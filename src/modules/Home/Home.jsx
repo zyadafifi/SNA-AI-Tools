@@ -51,7 +51,7 @@ export function Home() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 mx-auto bg-gradient-to-br">
+        <main className="flex-1 bg-gradient-to-br">
           <HomeMain />
         </main>
 

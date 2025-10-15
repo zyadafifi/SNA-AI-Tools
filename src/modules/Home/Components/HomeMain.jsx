@@ -69,13 +69,13 @@ export const HomeMain = () => {
 
   return (
     <div className="bg-gradient-to-br from-slate-50 to-gray-100 p-5">
-      <div>
+      <div className="max-w-4xl mx-auto lg:max-w-6xl xl:max-w-7xl">
         {/* ===================== HERO SECTION ===================== */}
         <motion.header
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
-          className="relative overflow-hidden rounded-3xl p-4 bg-gradient-to-br from-[#275151] via-[#63a29b] to-[#275151] text-white mb-8 sm:mb-12 md:mb-16"
+          className="relative overflow-hidden rounded-3xl p-4 lg:p-6 bg-gradient-to-br from-[#275151] via-[#63a29b] to-[#275151] text-white mb-8 sm:mb-12 md:mb-16"
         >
           {/* 🌌 Animated Background Gradient */}
           <motion.div
@@ -286,7 +286,7 @@ export const HomeMain = () => {
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: .2, duration: 0.8 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
                 key={tool.id}
                 className="relative group mb-5 sm:mb-10 last:mb-0"
                 onMouseEnter={() => setHoveredCard(tool.id)}

@@ -78,26 +78,29 @@ export const PronounceHomePage = () => {
     }
   }, []);
 
-  // Calculate path positions - exact copy from script.js
+  // Calculate path positions - Fixed for proper desktop layout
   const calculatePathPositions = useCallback((lessonsToRender) => {
     const positions = [];
-    const containerWidth = window.innerWidth;
-    const containerHeight = Math.max(800, lessonsToRender.length * 220); // Exact from script.js
+
+    // Use actual container width for proper centering
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const containerWidth = isMobile
+      ? window.innerWidth
+      : Math.min(window.innerWidth, 1200); // Reduced to match main-container max-width
+    const containerHeight = Math.max(800, lessonsToRender.length * 200);
 
     // Ensure minimum dimensions
     const finalContainerWidth = Math.max(300, containerWidth);
     const finalContainerHeight = Math.max(800, containerHeight);
 
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
     let padding, availableWidth, availableHeight;
 
     if (isMobile) {
-      padding = 120; // Exact from script.js
+      padding = 120;
       availableWidth = finalContainerWidth - padding * 2;
       availableHeight = finalContainerHeight - padding * 2;
     } else {
-      padding = 150; // Exact from script.js
+      padding = 120; // Further reduced padding to allow more left positioning
       availableWidth = finalContainerWidth - padding * 2;
       availableHeight = finalContainerHeight - padding * 2;
     }
@@ -110,16 +113,16 @@ export const PronounceHomePage = () => {
           (index / Math.max(lessonsToRender.length - 1, 1)) * availableHeight;
         const centerX = finalContainerWidth / 2;
 
-        const lessonInfoWidth = 180; // Exact from script.js
-        const circleRadius = 35; // Exact from script.js
-        const safeMargin = 20; // Exact from script.js
+        const lessonInfoWidth = 180;
+        const circleRadius = 35;
+        const safeMargin = 20;
 
         const maxSafeOffset = Math.min(
           finalContainerWidth / 2 - lessonInfoWidth - circleRadius - safeMargin,
-          finalContainerWidth * 0.2 // Exact from script.js
+          finalContainerWidth * 0.2
         );
 
-        const offsetDistance = Math.max(maxSafeOffset, 40); // Exact from script.js
+        const offsetDistance = Math.max(maxSafeOffset, 40);
 
         let x, side;
         if (index % 2 === 0) {
@@ -137,34 +140,28 @@ export const PronounceHomePage = () => {
 
         positions.push({ x, y, side });
       } else {
-        // Desktop layout
+        // Desktop layout - Fixed positioning algorithm
         const progress = index / Math.max(lessonsToRender.length - 1, 1);
         const baseY = padding + progress * availableHeight;
 
-        const centerX = finalContainerWidth / 2;
-        const maxOffset = availableWidth * 0.3; // Exact from script.js
+        const centerX = finalContainerWidth / 2 + 30; // Slight shift to the right
+        const maxOffset = Math.min(availableWidth * 0.22, 160); // Moderate offset for subtle left positioning
 
         let xOffset;
-        const cycle = index % 6; // Exact from script.js
+        const cycle = index % 4; // Reduced cycle to 4 for better distribution
 
         switch (cycle) {
           case 0:
-            xOffset = -maxOffset * 0.8; // Exact from script.js
+            xOffset = -maxOffset * 0.3; // Reduced left positioning
             break;
           case 1:
-            xOffset = maxOffset * 0.9; // Exact from script.js
+            xOffset = maxOffset * 0.4; // Increased right positioning
             break;
           case 2:
-            xOffset = -maxOffset * 0.6; // Exact from script.js
+            xOffset = -maxOffset * 0.2; // Reduced left positioning
             break;
           case 3:
-            xOffset = maxOffset * 0.7; // Exact from script.js
-            break;
-          case 4:
-            xOffset = -maxOffset * 0.4; // Exact from script.js
-            break;
-          case 5:
-            xOffset = maxOffset * 0.5; // Exact from script.js
+            xOffset = maxOffset * 0.3; // Increased right positioning
             break;
           default:
             xOffset = 0;
@@ -173,9 +170,13 @@ export const PronounceHomePage = () => {
         const x = centerX + xOffset;
         const y = baseY;
 
+        // Ensure lessons stay within bounds with proper margins
+        const lessonWidth = 300; // Reduced lesson width for better centering
+        const margin = 20; // Reduced margin to allow more left positioning
+
         const finalX = Math.max(
-          padding,
-          Math.min(finalContainerWidth - padding, x)
+          margin,
+          Math.min(finalContainerWidth - lessonWidth - margin, x)
         );
         const finalY = Math.max(
           padding,
