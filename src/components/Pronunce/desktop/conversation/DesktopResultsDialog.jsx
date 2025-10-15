@@ -1,4 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTimes,
+  faMicrophone,
+  faVolumeUp,
+  faPlay,
+  faPause,
+  faRedo,
+  faHeadphones,
+} from "@fortawesome/free-solid-svg-icons";
 
 const DesktopResultsDialog = ({
   show,
@@ -100,13 +110,28 @@ const DesktopResultsDialog = ({
       <div className="dialog-content">
         {/* Close Button */}
         <button className="close-btn" title="Close dialog" onClick={onClose}>
-          <i className="fas fa-times"></i>
+          <FontAwesomeIcon
+            icon={faTimes}
+            className="svg-inline--fa fas fa-times"
+            data-prefix="fas"
+            data-icon="times"
+            role="img"
+            aria-hidden="true"
+          />
         </button>
 
         {/* Dialog Header */}
         <div className="dialog-header">
           <div className="dialog-icon">
-            <i className="fas fa-microphone"></i>
+            <FontAwesomeIcon
+              icon={faMicrophone}
+              className="svg-inline--fa fas fa-microphone"
+              data-prefix="fas"
+              data-icon="microphone"
+              role="img"
+              aria-hidden="true"
+              style={{ minWidth: "30px", minHeight: "30px" }}
+            />
           </div>
           <h4>Your Pronunciation Review</h4>
 
@@ -177,15 +202,22 @@ const DesktopResultsDialog = ({
             }}
             disabled={isProcessing}
           >
-            <i
-              className={`fas ${
+            <FontAwesomeIcon
+              icon={isSpeaking ? (isPaused ? faPlay : faPause) : faVolumeUp}
+              className={`svg-inline--fa fas ${
                 isSpeaking
                   ? isPaused
                     ? "fa-play"
                     : "fa-pause"
                   : "fa-volume-up"
               }`}
-            ></i>
+              data-prefix="fas"
+              data-icon={
+                isSpeaking ? (isPaused ? "play" : "pause") : "volume-up"
+              }
+              role="img"
+              aria-hidden="true"
+            />
           </button>
 
           {/* Action Buttons */}
@@ -196,7 +228,15 @@ const DesktopResultsDialog = ({
               onClick={onRetry}
               disabled={isProcessing}
             >
-              <i className="fas fa-redo"></i> Retry
+              <FontAwesomeIcon
+                icon={faRedo}
+                className="svg-inline--fa fas fa-redo"
+                data-prefix="fas"
+                data-icon="redo"
+                role="img"
+                aria-hidden="true"
+              />{" "}
+              Retry
             </button>
             <button
               id="nextButton"
@@ -224,15 +264,32 @@ const DesktopResultsDialog = ({
             onClick={isPlayingRecording ? onPauseRecording : onPlayRecording}
             disabled={isProcessing}
           >
-            <i
-              className={`fas ${
+            <FontAwesomeIcon
+              icon={
+                isPlayingRecording
+                  ? isRecordingPaused
+                    ? faPlay
+                    : faPause
+                  : faHeadphones
+              }
+              className={`svg-inline--fa fas ${
                 isPlayingRecording
                   ? isRecordingPaused
                     ? "fa-play"
                     : "fa-pause"
                   : "fa-headphones"
               }`}
-            ></i>
+              data-prefix="fas"
+              data-icon={
+                isPlayingRecording
+                  ? isRecordingPaused
+                    ? "play"
+                    : "pause"
+                  : "headphones"
+              }
+              role="img"
+              aria-hidden="true"
+            />
           </button>
         </div>
 

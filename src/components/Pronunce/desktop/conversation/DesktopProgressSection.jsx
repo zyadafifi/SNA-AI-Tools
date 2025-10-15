@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChartLine } from "@fortawesome/free-solid-svg-icons";
 
 const DesktopProgressSection = ({
   currentSentenceIndex,
@@ -9,7 +11,7 @@ const DesktopProgressSection = ({
     <div className="learning-progress-section">
       <div className="progress-header">
         <div className="progress-icon">
-          <i className="fas fa-chart-line"></i>
+          <FontAwesomeIcon icon={faChartLine} className="fas fa-chart-line" />
         </div>
         <span className="progress-label">Learning Progress</span>
       </div>

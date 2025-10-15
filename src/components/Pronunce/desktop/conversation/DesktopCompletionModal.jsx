@@ -1,4 +1,6 @@
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes, faTrophy } from "@fortawesome/free-solid-svg-icons";
 const DesktopCompletionModal = ({ show, overallScore, onClose }) => {
   if (!show) return null;
 
@@ -11,13 +13,13 @@ const DesktopCompletionModal = ({ show, overallScore, onClose }) => {
       <div className="dialog-content completion-modal-content">
         {/* Close Button */}
         <button className="close-btn" title="Close dialog" onClick={onClose}>
-          <i className="fas fa-times"></i>
+          <FontAwesomeIcon icon={faTimes} className="fas fa-times" />
         </button>
 
         {/* Dialog Header */}
         <div className="dialog-header">
           <div className="dialog-icon">
-            <i className="fas fa-trophy"></i>
+            <FontAwesomeIcon icon={faTrophy} className="fas fa-trophy" />
           </div>
           <h4>🎉 Congratulations! 🎉</h4>
         </div>

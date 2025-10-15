@@ -2,7 +2,13 @@ import React from "react";
 import DesktopRecordingUI from "./DesktopRecordingUI";
 import SpinnerLoadingIcon from "../../SpinnerLoadingIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVolumeUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faVolumeUp,
+  faPlay,
+  faPause,
+  faMicrophone,
+  faHeadphones,
+} from "@fortawesome/free-solid-svg-icons";
 
 const DesktopPracticeSection = ({
   currentSentence,
@@ -70,15 +76,22 @@ const DesktopPracticeSection = ({
               }
             }}
           >
-            <i
-              className={`fas ${
+            <FontAwesomeIcon
+              icon={isSpeaking ? (isPaused ? faPlay : faPause) : faVolumeUp}
+              className={`svg-inline--fa fas ${
                 isSpeaking
                   ? isPaused
                     ? "fa-play"
                     : "fa-pause"
                   : "fa-volume-up"
               }`}
-            ></i>
+              data-prefix="fas"
+              data-icon={
+                isSpeaking ? (isPaused ? "play" : "pause") : "volume-up"
+              }
+              role="img"
+              aria-hidden="true"
+            />
           </button>
 
           {/* Microphone Button */}
@@ -90,7 +103,15 @@ const DesktopPracticeSection = ({
             title={isRecording ? "Stop recording" : "Start recording"}
             onClick={onMicClick}
           >
-            <i className="fas fa-microphone"></i>
+            <FontAwesomeIcon
+              icon={faMicrophone}
+              className="svg-inline--fa fas fa-microphone"
+              data-prefix="fas"
+              data-icon="microphone"
+              role="img"
+              aria-hidden="true"
+              style={{ minWidth: "30px", minHeight: "30px" }}
+            />
           </button>
 
           {/* Play Recording Button - Shows pause icon when playing recorded audio */}
@@ -108,15 +129,32 @@ const DesktopPracticeSection = ({
             }
             onClick={isPlayingRecording ? onPauseRecording : onPlayRecording}
           >
-            <i
-              className={`fas ${
+            <FontAwesomeIcon
+              icon={
+                isPlayingRecording
+                  ? isRecordingPaused
+                    ? faPlay
+                    : faPause
+                  : faHeadphones
+              }
+              className={`svg-inline--fa fas ${
                 isPlayingRecording
                   ? isRecordingPaused
                     ? "fa-play"
                     : "fa-pause"
                   : "fa-headphones"
               }`}
-            ></i>
+              data-prefix="fas"
+              data-icon={
+                isPlayingRecording
+                  ? isRecordingPaused
+                    ? "play"
+                    : "pause"
+                  : "headphones"
+              }
+              role="img"
+              aria-hidden="true"
+            />
           </button>
         </div>
       )}
@@ -131,7 +169,14 @@ const DesktopPracticeSection = ({
             title="Processing audio..."
             disabled
           >
-            <FontAwesomeIcon icon={faVolumeUp} />
+            <FontAwesomeIcon
+              icon={faVolumeUp}
+              className="svg-inline--fa fas fa-volume-up"
+              data-prefix="fas"
+              data-icon="volume-up"
+              role="img"
+              aria-hidden="true"
+            />
           </button>
 
           {/* Spinner in place of mic button */}
@@ -149,7 +194,14 @@ const DesktopPracticeSection = ({
             title="Processing audio..."
             disabled
           >
-            <i className="fas fa-headphones"></i>
+            <FontAwesomeIcon
+              icon={faHeadphones}
+              className="svg-inline--fa fas fa-headphones"
+              data-prefix="fas"
+              data-icon="headphones"
+              role="img"
+              aria-hidden="true"
+            />
           </button>
         </div>
       )}

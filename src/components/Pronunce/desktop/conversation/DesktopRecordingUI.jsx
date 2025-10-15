@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 const DesktopRecordingUI = ({
   recordingTime,
@@ -109,7 +111,7 @@ const DesktopRecordingUI = ({
           onClick={onDeleteRecording}
           title="Delete recording"
         >
-          <i className="fas fa-times"></i>
+          <FontAwesomeIcon icon={faTimes} className="fas fa-times" />
         </button>
 
         <div className="recording-visual">
@@ -130,7 +132,7 @@ const DesktopRecordingUI = ({
           onClick={onStopRecording}
           title="Stop recording and process"
         >
-          <i className="fas fa-paper-plane"></i>
+          <FontAwesomeIcon icon={faPaperPlane} className="fas fa-paper-plane" />
         </button>
       </div>
     </div>

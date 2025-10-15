@@ -1,4 +1,12 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPlayCircle,
+  faExclamationTriangle,
+  faPause,
+  faPlay,
+  faRedo,
+} from "@fortawesome/free-solid-svg-icons";
 
 const DesktopVideoSection = ({
   videoRef,
@@ -39,7 +47,7 @@ const DesktopVideoSection = ({
     <div className="watch-learn-section">
       <div className="section-header">
         <div className="section-icon">
-          <i className="fas fa-play-circle"></i>
+          <FontAwesomeIcon icon={faPlayCircle} className="fas fa-play-circle" />
         </div>
         <h3>Watch & Learn</h3>
       </div>
@@ -67,7 +75,10 @@ const DesktopVideoSection = ({
         {/* Video Error Indicator */}
         {videoError && (
           <div className="video-error-overlay">
-            <i className="fas fa-exclamation-triangle"></i>
+            <FontAwesomeIcon
+              icon={faExclamationTriangle}
+              className="fas fa-exclamation-triangle"
+            />
             <span>Video failed to load. Please check your connection.</span>
           </div>
         )}
@@ -81,7 +92,10 @@ const DesktopVideoSection = ({
           onClick={handlePlayClick}
           disabled={videoLoading}
         >
-          <i className={`fas ${isPlaying ? "fa-pause" : "fa-play"}`}></i>
+          <FontAwesomeIcon
+            icon={isPlaying ? faPause : faPlay}
+            className={`fas ${isPlaying ? "fa-pause" : "fa-play"}`}
+          />
           {isPlaying ? "Pause Video" : "Watch Video"}
         </button>
         <button
@@ -90,7 +104,7 @@ const DesktopVideoSection = ({
           onClick={handleReplayClick}
           disabled={videoLoading}
         >
-          <i className="fas fa-redo"></i> Replay
+          <FontAwesomeIcon icon={faRedo} className="fas fa-redo" /> Replay
         </button>
       </div>
     </div>
