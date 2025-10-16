@@ -11,7 +11,7 @@ import {
   Clock,
   CheckCircle2,
 } from "lucide-react";
-import { levelsAndLesson } from "../../config/levelsAndLesson/levelsAndLesson";
+import { readingData } from "../../config/readingData/readingData";
 import { SectionTitle } from "../../components";
 
 /**
@@ -54,7 +54,7 @@ export const ReadingProgressTracker = () => {
 
   // ✅ Resolve titles from catalog → value → placeholder
   const resolveLessonMeta = (levelId, lessonId, value) => {
-    const level = levelsAndLesson.find((l) => l.id === levelId);
+    const level = readingData.find((l) => l.id === levelId);
     const lesson = level?.lessons?.find((les) => les.id === lessonId);
 
     const levelTitle =
@@ -72,7 +72,7 @@ export const ReadingProgressTracker = () => {
 
   // ✅ Is this lesson present in our catalog?
   const isKnownCatalogLesson = (levelId, lessonId) => {
-    const level = levelsAndLesson.find((l) => l.id === levelId);
+    const level = readingData.find((l) => l.id === levelId);
     if (!level) return false;
     return !!level.lessons?.some((les) => les.id === lessonId);
   };
@@ -125,7 +125,7 @@ export const ReadingProgressTracker = () => {
       return isKnownCatalogLesson(levelId, lessonId);
     });
 
-    const totalLessons = levelsAndLesson.reduce(
+    const totalLessons = readingData.reduce(
       (total, level) => total + (level.lessons?.length || 0),
       0
     );
@@ -139,7 +139,7 @@ export const ReadingProgressTracker = () => {
   }, [progress]);
 
   const getLevelProgress = (levelId) => {
-    const level = levelsAndLesson.find((l) => l.id === levelId);
+    const level = readingData.find((l) => l.id === levelId);
     if (!level) return { completed: 0, total: 0, percentage: 0, level: null };
 
     const completed = Object.entries(progress).filter(([k, v]) => {
@@ -158,7 +158,7 @@ export const ReadingProgressTracker = () => {
 
   // Only levels that have at least one known completed lesson
   const levelsWithProgress = useMemo(() => {
-    return levelsAndLesson.filter(
+    return readingData.filter(
       (level) => getLevelProgress(level.id).completed > 0
     );
   }, [progress]);

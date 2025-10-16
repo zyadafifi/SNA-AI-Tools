@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
 import { X, Volume2, BookOpen } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
-import { levelsAndLesson } from "../../config/levelsAndLesson/levelsAndLesson";
+import { readingData } from "../../config/readingData/readingData";
 
 /* ------------------------------------------------------------------ */
 /* TTS support + config                                               */
@@ -226,7 +226,7 @@ export function ShowLessonFirstRound() {
   const [selectedWordData, setSelectedWordData] = useState(null);
   const [activeWord, setActiveWord] = useState(null);
 
-  const currentLevel = levelsAndLesson.find((level) => level.id === levelIdNum);
+  const currentLevel = readingData.find((level) => level.id === levelIdNum);
   const currentLesson =
     currentLevel?.lessons.find((lesson) => lesson.id === lessonIdNum) || null;
 

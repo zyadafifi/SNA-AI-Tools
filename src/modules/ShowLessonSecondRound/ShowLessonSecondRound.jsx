@@ -10,7 +10,7 @@ import {
   Languages,
 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
-import { levelsAndLesson } from "../../config/levelsAndLesson/levelsAndLesson";
+import { readingData } from "../../config/readingData/readingData";
 
 /* ------------------------------------------------------------------ */
 /* TTS support + config                                               */
@@ -345,7 +345,7 @@ export function ShowLessonSecondRound() {
   const [selectedWordData, setSelectedWordData] = useState(null);
   const [showTranslations, setShowTranslations] = useState(false); // New state for translation toggle
 
-  const currentLevel = levelsAndLesson.find((level) => level.id === levelIdNum);
+  const currentLevel = readingData.find((level) => level.id === levelIdNum);
   const currentLesson =
     currentLevel?.lessons.find((lesson) => lesson.id === lessonIdNum) || null;
 

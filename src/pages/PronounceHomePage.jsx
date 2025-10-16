@@ -203,7 +203,7 @@ export const PronounceHomePage = () => {
     const loadLessonsData = async () => {
       try {
         setLoading(true);
-        const response = await fetch("/assets/data.json");
+        const response = await fetch("/assets/pronounceData.json");
         const data = await response.json();
         setLessonsData(data);
       } catch (error) {

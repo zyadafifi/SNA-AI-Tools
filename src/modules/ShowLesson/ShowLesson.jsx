@@ -15,12 +15,11 @@ import {
   BookOpen,
   Trash2,
   Globe2,
-  Loader2,
   Turtle,
 } from "lucide-react";
 import { IoIosSend, IoIosMic } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
-import { levelsAndLesson } from "../../config/levelsAndLesson/levelsAndLesson";
+import { readingData } from "../../config/readingData/readingData";
 import { PiExam } from "react-icons/pi";
 
 /* ========================== Device Detection ========================== */
@@ -1135,10 +1134,10 @@ export function ShowLesson() {
   const { levelId, lessonId } = useParams();
   const lessonIdNum = parseInt(lessonId);
 
-  const currentLesson = levelsAndLesson
+  const currentLesson = readingData
     .find((level) => level.id == levelId)
     .lessons.find((lesson) => lesson.id == lessonIdNum);
-  const currentLevel = levelsAndLesson.find((level) => level.id == levelId);
+  const currentLevel = readingData.find((level) => level.id == levelId);
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [selectedWordData, setSelectedWordData] = useState(null);
