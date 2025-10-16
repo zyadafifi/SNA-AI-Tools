@@ -389,7 +389,7 @@ export const TopicsPage = () => {
   useEffect(() => {
     const loadLessonsData = async () => {
       try {
-        const response = await fetch("/assets/data.json");
+        const response = await fetch("/assets/pronounceData.json");
         const data = await response.json();
         setLessonsData(data);
       } catch (error) {

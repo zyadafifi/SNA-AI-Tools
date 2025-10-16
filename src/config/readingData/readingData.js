@@ -1,4 +1,4 @@
-export const levelsAndLesson = [
+export const readingData  = [
   {
     id: 1,
     image: "/assets/images/courses_image/Level-C-1.jpg",

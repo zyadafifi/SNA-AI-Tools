@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { levelsAndLesson } from "../../config/levelsAndLesson/levelsAndLesson";
+import { readingData } from "../../config/readingData/readingData";
 import {
   ArrowLeft,
   Award,
@@ -113,7 +113,7 @@ export const QuizPage = () => {
   };
 
   // البحث عن المستوى والدرس المناسبين
-  const currentLevel = levelsAndLesson.find((level) => level.id === levelIdNum);
+  const currentLevel = readingData.find((level) => level.id === levelIdNum);
   const currentLesson = currentLevel?.lessons.find(
     (lesson) => lesson.id === lessonIdNum
   );

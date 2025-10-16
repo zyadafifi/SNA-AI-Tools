@@ -39,7 +39,7 @@ export default function Article() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data.json")
+    fetch("/assets/pronounceData.json")
       .then((res) => res.json())
       .then((data) => {
         setArticles(data.articles);

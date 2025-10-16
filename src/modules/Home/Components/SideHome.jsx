@@ -7,7 +7,7 @@ import {
   ChevronRight,
   TrendingUp,
 } from "lucide-react";
-import { levelsAndLesson } from "../../../config/levelsAndLesson/levelsAndLesson";
+import { readingData } from "../../../config/readingData/readingData";
 import { Link } from "react-router-dom";
 
 export const SideHome = () => {
@@ -153,7 +153,7 @@ export const SideHome = () => {
   };
 
   const isKnownLesson = (levelId, lessonId) => {
-    const level = levelsAndLesson.find((l) => l.id === levelId);
+    const level = readingData.find((l) => l.id === levelId);
     return level?.lessons?.some((lesson) => lesson.id === lessonId) || false;
   };
 
@@ -165,7 +165,7 @@ export const SideHome = () => {
       return levelId && lessonId && isKnownLesson(levelId, lessonId);
     });
 
-    const totalLessons = levelsAndLesson.reduce(
+    const totalLessons = readingData.reduce(
       (total, level) => total + (level.lessons?.length || 0),
       0
     );

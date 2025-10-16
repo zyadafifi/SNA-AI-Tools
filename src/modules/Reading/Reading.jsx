@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { LevelList } from "./Components/LevelList/LevelList";
-import { levelsAndLesson } from "../../config/levelsAndLesson/levelsAndLesson";
+import { readingData } from "../../config/readingData/readingData";
 import { SectionTitle } from "../../components/index";
 
 export const Reading = () => {
@@ -27,7 +27,7 @@ export const Reading = () => {
 
     levelSections.forEach(({ title, keys }) => {
       // Get levels for this section
-      let sectionLevels = levelsAndLesson.filter((level) =>
+      let sectionLevels = readingData.filter((level) =>
         keys.includes(level.levelKey)
       );
 
