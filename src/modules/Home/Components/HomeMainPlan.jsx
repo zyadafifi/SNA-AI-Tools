@@ -13,10 +13,22 @@ const StarIcon = ({ filled = false }) => (
   </svg>
 );
 
-export default function HomeMainPlan() {
-  const [data, setData] = useState({ pronounce: null, writing: null, listening: null });
-  const [loading, setLoading] = useState({ pronounce: true, writing: true, listening: true });
-  const [errors, setErrors] = useState({ pronounce: null, writing: null, listening: null });
+export function HomeMainPlan() {
+  const [data, setData] = useState({
+    pronounce: null,
+    writing: null,
+    listening: null,
+  });
+  const [loading, setLoading] = useState({
+    pronounce: true,
+    writing: true,
+    listening: true,
+  });
+  const [errors, setErrors] = useState({
+    pronounce: null,
+    writing: null,
+    listening: null,
+  });
 
   const fetchData = async (url, key) => {
     try {
@@ -51,7 +63,8 @@ export default function HomeMainPlan() {
   const isLoading = Object.values(loading).some(Boolean);
   const hasErrors = Object.values(errors).some(Boolean);
   const maxKey = useMemo(
-    () => Object.keys(lengths).reduce((a, b) => (lengths[a] > lengths[b] ? a : b)),
+    () =>
+      Object.keys(lengths).reduce((a, b) => (lengths[a] > lengths[b] ? a : b)),
     [lengths]
   );
   const total = lengths[maxKey] || 0;
@@ -60,7 +73,10 @@ export default function HomeMainPlan() {
     const saved = localStorage.getItem("planUnlockedCount");
     return saved ? Number(saved) : 1;
   });
-  useEffect(() => localStorage.setItem("planUnlockedCount", String(unlockedCount)), [unlockedCount]);
+  useEffect(
+    () => localStorage.setItem("planUnlockedCount", String(unlockedCount)),
+    [unlockedCount]
+  );
 
   if (isLoading) {
     return (
@@ -73,7 +89,9 @@ export default function HomeMainPlan() {
   if (hasErrors) {
     return (
       <div className="mb-8 text-center py-8">
-        <div className="text-red-600">Error loading data. Please try again.</div>
+        <div className="text-red-600">
+          Error loading data. Please try again.
+        </div>
       </div>
     );
   }
@@ -86,6 +104,7 @@ export default function HomeMainPlan() {
     );
   }
 
+  // إعداد شكل المسار المتعرج مثل الثعبان
   const nodes = Array.from({ length: total }, (_, i) => ({
     index: i,
     label: `Lesson ${i + 1}`,
@@ -96,11 +115,18 @@ export default function HomeMainPlan() {
     <div className="relative flex flex-col items-center mt-8">
       {nodes.map((n) => {
         const unlocked = n.index < unlockedCount;
+        const current = n.index === unlockedCount - 1;
         const nextUp = n.index === unlockedCount;
-        const offsetX = n.side === "left" ? "-translate-x-12" : "translate-x-6";
+
+        // تقليل المسافة العمودية وزيادة الالتواء الأفقي
+        const offsetX =
+          n.side === "left" ? "-translate-x-20" : "translate-x-20";
 
         return (
-          <div key={n.index} className={`relative flex flex-col items-center mb-4 ${offsetX}`}>
+          <div
+            key={n.index}
+            className={`relative flex flex-col items-center mb-4 ${offsetX}`}
+          >
             {nextUp && (
               <span className="mb-1 text-emerald-700 bg-white px-3 py-1 rounded-xl shadow border border-emerald-200 text-sm font-semibold">
                 ابدأ
