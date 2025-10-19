@@ -2,6 +2,7 @@
   "lessons": [
     {
       "id": 1,
+      "slug": "lesson-1",
       "title": "Basic Pronunciation - Vowel Sounds",
       "description": "Master fundamental English vowel sounds with clear pronunciation practice",
       "duration": "12 minutes",
@@ -68,6 +69,7 @@
     },
     {
       "id": 2,
+      "slug": "lesson-2",
       "title": "Common Phrases and Greetings",
       "description": "Learn essential English greetings and everyday phrases for daily communication",
       "duration": "15 minutes",
@@ -134,6 +136,7 @@
     },
     {
       "id": 3,
+      "slug": "lesson-3",
       "title": "Numbers and Time",
       "description": "Master English numbers, telling time, and basic mathematical expressions",
       "duration": "18 minutes",
@@ -200,6 +203,7 @@
     },
     {
       "id": 4,
+      "slug": "lesson-4",
       "title": "Family and Relationships",
       "description": "Learn vocabulary and expressions related to family members and relationships",
       "duration": "20 minutes",
@@ -266,6 +270,7 @@
     },
     {
       "id": 5,
+      "slug": "lesson-5",
       "title": "Food and Dining",
       "description": "Essential vocabulary for ordering food, describing meals, and dining experiences",
       "duration": "22 minutes",
@@ -332,6 +337,7 @@
     },
     {
       "id": 6,
+      "slug": "lesson-6",
       "title": "Intermediate Listening - Business Communication",
       "description": "Professional communication skills for workplace environments and business contexts",
       "duration": "25 minutes",
@@ -398,6 +404,7 @@
     },
     {
       "id": 7,
+      "slug": "lesson-7",
       "title": "Academic English - Research and Study",
       "description": "Formal academic language for research, studies, and scholarly communication",
       "duration": "28 minutes",
@@ -464,6 +471,7 @@
     },
     {
       "id": 8,
+      "slug": "lesson-8",
       "title": "Advanced Conversation - Current Events",
       "description": "Complex discussions about current events, politics, and social issues",
       "duration": "30 minutes",
@@ -530,6 +538,7 @@
     },
     {
       "id": 9,
+      "slug": "lesson-9",
       "title": "Medical English - Healthcare Communication",
       "description": "Specialized vocabulary and expressions for healthcare professionals and medical contexts",
       "duration": "32 minutes",
@@ -596,6 +605,7 @@
     },
     {
       "id": 10,
+      "slug": "lesson-10",
       "title": "Legal English - Professional Communication",
       "description": "Formal legal language and professional communication for legal contexts",
       "duration": "35 minutes",

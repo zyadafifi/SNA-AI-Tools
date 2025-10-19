@@ -1,6 +1,7 @@
 export const readingData  = [
   {
     id: 1,
+    slug: "lesson-1",
     image: "/assets/images/courses_image/Level-C-1.jpg",
     levelTitle: "Who is She?",
     levelDescription:
@@ -312,6 +313,7 @@ export const readingData  = [
   {
     id: 2,
     image: "/assets/images/courses_image/images.jpeg",
+    slug: "lesson-2",
     levelTitle: "Daily Life Stories",
     levelDescription:
       "Simple everyday stories for English beginners. Learn about daily activities through easy conversations and situations. Perfect for building basic vocabulary and understanding.",
@@ -714,6 +716,7 @@ export const readingData  = [
     id: 3,
     levelTitle: "Family and Friends",
     image: "/assets/images/courses_image/family-friends.jpg",
+    slug: "lesson-6",
     levelDescription:
       "Stories about relationships, family members, and social interactions. Learn vocabulary about people in your life.",
     levelKey: "Elementary",
@@ -862,6 +865,7 @@ export const readingData  = [
     id: 4,
     image: "/assets/images/courses_image/cooking-statistics-hero.jpg",
     levelTitle: "Food and Cooking",
+    slug: "lesson-7",
     levelDescription:
       "Delicious stories about food, cooking, and dining experiences. Learn vocabulary for the kitchen and restaurant.",
     levelKey: "Elementary",
@@ -1027,6 +1031,7 @@ export const readingData  = [
     id: 5,
     image: "/assets/images/courses_image/GettyImages-944543546-1.jpg",
     levelTitle: "Travel and Adventure",
+    slug: "lesson-12",
     levelDescription:
       "Exciting stories about traveling, exploring new places, and adventures. Learn vocabulary for transportation and tourism.",
     levelKey: "Pre-Intermediate",
@@ -1216,6 +1221,7 @@ export const readingData  = [
     id: 6,
     image: "/assets/images/courses_image/iStock-1158174798_0.jpg",
     levelTitle: "Work and Career",
+    slug: "lesson-17",
     levelDescription:
       "Professional stories about different jobs, workplace situations, and career development. Learn business vocabulary.",
     levelKey: "Intermediate",
@@ -1392,6 +1398,7 @@ export const readingData  = [
     image:
       "/assets/images/courses_image/how-much-joining-gym-helps-health-2-jpg-1488906648.avif",
     levelTitle: "Health and Fitness",
+    slug: "lesson-27",
     levelDescription:
       "Learn about maintaining a healthy lifestyle through proper nutrition, exercise, and wellness practices. Discover vocabulary related to medical care, mental health, and physical activities.",
     levelKey: "Advanced",
@@ -2019,6 +2026,7 @@ export const readingData  = [
     id: 8,
     image: "/assets/images/courses_image/opt-2-medium.png",
     levelTitle: "Technology and Modern Life",
+    slug: "lesson-22",
     levelDescription:
       "Explore how technology shapes our daily lives. Learn vocabulary about computers, smartphones, social media, and digital communication.",
     levelKey: "Upper-Intermediate",
@@ -2770,6 +2778,7 @@ export const readingData  = [
     id: 9,
     image: "/assets/images/courses_image/medio-ambiente-1-e1579650264687.jpg",
     levelTitle: "Environment and Nature",
+    slug: "lesson-28",
     levelDescription:
       "Discover the natural world and environmental issues. Learn vocabulary about climate, wildlife, conservation, and sustainable living.",
     levelKey: "Advanced",
@@ -3527,6 +3536,7 @@ export const readingData  = [
     id: 10,
     image: "/assets/images/courses_image/Technical-Innovation.png",
     levelTitle: "Technology and Innovation",
+    slug: "lesson-29",
     levelDescription:
       "Explore the world of modern technology, digital transformation, and cutting-edge innovations that are shaping our future.",
     levelKey: "Advanced",
@@ -4106,6 +4116,7 @@ export const readingData  = [
   id: 19992,
   image: "/assets/images/courses_image/school.jpeg",
   levelTitle: "School and Learning",
+  slug: "lesson-3",
   levelDescription:
     "Learn simple English conversations about school life, classes, and learning activities.",
   levelKey: "Beginner",
@@ -4320,6 +4331,7 @@ export const readingData  = [
     id: 14,
     image: "/assets/images/courses_image/at-home.jpg",
     levelTitle: "At Home",
+    slug: "lesson-4",
     levelDescription:
       "Learn simple English phrases about home activities and family life.",
     levelKey: "Beginner",
@@ -4523,6 +4535,7 @@ export const readingData  = [
     id: 16,
     image: "/assets/images/courses_image/1-7-1024x576.jpg",
     levelTitle: "Around Town",
+    slug: "lesson-5",
     levelDescription:
       "Learn English phrases for common places, transportation, and shopping in a town.",
     levelKey: "Beginner",
@@ -4720,6 +4733,7 @@ export const readingData  = [
     id: 15,
     image: "/assets/images/courses_image/colors_shapes.jpeg",
     levelTitle: "Colors and Shapes",
+    slug: "lesson-8",
     levelDescription:
       "Learn about different colors and basic shapes in everyday objects.",
     levelKey: "Elementary",
@@ -5412,6 +5426,7 @@ export const readingData  = [
     id: 99,
     image: "/assets/images/courses_image/istockphoto-1349334252-612x612.jpg",
     levelTitle: "Daily Activities",
+    slug: "lesson-9",
     levelDescription:
       "Learn about daily routines and activities that people do every day.",
     levelKey: "Elementary",
@@ -6205,6 +6220,7 @@ export const readingData  = [
     id: 18,
     image: "/assets/images/courses_image/Communication-Technology.jpg",
     levelTitle: "Technology and Communication",
+    slug: "lesson-13",
     levelDescription:
       "Explore modern technology and various forms of digital communication in today's world.",
     levelKey: "Pre-Intermediate",
@@ -6947,6 +6963,7 @@ export const readingData  = [
     id: 100,
     image: "/assets/images/courses_image/maxresdefault.jpg",
     levelTitle: "Community Helpers",
+    slug: "lesson-14",
     levelDescription:
       "Learn about different people who help us in our community and their important jobs.",
     levelKey: "Pre-Intermediate",
@@ -7554,6 +7571,7 @@ export const readingData  = [
     id: 101,
     image: "/assets/images/courses_image/Seasons-and-Weather.webp",
     levelTitle: "Seasons and Weather",
+    slug: "lesson-10",
     levelDescription:
       "Explore the four seasons and different types of weather throughout the year.",
     levelKey: "Elementary",
@@ -8190,6 +8208,7 @@ export const readingData  = [
     id: 102,
     image: "/assets/images/courses_image/wildlife-harmony-scene-stockcake.jpg",
     levelTitle: "Animals and Nature",
+    slug: "lesson-15",
     levelDescription:
       "Discover amazing animals and learn about the natural world around us.",
     levelKey: "Pre-Intermediate",
@@ -8826,6 +8845,7 @@ export const readingData  = [
     image:
       "/assets/images/courses_image/what-is-health-and-wellness-featured-image.jpg",
     levelTitle: "Health and Wellness",
+    slug: "lesson-18",
     levelDescription:
       "Learn about maintaining physical and mental health through proper nutrition, exercise, and lifestyle choices.",
     levelKey: "Intermediate",
@@ -9794,6 +9814,7 @@ export const readingData  = [
     id: 105,
     image: "/assets/images/courses_image/Captivating-image.jpg",
     levelTitle: "Travel and Cultural Experiences",
+    slug: "lesson-19",
     levelDescription:
       "Explore different cultures, travel experiences, and the impact of tourism on global communities and environments.",
     levelKey: "Intermediate",
@@ -10978,6 +10999,7 @@ export const readingData  = [
     id: 108,
     image: "/assets/images/courses_image/concept.jpg",
     levelTitle: "Environmental Conservation and Climate Change",
+    slug: "lesson-20",
     levelDescription:
       "Explore environmental challenges, conservation efforts, and sustainable practices to protect our planet for future generations.",
     levelKey: "Intermediate",
@@ -11955,6 +11977,7 @@ export const readingData  = [
     image:
       "/assets/images/courses_image/market-research-analyst-1-scaled-e1646920394490.jpg",
     levelTitle: "Business and Entrepreneurship",
+    slug: "lesson-23",
     levelDescription:
       "Master advanced business concepts, entrepreneurial strategies, and professional skills needed to succeed in the modern corporate world and startup ecosystem.",
     levelKey: "Upper-Intermediate",
@@ -13168,6 +13191,7 @@ export const readingData  = [
     id: 111,
     image: "/assets/images/courses_image/Psychology-Human.jpeg",
     levelTitle: "Psychology and Human Behavior",
+    slug: "lesson-24",
     levelDescription:
       "Delve into the complexities of human cognition, behavioral patterns, mental health, and psychological theories that explain how we think, feel, and interact with the world.",
     levelKey: "Upper-Intermediate",
@@ -14064,6 +14088,7 @@ export const readingData  = [
     image:
       "/assets/images/courses_image/bachelor-of-arts-in-philosophy-and-ethics-in-tanzania.jpg",
     levelTitle: "Philosophy and Ethics",
+    slug: "lesson-25",
     levelDescription:
       "Examine fundamental questions about existence, knowledge, morality, and human nature through philosophical inquiry and ethical reasoning across different schools of thought.",
     levelKey: "Upper-Intermediate",
@@ -14945,6 +14970,7 @@ export const readingData  = [
     image:
       "/assets/images/courses_image/Fort-Wayne-intersection-credit-Nathan-Miller-1-1080x675.jpg",
     levelTitle: "My Community and Neighborhood",
+    slug: "lesson-11",
     levelDescription:
       "Learn about the people, places, and services in your community that help make our neighborhoods safe, clean, and fun places to live.",
     levelKey: "Elementary",
@@ -15613,6 +15639,7 @@ export const readingData  = [
     id: 100030,
     image: "/assets/images/courses_image/FEATURE_Creative-hobbies.webp",
     levelTitle: "Hobbies and Creative Activities",
+    slug: "lesson-16",
     levelDescription:
       "Explore various recreational pursuits and creative outlets that enrich personal life, develop skills, and provide relaxation and fulfillment through engaging activities.",
     levelKey: "Pre-Intermediate",
@@ -16345,6 +16372,7 @@ export const readingData  = [
   id: 9943,
   image: "/assets/images/courses_image/960x0.webp",
   levelTitle: "Global Issues and Social Responsibility",
+  slug: "lesson-21",
   levelDescription: "Examine contemporary global challenges including poverty, inequality, environmental degradation, and human rights while exploring individual and collective responses to create positive social change.",
   levelKey: "Intermediate",
   isLocked: true,
@@ -17010,6 +17038,7 @@ export const readingData  = [
   id: 4352,
   image: "/assets/images/courses_image/pedvLbViPiCbAUgbjyW4P8.jpg",
   "levelTitle": "Science and Scientific Method",
+  slug: "lesson-26",
   "levelDescription": "Explore scientific inquiry processes, research methodologies, hypothesis testing, and the application of scientific principles across disciplines while examining the role of science in society and technological advancement.",
   levelKey: "Upper-Intermediate",
   isLocked: true,
@@ -17640,6 +17669,7 @@ export const readingData  = [
   "id": 530133,
   "image": "/assets/images/courses_image/AdobeStock_939336513-web.jpg",
   "levelTitle": "Artificial Intelligence and Future Technologies",
+  "slug": "lesson-30",
   "levelDescription": "Dive deep into artificial intelligence, quantum computing, robotics, and the governance required to deploy advanced systems safely and at scale.",
   "levelKey": "Advanced",
   isLocked: true,
@@ -18030,6 +18060,7 @@ export const readingData  = [
   "id": 560333,
   "image": "/assets/images/courses_image/npj_space_Exploration_Homepage_Hero-6cbd659e40588b0fdb5ba432839cd8dc.jpg",
   "levelTitle": "Astronomy and Space Exploration",
+  "slug": "lesson-31",
   "levelDescription": "Study advanced topics in astronomy, astrophysics, planetary science, and human exploration of space.",
   "levelKey": "Advanced",
   isLocked: true,
