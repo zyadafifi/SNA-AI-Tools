@@ -5,6 +5,8 @@ import { CustomSlider } from "./ReadingTool/CustomSlider/CustomSlider";
 import { NavBar } from "./ReadingTool/layouts/NavBar/NavBar";
 import { Spinner } from "./ReadingTool/Spinner/Spinner";
 import { SectionTitle } from "./ReadingTool/SectionTitle/SectionTitle";
+import { Loading } from "./Loading";
+import { Error } from "./Error";
 
 export {
   Modal,
@@ -14,4 +16,6 @@ export {
   NavBar,
   Spinner,
   SectionTitle,
+  Loading,
+  Error,
 };

@@ -80,7 +80,7 @@
 
 /* Enhanced Main Container */
 .main-container {
-  max-width: 900px;
+  /* max-width: 900px; */
   margin: 0 auto;
   padding: 1rem;
 }
