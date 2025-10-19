@@ -175,7 +175,7 @@ export const MobileLessonPage = () => {
   useEffect(() => {
     const loadLessonsData = async () => {
       try {
-        const response = await fetch("/assets/pronounceData");
+        const response = await fetch("/assets/pronounceData.json");
         const data = await response.json();
         setLessonsData(data);
       } catch (error) {
