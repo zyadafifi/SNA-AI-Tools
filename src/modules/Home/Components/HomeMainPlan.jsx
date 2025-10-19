@@ -278,8 +278,8 @@ export function HomeMainPlan() {
 
           // On mobile, reduce the offset proportionally
           const mobileOffset = horizontalOffset
-            .replace("-translate-x-8", "-translate-x-4")
-            .replace("translate-x-8", "translate-x-4");
+            .replace("-translate-x-8", "-translate-x-10")
+            .replace("translate-x-8", "translate-x-10");
 
           return (
             <div
