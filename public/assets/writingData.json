@@ -2,150 +2,175 @@
   "topics": [
     {
       "id": "basic-pronunciation",
+      "slug": "lesson-1",
       "title": "Basic Pronunciation - Vowel Sounds",
       "description": "Master fundamental English vowel sounds with clear pronunciation practice",
       "duration": "12 minutes"
     },
     {
       "id": "common-phrases",
+      "slug": "lesson-2",
       "title": "Common Phrases and Greetings",
       "description": "Learn essential English greetings and everyday phrases for daily communication",
       "duration": "15 minutes"
     },
     {
       "id": "numbers-time",
+      "slug": "lesson-3",
       "title": "Numbers and Time",
       "description": "Master English numbers, telling time, and basic mathematical expressions",
       "duration": "18 minutes"
     },
     {
       "id": "family-relationships",
+      "slug": "lesson-4",
       "title": "Family and Relationships",
       "description": "Learn vocabulary and expressions related to family members and relationships",
       "duration": "20 minutes"
     },
     {
       "id": "food-dining",
+      "slug": "lesson-5",
       "title": "Food and Dining",
       "description": "Essential vocabulary for ordering food, describing meals, and dining experiences",
       "duration": "22 minutes"
     },
     {
       "id": "business-communication",
+      "slug": "lesson-6",
       "title": "Business Communication",
       "description": "Professional communication skills for workplace environments and business contexts",
       "duration": "25 minutes"
     },
     {
       "id": "academic-english",
+      "slug": "lesson-7",
       "title": "Academic English",
       "description": "Formal academic language for research, studies, and scholarly communication",
       "duration": "28 minutes"
     },
     {
       "id": "current-events",
+      "slug": "lesson-8",
       "title": "Current Events & News",
       "description": "Complex discussions about current events, politics, and social issues",
       "duration": "30 minutes"
     },
     {
       "id": "travel-tourism",
+      "slug": "lesson-9",
       "title": "Travel and Tourism",
       "description": "Essential vocabulary for booking trips, navigating airports, and exploring destinations",
       "duration": "24 minutes"
     },
     {
       "id": "health-medicine",
+      "slug": "lesson-10",
       "title": "Health and Medicine",
       "description": "Medical vocabulary for doctor visits, describing symptoms, and understanding prescriptions",
       "duration": "26 minutes"
     },
     {
       "id": "shopping-commerce",
+      "slug": "lesson-11",
       "title": "Shopping and Commerce",
       "description": "Retail vocabulary for browsing stores, comparing prices, and making purchases",
       "duration": "20 minutes"
     },
     {
       "id": "technology-digital",
+      "slug": "lesson-12",
       "title": "Technology and Digital Life",
       "description": "Modern tech vocabulary for computers, smartphones, and digital communication",
       "duration": "22 minutes"
     },
     {
       "id": "education-learning",
+      "slug": "lesson-13",
       "title": "Education and Learning",
       "description": "School and university vocabulary for academic discussions and educational contexts",
       "duration": "24 minutes"
     },
     {
       "id": "entertainment-media",
+      "slug": "lesson-14",
       "title": "Entertainment and Media",
       "description": "Vocabulary for movies, music, books, and discussing entertainment preferences",
       "duration": "18 minutes"
     },
     {
       "id": "sports-fitness",
+      "slug": "lesson-15",
       "title": "Sports and Fitness",
       "description": "Athletic vocabulary for discussing sports, exercise routines, and physical activities",
       "duration": "20 minutes"
     },
     {
       "id": "weather-climate",
+      "slug": "lesson-16",
       "title": "Weather and Climate",
       "description": "Meteorological vocabulary for describing weather conditions and climate discussions",
       "duration": "16 minutes"
     },
     {
       "id": "housing-accommodation",
+      "slug": "lesson-17",
       "title": "Housing and Accommodation",
       "description": "Real estate vocabulary for finding homes, describing properties, and rental situations",
       "duration": "22 minutes"
     },
     {
       "id": "transportation-logistics",
+      "slug": "lesson-18",
       "title": "Transportation and Logistics",
       "description": "Commuting vocabulary for public transport, driving, and navigation systems",
       "duration": "18 minutes"
     },
     {
       "id": "environment-sustainability",
+      "slug": "lesson-19",
       "title": "Environment and Sustainability",
       "description": "Eco-friendly vocabulary for environmental discussions and sustainable living",
       "duration": "24 minutes"
     },
     {
       "id": "arts-culture",
+      "slug": "lesson-20",
       "title": "Arts and Culture",
       "description": "Cultural vocabulary for museums, galleries, literature, and artistic expressions",
       "duration": "26 minutes"
     },
     {
       "id": "psychology-emotions",
+      "slug": "lesson-21",
       "title": "Psychology and Emotions",
       "description": "Emotional vocabulary for expressing feelings, mental health, and psychological concepts",
       "duration": "28 minutes"
     },
     {
       "id": "finance-economics",
+      "slug": "lesson-22",
       "title": "Finance and Economics",
       "description": "Financial vocabulary for banking, investments, budgeting, and economic discussions",
       "duration": "30 minutes"
     },
     {
       "id": "law-justice",
+      "slug": "lesson-23",
       "title": "Law and Justice",
       "description": "Legal vocabulary for understanding rights, legal processes, and justice systems",
       "duration": "32 minutes"
     },
     {
       "id": "science-research",
+      "slug": "lesson-24",
       "title": "Science and Research",
       "description": "Scientific vocabulary for experiments, research methods, and scientific discussions",
       "duration": "34 minutes"
     },
     {
       "id": "philosophy-ethics",
+      "slug": "lesson-25",
       "title": "Philosophy and Ethics",
       "description": "Abstract vocabulary for philosophical discussions, moral reasoning, and ethical dilemmas",
       "duration": "36 minutes"
