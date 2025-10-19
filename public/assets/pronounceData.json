@@ -2,6 +2,7 @@
   "lessons": [
     {
       "lessonNumber": 1,
+      "slug": "lesson-1",
       "title": "Introduction & Basic Greetings",
       "topics": [
         {
@@ -224,6 +225,7 @@
     },
     {
       "lessonNumber": 2,
+      "slug": "lesson-2",
       "title": "Order Favorite Coffee",
       "topics": [
         {
@@ -446,6 +448,7 @@
     },
     {
       "lessonNumber": 3,
+      "slug": "lesson-3",
       "title": "Coffee Choices",
       "topics": [
         {
@@ -668,6 +671,7 @@
     },
     {
       "lessonNumber": 4,
+      "slug": "lesson-4",
       "title": "Smoothie Options",
       "topics": [
         {
@@ -890,6 +894,7 @@
     },
     {
       "lessonNumber": 5,
+      "slug": "lesson-5",
       "title": "Items to Buy",
       "topics": [
         {
@@ -1112,6 +1117,7 @@
     },
     {
       "lessonNumber": 6,
+      "slug": "lesson-6",
       "title": "Restaurant Dining",
       "topics": [
         {
@@ -1334,6 +1340,7 @@
     },
     {
       "lessonNumber": 7,
+      "slug": "lesson-7",
       "title": "Transportation & Travel",
       "topics": [
         {
@@ -1556,6 +1563,7 @@
     },
     {
       "lessonNumber": 8,
+      "slug": "lesson-8",
       "title": "Health & Medical",
       "topics": [
         {
@@ -1778,6 +1786,7 @@
     },
     {
       "lessonNumber": 9,
+      "slug": "lesson-9",
       "title": "Work & Professional",
       "topics": [
         {
@@ -2000,6 +2009,7 @@
     },
     {
       "lessonNumber": 10,
+      "slug": "lesson-10",
       "title": "Entertainment & Hobbies",
       "topics": [
         {
