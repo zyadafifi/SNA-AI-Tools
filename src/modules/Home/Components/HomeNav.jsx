@@ -17,13 +17,6 @@ export const HomeNav = () => {
       linkTo: "/",
     },
     {
-      icon: readingIcon,
-      label: "القراءة",
-      color: "text-yellow-400",
-      width: "31px",
-      linkTo: "/reading",
-    },
-    {
       icon: listeningIcon,
       label: "الاستماع",
       color: "text-yellow-400",
@@ -36,6 +29,13 @@ export const HomeNav = () => {
       color: "text-yellow-400",
       width: "31px",
       linkTo: "/pronounce/home",
+    },
+    {
+      icon: readingIcon,
+      label: "القراءة",
+      color: "text-yellow-400",
+      width: "31px",
+      linkTo: "/reading",
     },
     {
       icon: writingIcon,
