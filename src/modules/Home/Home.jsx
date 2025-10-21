@@ -9,7 +9,7 @@ export function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen pb-20 md:pb-0 bg-gradient-to-br">
+    <div className="min-h-screen pb-20 md:pb-0">
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
