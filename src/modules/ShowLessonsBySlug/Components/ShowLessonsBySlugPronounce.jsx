@@ -35,6 +35,7 @@ import {
   faDumbbell,
   faMusic,
 } from "@fortawesome/free-solid-svg-icons";
+import { IoPlay } from "react-icons/io5";
 
 export const ShowLessonsBySlugPronounce = ({ pronounceLesson }) => {
   const [openTopicId, setOpenTopicId] = useState(null);
@@ -205,9 +206,9 @@ export const ShowLessonsBySlugPronounce = ({ pronounceLesson }) => {
                               </div>
 
                               {/* Play Button */}
-                              <button
-                                className={`shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-all shadow-lg relative bg-gradient-to-br from-purple-500 to-pink-500 hover:scale-110`}
-                              ></button>
+                              <button className="relative w-8 h-8 bg-gradient-to-br from-[var(--primary-color)] to-[var(--primary-color)] flex items-center justify-center rounded-full shadow-lg group-hover:shadow-[var(--primary-color)]/50 group-hover:scale-110 transition-all duration-300">
+                                <IoPlay className="text-xl text-[var(--main-text-color)] ml-1 group-hover:scale-125 transition-transform" />
+                              </button>
                             </div>
                           </div>
                         </div>
