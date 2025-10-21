@@ -957,7 +957,7 @@ export function ShowLessonSecondRound() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* Sidebar */}
       <Sidebar
         isOpen={sidebarOpen}

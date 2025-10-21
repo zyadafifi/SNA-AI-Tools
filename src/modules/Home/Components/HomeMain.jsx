@@ -57,7 +57,7 @@ export const HomeMain = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 to-gray-100 p-5">
+    <div className="p-5">
       <div className="max-w-4xl mx-auto lg:max-w-6xl xl:max-w-7xl">
         {/* ===================== HERO SECTION ===================== */}
         <HomeHeroSection tools={tools} />
