@@ -38,41 +38,50 @@ const ProgressBar = ({
     );
   }
 
-  const total = Math.max(1, sentences.length);
-  const denom = total - 1 > 0 ? total - 1 : 1;
-
-  // Validate and clamp currentSentenceIndex
-  const clampedCurrentIndex = Math.max(
-    0,
-    Math.min(currentSentenceIndex, total - 1)
-  );
-
-  const effectiveSentenceIndex =
-    sentenceProgress > 0
-      ? clampedCurrentIndex
-      : Math.max(0, clampedCurrentIndex - 1);
-
-  const prevCenter = (Math.max(0, effectiveSentenceIndex - 1) / denom) * 100;
-  const currCenter = (effectiveSentenceIndex / denom) * 100;
-  const segmentWidth = Math.max(0, currCenter - prevCenter);
-  const clampedSentenceProgress = Math.min(Math.max(sentenceProgress, 0), 1);
-
-  const overallProgress =
-    clampedSentenceProgress === 0
-      ? currCenter
-      : prevCenter + clampedSentenceProgress * segmentWidth;
-
-  const finishedCount =
+  const total = sentences.length;
+  const completedCount =
     typeof completedSentences === "number"
       ? completedSentences
-      : currentSentenceIndex;
+      : completedSentences?.size || 0;
 
-  // SNA brand colors with fallbacks for better compatibility
-  const progressColor = "var(--sna-primary, #63a29b)"; // Teal green for completed
-  const currentColor = "var(--sna-secondary, #275151)"; // Dark teal for current
+  // Calculate bullet positions: bullets are evenly distributed
+  // For n bullets, positions are at: 0/(n-1), 1/(n-1), 2/(n-1), ..., (n-1)/(n-1)
+  // This means: 0%, 25%, 50%, 75%, 100% for 5 bullets
+  const getBulletPosition = (index) => {
+    if (total === 1) return 100;
+    return (index / (total - 1)) * 100;
+  };
+
+  // Calculate progress based on completed sentences and current position
+  let progressPercentage;
+
+  if (completedCount === 0 && currentSentenceIndex === 0) {
+    // First sentence, not completed: show 50% of the way to first bullet
+    const firstBulletPos = getBulletPosition(0);
+    progressPercentage = firstBulletPos * 0.5;
+  } else {
+    // Show progress up to the last completed bullet
+    const completedBulletPos =
+      completedCount > 0 ? getBulletPosition(completedCount - 1) : 0;
+    const currentBulletPos = getBulletPosition(currentSentenceIndex);
+
+    if (currentSentenceIndex > completedCount) {
+      // On a new sentence: show 50% between completed and current bullet
+      const nextBulletPos = getBulletPosition(completedCount);
+      progressPercentage =
+        completedBulletPos + (nextBulletPos - completedBulletPos) * 0.5;
+    } else {
+      // Show progress to completed bullet
+      progressPercentage = completedBulletPos;
+    }
+  }
+
+  // SNA brand colors with fallbacks
+  const progressColor = "var(--sna-primary, #63a29b)";
+  const currentColor = "var(--sna-secondary, #275151)";
 
   const handleDotInteraction = (index) => {
-    if (onDotClick && index < finishedCount) {
+    if (onDotClick && getDotState(index) === "completed") {
       onDotClick(index);
     }
   };
@@ -85,9 +94,17 @@ const ProgressBar = ({
   };
 
   const getDotState = (index) => {
-    if (index < finishedCount) return "completed";
-    if (index === clampedCurrentIndex) return "current";
-    return "upcoming";
+    if (typeof completedSentences === "number") {
+      // Handle number-based completed sentences
+      if (index < completedSentences) return "completed";
+      if (index === currentSentenceIndex) return "current";
+      return "upcoming";
+    } else {
+      // Handle Set-based completed sentences
+      if (completedSentences?.has(index)) return "completed";
+      if (index === currentSentenceIndex) return "current";
+      return "upcoming";
+    }
   };
 
   return (
@@ -101,8 +118,8 @@ const ProgressBar = ({
       role="progressbar"
       aria-valuemin={0}
       aria-valuemax={100}
-      aria-valuenow={Math.round(overallProgress)}
-      aria-label="Reading progress"
+      aria-valuenow={progressPercentage}
+      aria-label="Learning progress"
     >
       {/* Background track */}
       <div
@@ -131,11 +148,11 @@ const ProgressBar = ({
               height: "100%",
               borderRadius: "9999px",
               background: `linear-gradient(90deg, ${progressColor} 0%, ${currentColor} 100%)`,
-              width: `${Math.min(Math.max(overallProgress, 0), 100)}%`,
+              width: `${Math.min(Math.max(progressPercentage, 0), 100)}%`,
             }}
             initial={{ width: "0%" }}
             animate={{
-              width: `${Math.min(Math.max(overallProgress, 0), 100)}%`,
+              width: `${Math.min(Math.max(progressPercentage, 0), 100)}%`,
             }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
           />
@@ -258,7 +275,7 @@ const ProgressBar = ({
                     )}
                   </AnimatePresence>
 
-                  {/* Pulse animation for current */}
+                  {/* Light animation for current bullet */}
                   {isCurrent && (
                     <motion.div
                       style={{
@@ -266,13 +283,19 @@ const ProgressBar = ({
                         inset: 0,
                         borderRadius: "9999px",
                         border: "2px solid var(--sna-primary-light)",
+                        boxShadow: "0 0 8px rgba(99, 162, 155, 0.3)",
                       }}
                       animate={{
-                        scale: [1, 1.4, 1],
-                        opacity: [0.5, 0, 0.5],
+                        scale: [1, 1.2, 1],
+                        opacity: [0.6, 0.3, 0.6],
+                        boxShadow: [
+                          "0 0 8px rgba(99, 162, 155, 0.3)",
+                          "0 0 12px rgba(99, 162, 155, 0.5)",
+                          "0 0 8px rgba(99, 162, 155, 0.3)",
+                        ],
                       }}
                       transition={{
-                        duration: 2,
+                        duration: 1.5,
                         repeat: Infinity,
                         ease: "easeInOut",
                       }}

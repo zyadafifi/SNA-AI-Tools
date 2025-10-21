@@ -538,7 +538,7 @@ export const DesktopConversationPage = () => {
             <div className="progress-bar-container">
               <ProgressBar
                 currentSentenceIndex={currentSentenceIndex}
-                sentenceProgress={duration > 0 ? currentTime / duration : 0}
+                sentenceProgress={0}
                 sentences={conversation.sentences}
                 completedSentences={completedSentences.size}
               />

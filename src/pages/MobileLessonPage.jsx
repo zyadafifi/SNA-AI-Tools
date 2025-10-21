@@ -701,7 +701,7 @@ export const MobileLessonPage = () => {
         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-md z-10">
           <ProgressBar
             currentSentenceIndex={currentSentenceIndex}
-            sentenceProgress={duration > 0 ? currentTime / duration : 0}
+            sentenceProgress={0}
             sentences={conversation.sentences}
             completedSentences={completedSentences.size}
           />
