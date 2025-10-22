@@ -1,7 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { NavBar } from "../components";
 import { useEffect } from "react";
-import background from "/assets/images/background.jpg";
 
 export function Layout() {
   const location = useLocation();
@@ -27,14 +26,7 @@ export function Layout() {
           )}
         </>
       )}
-      <main
-        className="min-h-[100vh]"
-        style={{
-          background: `url(${background})`,
-          backgroundSize: "270px",
-          backgroundAttachment: "fixed",
-        }}
-      >
+      <main className="min-h-[100vh] bg-white">
         <Outlet />
       </main>
     </div>
