@@ -7,7 +7,7 @@ import { usePronunciationScoring } from "../hooks/usePronunciationScoring";
 import { useVideoPlayer } from "../hooks/useVideoPlayer";
 import { useMobileFeatures } from "../hooks/useMobileFeatures";
 import useSubtitleSync from "../hooks/useSubtitleSync";
-import MobileProgressBar from "../components/Pronunce/mobile/MobileProgressBar";
+import ProgressBar from "../components/Pronunce/ProgressBar";
 import MobileBackButton from "../components/Pronunce/mobile/MobileBackButton";
 import MobileSubtitleContainer from "../components/Pronunce/mobile/MobileSubtitleContainer";
 import MobileReplayOverlay from "../components/Pronunce/mobile/MobileReplayOverlay";
@@ -697,12 +697,15 @@ export const MobileLessonPage = () => {
   return (
     <>
       <div className="mobile-video-container">
-        {/* Mobile Progress Bar */}
-        <MobileProgressBar
-          totalSentences={conversation.sentences.length}
-          currentSentenceIndex={currentSentenceIndex}
-          completedSentences={completedSentences}
-        />
+        {/* Dynamic Progress Bar */}
+        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-md z-10">
+          <ProgressBar
+            currentSentenceIndex={currentSentenceIndex}
+            sentenceProgress={0}
+            sentences={conversation.sentences}
+            completedSentences={completedSentences.size}
+          />
+        </div>
 
         {/* Back Button */}
         <MobileBackButton onBackClick={handleBackClick} />
