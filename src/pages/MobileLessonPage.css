@@ -827,7 +827,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
+  transform: translateX(-50%) translateY(calc(50vh + 100%));
   background: white;
   border-radius: 20px;
   padding: 24px;
@@ -836,11 +836,11 @@
   max-height: 80vh;
   overflow-y: auto;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-out;
 }
 
 .mobile-dialog-container.active .mobile-dialog-content {
-  transform: translate(-50%, -50%) scale(1);
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .mobile-close-btn {
