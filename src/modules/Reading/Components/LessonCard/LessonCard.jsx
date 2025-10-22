@@ -26,7 +26,7 @@ export const LessonCard = ({
             <div
               className="w-20 h-20 rounded-full text-[#f8b400] flex items-center justify-center text-4xl font-bold shadow-lg"
               style={{
-                background: "linear-gradient(135deg, #63a29bd6, #275151f0)",
+                background: "linear-gradient(135deg, #ffc515d6, #cc6a15f0)",
               }}
             >
               {index + 1}

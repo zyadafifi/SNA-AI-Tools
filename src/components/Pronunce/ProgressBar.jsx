@@ -77,7 +77,7 @@ const ProgressBar = ({
   }
 
   // SNA brand colors with fallbacks
-  const progressColor = "var(--sna-primary, #63a29b)";
+  const progressColor = "var(--sna-primary, #ffc515)";
   const currentColor = "var(--sna-secondary, #275151)";
 
   const handleDotInteraction = (index) => {

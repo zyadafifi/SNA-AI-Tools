@@ -23,7 +23,7 @@ const PDF_CONFIG = {
     small: 10,
   },
   colors: {
-    primary: "#63a29b",
+    primary: "#ffc515",
     secondary: "#275151",
     text: "#333333",
     light: "#666666",
