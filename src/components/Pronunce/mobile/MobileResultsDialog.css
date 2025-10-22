@@ -90,8 +90,8 @@
   height: 60px;
   background: linear-gradient(
     135deg,
-    rgb(99, 162, 155) 0%,
-    rgb(39, 81, 81) 100%
+    var(--primary-color, #ffc515) 0%,
+    var(--secondary-color, #cc6a15) 100%
   );
   border-radius: 50%;
   display: flex;
@@ -100,7 +100,7 @@
   color: white;
   font-size: 24px;
   margin: 0 auto 16px;
-  box-shadow: 0 8px 20px rgba(99, 162, 155, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 197, 21, 0.3);
 }
 
 .mobile-dialog-header h4 {
@@ -243,7 +243,7 @@
 
 .mobile-control-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(99, 162, 155, 0.4);
+  box-shadow: 0 6px 16px rgba(255, 197, 21, 0.4);
 }
 
 .mobile-control-btn:disabled {
@@ -262,20 +262,16 @@
 .mobile-play-btn {
   background: linear-gradient(
     135deg,
-    rgb(99, 162, 155) 0%,
-    rgb(39, 81, 81) 100%
+    var(--primary-color, #ffc515) 0%,
+    var(--secondary-color, #cc6a15) 100%
   );
 }
 
 .mobile-listen-btn:hover,
 .mobile-play-btn:hover {
-  background: linear-gradient(
-    135deg,
-    rgb(89, 152, 145) 0%,
-    rgb(29, 71, 71) 100%
-  );
+  background: linear-gradient(135deg, #e6b300 0%, #b85a00 100%);
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(99, 162, 155, 0.4);
+  box-shadow: 0 6px 16px rgba(255, 197, 21, 0.4);
 }
 
 /* Dialog Buttons */
@@ -312,24 +308,28 @@
 }
 
 .mobile-btn-primary {
-  background: linear-gradient(135deg, #63a29b 0%, #5a9691 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color, #ffc515) 0%,
+    var(--secondary-color, #cc6a15) 100%
+  );
   color: white;
-  box-shadow: 0 4px 12px rgba(99, 162, 155, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 197, 21, 0.3);
 }
 
 .mobile-btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(99, 162, 155, 0.4);
+  box-shadow: 0 6px 16px rgba(255, 197, 21, 0.4);
 }
 
 .mobile-btn-primary.success {
   background: linear-gradient(
     135deg,
-    rgb(99, 162, 155) 0%,
-    rgb(39, 81, 81) 100%
+    var(--primary-color, #ffc515) 0%,
+    var(--secondary-color, #cc6a15) 100%
   );
   color: white;
-  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 197, 21, 0.3);
 }
 
 .mobile-btn-primary.error {
@@ -339,9 +339,9 @@
 }
 
 .mobile-btn-primary.success:hover {
-  background: linear-gradient(135deg, #218838 0%, #1ea085 100%);
+  background: linear-gradient(135deg, #e6b300 0%, #b85a00 100%);
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(40, 167, 69, 0.4);
+  box-shadow: 0 6px 16px rgba(255, 197, 21, 0.4);
 }
 
 .mobile-btn-primary.error:hover {

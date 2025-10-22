@@ -1,11 +1,11 @@
 /* HomePage.css - Exact copy from styles.css */
 
 :root {
-  --sna-primary: #63a29b;
-  --sna-secondary: #275151;
-  --sna-primary-light: #8abdb7;
-  --sna-primary-lighter: #b1d7d3;
-  --sna-secondary-dark: #1c3c3c;
+  --sna-primary: var(--primary-color, #ffc515);
+  --sna-secondary: var(--secondary-color, #cc6a15);
+  --sna-primary-light: #ffd84d;
+  --sna-primary-lighter: #ffeb99;
+  --sna-secondary-dark: #a8550f;
 
   --text-dark: #2c3e50;
   --text-light: #ffffff;
@@ -24,8 +24,8 @@
 
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
-  --shadow-primary: 0 10px 30px rgba(99, 162, 155, 0.2),
-    0 5px 15px rgba(99, 162, 155, 0.1);
+  --shadow-primary: 0 10px 30px rgba(255, 197, 21, 0.2),
+    0 5px 15px rgba(255, 197, 21, 0.1);
 
   --radius-sm: 4px;
   --radius-md: 12px;
@@ -317,7 +317,7 @@ body {
   justify-content: center;
   color: white;
   font-size: 1.2rem;
-  box-shadow: 0 4px 12px rgba(99, 162, 155, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 197, 21, 0.3);
 }
 
 .app-title h1 {
@@ -448,9 +448,9 @@ body {
 
 .lesson-circle.current {
   animation: pulse 2s infinite, pulseShadow 3s infinite;
-  border-color: #7c3aed;
+  border-color: #cc6a15;
   background: transparent;
-  box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4), 0 12px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 0 rgba(204, 106, 21, 0.4), 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Desktop lesson circle hover effects with higher specificity */
@@ -460,35 +460,35 @@ body {
 }
 
 .lesson-node .lesson-circle.completed:hover {
-  box-shadow: 0 12px 30px rgba(99, 162, 155, 0.5) !important;
+  box-shadow: 0 12px 30px rgba(255, 197, 21, 0.5) !important;
 }
 
 .lesson-node .lesson-circle.in-progress:hover {
-  box-shadow: 0 12px 30px rgba(99, 162, 155, 0.4) !important;
+  box-shadow: 0 12px 30px rgba(255, 197, 21, 0.4) !important;
 }
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4);
+    box-shadow: 0 0 0 0 rgba(204, 106, 21, 0.4);
   }
   70% {
-    box-shadow: 0 0 0 15px rgba(124, 58, 237, 0);
+    box-shadow: 0 0 0 15px rgba(204, 106, 21, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+    box-shadow: 0 0 0 0 rgba(204, 106, 21, 0);
   }
 }
 
 @keyframes pulseShadow {
   0% {
-    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4), 0 12px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0 0 rgba(204, 106, 21, 0.4), 0 12px 40px rgba(0, 0, 0, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 8px rgba(124, 58, 237, 0.2),
+    box-shadow: 0 0 0 8px rgba(204, 106, 21, 0.2),
       0 20px 60px rgba(0, 0, 0, 0.6);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4), 0 12px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0 0 rgba(204, 106, 21, 0.4), 0 12px 40px rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -978,7 +978,7 @@ body {
   .lesson-node .lesson-info:hover .lesson-title {
     color: var(--sna-primary) !important;
     transform: scale(1.05) !important;
-    text-shadow: 0 2px 8px rgba(99, 162, 155, 0.3) !important;
+    text-shadow: 0 2px 8px rgba(255, 197, 21, 0.3) !important;
   }
 
   .lesson-node .lesson-info:hover .lesson-arrow {
@@ -993,11 +993,11 @@ body {
   }
 
   .lesson-node .lesson-circle.completed:hover {
-    box-shadow: 0 12px 30px rgba(99, 162, 155, 0.5) !important;
+    box-shadow: 0 12px 30px rgba(255, 197, 21, 0.5) !important;
   }
 
   .lesson-node .lesson-circle.in-progress:hover {
-    box-shadow: 0 12px 30px rgba(99, 162, 155, 0.4) !important;
+    box-shadow: 0 12px 30px rgba(255, 197, 21, 0.4) !important;
   }
 
   .lesson-title {
@@ -1200,7 +1200,7 @@ body {
   .lesson-node .lesson-info:hover .lesson-title {
     color: var(--sna-primary) !important;
     transform: scale(1.05) !important;
-    text-shadow: 0 2px 8px rgba(99, 162, 155, 0.3) !important;
+    text-shadow: 0 2px 8px rgba(255, 197, 21, 0.3) !important;
   }
 
   .lesson-node .lesson-info:hover .lesson-arrow {
@@ -1215,11 +1215,11 @@ body {
   }
 
   .lesson-node .lesson-circle.completed:hover {
-    box-shadow: 0 10px 25px rgba(99, 162, 155, 0.5) !important;
+    box-shadow: 0 10px 25px rgba(255, 197, 21, 0.5) !important;
   }
 
   .lesson-node .lesson-circle.in-progress:hover {
-    box-shadow: 0 10px 25px rgba(99, 162, 155, 0.4) !important;
+    box-shadow: 0 10px 25px rgba(255, 197, 21, 0.4) !important;
   }
 
   .lesson-node {
