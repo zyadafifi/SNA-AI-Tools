@@ -194,7 +194,7 @@ export const SideHome = () => {
       progress: overallProgress.percentage,
       completedLessons: overallProgress.completed,
       totalLessons: overallProgress.total,
-      color: "from-green-500 to-teal-500",
+      color: "from-[var(--primary-color)] to-[var(--primary-color)]",
       link: "/reading/progress",
     },
     {
@@ -207,7 +207,7 @@ export const SideHome = () => {
       progress: pronunciationProgress.progress,
       completedLessons: pronunciationProgress.completedTopics,
       totalLessons: pronunciationProgress.totalTopics,
-      color: "from-blue-500 to-cyan-500",
+      color: "from-[var(--primary-color)] to-[var(--primary-color)]",
       link: "/pronounce/progress",
     },
     {
@@ -220,7 +220,7 @@ export const SideHome = () => {
       progress: listeningProgress.progress,
       completedLessons: listeningProgress.completedLessons,
       totalLessons: listeningProgress.totalLessons,
-      color: "from-purple-500 to-pink-500",
+      color: "from-[var(--primary-color)] to-[var(--primary-color)]",
       link: "/listening/progress",
     },
     {
@@ -233,7 +233,7 @@ export const SideHome = () => {
       progress: writingProgress.progress,
       completedLessons: writingProgress.completedTopics,
       totalLessons: writingProgress.totalTopics,
-      color: "from-orange-500 to-red-500",
+      color: "from-[var(--primary-color)] to-[var(--primary-color)]",
       link: "/writing/progress",
       unit: "topics",
     },
@@ -244,7 +244,7 @@ export const SideHome = () => {
   );
 
   return (
-    <div className="sticky top-0 h-screen bg-gradient-to-b from-[#275151] to-[#1a3d3d] p-3 overflow-y-auto">
+    <div className="sticky top-0 h-screen bg-[var(--main-bg-color)] p-3 overflow-y-auto">
       <div className="space-y-4">
         {/* Header */}
         <div className="mb-8">
@@ -416,8 +416,8 @@ export const SideHome = () => {
                       x2="100%"
                       y2="100%"
                     >
-                      <stop offset="0%" stopColor="#63a29b" />
-                      <stop offset="100%" stopColor="#4d8580" />
+                      <stop offset="0%" stopColor="#ffc515" />
+                      <stop offset="100%" stopColor="#ffc515" />
                     </linearGradient>
                   </defs>
                 </svg>
