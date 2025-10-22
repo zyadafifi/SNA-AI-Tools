@@ -248,8 +248,12 @@ export const SideHome = () => {
       <div className="space-y-4">
         {/* Header */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-white mb-2">Learning Tools</h2>
-          <p className="text-white text-sm arabic_font">أدوات التعلم</p>
+          <h2 className="text-2xl font-bold text-[var(--main-text-color)] mb-2">
+            Learning Tools
+          </h2>
+          <p className="text-[var(--main-text-color)] text-sm arabic_font">
+            أدوات التعلم
+          </p>
         </div>
 
         {/* Tools Cards */}
@@ -268,43 +272,34 @@ export const SideHome = () => {
                 <div
                   className={`
                     relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 
-                    border border-white/10 transition-all duration-300
-                    ${
-                      isActive
-                        ? "bg-white/10 border-[#63a29b]/50 shadow-lg"
-                        : "hover:bg-white/8"
-                    }
+                    border border-gray/10 transition-all duration-300
                   `}
                 >
                   {/* Glow effect */}
                   <div
-                    className={`
-                      absolute inset-0 bg-gradient-to-r from-[#63a29b]/20 to-[#275151]/20
-                      rounded-2xl transition-opacity duration-300
-                      ${isActive ? "opacity-100" : "opacity-0"}
-                    `}
+                    className={`absolute inset-0 rounded-2xl transition-opacity duration-300`}
                   />
 
                   <div className="relative">
-                    <div className="flex items-start gap-3 mb-3">
+                    <div className="flex items-center gap-3 mb-3">
                       {/* Icon */}
                       <div
                         className={`
-                          w-12 h-12 rounded-xl bg-gradient-to-br from-[#63a29b] to-[#4d8580]
+                          rounded-xl bg-gradient-to-br
                           flex items-center justify-center flex-shrink-0
                           transition-transform duration-300
                           ${isActive ? "scale-110" : "scale-100"}
                         `}
                       >
-                        <Icon className="w-6 h-6 text-white" />
+                        <Icon className="w-12 h-12 text-[var(--primary-color)]" />
                       </div>
 
                       {/* Content */}
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-white font-bold text-base mb-1">
+                        <h3 className="text-[var(--main-text-color)] font-bold text-base mb-1">
                           {tool.title}
                         </h3>
-                        <p className="arabic_font text-[#63a29b] text-sm font-semibold mb-1">
+                        <p className="arabic_font text-[var(--main-text-color)] text-sm font-semibold mb-1">
                           {tool.titleAr}
                         </p>
                         <p className="text-gray-400 text-xs leading-relaxed">
@@ -315,7 +310,7 @@ export const SideHome = () => {
                       {/* Arrow */}
                       <ChevronRight
                         className={`
-                          w-5 h-5 text-[#63a29b] flex-shrink-0 mt-1
+                          w-5 h-5 text-[var(--primary-color)] flex-shrink-0 mt-1
                           transition-all duration-300
                           ${
                             isActive
@@ -330,7 +325,7 @@ export const SideHome = () => {
                     <div className="space-y-2">
                       {/* Progress Bar */}
                       <div className="relative">
-                        <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                           <div
                             className={`
                               h-full bg-gradient-to-r ${tool.color}
@@ -345,7 +340,7 @@ export const SideHome = () => {
                       {/* Progress Info */}
                       <div className="flex items-center justify-between text-xs">
                         <div className="flex items-center gap-1">
-                          <TrendingUp className="w-3 h-3 text-[#63a29b]" />
+                          <TrendingUp className="w-3 h-3 text-[var(--primary-color)]" />
                           <span className="text-white font-semibold">
                             {tool.progress}%
                           </span>
@@ -366,14 +361,14 @@ export const SideHome = () => {
 
         {/* Overall Progress - Simple Circular */}
         <div className="mt-8 pt-6 border-t border-white/10">
-          <div className="bg-gradient-to-br from-[#63a29b]/20 to-[#275151]/20 rounded-xl p-8 border border-[#63a29b]/30">
+          <div className="bg-gradient-to-br rounded-xl p-8 border border-[#63a29b]/30">
             <div className="flex flex-col items-center justify-center">
               {/* Title */}
               <div className="text-center mb-6">
-                <p className="text-white font-semibold text-lg mb-1">
+                <p className="text-[var(--main-text-color)] font-semibold text-lg mb-1">
                   Overall Progress
                 </p>
-                <p className="arabic_font text-[#63a29b] text-sm">
+                <p className="arabic_font text-[var(--main-text-color)] text-sm">
                   التقدم الإجمالي
                 </p>
               </div>
@@ -386,7 +381,7 @@ export const SideHome = () => {
                     cx="72"
                     cy="72"
                     r="64"
-                    stroke="rgba(255, 255, 255, 0.1)"
+                    stroke="#c4c4c4"
                     strokeWidth="10"
                     fill="none"
                   />
@@ -425,25 +420,25 @@ export const SideHome = () => {
                 {/* Center Content */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <p className="text-white font-bold text-3xl mb-1">
+                    <p className="text-[var(--main-text-color)] font-bold text-3xl mb-1">
                       {averageProgress}%
                     </p>
-                    <p className="text-white/60 text-sm">percent</p>
+                    <p className="text-[var(--main-text-color)] text-sm">percent</p>
                   </div>
                 </div>
               </div>
 
               {/* Optional subtitle */}
-              <p className="arabic_font text-white/70 text-xs mt-4 text-center max-w-xs">
+              <p className="arabic_font text-[var(--main-text-color)] text-xs mt-4 text-center max-w-xs">
                 متوسط تقدمك في جميع أدوات التعلم الأربعة
               </p>
             </div>
           </div>
         </div>
         <div>
-          <div className="mt-8 pt-6 border-t border-white/10">
+          <div className="mt-3 pt-6 border-t border-white/10">
             <div
-              className="bg-gradient-to-br from-[#63a29b]/20 to-[#275151]/20 rounded-xl p-4 border border-[#63a29b]/30"
+              className="bg-gradient-to-br rounded-xl p-4 border border-[#63a29b]/30"
               role="region"
               aria-label="واجهة التسجيل"
             >

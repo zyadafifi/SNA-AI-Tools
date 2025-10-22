@@ -6,10 +6,9 @@ export const HomeSectionTitle = () => {
       initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.4, duration: 0.8 }}
-      className="relative overflow-hidden py-12 sm:py-16 md:py-20 mb-8 sm:mb-12 md:mb-16 rounded-3xl"
+      className="relative overflow-hidden py-12 sm:py-16 md:py-20  rounded-3xl"
     >
       {/* Background with Custom Colors */}
-      <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-emerald-50 to-cyan-50 opacity-70"></div>
 
       {/* Floating Circles Animation */}
       <div className="absolute inset-0 overflow-hidden">
@@ -33,13 +32,13 @@ export const HomeSectionTitle = () => {
         <div
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full mb-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 backdrop-blur-md"
           style={{
-            backgroundColor: "rgba(99, 162, 155, 0.15)",
-            borderColor: "#63a29b",
+            backgroundColor: "#ffc51563",
+            borderColor: "#cc6a15",
           }}
         >
           <svg
             className="w-4 h-4"
-            style={{ color: "#63a29b" }}
+            style={{ color: "var(--main-text-color)" }}
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -47,7 +46,7 @@ export const HomeSectionTitle = () => {
           </svg>
           <span
             className="text-sm font-bold tracking-wide"
-            style={{ color: "#275151" }}
+            style={{ color: "var(--main-text-color)" }}
           >
             PROFESSIONAL LEARNING
           </span>
@@ -56,10 +55,12 @@ export const HomeSectionTitle = () => {
         {/* Main Heading with Line Effect */}
         <div className="mb-6">
           <h2 className="text-4xl sm:text-5xl md:text-7xl font-black mb-2 leading-tight tracking-tight">
-            <span style={{ color: "#275151" }}>Language</span>
+            <span style={{ color: "var(--primary-color)" }}>Language</span>
             <br />
             <span className="relative inline-block">
-              <span style={{ color: "#63a29b" }}>Learning Tools</span>
+              <span style={{ color: "var(--secondary-color)" }}>
+                Learning Tools
+              </span>
               <svg
                 className="absolute -bottom-2 left-0 w-full"
                 height="12"
@@ -69,7 +70,7 @@ export const HomeSectionTitle = () => {
               >
                 <path
                   d="M2 9C50 3 100 1 150 5C200 9 250 7 298 4"
-                  stroke="#63a29b"
+                  stroke="#ffc515"
                   strokeWidth="4"
                   strokeLinecap="round"
                 />
@@ -82,17 +83,17 @@ export const HomeSectionTitle = () => {
         <div className="relative inline-block mb-8">
           <div
             className="absolute -right-8 top-0 w-6 h-6 rounded opacity-50"
-            style={{ backgroundColor: "#63a29b" }}
+            style={{ backgroundColor: "#ffc515" }}
           ></div>
           <div
             className="absolute -left-8 bottom-0 w-6 h-6 rounded opacity-50"
-            style={{ backgroundColor: "#275151" }}
+            style={{ backgroundColor: "#cc6a15" }}
           ></div>
 
           <p
             className="text-2xl arabic_font sm:text-3xl md:text-4xl font-bold px-8 py-4"
             style={{
-              color: "#275151",
+              color: "#ffc515",
             }}
           >
             أدوات احترافية لإتقان اللغة
@@ -107,9 +108,9 @@ export const HomeSectionTitle = () => {
                 key={index}
                 className="px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm border transition-all duration-300 hover:scale-105"
                 style={{
-                  backgroundColor: "rgba(99, 162, 155, 0.1)",
-                  borderColor: "#63a29b",
-                  color: "#275151",
+                  backgroundColor: "#ffc51563",
+                  borderColor: "#cc6a15",
+                  color: "var(--main-text-color)",
                 }}
               >
                 {feature}
@@ -122,23 +123,23 @@ export const HomeSectionTitle = () => {
         <div className="flex items-center justify-center gap-2 mt-12">
           <div
             className="h-0.5 w-20 rounded-full"
-            style={{ backgroundColor: "#63a29b" }}
+            style={{ backgroundColor: "#ffc515" }}
           ></div>
           <div
             className="w-2 h-2 rounded-full"
-            style={{ backgroundColor: "#63a29b" }}
+            style={{ backgroundColor: "#ffc515" }}
           ></div>
           <div
             className="w-3 h-3 rounded-full"
-            style={{ backgroundColor: "#275151" }}
+            style={{ backgroundColor: "#cc6a15" }}
           ></div>
           <div
             className="w-2 h-2 rounded-full"
-            style={{ backgroundColor: "#63a29b" }}
+            style={{ backgroundColor: "#ffc515" }}
           ></div>
           <div
             className="h-0.5 w-20 rounded-full"
-            style={{ backgroundColor: "#63a29b" }}
+            style={{ backgroundColor: "#ffc515" }}
           ></div>
         </div>
       </div>

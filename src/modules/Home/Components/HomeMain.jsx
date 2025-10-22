@@ -60,7 +60,7 @@ export const HomeMain = () => {
     <div className="p-5">
       <div className="max-w-4xl mx-auto lg:max-w-6xl xl:max-w-7xl">
         {/* ===================== HERO SECTION ===================== */}
-        <HomeHeroSection tools={tools} />
+        {/* <HomeHeroSection tools={tools} /> */}
 
         {/* ===================== SECTION TITLE ===================== */}
         <HomeSectionTitle />
