@@ -75,18 +75,24 @@ export const ShowLessonsBySlug = () => {
 
   const readingLesson = readingData?.find((lesson) => lesson.slug == slug);
 
-
-
   return (
     <div>
       <div>
         <ShowLessonsBySlugHeader />
       </div>
       <div className="container container-md mx-auto section-padding">
-        <ShowLessonsBySlugListening listeningLesson={listeningLesson} />
-        <ShowLessonsBySlugPronounce pronounceLesson={pronounceLesson} />
-        <ShowLessonsBySlugReading readingLesson={readingLesson} />
-        <ShowLessonsBySlugWriting writingLesson={writingLesson} />
+        {listeningLesson && (
+          <ShowLessonsBySlugListening listeningLesson={listeningLesson} />
+        )}
+        {pronounceLesson && (
+          <ShowLessonsBySlugPronounce pronounceLesson={pronounceLesson} />
+        )}
+        {readingLesson && (
+          <ShowLessonsBySlugReading readingLesson={readingLesson} />
+        )}
+        {writingLesson && (
+          <ShowLessonsBySlugWriting writingLesson={writingLesson} />
+        )}
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ export const ShowLessonsBySlugWriting = ({ writingLesson }) => {
   return (
     <>
       <Link
-        to={`/writing/lesson/${writingLesson?.id}`}
+        to={`/questions/${writingLesson?.id}`}
         className="block group relative overflow-hidden bg-gradient-to-br from-[var(--third-color)] to-[var(--third-color)] p-6 rounded-3xl mb-5 hover:shadow-2xl transition-all duration-300 border border-white/10"
       >
         {/* Background Decoration */}
