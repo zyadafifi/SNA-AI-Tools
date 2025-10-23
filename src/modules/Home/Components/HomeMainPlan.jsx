@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { readingData } from "../../../config/readingData/readingData";
 
-// Duolingo-style icons
 const StarIcon = ({ filled = false, size = "w-6 h-6", className = "" }) => (
   <svg viewBox="0 0 24 24" className={`${size} ${className}`}>
     <path
@@ -21,16 +20,6 @@ const BookIcon = ({ size = "w-6 h-6", className = "" }) => (
     fill="currentColor"
   >
     <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
-  </svg>
-);
-
-const TreasureChestIcon = ({ size = "w-6 h-6", className = "" }) => (
-  <svg
-    viewBox="0 0 24 24"
-    className={`${size} ${className}`}
-    fill="currentColor"
-  >
-    <path d="M5 4h14c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v12h14V6H5zm2 2h10v2H7V8zm0 4h10v2H7v-2z" />
   </svg>
 );
 
@@ -94,6 +83,93 @@ const CrownIcon = ({ size = "w-6 h-6", className = "" }) => (
   </svg>
 );
 
+// Helper function to get progress from localStorage
+const getProgressFromLocalStorage = () => {
+  try {
+    // Listening Progress
+    const listeningProgress = JSON.parse(
+      localStorage.getItem("sna-lesson-progress") || "[]"
+    );
+    const listeningCompleted = listeningProgress.filter(
+      (lesson) => lesson.isCompleted
+    ).length;
+
+    // Pronunciation Progress
+    const pronunciationData = JSON.parse(
+      localStorage.getItem("pronunciationMasterProgress") || "{}"
+    );
+    const pronunciationTopics = pronunciationData.topics || {};
+    const pronunciationCompleted = Object.values(pronunciationTopics).filter(
+      (topic) => topic.completed
+    ).length;
+
+    // Reading Progress
+    const readingProgress = JSON.parse(
+      localStorage.getItem("quizProgress") || "{}"
+    );
+    const readingCompleted = Object.keys(readingProgress).length;
+
+    // Writing Progress
+    const writingProgress = JSON.parse(
+      localStorage.getItem("sna-writing-tool-progress") || "{}"
+    );
+    const writingCompleted = Object.values(writingProgress).filter(
+      (item) => item.completed
+    ).length;
+
+    return {
+      listening: listeningCompleted,
+      pronunciation: pronunciationCompleted,
+      reading: readingCompleted,
+      writing: writingCompleted,
+    };
+  } catch (error) {
+    console.error("Error reading progress from localStorage:", error);
+    return {
+      listening: 0,
+      pronunciation: 0,
+      reading: 0,
+      writing: 0,
+    };
+  }
+};
+
+// Helper function to determine next step logic
+const calculateNextStepLogic = (completedCounts, lengths) => {
+  // Find the minimum completed lesson among all categories
+  const minCompleted = Math.min(
+    completedCounts.listening,
+    completedCounts.pronunciation,
+    completedCounts.reading,
+    completedCounts.writing
+  );
+
+  // The lesson number we're working on
+  const currentLesson = minCompleted + 1;
+
+  // Check which categories still need to complete the current lesson
+  const needsCompletion = {
+    listening: completedCounts.listening < currentLesson && currentLesson <= lengths.listening,
+    pronunciation: completedCounts.pronunciation < currentLesson && currentLesson <= lengths.pronounce,
+    reading: completedCounts.reading < currentLesson && currentLesson <= lengths.reading,
+    writing: completedCounts.writing < currentLesson && currentLesson <= lengths.writing,
+  };
+
+  // Determine which category to show as "next"
+  let nextCategory = null;
+  if (needsCompletion.listening) nextCategory = "listening";
+  else if (needsCompletion.pronunciation) nextCategory = "pronunciation";
+  else if (needsCompletion.reading) nextCategory = "reading";
+  else if (needsCompletion.writing) nextCategory = "writing";
+
+  return {
+    currentLesson,
+    minCompleted,
+    needsCompletion,
+    nextCategory,
+  };
+};
+
 export function HomeMainPlan() {
   const [data, setData] = useState({
     pronounce: null,
@@ -141,6 +217,15 @@ export function HomeMainPlan() {
     [data]
   );
 
+  // Get completed counts from localStorage
+  const completedCounts = useMemo(() => getProgressFromLocalStorage(), []);
+
+  // Calculate next step logic
+  const nextStepInfo = useMemo(
+    () => calculateNextStepLogic(completedCounts, lengths),
+    [completedCounts, lengths]
+  );
+
   const isLoading = Object.values(loading).some(Boolean);
   const hasErrors = Object.values(errors).some(Boolean);
   const maxKey = useMemo(
@@ -150,14 +235,8 @@ export function HomeMainPlan() {
   );
   const total = lengths[maxKey] || 0;
 
-  const [unlockedCount, setUnlockedCount] = useState(() => {
-    const saved = localStorage.getItem("planUnlockedCount");
-    return saved ? Number(saved) : 1;
-  });
-  useEffect(
-    () => localStorage.setItem("planUnlockedCount", String(unlockedCount)),
-    [unlockedCount]
-  );
+  // Calculate unlocked count based on minimum completed lessons
+  const unlockedCount = nextStepInfo.minCompleted + 1;
 
   if (isLoading) {
     return (
@@ -242,33 +321,25 @@ export function HomeMainPlan() {
   return (
     <div className="flex justify-center py-8 px-4">
       <div className="relative flex flex-col items-center space-y-12">
+        {/* Debug Info - Remove in production */}
+        <div className="mb-4 p-4 bg-gray-100 rounded-lg text-sm">
+          <div className="font-bold mb-2">Progress Summary:</div>
+          <div>Listening: {completedCounts.listening} completed</div>
+          <div>Pronunciation: {completedCounts.pronunciation} completed</div>
+          <div>Reading: {completedCounts.reading} completed</div>
+          <div>Writing: {completedCounts.writing} completed</div>
+          <div className="mt-2 font-bold">
+            Current Lesson: {nextStepInfo.currentLesson}
+          </div>
+          <div>Next Category: {nextStepInfo.nextCategory || "All completed!"}</div>
+        </div>
+
         {nodes.map((node, index) => {
           const isUnlocked = node.index < unlockedCount;
           const isCurrent = node.index === unlockedCount - 1;
           const isNextUp = node.index === unlockedCount;
           const isLocked = node.index >= unlockedCount;
 
-          // ========================================
-          // SIMPLE ALTERNATING LESSON PATH
-          // ========================================
-          // Pattern: Simple alternating left-right zig-zag pattern like Duolingo
-          // - Lesson 1: Center
-          // - Lesson 2: Right
-          // - Lesson 3: Left
-          // - Lesson 4: Right
-          // - Lesson 5: Left
-          // - Lesson 6: Right
-          // And so on...
-          //
-          // Visual representation:
-          // Lesson 1: ↑ (center)
-          // Lesson 2:  → (right)
-          // Lesson 3: ← (left)
-          // Lesson 4:  → (right)
-          // Lesson 5: ← (left)
-          // Lesson 6:  → (right)
-
-          // Simple alternating pattern: even indices are center, odd indices alternate
           const isEven = index % 2 === 0;
           let horizontalOffset = isEven
             ? "translate-x-0"
@@ -326,11 +397,6 @@ export function HomeMainPlan() {
                 {(isUnlocked || isNextUp) && (
                   <Link
                     to={`/plan/slug/lesson-${node.index + 1}`}
-                    onClick={() => {
-                      if (isNextUp) {
-                        setUnlockedCount((c) => Math.min(c + 1, total));
-                      }
-                    }}
                     className="absolute inset-0 rounded-full z-10"
                   />
                 )}
