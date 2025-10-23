@@ -5,12 +5,12 @@ import { IoPlay } from "react-icons/io5";
 
 export const ShowLessonsBySlugWriting = ({ writingLesson }) => {
   console.log(writingLesson, "writing");
-  
+
   return (
-    <>
+    <div className="container container-md">
       <Link
         to={`/questions/${writingLesson?.id}`}
-        className="block group relative overflow-hidden bg-gradient-to-br from-[var(--third-color)] to-[var(--third-color)] p-6 rounded-3xl mb-5 hover:shadow-2xl transition-all duration-300 border border-white/10"
+        className="block group relative overflow-hidden border-2 border-gray-400 p-6 rounded-3xl mb-5 hover:shadow-2xl transition-all duration-300"
       >
         {/* Background Decoration */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--primary-color)]/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
@@ -22,31 +22,26 @@ export const ShowLessonsBySlugWriting = ({ writingLesson }) => {
             <div className="w-16 h-16 bg-gradient-to-br from-[var(--primary-color)] to-[var(--secondary-color)] flex items-center justify-center rounded-2xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
               <FaPenFancy className="text-3xl text-[var(--main-text-color)]" />
             </div>
-            <div className="absolute -bottom-2 -right-2 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full shadow-md">
-              <p className="text-xs font-bold text-[var(--main-text-color)]">
-                Writing
-              </p>
-            </div>
           </div>
 
           {/* Center: Content */}
           <div className="flex-1 min-w-0 space-y-2">
             <div className="flex items-center gap-2 mb-1">
               <div className="w-1 h-5 bg-[var(--primary-color)] rounded-full" />
-              <h1 className="text-lg sm:text-xl font-bold text-white line-clamp-1 group-hover:text-[var(--primary-color)] transition-colors">
+              <h1 className="text-lg sm:text-xl font-bold text-[var(--main-text-color)] line-clamp-1 group-hover:text-[var(--primary-color)] transition-colors">
                 {writingLesson?.title}
               </h1>
             </div>
-            <p className="text-sm text-white/70 line-clamp-2 leading-relaxed">
+            <p className="text-sm text-[var(--main-text-color)] line-clamp-2 leading-relaxed">
               {writingLesson?.description}
             </p>
 
             {/* Progress Indicator (Optional) */}
             <div className="flex items-center gap-2 mt-3">
-              <div className="flex-1 h-1.5 bg-white/20 rounded-full overflow-hidden max-w-[200px]">
+              <div className="flex-1 h-1.5 bg-gray-300 rounded-full overflow-hidden max-w-[200px]">
                 <div className="h-full w-0 bg-[var(--primary-color)] rounded-full group-hover:w-full transition-all duration-1000" />
               </div>
-              <span className="text-xs text-white/50 font-medium">Start</span>
+              <span className="text-xs text-[var(--main-text-color)] font-medium">Start</span>
             </div>
           </div>
 
@@ -63,7 +58,7 @@ export const ShowLessonsBySlugWriting = ({ writingLesson }) => {
         {/* Bottom Shine Effect */}
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       </Link>
-    </>
+    </div>
   );
 };
 
