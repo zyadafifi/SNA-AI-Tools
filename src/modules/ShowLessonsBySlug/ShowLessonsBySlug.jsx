@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 import { ShowLessonsBySlugHeader } from "./Components/ShowLessonsBySlugHeader";
 import { ShowLessonsBySlugListening } from "./Components/ShowLessonsBySlugListening";
 import { ShowLessonsBySlugPronounce } from "./Components/ShowLessonsBySlugPronounce";
+import { ShowLessonsBySlugReading } from "./Components/ShowLessonsBySlugReading";
+import { ShowLessonsBySlugWriting } from "./Components/ShowLessonsBySlugWriting";
 
 export const ShowLessonsBySlug = () => {
   const { slug } = useParams();
@@ -73,8 +75,7 @@ export const ShowLessonsBySlug = () => {
 
   const readingLesson = readingData?.find((lesson) => lesson.slug == slug);
 
-  // console.log(readingLesson, "reading");
-  // console.log(writingLesson, "writing");
+
 
   return (
     <div>
@@ -84,6 +85,8 @@ export const ShowLessonsBySlug = () => {
       <div className="container container-md mx-auto section-padding">
         <ShowLessonsBySlugListening listeningLesson={listeningLesson} />
         <ShowLessonsBySlugPronounce pronounceLesson={pronounceLesson} />
+        <ShowLessonsBySlugReading readingLesson={readingLesson} />
+        <ShowLessonsBySlugWriting writingLesson={writingLesson} />
       </div>
     </div>
   );
