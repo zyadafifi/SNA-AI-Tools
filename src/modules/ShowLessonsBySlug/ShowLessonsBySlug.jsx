@@ -80,18 +80,38 @@ export const ShowLessonsBySlug = () => {
       <div>
         <ShowLessonsBySlugHeader />
       </div>
-      <div className="container container-md mx-auto section-padding">
+      <div className="section-padding">
         {listeningLesson && (
-          <ShowLessonsBySlugListening listeningLesson={listeningLesson} />
+          <div className="relative">
+            <div className="absolute px-7 py-1 z-10 top-3 left-0 rounded-tr-full rounded-br-full  bg-[var(--primary-color)] ">
+              <p className="text-white text-lg">Listening</p>
+            </div>
+            <ShowLessonsBySlugListening listeningLesson={listeningLesson} />
+          </div>
         )}
         {pronounceLesson && (
-          <ShowLessonsBySlugPronounce pronounceLesson={pronounceLesson} />
+          <div className="relative">
+            <div className="absolute px-7 py-1 z-10 top-3 left-0 rounded-tr-full rounded-br-full  bg-[var(--primary-color)] ">
+              <p className="text-white text-lg">Pronunciation</p>
+            </div>
+            <ShowLessonsBySlugPronounce pronounceLesson={pronounceLesson} />
+          </div>
         )}
         {readingLesson && (
-          <ShowLessonsBySlugReading readingLesson={readingLesson} />
+          <div className="relative">
+            <div className="absolute px-7 py-1 z-10 top-3 left-0 rounded-tr-full rounded-br-full  bg-[var(--primary-color)] ">
+              <p className="text-white text-lg">Reading</p>
+            </div>
+            <ShowLessonsBySlugReading readingLesson={readingLesson} />
+          </div>
         )}
         {writingLesson && (
-          <ShowLessonsBySlugWriting writingLesson={writingLesson} />
+          <div className="relative">
+            <div className="absolute px-7 py-1 z-10 top-3 left-0 rounded-tr-full rounded-br-full  bg-[var(--primary-color)] ">
+              <p className="text-white text-lg">writing</p>
+            </div>
+            <ShowLessonsBySlugWriting writingLesson={writingLesson} />
+          </div>
         )}
       </div>
     </div>
