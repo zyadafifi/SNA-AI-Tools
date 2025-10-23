@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logo from "/assets/images/logo.png";
 
 export const HomeSectionTitle = () => {
   return (
@@ -6,8 +7,13 @@ export const HomeSectionTitle = () => {
       initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.4, duration: 0.8 }}
-      className="relative overflow-hidden py-12 sm:py-16 md:py-20  rounded-3xl"
+      className="relative overflow-hidden py-11 rounded-3xl"
     >
+      <div className="flex items-center justify-center">
+        <div className="w-44 mb-4">
+          <img className="w-full" src={logo} alt="" />
+        </div>
+      </div>
       {/* Background with Custom Colors */}
 
       {/* Floating Circles Animation */}
@@ -16,6 +22,7 @@ export const HomeSectionTitle = () => {
           className="absolute top-20 left-10 w-32 h-32 rounded-full opacity-10 animate-float"
           style={{ backgroundColor: "#63a29b" }}
         ></div>
+
         <div
           className="absolute bottom-20 right-10 w-40 h-40 rounded-full opacity-10 animate-float-delayed"
           style={{ backgroundColor: "#275151" }}
