@@ -3,11 +3,11 @@
 /* CSS Variables - SNA Color Palette */
 :root {
   /* SNA Color Palette */
-  --sna-primary: #63a29b;
-  --sna-secondary: #275151;
-  --sna-primary-light: #8abdb7;
-  --sna-primary-lighter: #b1d7d3;
-  --sna-secondary-dark: #1c3c3c;
+  --sna-primary: var(--primary-color, #ffc515);
+  --sna-secondary: var(--secondary-color, #cc6a15);
+  --sna-primary-light: #ffd84d;
+  --sna-primary-lighter: #ffeb99;
+  --sna-secondary-dark: #a8550f;
 
   /* Typography Variables */
   --font-english: "Nunito", sans-serif;

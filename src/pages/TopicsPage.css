@@ -2,9 +2,9 @@
 
 /* CSS Variables */
 :root {
-  --sna-primary: #63a29b;
-  --sna-primary-light: #8abdb7;
-  --sna-primary-lighter: #b1d7d3;
+  --sna-primary: var(--primary-color, #ffc515);
+  --sna-primary-light: #ffd84d;
+  --sna-primary-lighter: #ffeb99;
   --text-dark: #2c3e50;
   --text-muted: #6c757d;
   --background-white: #ffffff;

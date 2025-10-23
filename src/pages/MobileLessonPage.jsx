@@ -617,6 +617,11 @@ export const MobileLessonPage = () => {
   };
 
   const handleVideoClick = async () => {
+    // Don't allow video interaction when replay overlay is visible
+    if (showReplayOverlay) {
+      return;
+    }
+
     if (!hasUserInteracted) {
       setHasUserInteracted(true);
       userInteractionRef.current = true;

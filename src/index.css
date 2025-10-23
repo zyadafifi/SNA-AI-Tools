@@ -378,7 +378,7 @@ a {
   position: absolute;
   width: 6px;
   height: 6px;
-  background-color: #63a29b;
+  background-color: #ffc515;
   border-radius: 50%;
   animation: processing-dots 1.4s linear infinite;
 }
@@ -477,7 +477,7 @@ a {
 .spinner-ring {
   position: absolute;
   border: 3px solid transparent;
-  border-top: 3px solid #63a29b;
+  border-top: 3px solid #ffc515;
   border-radius: 50%;
   animation: spin-ring 1.5s linear infinite;
 }
@@ -492,14 +492,14 @@ a {
   width: 45px;
   height: 45px;
   animation-delay: -0.5s;
-  border-top-color: rgba(99, 162, 155, 0.7);
+  border-top-color: rgba(255, 197, 21, 0.7);
 }
 
 .spinner-ring:nth-child(3) {
   width: 30px;
   height: 30px;
   animation-delay: -1s;
-  border-top-color: rgba(99, 162, 155, 0.4);
+  border-top-color: rgba(255, 197, 21, 0.4);
 }
 
 @keyframes spin-ring {
@@ -531,7 +531,7 @@ a {
   padding: 16px 20px;
   border-radius: 16px;
   transition: all 0.3s ease;
-  color: linear-gradient(135deg, rgb(99, 162, 155) 0%, rgb(39, 81, 81) 100%);
+  color: linear-gradient(135deg, rgb(255, 197, 21) 0%, rgb(204, 106, 21) 100%);
   font-size: 14px;
   font-weight: 500;
   min-width: 70px;
@@ -553,11 +553,11 @@ a {
 }
 
 .listen-btn .fas {
-  color: linear-gradient(135deg, rgb(99, 162, 155) 0%, rgb(39, 81, 81) 100%);
+  color: linear-gradient(135deg, rgb(255, 197, 21) 0%, rgb(204, 106, 21) 100%);
 }
 
 .listen-slow-btn .fas {
-  color: linear-gradient(135deg, rgb(99, 162, 155) 0%, rgb(39, 81, 81) 100%);
+  color: linear-gradient(135deg, rgb(255, 197, 21) 0%, rgb(204, 106, 21) 100%);
 }
 
 /* Mic Button */
@@ -567,8 +567,8 @@ a {
   border-radius: 50%;
   background: linear-gradient(
     135deg,
-    rgb(99, 162, 155) 0%,
-    rgb(39, 81, 81) 100%
+    rgb(255, 197, 21) 0%,
+    rgb(204, 106, 21) 100%
   );
   border: none;
   color: white;
@@ -578,7 +578,7 @@ a {
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(99, 162, 155, 0.4);
+  box-shadow: 0 4px 20px rgba(255, 197, 21, 0.4);
   position: relative;
 }
 
@@ -645,8 +645,8 @@ a {
 .mobile-waveform-container {
   background: linear-gradient(
     135deg,
-    rgb(99, 162, 155) 0%,
-    rgb(39, 81, 81) 100%
+    rgb(255, 197, 21) 0%,
+    rgb(204, 106, 21) 100%
   );
   border-radius: 50px;
   padding: 16px 20px;

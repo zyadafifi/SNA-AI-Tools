@@ -532,7 +532,7 @@ export const PronounceHomePage = () => {
                     startAnchor="bottom"
                     endAnchor="top"
                     strokeWidth={2}
-                    color={isPathCompleted ? "#63a29b" : "#9ca3af"}
+                    color={isPathCompleted ? "#ffc515" : "#9ca3af"}
                     dashness={
                       isPathCompleted
                         ? false

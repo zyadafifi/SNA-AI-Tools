@@ -3,7 +3,7 @@ import "./SpinnerLoadingIcon.css";
 
 const SpinnerLoadingIcon = ({
   size = 90,
-  color = "#63a29b",
+  color = "#ffc515",
   dotColor = "#ffffff",
   className = "",
   ariaLabel = "Processing your recording...",

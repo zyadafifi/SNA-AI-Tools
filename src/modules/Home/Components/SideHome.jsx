@@ -423,7 +423,9 @@ export const SideHome = () => {
                     <p className="text-[var(--main-text-color)] font-bold text-3xl mb-1">
                       {averageProgress}%
                     </p>
-                    <p className="text-[var(--main-text-color)] text-sm">percent</p>
+                    <p className="text-[var(--main-text-color)] text-sm">
+                      percent
+                    </p>
                   </div>
                 </div>
               </div>
