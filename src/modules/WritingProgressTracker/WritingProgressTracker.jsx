@@ -219,8 +219,8 @@ export function WritingProgressTracker() {
   }, [recentActivityItems]);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <div className="min-h-screen py-8">
+      <div className="container container-lg px-4">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <SectionTitle title="تقدمك في الكتابة" />

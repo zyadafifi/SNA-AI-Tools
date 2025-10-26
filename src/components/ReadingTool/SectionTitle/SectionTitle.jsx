@@ -8,7 +8,7 @@ export const SectionTitle = ({ title }) => {
                before:content-[''] before:absolute before:left-0 before:-bottom-2
                before:w-full before:h-[3px]
                before:bg-gradient-to-r before:from-[var(--secondary-color)] before:to-[var(--primary-color)]
-               before:rounded-2xl arabic_font"
+               before:rounded-2xl"
       >
         {title}
       </h2>

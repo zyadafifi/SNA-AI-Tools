@@ -1,9 +1,11 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { NavBar } from "../components";
 import { useEffect } from "react";
+import background from "/assets/images/gradient-background.png";
 
 export function Layout() {
   const location = useLocation();
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -16,7 +18,7 @@ export function Layout() {
   }, [location.pathname]);
 
   return (
-    <div className="">
+    <div className="layout-container">
       {location.pathname.includes("/reading") && (
         <>
           {location.pathname !== "/" && (
@@ -26,7 +28,7 @@ export function Layout() {
           )}
         </>
       )}
-      <main className="min-h-[100vh] bg-white">
+      <main className="min-h-[100vh] relative z-10">
         <Outlet />
       </main>
     </div>

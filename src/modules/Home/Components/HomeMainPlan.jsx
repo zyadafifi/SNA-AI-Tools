@@ -2,141 +2,244 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { readingData } from "../../../config/readingData/readingData";
 
-const StarIcon = ({ filled = false, size = "w-6 h-6", className = "" }) => (
-  <svg viewBox="0 0 24 24" className={`${size} ${className}`}>
+// ============================================
+// ICONS COMPONENTS
+// ============================================
+const StarIcon = ({ filled = false, size = "w-12 h-12" }) => (
+  <svg viewBox="0 0 24 24" className={size}>
     <path
       d="M12 2.5l2.97 6.02 6.65.97-4.81 4.69 1.14 6.64L12 17.77 6.05 20.82l1.14-6.64L2.39 9.49l6.64-.97L12 2.5z"
-      className={filled ? "fill-white" : "fill-transparent"}
-      stroke={filled ? "white" : "currentColor"}
-      strokeWidth={filled ? 0 : 1.5}
+      className={filled ? "fill-white" : "fill-gray-400"}
+      stroke={filled ? "white" : "#D1D5DB"}
+      strokeWidth={1.5}
     />
   </svg>
 );
 
-const BookIcon = ({ size = "w-6 h-6", className = "" }) => (
-  <svg
-    viewBox="0 0 24 24"
-    className={`${size} ${className}`}
-    fill="currentColor"
-  >
-    <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
-  </svg>
-);
+// ============================================
+// CURVED PATH SVG - Connects nodes with curves
+// ============================================
+const CurvedConnector = ({ from, to, isActive }) => {
+  const curveOffset = (to.x - from.x) / 2;
 
-const TrophyIcon = ({ size = "w-6 h-6", className = "" }) => (
-  <svg
-    viewBox="0 0 24 24"
-    className={`${size} ${className}`}
-    fill="currentColor"
-  >
-    <path d="M7 4V2c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2v2h3c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-1v6c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2v-6H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h3zm2-2h6v2H9V2zm-1 4h8v2H8V6zm0 4h8v6H8v-6z" />
-  </svg>
-);
+  const path = `
+    M ${from.x} ${from.y}
+    C ${from.x + curveOffset} ${from.y + 30},
+      ${to.x - curveOffset} ${to.y - 30},
+      ${to.x} ${to.y}
+  `;
 
-const HeartIcon = ({ size = "w-6 h-6", className = "" }) => (
-  <svg
-    viewBox="0 0 24 24"
-    className={`${size} ${className}`}
-    fill="currentColor"
-  >
-    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-  </svg>
-);
-
-const ShieldIcon = ({ size = "w-6 h-6", className = "" }) => (
-  <svg
-    viewBox="0 0 24 24"
-    className={`${size} ${className}`}
-    fill="currentColor"
-  >
-    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
-  </svg>
-);
-
-const LightningIcon = ({ size = "w-6 h-6", className = "" }) => (
-  <svg
-    viewBox="0 0 24 24"
-    className={`${size} ${className}`}
-    fill="currentColor"
-  >
-    <path d="M7 2v11h3v9l7-12h-4l4-8z" />
-  </svg>
-);
-
-const GemIcon = ({ size = "w-6 h-6", className = "" }) => (
-  <svg
-    viewBox="0 0 24 24"
-    className={`${size} ${className}`}
-    fill="currentColor"
-  >
-    <path d="M6 2L2 7l10 13 10-13-4-5H6zm2.03 2L12 4.97 15.97 4H8.03z" />
-  </svg>
-);
-
-const CrownIcon = ({ size = "w-6 h-6", className = "" }) => (
-  <svg
-    viewBox="0 0 24 24"
-    className={`${size} ${className}`}
-    fill="currentColor"
-  >
-    <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm2.7-2h8.6l.9-5.4-2.1 2.1L12 8l-3.1 2.7-2.1-2.1L7.7 14z" />
-  </svg>
-);
-
-// Helper function to get progress from localStorage
-const getProgressFromLocalStorage = () => {
-  try {
-    // Listening Progress
-    const listeningProgress = JSON.parse(
-      localStorage.getItem("sna-lesson-progress") || "[]"
-    );
-    const listeningCompleted = listeningProgress.filter(
-      (lesson) => lesson.isCompleted
-    ).length;
-
-    // Pronunciation Progress
-    const pronunciationData = JSON.parse(
-      localStorage.getItem("pronunciationMasterProgress") || "{}"
-    );
-    const pronunciationTopics = pronunciationData.topics || {};
-    const pronunciationCompleted = Object.values(pronunciationTopics).filter(
-      (topic) => topic.completed
-    ).length;
-
-    // Reading Progress
-    const readingProgress = JSON.parse(
-      localStorage.getItem("quizProgress") || "{}"
-    );
-    const readingCompleted = Object.keys(readingProgress).length;
-
-    // Writing Progress
-    const writingProgress = JSON.parse(
-      localStorage.getItem("sna-writing-tool-progress") || "{}"
-    );
-    const writingCompleted = Object.values(writingProgress).filter(
-      (item) => item.completed
-    ).length;
-
-    return {
-      listening: listeningCompleted,
-      pronunciation: pronunciationCompleted,
-      reading: readingCompleted,
-      writing: writingCompleted,
-    };
-  } catch (error) {
-    console.error("Error reading progress from localStorage:", error);
-    return {
-      listening: 0,
-      pronunciation: 0,
-      reading: 0,
-      writing: 0,
-    };
-  }
+  return (
+    <path
+      d={path}
+      fill="none"
+      stroke="#E5E7EB"
+      strokeWidth="3"
+      strokeLinecap="round"
+    />
+  );
 };
 
-// Helper function to determine next step logic
+// ============================================
+// LESSON NODE - Single circular node
+// ============================================
+const LessonNode = ({ node, position, onNodeClick }) => {
+  const { isUnlocked, isCurrent, nextCategoryLabel, isClickable, linkTo } =
+    node;
+
+  return (
+    <div
+      className="absolute"
+      style={{
+        left: `${position.x}px`,
+        top: `${position.y}px`,
+        transform: "translate(-50%, -50%)",
+      }}
+    >
+      {/* Next Label */}
+      {isCurrent && nextCategoryLabel && (
+        <div className="absolute -top-20 left-1/2 transform -translate-x-1/2">
+          <div className="bg-white border-2 border-yellow-500 rounded-full px-4 py-2 shadow-lg whitespace-nowrap">
+            <div className="text-center">
+              <span className="text-orange-500 font-bold text-sm block">
+                ابدأ
+              </span>
+            </div>
+          </div>
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent border-t-yellow-500"></div>
+        </div>
+      )}
+
+      {/* Node Circle */}
+      <div className="relative">
+        {/* Outer ring for active node */}
+        {isCurrent && (
+          <div
+            className="absolute inset-0 rounded-full border-4 border-yellow-500 animate-pulse"
+            style={{ width: "96px", height: "96px", left: "-8px", top: "-8px" }}
+          ></div>
+        )}
+
+        {/* Main circle */}
+        <div
+          className={`
+            w-20 h-20 rounded-full flex items-center justify-center
+            transition-all duration-300 shadow-lg relative
+            ${
+              isUnlocked || isCurrent
+                ? "bg-gradient-to-b from-yellow-400 to-orange-500 cursor-pointer hover:scale-105"
+                : "bg-gray-300 cursor-not-allowed"
+            }
+          `}
+          onClick={() => isClickable && onNodeClick(node)}
+        >
+          {/* Icon */}
+          <div className="relative z-10">
+            <StarIcon filled={isUnlocked || isCurrent} size="w-10 h-10" />
+          </div>
+        </div>
+
+        {/* Clickable Link Overlay */}
+        {isClickable && linkTo && (
+          <Link
+            to={linkTo}
+            className="absolute inset-0 rounded-full z-20"
+            style={{ width: "80px", height: "80px" }}
+          />
+        )}
+      </div>
+    </div>
+  );
+};
+
+// ============================================
+// ZIGZAG PATH UI COMPONENT
+// ============================================
+const ZigzagPathUI = ({ nodes, onNodeClick = () => {} }) => {
+  const calculatePositions = (nodes) => {
+    const positions = [];
+    const centerX = 200;
+    const startY = 100;
+    const verticalSpacing = 140;
+    const horizontalOffset = 80;
+
+    nodes.forEach((node, index) => {
+      let x = centerX;
+
+      if (index % 2 === 1) {
+        x = centerX - horizontalOffset;
+      } else if (index > 0) {
+        x = centerX + horizontalOffset;
+      }
+
+      positions.push({
+        x,
+        y: startY + index * verticalSpacing,
+      });
+    });
+
+    return positions;
+  };
+
+  const positions = calculatePositions(nodes);
+  const svgHeight =
+    positions.length > 0 ? positions[positions.length - 1].y + 100 : 500;
+
+  return (
+    <div className="relative w-full flex justify-center py-8 overflow-hidden">
+      <div
+        className="relative"
+        style={{ width: "400px", height: `${svgHeight}px` }}
+      >
+        {/* SVG for curved connectors */}
+        <svg
+          className="absolute top-0 left-0 w-full h-full pointer-events-none"
+          style={{ zIndex: 0 }}
+        >
+          {positions.map((pos, index) => {
+            if (index === positions.length - 1) return null;
+            const nextPos = positions[index + 1];
+
+            return (
+              <CurvedConnector
+                key={`connector-${index}`}
+                from={pos}
+                to={nextPos}
+                isActive={nodes[index].isUnlocked}
+              />
+            );
+          })}
+        </svg>
+
+        {/* Nodes */}
+        {nodes.map((node, index) => (
+          <LessonNode
+            key={node.id}
+            node={node}
+            position={positions[index]}
+            onNodeClick={onNodeClick}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// ============================================
+// DATA LOGIC - Progress tracking
+// ============================================
+const useProgressData = () => {
+  const getProgressFromLocalStorage = () => {
+    try {
+      const listeningProgress = JSON.parse(
+        localStorage.getItem("sna-lesson-progress") || "[]"
+      );
+      const listeningCompleted = listeningProgress.filter(
+        (lesson) => lesson.isCompleted
+      ).length;
+
+      const pronunciationData = JSON.parse(
+        localStorage.getItem("pronunciationMasterProgress") || "{}"
+      );
+      const pronunciationTopics = pronunciationData.topics || {};
+      const pronunciationCompleted = Object.values(pronunciationTopics).filter(
+        (topic) => topic.completed
+      ).length;
+
+      const readingProgress = JSON.parse(
+        localStorage.getItem("quizProgress") || "{}"
+      );
+      const readingCompleted = Object.keys(readingProgress).length;
+      console.log(Object.keys(readingProgress));
+      
+      const writingProgress = JSON.parse(
+        localStorage.getItem("sna-writing-tool-progress") || "{}"
+      );
+      const writingCompleted = Object.values(writingProgress).filter(
+        (item) => item.isUnlocked
+      ).length;
+
+      return {
+        listening: listeningCompleted,
+        pronunciation: pronunciationCompleted,
+        reading: readingCompleted,
+        writing: writingCompleted,
+      };
+    } catch (error) {
+      console.error("Error reading progress from localStorage:", error);
+      return {
+        listening: 0,
+        pronunciation: 0,
+        reading: 0,
+        writing: 0,
+      };
+    }
+  };
+
+  return getProgressFromLocalStorage();
+};
+
 const calculateNextStepLogic = (completedCounts, lengths) => {
-  // Find the minimum completed lesson among all categories
   const minCompleted = Math.min(
     completedCounts.listening,
     completedCounts.pronunciation,
@@ -144,32 +247,77 @@ const calculateNextStepLogic = (completedCounts, lengths) => {
     completedCounts.writing
   );
 
-  // The lesson number we're working on
   const currentLesson = minCompleted + 1;
 
-  // Check which categories still need to complete the current lesson
   const needsCompletion = {
-    listening: completedCounts.listening < currentLesson && currentLesson <= lengths.listening,
-    pronunciation: completedCounts.pronunciation < currentLesson && currentLesson <= lengths.pronounce,
-    reading: completedCounts.reading < currentLesson && currentLesson <= lengths.reading,
-    writing: completedCounts.writing < currentLesson && currentLesson <= lengths.writing,
+    listening:
+      completedCounts.listening < currentLesson &&
+      currentLesson <= lengths.listening,
+    pronunciation:
+      completedCounts.pronunciation < currentLesson &&
+      currentLesson <= lengths.pronounce,
+    reading:
+      completedCounts.reading < currentLesson &&
+      currentLesson <= lengths.reading,
+    writing:
+      completedCounts.writing < currentLesson &&
+      currentLesson <= lengths.writing,
   };
 
-  // Determine which category to show as "next"
   let nextCategory = null;
   if (needsCompletion.listening) nextCategory = "listening";
   else if (needsCompletion.pronunciation) nextCategory = "pronunciation";
   else if (needsCompletion.reading) nextCategory = "reading";
   else if (needsCompletion.writing) nextCategory = "writing";
 
+  const allCurrentCompleted = !Object.values(needsCompletion).some(Boolean);
+  const nextNodeIndex = allCurrentCompleted ? minCompleted + 1 : minCompleted;
+
   return {
     currentLesson,
     minCompleted,
     needsCompletion,
     nextCategory,
+    nextNodeIndex,
   };
 };
 
+const getCategoryNameArabic = (category) => {
+  const names = {
+    listening: "الاستماع",
+    pronunciation: "النطق",
+    reading: "القراءة",
+    writing: "الكتابة",
+  };
+  return names[category] || category;
+};
+
+const createNodesFromData = (total, currentIndex, nextCategory) => {
+  const nodes = [];
+
+  for (let i = 0; i < total; i++) {
+    const isUnlocked = i < currentIndex;
+    const isCurrent = i === currentIndex;
+
+    nodes.push({
+      id: `lesson-${i}`,
+      index: i,
+      label: `Lesson ${i + 1}`,
+      iconType: "star",
+      isUnlocked,
+      isCurrent,
+      isClickable: isUnlocked || isCurrent,
+      linkTo: isUnlocked || isCurrent ? `/plan/slug/lesson-${i + 1}` : null,
+      nextCategoryLabel: isCurrent ? nextCategory : null,
+    });
+  }
+
+  return nodes;
+};
+
+// ============================================
+// MAIN COMPONENT
+// ============================================
 export function HomeMainPlan() {
   const [data, setData] = useState({
     pronounce: null,
@@ -217,14 +365,13 @@ export function HomeMainPlan() {
     [data]
   );
 
-  // Get completed counts from localStorage
-  const completedCounts = useMemo(() => getProgressFromLocalStorage(), []);
+  const completedCounts = useProgressData();
 
-  // Calculate next step logic
   const nextStepInfo = useMemo(
     () => calculateNextStepLogic(completedCounts, lengths),
     [completedCounts, lengths]
   );
+
 
   const isLoading = Object.values(loading).some(Boolean);
   const hasErrors = Object.values(errors).some(Boolean);
@@ -235,8 +382,21 @@ export function HomeMainPlan() {
   );
   const total = lengths[maxKey] || 0;
 
-  // Calculate unlocked count based on minimum completed lessons
-  const unlockedCount = nextStepInfo.minCompleted + 1;
+  const nodes = useMemo(() => {
+    if (total === 0) return [];
+
+    return createNodesFromData(
+      total,
+      nextStepInfo.nextNodeIndex,
+      nextStepInfo.nextCategory
+        ? getCategoryNameArabic(nextStepInfo.nextCategory)
+        : null
+    );
+  }, [total, nextStepInfo]);
+
+  const handleNodeClick = (node) => {
+    console.log("Node clicked:", node);
+  };
 
   if (isLoading) {
     return (
@@ -264,147 +424,5 @@ export function HomeMainPlan() {
     );
   }
 
-  // Create lesson nodes with distinct icons for each lesson
-  const createLessonNodes = (total) => {
-    const iconTypes = [
-      "star",
-      "book",
-      "trophy",
-      "heart",
-      "shield",
-      "lightning",
-      "gem",
-      "crown",
-    ];
-    const nodes = [];
-
-    for (let i = 0; i < total; i++) {
-      const iconType = iconTypes[i % iconTypes.length];
-      const isSpecial = i === total - 1; // Last lesson is special
-
-      nodes.push({
-        index: i,
-        label: `Lesson ${i + 1}`,
-        iconType,
-        isSpecial,
-      });
-    }
-    return nodes;
-  };
-
-  const nodes = createLessonNodes(total);
-
-  const renderIcon = (iconType, isUnlocked, size = "w-8 h-8") => {
-    const iconProps = { size, filled: isUnlocked };
-    const iconClass = isUnlocked ? "text-white" : "text-gray-500";
-
-    switch (iconType) {
-      case "book":
-        return <BookIcon {...iconProps} className={iconClass} />;
-      case "trophy":
-        return <TrophyIcon {...iconProps} className={iconClass} />;
-      case "heart":
-        return <HeartIcon {...iconProps} className={iconClass} />;
-      case "shield":
-        return <ShieldIcon {...iconProps} className={iconClass} />;
-      case "lightning":
-        return <LightningIcon {...iconProps} className={iconClass} />;
-      case "gem":
-        return <GemIcon {...iconProps} className={iconClass} />;
-      case "crown":
-        return <CrownIcon {...iconProps} className={iconClass} />;
-      default:
-        return <StarIcon {...iconProps} className={iconClass} />;
-    }
-  };
-
-  return (
-    <div className="flex justify-center py-8 px-4">
-      <div className="relative flex flex-col items-center space-y-12">
-        {/* Debug Info - Remove in production */}
-        <div className="mb-4 p-4 bg-gray-100 rounded-lg text-sm">
-          <div className="font-bold mb-2">Progress Summary:</div>
-          <div>Listening: {completedCounts.listening} completed</div>
-          <div>Pronunciation: {completedCounts.pronunciation} completed</div>
-          <div>Reading: {completedCounts.reading} completed</div>
-          <div>Writing: {completedCounts.writing} completed</div>
-          <div className="mt-2 font-bold">
-            Current Lesson: {nextStepInfo.currentLesson}
-          </div>
-          <div>Next Category: {nextStepInfo.nextCategory || "All completed!"}</div>
-        </div>
-
-        {nodes.map((node, index) => {
-          const isUnlocked = node.index < unlockedCount;
-          const isCurrent = node.index === unlockedCount - 1;
-          const isNextUp = node.index === unlockedCount;
-          const isLocked = node.index >= unlockedCount;
-
-          const isEven = index % 2 === 0;
-          let horizontalOffset = isEven
-            ? "translate-x-0"
-            : index % 4 === 1
-            ? "translate-x-8"
-            : "-translate-x-8";
-
-          // On mobile, reduce the offset proportionally
-          const mobileOffset = horizontalOffset
-            .replace("-translate-x-8", "-translate-x-10")
-            .replace("translate-x-8", "translate-x-10");
-
-          return (
-            <div
-              key={node.index}
-              className={`
-                relative flex flex-col items-center
-                ${mobileOffset} md:${horizontalOffset}
-                transition-all duration-500 ease-in-out
-              `}
-            >
-              {/* START label for current lesson - positioned above the active node */}
-              {isCurrent && (
-                <div className="mb-4 relative">
-                  <div className="bg-white border-2 border-[var(--primary-color)] rounded-full px-4 py-2 shadow-lg">
-                    <span className="text-[var(--secondary-color)] font-bold text-sm uppercase">
-                      START
-                    </span>
-                  </div>
-                  {/* Small triangle pointer pointing down to the node */}
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-2 border-r-2 border-t-2 border-l-transparent border-r-transparent border-t-[var(--primary-color)]"></div>
-                </div>
-              )}
-
-              {/* Lesson node */}
-              <div className="relative">
-                <div
-                  className={`
-                    w-20 h-20 rounded-full flex items-center justify-center
-                    transition-all duration-300 ease-in-out
-                    shadow-lg
-                    ${
-                      isUnlocked
-                        ? "bg-gradient-to-b from-[var(--primary-color)] to-[var(--secondary-color)] shadow-[var(--primary-color)]/30 hover:scale-105 hover:shadow-xl hover:shadow-[var(--primary-color)]/50 cursor-pointer"
-                        : isNextUp
-                        ? "bg-gradient-to-b from-[var(--primary-color)] to-[var(--secondary-color)] shadow-[var(--primary-color)]/30 ring-4 ring-[var(--primary-color)]/20 ring-opacity-60 hover:scale-105 hover:shadow-xl hover:shadow-[var(--primary-color)]/50 cursor-pointer"
-                        : "bg-gray-200 shadow-gray-200 opacity-50 cursor-not-allowed"
-                    }
-                  `}
-                >
-                  {renderIcon(node.iconType, isUnlocked || isNextUp)}
-                </div>
-
-                {/* Clickable link overlay */}
-                {(isUnlocked || isNextUp) && (
-                  <Link
-                    to={`/plan/slug/lesson-${node.index + 1}`}
-                    className="absolute inset-0 rounded-full z-10"
-                  />
-                )}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
+  return <ZigzagPathUI nodes={nodes} onNodeClick={handleNodeClick} />;
 }

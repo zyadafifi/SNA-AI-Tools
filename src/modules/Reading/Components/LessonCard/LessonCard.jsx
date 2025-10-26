@@ -24,7 +24,7 @@ export const LessonCard = ({
           {/* Number circle overlay */}
           <div className="absolute inset-0 flex justify-center items-center">
             <div
-              className="w-20 h-20 rounded-full text-[#f8b400] flex items-center justify-center text-4xl font-bold shadow-lg"
+              className="w-20 h-20 rounded-full text-[var(--main-text-color)] flex items-center justify-center text-4xl font-bold shadow-lg"
               style={{
                 background: "linear-gradient(135deg, #ffc515d6, #cc6a15f0)",
               }}
