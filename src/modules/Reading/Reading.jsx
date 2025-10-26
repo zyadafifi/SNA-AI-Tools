@@ -135,7 +135,7 @@ export const Reading = () => {
                   placeholder="Search Library"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="px-4 w-full placeholder:text-gray-800 bg-white py-[5px] pl-11 text-[#000] border border-gray-300 rounded-lg outline-none"
+                  className="px-4 w-full placeholder:text-gray-800 bg-white py-[5px] pl-11 text-[#000] border border-gray-300 rounded-2xl outline-none"
                 />
                 <svg
                   className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-black"
@@ -175,9 +175,9 @@ export const Reading = () => {
                     <button
                       key={title}
                       onClick={() => handleLevelToggle(keys[0])}
-                      className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                      className={`px-3 py-2 text-sm font-medium rounded-2xl shadow-sm transition-colors ${
                         isSelected
-                          ? "bg-[var(--secondary-color)] text-white"
+                          ? "bg-[var(--primary-color)] text-white"
                           : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                       }`}
                     >
@@ -200,7 +200,7 @@ export const Reading = () => {
               </div>
             ))
           ) : (
-            <div className="text-center py-16 bg-gray-50 rounded-lg">
+            <div className="text-center py-16 rounded-lg">
               <svg
                 className="mx-auto h-12 w-12 text-gray-400 mb-4"
                 fill="none"

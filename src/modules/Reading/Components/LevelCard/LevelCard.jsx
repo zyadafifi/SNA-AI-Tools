@@ -9,53 +9,52 @@ export function LevelCard({ level }) {
       return {
         bg: "bg-emerald-500",
         text: "text-emerald-700",
-        gradient: "from-emerald-400 to-teal-500",
+        gradient: "from-[var(--primary-color)] to-[var(--primary-color)]",
         icon: "🌱",
       };
     if (levelKey === "Elementary")
       return {
         bg: "bg-blue-500",
         text: "text-blue-700",
-        gradient: "from-blue-400 to-indigo-500",
+        gradient: "from-[var(--primary-color)] to-[var(--primary-color)]",
         icon: "📚",
       };
     if (levelKey === "Pre-Intermediate")
       return {
         bg: "bg-amber-500",
         text: "text-amber-700",
-        gradient: "from-amber-400 to-orange-500",
+        gradient: "from-[var(--primary-color)] to-[var(--primary-color)]",
         icon: "⚡",
       };
     if (levelKey === "Intermediate")
       return {
         bg: "bg-red-500",
         text: "text-red-700",
-        gradient: "from-red-400 to-rose-500",
+        gradient: "from-[var(--primary-color)] to-[var(--primary-color)]",
         icon: "🔥",
       };
     if (levelKey === "Upper-Intermediate")
       return {
         bg: "bg-purple-600",
         text: "text-purple-700",
-        gradient: "from-purple-500 to-violet-600",
+        gradient: "from-[var(--primary-color)] to-[var(--primary-color)]",
         icon: "💎",
       };
     if (levelKey === "Advanced")
       return {
         bg: "bg-gradient-to-r from-pink-500 to-rose-600",
         text: "text-rose-800",
-        gradient: "from-pink-500 via-rose-500 to-red-600",
+        gradient: "from-[var(--primary-color)] to-[var(--primary-color)]",
         icon: "👑",
       };
     return {
       bg: "bg-slate-500",
       text: "text-slate-700",
-      gradient: "from-slate-400 to-gray-500",
+      gradient: "from-[var(--primary-color)] to-[var(--primary-color)]",
       icon: "📖",
     };
   };
 
-  
   const isLocked = level?.isLocked || false;
   const colors = getColors(level?.levelKey);
 
@@ -104,11 +103,14 @@ export function LevelCard({ level }) {
 
         {/* Play Button for Unlocked Content */}
         {!isLocked && (
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/20 backdrop-blur-sm">
-            <div className="bg-white/90 rounded-full w-12 h-12 flex items-center justify-center shadow-2xl transform scale-90 group-hover:scale-100 transition-transform duration-300">
-              <IoPlay className="text-gray-800 text-2xl ml-1" />
+          <Link
+            to={`/reading/show-lesson-first-round/${level?.id}/${level?.lessons[0]?.id}`}
+            className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/20 backdrop-blur-sm"
+          >
+            <div className="bg-[var(--primary-color)] rounded-full w-12 h-12 flex items-center justify-center shadow-2xl transform scale-90 group-hover:scale-100 transition-transform duration-300">
+              <IoPlay className="text-white text-3xl ml-1" />
             </div>
-          </div>
+          </Link>
         )}
 
         {/* Hover Button */}
