@@ -5,7 +5,6 @@ import { IoPlay } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { useProgress } from "../../../contexts/WritingProgressContext";
 export const ShowLessonsBySlugWriting = ({ writingLesson }) => {
-  console.log(writingLesson, "writing");
   const { startTopic } = useProgress();
 
   const [lessonStatus, setLessonStatus] = useState({
@@ -14,7 +13,6 @@ export const ShowLessonsBySlugWriting = ({ writingLesson }) => {
     isInProgress: false,
     progress: 0,
   });
-  console.log(lessonStatus);
 
   useEffect(() => {
     // قراءة الحالة من localStorage
