@@ -1,10 +1,9 @@
 import logoImage from "/assets/images/sna ddd.png";
-import homeIcon from "/assets/images/icons/fbe0c187341c280e161f76fb4cbda1d7.svg";
-import readingIcon from "/assets/images/icons/234635.png";
-import listeningIcon from "/assets/images/icons/headphones-listening.svg";
-import pronunciationIcon from "/assets/images/icons/3b4928101472fce4e9edac920c1b3817.svg";
-import writingIcon from "/assets/images/icons/4659027.png";
-import loginIcon from "/assets/images/icons/login-image.png";
+import homeIcon from "/assets/images/icons/white-home.svg";
+import readingIcon from "/assets/images/icons/uuu.png";
+import listeningIcon from "/assets/images/icons/u.png";
+import pronunciationIcon from "/assets/images/icons/uu.png";
+import writingIcon from "/assets/images/icons/uuuu.png";
 import { Link } from "react-router-dom";
 
 export const HomeNav = () => {
@@ -44,18 +43,11 @@ export const HomeNav = () => {
       width: "31px",
       linkTo: "/writing/home",
     },
-    {
-      icon: loginIcon,
-      label: "تسجيل الدخول",
-      color: "text-yellow-400",
-      width: "31px",
-      linkTo: "/login",
-    },
   ];
   return (
     <>
       {/* Right Sidebar - Hidden on mobile */}
-      <aside className="hidden overflow-y-auto bg-white md:block w-64 p-4 sticky top-0 right-0 h-screen bottom border-l-2 border-gray-100">
+      <aside className="hidden overflow-y-auto md:block w-60  sticky top-0 right-0 h-screen bottom">
         <div className="flex justify-center">
           <Link to="/" className="w-36 my-5 block">
             <img className="w-full" src={logoImage} alt="logo" />
@@ -67,15 +59,13 @@ export const HomeNav = () => {
               <Link
                 to={item.linkTo}
                 key={idx}
-                className={`w-full mb-4 rounded-xl py-2 p-6 flex items-center justify-end gap-5 group transition-all duration-300 ${
+                className={`w-full mb-3 rounded-l-full py-3 p-6 flex items-center justify-center gap-5 group transition-all duration-300 border border-r-0 border-gray-400 shadow-md hover:shadow-sm hover:border-transparent ${
                   idx == 0
-                    ? "bg-[var(--primary-color)]"
+                    ? "bg-[var(--primary-color)] border-transparent"
                     : "hover:bg-[var(--primary-color)] "
                 }`}
               >
-                <span
-                  className={`text-black arabic_font transition`}
-                >
+                <span className={`text-lg text-black/70 arabic_font transition`}>
                   {item.label}
                 </span>
                 <div style={{ width: item.width }}>
