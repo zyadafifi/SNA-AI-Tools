@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { FaPenFancy } from "react-icons/fa";
 import { IoPlay } from "react-icons/io5";
 import { useEffect, useState } from "react";
-
+import { useProgress } from "../../../contexts/WritingProgressContext";
 export const ShowLessonsBySlugWriting = ({ writingLesson }) => {
   console.log(writingLesson, "writing");
+  const { startTopic } = useProgress();
 
   const [lessonStatus, setLessonStatus] = useState({
     isUnlocked: false,
@@ -13,6 +14,7 @@ export const ShowLessonsBySlugWriting = ({ writingLesson }) => {
     isInProgress: false,
     progress: 0,
   });
+  console.log(lessonStatus);
 
   useEffect(() => {
     // قراءة الحالة من localStorage
@@ -64,9 +66,15 @@ export const ShowLessonsBySlugWriting = ({ writingLesson }) => {
   return (
     <div className="container container-md">
       <Link
-        to={`/questions/${writingLesson?.id}`}
+        to={
+          lessonStatus.phase == "not-started"
+            ? `/article/${writingLesson?.id}`
+            : `/questions/${writingLesson?.id}`
+        }
+        onClick={() => startTopic(writingLesson.id)}
         className={`block group relative overflow-hidden border-2 p-6 rounded-3xl mb-5 hover:shadow-2xl transition-all duration-300 ${
-          !lessonStatus.isUnlocked
+          !lessonStatus.isUnlocked &&
+          localStorage.getItem("sna-writing-tool-progress") != null
             ? "border-gray-300 opacity-60 pointer-events-none"
             : "border-gray-400"
         }`}
@@ -81,7 +89,7 @@ export const ShowLessonsBySlugWriting = ({ writingLesson }) => {
             <div className="w-16 h-16 bg-gradient-to-br from-[var(--primary-color)] to-[var(--secondary-color)] flex items-center justify-center rounded-2xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
               <FaPenFancy className="text-3xl text-[var(--main-text-color)]" />
             </div>
-             {/* Completed Badge */}
+            {/* Completed Badge */}
             {lessonStatus.progress === 100 && (
               <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center border-2 border-[var(--third-color)]">
                 <svg
