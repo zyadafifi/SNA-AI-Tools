@@ -105,7 +105,7 @@ const TipsPanel = ({ isOpen, onClose }) => {
               return (
                 <div
                   key={index}
-                  className="bg-[#FDFDFD] border border-[#e5e7eb] rounded-xl p-4 md:p-5 transition-all duration-300 hover:bg-[#FFF7E6] hover:border-[#FDCB3E]/30 hover:shadow-sm"
+                  className="bg-gradient-to-br from-gray-200 to-yellow-100 border border-[#d1d5db] rounded-xl p-4 md:p-5 transition-all duration-300 hover:bg-gradient-to-br hover:from-yellow-100 hover:to-yellow-200 hover:border-[#FDCB3E]/30 hover:shadow-sm"
                 >
                   <div className="flex items-center gap-3 mb-2 md:mb-3">
                     <TipIcon className="w-5 h-5 md:w-6 md:h-6 text-[#334155] flex-shrink-0" />
