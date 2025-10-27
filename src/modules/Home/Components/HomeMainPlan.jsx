@@ -58,7 +58,7 @@ const LessonNode = ({ node, position, onNodeClick }) => {
     >
       {/* Next Label */}
       {isCurrent && nextCategoryLabel && (
-        <div className="absolute -top-20 left-1/2 transform -translate-x-1/2">
+        <div className="absolute -top-16 left-1/2 transform -translate-x-1/2">
           <div className="bg-white border-2 border-yellow-500 rounded-full px-4 py-2 shadow-lg whitespace-nowrap">
             <div className="text-center">
               <span className="arabic_font text-orange-500 font-bold text-sm block">
@@ -400,9 +400,6 @@ export function HomeMainPlan() {
     () => calculateNextStepLogic(completedCounts, lengths),
     [completedCounts, lengths]
   );
-
-  console.log(nextStepInfo);
-  
 
   const isLoading = Object.values(loading).some(Boolean);
   const hasErrors = Object.values(errors).some(Boolean);
