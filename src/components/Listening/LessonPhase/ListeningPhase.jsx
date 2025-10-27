@@ -61,9 +61,14 @@ const ListeningPhase = ({ lesson, onComplete }) => {
 
       <button
         onClick={handleComplete}
-        className="bg-[#ffc515] text-white border-none px-6 sm:px-8 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-semibold cursor-pointer transition-all duration-300 hover:bg-[#cc6a15] hover:-translate-y-[2px] shadow-[0_4px_12px_rgba(255,197,21,0.3)] touch-manipulation"
+        className="relative bg-[#ffc515] text-white border-none px-6 sm:px-8 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-semibold cursor-pointer transition-all duration-300 hover:bg-[#cc6a15] hover:-translate-y-[2px] shadow-[0_4px_12px_rgba(255,197,21,0.3)] touch-manipulation overflow-hidden group"
+        style={{
+          background:
+            "linear-gradient(135deg, #ffc515 0%, #ffd84d 50%, #ffc515 100%)",
+        }}
       >
-        Next - Dictation Phase
+        <span className="relative z-10">Next - Dictation Phase</span>
+        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></span>
       </button>
     </div>
   );

@@ -96,9 +96,17 @@ export const ListeningLessonPage = () => {
               onClick={() => setCurrentPhase(phase.id)}
               className={`flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-3 rounded-xl cursor-pointer transition-all duration-300 font-semibold text-xs sm:text-sm flex-1 justify-center touch-manipulation ${
                 currentPhase === phase.id
-                  ? "bg-[#ffc515] text-white shadow-[0_4px_12px_rgba(255,197,21,0.3)]"
+                  ? "text-white shadow-[0_4px_12px_rgba(255,197,21,0.3)]"
                   : "bg-white text-gray-600 border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.1)]"
               }`}
+              style={
+                currentPhase === phase.id
+                  ? {
+                      background:
+                        "linear-gradient(135deg, #ffc515 0%, #ffd84d 50%, #ffc515 100%)",
+                    }
+                  : {}
+              }
             >
               <span className="text-sm sm:text-base">{phase.icon}</span>
               <span className="text-xs sm:text-sm">{phase.name}</span>
