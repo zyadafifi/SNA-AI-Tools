@@ -26,22 +26,25 @@ const ListeningPhase = ({ lesson, onComplete }) => {
   };
 
   return (
-    <div className="text-center max-w-[800px] mx-auto">
-      <h2 className="text-4xl text-[#275151] mb-4">🎶 Listening Phase</h2>
-      <p className="text-[#475569] mb-6 text-lg">
+    <div className="text-center">
+      <h2 className="text-xl sm:text-2xl text-[#ffc515] mb-3 sm:mb-4 font-bold flex items-center justify-center gap-2">
+        <span className="text-xl sm:text-2xl">🎧</span>
+        Listening Phase
+      </h2>
+      <p className="text-gray-600 mb-4 sm:mb-6 text-xs sm:text-sm">
         Watch the video below to improve your listening skills
       </p>
 
       {/* Tip of the Day */}
-      <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-lg p-4 my-6 flex items-center gap-3 text-left">
-        <span className="text-2xl flex-shrink-0">🌟</span>
-        <div className="text-[#334155] text-sm leading-relaxed">
+      <div className="bg-gray-100 border border-gray-200 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3 text-left">
+        <span className="text-lg sm:text-xl flex-shrink-0">🌟</span>
+        <div className="text-gray-700 text-xs sm:text-sm leading-relaxed">
           <strong>Tip of the Day:</strong> {dailyTip}
         </div>
       </div>
 
       {/* YouTube Video */}
-      <div className="relative w-full h-0 pb-[56.25%] my-6 rounded-lg overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
+      <div className="relative w-full h-0 pb-[56.25%] mb-4 sm:mb-6 rounded-lg overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
         <iframe
           src={`https://www.youtube.com/embed/${lesson.youtubeVideoId}`}
           title="SNA Academy Listening Video"
@@ -52,13 +55,13 @@ const ListeningPhase = ({ lesson, onComplete }) => {
         />
       </div>
 
-      <p className="text-[#475569] my-6 text-base">
-        After watching the video, click "Next" to proceed to the dictation phase
+      <p className="text-gray-600 mb-4 sm:mb-6 text-xs sm:text-sm">
+        Watch the video below to improve your listening skills
       </p>
 
       <button
         onClick={handleComplete}
-        className="bg-[linear-gradient(135deg,#63a29b_0%,#275151_100%)] text-white border-none px-6 py-3 rounded-lg text-base font-semibold cursor-pointer transition-[background-color] duration-300 hover:bg-[linear-gradient(45deg,#275151,#63a29b)] hover:-translate-y-[2px]"
+        className="bg-[#ffc515] text-white border-none px-6 sm:px-8 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-semibold cursor-pointer transition-all duration-300 hover:bg-[#cc6a15] hover:-translate-y-[2px] shadow-[0_4px_12px_rgba(255,197,21,0.3)] touch-manipulation"
       >
         Next - Dictation Phase
       </button>
