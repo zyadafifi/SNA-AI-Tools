@@ -123,19 +123,6 @@ export const ShowLessonsBySlugPronounce = ({ pronounceLesson }) => {
     return !previousConversationProgress?.completed;
   };
 
-  // Open conversation
-  const openConversation = (conversationId, topicId) => {
-    // Check if mobile device
-    if (isMobile) {
-      navigate(
-        `/pronounce/mobile/${currentLesson.lessonNumber}/${topicId}/${conversationId}`
-      );
-    } else {
-      navigate(
-        `/pronounce/desktop/${currentLesson.lessonNumber}/${topicId}/${conversationId}`
-      );
-    }
-  };
 
   return (
     <div className="container container-md">
