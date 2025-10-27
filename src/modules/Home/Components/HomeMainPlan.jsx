@@ -80,7 +80,7 @@ const LessonNode = ({ node, position, onNodeClick }) => {
               width: "96px",
               height: "96px",
               left: "-8px",
-              top: "-8px",
+              top: "-6px",
               perspective: "20em",
               transform: "rotateX(26.87deg)",
               boxShadow: "6px 4px 4px 1px #000",
