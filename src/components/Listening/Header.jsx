@@ -16,7 +16,7 @@ const Header = ({ onToggleTips }) => {
             </Link>
           </div>
           <button
-            className="bg-[#ffc515] text-gray-800 border border-gray-300 px-3 py-2 rounded-lg font-semibold text-xs sm:text-sm cursor-pointer transition-all duration-300 hover:bg-[#ffd84d] hover:border-gray-400"
+            className=" text-gray-800 border border-gray-800 px-3 py-2 rounded-lg font-semibold text-xs sm:text-sm cursor-pointer transition-all duration-300 hover:bg-[#ffd84d] hover:border-gray-400"
             onClick={onToggleTips}
           >
             Tips & Help
