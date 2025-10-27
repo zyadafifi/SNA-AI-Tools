@@ -89,9 +89,9 @@ export const HomeNav = () => {
                 key={idx}
                 className={`${
                   idx == 0
-                    ? "bg-[var(--secondary-color)]"
-                    : "hover:bg-[var(--secondary-color)] "
-                } flex flex-col items-center gap-1 hover:bg-[var(--secondary-color)] p-3 rounded-lg transition`}
+                    ? "bg-[var(--primary-color)]"
+                    : "hover:bg-[var(--primary-color)]"
+                } flex flex-col items-center gap-1 hover:bg-[var(--primary-color)] p-3 rounded-lg transition`}
               >
                 <div style={{ width: item.width }}>
                   <img className="w-full" src={item.icon} alt="nav icon" />
