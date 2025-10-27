@@ -123,6 +123,20 @@ export const ShowLessonsBySlugPronounce = ({ pronounceLesson }) => {
     return !previousConversationProgress?.completed;
   };
 
+  // Open conversation
+  const openConversation = (conversationId, topicId) => {
+    // Check if mobile device
+    if (isMobile) {
+      navigate(
+        `/pronounce/mobile/${currentLesson.lessonNumber}/${topicId}/${conversationId}`
+      );
+    } else {
+      navigate(
+        `/pronounce/desktop/${currentLesson.lessonNumber}/${topicId}/${conversationId}`
+      );
+    }
+  };
+
   return (
     <div className="container container-md">
       <div className="bg-gradient-to-br border-2 border-gray-400 p-6 rounded-3xl mb-5 hover:shadow-2xl transition-all duration-300">
@@ -280,9 +294,11 @@ export const ShowLessonsBySlugPronounce = ({ pronounceLesson }) => {
                             const wrapperProps = conversationLocked
                               ? {}
                               : {
-                                  to: `/pronounce/desktop/${pronounceLesson.lessonNumber}/${topic.id}/${conversation.id}`,
+                                  to:
+                                    window.innerWidth <= 768
+                                      ? `/pronounce/mobile/${pronounceLesson.lessonNumber}/${topic.id}/${conversation.id}`
+                                      : `/pronounce/desktop/${pronounceLesson.lessonNumber}/${topic.id}/${conversation.id}`,
                                 };
-
                             return (
                               <ConversationWrapper
                                 {...wrapperProps}
