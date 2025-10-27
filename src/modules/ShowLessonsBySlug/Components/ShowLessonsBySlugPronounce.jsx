@@ -193,6 +193,22 @@ export const ShowLessonsBySlugPronounce = ({ pronounceLesson }) => {
                             icon={getTopicIcon(topic.icon)}
                           />
                         )}
+                        {/* Completed Badge */}
+                        {!isLocked && (
+                          <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center border-2 border-[var(--third-color)]">
+                            <svg
+                              className="w-3 h-3 text-white"
+                              fill="none"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                          </div>
+                        )}
                       </div>
 
                       {/* Content */}
@@ -300,6 +316,23 @@ export const ShowLessonsBySlugPronounce = ({ pronounceLesson }) => {
                                             icon={getTopicIcon(topic.icon)}
                                           />
                                         )}
+                                        {/* Completed Badge */}
+                                        {conversationProgress?.completed &&
+                                          !isLocked && (
+                                            <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center border-2 border-[var(--third-color)]">
+                                              <svg
+                                                className="w-3 h-3 text-white"
+                                                fill="none"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                              >
+                                                <path d="M5 13l4 4L19 7"></path>
+                                              </svg>
+                                            </div>
+                                          )}
                                       </div>
 
                                       {/* Conversation Info */}

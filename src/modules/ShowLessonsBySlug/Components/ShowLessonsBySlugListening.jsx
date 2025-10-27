@@ -2,8 +2,29 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { ImHeadphones } from "react-icons/im";
 import { IoPlay } from "react-icons/io5";
+import { useEffect, useState } from "react";
 
 export const ShowLessonsBySlugListening = ({ listeningLesson }) => {
+  const [lessonStatus, setLessonStatus] = useState({
+    isCompleted: false,
+    isUnlocked: true,
+    progress: 0,
+  });
+
+  useEffect(() => {
+    // قراءة الحالة من localStorage
+    const savedProgress = localStorage.getItem("sna-lesson-progress");
+    if (savedProgress && listeningLesson?.id) {
+      const progressArray = JSON.parse(savedProgress);
+      const lesson = progressArray.find(
+        (item) => item.id === listeningLesson.id
+      );
+      if (lesson) {
+        setLessonStatus(lesson);
+      }
+    }
+  }, [listeningLesson?.id]);
+
   return (
     <div className="container container-md">
       <Link
@@ -20,6 +41,22 @@ export const ShowLessonsBySlugListening = ({ listeningLesson }) => {
             <div className="w-16 h-16 bg-gradient-to-br from-[var(--primary-color)] to-[var(--secondary-color)] flex items-center justify-center rounded-2xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
               <ImHeadphones className="text-3xl text-[var(--main-text-color)]" />
             </div>
+            {/* Completed Badge */}
+            {lessonStatus.isCompleted && (
+              <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center border-2 border-[var(--third-color)]">
+                <svg
+                  className="w-3 h-3 text-white"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+            )}
           </div>
 
           {/* Center: Content */}
@@ -34,13 +71,20 @@ export const ShowLessonsBySlugListening = ({ listeningLesson }) => {
               {listeningLesson?.description}
             </p>
 
-            {/* Progress Indicator (Optional) */}
+            {/* Progress Indicator */}
             <div className="flex items-center gap-2 mt-3">
               <div className="flex-1 h-1.5 bg-gray-300 rounded-full overflow-hidden max-w-[200px]">
-                <div className="h-full w-0 bg-[var(--primary-color)] rounded-full group-hover:w-full transition-all duration-1000" />
+                <div
+                  className="h-full bg-[var(--primary-color)] rounded-full transition-all duration-1000"
+                  style={{ width: `${lessonStatus.progress}%` }}
+                />
               </div>
               <span className="text-xs text-[var(--main-text-color)] font-medium">
-                Start
+                {lessonStatus.isCompleted
+                  ? "Completed"
+                  : lessonStatus.progress > 0
+                  ? `${lessonStatus.progress}%`
+                  : "Start"}
               </span>
             </div>
           </div>

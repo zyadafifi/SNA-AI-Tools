@@ -61,8 +61,8 @@ const LessonNode = ({ node, position, onNodeClick }) => {
         <div className="absolute -top-20 left-1/2 transform -translate-x-1/2">
           <div className="bg-white border-2 border-yellow-500 rounded-full px-4 py-2 shadow-lg whitespace-nowrap">
             <div className="text-center">
-              <span className="text-orange-500 font-bold text-sm block">
-                ابدأ
+              <span className="arabic_font text-orange-500 font-bold text-sm block">
+                ابدأ {nextCategoryLabel}
               </span>
             </div>
           </div>
@@ -186,11 +186,12 @@ const ZigzagPathUI = ({ nodes, onNodeClick = () => {} }) => {
 };
 
 // ============================================
-// DATA LOGIC - Progress tracking
+// DATA LOGIC - Progress tracking المُحدّث
 // ============================================
-const useProgressData = () => {
+const useProgressData = (lengths) => {
   const getProgressFromLocalStorage = () => {
     try {
+      // ====== Listening Progress ======
       const listeningProgress = JSON.parse(
         localStorage.getItem("sna-lesson-progress") || "[]"
       );
@@ -198,6 +199,7 @@ const useProgressData = () => {
         (lesson) => lesson.isCompleted
       ).length;
 
+      // ====== Pronunciation Progress ======
       const pronunciationData = JSON.parse(
         localStorage.getItem("pronunciationMasterProgress") || "{}"
       );
@@ -206,18 +208,28 @@ const useProgressData = () => {
         (topic) => topic.completed
       ).length;
 
+      // ====== Reading Progress ======
       const readingProgress = JSON.parse(
         localStorage.getItem("quizProgress") || "{}"
       );
-      const readingCompleted = Object.keys(readingProgress).length;
-      console.log(Object.keys(readingProgress));
-      
+      const readingCompleted = Object.values(readingProgress).filter(
+        (lesson) => lesson.completed
+      ).length;
+
+      // ====== Writing Progress ======
       const writingProgress = JSON.parse(
         localStorage.getItem("sna-writing-tool-progress") || "{}"
       );
       const writingCompleted = Object.values(writingProgress).filter(
-        (item) => item.isUnlocked
+        (item) => item.phase == "questions-completed"
       ).length;
+
+      console.log("📊 Progress Summary:", {
+        listening: `${listeningCompleted}/${lengths.listening}`,
+        pronunciation: `${pronunciationCompleted}/${lengths.pronounce}`,
+        reading: `${readingCompleted}/${lengths.reading}`,
+        writing: `${writingCompleted}/${lengths.writing}`,
+      });
 
       return {
         listening: listeningCompleted,
@@ -240,6 +252,7 @@ const useProgressData = () => {
 };
 
 const calculateNextStepLogic = (completedCounts, lengths) => {
+  // نحسب أقل عدد دروس مكتملة في كل الأقسام
   const minCompleted = Math.min(
     completedCounts.listening,
     completedCounts.pronunciation,
@@ -247,38 +260,54 @@ const calculateNextStepLogic = (completedCounts, lengths) => {
     completedCounts.writing
   );
 
-  const currentLesson = minCompleted + 1;
+  // الخطوة الحالية = أقل عدد دروس مكتملة
+  const currentStep = minCompleted;
 
+  // نشوف كل قسم محتاج يكمل الدرس رقم كام
   const needsCompletion = {
     listening:
-      completedCounts.listening < currentLesson &&
-      currentLesson <= lengths.listening,
+      completedCounts.listening < currentStep + 1 &&
+      currentStep + 1 <= lengths.listening,
     pronunciation:
-      completedCounts.pronunciation < currentLesson &&
-      currentLesson <= lengths.pronounce,
+      completedCounts.pronunciation < currentStep + 1 &&
+      currentStep + 1 <= lengths.pronounce,
     reading:
-      completedCounts.reading < currentLesson &&
-      currentLesson <= lengths.reading,
+      completedCounts.reading < currentStep + 1 &&
+      currentStep + 1 <= lengths.reading,
     writing:
-      completedCounts.writing < currentLesson &&
-      currentLesson <= lengths.writing,
+      completedCounts.writing < currentStep + 1 &&
+      currentStep + 1 <= lengths.writing,
   };
 
+  // نحدد أول قسم محتاج إكمال
   let nextCategory = null;
   if (needsCompletion.listening) nextCategory = "listening";
   else if (needsCompletion.pronunciation) nextCategory = "pronunciation";
   else if (needsCompletion.reading) nextCategory = "reading";
   else if (needsCompletion.writing) nextCategory = "writing";
 
+  // نشوف لو كل الأقسام خلصت الخطوة الحالية
   const allCurrentCompleted = !Object.values(needsCompletion).some(Boolean);
-  const nextNodeIndex = allCurrentCompleted ? minCompleted + 1 : minCompleted;
 
-  return {
-    currentLesson,
+  // الـ node اللي هيكون active
+  const nextNodeIndex = allCurrentCompleted ? minCompleted : minCompleted;
+
+  console.log("🎯 Next Step Logic:", {
+    currentStep: currentStep + 1,
     minCompleted,
     needsCompletion,
     nextCategory,
     nextNodeIndex,
+    allCurrentCompleted,
+  });
+
+  return {
+    currentStep: currentStep + 1,
+    minCompleted,
+    needsCompletion,
+    nextCategory,
+    nextNodeIndex,
+    allCurrentCompleted,
   };
 };
 
@@ -365,13 +394,15 @@ export function HomeMainPlan() {
     [data]
   );
 
-  const completedCounts = useProgressData();
+  const completedCounts = useProgressData(lengths);
 
   const nextStepInfo = useMemo(
     () => calculateNextStepLogic(completedCounts, lengths),
     [completedCounts, lengths]
   );
 
+  console.log(nextStepInfo);
+  
 
   const isLoading = Object.values(loading).some(Boolean);
   const hasErrors = Object.values(errors).some(Boolean);

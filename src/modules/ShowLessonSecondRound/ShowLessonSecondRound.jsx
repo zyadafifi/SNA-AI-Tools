@@ -1121,7 +1121,10 @@ export function ShowLessonSecondRound() {
             <div className="flex items-center justify-between px-4 py-2">
               {/* Left: play / skip */}
               <div className="flex items-center gap-2">
-                <div className={`tooltip tooltip-success w-10 h-10 rounded-full animate-pulse tooltip-open arabic_font`} data-tip={`${isReading ? "إيقاف" : "ابدأ الاستماع"}`}>
+                <div
+                  className={`tooltip tooltip-warning w-10 h-10 rounded-full animate-pulse tooltip-open arabic_font`}
+                  data-tip={`${isReading ? "إيقاف" : "ابدأ الاستماع"}`}
+                >
                   <button
                     onClick={togglePlayPause}
                     className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[var(--primary-color)] text-white hover:bg-[var(--secondary-color)] transition-colors"

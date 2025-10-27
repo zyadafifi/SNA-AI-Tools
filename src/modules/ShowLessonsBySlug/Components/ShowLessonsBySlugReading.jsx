@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MdMenuBook } from "react-icons/md";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,6 +9,24 @@ import { IoPlay } from "react-icons/io5";
 
 export const ShowLessonsBySlugReading = ({ readingLesson }) => {
   const [openLessonId, setOpenLessonId] = useState(null);
+  const [quizProgress, setQuizProgress] = useState({});
+
+  // Load quiz progress from localStorage
+  useEffect(() => {
+    const loadQuizProgress = () => {
+      try {
+        const storedProgress = localStorage.getItem("quizProgress");
+        if (storedProgress) {
+          const parsedProgress = JSON.parse(storedProgress);
+          setQuizProgress(parsedProgress);
+        }
+      } catch (error) {
+        console.error("Error loading quiz progress:", error);
+      }
+    };
+
+    loadQuizProgress();
+  }, []);
 
   // Toggle accordion
   const toggleLesson = (lessonId, isLocked) => {
@@ -16,11 +34,27 @@ export const ShowLessonsBySlugReading = ({ readingLesson }) => {
     setOpenLessonId(openLessonId === lessonId ? null : lessonId);
   };
 
-  // Check if lesson is locked (first lesson always unlocked)
+  // Check if lesson is locked based on quiz progress
   const isLessonLocked = (lessonId, lessonIndex) => {
+    // First lesson is always unlocked
     if (lessonIndex === 0) return false;
-    // يمكن تضيف logic لل progress هنا
-    return false;
+
+    // Get the previous lesson
+    const previousLesson = readingLesson.lessons[lessonIndex - 1];
+    if (!previousLesson) return false;
+
+    // Check if previous lesson quiz is completed
+    const progressKey = `level-${readingLesson.id}-lesson-${previousLesson.id}`;
+    const previousLessonProgress = quizProgress[progressKey];
+
+    // Unlock if previous lesson is completed
+    return !previousLessonProgress || !previousLessonProgress.completed;
+  };
+
+  // Check if current lesson is completed
+  const isLessonCompleted = (lessonId) => {
+    const progressKey = `level-${readingLesson.id}-lesson-${lessonId}`;
+    return quizProgress[progressKey]?.completed || false;
   };
 
   return (
@@ -59,6 +93,7 @@ export const ShowLessonsBySlugReading = ({ readingLesson }) => {
             {readingLesson.lessons?.map((lesson, lessonIndex) => {
               const isOpen = openLessonId === lesson.id;
               const isLocked = isLessonLocked(lesson.id, lessonIndex);
+              const isCompleted = isLessonCompleted(lesson.id);
 
               return (
                 <div
@@ -95,6 +130,23 @@ export const ShowLessonsBySlugReading = ({ readingLesson }) => {
                             icon={faBook}
                           />
                         )}
+                        
+                        {/* Completed Badge */}
+                        {isCompleted && !isLocked && (
+                          <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center border-2 border-[var(--third-color)]">
+                            <svg
+                              className="w-3 h-3 text-white"
+                              fill="none"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                          </div>
+                        )}
                       </div>
 
                       {/* Content */}
@@ -103,6 +155,11 @@ export const ShowLessonsBySlugReading = ({ readingLesson }) => {
                           <h3 className="text-lg sm:text-xl font-bold text-white line-clamp-1">
                             {lesson.title}
                           </h3>
+                          {isCompleted && (
+                            <span className="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full">
+                              ✓ Completed
+                            </span>
+                          )}
                         </div>
                         <p className="text-sm text-gray-400 line-clamp-1 mb-2">
                           {isLocked
@@ -159,7 +216,7 @@ export const ShowLessonsBySlugReading = ({ readingLesson }) => {
                                 {/* Story Info */}
                                 <div className="flex-1 min-w-0">
                                   <h4 className="text-white font-semibold line-clamp-1 text-sm sm:text-base mb-1">
-                                    Start Reading
+                                    {isCompleted ? "Review Story" : "Start Reading"}
                                   </h4>
                                   <p className="text-xs text-gray-400">
                                     Read the full story with word definitions
