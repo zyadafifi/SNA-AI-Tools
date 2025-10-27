@@ -1,4 +1,4 @@
-import logoImage from "/assets/images/logo.png";
+import logoImage from "/assets/images/sna ddd.png";
 import homeIcon from "/assets/images/icons/fbe0c187341c280e161f76fb4cbda1d7.svg";
 import readingIcon from "/assets/images/icons/234635.png";
 import listeningIcon from "/assets/images/icons/headphones-listening.svg";
@@ -55,9 +55,9 @@ export const HomeNav = () => {
   return (
     <>
       {/* Right Sidebar - Hidden on mobile */}
-      <aside className="hidden bg-white md:block w-64 p-4 sticky top-0 right-0 h-screen bottom border-l-2 border-gray-100">
+      <aside className="hidden overflow-y-auto bg-white md:block w-64 p-4 sticky top-0 right-0 h-screen bottom border-l-2 border-gray-100">
         <div className="flex justify-center">
-          <Link to="/" className="w-44 my-8 block">
+          <Link to="/" className="w-36 my-5 block">
             <img className="w-full" src={logoImage} alt="logo" />
           </Link>
         </div>
@@ -69,14 +69,12 @@ export const HomeNav = () => {
                 key={idx}
                 className={`w-full mb-4 rounded-xl py-2 p-6 flex items-center justify-end gap-5 group transition-all duration-300 ${
                   idx == 0
-                    ? "bg-[var(--secondary-color)]"
-                    : "hover:bg-[var(--secondary-color)] "
+                    ? "bg-[var(--primary-color)]"
+                    : "hover:bg-[var(--primary-color)] "
                 }`}
               >
                 <span
-                  className={`${
-                    idx == 0 ? "text-white" : ""
-                  } text-black arabic_font group-hover:text-white transition`}
+                  className={`text-black arabic_font transition`}
                 >
                   {item.label}
                 </span>
