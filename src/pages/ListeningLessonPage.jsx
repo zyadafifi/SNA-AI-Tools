@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Headphones, PenTool } from "lucide-react";
 import dataService from "../services/dataService";
 import ListeningPhase from "../components/Listening/LessonPhase/ListeningPhase";
 import DictationPhase from "../components/Listening/LessonPhase/DictationPhase";
@@ -37,8 +38,8 @@ export const ListeningLessonPage = () => {
   }
 
   const phases = [
-    { id: "listening", name: "Listening", icon: "🎧" },
-    { id: "dictation", name: "Dictation", icon: "✏️" },
+    { id: "listening", name: "Listening", icon: Headphones },
+    { id: "dictation", name: "Dictation", icon: PenTool },
   ];
 
   const handleLessonComplete = () => {
@@ -90,28 +91,31 @@ export const ListeningLessonPage = () => {
 
         {/* Phase Navigation */}
         <div className="flex gap-2 mb-4 sm:mb-6 mt-6 ">
-          {phases.map((phase) => (
-            <div
-              key={phase.id}
-              onClick={() => setCurrentPhase(phase.id)}
-              className={`flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-3 rounded-xl cursor-pointer transition-all duration-300 font-semibold text-xs sm:text-sm flex-1 justify-center touch-manipulation ${
-                currentPhase === phase.id
-                  ? "text-white shadow-[0_4px_12px_rgba(255,197,21,0.3)]"
-                  : "bg-white text-gray-600 border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.1)]"
-              }`}
-              style={
-                currentPhase === phase.id
-                  ? {
-                      background:
-                        "linear-gradient(135deg, #ffc515 0%, #ffd84d 50%, #ffc515 100%)",
-                    }
-                  : {}
-              }
-            >
-              <span className="text-sm sm:text-base">{phase.icon}</span>
-              <span className="text-xs sm:text-sm">{phase.name}</span>
-            </div>
-          ))}
+          {phases.map((phase) => {
+            const IconComponent = phase.icon;
+            return (
+              <div
+                key={phase.id}
+                onClick={() => setCurrentPhase(phase.id)}
+                className={`flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-3 rounded-xl cursor-pointer transition-all duration-300 font-semibold text-xs sm:text-sm flex-1 justify-center touch-manipulation ${
+                  currentPhase === phase.id
+                    ? "text-white shadow-[0_4px_12px_rgba(255,197,21,0.3)]"
+                    : "bg-white text-gray-600 border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.1)]"
+                }`}
+                style={
+                  currentPhase === phase.id
+                    ? {
+                        background:
+                          "linear-gradient(135deg, #ffc515 0%, #ffd84d 50%, #ffc515 100%)",
+                      }
+                    : {}
+                }
+              >
+                <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                <span className="text-xs sm:text-sm">{phase.name}</span>
+              </div>
+            );
+          })}
         </div>
 
         {/* Phase Content */}
