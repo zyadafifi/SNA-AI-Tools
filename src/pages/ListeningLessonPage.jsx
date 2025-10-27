@@ -53,28 +53,34 @@ export const ListeningLessonPage = () => {
 
       <div className="max-w-md mx-auto px-4 py-4 sm:max-w-lg md:max-w-2xl lg:max-w-4xl">
         {/* Lesson Overview Card */}
-        <div className="bg-[#ffc515] rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6 shadow-[0_8px_25px_rgba(255,197,21,0.3)]">
-          <div className="text-center text-white">
+        <div className="bg-[linear-gradient(135deg,_#e6e6e6_0%,_#ffe680_100%)] rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6 shadow-[0_8px_25px_rgba(255,197,21,0.3)]">
+          <div className="text-center text-gray-600">
             <h1 className="text-xl sm:text-2xl font-bold mb-2 leading-tight">
-              {lesson.title}
+              {lesson.title.includes(" - ") ? (
+                <>
+                  <div>{lesson.title.split(" - ")[0]}</div>
+                  <div>_ {lesson.title.split(" - ")[1]}</div>
+                </>
+              ) : (
+                lesson.title
+              )}
             </h1>
-            <p className="text-xs sm:text-sm text-white/90 mb-4 sm:mb-6 leading-relaxed">
+            <p className="text-xs sm:text-sm text-gray-600/90 mb-4 sm:mb-6 leading-relaxed">
               {lesson.description}
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 sm:py-3 border border-white/30 flex-1">
-                <span className="text-white font-semibold text-xs sm:text-sm">
+            <div className="flex flex-col items-center sm:flex-row sm:justify-center gap-2 sm:gap-3">
+              <div className="bg-white/20 backdrop-blur-sm rounded-3xl px-3 py-3 border-2 border-gray-800/30 inline-flex flex-1 justify-center min-w-0 w-full max-w-[140px]">
+                <span className="text-gray-600 font-semibold text-xs sm:text-sm truncate">
                   {lesson.duration}
                 </span>
               </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 sm:py-3 border border-white/30 flex-1">
-                <span className="text-white font-semibold text-xs sm:text-sm">
+              <div className="bg-white/20 backdrop-blur-sm rounded-3xl px-3 py-3 border-2 border-gray-800/30 inline-flex flex-1 justify-center min-w-0 w-full max-w-[140px]">
+                <span className="text-gray-600 font-semibold text-xs sm:text-sm truncate">
                   {lesson.exercises.length} exercises
                 </span>
               </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 sm:py-3 border border-white/30 flex-1">
-                <span className="text-white font-semibold text-xs sm:text-sm">
+              <div className="bg-white/20 backdrop-blur-sm rounded-3xl px-3 py-3 border-2 border-gray-800/30 inline-flex flex-1 justify-center min-w-0 w-full max-w-[140px]">
+                <span className="text-gray-600 font-semibold text-xs sm:text-sm truncate">
                   Lesson {lesson.id} of 60
                 </span>
               </div>
@@ -83,7 +89,7 @@ export const ListeningLessonPage = () => {
         </div>
 
         {/* Phase Navigation */}
-        <div className="flex gap-2 mb-4 sm:mb-6">
+        <div className="flex gap-2 mb-4 sm:mb-6 mt-6 ">
           {phases.map((phase) => (
             <div
               key={phase.id}
