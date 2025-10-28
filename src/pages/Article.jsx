@@ -42,7 +42,7 @@ export default function Article() {
     fetch("/assets/pronounceData.json")
       .then((res) => res.json())
       .then((data) => {
-        setArticles(data.articles);
+        setArticles(data);
         setLoading(false);
       })
       .catch((error) => {
@@ -52,7 +52,6 @@ export default function Article() {
   }, []);
 
   const article = articles[topicId] || defaultArticle;
-
   if (loading) {
     return (
       <Layout>

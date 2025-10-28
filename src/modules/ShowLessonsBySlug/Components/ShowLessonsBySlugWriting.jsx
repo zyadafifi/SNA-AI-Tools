@@ -67,7 +67,9 @@ export const ShowLessonsBySlugWriting = ({ writingLesson }) => {
         to={
           lessonStatus.phase == "not-started"
             ? `/article/${writingLesson?.id}`
-            : `/questions/${writingLesson?.id}`
+            : lessonStatus.phase == "article-read"
+            ? `/questions/${writingLesson?.id}`
+            : `/results/${writingLesson?.id}`
         }
         onClick={() => startTopic(writingLesson.id)}
         className={`block group relative overflow-hidden border-2 p-6 rounded-3xl mb-5 hover:shadow-2xl transition-all duration-300 ${
