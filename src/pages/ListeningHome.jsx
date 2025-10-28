@@ -71,53 +71,69 @@ export const ListeningHome = () => {
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Hero Section */}
-        <div className="bg-gradient-to-r from-[#f5e6d3] to-[#fef3e2] rounded-2xl sm:rounded-3xl p-5 sm:p-8 mb-6 sm:mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] text-center">
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#334155] mb-3 sm:mb-4">
-            SNA Academy
-          </h1>
-          <p className="text-sm sm:text-base text-[#64748b] mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Master fundamental English vowel sounds with clear pronunciation
-          </p>
+        <div className="relative">
+          <div className="bg-gradient-to-r from-[#f5e6d3] to-[#fef3e2] rounded-2xl sm:rounded-3xl p-8 sm:p-12 pb-24 sm:pb-28 mb-10 shadow-[0_4px_20px_rgba(0,0,0,0.08)] text-center">
+            <h1 className="text-3xl sm:text-4xl font-bold text-[#334155] mb-3 sm:mb-4">
+              SNA Academy
+            </h1>
+            <p className="text-base sm:text-lg text-[#64748b] mb-0 max-w-2xl mx-auto">
+              Master fundamental English vowel sounds with clear pronunciation
+            </p>
 
-          {/* Progress Cards with Connecting Lines */}
-          <div className="relative flex items-center justify-center mt-2">
-            {/* Left connecting line */}
+            {/* PROGRESS – two cards with pill-shaped inner edges and square outer edges */}
             <div
-              className="absolute left-0 right-1/2 h-px bg-gray-200 shadow-[inset_0_-1px_0_rgba(0,0,0,0.04)] -z-0 hidden sm:block"
+              className="
+        absolute left-1/2 -translate-x-1/2 bottom-6
+        w-[calc(100%+3rem)] sm:w-[calc(100%+5rem)] lg:w-[calc(100%+8rem)]
+        max-w-none
+      "
               aria-hidden="true"
-            />
-            {/* Right connecting line */}
-            <div
-              className="absolute left-1/2 right-0 h-px bg-gray-200 shadow-[inset_0_-1px_0_rgba(0,0,0,0.04)] -z-0 hidden sm:block"
-              aria-hidden="true"
-            />
+            >
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                {/* LEFT card — pill-shaped on right (inner edge), square on left (outer edge) */}
+                <div
+                  className="
+            bg-white rounded-r-full rounded-l-2xl
+            border-t border-b border-r border-slate-200
+            shadow-[0_12px_30px_rgba(0,0,0,0.12)]
+            h-16 sm:h-18 flex items-center justify-end px-8 sm:px-12
+          "
+                  aria-label={`${progress.completed} completed lessons`}
+                >
+                  <div className="text-center leading-tight flex flex-col justify-center">
+                    <div className="text-lg sm:text-xl font-semibold text-slate-700">
+                      {progress.completed}
+                    </div>
+                    <div className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                      completed
+                    </div>
+                  </div>
+                </div>
 
-            <div className="relative z-10 flex items-center gap-4 sm:gap-6">
-              <div
-                className="bg-white rounded-full border border-gray-200 px-6 sm:px-8 py-3 sm:py-4 min-w-[120px] sm:min-w-[140px] text-center flex flex-col justify-center items-center"
-                aria-label={`${progress.completed} completed lessons`}
-              >
-                <div className="text-base sm:text-lg font-semibold text-slate-700">
-                  {progress.completed}
-                </div>
-                <div className="mt-1 text-[11px] sm:text-xs text-slate-500">
-                  completed
-                </div>
-              </div>
-              <div
-                className="bg-white rounded-full border border-gray-200 px-6 sm:px-8 py-3 sm:py-4 min-w-[120px] sm:min-w-[140px] text-center flex flex-col justify-center items-center"
-                aria-label={`${
-                  progress.total - progress.completed
-                } remaining lessons`}
-              >
-                <div className="text-base sm:text-lg font-semibold text-slate-700">
-                  {progress.total - progress.completed}
-                </div>
-                <div className="mt-1 text-[11px] sm:text-xs text-slate-500">
-                  Remaining
+                {/* RIGHT card — pill-shaped on left (inner edge), square on right (outer edge) */}
+                <div
+                  className="
+            bg-white rounded-l-full rounded-r-2xl
+            border-t border-b border-l border-slate-200
+            shadow-[0_12px_30px_rgba(0,0,0,0.12)]
+            h-16 sm:h-18 flex items-center justify-start px-8 sm:px-12
+          "
+                  aria-label={`${
+                    progress.total - progress.completed
+                  } remaining lessons`}
+                >
+                  <div className="text-center leading-tight flex flex-col justify-center">
+                    <div className="text-lg sm:text-xl font-semibold text-slate-700">
+                      {progress.total - progress.completed}
+                    </div>
+                    <div className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                      Remaining
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            {/* /PROGRESS */}
           </div>
         </div>
 
