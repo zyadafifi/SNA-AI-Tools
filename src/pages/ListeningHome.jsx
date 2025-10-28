@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import dataService from "../services/dataService";
 import LessonCard from "../components/Listening/LessonCard";
-import Header from "../components/Listening/Header";
 import TipsPanel from "../components/Listening/TipsPanel";
 import useProgress from "../hooks/useProgress";
-
+import snaLogo from "/assets/images/sna logo.png";
 export const ListeningHome = () => {
   const [showTips, setShowTips] = useState(false);
   const [lessons, setLessons] = useState([]);
@@ -66,45 +65,56 @@ export const ListeningHome = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header onToggleTips={() => setShowTips(!showTips)} />
-
+    <div
+      className="min-h-screen"
+      style={{
+        background: 'url("/assets/images/gradient-background.png") #fff',
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "left",
+      }}
+    >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Hero Section */}
         <div className="relative">
-          <div className="bg-gradient-to-r from-[#f5e6d3] to-[#fef3e2] rounded-2xl sm:rounded-3xl p-8 sm:p-12 pb-24 sm:pb-28 mb-10 shadow-[0_4px_20px_rgba(0,0,0,0.08)] text-center">
-            <h1 className="text-3xl sm:text-4xl font-bold text-[#334155] mb-3 sm:mb-4">
-              SNA Academy
-            </h1>
-            <p className="text-base sm:text-lg text-[#64748b] mb-0 max-w-2xl mx-auto">
-              Master fundamental English vowel sounds with clear pronunciation
+          <div className="bg-gradient-to-br from-[#f8edd6]/30 via-[#d3995e]/20 to-[#96b0c0]/25 rounded-xl sm:rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-10 xl:p-14 pb-20 sm:pb-24 lg:pb-28 xl:pb-32 mb-6 sm:mb-8 lg:mb-10 shadow-[0_4px_20px_rgba(0,0,0,0.08)] text-center">
+            <div className="flex justify-center mb-2 sm:mb-3 lg:mb-4">
+              <img
+                src={snaLogo}
+                alt="SNA Academy"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto"
+              />
+            </div>
+            <p className="text-sm sm:text-base lg:text-lg text-[#64748b] mb-0 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
+              Master fundamental English vowel
+              <br /> sounds with clear pronunciation
             </p>
 
             {/* PROGRESS – two cards with pill-shaped inner edges and square outer edges */}
             <div
               className="
-        absolute left-1/2 -translate-x-1/2 bottom-6
-        w-[calc(100%+3rem)] sm:w-[calc(100%+5rem)] lg:w-[calc(100%+8rem)]
-        max-w-none
+        absolute left-1/2 -translate-x-1/2 bottom-3 sm:bottom-4 lg:bottom-6
+        w-screen sm:w-[calc(100%+3rem)] lg:w-[calc(100%+5rem)] xl:w-[calc(100%+8rem)]
+        max-w-none px-0 sm:px-0
       "
               aria-hidden="true"
             >
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
                 {/* LEFT card — pill-shaped on right (inner edge), square on left (outer edge) */}
                 <div
                   className="
-            bg-white rounded-r-full rounded-l-2xl
+            bg-white rounded-r-full rounded-l-xl sm:rounded-l-2xl
             border-t border-b border-r border-slate-200
-            shadow-[0_12px_30px_rgba(0,0,0,0.12)]
-            h-16 sm:h-18 flex items-center justify-end px-8 sm:px-12
+            shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)]
+            h-12 sm:h-14 lg:h-16 xl:h-18 flex items-center justify-end px-4 sm:px-6 lg:px-8 xl:px-12
           "
                   aria-label={`${progress.completed} completed lessons`}
                 >
                   <div className="text-center leading-tight flex flex-col justify-center">
-                    <div className="text-lg sm:text-xl font-semibold text-slate-700">
+                    <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-slate-700">
                       {progress.completed}
                     </div>
-                    <div className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                    <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
                       completed
                     </div>
                   </div>
@@ -113,20 +123,20 @@ export const ListeningHome = () => {
                 {/* RIGHT card — pill-shaped on left (inner edge), square on right (outer edge) */}
                 <div
                   className="
-            bg-white rounded-l-full rounded-r-2xl
+            bg-white rounded-l-full rounded-r-xl sm:rounded-r-2xl
             border-t border-b border-l border-slate-200
-            shadow-[0_12px_30px_rgba(0,0,0,0.12)]
-            h-16 sm:h-18 flex items-center justify-start px-8 sm:px-12
+            shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)]
+            h-12 sm:h-14 lg:h-16 xl:h-18 flex items-center justify-start px-4 sm:px-6 lg:px-8 xl:px-12
           "
                   aria-label={`${
                     progress.total - progress.completed
                   } remaining lessons`}
                 >
                   <div className="text-center leading-tight flex flex-col justify-center">
-                    <div className="text-lg sm:text-xl font-semibold text-slate-700">
+                    <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-slate-700">
                       {progress.total - progress.completed}
                     </div>
-                    <div className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                    <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
                       Remaining
                     </div>
                   </div>
