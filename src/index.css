@@ -147,6 +147,22 @@ a {
     }
   }
 
+  .animate-shine {
+    animation: shine 3s ease-in-out infinite;
+  }
+
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%) skewX(-12deg);
+    }
+    50% {
+      transform: translateX(100%) skewX(-12deg);
+    }
+    100% {
+      transform: translateX(100%) skewX(-12deg);
+    }
+  }
+
   /* Custom slider styling for AudioControls */
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
