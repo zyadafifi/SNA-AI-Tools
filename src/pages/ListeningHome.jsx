@@ -17,7 +17,7 @@ export const ListeningHome = () => {
     percentage: 0,
   });
   console.log(dataService);
-  
+
   const lessonsPerPage = 20;
   const { getProgress } = useProgress();
 
@@ -66,42 +66,55 @@ export const ListeningHome = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       <Header onToggleTips={() => setShowTips(!showTips)} />
 
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 py-6 sm:py-8">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Hero Section */}
-        <div className="relative overflow-hidden bg-[linear-gradient(135deg,#63a29b_0%,#275151_100%)] rounded-xl sm:rounded-2xl py-6 sm:py-10 mb-6 sm:mb-8 shadow-[0_10px_30px_rgba(39,81,81,0.15)] text-center text-white before:absolute before:-top-1/2 before:-left-1/2 before:w-[200%] before:h-[200%] before:bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,transparent_70%)] before:animate-float">
-          <div className="absolute inset-0 bg-black/10"></div>
-          <div className="relative z-10">
-            <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 bg-[linear-gradient(135deg,#ffffff_0%,#e6f7f5_100%)] bg-clip-text text-transparent leading-tight">
-                SNA Academy
-              </h1>
-              <p className="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-[800px] mx-auto mb-6 sm:mb-8 leading-relaxed font-normal px-4">
-                Master English through Interactive Listening and Dictation
-              </p>
+        <div className="bg-gradient-to-r from-[#f5e6d3] to-[#fef3e2] rounded-2xl sm:rounded-3xl p-5 sm:p-8 mb-6 sm:mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] text-center">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#334155] mb-3 sm:mb-4">
+            SNA Academy
+          </h1>
+          <p className="text-sm sm:text-base text-[#64748b] mb-6 sm:mb-8 max-w-2xl mx-auto">
+            Master fundamental English vowel sounds with clear pronunciation
+          </p>
 
-              {/* Compact Progress */}
-              <div className="bg-white/15 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 max-w-sm sm:max-w-md mx-auto border border-white/20">
-                <div className="flex items-center justify-center gap-6 sm:gap-8">
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
-                      {progress.completed}
-                    </div>
-                    <div className="text-emerald-300 font-medium text-xs uppercase tracking-wide">
-                      Completed
-                    </div>
-                  </div>
+          {/* Progress Cards with Connecting Lines */}
+          <div className="relative flex items-center justify-center mt-2">
+            {/* Left connecting line */}
+            <div
+              className="absolute left-0 right-1/2 h-px bg-gray-200 shadow-[inset_0_-1px_0_rgba(0,0,0,0.04)] -z-0 hidden sm:block"
+              aria-hidden="true"
+            />
+            {/* Right connecting line */}
+            <div
+              className="absolute left-1/2 right-0 h-px bg-gray-200 shadow-[inset_0_-1px_0_rgba(0,0,0,0.04)] -z-0 hidden sm:block"
+              aria-hidden="true"
+            />
 
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
-                      {progress.total - progress.completed}
-                    </div>
-                    <div className="text-slate-300 font-medium text-xs uppercase tracking-wide">
-                      Remaining
-                    </div>
-                  </div>
+            <div className="relative z-10 flex items-center gap-4 sm:gap-6">
+              <div
+                className="bg-white rounded-full border border-gray-200 px-6 sm:px-8 py-3 sm:py-4 min-w-[120px] sm:min-w-[140px] text-center flex flex-col justify-center items-center"
+                aria-label={`${progress.completed} completed lessons`}
+              >
+                <div className="text-base sm:text-lg font-semibold text-slate-700">
+                  {progress.completed}
+                </div>
+                <div className="mt-1 text-[11px] sm:text-xs text-slate-500">
+                  completed
+                </div>
+              </div>
+              <div
+                className="bg-white rounded-full border border-gray-200 px-6 sm:px-8 py-3 sm:py-4 min-w-[120px] sm:min-w-[140px] text-center flex flex-col justify-center items-center"
+                aria-label={`${
+                  progress.total - progress.completed
+                } remaining lessons`}
+              >
+                <div className="text-base sm:text-lg font-semibold text-slate-700">
+                  {progress.total - progress.completed}
+                </div>
+                <div className="mt-1 text-[11px] sm:text-xs text-slate-500">
+                  Remaining
                 </div>
               </div>
             </div>
@@ -110,10 +123,10 @@ export const ListeningHome = () => {
 
         {/* Lessons Grid */}
         <div className="lessons-section">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 sm:mb-8 text-center">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#FDCB3E] mb-6 sm:mb-8 text-center drop-shadow-sm">
             Available Lessons
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10 p-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-10 p-0">
             {lessons.map((lesson, index) => (
               <div
                 key={lesson.id}
@@ -137,7 +150,7 @@ export const ListeningHome = () => {
             <button
               onClick={handleLoadMore}
               disabled={loading}
-              className="bg-[linear-gradient(135deg,#63a29b_0%,#275151_100%)] text-white font-semibold px-6 sm:px-10 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-none cursor-pointer transition-all duration-300 text-base sm:text-lg shadow-[0_8px_25px_rgba(99,162,155,0.3)] relative overflow-hidden backdrop-blur-sm hover:-translate-y-1 hover:scale-105 hover:shadow-[0_12px_30px_rgba(99,162,155,0.4)] hover:bg-[linear-gradient(45deg,#275151,#63a29b)] disabled:bg-[linear-gradient(135deg,#94a3b8,#64748b)] disabled:cursor-not-allowed disabled:transform-none disabled:shadow-[0_4px_12px_rgba(156,163,175,0.3)] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)] before:transition-[left] before:duration-[0.6s] before:ease-in-out hover:before:left-full disabled:before:hidden"
+              className="bg-[#FDCB3E] text-white font-semibold px-6 sm:px-10 py-3 sm:py-4 rounded-xl border-none cursor-pointer transition-all duration-300 text-sm sm:text-base shadow-[0_4px_12px_rgba(253,203,62,0.3)] hover:bg-[#ffd84d] hover:shadow-[0_6px_16px_rgba(253,203,62,0.4)] disabled:bg-gray-400 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none"
             >
               {loading ? (
                 <div className="flex items-center gap-3">
@@ -146,7 +159,6 @@ export const ListeningHome = () => {
                 </div>
               ) : (
                 <div className="flex items-center gap-3">
-                  <span>📚</span>
                   <span>Load More Lessons</span>
                 </div>
               )}
