@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { readingData } from "../../../config/readingData/readingData";
+import { Loading } from "../../../components/Loading";
 
 // ============================================
 // ICONS COMPONENTS
@@ -9,7 +10,7 @@ const StarIcon = ({ filled = false, size = "w-12 h-12" }) => (
   <svg viewBox="0 0 24 24" className={size}>
     <path
       d="M12 2.5l2.97 6.02 6.65.97-4.81 4.69 1.14 6.64L12 17.77 6.05 20.82l1.14-6.64L2.39 9.49l6.64-.97L12 2.5z"
-      className={filled ? "fill-white" : "fill-gray-400"}
+      className={filled ? "fill-transparent" : "fill-gray-400"}
       stroke={filled ? "white" : "#D1D5DB"}
       strokeWidth={1.5}
     />
@@ -20,12 +21,12 @@ const StarIcon = ({ filled = false, size = "w-12 h-12" }) => (
 // CURVED PATH SVG - Connects nodes with curves
 // ============================================
 const CurvedConnector = ({ from, to, isActive }) => {
-  const curveOffset = (to.x - from.x) / 2;
+  const curveOffset = (to.x - from.x) / 1;
 
   const path = `
     M ${from.x} ${from.y}
-    C ${from.x + curveOffset} ${from.y + 30},
-      ${to.x - curveOffset} ${to.y - 30},
+    C ${from.x + curveOffset} ${from.y + 20},
+      ${to.x + curveOffset} ${to.y - 30},
       ${to.x} ${to.y}
   `;
 
@@ -33,9 +34,8 @@ const CurvedConnector = ({ from, to, isActive }) => {
     <path
       d={path}
       fill="none"
-      stroke="#E5E7EB"
-      strokeWidth="3"
-      strokeLinecap="round"
+      stroke={isActive ? "var(--primary-color)" : "#E5E7EB"}
+      strokeWidth={isActive ? "4" : "9"}
     />
   );
 };
@@ -75,13 +75,28 @@ const LessonNode = ({ node, position, onNodeClick }) => {
         {/* Outer ring for active node */}
         {isCurrent && (
           <div
-            className="absolute inset-0 rounded-full border-4 border-yellow-500 animate-pulse"
-            style={{ width: "96px", height: "96px", left: "-8px", top: "-8px" }}
+            className="absolute inset-0 rounded-full border-4 border-[var(--primary-color)] animate-pulse"
+            style={{
+              width: "96px",
+              height: "96px",
+              left: "-8px",
+              top: "-6px",
+              perspective: "20em",
+              transform: "rotateX(26.87deg)",
+              boxShadow: "6px 4px 4px 1px #000",
+            }}
           ></div>
         )}
 
         {/* Main circle */}
         <div
+          style={{
+            transform: "rotateX(26.87deg)",
+            perspective: "20em",
+            boxShadow: `0px 5px 1px 1px ${
+              isUnlocked || isCurrent ? "var(--secondary-color)" : "gray"
+            }`,
+          }}
           className={`
             w-20 h-20 rounded-full flex items-center justify-center
             transition-all duration-300 shadow-lg relative
@@ -104,7 +119,10 @@ const LessonNode = ({ node, position, onNodeClick }) => {
           <Link
             to={linkTo}
             className="absolute inset-0 rounded-full z-20"
-            style={{ width: "80px", height: "80px" }}
+            style={{
+              width: "80px",
+              height: "80px",
+            }}
           />
         )}
       </div>
@@ -427,11 +445,7 @@ export function HomeMainPlan() {
   };
 
   if (isLoading) {
-    return (
-      <div className="mb-8 text-center py-8">
-        <div className="animate-pulse text-gray-600">Loading lessons…</div>
-      </div>
-    );
+    return <Loading/>
   }
 
   if (hasErrors) {

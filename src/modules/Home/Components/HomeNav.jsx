@@ -65,7 +65,9 @@ export const HomeNav = () => {
                     : "hover:bg-[var(--primary-color)] "
                 }`}
               >
-                <span className={`text-lg text-black/70 arabic_font transition`}>
+                <span
+                  className={`text-lg text-black/70 arabic_font transition`}
+                >
                   {item.label}
                 </span>
                 <div style={{ width: item.width }}>
