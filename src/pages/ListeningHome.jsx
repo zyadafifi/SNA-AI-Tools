@@ -149,26 +149,27 @@ export const ListeningHome = () => {
 
         {/* Lessons Grid */}
         <div className="lessons-section">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#FDCB3E] mb-6 sm:mb-8 text-center drop-shadow-sm">
-            Available Lessons
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-10 p-0">
-            {lessons.map((lesson, index) => (
-              <div
-                key={lesson.id}
-                className="animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <LessonCard
-                  lesson={lesson}
-                  isUnlocked={lesson.isUnlocked}
-                  isCompleted={lesson.isCompleted}
-                  progress={lesson.progress}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#FDCB3E] mb-6 sm:mb-8 text-center drop-shadow-sm">
+    Available Lessons
+  </h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10 p-0">
+    {lessons.map((lesson, index) => (
+      <div
+        key={lesson.id}
+        className="animate-fade-in-up h-full flex"
+        style={{ animationDelay: `${index * 0.1}s` }}
+      >
+        <LessonCard
+          lesson={lesson}
+          isUnlocked={lesson.isUnlocked}
+          isCompleted={lesson.isCompleted}
+          progress={lesson.progress}
+          className="h-full w-full"
+        />
+      </div>
+    ))}
+  </div>
+</div>
 
         {/* Load More Button */}
         {hasMore && (
