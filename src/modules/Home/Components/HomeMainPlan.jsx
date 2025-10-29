@@ -164,7 +164,7 @@ const ZigzagPathUI = ({ nodes, onNodeClick = () => {} }) => {
     positions.length > 0 ? positions[positions.length - 1].y + 100 : 500;
 
   return (
-    <div className="relative w-full flex justify-center py-8 overflow-hidden">
+    <div className="container relative w-full flex justify-center py-8 overflow-hidden">
       <div
         className="relative"
         style={{ width: "400px", height: `${svgHeight}px` }}
