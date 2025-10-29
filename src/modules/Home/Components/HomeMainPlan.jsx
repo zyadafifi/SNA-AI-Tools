@@ -445,7 +445,7 @@ export function HomeMainPlan() {
   };
 
   if (isLoading) {
-    return <Loading/>
+    return <Loading />;
   }
 
   if (hasErrors) {
