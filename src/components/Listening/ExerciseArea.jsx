@@ -1,5 +1,3 @@
-
-
 const ExerciseArea = ({
   mode,
   exercise,
@@ -20,14 +18,14 @@ const ExerciseArea = ({
       {/* Exercise Content */}
       {mode === "writing" && (
         <div>
-          <label className="block mb-4 font-semibold text-gray-700">
-            Type what you heard:
+          <label className="block mb-3 font-semibold text-gray-700 text-lg">
+            type what you heard
           </label>
           <textarea
             value={userAnswer}
             onChange={(e) => onAnswerChange(e.target.value)}
-            placeholder="Type the sentence you heard here..."
-            className="w-full p-4 border-2 border-gray-200 rounded-xl text-base resize-vertical min-h-[120px] font-inherit transition-colors duration-300 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200"
+            placeholder="type the sentence you heard here"
+            className="w-full p-4 border border-gray-300 rounded-2xl text-base resize-vertical min-h-[140px] font-inherit transition-colors duration-300 focus:outline-none focus:border-gray-400 bg-white text-gray-800 placeholder:text-gray-400"
             spellCheck="false"
             autoCorrect="off"
             autoCapitalize="off"
@@ -63,29 +61,27 @@ const ExerciseArea = ({
 
       {/* Action Buttons */}
       {!showFeedback && (
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-3 sm:gap-4 justify-center">
           <button
             onClick={onSubmit}
             disabled={
               (mode === "writing" && !userAnswer.trim()) ||
               (mode === "choice" && selectedChoice === null)
             }
-            className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+            className={`px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 ${
               (mode === "writing" && !userAnswer.trim()) ||
               (mode === "choice" && selectedChoice === null)
                 ? "bg-gray-400 text-gray-600 cursor-not-allowed"
-                : "bg-gradient-to-r from-teal-500 to-teal-700 text-white hover:-translate-y-1 hover:shadow-lg hover:from-teal-600 hover:to-teal-800"
+                : "bg-[#FDCB3E] text-gray-800 hover:bg-[#ffd84d] shadow-sm"
             }`}
           >
-            <span className="text-lg">✓</span>
-            Check Answer
+            check answer
           </button>
 
           <button
             onClick={onReset}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-white border-2 border-gray-300 text-gray-700 hover:border-teal-300 hover:text-teal-700 transition-all duration-300"
+            className="px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-sm"
           >
-            <span className="text-lg">↻</span>
             Reset
           </button>
         </div>

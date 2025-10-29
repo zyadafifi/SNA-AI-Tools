@@ -32,18 +32,48 @@ const DictationPhase = ({ lesson, onComplete }) => {
     }
   }, [currentExerciseIndex, lesson.id, lesson.exercises.length]);
 
+  // Icon components
+  const PencilIcon = ({ className = "" }) => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+    </svg>
+  );
+
+  const CheckmarkIcon = ({ className = "" }) => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M20 6L9 17l-5-5" />
+    </svg>
+  );
+
   const modes = [
     {
       id: "writing",
       name: "Writing Mode",
-      icon: "✏️",
-      description: "Type what you hear",
+      icon: PencilIcon,
+      description: "type what you hear",
     },
     {
       id: "choice",
       name: "Multiple Choice",
-      icon: "✔️",
-      description: "Choose the correct answer",
+      icon: CheckmarkIcon,
+      description: "choose what you hear",
     },
   ];
 
@@ -233,35 +263,38 @@ const DictationPhase = ({ lesson, onComplete }) => {
     );
   }
 
+  const progressPercentage =
+    ((currentExerciseIndex + 1) / lesson.exercises.length) * 100;
+
   return (
     <div className="max-w-[800px] mx-auto">
-      <h2 className="text-4xl text-[#275151] text-center mb-6">
-        ✏️ Dictation Phase
-      </h2>
+      {/* Title Section */}
+      <div className="text-center mb-6">
+        <h2 className="text-4xl sm:text-5xl font-bold text-[#FDCB3E] mb-4 flex items-center justify-center gap-3">
+          <span className="text-4xl sm:text-5xl">✏️</span>
+          Dictation Phase
+        </h2>
+      </div>
 
       {/* Progress Section */}
-      <div className="bg-white border border-[#e2e8f0] rounded-lg p-5 mb-6">
-        <div className="w-full h-2 bg-[#e2e8f0] rounded-md overflow-hidden mb-3">
-          <div
-            className="h-full bg-[#63a29b] rounded-md transition-[width] duration-300"
-            style={{
-              width: `${
-                ((currentExerciseIndex + 1) / lesson.exercises.length) * 100
-              }%`,
-            }}
-          />
+      {!showFeedback && (
+        <div className="mb-6">
+          <div className="relative w-full h-1 bg-gray-300 rounded-full mb-2">
+            <div
+              className="absolute top-1/2 left-0 w-4 h-4 -translate-y-1/2 rounded-full bg-[#FDCB3E] transition-all duration-300"
+              style={{ left: "0%" }}
+            />
+            <div
+              className="absolute top-1/2 w-4 h-4 -translate-y-1/2 rounded-full bg-[#FDCB3E] transition-all duration-300"
+              style={{ left: `${progressPercentage}%` }}
+            />
+          </div>
         </div>
-        <div className="text-center text-[#275151] font-semibold text-sm">
-          Exercise {currentExerciseIndex + 1} of {lesson.exercises.length}
-        </div>
-      </div>
+      )}
 
       {/* Audio Section */}
       {!showFeedback && (
-        <div className="bg-white border border-[#e2e8f0] rounded-lg p-5 mb-6 text-center">
-          <h3 className="text-[#275151] mb-4 text-xl">
-            Listen to the Sentence
-          </h3>
+        <div className="mb-6">
           <AudioControls
             audioUrl={currentExercise.audio}
             isPlaying={isPlaying}
@@ -272,26 +305,56 @@ const DictationPhase = ({ lesson, onComplete }) => {
         </div>
       )}
 
-      {/* Mode Selection */}
-      {!selectedMode && (
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 mb-6">
-          {modes.map((mode) => (
-            <button
-              key={mode.id}
-              onClick={() => handleModeSelect(mode.id)}
-              className="bg-white border-2 border-[#e2e8f0] rounded-lg p-4 cursor-pointer transition-all duration-300 text-left flex items-center gap-3 hover:border-[#63a29b] hover:bg-[#f8fafc]"
-            >
-              <span className="text-2xl">{mode.icon}</span>
-              <div className="flex flex-col gap-1">
-                <span className="font-semibold text-[#275151] text-base">
-                  {mode.name}
-                </span>
-                <span className="text-[#475569] text-sm">
-                  {mode.description}
-                </span>
-              </div>
-            </button>
-          ))}
+      {/* Mode Selection - Always visible */}
+      {!showFeedback && (
+        <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4 mb-6 w-full">
+          {modes.map((mode, index) => {
+            const IconComponent = mode.icon;
+            const isActive = selectedMode === mode.id;
+            const isFirst = index === 0; // Writing Mode (left)
+            const isSecond = index === 1; // Multiple Choice (right)
+
+            return (
+              <button
+                key={mode.id}
+                onClick={() => handleModeSelect(mode.id)}
+                className={`
+                  w-full
+                  ${isActive ? "bg-[#FDCB3E]" : "bg-white"}
+                  ${
+                    isFirst
+                      ? "rounded-r-full rounded-l-xl sm:rounded-l-2xl border-t border-b border-r border-slate-200"
+                      : "rounded-l-full rounded-r-xl sm:rounded-r-2xl border-t border-b border-l border-slate-200"
+                  }
+                  ${
+                    isActive
+                      ? ""
+                      : "shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
+                  }
+                  h-12 sm:h-14 lg:h-16 xl:h-18 
+                  flex items-center 
+                  ${isFirst ? "justify-end" : "justify-start"}
+                  px-4 sm:px-6 lg:px-8 xl:px-12
+                  cursor-pointer transition-all duration-300
+                  ${!isActive ? "hover:bg-gray-50" : ""}
+                `}
+              >
+                <div className="flex items-center gap-3">
+                  <IconComponent
+                    className={isActive ? "text-gray-800" : "text-slate-700"}
+                  />
+                  <div className="text-left leading-tight flex flex-col justify-center">
+                    <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-slate-700">
+                      {mode.name}
+                    </div>
+                    <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
+                      {mode.description}
+                    </div>
+                  </div>
+                </div>
+              </button>
+            );
+          })}
         </div>
       )}
 

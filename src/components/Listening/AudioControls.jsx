@@ -1,79 +1,79 @@
 import { useState, useRef, useEffect } from "react";
 
+const PlayPauseIcon = ({ playing }) => {
+  // Pure SVG (no emoji), flat yellow like the mock, with a tiny soft shadow.
+  return playing ? (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
+      className="drop-shadow-[0_1px_0_rgba(0,0,0,0.10)]"
+      aria-hidden="true"
+    >
+      <rect x="4.5" y="3.5" width="5" height="15" rx="1" fill="#FDCB3E" />
+      <rect x="12.5" y="3.5" width="5" height="15" rx="1" fill="#FDCB3E" />
+    </svg>
+  ) : (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
+      className="drop-shadow-[0_1px_0_rgba(0,0,0,0.10)]"
+      aria-hidden="true"
+    >
+      <path d="M6 3 L18 11 L6 19 Z" fill="#FDCB3E" />
+    </svg>
+  );
+};
+
 const AudioControls = ({
   audioUrl,
   isPlaying,
   onPlayPause,
-  onVolumeChange,
+  onVolumeChange, // (kept for API parity if you use it elsewhere)
   onSpeedChange,
 }) => {
-  const [volume, setVolume] = useState(1);
   const [playbackRate, setPlaybackRate] = useState(1);
-  const [isPaused, setIsPaused] = useState(false);
   const audioRef = useRef(null);
+
+  // Simulated waveform bars (subtle like the mock)
+  const waveformBars = Array.from(
+    { length: 28 },
+    () => Math.floor(Math.random() * 22 + 8) // 8–30px
+  );
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.volume = volume;
       audioRef.current.playbackRate = playbackRate;
     }
-  }, [volume, playbackRate]);
+  }, [playbackRate]);
 
   const handlePlayPause = () => {
     if (!audioUrl) {
       alert("No audio available for this exercise");
       return;
     }
-
-    if (isPlaying) {
-      audioRef.current?.pause();
-      setIsPaused(true);
-    } else {
-      audioRef.current?.play();
-      setIsPaused(false);
-    }
-    onPlayPause();
+    if (isPlaying) audioRef.current?.pause();
+    else audioRef.current?.play();
+    onPlayPause?.();
   };
 
-  const getPlayButtonIcon = () => {
-    return isPlaying ? "⏸" : "▶";
-  };
-
-  const getPlayButtonText = () => {
-    return isPlaying ? "Pause Sentence" : "Play Sentence";
-  };
-
-  const handleVolumeChange = (e) => {
-    const newVolume = parseFloat(e.target.value);
-    setVolume(newVolume);
-    onVolumeChange?.(newVolume);
-
-    // Update slider fill
-    const percent = newVolume * 100;
-    e.target.style.background = `linear-gradient(to right, #5fa69c 0%, #5fa69c ${percent}%, #d1d5db ${percent}%, #d1d5db 100%)`;
-  };
-
-  const handleSpeedChange = (e) => {
-    const newSpeed = parseFloat(e.target.value);
-    setPlaybackRate(newSpeed);
-    onSpeedChange?.(newSpeed);
-
-    // Update slider fill
-    const percent = ((newSpeed - 0.5) / (2 - 0.5)) * 100;
-    e.target.style.background = `linear-gradient(to right, #5fa69c 0%, #5fa69c ${percent}%, #d1d5db ${percent}%, #d1d5db 100%)`;
+  const handleSpeedToggle = () => {
+    const speeds = [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
+    const i = speeds.indexOf(playbackRate);
+    const next = speeds[(i + 1) % speeds.length];
+    setPlaybackRate(next);
+    onSpeedChange?.(next);
   };
 
   return (
-    <div className="flex flex-col gap-4 sm:gap-5 py-6 sm:py-10 px-4 sm:px-[60px] bg-[#f8fafc] rounded-[16px] sm:rounded-[20px] max-w-[900px] mx-auto shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
-      {/* Audio Element */}
+    <div className="bg-gradient-to-r from-[#FFF3E0] via-[#FFF7E8] to-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-[0_2px_10px_rgba(0,0,0,0.08)]">
+      {/* Audio element */}
       {audioUrl && (
         <audio
           ref={audioRef}
           src={audioUrl}
-          onEnded={() => {
-            setIsPaused(false);
-            onPlayPause();
-          }}
+          onEnded={() => onPlayPause?.()}
           onError={() => {
             console.error("Audio failed to load");
             alert(
@@ -83,85 +83,80 @@ const AudioControls = ({
         />
       )}
 
-      {/* Volume Control */}
-      <div className="flex items-center justify-center gap-2 sm:gap-4 min-h-8">
-        <div className="text-lg sm:text-[22px] w-6 sm:w-7 flex items-center justify-center flex-shrink-0">
-          🔊
+      {/* Title */}
+      <h3 className="text-center text-gray-800 mb-6 text-lg sm:text-xl font-bold">
+        Listen to the sentence
+      </h3>
+
+      {/* Player with tooltip */}
+      <div className="relative">
+        {/* Tooltip bubble */}
+        <div className="absolute -top-9 left-0 z-10">
+          <div className="relative bg-gray border border-gray-200 rounded-lg px-3 py-1.5 shadow-sm">
+            <span className="text-xs text-gray-600 whitespace-nowrap font-normal">
+              tap here to listen
+            </span>
+            {/* Arrow */}
+            <div className="absolute -bottom-1 left-4">
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path d="M0 0 L5 6 L10 0 Z" fill="gray" />
+              </svg>
+              <svg
+                width="10"
+                height="6"
+                viewBox="0 0 10 6"
+                fill="none"
+                className="absolute top-0 left-0"
+              >
+                <path
+                  d="M0 0 L5 5 L10 0"
+                  fill="none"
+                  stroke="gray"
+                  strokeWidth="1"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
-        <div className="font-normal text-[#374151] text-xs sm:text-[15px] min-w-fit whitespace-nowrap">
-          Volume:
-        </div>
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value={volume}
-          onChange={handleVolumeChange}
-          className="flex-1 h-[6px] min-h-[6px] max-h-[6px] min-w-auto border-none rounded-[10px] outline-none appearance-none cursor-pointer max-w-[200px] relative p-0 m-0 box-border align-middle"
-          style={{
-            background: `linear-gradient(to right, #5fa69c 0%, #5fa69c ${
-              volume * 100
-            }%, #d1d5db ${volume * 100}%, #d1d5db 100%)`,
-          }}
-        />
-        <div className="font-normal text-[#374151] text-xs sm:text-[15px] min-w-[40px] sm:min-w-[50px] text-left">
-          {Math.round(volume * 100)}%
+
+        {/* Rail */}
+        <div className="bg-white border border-gray-300 rounded-full flex items-center gap-3 sm:gap-4 px-3 sm:px-4 py-2.5 sm:py-3 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+          {/* Play / Pause (no background) */}
+          <button
+            onClick={handlePlayPause}
+            disabled={!audioUrl}
+            aria-label={isPlaying ? "Pause" : "Play"}
+            className="flex-shrink-0 flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none"
+            style={{ background: "transparent", boxShadow: "none" }}
+          >
+            <PlayPauseIcon playing={isPlaying} />
+          </button>
+
+          {/* Waveform */}
+          <div className="flex-1 flex items-center justify-center gap-[3px] sm:gap-1 px-1 sm:px-2 h-9">
+            {waveformBars.map((h, idx) => (
+              <div
+                key={idx}
+                className="bg-gray-500/70 rounded-[1px]"
+                style={{
+                  width: "3px",
+                  height: `${h}px`,
+                  minHeight: "8px",
+                  maxHeight: "30px",
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Speed pill (small, yellow, rounded) */}
+          <button
+            onClick={handleSpeedToggle}
+            className="flex-shrink-0 bg-[#FDCB3E] text-gray-900 border border-gray-300 rounded-full px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-semibold hover:bg-[#FFD84D] transition-all duration-300 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+          >
+            {playbackRate === 1 ? "1x" : `${playbackRate.toFixed(1)}x`}
+          </button>
         </div>
       </div>
-
-      {/* Speed Control */}
-      <div className="flex items-center justify-center gap-2 sm:gap-4 min-h-8">
-        <div className="text-lg sm:text-[22px] w-6 sm:w-7 flex items-center justify-center flex-shrink-0">
-          ⚡
-        </div>
-        <div className="font-normal text-[#374151] text-xs sm:text-[15px] min-w-fit whitespace-nowrap">
-          Speed:
-        </div>
-        <input
-          type="range"
-          min="0.5"
-          max="2"
-          step="0.1"
-          value={playbackRate}
-          onChange={handleSpeedChange}
-          className="flex-1 h-[6px] min-h-[6px] max-h-[6px] min-w-auto border-none rounded-[10px] outline-none appearance-none cursor-pointer max-w-[200px] relative p-0 m-0 box-border align-middle"
-          style={{
-            background: `linear-gradient(to right, #5fa69c 0%, #5fa69c ${
-              ((playbackRate - 0.5) / (2 - 0.5)) * 100
-            }%, #d1d5db ${
-              ((playbackRate - 0.5) / (2 - 0.5)) * 100
-            }%, #d1d5db 100%)`,
-          }}
-        />
-        <div className="font-normal text-[#374151] text-xs sm:text-[15px] min-w-[40px] sm:min-w-[50px] text-left">
-          {playbackRate.toFixed(1)}x
-        </div>
-      </div>
-
-      {/* Listen to the sentence */}
-      <div className="flex items-center gap-2 sm:gap-[10px] mt-4 mb-2 justify-center">
-        <div className="text-xl sm:text-[26px]">🔊</div>
-        <div className="text-sm sm:text-[18px] font-semibold text-[#374151]">
-          Listen to the sentence:
-        </div>
-      </div>
-
-      {/* Play Button */}
-      <button
-        onClick={handlePlayPause}
-        disabled={!audioUrl}
-        className={`flex items-center justify-center gap-2 sm:gap-[10px] bg-[linear-gradient(135deg,#63a29b_0%,#275151_100%)] text-white border-none px-6 sm:px-9 py-3 sm:py-[14px] rounded-[40px] sm:rounded-[50px] text-sm sm:text-base font-medium cursor-pointer transition-all duration-300 shadow-[0_2px_8px_rgba(95,166,156,0.25)] min-h-[44px] sm:min-h-[52px] mx-auto max-w-fit ${
-          !audioUrl
-            ? "bg-[#9ca3af] cursor-not-allowed opacity-60"
-            : "hover:bg-[linear-gradient(45deg,#275151,#63a29b)] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(95,166,156,0.35)] active:translate-y-0 active:shadow-[0_2px_6px_rgba(95,166,156,0.25)]"
-        }`}
-      >
-        <span className="text-base sm:text-[18px] flex items-center">
-          {getPlayButtonIcon()}
-        </span>
-        <span className="text-sm sm:text-base">{getPlayButtonText()}</span>
-      </button>
     </div>
   );
 };
