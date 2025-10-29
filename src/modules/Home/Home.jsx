@@ -13,7 +13,7 @@ export function Home() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-3 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 text-black hover:bg-white/20 transition-all"
+        className={`lg:hidden fixed top-4 ${isSidebarOpen ? "right-4" : "left-4"} z-50 p-3 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 text-black hover:bg-white/20 transition-all`}
         aria-label="Toggle menu"
       >
         {isSidebarOpen ? (
