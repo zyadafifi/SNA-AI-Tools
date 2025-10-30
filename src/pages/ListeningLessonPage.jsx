@@ -13,21 +13,36 @@ export const ListeningLessonPage = () => {
   const [currentPhase, setCurrentPhase] = useState("listening");
   const [showTips, setShowTips] = useState(false);
   const [lesson, setLesson] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const foundLesson = dataService.getLessonById(parseInt(id));
-    if (foundLesson) {
-      // Check if lesson is unlocked
-      if (!dataService.isLessonUnlocked(parseInt(id))) {
-        alert("This lesson is locked. Complete the previous lesson first!");
+    const loadLesson = async () => {
+      const foundLesson = await dataService.getLessonById(parseInt(id));
+      if (foundLesson) {
+        // Check if lesson is unlocked
+        const isUnlocked = await dataService.isLessonUnlocked(parseInt(id));
+        if (!isUnlocked) {
+          alert("This lesson is locked. Complete the previous lesson first!");
+          navigate("/listening/home");
+          return;
+        }
+        setLesson(foundLesson);
+      } else {
         navigate("/listening/home");
-        return;
       }
-      setLesson(foundLesson);
-    } else {
-      navigate("/listening/home");
-    }
+    };
+    loadLesson();
   }, [id, navigate]);
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   if (!lesson) {
     return (
@@ -42,12 +57,32 @@ export const ListeningLessonPage = () => {
     { id: "dictation", name: "Dictation", icon: PenTool },
   ];
 
-  const handleLessonComplete = () => {
-    dataService.completeLesson(parseInt(id));
+  const handleLessonComplete = async () => {
+    await dataService.completeLesson(parseInt(id));
     alert("Congratulations! You have completed this lesson!");
     navigate("/listening/home");
   };
 
+  // Mobile layout - full screen for both phases
+  if (isMobile) {
+    return (
+      <div className="min-h-screen bg-gray-100">
+        {/* Phase Content - Full Screen */}
+        {currentPhase === "listening" && (
+          <ListeningPhase
+            lesson={lesson}
+            onComplete={() => setCurrentPhase("dictation")}
+          />
+        )}
+
+        {currentPhase === "dictation" && (
+          <DictationPhase lesson={lesson} onComplete={handleLessonComplete} />
+        )}
+      </div>
+    );
+  }
+
+  // Desktop layout - keep existing design
   return (
     <div className="min-h-screen bg-gray-100">
       <Header onToggleTips={() => setShowTips(!showTips)} />

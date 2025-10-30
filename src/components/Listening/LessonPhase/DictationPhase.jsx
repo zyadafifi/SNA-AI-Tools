@@ -7,12 +7,12 @@ import dataService from "../../../services/dataService";
 
 const DictationPhase = ({ lesson, onComplete }) => {
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
-  const [selectedMode, setSelectedMode] = useState(null);
   const [userAnswer, setUserAnswer] = useState("");
-  const [selectedChoice, setSelectedChoice] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showFeedback, setShowFeedback] = useState(false);
   const [feedback, setFeedback] = useState(null);
+  const [showStartOverlay, setShowStartOverlay] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const [stats, setStats] = useState({
     correct: 0,
     total: 0,
@@ -22,97 +22,42 @@ const DictationPhase = ({ lesson, onComplete }) => {
   const currentExercise = lesson.exercises[currentExerciseIndex];
   const isLastExercise = currentExerciseIndex === lesson.exercises.length - 1;
 
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   // Update progress when exercise index changes
   useEffect(() => {
     if (currentExerciseIndex > 0) {
       const progress = Math.round(
         (currentExerciseIndex / lesson.exercises.length) * 100
       );
-      dataService.updateLessonProgress(lesson.id, progress);
+      dataService
+        .updateLessonProgress(lesson.id, progress)
+        .catch(console.error);
     }
   }, [currentExerciseIndex, lesson.id, lesson.exercises.length]);
 
-  // Icon components
-  const PencilIcon = ({ className = "" }) => (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-    </svg>
-  );
-
-  const CheckmarkIcon = ({ className = "" }) => (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-    >
-      <path d="M20 6L9 17l-5-5" />
-    </svg>
-  );
-
-  const modes = [
-    {
-      id: "writing",
-      name: "Writing Mode",
-      icon: PencilIcon,
-      description: "type what you hear",
-    },
-    {
-      id: "choice",
-      name: "Multiple Choice",
-      icon: CheckmarkIcon,
-      description: "choose what you hear",
-    },
-  ];
-
-  const handleModeSelect = (mode) => {
-    setSelectedMode(mode);
-    setUserAnswer("");
-    setSelectedChoice(null);
-    setShowFeedback(false);
-    setFeedback(null);
+  const handleStartDictation = () => {
+    setShowStartOverlay(false);
   };
 
   const handleAnswerSubmit = () => {
-    if (!selectedMode) return;
-
-    let isCorrect = false;
-    let score = 0;
-
-    if (selectedMode === "writing") {
-      if (!userAnswer.trim()) {
-        alert("Please type your answer first!");
-        return;
-      }
-      const analysis = analyzeAnswer(userAnswer.trim(), currentExercise.text);
-      score = analysis.accuracy;
-      isCorrect = analysis.isPerfect;
-      setFeedback({ type: "writing", analysis, isCorrect });
-    } else {
-      if (selectedChoice === null) {
-        alert("Please select an answer first!");
-        return;
-      }
-      isCorrect = selectedChoice === 0; // First choice is always correct
-      score = isCorrect ? 100 : 0;
-      setFeedback({
-        type: "choice",
-        isCorrect,
-        correctAnswer: currentExercise.text,
-      });
+    if (!userAnswer.trim()) {
+      alert("Please type your answer first!");
+      return;
     }
+
+    const analysis = analyzeAnswer(userAnswer.trim(), currentExercise.text);
+    const score = analysis.accuracy;
+    const isCorrect = analysis.isPerfect;
+    setFeedback({ type: "writing", analysis, isCorrect });
 
     // Play sound effect
     if (isCorrect) {
@@ -134,15 +79,14 @@ const DictationPhase = ({ lesson, onComplete }) => {
     setShowFeedback(true);
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (isLastExercise) {
       // Mark lesson as completed
-      dataService.completeLesson(lesson.id);
+      await dataService.completeLesson(lesson.id);
       onComplete();
     } else {
       setCurrentExerciseIndex((prev) => prev + 1);
       setUserAnswer("");
-      setSelectedChoice(null);
       setShowFeedback(false);
       setFeedback(null);
 
@@ -150,20 +94,18 @@ const DictationPhase = ({ lesson, onComplete }) => {
       const progress = Math.round(
         ((currentExerciseIndex + 1) / lesson.exercises.length) * 100
       );
-      dataService.updateLessonProgress(lesson.id, progress);
+      await dataService.updateLessonProgress(lesson.id, progress);
     }
   };
 
   const handleReset = () => {
     setUserAnswer("");
-    setSelectedChoice(null);
     setShowFeedback(false);
     setFeedback(null);
   };
 
   const handleRetry = () => {
     setUserAnswer("");
-    setSelectedChoice(null);
     setShowFeedback(false);
     setFeedback(null);
   };
@@ -266,6 +208,31 @@ const DictationPhase = ({ lesson, onComplete }) => {
   const progressPercentage =
     ((currentExerciseIndex + 1) / lesson.exercises.length) * 100;
 
+  // Mobile dictation layout
+  if (isMobile && showStartOverlay) {
+    return (
+      <div className="fixed inset-0 bg-gradient-to-br from-[#ffc515] to-[#ffd84d] flex items-center justify-center z-50">
+        <div className="text-center px-6">
+          <div className="bg-white/10 backdrop-blur-sm rounded-full p-8 mb-6 inline-block">
+            <span className="text-6xl">✏️</span>
+          </div>
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Dictation phase
+          </h2>
+          <p className="text-white/90 text-lg mb-8">
+            Get ready to type what you hear
+          </p>
+          <button
+            onClick={handleStartDictation}
+            className="bg-white text-[#ffc515] px-8 py-4 rounded-full text-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
+            Tap To Start
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-[800px] mx-auto">
       {/* Title Section */}
@@ -305,68 +272,13 @@ const DictationPhase = ({ lesson, onComplete }) => {
         </div>
       )}
 
-      {/* Mode Selection - Always visible */}
+      {/* Exercise Area - Writing Mode Only */}
       {!showFeedback && (
-        <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4 mb-6 w-full">
-          {modes.map((mode, index) => {
-            const IconComponent = mode.icon;
-            const isActive = selectedMode === mode.id;
-            const isFirst = index === 0; // Writing Mode (left)
-            const isSecond = index === 1; // Multiple Choice (right)
-
-            return (
-              <button
-                key={mode.id}
-                onClick={() => handleModeSelect(mode.id)}
-                className={`
-                  w-full
-                  ${isActive ? "bg-[#FDCB3E]" : "bg-white"}
-                  ${
-                    isFirst
-                      ? "rounded-r-full rounded-l-xl sm:rounded-l-2xl border-t border-b border-r border-slate-200"
-                      : "rounded-l-full rounded-r-xl sm:rounded-r-2xl border-t border-b border-l border-slate-200"
-                  }
-                  ${
-                    isActive
-                      ? ""
-                      : "shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
-                  }
-                  h-12 sm:h-14 lg:h-16 xl:h-18 
-                  flex items-center 
-                  ${isFirst ? "justify-end" : "justify-start"}
-                  px-4 sm:px-6 lg:px-8 xl:px-12
-                  cursor-pointer transition-all duration-300
-                  ${!isActive ? "hover:bg-gray-50" : ""}
-                `}
-              >
-                <div className="flex items-center gap-3">
-                  <IconComponent
-                    className={isActive ? "text-gray-800" : "text-slate-700"}
-                  />
-                  <div className="text-left leading-tight flex flex-col justify-center">
-                    <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-slate-700">
-                      {mode.name}
-                    </div>
-                    <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
-                      {mode.description}
-                    </div>
-                  </div>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      )}
-
-      {/* Exercise Area */}
-      {selectedMode && !showFeedback && (
         <ExerciseArea
-          mode={selectedMode}
+          mode="writing"
           exercise={currentExercise}
           userAnswer={userAnswer}
           onAnswerChange={setUserAnswer}
-          selectedChoice={selectedChoice}
-          onChoiceSelect={setSelectedChoice}
           onSubmit={handleAnswerSubmit}
           onReset={handleReset}
           showFeedback={showFeedback}

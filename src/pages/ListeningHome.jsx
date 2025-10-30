@@ -18,21 +18,24 @@ export const ListeningHome = () => {
   console.log(dataService);
 
   const lessonsPerPage = 20;
-  const { getProgress } = useProgress();
+  const { getProgress, refreshProgress } = useProgress();
 
   useEffect(() => {
     loadLessons();
-    updateProgress();
+    updateProgress().catch(console.error);
   }, [currentPage]);
 
   // Refresh progress when component becomes visible (returning from lesson)
   useEffect(() => {
-    const handleVisibilityChange = () => {
+    const handleVisibilityChange = async () => {
       if (!document.hidden) {
         updateProgress();
         // Reload lessons to get updated progress
-        const pageLessons = dataService.getLessons(currentPage, lessonsPerPage);
-        setLessons(pageLessons);
+        const pageLessons = await dataService.getLessons(
+          currentPage,
+          lessonsPerPage
+        );
+        setLessons(pageLessons || []);
       }
     };
 
@@ -41,23 +44,37 @@ export const ListeningHome = () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
   }, [currentPage]);
 
-  const updateProgress = () => {
-    setProgress(getProgress());
+  const updateProgress = async () => {
+    if (refreshProgress) {
+      await refreshProgress();
+      setProgress(getProgress());
+    } else {
+      setProgress(getProgress());
+    }
   };
 
-  const loadLessons = () => {
+  const loadLessons = async () => {
     setLoading(true);
-    const pageLessons = dataService.getLessons(currentPage, lessonsPerPage);
-    const totalLessons = dataService.getTotalLessons();
+    try {
+      const pageLessons = await dataService.getLessons(
+        currentPage,
+        lessonsPerPage
+      );
+      const totalLessons = await dataService.getTotalLessons();
 
-    if (currentPage === 1) {
-      setLessons(pageLessons);
-    } else {
-      setLessons((prev) => [...prev, ...pageLessons]);
+      if (currentPage === 1) {
+        setLessons(pageLessons || []);
+      } else {
+        setLessons((prev) => [...(prev || []), ...(pageLessons || [])]);
+      }
+
+      setHasMore(currentPage * lessonsPerPage < totalLessons);
+    } catch (error) {
+      console.error("Error loading lessons:", error);
+      setLessons([]);
+    } finally {
+      setLoading(false);
     }
-
-    setHasMore(currentPage * lessonsPerPage < totalLessons);
-    setLoading(false);
   };
 
   const handleLoadMore = () => {
@@ -149,27 +166,27 @@ export const ListeningHome = () => {
 
         {/* Lessons Grid */}
         <div className="lessons-section">
-  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#FDCB3E] mb-6 sm:mb-8 text-center drop-shadow-sm">
-    Available Lessons
-  </h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10 p-0">
-    {lessons.map((lesson, index) => (
-      <div
-        key={lesson.id}
-        className="animate-fade-in-up h-full flex"
-        style={{ animationDelay: `${index * 0.1}s` }}
-      >
-        <LessonCard
-          lesson={lesson}
-          isUnlocked={lesson.isUnlocked}
-          isCompleted={lesson.isCompleted}
-          progress={lesson.progress}
-          className="h-full w-full"
-        />
-      </div>
-    ))}
-  </div>
-</div>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#FDCB3E] mb-6 sm:mb-8 text-center drop-shadow-sm">
+            Available Lessons
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10 p-0">
+            {lessons.map((lesson, index) => (
+              <div
+                key={lesson.id}
+                className="animate-fade-in-up h-full flex"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <LessonCard
+                  lesson={lesson}
+                  isUnlocked={lesson.isUnlocked}
+                  isCompleted={lesson.isCompleted}
+                  progress={lesson.progress}
+                  className="h-full w-full"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Load More Button */}
         {hasMore && (
