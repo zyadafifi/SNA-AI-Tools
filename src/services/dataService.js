@@ -85,6 +85,28 @@ class DataService {
     return (this.lessons || []).find((lesson) => lesson.id === parseInt(id));
   }
 
+  // Get normalized questions for a lesson (fallback from exercises)
+  async getLessonQuestions(lessonId) {
+    const lesson = await this.getLessonById(lessonId);
+    if (!lesson) return [];
+    if (Array.isArray(lesson.questions) && lesson.questions.length > 0) {
+      return lesson.questions;
+    }
+    // Fallback: derive 5 questions from exercises/text using lesson.videoSrc when per‑question videos are not yet provided
+    const source = Array.isArray(lesson.exercises) ? lesson.exercises : [];
+    const derived = source.slice(0, 5).map((ex, idx) => ({
+      id: idx + 1,
+      text: ex.text || "",
+      videoSrc: ex.videoSrc || lesson.videoSrc || "",
+    }));
+    return derived;
+  }
+
+  async getQuestion(lessonId, questionIndex) {
+    const qs = await this.getLessonQuestions(lessonId);
+    return qs[questionIndex] || null;
+  }
+
   // Get tips database
   getTipsDatabase() {
     return this.tipsDatabase || {};

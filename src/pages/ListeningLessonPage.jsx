@@ -10,23 +10,32 @@ import TipsPanel from "../components/Listening/TipsPanel";
 export const ListeningLessonPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [currentPhase, setCurrentPhase] = useState("listening");
+  const [currentPhase, setCurrentPhase] = useState("video");
   const [showTips, setShowTips] = useState(false);
   const [lesson, setLesson] = useState(null);
+  const [questions, setQuestions] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const loadLesson = async () => {
-      const foundLesson = await dataService.getLessonById(parseInt(id));
+      const lessonId = parseInt(id);
+      const foundLesson = await dataService.getLessonById(lessonId);
       if (foundLesson) {
         // Check if lesson is unlocked
-        const isUnlocked = await dataService.isLessonUnlocked(parseInt(id));
+        const isUnlocked = await dataService.isLessonUnlocked(lessonId);
         if (!isUnlocked) {
           alert("This lesson is locked. Complete the previous lesson first!");
           navigate("/listening/home");
           return;
         }
         setLesson(foundLesson);
+        const qs = await dataService.getLessonQuestions(lessonId);
+        setQuestions(qs);
+        // Derive current question from saved progress (20% per question)
+        const progress = foundLesson.progress || 0;
+        const derivedIndex = Math.min(4, Math.floor(progress / 20));
+        setCurrentQuestionIndex(derivedIndex);
       } else {
         navigate("/listening/home");
       }
@@ -63,20 +72,41 @@ export const ListeningLessonPage = () => {
     navigate("/listening/home");
   };
 
+  const handleDictationCompleted = async () => {
+    const total = Math.max(1, questions.length || 5);
+    const nextIndex = currentQuestionIndex + 1;
+    const lessonId = parseInt(id);
+    // Update progress: 20% per question
+    const newProgress = Math.min(100, Math.round((nextIndex / total) * 100));
+    await dataService.updateLessonProgress(lessonId, newProgress);
+    if (nextIndex >= total) {
+      await handleLessonComplete();
+      return;
+    }
+    setCurrentQuestionIndex(nextIndex);
+    setCurrentPhase("video");
+  };
+
   // Mobile layout - full screen for both phases
   if (isMobile) {
     return (
-      <div className="min-h-screen bg-gray-100">
-        {/* Phase Content - Full Screen */}
-        {currentPhase === "listening" && (
+      <div className="min-h-screen bg-black">
+        {/* Always render the video full-screen; overlay dictation on top when needed */}
+        {questions[currentQuestionIndex] && (
           <ListeningPhase
-            lesson={lesson}
+            videoSrc={questions[currentQuestionIndex].videoSrc}
+            totalSteps={questions.length}
+            currentStepIndex={currentQuestionIndex}
             onComplete={() => setCurrentPhase("dictation")}
           />
         )}
 
-        {currentPhase === "dictation" && (
-          <DictationPhase lesson={lesson} onComplete={handleLessonComplete} />
+        {currentPhase === "dictation" && questions[currentQuestionIndex] && (
+          <DictationPhase
+            correctText={questions[currentQuestionIndex].text}
+            onComplete={handleDictationCompleted}
+            onListenAgain={() => setCurrentPhase("video")}
+          />
         )}
       </div>
     );
@@ -153,17 +183,22 @@ export const ListeningLessonPage = () => {
           })}
         </div>
 
-        {/* Phase Content */}
-        <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-[0_8px_25px_rgba(0,0,0,0.1)] border border-gray-100 min-h-[300px] sm:min-h-[400px]">
-          {currentPhase === "listening" && (
+        {/* Video plus overlay dictation even on desktop for consistency */}
+        <div className="relative bg-black rounded-2xl overflow-hidden shadow-[0_8px_25px_rgba(0,0,0,0.1)] border border-gray-100 min-h-[300px] sm:min-h-[400px]">
+          {questions[currentQuestionIndex] && (
             <ListeningPhase
-              lesson={lesson}
+              videoSrc={questions[currentQuestionIndex].videoSrc}
+              totalSteps={questions.length}
+              currentStepIndex={currentQuestionIndex}
               onComplete={() => setCurrentPhase("dictation")}
             />
           )}
-
-          {currentPhase === "dictation" && (
-            <DictationPhase lesson={lesson} onComplete={handleLessonComplete} />
+          {currentPhase === "dictation" && questions[currentQuestionIndex] && (
+            <DictationPhase
+              correctText={questions[currentQuestionIndex].text}
+              onComplete={handleDictationCompleted}
+              onListenAgain={() => setCurrentPhase("video")}
+            />
           )}
         </div>
       </div>

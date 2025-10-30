@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaChevronLeft } from "react-icons/fa";
+import { FaHeadphonesSimple, FaRegLightbulb } from "react-icons/fa6";
 import ProgressBar from "../../Pronunce/ProgressBar";
 import { useVideoPlayer } from "../../../hooks/useVideoPlayer";
 import useSubtitleSync from "../../../hooks/useSubtitleSync";
 
-const ListeningPhase = ({ lesson, onComplete }) => {
+const ListeningPhase = ({
+  lesson,
+  videoSrc,
+  onComplete,
+  totalSteps = 0,
+  currentStepIndex = 0,
+}) => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
@@ -53,14 +60,15 @@ const ListeningPhase = ({ lesson, onComplete }) => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Load video source when lesson changes
+  // Load video source from prop (preferred) or lesson
   useEffect(() => {
-    if (lesson?.videoSrc) {
-      setVideoSource(lesson.videoSrc);
+    const src = videoSrc || lesson?.videoSrc;
+    if (src) {
+      setVideoSource(src);
     } else {
-      console.warn("Lesson missing videoSrc:", lesson?.id || "unknown");
+      console.warn("ListeningPhase: missing videoSrc");
     }
-  }, [lesson, setVideoSource]);
+  }, [videoSrc, lesson, setVideoSource]);
 
   // Handle user interaction for mobile
   const handleUserInteraction = useCallback(async () => {
@@ -136,10 +144,10 @@ const ListeningPhase = ({ lesson, onComplete }) => {
           }}
         >
           <ProgressBar
-            currentSentenceIndex={0}
+            currentSentenceIndex={currentStepIndex}
             sentenceProgress={videoProgress}
-            sentences={lesson.exercises}
-            completedSentences={0}
+            sentences={Array.from({ length: Math.max(0, totalSteps) })}
+            completedSentences={currentStepIndex}
           />
         </div>
 
@@ -168,13 +176,13 @@ const ListeningPhase = ({ lesson, onComplete }) => {
                   message: error.message,
                   networkState: video.networkState,
                   readyState: video.readyState,
-                  src: video.src || lesson?.videoSrc,
+                  src: video.src || videoSrc || lesson?.videoSrc,
                 });
               } else {
                 console.error("Video error event (no error code):", {
                   networkState: video?.networkState,
                   readyState: video?.readyState,
-                  src: video?.src || lesson?.videoSrc,
+                  src: video?.src || videoSrc || lesson?.videoSrc,
                 });
               }
               handleError(e);
@@ -182,8 +190,8 @@ const ListeningPhase = ({ lesson, onComplete }) => {
             onLoadStart={handleLoadStart}
             onCanPlay={handleCanPlay}
           >
-            {lesson?.videoSrc ? (
-              <source src={lesson.videoSrc} type="video/mp4" />
+            {videoSrc || lesson?.videoSrc ? (
+              <source src={videoSrc || lesson?.videoSrc} type="video/mp4" />
             ) : (
               <source src="" type="video/mp4" />
             )}
@@ -224,16 +232,28 @@ const ListeningPhase = ({ lesson, onComplete }) => {
         {/* Initial Tap to Start Overlay */}
         {(!hasUserInteracted || showIOSAudioOverlay) && (
           <div
-            className="fixed inset-0 bg-black/70 backdrop-blur-[10px] flex items-center justify-center z-[1040] cursor-pointer"
+            className="fixed inset-0   flex items-center justify-center z-[1040] cursor-pointer"
             onClick={handleUserInteraction}
           >
-            <div className="text-center text-white ">
-              <div className="w-20 h-20 sm:w-[70px] sm:h-[70px] bg-[#ffc515] rounded-full flex items-center justify-center text-4xl sm:text-[30px] mx-auto mb-5 shadow-[0_8px_24px_rgba(255,197,21,0.4)]">
-                ▶
+            <div className="w-full px-5">
+              <div className="mx-auto max-w-[320px] sm:max-w-[360px] bg-white/90 backdrop-blur-md rounded-[20px] p-5 text-center shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+                <div className="flex items-center justify-center gap-2 text-gray-800 mb-1.5">
+                  <FaHeadphonesSimple className="w-6 h-6" />
+                  <h2 className="text-xl font-extrabold">Listening Phase</h2>
+                </div>
+                <p className="text-gray-600 text-[13px] leading-relaxed">
+                  Tap To Watch this video to improve your
+                  <br />
+                  listening skills
+                </p>
+                <div className="mt-4 flex items-start gap-2.5 text-left">
+                  <FaRegLightbulb className="w-5 h-5 text-[#ffc515] mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-600 text-[13px] leading-relaxed">
+                    After you finish the listening, you will move to the
+                    dictation phase
+                  </p>
+                </div>
               </div>
-              <p className="text-xl sm:text-lg font-semibold m-0 [text-shadow:0_2px_8px_rgba(0,0,0,0.5)]">
-                Tap to Start Video
-              </p>
             </div>
           </div>
         )}

@@ -5,13 +5,18 @@ import FeedbackDisplay from "../FeedbackDisplay";
 import soundEffects from "../../../utils/soundEffects";
 import dataService from "../../../services/dataService";
 
-const DictationPhase = ({ lesson, onComplete }) => {
+// Supports two modes:
+// 1) Legacy lesson/exercises flow (lesson prop)
+// 2) Per-question flow (correctText + onListenAgain + onComplete)
+const DictationPhase = ({ lesson, correctText, onListenAgain, onComplete }) => {
+  // Determine mode before any state depends on it
+  const isQuestionMode = !!correctText;
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
   const [userAnswer, setUserAnswer] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
   const [showFeedback, setShowFeedback] = useState(false);
   const [feedback, setFeedback] = useState(null);
-  const [showStartOverlay, setShowStartOverlay] = useState(true);
+  const [showStartOverlay, setShowStartOverlay] = useState(!isQuestionMode);
   const [isMobile, setIsMobile] = useState(false);
   const [stats, setStats] = useState({
     correct: 0,
@@ -19,8 +24,12 @@ const DictationPhase = ({ lesson, onComplete }) => {
     accuracy: 0,
   });
 
-  const currentExercise = lesson.exercises[currentExerciseIndex];
-  const isLastExercise = currentExerciseIndex === lesson.exercises.length - 1;
+  const currentExercise = isQuestionMode
+    ? { text: correctText }
+    : lesson.exercises[currentExerciseIndex];
+  const isLastExercise = isQuestionMode
+    ? true
+    : currentExerciseIndex === lesson.exercises.length - 1;
 
   // Detect mobile device
   useEffect(() => {
@@ -34,6 +43,7 @@ const DictationPhase = ({ lesson, onComplete }) => {
 
   // Update progress when exercise index changes
   useEffect(() => {
+    if (isQuestionMode) return;
     if (currentExerciseIndex > 0) {
       const progress = Math.round(
         (currentExerciseIndex / lesson.exercises.length) * 100
@@ -42,7 +52,12 @@ const DictationPhase = ({ lesson, onComplete }) => {
         .updateLessonProgress(lesson.id, progress)
         .catch(console.error);
     }
-  }, [currentExerciseIndex, lesson.id, lesson.exercises.length]);
+  }, [
+    isQuestionMode,
+    currentExerciseIndex,
+    lesson?.id,
+    lesson?.exercises?.length,
+  ]);
 
   const handleStartDictation = () => {
     setShowStartOverlay(false);
@@ -80,17 +95,20 @@ const DictationPhase = ({ lesson, onComplete }) => {
   };
 
   const handleNext = async () => {
+    if (isQuestionMode) {
+      // In per-question mode delegate next to parent
+      onComplete && onComplete();
+      return;
+    }
     if (isLastExercise) {
-      // Mark lesson as completed
       await dataService.completeLesson(lesson.id);
-      onComplete();
+      onComplete && onComplete();
     } else {
       setCurrentExerciseIndex((prev) => prev + 1);
       setUserAnswer("");
       setShowFeedback(false);
       setFeedback(null);
 
-      // Update progress
       const progress = Math.round(
         ((currentExerciseIndex + 1) / lesson.exercises.length) * 100
       );
@@ -205,8 +223,9 @@ const DictationPhase = ({ lesson, onComplete }) => {
     );
   }
 
-  const progressPercentage =
-    ((currentExerciseIndex + 1) / lesson.exercises.length) * 100;
+  const progressPercentage = isQuestionMode
+    ? 100
+    : ((currentExerciseIndex + 1) / lesson.exercises.length) * 100;
 
   // Mobile dictation layout
   if (isMobile && showStartOverlay) {
@@ -233,6 +252,86 @@ const DictationPhase = ({ lesson, onComplete }) => {
     );
   }
 
+  // Overlay container in question mode to appear over the video
+  if (isQuestionMode) {
+    return (
+      <div className="fixed inset-0 z-[1050] pointer-events-none">
+        <div className="relative h-full w-full flex flex-col justify-end">
+          {!showFeedback && (
+            <div className="pointer-events-auto px-4 pb-6">
+              {/* Header pill */}
+              <div className="flex justify-center mb-3">
+                <div className="bg-white/50 backdrop-blur-sm text-gray-800 rounded-[24px] px-6 py-3 shadow-[0_2px_12px_rgba(0,0,0,0.15)] inline-flex items-center gap-3">
+                 
+                  <div>
+                    <div className="text-gray-800 font-extrabold text-lg leading-none text-center">
+                      Your Turn!
+                    </div>
+                    <div className="text-gray-600 text-sm mt-1">
+                    <span className="text-lg">✏️</span> type what you heard
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Textarea */}
+              <div className="-ml-6 w-[105%] max-w-none">
+                <div className="bg-white/50 backdrop-blur-sm border border-white/60 shadow-[0_4px_20px_rgba(0,0,0,0.12)] rounded-l-[24px] rounded-r-[999px] overflow-hidden">
+                  <textarea
+                    value={userAnswer}
+                    onChange={(e) => setUserAnswer(e.target.value)}
+                    placeholder="type the sentence you heard here........"
+                    className="w-full min-h-[88px] bg-transparent text-black-800 placeholder-black px-5 py-3.5 focus:outline-none resize-none"
+                    spellCheck="false"
+                    autoCorrect="off"
+                    autoCapitalize="off"
+                    data-gramm="false"
+                    data-gramm_editor="false"
+                    data-enable-grammarly="false"
+                  />
+                </div>
+              </div>
+
+              {/* Buttons */}
+              <div className="mt-5 flex items-center justify-center gap-3">
+                <button
+                  onClick={() => {
+                    setShowFeedback(false);
+                    setFeedback(null);
+                    onListenAgain && onListenAgain();
+                  }}
+                  className="px-6 py-3 rounded-full border border-white text-white bg-transparent hover:bg-white/10 transition-all"
+                >
+                  Listen again
+                </button>
+                <button
+                  onClick={handleAnswerSubmit}
+                  disabled={!userAnswer.trim()}
+                  className={`${
+                    !userAnswer.trim() ? "opacity-50 cursor-not-allowed" : ""
+                  } px-8 py-3 rounded-full font-semibold text-gray-900 bg-[#ffc515] hover:bg-[#ffd84d] transition-all shadow-[0_10px_20px_rgba(255,197,21,0.35)]`}
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          )}
+          {showFeedback && feedback && (
+            <div className="pointer-events-auto p-4">
+              <FeedbackDisplay
+                feedback={feedback}
+                onNext={handleNext}
+                onRetry={onListenAgain}
+                isLastExercise={isLastExercise}
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // Legacy layout (desktop/old data)
   return (
     <div className="max-w-[800px] mx-auto">
       {/* Title Section */}
