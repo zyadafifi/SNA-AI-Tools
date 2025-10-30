@@ -262,13 +262,12 @@ const DictationPhase = ({ lesson, correctText, onListenAgain, onComplete }) => {
               {/* Header pill */}
               <div className="flex justify-center mb-3">
                 <div className="bg-white/50 backdrop-blur-sm text-gray-800 rounded-[24px] px-6 py-3 shadow-[0_2px_12px_rgba(0,0,0,0.15)] inline-flex items-center gap-3">
-                 
                   <div>
                     <div className="text-gray-800 font-extrabold text-lg leading-none text-center">
                       Your Turn!
                     </div>
                     <div className="text-gray-600 text-sm mt-1">
-                    <span className="text-lg">✏️</span> type what you heard
+                      <span className="text-lg">🖊️</span> type what you heard
                     </div>
                   </div>
                 </div>
