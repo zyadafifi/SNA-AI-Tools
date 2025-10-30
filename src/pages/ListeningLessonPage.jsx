@@ -103,6 +103,7 @@ export const ListeningLessonPage = () => {
 
         {currentPhase === "dictation" && questions[currentQuestionIndex] && (
           <DictationPhase
+            lesson={lesson}
             correctText={questions[currentQuestionIndex].text}
             onComplete={handleDictationCompleted}
             onListenAgain={() => setCurrentPhase("video")}
@@ -195,6 +196,7 @@ export const ListeningLessonPage = () => {
           )}
           {currentPhase === "dictation" && questions[currentQuestionIndex] && (
             <DictationPhase
+              lesson={lesson}
               correctText={questions[currentQuestionIndex].text}
               onComplete={handleDictationCompleted}
               onListenAgain={() => setCurrentPhase("video")}

@@ -322,6 +322,7 @@ const DictationPhase = ({ lesson, correctText, onListenAgain, onComplete }) => {
                 onNext={handleNext}
                 onRetry={onListenAgain}
                 isLastExercise={isLastExercise}
+                lessonTitle={lesson?.title}
               />
             </div>
           )}

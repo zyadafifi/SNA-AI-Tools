@@ -1,6 +1,12 @@
 import React from "react";
 
-const FeedbackDisplay = ({ feedback, onNext, onRetry, isLastExercise }) => {
+const FeedbackDisplay = ({
+  feedback,
+  onNext,
+  onRetry,
+  isLastExercise,
+  lessonTitle,
+}) => {
   const { type, analysis, correctAnswer } = feedback;
 
   if (type !== "writing" || !analysis) return null;
@@ -14,10 +20,10 @@ const FeedbackDisplay = ({ feedback, onNext, onRetry, isLastExercise }) => {
 
   return (
     <div className="fixed inset-0 z-[1060] flex items-center justify-center">
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="relative w-[92%] max-w-[360px] bg-white/70 backdrop-blur-md rounded-[24px] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+      <div className="absolute inset-0 " />
+      <div className="relative w-[92%] max-w-[360px] bg-white/80 backdrop-blur-md rounded-[24px] px-4 pt-5 pb-4 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
         {/* Top accuracy badge */}
-        <div className="flex justify-center -mt-12 mb-2">
+        <div className="flex justify-center mt-0 mb-3">
           <div className="w-[110px] h-[110px] rounded-full bg-gradient-to-b from-[#ffd84d] to-[#f5b100] shadow-[0_8px_24px_rgba(255,197,21,0.5)] border-4 border-white flex flex-col items-center justify-center text-[#333]">
             <div className="text-2xl font-extrabold">{analysis.accuracy}%</div>
             <div className="text-[11px] leading-none opacity-80 mt-1">
@@ -25,40 +31,71 @@ const FeedbackDisplay = ({ feedback, onNext, onRetry, isLastExercise }) => {
             </div>
           </div>
         </div>
-
-        {/* Subtitle */}
-        <p className="text-center text-[12px] text-[#475569] mt-2 mb-3">
-          Master fundamental english vowel sounds with clear pronunciation
-        </p>
-
-        {/* Stats pills */}
-        <div className="grid grid-cols-2 gap-3 mb-3">
-          {stats.slice(0, 2).map((s, i) => (
-            <div
-              key={`top-${i}`}
-              className="bg-white rounded-[28px] px-4 py-3 shadow-[0_6px_14px_rgba(0,0,0,0.1)] border border-[#e2e8f0] flex items-center justify-center gap-2"
-            >
-              <span
-                className={`text-[18px] font-bold ${
-                  i === 0 ? "text-green-600" : "text-red-500"
-                }`}
-              >
-                {s.value}
-              </span>
-              <span className="text-[12px] text-[#475569]">{s.label}</span>
+        {lessonTitle && (
+          <div className="flex justify-center mt-5 mb-3">
+            <div className="px-4 py-1 rounded-full bg-slate-200/90 backdrop-blur-sm border border-white shadow-[0_2px_8px_rgba(0,0,0,0.12)] text-[12px] text-slate-800 font-semibold">
+              {lessonTitle}
             </div>
-          ))}
-          {stats.slice(2, 4).map((s, i) => (
+          </div>
+        )}
+        {/* Stats: same styling as provided pill components */}
+        <div className="space-y-2 mb-3 sm:mb-4 lg:mb-6 -mx-4">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4 w-full">
             <div
-              key={`bot-${i}`}
-              className="bg-white rounded-[28px] px-4 py-3 shadow-[0_6px_14px_rgba(0,0,0,0.1)] border border-[#e2e8f0] flex items-center justify-center gap-2"
+              className="bg-white rounded-r-full rounded-l-xl sm:rounded-l-2xl border-t border-b border-r border-slate-200 shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)] h-12 sm:h-14 lg:h-16 xl:h-18 flex items-center justify-end px-4 sm:px-6 lg:px-8 xl:px-12"
+              aria-label={`${stats[0].value} ${stats[0].label}`}
             >
-              <span className="text-[18px] font-bold text-[#0ea5e9]">
-                {s.value}
-              </span>
-              <span className="text-[12px] text-[#475569]">{s.label}</span>
+              <div className="text-center leading-tight flex flex-col justify-center">
+                <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-green-600">
+                  {stats[0].value}
+                </div>
+                <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
+                  {stats[0].label}
+                </div>
+              </div>
             </div>
-          ))}
+            <div
+              className="bg-white rounded-l-full rounded-r-xl sm:rounded-r-2xl border-t border-b border-l border-slate-200 shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)] h-12 sm:h-14 lg:h-16 xl:h-18 flex items-center justify-start px-4 sm:px-6 lg:px-8 xl:px-12"
+              aria-label={`${stats[1].value} ${stats[1].label}`}
+            >
+              <div className="text-center leading-tight flex flex-col justify-center">
+                <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-red-500">
+                  {stats[1].value}
+                </div>
+                <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
+                  {stats[1].label}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4 w-full">
+            <div
+              className="bg-white rounded-r-full rounded-l-xl sm:rounded-l-2xl border-t border-b border-r border-slate-200 shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)] h-12 sm:h-14 lg:h-16 xl:h-18 flex items-center justify-end px-4 sm:px-6 lg:px-8 xl:px-12"
+              aria-label={`${stats[2].value} ${stats[2].label}`}
+            >
+              <div className="text-center leading-tight flex flex-col justify-center">
+                <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-slate-700">
+                  {stats[2].value}
+                </div>
+                <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
+                  {stats[2].label}
+                </div>
+              </div>
+            </div>
+            <div
+              className="bg-white rounded-l-full rounded-r-xl sm:rounded-r-2xl border-t border-b border-l border-slate-200 shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)] h-12 sm:h-14 lg:h-16 xl:h-18 flex items-center justify-start px-4 sm:px-6 lg:px-8 xl:px-12"
+              aria-label={`${stats[3].value} ${stats[3].label}`}
+            >
+              <div className="text-center leading-tight flex flex-col justify-center">
+                <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-slate-700">
+                  {stats[3].value}
+                </div>
+                <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
+                  {stats[3].label}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Answers */}
@@ -103,13 +140,13 @@ const FeedbackDisplay = ({ feedback, onNext, onRetry, isLastExercise }) => {
         <div className="flex items-center justify-center gap-3 mt-4">
           <button
             onClick={onRetry}
-            className="px-5 py-2.5 rounded-full bg-white text-[#475569] border border-[#e2e8f0] shadow-sm hover:bg-white/80"
+            className="w-[100px] h-[38px] rounded-full border border-[#D1D5DB] text-[#6B7280] text-sm font-medium bg-white hover:bg-gray-50 transition"
           >
             Retry
           </button>
           <button
             onClick={onNext}
-            className="px-6 py-2.5 rounded-full bg-[#ffc515] text-[#1f2937] font-semibold shadow-[0_8px_18px_rgba(255,197,21,0.35)] hover:bg-[#ffd84d]"
+            className="w-[100px] h-[38px] rounded-full bg-[#FFC107] text-white text-sm font-semibold shadow-[0_4px_12px_rgba(255,193,7,0.35)] hover:bg-[#FFB300] transition"
           >
             Next
           </button>
