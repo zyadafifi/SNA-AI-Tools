@@ -908,8 +908,9 @@ const ClickableWord = ({
   onPlayWordAudio,
 }) => {
   const handleClick = useCallback(() => {
-    const cleanWord = word.replace(/[.,!?;:'"]/g, "");
-    const wordData = wordDefinitions[cleanWord];
+    const cleanWord = word.replace(/[^\u0600-\u06FFa-zA-Z0-9\s]/g, "")
+    const toLowerWord = cleanWord.toLowerCase();
+    const wordData = wordDefinitions[toLowerWord];
     onPlayWordAudio(cleanWord);
     onWordClick({
       word: cleanWord,
