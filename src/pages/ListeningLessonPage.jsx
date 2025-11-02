@@ -143,7 +143,8 @@ export const ListeningLessonPage = () => {
               </div>
               <div className="bg-white/20 backdrop-blur-sm rounded-3xl px-3 py-3 border-2 border-gray-800/30 inline-flex flex-1 justify-center min-w-0 w-full max-w-[140px]">
                 <span className="text-gray-600 font-semibold text-xs sm:text-sm truncate">
-                  {lesson.exercises.length} exercises
+                  {lesson.questions?.length || lesson.exercises?.length || 0}{" "}
+                  questions
                 </span>
               </div>
               <div className="bg-white/20 backdrop-blur-sm rounded-3xl px-3 py-3 border-2 border-gray-800/30 inline-flex flex-1 justify-center min-w-0 w-full max-w-[140px]">

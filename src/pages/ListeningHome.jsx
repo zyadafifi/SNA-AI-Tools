@@ -15,7 +15,6 @@ export const ListeningHome = () => {
     total: 0,
     percentage: 0,
   });
-  console.log(dataService);
 
   const lessonsPerPage = 20;
   const { getProgress, refreshProgress } = useProgress();

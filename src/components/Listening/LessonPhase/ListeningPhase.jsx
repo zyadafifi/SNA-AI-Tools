@@ -65,8 +65,6 @@ const ListeningPhase = ({
     const src = videoSrc || lesson?.videoSrc;
     if (src) {
       setVideoSource(src);
-    } else {
-      console.warn("ListeningPhase: missing videoSrc");
     }
   }, [videoSrc, lesson, setVideoSource]);
 

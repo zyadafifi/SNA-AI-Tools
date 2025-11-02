@@ -24,12 +24,13 @@ const DictationPhase = ({ lesson, correctText, onListenAgain, onComplete }) => {
     accuracy: 0,
   });
 
+  const exercisesList = lesson?.questions || lesson?.exercises || [];
   const currentExercise = isQuestionMode
     ? { text: correctText }
-    : lesson.exercises[currentExerciseIndex];
+    : exercisesList[currentExerciseIndex];
   const isLastExercise = isQuestionMode
     ? true
-    : currentExerciseIndex === lesson.exercises.length - 1;
+    : currentExerciseIndex === exercisesList.length - 1;
 
   // Detect mobile device
   useEffect(() => {
@@ -44,20 +45,15 @@ const DictationPhase = ({ lesson, correctText, onListenAgain, onComplete }) => {
   // Update progress when exercise index changes
   useEffect(() => {
     if (isQuestionMode) return;
-    if (currentExerciseIndex > 0) {
+    if (currentExerciseIndex > 0 && exercisesList.length > 0) {
       const progress = Math.round(
-        (currentExerciseIndex / lesson.exercises.length) * 100
+        (currentExerciseIndex / exercisesList.length) * 100
       );
       dataService
         .updateLessonProgress(lesson.id, progress)
         .catch(console.error);
     }
-  }, [
-    isQuestionMode,
-    currentExerciseIndex,
-    lesson?.id,
-    lesson?.exercises?.length,
-  ]);
+  }, [isQuestionMode, currentExerciseIndex, lesson?.id, exercisesList.length]);
 
   const handleStartDictation = () => {
     setShowStartOverlay(false);
@@ -110,7 +106,7 @@ const DictationPhase = ({ lesson, correctText, onListenAgain, onComplete }) => {
       setFeedback(null);
 
       const progress = Math.round(
-        ((currentExerciseIndex + 1) / lesson.exercises.length) * 100
+        ((currentExerciseIndex + 1) / exercisesList.length) * 100
       );
       await dataService.updateLessonProgress(lesson.id, progress);
     }
@@ -225,7 +221,9 @@ const DictationPhase = ({ lesson, correctText, onListenAgain, onComplete }) => {
 
   const progressPercentage = isQuestionMode
     ? 100
-    : ((currentExerciseIndex + 1) / lesson.exercises.length) * 100;
+    : exercisesList.length > 0
+    ? ((currentExerciseIndex + 1) / exercisesList.length) * 100
+    : 0;
 
   // Mobile dictation layout
   if (isMobile && showStartOverlay) {
@@ -365,8 +363,8 @@ const DictationPhase = ({ lesson, correctText, onListenAgain, onComplete }) => {
             audioUrl={currentExercise.audio}
             isPlaying={isPlaying}
             onPlayPause={() => setIsPlaying(!isPlaying)}
-            onVolumeChange={(volume) => console.log("Volume:", volume)}
-            onSpeedChange={(speed) => console.log("Speed:", speed)}
+            onVolumeChange={(volume) => {}}
+            onSpeedChange={(speed) => {}}
           />
         </div>
       )}
