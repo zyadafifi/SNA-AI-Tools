@@ -94,6 +94,9 @@ export const ListeningLessonPage = () => {
         {/* Always render the video full-screen; overlay dictation on top when needed */}
         {questions[currentQuestionIndex] && (
           <ListeningPhase
+            lesson={lesson}
+            lessonId={lesson?.id}
+            questionId={questions[currentQuestionIndex]?.id}
             videoSrc={questions[currentQuestionIndex].videoSrc}
             totalSteps={questions.length}
             currentStepIndex={currentQuestionIndex}
@@ -189,6 +192,9 @@ export const ListeningLessonPage = () => {
         <div className="relative bg-black rounded-2xl overflow-hidden shadow-[0_8px_25px_rgba(0,0,0,0.1)] border border-gray-100 min-h-[300px] sm:min-h-[400px]">
           {questions[currentQuestionIndex] && (
             <ListeningPhase
+              lesson={lesson}
+              lessonId={lesson?.id}
+              questionId={questions[currentQuestionIndex]?.id}
               videoSrc={questions[currentQuestionIndex].videoSrc}
               totalSteps={questions.length}
               currentStepIndex={currentQuestionIndex}

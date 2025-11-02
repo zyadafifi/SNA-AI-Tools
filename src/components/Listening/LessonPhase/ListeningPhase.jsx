@@ -5,6 +5,7 @@ import { FaHeadphonesSimple, FaRegLightbulb } from "react-icons/fa6";
 import ProgressBar from "../../Pronunce/ProgressBar";
 import { useVideoPlayer } from "../../../hooks/useVideoPlayer";
 import useSubtitleSync from "../../../hooks/useSubtitleSync";
+import MobileSubtitleContainer from "../MobileSubtitleContainer";
 
 const ListeningPhase = ({
   lesson,
@@ -12,6 +13,8 @@ const ListeningPhase = ({
   onComplete,
   totalSteps = 0,
   currentStepIndex = 0,
+  lessonId,
+  questionId,
 }) => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
@@ -46,7 +49,7 @@ const ListeningPhase = ({
     currentSubtitle,
     subtitles,
     isSubtitlesActive,
-    loadSubtitlesForSentence,
+    loadSubtitlesForQuestion,
     clearSubtitles,
   } = useSubtitleSync(videoRef);
 
@@ -67,6 +70,17 @@ const ListeningPhase = ({
       setVideoSource(src);
     }
   }, [videoSrc, lesson, setVideoSource]);
+
+  // Load subtitles when question changes
+  useEffect(() => {
+    if (lessonId && questionId) {
+      loadSubtitlesForQuestion(lessonId, questionId);
+    }
+    return () => {
+      clearSubtitles();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lessonId, questionId]);
 
   // Handle user interaction for mobile
   const handleUserInteraction = useCallback(async () => {
@@ -206,15 +220,10 @@ const ListeningPhase = ({
         </div>
 
         {/* Subtitle Overlay */}
-        {currentSubtitle && (
-          <div className="fixed top-[120px] sm:top-[100px] left-1/2 -translate-x-1/2 z-[1030] max-w-[90%] w-auto text-center pointer-events-none">
-            <div className="bg-black/80 backdrop-blur-[5px] text-white py-2.5 px-5 rounded-xl inline-block">
-              <p className="m-0 text-lg sm:text-base font-semibold leading-[1.4] [text-shadow:1px_1px_2px_rgba(0,0,0,0.8)]">
-                {currentSubtitle.text}
-              </p>
-            </div>
-          </div>
-        )}
+        <MobileSubtitleContainer
+          currentSubtitle={currentSubtitle}
+          isMobile={isMobile}
+        />
 
         {/* Focus on Listening Overlay */}
         {showFocusOverlay && hasUserInteracted && isPlaying && (

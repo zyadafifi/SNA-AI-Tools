@@ -98,17 +98,24 @@ const useSRTParser = () => {
    * @param {number} topicId - Topic ID
    * @param {number} conversationId - Conversation ID
    * @param {number} sentenceIndex - Sentence index (1-based)
+   * @param {string} folderPath - Subfolder path (default: "pronunciation")
    * @returns {Promise<Array>} Promise resolving to parsed subtitles array
    */
   const loadSRTFile = useCallback(
-    async (lessonNumber, topicId, conversationId, sentenceIndex) => {
+    async (
+      lessonNumber,
+      topicId,
+      conversationId,
+      sentenceIndex,
+      folderPath = "pronunciation"
+    ) => {
       setIsLoading(true);
       setError(null);
 
       try {
         // Construct SRT file path based on the naming convention
         const fileName = `lesson${lessonNumber}_topic${topicId}_conversation${conversationId}_sentence${sentenceIndex}.srt`;
-        const filePath = `/subtitles/${fileName}`;
+        const filePath = `/assets/subtitles/${folderPath}/${fileName}`;
 
         const response = await fetch(filePath);
 
