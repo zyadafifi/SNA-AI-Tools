@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
-import { X, Volume2, BookOpen } from "lucide-react";
+import { X, Volume2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { readingData } from "../../config/readingData/readingData";
 
@@ -12,89 +12,137 @@ const supportsTTS =
   "speechSynthesis" in window &&
   "SpeechSynthesisUtterance" in window;
 
-const PREFERRED_VOICE_NAME = "Google UK English Female";
+const PREFERRED_VOICE_NAME = "Google UK English Male";
 const PREFERRED_VOICE_LANG = "en-GB";
 
+
+
 /* ------------------------------------------------------------------ */
-/* Sidebar                                                            */
+/* Word Popover (replaces Sidebar)                                   */
 /* ------------------------------------------------------------------ */
-const Sidebar = ({ isOpen, selectedWordData, onClose, onPlayWordAudio }) => {
+const WordPopover = ({ isOpen, selectedWordData, position, onClose, onPlayWordAudio }) => {
+  if (!isOpen || !selectedWordData || !position) return null;
+
+  const popoverWidth = 320;
+  const estimatedHeight = 250;
+
+  // حساب الموقع
+  let top = position.top;
+  let left = position.left - popoverWidth / 2;
+  let showBelow = false;
+
+  // نشوف لو الكلمة في أول الصفحة
+  if (position.top < estimatedHeight + 100) {
+    showBelow = true;
+    top = position.bottom + 10;
+  } else {
+    top = position.top - estimatedHeight - 10;
+  }
+
+  // نتأكد إن مش هيخرج من الشاشة يمين أو شمال
+  const maxLeft = window.innerWidth - popoverWidth - 20;
+  if (left < 20) {
+    left = 20;
+  } else if (left > maxLeft) {
+    left = maxLeft;
+  }
+
+  // حساب موقع السهم بالنسبة للـ popover
+  const arrowLeft = position.left - left;
+
   return (
     <>
+      {/* Backdrop */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        } lg:hidden`}
+        className="fixed inset-0 z-40 bg-black bg-opacity-20 md:bg-transparent"
         onClick={onClose}
       />
+      
+      {/* Popover */}
       <div
-        className={`fixed inset-y-0 top-[50%] translate-y-[-50%] right-3 overflow-hidden rounded-3xl w-full max-w-xs sm:max-w-sm md:w-96 bg-white shadow-xl z-50 transform transition-all h-full duration-300 ease-in-out ${
-          isOpen ? "translate-x-0" : "translate-x-[135%]"
-        } flex flex-col`}
+        className="absolute z-50 bg-white rounded-xl shadow-2xl border border-gray-200"
+        style={{
+          top: `${top - 65}px`,
+          left: `${left}px`,
+          width: `${popoverWidth}px`,
+          maxWidth: 'calc(100vw - 40px)',
+        }}
       >
-        <div className="flex justify-end p-4 sm:px-6">
-          <button
-            onClick={onClose}
-            className="p-1.5 rounded-lg hover:bg-gray-200 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-300 hover:rotate-90 transform origin-center"
-            aria-label="Close sidebar"
-          >
-            <X size={20} className="text-gray-500" />
-          </button>
+        {/* Header */}
+        <div className="flex items-center justify-between p-3 border-b border-gray-100">
+          <h3 className="text-lg font-bold text-gray-800 break-all flex-1 mr-2">
+            {selectedWordData.word}
+          </h3>
+          <div className="flex items-center gap-1 flex-shrink-0">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onPlayWordAudio(selectedWordData.word);
+              }}
+              className="p-1.5 bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] rounded-lg transition-all duration-200"
+              aria-label="Play pronunciation"
+            >
+              <Volume2 size={16} className="text-white" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onClose();
+              }}
+              className="p-1.5 hover:bg-gray-100 rounded-lg transition-all duration-200"
+              aria-label="Close"
+            >
+              <X size={16} className="text-gray-500" />
+            </button>
+          </div>
         </div>
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 sm:space-y-6">
-          {selectedWordData ? (
-            <>
-              <div className="bg-gradient-to-br from-[var(--secondary-color)] to-[var(--primary-color)] p-4 sm:p-6 rounded-xl border border-gray-100 shadow-sm transform transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
-                <div className="flex items-center justify-between mb-2 sm:mb-3">
-                  <h2 className="text-xl sm:text-2xl font-bold text-white break-all">
-                    {selectedWordData.word}
-                  </h2>
-                  <button
-                    onClick={() => onPlayWordAudio(selectedWordData.word)}
-                    className="p-2 bg-white hover:bg-gray-100 rounded-full shadow-sm transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-200 active:scale-95 ml-2"
-                    aria-label="Play pronunciation"
-                  >
-                    <Volume2 size={20} className="text-blue-600" />
-                  </button>
-                </div>
-                <p className="text-base sm:text-lg text-white font-medium mb-3 sm:mb-4">
-                  {selectedWordData.translation}
-                </p>
-              </div>
-              {selectedWordData.definition && (
-                <div className="space-y-2">
-                  <h4 className="text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wider">
-                    Definition
-                  </h4>
-                  <p className="text-sm sm:text-base text-gray-700">
-                    {selectedWordData.definition}
-                  </p>
-                </div>
-              )}
-            </>
-          ) : (
-            <div className="flex flex-col items-center justify-center h-full text-center p-6 sm:p-8">
-              <BookOpen
-                size={28}
-                className="text-gray-300 mb-3 sm:mb-4 transition-all duration-500 hover:rotate-6"
-              />
-              <h4 className="text-base sm:text-lg font-medium text-gray-500 mb-1">
-                No word selected
+
+        {/* Content */}
+        <div className="p-4 space-y-3 max-h-64 overflow-y-auto">
+          {/* Translation */}
+          <div>
+            <p className="arabic_font text-right text-base text-gray-700 font-medium">
+              {selectedWordData.translation}
+            </p>
+          </div>
+
+          {/* Definition */}
+          {selectedWordData.definition && (
+            <div className="pt-2 border-t border-gray-100">
+              <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">
+                Definition
               </h4>
-              <p className="text-xs sm:text-sm text-gray-400">
-                Click on any word to see its details here
+              <p className="text-sm text-gray-600 leading-relaxed">
+                {selectedWordData.definition}
               </p>
             </div>
           )}
         </div>
+
+        {/* Arrow pointer */}
+        <div
+          className={`absolute w-3 h-3 bg-white border border-gray-200 transform rotate-45 ${
+            showBelow 
+              ? 'border-b-0 border-r-0 -top-[7px]' 
+              : 'border-t-0 border-l-0 -bottom-[7px]'
+          }`}
+          style={{
+            left: `${Math.max(10, Math.min(arrowLeft, popoverWidth - 10))}px`,
+          }}
+        />
       </div>
     </>
   );
 };
 
-Sidebar.propTypes = {
+WordPopover.propTypes = {
   isOpen: PropTypes.bool,
   selectedWordData: PropTypes.object,
+  position: PropTypes.shape({
+    top: PropTypes.number,
+    bottom: PropTypes.number,
+    left: PropTypes.number,
+  }),
   onClose: PropTypes.func,
   onPlayWordAudio: PropTypes.func,
 };
@@ -110,9 +158,27 @@ const ClickableWord = ({
   wordDefinitions,
   onPlayWordAudio,
 }) => {
-  const handleClick = useCallback(() => {
+  const wordRef = useRef(null);
+
+  const handleClick = useCallback((e) => {
+    e.stopPropagation();
+    
     const cleanWord = word.replace(/[.,!?;:'"]/g, "");
-    const wordData = wordDefinitions[cleanWord];
+    const toLowerWord = cleanWord.toLowerCase();
+    const wordData = wordDefinitions[toLowerWord];
+
+    if (!wordRef.current) return;
+
+    // حساب موقع الكلمة بالنسبة للصفحة
+    const rect = wordRef.current.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    
+    const position = {
+      top: rect.top + scrollTop,
+      bottom: rect.bottom + scrollTop,
+      left: rect.left + scrollLeft + rect.width / 2,
+    };
 
     onPlayWordAudio(cleanWord);
 
@@ -122,7 +188,7 @@ const ClickableWord = ({
       definition: wordData ? wordData.definition : "Definition not available",
       partOfSpeech: wordData ? wordData.partOfSpeech : "word",
       rank: wordData ? wordData.rank : Math.floor(Math.random() * 1000) + 1,
-    });
+    }, position);
   }, [word, onWordClick, wordDefinitions, onPlayWordAudio]);
 
   const cleanWord = word.replace(/[.,!?;:'"]/g, "");
@@ -132,6 +198,7 @@ const ClickableWord = ({
   return (
     <>
       <span
+        ref={wordRef}
         className={`text-black font-semibold text-xl hover:bg-blue-100 cursor-pointer rounded transition-all duration-200 ${
           isActive
             ? "border border-black p-1 bg-blue-50 shadow-sm"
@@ -157,7 +224,7 @@ ClickableWord.propTypes = {
 };
 
 /* ------------------------------------------------------------------ */
-/* Sentence (simplified: no ref, no highlight/progress badge)         */
+/* Sentence                                                           */
 /* ------------------------------------------------------------------ */
 const Sentence = ({
   sentence,
@@ -222,8 +289,9 @@ export function ShowLessonFirstRound() {
   const levelIdNum = Number(levelId);
   const lessonIdNum = Number(lessonId);
 
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [popoverOpen, setPopoverOpen] = useState(false);
   const [selectedWordData, setSelectedWordData] = useState(null);
+  const [popoverPosition, setPopoverPosition] = useState(null);
   const [activeWord, setActiveWord] = useState(null);
 
   const currentLevel = readingData.find((level) => level.id === levelIdNum);
@@ -273,7 +341,6 @@ export function ShowLessonFirstRound() {
       const toSay = (text || "").trim();
       if (!toSay) return;
 
-      // stop any audio
       if (audioRef.current) {
         try {
           audioRef.current.pause();
@@ -287,7 +354,7 @@ export function ShowLessonFirstRound() {
           const v = pickVoice();
           if (v) utter.voice = v;
           utter.lang = v?.lang || PREFERRED_VOICE_LANG || "en-US";
-          utter.rate = 1; // fixed, simpler UI
+          utter.rate = 1;
           utter.pitch = 1;
           utter.volume = 1;
           window.speechSynthesis.speak(utter);
@@ -309,7 +376,6 @@ export function ShowLessonFirstRound() {
     [pickVoice]
   );
 
-  /* ---------------- Manual sentence audio play ---------------- */
   const playSentenceAudio = useCallback((audioUrl) => {
     if (window.speechSynthesis) {
       try {
@@ -332,7 +398,6 @@ export function ShowLessonFirstRound() {
     });
   }, []);
 
-  /* ---------------- Word speak ---------------- */
   const playWordAudio = useCallback(
     (word) => {
       const clean = (word || "").replace(/[^\w'-]/g, "");
@@ -342,16 +407,28 @@ export function ShowLessonFirstRound() {
     [speak]
   );
 
-  /* ---------------- Word click (open sidebar) ---------------- */
-  const handleWordClick = useCallback((wordData) => {
-    setSelectedWordData(wordData);
-    setActiveWord(wordData.word);
-    setSidebarOpen(true);
+  /* ---------------- Word click (open/close popover) ---------------- */
+  const handleWordClick = useCallback((wordData, position) => {
+    setSelectedWordData((prev) => {
+      if (prev && prev.word === wordData.word) {
+        setPopoverOpen(false);
+        setActiveWord(null);
+        setPopoverPosition(null);
+        return null;
+      } else {
+        setPopoverOpen(true);
+        setActiveWord(wordData.word);
+        setPopoverPosition(position);
+        return wordData;
+      }
+    });
   }, []);
 
-  const closeSidebar = () => {
-    setSidebarOpen(false);
+  const closePopover = () => {
+    setPopoverOpen(false);
     setActiveWord(null);
+    setSelectedWordData(null);
+    setPopoverPosition(null);
   };
 
   /* ---------------- Cleanup ---------------- */
@@ -370,7 +447,6 @@ export function ShowLessonFirstRound() {
     };
   }, []);
 
-  /* ---------------- UI ---------------- */
   if (!currentLesson) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -395,20 +471,12 @@ export function ShowLessonFirstRound() {
   const NEXT_ROUND_URL = `/reading/show-lesson-second-round/${levelId}/${lessonId}`;
 
   return (
-    <div className="min-h-screen">
-      {/* Sidebar */}
-      <Sidebar
-        isOpen={sidebarOpen}
-        selectedWordData={selectedWordData}
-        onClose={closeSidebar}
-        onPlayWordAudio={playWordAudio}
-      />
-
+    <div className="min-h-screen relative">
       <div className="max-w-4xl mx-auto p-6">
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
             <Link
-              to="/"
+              to="/reading"
               className="p-2 text-[var(--secondary-color)] hover:bg-gray-200 rounded-full transition-colors"
             >
               <X size={29} />
@@ -449,12 +517,18 @@ export function ShowLessonFirstRound() {
         </div>
       </div>
 
-      {/* Next round button */}
-      <div className="fixed bottom-6 right-6">
-        {/* Glowing ring */}
-        <div className="absolute inset-0 rounded-full bg-[var(--primary-color)] blur-lg opacity-60 animate-pulse"></div>
+      {/* Word Popover */}
+      <WordPopover
+        isOpen={popoverOpen}
+        selectedWordData={selectedWordData}
+        position={popoverPosition}
+        onClose={closePopover}
+        onPlayWordAudio={playWordAudio}
+      />
 
-        {/* Button */}
+      {/* Next round button */}
+      <div className="fixed bottom-6 right-6 z-30">
+        <div className="absolute inset-0 rounded-full bg-[var(--primary-color)] blur-lg opacity-60 animate-pulse"></div>
         <Link
           to={NEXT_ROUND_URL}
           className="relative arabic_font text-sm font-medium px-5 py-3 rounded-full bg-[var(--primary-color)] text-white hover:bg-[var(--secondary-color)] active:scale-[.98] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 flex items-center gap-2"
