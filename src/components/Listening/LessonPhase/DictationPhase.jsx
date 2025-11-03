@@ -5,84 +5,76 @@ import FeedbackDisplay from "../FeedbackDisplay";
 import soundEffects from "../../../utils/soundEffects";
 import dataService from "../../../services/dataService";
 
-const DictationPhase = ({ lesson, onComplete }) => {
+// Supports two modes:
+// 1) Legacy lesson/exercises flow (lesson prop)
+// 2) Per-question flow (correctText + onListenAgain + onComplete)
+const DictationPhase = ({
+  lesson,
+  correctText,
+  onListenAgain,
+  onComplete,
+  isDesktop = false,
+}) => {
+  // Determine mode before any state depends on it
+  const isQuestionMode = !!correctText;
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
-  const [selectedMode, setSelectedMode] = useState(null);
   const [userAnswer, setUserAnswer] = useState("");
-  const [selectedChoice, setSelectedChoice] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showFeedback, setShowFeedback] = useState(false);
   const [feedback, setFeedback] = useState(null);
+  const [showStartOverlay, setShowStartOverlay] = useState(!isQuestionMode);
+  const [isMobile, setIsMobile] = useState(false);
   const [stats, setStats] = useState({
     correct: 0,
     total: 0,
     accuracy: 0,
   });
 
-  const currentExercise = lesson.exercises[currentExerciseIndex];
-  const isLastExercise = currentExerciseIndex === lesson.exercises.length - 1;
+  const exercisesList = lesson?.questions || lesson?.exercises || [];
+  const currentExercise = isQuestionMode
+    ? { text: correctText }
+    : exercisesList[currentExerciseIndex];
+  const isLastExercise = isQuestionMode
+    ? true
+    : currentExerciseIndex === exercisesList.length - 1;
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Update progress when exercise index changes
   useEffect(() => {
-    if (currentExerciseIndex > 0) {
+    if (isQuestionMode) return;
+    if (currentExerciseIndex > 0 && exercisesList.length > 0) {
       const progress = Math.round(
-        (currentExerciseIndex / lesson.exercises.length) * 100
+        (currentExerciseIndex / exercisesList.length) * 100
       );
-      dataService.updateLessonProgress(lesson.id, progress);
+      dataService
+        .updateLessonProgress(lesson.id, progress)
+        .catch(console.error);
     }
-  }, [currentExerciseIndex, lesson.id, lesson.exercises.length]);
+  }, [isQuestionMode, currentExerciseIndex, lesson?.id, exercisesList.length]);
 
-  const modes = [
-    {
-      id: "writing",
-      name: "Writing Mode",
-      icon: "✏️",
-      description: "Type what you hear",
-    },
-    {
-      id: "choice",
-      name: "Multiple Choice",
-      icon: "✔️",
-      description: "Choose the correct answer",
-    },
-  ];
-
-  const handleModeSelect = (mode) => {
-    setSelectedMode(mode);
-    setUserAnswer("");
-    setSelectedChoice(null);
-    setShowFeedback(false);
-    setFeedback(null);
+  const handleStartDictation = () => {
+    setShowStartOverlay(false);
   };
 
   const handleAnswerSubmit = () => {
-    if (!selectedMode) return;
-
-    let isCorrect = false;
-    let score = 0;
-
-    if (selectedMode === "writing") {
-      if (!userAnswer.trim()) {
-        alert("Please type your answer first!");
-        return;
-      }
-      const analysis = analyzeAnswer(userAnswer.trim(), currentExercise.text);
-      score = analysis.accuracy;
-      isCorrect = analysis.isPerfect;
-      setFeedback({ type: "writing", analysis, isCorrect });
-    } else {
-      if (selectedChoice === null) {
-        alert("Please select an answer first!");
-        return;
-      }
-      isCorrect = selectedChoice === 0; // First choice is always correct
-      score = isCorrect ? 100 : 0;
-      setFeedback({
-        type: "choice",
-        isCorrect,
-        correctAnswer: currentExercise.text,
-      });
+    if (!userAnswer.trim()) {
+      alert("Please type your answer first!");
+      return;
     }
+
+    const analysis = analyzeAnswer(userAnswer.trim(), currentExercise.text);
+    const score = analysis.accuracy;
+    const isCorrect = analysis.isPerfect;
+    setFeedback({ type: "writing", analysis, isCorrect });
 
     // Play sound effect
     if (isCorrect) {
@@ -104,36 +96,36 @@ const DictationPhase = ({ lesson, onComplete }) => {
     setShowFeedback(true);
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
+    if (isQuestionMode) {
+      // In per-question mode delegate next to parent
+      onComplete && onComplete();
+      return;
+    }
     if (isLastExercise) {
-      // Mark lesson as completed
-      dataService.completeLesson(lesson.id);
-      onComplete();
+      await dataService.completeLesson(lesson.id);
+      onComplete && onComplete();
     } else {
       setCurrentExerciseIndex((prev) => prev + 1);
       setUserAnswer("");
-      setSelectedChoice(null);
       setShowFeedback(false);
       setFeedback(null);
 
-      // Update progress
       const progress = Math.round(
-        ((currentExerciseIndex + 1) / lesson.exercises.length) * 100
+        ((currentExerciseIndex + 1) / exercisesList.length) * 100
       );
-      dataService.updateLessonProgress(lesson.id, progress);
+      await dataService.updateLessonProgress(lesson.id, progress);
     }
   };
 
   const handleReset = () => {
     setUserAnswer("");
-    setSelectedChoice(null);
     setShowFeedback(false);
     setFeedback(null);
   };
 
   const handleRetry = () => {
     setUserAnswer("");
-    setSelectedChoice(null);
     setShowFeedback(false);
     setFeedback(null);
   };
@@ -233,77 +225,223 @@ const DictationPhase = ({ lesson, onComplete }) => {
     );
   }
 
-  return (
-    <div className="max-w-[800px] mx-auto">
-      <h2 className="text-4xl text-[#275151] text-center mb-6">
-        ✏️ Dictation Phase
-      </h2>
+  const progressPercentage = isQuestionMode
+    ? 100
+    : exercisesList.length > 0
+    ? ((currentExerciseIndex + 1) / exercisesList.length) * 100
+    : 0;
 
-      {/* Progress Section */}
-      <div className="bg-white border border-[#e2e8f0] rounded-lg p-5 mb-6">
-        <div className="w-full h-2 bg-[#e2e8f0] rounded-md overflow-hidden mb-3">
-          <div
-            className="h-full bg-[#63a29b] rounded-md transition-[width] duration-300"
-            style={{
-              width: `${
-                ((currentExerciseIndex + 1) / lesson.exercises.length) * 100
-              }%`,
-            }}
-          />
-        </div>
-        <div className="text-center text-[#275151] font-semibold text-sm">
-          Exercise {currentExerciseIndex + 1} of {lesson.exercises.length}
+  // Mobile dictation layout
+  if (isMobile && showStartOverlay) {
+    return (
+      <div className="fixed inset-0 bg-gradient-to-br from-[#ffc515] to-[#ffd84d] flex items-center justify-center z-50">
+        <div className="text-center px-6">
+          <div className="bg-white/10 backdrop-blur-sm rounded-full p-8 mb-6 inline-block">
+            <span className="text-6xl">✏️</span>
+          </div>
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Dictation phase
+          </h2>
+          <p className="text-white/90 text-lg mb-8">
+            Get ready to type what you hear
+          </p>
+          <button
+            onClick={handleStartDictation}
+            className="bg-white text-[#ffc515] px-8 py-4 rounded-full text-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
+            Tap To Start
+          </button>
         </div>
       </div>
+    );
+  }
+
+  // Desktop combined view - normal layout (not overlay)
+  if (isQuestionMode && isDesktop) {
+    return (
+      <div className="p-6 bg-white">
+        {!showFeedback ? (
+          <>
+            {/* Textarea */}
+            <div className="mb-4">
+              <div className="bg-gray-50 border-2 border-gray-200 rounded-l-[16px] rounded-r-full overflow-hidden shadow-sm">
+                <textarea
+                  value={userAnswer}
+                  onChange={(e) => setUserAnswer(e.target.value)}
+                  placeholder="type the sentence you heard here........"
+                  className="w-full min-h-[120px] bg-transparent text-gray-800 placeholder-gray-400 px-5 py-4 focus:outline-none focus:border-[#ffc515] resize-none text-base"
+                  spellCheck="false"
+                  autoCorrect="off"
+                  autoCapitalize="off"
+                  data-gramm="false"
+                  data-gramm_editor="false"
+                  data-enable-grammarly="false"
+                />
+              </div>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex items-center justify-center gap-4">
+              <button
+                onClick={() => {
+                  setShowFeedback(false);
+                  setFeedback(null);
+                  onListenAgain && onListenAgain();
+                }}
+                className="px-6 py-2 rounded-full border-2 border-gray-300 text-gray-400 bg-white hover:bg-gray-400 hover:text-white hover:border-gray-400 font-medium"
+              >
+                Listen again
+              </button>
+              <button
+                onClick={handleAnswerSubmit}
+                disabled={!userAnswer.trim()}
+                className={`${
+                  !userAnswer.trim() ? "opacity-50 cursor-not-allowed" : ""
+                } px-11 py-2 rounded-full font-semibold text-white bg-[#ffc515] hover:bg-[#fff] hover:text-[#ffc515] hover:border-[#ffc515] hover:border-2`}
+              >
+                Next
+              </button>
+            </div>
+          </>
+        ) : (
+          <FeedbackDisplay
+            feedback={feedback}
+            onNext={handleNext}
+            onRetry={onListenAgain}
+            isLastExercise={isLastExercise}
+            lessonTitle={lesson?.title}
+          />
+        )}
+      </div>
+    );
+  }
+
+  // Mobile overlay container in question mode
+  if (isQuestionMode && !isDesktop) {
+    return (
+      <div className="fixed inset-0 z-[1050] pointer-events-none">
+        <div className="relative h-full w-full flex flex-col justify-end">
+          {!showFeedback && (
+            <div className="pointer-events-auto px-4 pb-6">
+              {/* Header pill */}
+              <div className="flex justify-center mb-3">
+                <div className="bg-white/50 backdrop-blur-sm text-gray-800 rounded-[24px] px-6 py-3 shadow-[0_2px_12px_rgba(0,0,0,0.15)] inline-flex items-center gap-3">
+                  <div>
+                    <div className="text-gray-800 font-extrabold text-lg leading-none text-center">
+                      Your Turn!
+                    </div>
+                    <div className="text-gray-600 text-sm mt-1">
+                      <span className="text-lg">🖊️</span> type what you heard
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Textarea */}
+              <div className="-ml-6 w-[105%] max-w-none">
+                <div className="bg-white/50 backdrop-blur-sm border border-white/60 shadow-[0_4px_20px_rgba(0,0,0,0.12)] rounded-l-[24px] rounded-r-[999px] overflow-hidden">
+                  <textarea
+                    value={userAnswer}
+                    onChange={(e) => setUserAnswer(e.target.value)}
+                    placeholder="type the sentence you heard here........"
+                    className="w-full min-h-[88px] bg-transparent text-black-800 placeholder-black px-5 py-3.5 focus:outline-none resize-none"
+                    spellCheck="false"
+                    autoCorrect="off"
+                    autoCapitalize="off"
+                    data-gramm="false"
+                    data-gramm_editor="false"
+                    data-enable-grammarly="false"
+                  />
+                </div>
+              </div>
+
+              {/* Buttons */}
+              <div className="mt-5 flex items-center justify-center gap-3">
+                <button
+                  onClick={() => {
+                    setShowFeedback(false);
+                    setFeedback(null);
+                    onListenAgain && onListenAgain();
+                  }}
+                  className="px-6 py-3 rounded-full border border-white text-white bg-transparent hover:bg-white/10 transition-all"
+                >
+                  Listen again
+                </button>
+                <button
+                  onClick={handleAnswerSubmit}
+                  disabled={!userAnswer.trim()}
+                  className={`${
+                    !userAnswer.trim() ? "opacity-50 cursor-not-allowed" : ""
+                  } px-8 py-3 rounded-full font-semibold text-gray-900 bg-[#ffc515] hover:bg-[#ffd84d] transition-all shadow-[0_10px_20px_rgba(255,197,21,0.35)]`}
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          )}
+          {showFeedback && feedback && (
+            <div className="pointer-events-auto p-4">
+              <FeedbackDisplay
+                feedback={feedback}
+                onNext={handleNext}
+                onRetry={onListenAgain}
+                isLastExercise={isLastExercise}
+                lessonTitle={lesson?.title}
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // Legacy layout (desktop/old data)
+  return (
+    <div className="max-w-[800px] mx-auto">
+      {/* Title Section */}
+      <div className="text-center mb-6">
+        <h2 className="text-4xl sm:text-5xl font-bold text-[#FDCB3E] mb-4 flex items-center justify-center gap-3">
+          <span className="text-4xl sm:text-5xl">✏️</span>
+          Dictation Phase
+        </h2>
+      </div>
+
+      {/* Progress Section */}
+      {!showFeedback && (
+        <div className="mb-6">
+          <div className="relative w-full h-1 bg-gray-300 rounded-full mb-2">
+            <div
+              className="absolute top-1/2 left-0 w-4 h-4 -translate-y-1/2 rounded-full bg-[#FDCB3E] transition-all duration-300"
+              style={{ left: "0%" }}
+            />
+            <div
+              className="absolute top-1/2 w-4 h-4 -translate-y-1/2 rounded-full bg-[#FDCB3E] transition-all duration-300"
+              style={{ left: `${progressPercentage}%` }}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Audio Section */}
       {!showFeedback && (
-        <div className="bg-white border border-[#e2e8f0] rounded-lg p-5 mb-6 text-center">
-          <h3 className="text-[#275151] mb-4 text-xl">
-            Listen to the Sentence
-          </h3>
+        <div className="mb-6">
           <AudioControls
             audioUrl={currentExercise.audio}
             isPlaying={isPlaying}
             onPlayPause={() => setIsPlaying(!isPlaying)}
-            onVolumeChange={(volume) => console.log("Volume:", volume)}
-            onSpeedChange={(speed) => console.log("Speed:", speed)}
+            onVolumeChange={(volume) => {}}
+            onSpeedChange={(speed) => {}}
           />
         </div>
       )}
 
-      {/* Mode Selection */}
-      {!selectedMode && (
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 mb-6">
-          {modes.map((mode) => (
-            <button
-              key={mode.id}
-              onClick={() => handleModeSelect(mode.id)}
-              className="bg-white border-2 border-[#e2e8f0] rounded-lg p-4 cursor-pointer transition-all duration-300 text-left flex items-center gap-3 hover:border-[#63a29b] hover:bg-[#f8fafc]"
-            >
-              <span className="text-2xl">{mode.icon}</span>
-              <div className="flex flex-col gap-1">
-                <span className="font-semibold text-[#275151] text-base">
-                  {mode.name}
-                </span>
-                <span className="text-[#475569] text-sm">
-                  {mode.description}
-                </span>
-              </div>
-            </button>
-          ))}
-        </div>
-      )}
-
-      {/* Exercise Area */}
-      {selectedMode && !showFeedback && (
+      {/* Exercise Area - Writing Mode Only */}
+      {!showFeedback && (
         <ExerciseArea
-          mode={selectedMode}
+          mode="writing"
           exercise={currentExercise}
           userAnswer={userAnswer}
           onAnswerChange={setUserAnswer}
-          selectedChoice={selectedChoice}
-          onChoiceSelect={setSelectedChoice}
           onSubmit={handleAnswerSubmit}
           onReset={handleReset}
           showFeedback={showFeedback}

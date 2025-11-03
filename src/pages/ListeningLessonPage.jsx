@@ -1,33 +1,57 @@
 import { useState, useEffect } from "react";
+import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Headphones, PenTool } from "lucide-react";
 import dataService from "../services/dataService";
 import ListeningPhase from "../components/Listening/LessonPhase/ListeningPhase";
 import DictationPhase from "../components/Listening/LessonPhase/DictationPhase";
-import Header from "../components/Listening/Header";
 import TipsPanel from "../components/Listening/TipsPanel";
 
 export const ListeningLessonPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [currentPhase, setCurrentPhase] = useState("listening");
+  const [currentPhase, setCurrentPhase] = useState("video");
   const [showTips, setShowTips] = useState(false);
   const [lesson, setLesson] = useState(null);
+  const [questions, setQuestions] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const foundLesson = dataService.getLessonById(parseInt(id));
-    if (foundLesson) {
-      // Check if lesson is unlocked
-      if (!dataService.isLessonUnlocked(parseInt(id))) {
-        alert("This lesson is locked. Complete the previous lesson first!");
+    const loadLesson = async () => {
+      const lessonId = parseInt(id);
+      const foundLesson = await dataService.getLessonById(lessonId);
+      if (foundLesson) {
+        // Check if lesson is unlocked
+        const isUnlocked = await dataService.isLessonUnlocked(lessonId);
+        if (!isUnlocked) {
+          alert("This lesson is locked. Complete the previous lesson first!");
+          navigate("/listening/home");
+          return;
+        }
+        setLesson(foundLesson);
+        const qs = await dataService.getLessonQuestions(lessonId);
+        setQuestions(qs);
+        // Derive current question from saved progress (20% per question)
+        const progress = foundLesson.progress || 0;
+        const derivedIndex = Math.min(4, Math.floor(progress / 20));
+        setCurrentQuestionIndex(derivedIndex);
+      } else {
         navigate("/listening/home");
-        return;
       }
-      setLesson(foundLesson);
-    } else {
-      navigate("/listening/home");
-    }
+    };
+    loadLesson();
   }, [id, navigate]);
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   if (!lesson) {
     return (
@@ -42,93 +66,129 @@ export const ListeningLessonPage = () => {
     { id: "dictation", name: "Dictation", icon: PenTool },
   ];
 
-  const handleLessonComplete = () => {
-    dataService.completeLesson(parseInt(id));
+  const handleLessonComplete = async () => {
+    await dataService.completeLesson(parseInt(id));
     alert("Congratulations! You have completed this lesson!");
     navigate("/listening/home");
   };
 
-  return (
-    <div className="min-h-screen bg-gray-100">
-      <Header onToggleTips={() => setShowTips(!showTips)} />
+  const handleDictationCompleted = async () => {
+    const total = Math.max(1, questions.length || 5);
+    const nextIndex = currentQuestionIndex + 1;
+    const lessonId = parseInt(id);
+    // Update progress: 20% per question
+    const newProgress = Math.min(100, Math.round((nextIndex / total) * 100));
+    await dataService.updateLessonProgress(lessonId, newProgress);
+    if (nextIndex >= total) {
+      await handleLessonComplete();
+      return;
+    }
+    setCurrentQuestionIndex(nextIndex);
+    setCurrentPhase("video");
+  };
 
-      <div className="max-w-md mx-auto px-4 py-4 sm:max-w-lg md:max-w-2xl lg:max-w-4xl">
-        {/* Lesson Overview Card */}
-        <div className="bg-[linear-gradient(135deg,_#e6e6e6_0%,_#ffe680_100%)] rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6 shadow-[0_8px_25px_rgba(255,197,21,0.3)]">
-          <div className="text-center text-gray-600">
-            <h1 className="text-xl sm:text-2xl font-bold mb-2 leading-tight">
-              {lesson.title.includes(" - ") ? (
-                <>
-                  <div>{lesson.title.split(" - ")[0]}</div>
-                  <div>_ {lesson.title.split(" - ")[1]}</div>
-                </>
-              ) : (
-                lesson.title
-              )}
-            </h1>
-            <p className="text-xs sm:text-sm text-gray-600/90 mb-4 sm:mb-6 leading-relaxed">
-              {lesson.description}
-            </p>
-            <div className="flex flex-col items-center sm:flex-row sm:justify-center gap-2 sm:gap-3">
-              <div className="bg-white/20 backdrop-blur-sm rounded-3xl px-3 py-3 border-2 border-gray-800/30 inline-flex flex-1 justify-center min-w-0 w-full max-w-[140px]">
-                <span className="text-gray-600 font-semibold text-xs sm:text-sm truncate">
-                  {lesson.duration}
-                </span>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-3xl px-3 py-3 border-2 border-gray-800/30 inline-flex flex-1 justify-center min-w-0 w-full max-w-[140px]">
-                <span className="text-gray-600 font-semibold text-xs sm:text-sm truncate">
-                  {lesson.exercises.length} exercises
-                </span>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-3xl px-3 py-3 border-2 border-gray-800/30 inline-flex flex-1 justify-center min-w-0 w-full max-w-[140px]">
-                <span className="text-gray-600 font-semibold text-xs sm:text-sm truncate">
-                  Lesson {lesson.id} of 60
-                </span>
-              </div>
-            </div>
+  // Mobile layout - full screen for both phases
+  if (isMobile) {
+    return (
+      <div className="min-h-screen bg-black">
+        {/* Always render the video full-screen; overlay dictation on top when needed */}
+        {questions[currentQuestionIndex] && (
+          <ListeningPhase
+            lesson={lesson}
+            lessonId={lesson?.id}
+            questionId={questions[currentQuestionIndex]?.id}
+            videoSrc={questions[currentQuestionIndex].videoSrc}
+            totalSteps={questions.length}
+            currentStepIndex={currentQuestionIndex}
+            onComplete={() => setCurrentPhase("dictation")}
+          />
+        )}
+
+        {currentPhase === "dictation" && questions[currentQuestionIndex] && (
+          <DictationPhase
+            lesson={lesson}
+            correctText={questions[currentQuestionIndex].text}
+            onComplete={handleDictationCompleted}
+            onListenAgain={() => setCurrentPhase("video")}
+          />
+        )}
+      </div>
+    );
+  }
+
+  // Desktop layout - combined video and dictation view
+  return (
+    <div
+      className="min-h-screen"
+      style={{
+        background: 'url("/assets/images/gradient-background.png") #fff',
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "left",
+      }}
+    >
+      <div className="max-w-4xl mx-auto px-4 py-6 lg:px-6">
+        {/* Progress Indicator - All bullets solid yellow, connected by light gray line */}
+        <div className="mb-5">
+          <div className="flex items-center justify-center gap-2">
+            {Array.from({ length: questions.length || 5 }).map((_, index) => {
+              return (
+                <React.Fragment key={index}>
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#ffc515] border-2 border-[#ffc515]" />
+                  {index < (questions.length || 5) - 1 && (
+                    <div className="h-0.5 w-10 bg-gray-300" />
+                  )}
+                </React.Fragment>
+              );
+            })}
           </div>
         </div>
 
-        {/* Phase Navigation */}
-        <div className="flex gap-2 mb-4 sm:mb-6 mt-6 ">
-          {phases.map((phase) => {
-            const IconComponent = phase.icon;
-            return (
-              <div
-                key={phase.id}
-                onClick={() => setCurrentPhase(phase.id)}
-                className={`flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-3 rounded-xl cursor-pointer transition-all duration-300 font-semibold text-xs sm:text-sm flex-1 justify-center touch-manipulation ${
-                  currentPhase === phase.id
-                    ? "text-white shadow-[0_4px_12px_rgba(255,197,21,0.3)]"
-                    : "bg-white text-gray-600 border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.1)]"
-                }`}
-                style={
-                  currentPhase === phase.id
-                    ? {
-                        background:
-                          "linear-gradient(135deg, #ffc515 0%, #ffd84d 50%, #ffc515 100%)",
-                      }
-                    : {}
-                }
-              >
-                <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                <span className="text-xs sm:text-sm">{phase.name}</span>
-              </div>
-            );
-          })}
+        {/* Listening Phase Title */}
+        <div className="mb-5 text-center">
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <Headphones className="w-9 h-9 text-[#ffc515]" strokeWidth={2.5} />
+            <h2 className="text-4xl font-bold text-[#ffc515] leading-tight">
+              Listening Phase
+            </h2>
+          </div>
         </div>
 
-        {/* Phase Content */}
-        <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-[0_8px_25px_rgba(0,0,0,0.1)] border border-gray-100 min-h-[300px] sm:min-h-[400px]">
-          {currentPhase === "listening" && (
-            <ListeningPhase
-              lesson={lesson}
-              onComplete={() => setCurrentPhase("dictation")}
-            />
-          )}
+        {/* Combined Video and Dictation Container */}
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-300 p-4">
+          {/* Subtitle */}
+          <p className="text-gray-600 text-base text-center mb-4">
+            Watch the video below to improve your listening skills
+          </p>
 
-          {currentPhase === "dictation" && (
-            <DictationPhase lesson={lesson} onComplete={handleLessonComplete} />
+          {/* Video Section */}
+          <div className="bg-black rounded-2xl p-1">
+            {questions[currentQuestionIndex] && (
+              <ListeningPhase
+                lesson={lesson}
+                lessonId={lesson?.id}
+                questionId={questions[currentQuestionIndex]?.id}
+                videoSrc={questions[currentQuestionIndex].videoSrc}
+                totalSteps={questions.length}
+                currentStepIndex={currentQuestionIndex}
+                onComplete={() => {}}
+                isDesktop={true}
+              />
+            )}
+          </div>
+
+          {/* Dictation Section - Always visible on desktop */}
+          {questions[currentQuestionIndex] && (
+            <DictationPhase
+              lesson={lesson}
+              correctText={questions[currentQuestionIndex].text}
+              onComplete={handleDictationCompleted}
+              onListenAgain={() => {
+                // Video will restart when user clicks play button
+                // The video is always visible on desktop, so no phase switching needed
+              }}
+              isDesktop={true}
+            />
           )}
         </div>
       </div>

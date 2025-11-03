@@ -89,7 +89,10 @@ const LessonCard = ({ lesson, isUnlocked, isCompleted, progress }) => {
           <div className="flex gap-2 text-xs text-[#64748b] font-medium">
             <span>{lesson.duration}</span>
             <span className="text-[#cbd5e1]">•</span>
-            <span>{lesson.exercises.length} exercises</span>
+            <span>
+              {lesson.questions?.length || lesson.exercises?.length || 0}{" "}
+              questions
+            </span>
           </div>
         </div>
       </div>

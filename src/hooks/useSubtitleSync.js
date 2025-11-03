@@ -13,6 +13,7 @@ const useSubtitleSync = (videoRef) => {
 
   const {
     loadSRTFile,
+    parseSRT,
     getCurrentSubtitle,
     isLoading: srtLoading,
     error: srtError,
@@ -67,7 +68,7 @@ const useSubtitleSync = (videoRef) => {
   }, []);
 
   /**
-   * Load subtitles for current sentence
+   * Load subtitles for current sentence (pronunciation tool)
    * @param {number} lessonNumber - Lesson number
    * @param {number} topicId - Topic ID
    * @param {number} conversationId - Conversation ID
@@ -85,7 +86,8 @@ const useSubtitleSync = (videoRef) => {
           lessonNumber,
           topicId,
           conversationId,
-          sentenceIndex
+          sentenceIndex,
+          "pronunciation"
         );
 
         if (loadedSubtitles && loadedSubtitles.length > 0) {
@@ -106,6 +108,60 @@ const useSubtitleSync = (videoRef) => {
       }
     },
     [loadSRTFile, startSubtitleSync, stopSubtitleSync]
+  );
+
+  /**
+   * Load subtitles for listening tool question
+   * @param {number} lessonId - Lesson ID
+   * @param {number} questionId - Question ID
+   */
+  const loadSubtitlesForQuestion = useCallback(
+    async (lessonId, questionId) => {
+      setSubtitleError(null);
+
+      try {
+        // Stop current sync while loading
+        stopSubtitleSync();
+
+        // Create a custom loader for listening tool naming convention
+        const fileName = `lesson${lessonId}_question${questionId}.srt`;
+        const filePath = `/assets/subtitles/listening/${fileName}`;
+
+        const response = await fetch(filePath);
+
+        if (!response.ok) {
+          throw new Error(
+            `Failed to load SRT file: ${response.status} ${response.statusText}`
+          );
+        }
+
+        const srtContent = await response.text();
+
+        if (!srtContent.trim()) {
+          throw new Error("SRT file is empty");
+        }
+
+        const loadedSubtitles = parseSRT(srtContent);
+
+        if (loadedSubtitles && loadedSubtitles.length > 0) {
+          setSubtitles(loadedSubtitles);
+          setCurrentSubtitle(null);
+          currentSubtitleIndexRef.current = -1;
+
+          // Start sync after loading
+          startSubtitleSync();
+        } else {
+          setSubtitles([]);
+          setCurrentSubtitle(null);
+        }
+      } catch (error) {
+        console.error("Error loading subtitles:", error.message);
+        setSubtitleError(error.message);
+        setSubtitles([]);
+        setCurrentSubtitle(null);
+      }
+    },
+    [parseSRT, startSubtitleSync, stopSubtitleSync]
   );
 
   /**
@@ -187,6 +243,7 @@ const useSubtitleSync = (videoRef) => {
     isLoading: srtLoading,
     error: subtitleError || srtError,
     loadSubtitlesForSentence,
+    loadSubtitlesForQuestion,
     clearSubtitles,
     startSubtitleSync,
     stopSubtitleSync,
