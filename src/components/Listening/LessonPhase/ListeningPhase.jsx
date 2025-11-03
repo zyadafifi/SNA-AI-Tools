@@ -15,6 +15,7 @@ const ListeningPhase = ({
   currentStepIndex = 0,
   lessonId,
   questionId,
+  isDesktop = false,
 }) => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
@@ -99,12 +100,15 @@ const ListeningPhase = ({
     }
   }, [videoRef]);
 
-  // Handle video end - auto-transition to dictation
+  // Handle video end - auto-transition to dictation (mobile only)
   const handleVideoEnd = useCallback(() => {
-    setTimeout(() => {
-      onComplete();
-    }, 1000);
-  }, [onComplete]);
+    if (!isDesktop && isMobile) {
+      setTimeout(() => {
+        onComplete();
+      }, 1000);
+    }
+    // Desktop: don't auto-switch, dictation is always visible
+  }, [onComplete, isDesktop, isMobile]);
 
   const handleVideoClick = () => {
     if (!hasUserInteracted) {
@@ -283,20 +287,12 @@ const ListeningPhase = ({
 
   // Desktop layout with HTML5 video
   return (
-    <div className="text-center">
-      <h2 className="text-xl sm:text-2xl text-[#ffc515] mb-3 sm:mb-4 font-bold flex items-center justify-center gap-2">
-        <span className="text-xl sm:text-2xl">🎧</span>
-        Listening Phase
-      </h2>
-      <p className="text-gray-600 mb-4 sm:mb-6 text-xs sm:text-sm">
-        Watch the video below to improve your listening skills
-      </p>
-
-      {/* HTML5 Video */}
-      <div className="relative w-full h-0 pb-[56.25%] mb-4 sm:mb-6 rounded-lg overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
+    <div className="w-full">
+      {/* HTML5 Video - Simplified for combined view */}
+      <div className="relative w-full h-0 pb-[56.25%] overflow-hidden rounded-t-2xl">
         <video
           ref={videoRef}
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover rounded-t-2xl"
           controls
           playsInline
           preload="metadata"
@@ -314,7 +310,7 @@ const ListeningPhase = ({
                 message: error.message,
                 networkState: video.networkState,
                 readyState: video.readyState,
-                src: video.src || lesson?.videoSrc,
+                src: video.src || lesson?.videoSrc || videoSrc,
               });
             }
             handleError(e);
@@ -322,30 +318,22 @@ const ListeningPhase = ({
           onLoadStart={handleLoadStart}
           onCanPlay={handleCanPlay}
         >
-          {lesson?.videoSrc ? (
-            <source src={lesson.videoSrc} type="video/mp4" />
+          {videoSrc || lesson?.videoSrc ? (
+            <source src={videoSrc || lesson.videoSrc} type="video/mp4" />
           ) : (
             <source src="" type="video/mp4" />
           )}
           Your browser does not support the video tag.
         </video>
+
+        {/* Video Error Indicator */}
+        {videoError && (
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2.5 bg-red-600/90 text-white p-5 rounded-[10px] text-sm text-center z-10">
+            <i className="fas fa-exclamation-triangle text-2xl mb-1"></i>
+            <span>Video failed to load. Please check your connection.</span>
+          </div>
+        )}
       </div>
-
-      <p className="text-gray-600 mb-4 sm:mb-6 text-xs sm:text-sm">
-        Watch the video below to improve your listening skills
-      </p>
-
-      <button
-        onClick={onComplete}
-        className="relative bg-[#ffc515] text-white border-none px-6 sm:px-8 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-semibold cursor-pointer transition-all duration-300 hover:bg-[#cc6a15] hover:-translate-y-[2px] shadow-[0_4px_12px_rgba(255,197,21,0.3)] touch-manipulation overflow-hidden group"
-        style={{
-          background:
-            "linear-gradient(135deg, #ffc515 0%, #ffd84d 50%, #ffc515 100%)",
-        }}
-      >
-        <span className="relative z-10">Next - Dictation Phase</span>
-        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></span>
-      </button>
     </div>
   );
 };

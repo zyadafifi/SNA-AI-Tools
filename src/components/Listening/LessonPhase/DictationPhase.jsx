@@ -8,7 +8,13 @@ import dataService from "../../../services/dataService";
 // Supports two modes:
 // 1) Legacy lesson/exercises flow (lesson prop)
 // 2) Per-question flow (correctText + onListenAgain + onComplete)
-const DictationPhase = ({ lesson, correctText, onListenAgain, onComplete }) => {
+const DictationPhase = ({
+  lesson,
+  correctText,
+  onListenAgain,
+  onComplete,
+  isDesktop = false,
+}) => {
   // Determine mode before any state depends on it
   const isQuestionMode = !!correctText;
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
@@ -250,8 +256,68 @@ const DictationPhase = ({ lesson, correctText, onListenAgain, onComplete }) => {
     );
   }
 
-  // Overlay container in question mode to appear over the video
-  if (isQuestionMode) {
+  // Desktop combined view - normal layout (not overlay)
+  if (isQuestionMode && isDesktop) {
+    return (
+      <div className="p-6 bg-white">
+        {!showFeedback ? (
+          <>
+            {/* Textarea */}
+            <div className="mb-4">
+              <div className="bg-gray-50 border-2 border-gray-200 rounded-l-[16px] rounded-r-full overflow-hidden shadow-sm">
+                <textarea
+                  value={userAnswer}
+                  onChange={(e) => setUserAnswer(e.target.value)}
+                  placeholder="type the sentence you heard here........"
+                  className="w-full min-h-[120px] bg-transparent text-gray-800 placeholder-gray-400 px-5 py-4 focus:outline-none focus:border-[#ffc515] resize-none text-base"
+                  spellCheck="false"
+                  autoCorrect="off"
+                  autoCapitalize="off"
+                  data-gramm="false"
+                  data-gramm_editor="false"
+                  data-enable-grammarly="false"
+                />
+              </div>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex items-center justify-center gap-4">
+              <button
+                onClick={() => {
+                  setShowFeedback(false);
+                  setFeedback(null);
+                  onListenAgain && onListenAgain();
+                }}
+                className="px-6 py-2 rounded-full border-2 border-gray-300 text-gray-400 bg-white hover:bg-gray-400 hover:text-white hover:border-gray-400 font-medium"
+              >
+                Listen again
+              </button>
+              <button
+                onClick={handleAnswerSubmit}
+                disabled={!userAnswer.trim()}
+                className={`${
+                  !userAnswer.trim() ? "opacity-50 cursor-not-allowed" : ""
+                } px-11 py-2 rounded-full font-semibold text-white bg-[#ffc515] hover:bg-[#fff] hover:text-[#ffc515] hover:border-[#ffc515] hover:border-2`}
+              >
+                Next
+              </button>
+            </div>
+          </>
+        ) : (
+          <FeedbackDisplay
+            feedback={feedback}
+            onNext={handleNext}
+            onRetry={onListenAgain}
+            isLastExercise={isLastExercise}
+            lessonTitle={lesson?.title}
+          />
+        )}
+      </div>
+    );
+  }
+
+  // Mobile overlay container in question mode
+  if (isQuestionMode && !isDesktop) {
     return (
       <div className="fixed inset-0 z-[1050] pointer-events-none">
         <div className="relative h-full w-full flex flex-col justify-end">
