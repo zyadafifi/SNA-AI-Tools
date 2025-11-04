@@ -520,9 +520,9 @@ export const MobileLessonPage = () => {
       completeSentence(currentSentenceIndex, lastScore);
 
       // Move to next sentence if not completed
+      // Note: completeSentence already updates currentSentenceIndex internally
       if (currentSentenceIndex < conversation.sentences.length - 1) {
         const nextSentenceIndex = currentSentenceIndex + 1;
-        setCurrentSentenceIndex(nextSentenceIndex);
 
         // Hide practice overlay and replay overlay
         setShowPracticeOverlay(false);
@@ -539,19 +539,22 @@ export const MobileLessonPage = () => {
         }
 
         // Auto-play next video (only if user has interacted)
-        if (hasUserInteracted || userInteractionRef.current) {
-          setTimeout(async () => {
-            if (conversation.sentences[nextSentenceIndex]?.videoSrc) {
-              setVideoSource(
-                conversation.sentences[nextSentenceIndex].videoSrc
-              );
-              // Wait a bit for video source to load, then play
-              setTimeout(() => {
-                safeVideoPlay();
-              }, 200);
-            }
-          }, 500);
-        }
+        // Use setTimeout to ensure state from completeSentence has updated
+        setTimeout(() => {
+          if (hasUserInteracted || userInteractionRef.current) {
+            setTimeout(async () => {
+              if (conversation.sentences[nextSentenceIndex]?.videoSrc) {
+                setVideoSource(
+                  conversation.sentences[nextSentenceIndex].videoSrc
+                );
+                // Wait a bit for video source to load, then play
+                setTimeout(() => {
+                  safeVideoPlay();
+                }, 200);
+              }
+            }, 500);
+          }
+        }, 0);
       }
     }
   };

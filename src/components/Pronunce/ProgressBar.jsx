@@ -44,36 +44,30 @@ const ProgressBar = ({
       ? completedSentences
       : completedSentences?.size || 0;
 
-  // Calculate bullet positions: bullets are evenly distributed
-  // For n bullets, positions are at: 0/(n-1), 1/(n-1), 2/(n-1), ..., (n-1)/(n-1)
-  // This means: 0%, 25%, 50%, 75%, 100% for 5 bullets
+  // Calculate bullet positions: bullets are evenly distributed across the progress bar
+  // For n bullets, divide the bar into n equal segments and place bullets at segment midpoints
+  // For 3 bullets: 16.65%, 50%, 83.35% (each segment is 33.3% of the total width)
   const getBulletPosition = (index) => {
-    if (total === 1) return 100;
-    return (index / (total - 1)) * 100;
+    if (total === 1) return 50; // Center for single bullet
+    // Divide progress bar into equal segments, place bullet at midpoint of each segment
+    const segmentSize = 100 / total;
+    return index * segmentSize + segmentSize / 2;
   };
 
   // Calculate progress based on completed sentences and current position
+  // Progress is distributed in equal segments (33.3% each for 3 sentences)
+  // The fill is always synchronized with the current bullet position
+  const segmentSize = 100 / total;
   let progressPercentage;
 
-  if (completedCount === 0 && currentSentenceIndex === 0) {
-    // First sentence, not completed: show 50% of the way to first bullet
-    const firstBulletPos = getBulletPosition(0);
-    progressPercentage = firstBulletPos * 0.5;
+  // Check if all sentences are completed
+  if (completedCount === total && total > 0) {
+    // All sentences completed: fill to 100%
+    progressPercentage = 100;
   } else {
-    // Show progress up to the last completed bullet
-    const completedBulletPos =
-      completedCount > 0 ? getBulletPosition(completedCount - 1) : 0;
-    const currentBulletPos = getBulletPosition(currentSentenceIndex);
-
-    if (currentSentenceIndex > completedCount) {
-      // On a new sentence: show 50% between completed and current bullet
-      const nextBulletPos = getBulletPosition(completedCount);
-      progressPercentage =
-        completedBulletPos + (nextBulletPos - completedBulletPos) * 0.5;
-    } else {
-      // Show progress to completed bullet
-      progressPercentage = completedBulletPos;
-    }
+    // Fill to the current sentence's bullet position
+    // This ensures the fill is always at the bullet for the sentence being worked on
+    progressPercentage = getBulletPosition(currentSentenceIndex);
   }
 
   // SNA brand colors with fallbacks
@@ -164,10 +158,7 @@ const ProgressBar = ({
             position: "absolute",
             inset: 0,
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
-            paddingLeft: "16px",
-            paddingRight: "16px",
           }}
         >
           {sentences.map((_, i) => {
@@ -178,12 +169,15 @@ const ProgressBar = ({
               hoveredDot === i || focusedDot === i || touchedDot === i;
             const isInteractive = onDotClick && isCompleted;
             const label = labels[i] || `Step ${i + 1}`;
+            const bulletPosition = getBulletPosition(i);
 
             return (
               <div
                 key={i}
                 style={{
-                  position: "relative",
+                  position: "absolute",
+                  left: `${bulletPosition}%`,
+                  transform: "translateX(-50%)",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
