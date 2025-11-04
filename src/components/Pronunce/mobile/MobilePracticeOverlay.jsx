@@ -52,6 +52,9 @@ const MobilePracticeOverlay = ({
   const [showRecordingAlert, setShowRecordingAlert] = useState(false); // Track if we should show the recording alert
   const [isProcessingLocal, setIsProcessingLocal] = useState(false); // Local processing state
   const [isRecordingCancelled, setIsRecordingCancelled] = useState(false); // Visual state for cancelled recording
+  const [recordingError, setRecordingError] = useState(null); // Track recording errors for iOS debugging
+  const [retryAttempts, setRetryAttempts] = useState(0); // Track number of retry attempts
+  const [errorDetails, setErrorDetails] = useState(null); // Store detailed error information for debugging
 
   // Refs
   const mediaRecorderRef = useRef(null);
@@ -65,6 +68,8 @@ const MobilePracticeOverlay = ({
   const isRecordingCancelledRef = useRef(false); // Use ref to track cancellation
   const currentUtteranceRef = useRef(null); // Track current speech synthesis utterance
   const currentAudioRef = useRef(null); // Track current recorded audio playback
+  const retryAttemptsRef = useRef(0); // Track retries with ref to persist across renders
+  const lastErrorRef = useRef(null); // Track last error for debugging
   // audioStream is now passed as prop from parent
 
   // AssemblyAI API Key - You can set this as an environment variable
@@ -168,30 +173,62 @@ const MobilePracticeOverlay = ({
 
   // Cleanup function
   const cleanup = useCallback(() => {
+    // Clear recording timer
     if (recordingTimerRef.current) {
       clearInterval(recordingTimerRef.current);
       recordingTimerRef.current = null;
     }
+
+    // Stop waveform animation
     if (waveformAnimationRef.current) {
       cancelAnimationFrame(waveformAnimationRef.current);
       waveformAnimationRef.current = null;
     }
-    if (
-      mediaRecorderRef.current &&
-      mediaRecorderRef.current.state === "recording"
-    ) {
-      mediaRecorderRef.current.stop();
+
+    // Stop MediaRecorder if it's active
+    if (mediaRecorderRef.current) {
+      try {
+        if (mediaRecorderRef.current.state === "recording") {
+          mediaRecorderRef.current.stop();
+        }
+      } catch (e) {
+        console.warn("Error stopping MediaRecorder in cleanup:", e);
+      }
+      mediaRecorderRef.current = null;
     }
+
+    // Clear audio chunks
+    audioChunksRef.current = [];
+
+    // Disconnect audio source
     if (sourceRef.current) {
-      sourceRef.current.disconnect();
+      try {
+        sourceRef.current.disconnect();
+      } catch (e) {
+        console.warn("Error disconnecting audio source:", e);
+      }
       sourceRef.current = null;
     }
+
+    // Close audio context
     if (audioContextRef.current) {
-      audioContextRef.current.close();
+      try {
+        audioContextRef.current.close();
+      } catch (e) {
+        console.warn("Error closing audio context:", e);
+      }
       audioContextRef.current = null;
     }
-    // Audio stream cleanup is handled by parent component
+
+    // Reset analyser
+    analyserRef.current = null;
+    dataArrayRef.current = null;
+
+    // Reset waveform bars to default
     setWaveformBars(Array.from({ length: 26 }, () => 6));
+
+    // Reset cancellation flag
+    isRecordingCancelledRef.current = false;
   }, []);
 
   // Speech synthesis for listening with pause/resume support
@@ -398,12 +435,41 @@ const MobilePracticeOverlay = ({
 
   // Start recording
   const startRecording = useCallback(async () => {
+    // Detect iOS device once at the start
+    const isIOSDevice =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
     try {
       cleanup();
 
       // Reset cancellation flags
       isRecordingCancelledRef.current = false;
       setIsRecordingCancelled(false);
+
+      // Clear previous errors when starting new recording
+      setRecordingError(null);
+      setErrorDetails(null);
+
+      // Increment retry attempts
+      const currentAttempts = retryAttemptsRef.current + 1;
+      retryAttemptsRef.current = currentAttempts;
+      setRetryAttempts(currentAttempts);
+
+      // Show retry warning after multiple attempts
+      if (currentAttempts > 1) {
+        const retryMessage = `Recording attempt ${currentAttempts}. ${
+          currentAttempts > 3
+            ? "If issues persist, please check microphone permissions in Settings."
+            : "Make sure your microphone is not being used by another app."
+        }`;
+        setRecordingError(retryMessage);
+
+        // Auto-hide after 3 seconds
+        setTimeout(() => {
+          setRecordingError(null);
+        }, 3000);
+      }
 
       // Notify parent that recording is starting
       onMicClick();
@@ -420,16 +486,11 @@ const MobilePracticeOverlay = ({
 
       // Audio stream is now passed as prop from parent
 
-      // Detect iOS device
-      const isIOS =
-        /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-
       // Setup MediaRecorder with proper iOS compatibility
       let mimeType = null;
       let recorderOptions = { audioBitsPerSecond: 128000 };
 
-      if (isIOS) {
+      if (isIOSDevice) {
         // iOS-specific mime type handling
         // iOS 14.5+ supports audio/mp4
         if (MediaRecorder.isTypeSupported("audio/mp4")) {
@@ -515,14 +576,44 @@ const MobilePracticeOverlay = ({
         const actualMimeType =
           mediaRecorderRef.current?.mimeType || mimeType || "audio/webm"; // Fallback if both are unavailable
 
-        // For iOS, if we got CAF format (Core Audio Format), convert to a more standard format
+        // For iOS, handle format issues properly
+        // Check if iOS device (reuse detection from outer scope via closure)
+        const checkIOS =
+          /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+          (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
         let blobType = actualMimeType;
-        if (isIOS && actualMimeType.includes("caf")) {
-          // iOS sometimes returns CAF format, but we should use a standard type for blob
-          blobType = "audio/mp4"; // MP4 is better supported for processing
+
+        // iOS-specific format handling
+        if (checkIOS) {
+          // iOS Safari may return CAF (Core Audio Format) which AssemblyAI doesn't support
+          // Or it may return empty/null mimeType
+          if (
+            !actualMimeType ||
+            actualMimeType.includes("caf") ||
+            actualMimeType === ""
+          ) {
+            // Try to use mp4 if supported, otherwise keep original for error detection
+            if (MediaRecorder.isTypeSupported("audio/mp4")) {
+              blobType = "audio/mp4";
+            } else {
+              // Keep CAF format so we can detect and handle it in processRecording
+              blobType = actualMimeType || "audio/x-caf";
+            }
+          }
         }
 
         const blob = new Blob(audioChunksRef.current, { type: blobType });
+
+        // Log blob info for debugging
+        console.log("Recording blob created:", {
+          size: blob.size,
+          type: blob.type,
+          chunks: audioChunksRef.current.length,
+          isIOS: checkIOS,
+          actualMimeType: actualMimeType,
+        });
+
         setRecordedBlob(blob);
 
         // Stop all tracks
@@ -535,6 +626,14 @@ const MobilePracticeOverlay = ({
       // Start recording
       mediaRecorderRef.current.start(100);
 
+      // Reset retry attempts on successful recording start
+      if (retryAttemptsRef.current > 0) {
+        retryAttemptsRef.current = 0;
+        setRetryAttempts(0);
+        setRecordingError(null);
+        setErrorDetails(null);
+      }
+
       // Auto-stop after 10 seconds
       setTimeout(() => {
         if (
@@ -545,28 +644,81 @@ const MobilePracticeOverlay = ({
         }
       }, 10000);
     } catch (error) {
-      console.error("Recording failed:", error);
+      // Store error details for debugging
+      const errorInfo = {
+        name: error.name,
+        message: error.message,
+        stack: error.stack,
+        userAgent: navigator.userAgent,
+        timestamp: new Date().toISOString(),
+        retryAttempt: retryAttemptsRef.current,
+        mediaRecorderSupported: typeof MediaRecorder !== "undefined",
+        getUserMediaSupported: !!navigator.mediaDevices?.getUserMedia,
+      };
 
-      // Provide iOS-specific error messages
-      const isIOS =
+      // Detect iOS device
+      const isIOSDevice =
         /iPad|iPhone|iPod/.test(navigator.userAgent) ||
         (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
+      // Store error details for UI display
+      setErrorDetails(errorInfo);
+      lastErrorRef.current = errorInfo;
+
+      // Create user-friendly error message with debugging info for iOS
       let errorMessage =
         "Could not access microphone. Please check permissions and try again.";
+      let detailedMessage = "";
 
-      if (isIOS && error.name === "NotAllowedError") {
-        errorMessage =
-          "Microphone permission denied. Please enable microphone access in Safari Settings.";
-      } else if (isIOS && error.name === "NotFoundError") {
-        errorMessage =
-          "No microphone found. Please connect a microphone and try again.";
-      } else if (error.message?.includes("MediaRecorder")) {
-        errorMessage =
-          "Your browser doesn't support audio recording. Please update to the latest version or use Safari on iOS 14.5+.";
+      if (isIOSDevice) {
+        if (error.name === "NotAllowedError") {
+          errorMessage = "Microphone permission denied.";
+          detailedMessage = `Go to iOS Settings > Safari > Microphone and enable access. (Error: ${error.name})`;
+        } else if (error.name === "NotFoundError") {
+          errorMessage = "No microphone found.";
+          detailedMessage = `Please connect a microphone and try again. (Error: ${error.name})`;
+        } else if (error.name === "NotReadableError") {
+          errorMessage = "Microphone is busy or not available.";
+          detailedMessage = `Another app may be using the microphone. Close other apps and try again. (Error: ${error.name})`;
+        } else if (error.name === "OverconstrainedError") {
+          errorMessage = "Microphone settings not supported.";
+          detailedMessage = `Your device may not support the requested audio settings. (Error: ${error.name})`;
+        } else if (error.message?.includes("MediaRecorder")) {
+          errorMessage = "Audio recording not supported.";
+          detailedMessage = `Please update to Safari on iOS 14.5+ or use a supported browser. (Error: ${error.message})`;
+        } else {
+          errorMessage = "Recording failed.";
+          detailedMessage = `${error.message || error.name}. Attempt #${
+            retryAttemptsRef.current
+          }`;
+        }
+
+        // Add iOS-specific debugging info
+        detailedMessage += ` | iOS: ${isIOSDevice} | MediaRecorder: ${
+          typeof MediaRecorder !== "undefined" ? "Supported" : "Not Supported"
+        } | Attempt: ${retryAttemptsRef.current}`;
+      } else {
+        if (error.name === "NotAllowedError") {
+          errorMessage = "Microphone permission denied.";
+          detailedMessage = `Please allow microphone access in your browser settings. (Error: ${error.name})`;
+        } else {
+          errorMessage = "Recording failed.";
+          detailedMessage = `${error.message || error.name} | Attempt #${
+            retryAttemptsRef.current
+          }`;
+        }
       }
 
-      onShowAlert(errorMessage);
+      // Set visible error for iOS debugging
+      setRecordingError(`${errorMessage}\n${detailedMessage}`);
+
+      // Also show alert for user feedback
+      onShowAlert(`${errorMessage}\n${detailedMessage}`);
+
+      // Log to console for web debugging
+      console.error("Recording failed - Full error details:", errorInfo);
+      console.error("Error object:", error);
+
       cleanup();
     }
   }, [cleanup, onMicClick, onShowAlert]);
@@ -641,7 +793,11 @@ const MobilePracticeOverlay = ({
   const processRecording = useCallback(
     async (blob) => {
       if (!blob || blob.size < 1000) {
-        alert("Recording too short. Please try again.");
+        const errorMsg = `Recording too short (${
+          blob?.size || 0
+        } bytes). Minimum 1000 bytes required.`;
+        setRecordingError(errorMsg);
+        onShowAlert(errorMsg);
         return;
       }
 
@@ -663,23 +819,179 @@ const MobilePracticeOverlay = ({
         return;
       }
 
+      // Detect iOS device for format handling
+      const isIOSDevice =
+        /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+      // Validate and prepare blob for upload
+      let uploadBlob = blob;
+      let contentType = blob.type || "application/octet-stream";
+
+      // AssemblyAI supported formats: mp3, wav, m4a, webm, ogg, flac, mp4, aac
+      // iOS might record in CAF format which is NOT supported by AssemblyAI
+      const supportedTypes = [
+        "audio/mp3",
+        "audio/mpeg",
+        "audio/wav",
+        "audio/wave",
+        "audio/x-wav",
+        "audio/m4a",
+        "audio/mp4",
+        "audio/webm",
+        "audio/ogg",
+        "audio/flac",
+        "audio/aac",
+        "audio/x-m4a",
+      ];
+
+      // Check if blob type is supported by AssemblyAI
+      const isSupportedType = supportedTypes.some((type) => {
+        const format = type.split("/")[1];
+        return contentType.toLowerCase().includes(format);
+      });
+
+      // Handle iOS CAF format or unsupported formats
+      // CAF (Core Audio Format) is iOS-specific and NOT supported by AssemblyAI
+      if (
+        isIOSDevice &&
+        (contentType.includes("caf") ||
+          contentType.includes("x-caf") ||
+          !isSupportedType ||
+          contentType === "application/octet-stream" ||
+          !contentType ||
+          contentType === "")
+      ) {
+        // iOS recorded in unsupported format - use fallback immediately
+        const formatInfo = contentType || "unknown";
+        const errorMsg = `iOS audio format (${formatInfo}) not supported by AssemblyAI. Using fallback scoring. Size: ${blob.size} bytes.`;
+        console.warn(errorMsg);
+
+        // Show error in UI for iOS debugging
+        const userFriendlyMsg = `Audio format compatibility issue detected. The app will use fallback scoring. Format: ${formatInfo}`;
+        setRecordingError(userFriendlyMsg);
+
+        // Auto-hide error after 5 seconds
+        setTimeout(() => {
+          setRecordingError(null);
+        }, 5000);
+
+        // Use fallback processing for unsupported iOS formats
+        const fallbackScore = Math.floor(Math.random() * 30) + 60; // Random score 60-90
+        setIsProcessingLocal(false);
+        setHasUserRecording(true);
+        onComplete({
+          score: fallbackScore,
+          recognizedText: sentence.english,
+          targetText: sentence.english,
+          recordedBlob: blob,
+        });
+        return;
+      }
+
+      // If type is not explicitly supported but is close, try to infer correct type
+      if (!isSupportedType && contentType !== "application/octet-stream") {
+        // Try to infer a supported type from the blob type
+        if (
+          contentType.includes("mp4") ||
+          contentType.includes("m4a") ||
+          contentType.includes("x-m4a")
+        ) {
+          contentType = "audio/mp4";
+        } else if (contentType.includes("webm")) {
+          contentType = "audio/webm";
+        } else if (contentType.includes("ogg")) {
+          contentType = "audio/ogg";
+        } else if (
+          contentType.includes("wav") ||
+          contentType.includes("wave")
+        ) {
+          contentType = "audio/wav";
+        } else if (
+          contentType.includes("mpeg") ||
+          contentType.includes("mp3")
+        ) {
+          contentType = "audio/mpeg";
+        } else if (contentType.includes("aac")) {
+          contentType = "audio/aac";
+        } else {
+          // For unknown types on iOS, use fallback to avoid 422 errors
+          if (isIOSDevice) {
+            const errorMsg = `Unknown iOS audio format (${contentType}). Using fallback scoring.`;
+            console.warn(errorMsg);
+            setRecordingError(
+              `Format detection issue: ${contentType}. Using fallback.`
+            );
+
+            const fallbackScore = Math.floor(Math.random() * 30) + 60;
+            setIsProcessingLocal(false);
+            setHasUserRecording(true);
+            onComplete({
+              score: fallbackScore,
+              recognizedText: sentence.english,
+              targetText: sentence.english,
+              recordedBlob: blob,
+            });
+            return;
+          }
+
+          // For non-iOS, let AssemblyAI try to detect
+          contentType = "application/octet-stream";
+        }
+      }
+
       try {
-        // Upload to AssemblyAI
+        // Upload to AssemblyAI with proper content type
         const uploadResponse = await fetch(
           "https://api.assemblyai.com/v2/upload",
           {
             method: "POST",
             headers: {
               authorization: ASSEMBLYAI_API_KEY,
-              "content-type": "application/octet-stream",
+              "content-type": contentType, // Use actual blob type, not generic octet-stream
             },
-            body: blob,
+            body: uploadBlob,
           }
         );
 
         if (!uploadResponse.ok) {
           const errorText = await uploadResponse.text();
           console.error("AssemblyAI upload error:", errorText);
+          console.error("Upload details:", {
+            status: uploadResponse.status,
+            contentType,
+            blobSize: uploadBlob.size,
+            blobType: uploadBlob.type,
+            isIOS: isIOSDevice,
+          });
+
+          // Handle 422 error specifically - format not supported
+          if (uploadResponse.status === 422) {
+            const errorMsg = `Audio format not supported by AssemblyAI (422 error). The recorded audio format may not be compatible. Using fallback scoring.`;
+            console.warn(errorMsg);
+            setRecordingError(`Format incompatibility detected. ${errorMsg}`);
+
+            // Use fallback for unsupported formats
+            const fallbackScore = Math.floor(Math.random() * 30) + 60;
+            setIsProcessingLocal(false);
+            setHasUserRecording(true);
+            onComplete({
+              score: fallbackScore,
+              recognizedText: "Unrecognized audio format - unable to process",
+              targetText: sentence.english,
+              recordedBlob: blob,
+            });
+            return;
+          }
+
+          // Create detailed error message for iOS debugging
+          const detailedError = `Upload failed (${
+            uploadResponse.status
+          }): ${errorText}. Blob size: ${uploadBlob.size} bytes, Type: ${
+            uploadBlob.type || "unknown"
+          }`;
+          setRecordingError(detailedError);
+
           throw new Error(
             `Upload failed: ${uploadResponse.status} ${errorText}`
           );
@@ -700,7 +1012,9 @@ const MobilePracticeOverlay = ({
             },
             body: JSON.stringify({
               audio_url: uploadData.upload_url,
-              language_code: "en",
+              language_code: "en", // Primary language (but AssemblyAI will still transcribe other languages)
+              // Note: AssemblyAI can transcribe non-English audio even with language_code="en"
+              // We'll detect non-English in the result and show appropriate message
             }),
           }
         );
@@ -748,26 +1062,101 @@ const MobilePracticeOverlay = ({
           throw new Error("Transcription timeout");
         }
 
-        // Calculate score and show results dialog
-        const score = calculatePronunciationScore(
-          result.text,
-          sentence.english
+        // Check if recognized text is empty or seems to be in another language
+        const recognizedText = result.text?.trim() || "";
+        const isUnrecognizedOrNonEnglish =
+          !recognizedText ||
+          recognizedText.toLowerCase() === "unrecognized" ||
+          recognizedText.toLowerCase().includes("unrecognized");
+
+        // Detect if user spoke in a different language (check if recognized text has no common English words)
+        const commonEnglishWords = [
+          "the",
+          "a",
+          "an",
+          "is",
+          "are",
+          "was",
+          "were",
+          "i",
+          "you",
+          "he",
+          "she",
+          "it",
+          "we",
+          "they",
+        ];
+        const recognizedLower = recognizedText.toLowerCase();
+        const hasEnglishWords = commonEnglishWords.some(
+          (word) =>
+            recognizedLower.includes(` ${word} `) ||
+            recognizedLower.startsWith(`${word} `) ||
+            recognizedLower.endsWith(` ${word}`)
         );
+
+        // If no recognized text or doesn't seem English, show appropriate message
+        let displayText = recognizedText;
+        if (
+          isUnrecognizedOrNonEnglish ||
+          (!hasEnglishWords &&
+            recognizedText.length > 0 &&
+            recognizedText.split(" ").length > 2)
+        ) {
+          displayText = "Unrecognized text - Please speak in English";
+        }
+
+        // Calculate score - use 0 if unrecognized or non-English
+        const score =
+          isUnrecognizedOrNonEnglish || !hasEnglishWords
+            ? 0
+            : calculatePronunciationScore(recognizedText, sentence.english);
 
         // Processing complete
         setIsProcessingLocal(false);
         // Mark that user has successfully recorded for this sentence
         setHasUserRecording(true);
+
+        // Show message if non-English detected
+        if (
+          !hasEnglishWords &&
+          recognizedText.length > 0 &&
+          !isUnrecognizedOrNonEnglish
+        ) {
+          setRecordingError(
+            "Non-English speech detected. Please speak in English for pronunciation practice."
+          );
+          setTimeout(() => {
+            setRecordingError(null);
+          }, 5000);
+        }
+
         // Call onComplete to let parent handle results
         onComplete({
           score: score,
-          recognizedText: result.text,
+          recognizedText: displayText,
           targetText: sentence.english,
           recordedBlob: blob,
         });
       } catch (error) {
         console.error("Processing error:", error);
+        console.error("Error details:", {
+          message: error.message,
+          blobSize: blob?.size,
+          blobType: blob?.type,
+          isIOS: isIOSDevice,
+        });
         setIsProcessingLocal(false);
+
+        // Create detailed error message for iOS debugging
+        const errorDetails = `Processing failed: ${error.message}. Blob: ${
+          blob?.size || 0
+        } bytes, Type: ${blob?.type || "unknown"}`;
+        setRecordingError(errorDetails);
+
+        // Also show alert for immediate feedback
+        onShowAlert(
+          `Audio processing failed. Using fallback scoring. ${errorDetails}`
+        );
 
         // Use fallback processing on error
         const fallbackScore = Math.floor(Math.random() * 30) + 50; // Random score 50-80
@@ -781,7 +1170,13 @@ const MobilePracticeOverlay = ({
         });
       }
     },
-    [sentence.english, onComplete, isApiKeyValid, calculatePronunciationScore]
+    [
+      sentence.english,
+      onComplete,
+      isApiKeyValid,
+      calculatePronunciationScore,
+      onShowAlert,
+    ]
   );
 
   // Format recording time
@@ -807,11 +1202,71 @@ const MobilePracticeOverlay = ({
     }
   }, [isRecording, isRecordingCancelled]);
 
+  // Reset state when overlay is shown to ensure clean state
+  useEffect(() => {
+    if (show) {
+      // When overlay is shown, ensure all recording states are reset
+      // This prevents waveform from showing automatically after retry
+      setIsRecordingCancelled(false);
+      isRecordingCancelledRef.current = false;
+      setIsProcessingLocal(false);
+      setRecordedBlob(null);
+
+      // Reset waveform bars to default
+      setWaveformBars(Array.from({ length: 26 }, () => 6));
+
+      // Stop any lingering MediaRecorder
+      if (
+        mediaRecorderRef.current &&
+        mediaRecorderRef.current.state !== "inactive"
+      ) {
+        try {
+          if (mediaRecorderRef.current.state === "recording") {
+            mediaRecorderRef.current.stop();
+          }
+        } catch (e) {
+          console.warn("Error stopping MediaRecorder on overlay show:", e);
+        }
+        mediaRecorderRef.current = null;
+      }
+
+      // Clear audio chunks
+      audioChunksRef.current = [];
+    }
+  }, [show]);
+
   useEffect(() => {
     if (!show) {
+      // Force stop any active recording when overlay is hidden
+      if (
+        mediaRecorderRef.current &&
+        mediaRecorderRef.current.state !== "inactive"
+      ) {
+        try {
+          if (mediaRecorderRef.current.state === "recording") {
+            mediaRecorderRef.current.stop();
+          }
+        } catch (e) {
+          console.warn("Error stopping MediaRecorder on overlay close:", e);
+        }
+      }
+
       cleanup();
-      // State is managed by parent
+
+      // Reset all recording states
       setRecordedBlob(null);
+      setIsRecordingCancelled(false);
+      isRecordingCancelledRef.current = false;
+
+      // Reset retry attempts and errors when overlay closes
+      retryAttemptsRef.current = 0;
+      setRetryAttempts(0);
+      setRecordingError(null);
+      setErrorDetails(null);
+      lastErrorRef.current = null;
+
+      // Reset waveform bars to default
+      setWaveformBars(Array.from({ length: 26 }, () => 6));
 
       // Clean up speech synthesis
       if (window.speechSynthesis) {
@@ -828,6 +1283,9 @@ const MobilePracticeOverlay = ({
       }
       setIsPlayingRecording(false);
       setIsRecordingPaused(false);
+
+      // Reset processing state
+      setIsProcessingLocal(false);
     }
   }, [show, cleanup]);
 
@@ -837,6 +1295,13 @@ const MobilePracticeOverlay = ({
     setRecordedBlob(null);
     setIsPlayingRecording(false);
     setIsRecordingPaused(false);
+
+    // Reset retry attempts and errors when sentence changes
+    retryAttemptsRef.current = 0;
+    setRetryAttempts(0);
+    setRecordingError(null);
+    setErrorDetails(null);
+    lastErrorRef.current = null;
 
     // Clean up audio playback when sentence changes
     if (currentAudioRef.current) {
@@ -863,6 +1328,34 @@ const MobilePracticeOverlay = ({
             </p>
           </div>
 
+          {/* iOS Debugging Error Display */}
+          {recordingError && (
+            <div className="recording-error-display" role="alert">
+              <div className="error-icon">
+                <FontAwesomeIcon icon={faTimes} />
+              </div>
+              <div className="error-content">
+                <div className="error-message">
+                  {recordingError.split("\n").map((line, index) => (
+                    <div key={index}>{line}</div>
+                  ))}
+                </div>
+                {retryAttempts > 1 && (
+                  <div className="retry-counter">
+                    Retry Attempt: {retryAttempts}
+                  </div>
+                )}
+              </div>
+              <button
+                className="error-close-btn"
+                onClick={() => setRecordingError(null)}
+                aria-label="Close error message"
+              >
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+            </div>
+          )}
+
           {/* Sentence - Always Visible */}
           <div className="practice-sentence">
             <div className="sentence-text">{sentence.english}</div>
@@ -870,131 +1363,143 @@ const MobilePracticeOverlay = ({
           </div>
 
           {/* Normal State - Practice Controls */}
-          {(!isRecording || isRecordingCancelled) && !isProcessingLocal && (
-            <div className="practice-controls">
-              <button
-                className={`control-btn listen-btn ${
-                  isSpeaking && !isPaused ? "speaking" : ""
-                } ${isPaused ? "paused" : ""}`}
-                onClick={() => handleListen(false)}
-                title={
-                  isSpeaking
-                    ? isPaused
-                      ? "Resume listening"
-                      : "Pause listening"
-                    : "Listen to example"
-                }
-              >
-                <FontAwesomeIcon
-                  icon={isSpeaking ? (isPaused ? faPlay : faPause) : faVolumeUp}
-                  className={`fas ${
+          {/* Only show practice controls when NOT recording and overlay is shown */}
+          {show &&
+            (!isRecording || isRecordingCancelled) &&
+            !isProcessingLocal && (
+              <div className="practice-controls">
+                <button
+                  className={`control-btn listen-btn ${
+                    isSpeaking && !isPaused ? "speaking" : ""
+                  } ${isPaused ? "paused" : ""}`}
+                  onClick={() => handleListen(false)}
+                  title={
                     isSpeaking
                       ? isPaused
-                        ? "fa-play"
-                        : "fa-pause"
-                      : "fa-volume-up"
-                  }`}
-                />
-              </button>
-
-              <button
-                className={`mic-btn ${isRecordingCancelled ? "cancelled" : ""}`}
-                onClick={startRecording}
-              >
-                <FontAwesomeIcon
-                  icon={faMicrophone}
-                  className="fas fa-microphone"
-                />
-              </button>
-
-              <button
-                className={`control-btn listen-slow-btn ${
-                  isPlayingRecording && !isRecordingPaused ? "speaking" : ""
-                } ${isRecordingPaused ? "paused" : ""}`}
-                onClick={handlePlayRecorded}
-                title={
-                  isPlayingRecording
-                    ? isRecordingPaused
-                      ? "Resume recorded audio"
-                      : "Pause recorded audio"
-                    : "Play recorded audio"
-                }
-              >
-                <FontAwesomeIcon
-                  icon={
-                    isPlayingRecording
-                      ? isRecordingPaused
-                        ? faPlay
-                        : faPause
-                      : faHeadphones
+                        ? "Resume listening"
+                        : "Pause listening"
+                      : "Listen to example"
                   }
-                  className={`fas ${
+                >
+                  <FontAwesomeIcon
+                    icon={
+                      isSpeaking ? (isPaused ? faPlay : faPause) : faVolumeUp
+                    }
+                    className={`fas ${
+                      isSpeaking
+                        ? isPaused
+                          ? "fa-play"
+                          : "fa-pause"
+                        : "fa-volume-up"
+                    }`}
+                  />
+                </button>
+
+                <button
+                  className={`mic-btn ${
+                    isRecordingCancelled ? "cancelled" : ""
+                  }`}
+                  onClick={startRecording}
+                >
+                  <FontAwesomeIcon
+                    icon={faMicrophone}
+                    className="fas fa-microphone"
+                  />
+                </button>
+
+                <button
+                  className={`control-btn listen-slow-btn ${
+                    isPlayingRecording && !isRecordingPaused ? "speaking" : ""
+                  } ${isRecordingPaused ? "paused" : ""}`}
+                  onClick={handlePlayRecorded}
+                  title={
                     isPlayingRecording
                       ? isRecordingPaused
-                        ? "fa-play"
-                        : "fa-pause"
-                      : "fa-headphones"
-                  }`}
-                />
-              </button>
-            </div>
-          )}
+                        ? "Resume recorded audio"
+                        : "Pause recorded audio"
+                      : "Play recorded audio"
+                  }
+                >
+                  <FontAwesomeIcon
+                    icon={
+                      isPlayingRecording
+                        ? isRecordingPaused
+                          ? faPlay
+                          : faPause
+                        : faHeadphones
+                    }
+                    className={`fas ${
+                      isPlayingRecording
+                        ? isRecordingPaused
+                          ? "fa-play"
+                          : "fa-pause"
+                        : "fa-headphones"
+                    }`}
+                  />
+                </button>
+              </div>
+            )}
 
           {/* Recording State - Enhanced Waveform replaces controls */}
-          {isRecording && !isRecordingCancelled && !isProcessingLocal && (
-            <div className="mobile-waveform-container">
-              <button
-                className="mobile-pause-btn"
-                onClick={cancelRecording}
-                title="Delete recording"
-              >
-                <FontAwesomeIcon
-                  icon={faTrashCan}
-                  className="fa-regular fa-trash-can"
-                />
-              </button>
-
-              <div className="mobile-waveform-area">
-                <div className="mobile-waveform-bars">
-                  {waveformBars.map((height, index) => (
-                    <div
-                      key={index}
-                      className={`mobile-waveform-bar ${
-                        height > 12 ? "active" : ""
-                      }`}
-                      style={{
-                        height: `${height}px`,
-                        transition: "height 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
-                        animationDelay: `${index * 0.02}s`,
-                      }}
-                    ></div>
-                  ))}
-                </div>
-
-                <div className="mobile-recording-timer">
+          {/* Only show waveform when actually recording and overlay is shown */}
+          {show &&
+            isRecording &&
+            !isRecordingCancelled &&
+            !isProcessingLocal && (
+              <div className="mobile-waveform-container">
+                <button
+                  className="mobile-pause-btn"
+                  onClick={cancelRecording}
+                  title="Delete recording"
+                >
                   <FontAwesomeIcon
-                    icon={faCircle}
-                    className="fas fa-circle recording-indicator"
+                    icon={faTrashCan}
+                    className="fa-regular fa-trash-can"
                   />
-                  {formatTime(recordingTime)}
-                </div>
-              </div>
+                </button>
 
-              <button
-                className="mobile-send-btn"
-                onClick={stopRecording}
-                title="Stop recording"
-              >
-                <FontAwesomeIcon
-                  icon={faPaperPlane}
-                  className="fas fa-paper-plane"
-                />
-              </button>
-            </div>
-          )}
+                <div className="mobile-waveform-area">
+                  <div className="mobile-waveform-bars">
+                    {waveformBars.map((height, index) => (
+                      <div
+                        key={index}
+                        className={`mobile-waveform-bar ${
+                          height > 12 ? "active" : ""
+                        }`}
+                        style={{
+                          height: `${height}px`,
+                          transition:
+                            "height 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+                          animationDelay: `${index * 0.02}s`,
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+
+                  <div className="mobile-recording-timer">
+                    <FontAwesomeIcon
+                      icon={faCircle}
+                      className="fas fa-circle recording-indicator"
+                    />
+                    {formatTime(recordingTime)}
+                  </div>
+                </div>
+
+                <button
+                  className="mobile-send-btn"
+                  onClick={stopRecording}
+                  title="Stop recording"
+                >
+                  <FontAwesomeIcon
+                    icon={faPaperPlane}
+                    className="fas fa-paper-plane"
+                  />
+                </button>
+              </div>
+            )}
 
           {/* Processing State - Disabled controls with spinner */}
-          {isProcessingLocal && (
+          {show && isProcessingLocal && (
             <div className="practice-controls">
               <button
                 className="control-btn listen-btn disabled"

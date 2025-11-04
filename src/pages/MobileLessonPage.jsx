@@ -493,15 +493,25 @@ export const MobileLessonPage = () => {
 
   const handleRetry = () => {
     setShowResultsDialog(false);
+
+    // Stop any active recording first
+    if (isRecording) {
+      stopRecording();
+    }
+
+    // Clear all recording-related state
     clearRecording();
     setRecognizedText("");
     setMissingWords([]);
+
     // Reset practice overlay states
     setShowPracticeOverlay(false);
     setShowReplayOverlay(false);
+
     // Reset the sentence for retry
     retrySentence();
-    // Show practice overlay after a short delay
+
+    // Show practice overlay after a short delay to ensure state is reset
     setTimeout(() => {
       setShowPracticeOverlay(true);
     }, 500);
