@@ -44,7 +44,7 @@ const HeaderBanner = ({ lessons = [] }) => {
         {/* Right Section - Logo Image */}
         <div className="header-right">
           <img
-            src="/assets/images/sna ddd.png"
+            src="/assets/images/logo.png"
             alt="SNA Logo"
             className="header-logo"
           />
