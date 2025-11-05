@@ -41,37 +41,13 @@ const HeaderBanner = ({ lessons = [] }) => {
           </button>
         </div>
 
-        {/* Right Section - Panda Mascot */}
+        {/* Right Section - Logo Image */}
         <div className="header-right">
-          <div className="panda-mascot">
-            <div className="panda-body">
-              <div className="panda-head">
-                <div className="panda-ears"></div>
-                <div className="panda-face">
-                  <div className="panda-eyes">
-                    <div className="panda-eye left-eye"></div>
-                    <div className="panda-eye right-eye"></div>
-                  </div>
-                  <div className="panda-sunglasses">
-                    <div className="sunglass-lens left-lens"></div>
-                    <div className="sunglass-bridge"></div>
-                    <div className="sunglass-lens right-lens"></div>
-                  </div>
-                  <div className="panda-nose"></div>
-                  <div className="panda-mouth"></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="daily-challenge-sign">
-              <div className="sign-stick left-stick"></div>
-              <div className="sign-board">
-                <div className="sign-text">Daily</div>
-                <div className="sign-text">Challenge</div>
-              </div>
-              <div className="sign-stick right-stick"></div>
-            </div>
-          </div>
+          <img
+            src="/assets/images/sna ddd.png"
+            alt="SNA Logo"
+            className="header-logo"
+          />
         </div>
       </div>
     </div>

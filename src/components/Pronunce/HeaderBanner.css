@@ -104,7 +104,7 @@
   transition: all 0.3s ease;
 }
 
-/* Right Section - Panda Mascot */
+/* Right Section - Logo Image */
 .header-right {
   display: flex;
   align-items: center;
@@ -112,11 +112,11 @@
   flex: 1;
 }
 
-.panda-mascot {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.header-logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
 }
 
 /* Panda Body */
@@ -299,8 +299,8 @@
     flex: 0 0 auto;
   }
 
-  .panda-mascot {
-    gap: 0.5rem;
+  .header-logo {
+    max-height: 140px;
   }
 
   .panda-head {
@@ -393,9 +393,8 @@
     max-width: 120px;
   }
 
-  .panda-head {
-    width: 50px;
-    height: 50px;
+  .header-logo {
+    max-height: 120px;
   }
 
   .panda-ears {
