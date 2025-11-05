@@ -28,7 +28,7 @@ const MobileSubtitleContainer = ({
   }
 
   return (
-    <div className="subtitle-container mt-4" id="mobileSubtitleContainer">
+    <div className="subtitle-container mt-4 " id="mobileSubtitleContainer">
       <div className="subtitle-content">
         {displayEnglish && (
           <div className="subtitle-english" id="mobileSubtitleEnglish">
