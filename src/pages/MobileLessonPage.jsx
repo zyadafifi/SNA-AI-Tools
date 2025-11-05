@@ -42,7 +42,9 @@ export const MobileLessonPage = () => {
   const [showResultsDialog, setShowResultsDialog] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
-  const [showIOSAudioOverlay, setShowIOSAudioOverlay] = useState(false);
+  const [showIOSAudioOverlay, setShowIOSAudioOverlay] = useState(
+    typeof window !== "undefined" && window.innerWidth <= 768
+  );
   const [recognizedText, setRecognizedText] = useState("");
   const [missingWords, setMissingWords] = useState([]);
   const [lastScore, setLastScore] = useState(null);
@@ -155,11 +157,8 @@ export const MobileLessonPage = () => {
       return true;
     } catch (error) {
       console.error("Video play failed:", error.name, error.message);
-      if (error.name === "NotAllowedError") {
-        setShowIOSAudioOverlay(true);
-        setPendingVideoPlay(true);
-        return false;
-      } else if (error.name === "NotSupportedError") {
+      // Don't show overlay again after initial interaction
+      if (error.name === "NotSupportedError") {
         console.error("Video format not supported or video failed to load");
         return false;
       } else {
@@ -385,16 +384,15 @@ export const MobileLessonPage = () => {
 
   // Detect if we're on mobile and set initial overlay state
   useEffect(() => {
-    if (isMobile) {
-      // On mobile, always show the overlay initially
+    if (isMobile && !hasUserInteracted && !userInteractionRef.current) {
+      // On mobile, show the overlay if user hasn't interacted yet
       setShowIOSAudioOverlay(true);
-      setHasUserInteracted(false);
-    } else {
+    } else if (!isMobile && !hasUserInteracted) {
       // On desktop, user interaction might not be required
       setHasUserInteracted(true);
       userInteractionRef.current = true;
     }
-  }, [isMobile]);
+  }, [isMobile, hasUserInteracted]);
 
   const handleBackClick = () => {
     navigate(`/pronounce/topics/${lessonNumber}`);
@@ -406,18 +404,18 @@ export const MobileLessonPage = () => {
     setShowPracticeOverlay(true);
   };
 
-  const handleReplayClick = () => {
+  const handleReplayClick = async () => {
     setShowReplayOverlay(false);
     setShowPracticeOverlay(false); // Hide practice overlay when replaying
-    // Ensure user has interacted before replaying
-    if (hasUserInteracted || userInteractionRef.current) {
-      // Reset video to beginning but DON'T autoplay
-      if (videoRef.current) {
-        videoRef.current.currentTime = 0;
-        // Video is reset but paused - user must click to play
+
+    // Reset video to beginning and play immediately
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      try {
+        await videoRef.current.play();
+      } catch (error) {
+        console.error("Video replay error:", error);
       }
-    } else {
-      setShowIOSAudioOverlay(true);
     }
   };
 
@@ -493,7 +491,8 @@ export const MobileLessonPage = () => {
     setMissingWords([]);
     // Reset practice overlay states
     setShowPracticeOverlay(false);
-    setShowReplayOverlay(false);
+    // Keep replay overlay visible - don't hide it on retry
+    // setShowReplayOverlay(false); // Removed to keep replay button visible
     // Reset the sentence for retry
     retrySentence();
     // Show practice overlay after a short delay

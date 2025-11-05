@@ -420,20 +420,79 @@ const MobilePracticeOverlay = ({
 
       // Audio stream is now passed as prop from parent
 
-      // Setup MediaRecorder with iOS compatibility
-      let mimeType = "audio/webm;codecs=opus";
-      if (!MediaRecorder.isTypeSupported(mimeType)) {
-        // Fallback for iOS Safari
-        mimeType = "audio/mp4";
-        if (!MediaRecorder.isTypeSupported(mimeType)) {
-          mimeType = "audio/wav";
+      // Detect iOS device
+      const isIOS =
+        /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+      // Setup MediaRecorder with proper iOS compatibility
+      let mimeType = null;
+      let recorderOptions = { audioBitsPerSecond: 128000 };
+
+      if (isIOS) {
+        // iOS-specific mime type handling
+        // iOS 14.5+ supports audio/mp4
+        if (MediaRecorder.isTypeSupported("audio/mp4")) {
+          mimeType = "audio/mp4";
+        } else if (MediaRecorder.isTypeSupported("audio/aac")) {
+          mimeType = "audio/aac";
+        } else if (MediaRecorder.isTypeSupported("audio/mpeg")) {
+          mimeType = "audio/mpeg";
+        } else {
+          // Fallback: Let MediaRecorder use browser default (iOS will use CAF format)
+          // Don't specify mimeType, let the browser choose
+          mimeType = null;
+        }
+      } else {
+        // Non-iOS devices: try webm first
+        if (MediaRecorder.isTypeSupported("audio/webm;codecs=opus")) {
+          mimeType = "audio/webm;codecs=opus";
+        } else if (MediaRecorder.isTypeSupported("audio/webm")) {
+          mimeType = "audio/webm";
+        } else if (MediaRecorder.isTypeSupported("audio/ogg;codecs=opus")) {
+          mimeType = "audio/ogg;codecs=opus";
+        } else if (MediaRecorder.isTypeSupported("audio/mp4")) {
+          mimeType = "audio/mp4";
+        } else {
+          // Fallback: Use browser default
+          mimeType = null;
         }
       }
 
-      mediaRecorderRef.current = new MediaRecorder(stream, {
-        mimeType: mimeType,
-        audioBitsPerSecond: 128000,
-      });
+      // Create MediaRecorder with determined mimeType
+      if (mimeType) {
+        recorderOptions.mimeType = mimeType;
+      }
+
+      try {
+        mediaRecorderRef.current = new MediaRecorder(stream, recorderOptions);
+
+        // Store the actual mimeType used (in case it's different from what we requested)
+        const actualMimeType =
+          mediaRecorderRef.current.mimeType || mimeType || "audio/webm";
+
+        // Update mimeType for blob creation later
+        mimeType = actualMimeType;
+      } catch (recorderError) {
+        console.warn(
+          "MediaRecorder creation failed, trying without mimeType:",
+          recorderError
+        );
+        // Fallback: Create without mimeType specification
+        try {
+          mediaRecorderRef.current = new MediaRecorder(stream);
+          // Get the actual mimeType from the recorder
+          mimeType = mediaRecorderRef.current.mimeType || "audio/webm";
+        } catch (fallbackError) {
+          console.error(
+            "MediaRecorder creation completely failed:",
+            fallbackError
+          );
+          throw new Error(
+            "MediaRecorder is not supported on this device. Please use a modern browser."
+          );
+        }
+      }
 
       audioChunksRef.current = [];
 
@@ -452,7 +511,18 @@ const MobilePracticeOverlay = ({
           return;
         }
 
-        const blob = new Blob(audioChunksRef.current, { type: mimeType });
+        // Get the actual mimeType from the MediaRecorder (more reliable)
+        const actualMimeType =
+          mediaRecorderRef.current?.mimeType || mimeType || "audio/webm"; // Fallback if both are unavailable
+
+        // For iOS, if we got CAF format (Core Audio Format), convert to a more standard format
+        let blobType = actualMimeType;
+        if (isIOS && actualMimeType.includes("caf")) {
+          // iOS sometimes returns CAF format, but we should use a standard type for blob
+          blobType = "audio/mp4"; // MP4 is better supported for processing
+        }
+
+        const blob = new Blob(audioChunksRef.current, { type: blobType });
         setRecordedBlob(blob);
 
         // Stop all tracks
@@ -476,12 +546,30 @@ const MobilePracticeOverlay = ({
       }, 10000);
     } catch (error) {
       console.error("Recording failed:", error);
-      alert(
-        "Could not access microphone. Please check permissions and try again."
-      );
+
+      // Provide iOS-specific error messages
+      const isIOS =
+        /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+      let errorMessage =
+        "Could not access microphone. Please check permissions and try again.";
+
+      if (isIOS && error.name === "NotAllowedError") {
+        errorMessage =
+          "Microphone permission denied. Please enable microphone access in Safari Settings.";
+      } else if (isIOS && error.name === "NotFoundError") {
+        errorMessage =
+          "No microphone found. Please connect a microphone and try again.";
+      } else if (error.message?.includes("MediaRecorder")) {
+        errorMessage =
+          "Your browser doesn't support audio recording. Please update to the latest version or use Safari on iOS 14.5+.";
+      }
+
+      onShowAlert(errorMessage);
       cleanup();
     }
-  }, [cleanup, onMicClick]);
+  }, [cleanup, onMicClick, onShowAlert]);
 
   // Stop recording with submission sound
   const stopRecording = useCallback(() => {
@@ -934,7 +1022,10 @@ const MobilePracticeOverlay = ({
                 title="Processing audio..."
                 disabled
               >
-                <i className="fas fa-headphones"></i>
+                <FontAwesomeIcon
+                  icon={faHeadphones}
+                  className="fas fa-headphones"
+                />
               </button>
             </div>
           )}
