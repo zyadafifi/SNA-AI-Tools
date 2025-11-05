@@ -15,8 +15,7 @@ import MobilePracticeOverlay from "../components/Pronunce/mobile/MobilePracticeO
 import MobileCompletionCard from "../components/Pronunce/mobile/MobileCompletionCard";
 import MobileResultsDialog from "../components/Pronunce/mobile/MobileResultsDialog";
 import MobileAlertContainer from "../components/Pronunce/mobile/MobileAlertContainer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVolumeUp } from "@fortawesome/free-solid-svg-icons";
+import { FaMicrophone, FaRegLightbulb } from "react-icons/fa";
 import "./MobileLessonPage.css";
 
 export const MobileLessonPage = () => {
@@ -48,7 +47,6 @@ export const MobileLessonPage = () => {
   const [missingWords, setMissingWords] = useState([]);
   const [lastScore, setLastScore] = useState(null);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
-  const [pendingVideoPlay, setPendingVideoPlay] = useState(false);
   const [videoLoadAttempts, setVideoLoadAttempts] = useState(0);
   const [currentVideoSrc, setCurrentVideoSrc] = useState(null);
 
@@ -286,14 +284,11 @@ export const MobileLessonPage = () => {
 
         // Wait for video to load before attempting to play
         const handleCanPlayThrough = () => {
-          if (hasUserInteracted || userInteractionRef.current) {
-            setTimeout(() => {
-              safeVideoPlay();
-            }, 100);
-          } else {
-            // Show interaction overlay for first video
+          // Just show overlay if not interacted, don't autoplay
+          if (!hasUserInteracted && !userInteractionRef.current) {
             setShowIOSAudioOverlay(true);
           }
+          // Video is ready but paused - user must click to play
           videoRef.current?.removeEventListener(
             "canplaythrough",
             handleCanPlayThrough
@@ -411,15 +406,15 @@ export const MobileLessonPage = () => {
     setShowPracticeOverlay(true);
   };
 
-  const handleReplayClick = async () => {
+  const handleReplayClick = () => {
     setShowReplayOverlay(false);
     setShowPracticeOverlay(false); // Hide practice overlay when replaying
     // Ensure user has interacted before replaying
     if (hasUserInteracted || userInteractionRef.current) {
-      // Reset video to beginning and play
+      // Reset video to beginning but DON'T autoplay
       if (videoRef.current) {
         videoRef.current.currentTime = 0;
-        await safeVideoPlay();
+        // Video is reset but paused - user must click to play
       }
     } else {
       setShowIOSAudioOverlay(true);
@@ -547,10 +542,7 @@ export const MobileLessonPage = () => {
                 setVideoSource(
                   conversation.sentences[nextSentenceIndex].videoSrc
                 );
-                // Wait a bit for video source to load, then play
-                setTimeout(() => {
-                  safeVideoPlay();
-                }, 200);
+                // Video is loaded but paused - user must click to play
               }
             }, 500);
           }
@@ -577,25 +569,20 @@ export const MobileLessonPage = () => {
   };
 
   const handleIOSAudioClick = async () => {
-    // Mark that user has interacted
+    // Mark interaction and hide overlay
     setHasUserInteracted(true);
     userInteractionRef.current = true;
-
-    // Enable video audio
-    enableVideoAudio();
-
-    // Hide the overlay
     setShowIOSAudioOverlay(false);
 
-    // Unmute and try to play video
+    // Prepare video and play immediately
     if (videoRef.current) {
       videoRef.current.muted = false;
       videoRef.current.volume = 1.0;
-
-      // If there was a pending video play, try now
-      if (pendingVideoPlay) {
-        setPendingVideoPlay(false);
-        await safeVideoPlay();
+      // Play video immediately after clicking overlay
+      try {
+        await videoRef.current.play();
+      } catch (error) {
+        console.error("Video play error:", error);
       }
     }
   };
@@ -625,23 +612,18 @@ export const MobileLessonPage = () => {
       return;
     }
 
-    if (!hasUserInteracted) {
-      setHasUserInteracted(true);
-      userInteractionRef.current = true;
-
-      if (isMobile) {
-        enableVideoAudio();
-        setShowIOSAudioOverlay(false);
-
-        // Unmute video on user interaction
-        if (videoRef.current) {
-          videoRef.current.muted = false;
-          videoRef.current.volume = 1.0;
-        }
-      }
+    // Don't allow play if initial overlay is still showing
+    if (showIOSAudioOverlay) {
+      return; // User must click overlay first
     }
 
-    // Try to play/pause video
+    if (!hasUserInteracted) {
+      // Show overlay instead of playing
+      setShowIOSAudioOverlay(true);
+      return;
+    }
+
+    // Now handle normal play/pause
     if (videoRef.current) {
       if (videoRef.current.paused) {
         await safeVideoPlay();
@@ -758,12 +740,36 @@ export const MobileLessonPage = () => {
           )}
         </div>
 
-        {/* iOS Audio Enable Overlay */}
+        {/* Initial Tap to Start Overlay with Dark Backdrop */}
         {showIOSAudioOverlay && (
-          <div className="ios-audio-overlay" onClick={handleIOSAudioClick}>
-            <div className="ios-audio-content">
-              <FontAwesomeIcon icon={faVolumeUp} />
-              <p>Tap to enable audio and start</p>
+          <div
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[1040] cursor-pointer"
+            onClick={handleIOSAudioClick}
+          >
+            <div className="w-full px-5" onClick={(e) => e.stopPropagation()}>
+              <div
+                className="mx-auto max-w-[320px] sm:max-w-[360px] bg-white/90 backdrop-blur-md rounded-[20px] p-5 text-center shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
+                onClick={handleIOSAudioClick}
+              >
+                <div className="flex items-center justify-center gap-2 text-gray-800 mb-1.5">
+                  <FaMicrophone className="w-6 h-6" />
+                  <h2 className="text-xl font-extrabold">
+                    Pronunciation Practice
+                  </h2>
+                </div>
+                <p className="text-gray-600 text-[13px] leading-relaxed">
+                  Tap to watch this video and learn
+                  <br />
+                  how to pronounce correctly
+                </p>
+                <div className="mt-4 flex items-start gap-2.5 text-left">
+                  <FaRegLightbulb className="w-5 h-5 text-[#ffc515] mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-600 text-[13px] leading-relaxed">
+                    After watching, you'll practice speaking the sentence
+                    yourself
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         )}
