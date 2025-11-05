@@ -21,8 +21,7 @@ const HeaderBanner = ({ lessons = [] }) => {
   };
 
   const handleTryNow = () => {
-    const currentLesson = getCurrentLesson();
-    navigate(`/pronounce/topics/${currentLesson}`);
+    window.location.href = "https://doulingo-final-test.netlify.app/";
   };
 
   return (
@@ -32,7 +31,7 @@ const HeaderBanner = ({ lessons = [] }) => {
         <div className="header-left">
           <div className="header-title">
             <h1 className="header-main-title">Test Your</h1>
-            <h1 className="header-sub-title">Pronunciation</h1>
+            <h1 className="header-main-title">English Level</h1>
           </div>
 
           <button className="header-cta-button" onClick={handleTryNow}>
