@@ -14,9 +14,7 @@ export const useNewSpeechRecognition = () => {
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
   const recordingIntervalRef = useRef(null);
-  const audioContextRef = useRef(null);
-  const analyserRef = useRef(null);
-  const animationFrameRef = useRef(null);
+  // Removed audioContextRef, analyserRef, animationFrameRef - visualization handled by MobilePracticeOverlay
   const currentUtteranceRef = useRef(null);
   const recordedAudioRef = useRef(null);
 
@@ -68,10 +66,8 @@ export const useNewSpeechRecognition = () => {
         setRecordingTime((prev) => prev + 1);
       }, 1000);
 
-      // Setup audio visualization with a small delay
-      setTimeout(() => {
-        setupAudioVisualization(stream);
-      }, 100);
+      // Note: Audio visualization is handled by MobilePracticeOverlay component
+      // to avoid conflicts and improve performance
     } catch (error) {
       console.error("❌ Error starting recording:", error);
     }
@@ -90,8 +86,7 @@ export const useNewSpeechRecognition = () => {
         recordingIntervalRef.current = null;
       }
 
-      // Stop audio visualization
-      stopAudioVisualization();
+      // Note: Audio visualization cleanup is handled by MobilePracticeOverlay
 
       // Stop all tracks
       if (mediaRecorderRef.current.stream) {
@@ -131,8 +126,7 @@ export const useNewSpeechRecognition = () => {
           recordingIntervalRef.current = null;
         }
 
-        // Stop audio visualization
-        stopAudioVisualization();
+        // Note: Audio visualization cleanup is handled by MobilePracticeOverlay
 
         // Stop all tracks
         if (mediaRecorderRef.current.stream) {
@@ -146,99 +140,9 @@ export const useNewSpeechRecognition = () => {
     });
   }, [isRecording]);
 
-  // Setup audio visualization
-  const setupAudioVisualization = (stream) => {
-    try {
-      const audioContext = new (window.AudioContext ||
-        window.webkitAudioContext)();
-      const analyser = audioContext.createAnalyser();
-      const source = audioContext.createMediaStreamSource(stream);
-
-      source.connect(analyser);
-      analyser.fftSize = 256;
-
-      audioContextRef.current = audioContext;
-      analyserRef.current = analyser;
-
-      // Start visualization
-      animateWaveform();
-    } catch (error) {
-      console.error("❌ Error setting up audio visualization:", error);
-    }
-  };
-
-  // Animate waveform
-  const animateWaveform = () => {
-    if (!analyserRef.current) return;
-
-    const dataArray = new Uint8Array(analyserRef.current.frequencyBinCount);
-
-    const animate = () => {
-      if (!isRecording) {
-        animationFrameRef.current = null;
-        return;
-      }
-
-      analyserRef.current.getByteFrequencyData(dataArray);
-
-      // Calculate average volume
-      const average = dataArray.reduce((a, b) => a + b) / dataArray.length;
-
-      // Update speech detection
-      setSpeechDetected(average > 20);
-
-      // Update waveform bars
-      updateWaveformBars(dataArray);
-
-      animationFrameRef.current = requestAnimationFrame(animate);
-    };
-
-    animate();
-  };
-
-  // Update waveform bars
-  const updateWaveformBars = (dataArray) => {
-    const bars = document.querySelectorAll(".mobile-waveform-bar");
-    if (bars.length === 0) return;
-
-    bars.forEach((bar, index) => {
-      const dataIndex = Math.floor((index / bars.length) * dataArray.length);
-      const value = dataArray[dataIndex] || 0;
-      const height = Math.max(6, (value / 255) * 30);
-
-      bar.style.height = `${height}px`;
-      bar.style.opacity = value > 50 ? "1" : "0.7";
-
-      if (value > 100) {
-        bar.classList.add("active");
-      } else {
-        bar.classList.remove("active");
-      }
-    });
-  };
-
-  // Stop audio visualization
-  const stopAudioVisualization = () => {
-    if (animationFrameRef.current) {
-      cancelAnimationFrame(animationFrameRef.current);
-      animationFrameRef.current = null;
-    }
-
-    if (audioContextRef.current) {
-      audioContextRef.current.close();
-      audioContextRef.current = null;
-    }
-
-    analyserRef.current = null;
-
-    // Reset waveform bars
-    const bars = document.querySelectorAll(".mobile-waveform-bar");
-    bars.forEach((bar) => {
-      bar.style.height = "6px";
-      bar.style.opacity = "0.7";
-      bar.classList.remove("active");
-    });
-  };
+  // Note: Audio visualization functions removed
+  // Visualization is now handled by MobilePracticeOverlay component
+  // to avoid conflicts and improve performance on iOS
 
   // Delete recording
   const deleteRecording = useCallback(() => {

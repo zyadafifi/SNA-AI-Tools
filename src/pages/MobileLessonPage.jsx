@@ -484,8 +484,12 @@ export const MobileLessonPage = () => {
     await stopRecordingAndGetBlob();
   };
 
-  const handleRetry = () => {
+  const handleRetry = async () => {
     setShowResultsDialog(false);
+
+    // Explicit cleanup before retry
+    await cleanup();
+
     clearRecording();
     setRecognizedText("");
     setMissingWords([]);
@@ -495,10 +499,10 @@ export const MobileLessonPage = () => {
     // setShowReplayOverlay(false); // Removed to keep replay button visible
     // Reset the sentence for retry
     retrySentence();
-    // Show practice overlay after a short delay
+    // Longer delay to ensure cleanup completed
     setTimeout(() => {
       setShowPracticeOverlay(true);
-    }, 500);
+    }, 800);
   };
 
   const handleContinue = async () => {

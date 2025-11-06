@@ -41,7 +41,7 @@ class SoundEffects {
         const rightUrl = "/assets/audio/right answer SFX.wav";
         const wrongUrl = "/assets/audio/wrong answer SFX.wav";
 
-        // Pre-create and load audio instances
+        // Pre-create audio instances (don't call load() - it causes ERR_CACHE_OPERATION_NOT_SUPPORTED)
         for (let i = 0; i < this.poolSize; i++) {
           const rightAudio = new Audio(rightUrl);
           const wrongAudio = new Audio(wrongUrl);
@@ -51,17 +51,9 @@ class SoundEffects {
           rightAudio.volume = 0.7;
           wrongAudio.volume = 0.7;
 
-          // Load audio files
-          try {
-            await rightAudio.load();
-          } catch (e) {
-            // Ignore load errors, will retry on play
-          }
-          try {
-            await wrongAudio.load();
-          } catch (e) {
-            // Ignore load errors, will retry on play
-          }
+          // Don't call load() - let browser handle it naturally
+          // The preload="auto" attribute will trigger loading
+          // We'll wait for canplaythrough event if needed during play
 
           this.audioPool.right.push(rightAudio);
           this.audioPool.wrong.push(wrongAudio);
@@ -150,6 +142,7 @@ class SoundEffects {
 
     return new Promise((resolve) => {
       const audio = new Audio(url);
+      audio.preload = "auto";
       audio.volume = 0.7;
 
       const attemptPlay = (attempt = 1) => {
@@ -177,10 +170,12 @@ class SoundEffects {
         }
       };
 
-      // Load and play
+      // Play - browser will load if needed
       if (audio.readyState >= 2) {
+        // Already loaded, play immediately
         attemptPlay();
       } else {
+        // Wait for audio to be ready, then play
         audio.addEventListener("canplaythrough", () => attemptPlay(), {
           once: true,
         });
@@ -192,7 +187,9 @@ class SoundEffects {
           },
           { once: true }
         );
-        audio.load();
+        // Don't call load() - setting src or accessing play() will trigger loading
+        // Try to play, which will trigger loading if needed
+        attemptPlay();
       }
     });
   }
