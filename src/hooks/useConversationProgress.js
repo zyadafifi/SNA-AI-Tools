@@ -88,8 +88,8 @@ export const useConversationProgress = (conversationId, totalSentences) => {
   );
 
   const retrySentence = useCallback(() => {
-    // Reset current sentence for retry
-    setCurrentSentenceIndex(0);
+    // Keep current sentence for retry - don't reset to 0
+    // The user wants to retry the current sentence, not go back to the first one
   }, []);
 
   const resetConversation = useCallback(() => {
