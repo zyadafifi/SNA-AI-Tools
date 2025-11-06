@@ -1,152 +1,148 @@
 // Sound effects utility with iOS compatibility
 class SoundEffects {
   constructor() {
-    this.audioContext = null;
-    this.isUnlocked = false;
     this.isIOS =
       /iPad|iPhone|iPod/.test(navigator.userAgent) ||
       (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-    this.audioBuffers = {
-      right: null,
-      wrong: null,
+    this.audioPool = {
+      right: [],
+      wrong: [],
     };
-    this.isLoading = false;
-    this.loadPromise = null;
+    this.poolSize = 3; // Pre-create multiple audio instances
+    this.isInitialized = false;
+    this.initPromise = null;
 
-    // Initialize audio context (will be unlocked on first user interaction)
-    this.initAudioContext();
+    // Initialize on first user interaction (iOS requirement)
+    if (typeof window !== "undefined") {
+      const initEvents = ["touchstart", "click", "keydown"];
+      const initAudio = () => {
+        this.initialize();
+        initEvents.forEach((event) => {
+          document.removeEventListener(event, initAudio);
+        });
+      };
 
-    // Preload audio files
-    this.preloadSounds();
-  }
-
-  initAudioContext() {
-    try {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      this.audioContext = new AudioContext();
-
-      // iOS: Context starts suspended, needs user interaction to resume
-      if (this.audioContext.state === "suspended") {
-        this.audioContext.resume();
-      }
-    } catch (error) {
-      console.warn(
-        "AudioContext not supported, falling back to HTML5 Audio",
-        error
-      );
-      this.audioContext = null;
+      initEvents.forEach((event) => {
+        document.addEventListener(event, initAudio, {
+          once: true,
+          passive: true,
+        });
+      });
     }
   }
 
-  async unlockAudioContext() {
-    if (this.isUnlocked) return true;
+  async initialize() {
+    if (this.isInitialized) return this.initPromise;
+    if (this.initPromise) return this.initPromise;
 
-    try {
-      if (this.audioContext) {
-        // Resume suspended context (iOS requirement)
-        if (this.audioContext.state === "suspended") {
-          await this.audioContext.resume();
+    this.initPromise = new Promise(async (resolve) => {
+      try {
+        // Create audio pool for better iOS performance
+        const rightUrl = "/assets/audio/right answer SFX.wav";
+        const wrongUrl = "/assets/audio/wrong answer SFX.wav";
+
+        // Pre-create and load audio instances
+        for (let i = 0; i < this.poolSize; i++) {
+          const rightAudio = new Audio(rightUrl);
+          const wrongAudio = new Audio(wrongUrl);
+
+          rightAudio.preload = "auto";
+          wrongAudio.preload = "auto";
+          rightAudio.volume = 0.7;
+          wrongAudio.volume = 0.7;
+
+          // Load audio files
+          try {
+            await rightAudio.load();
+          } catch (e) {
+            // Ignore load errors, will retry on play
+          }
+          try {
+            await wrongAudio.load();
+          } catch (e) {
+            // Ignore load errors, will retry on play
+          }
+
+          this.audioPool.right.push(rightAudio);
+          this.audioPool.wrong.push(wrongAudio);
         }
 
-        // Create silent buffer and play to unlock (iOS requirement)
-        const buffer = this.audioContext.createBuffer(1, 1, 22050);
-        const source = this.audioContext.createBufferSource();
-        source.buffer = buffer;
-        source.connect(this.audioContext.destination);
-        source.start(0);
-
-        this.isUnlocked = true;
-        return true;
+        this.isInitialized = true;
+        console.log("Sound effects initialized successfully");
+        resolve(true);
+      } catch (error) {
+        console.warn("Failed to initialize sound effects:", error);
+        this.isInitialized = false;
+        resolve(false);
       }
-    } catch (error) {
-      console.warn("Failed to unlock audio context:", error);
-    }
-
-    return false;
-  }
-
-  async loadAudioFile(url) {
-    try {
-      if (!this.audioContext) {
-        // Fallback to HTML5 Audio
-        return null;
-      }
-
-      const response = await fetch(url);
-      const arrayBuffer = await response.arrayBuffer();
-      const audioBuffer = await this.audioContext.decodeAudioData(arrayBuffer);
-      return audioBuffer;
-    } catch (error) {
-      console.warn("Failed to load audio file:", url, error);
-      return null;
-    }
-  }
-
-  async preloadSounds() {
-    if (this.isLoading) return this.loadPromise;
-
-    this.isLoading = true;
-    this.loadPromise = Promise.all([
-      this.loadAudioFile("/assets/audio/right answer SFX.wav").then(
-        (buffer) => {
-          this.audioBuffers.right = buffer;
-        }
-      ),
-      this.loadAudioFile("/assets/audio/wrong answer SFX.wav").then(
-        (buffer) => {
-          this.audioBuffers.wrong = buffer;
-        }
-      ),
-    ]).finally(() => {
-      this.isLoading = false;
     });
 
-    return this.loadPromise;
+    return this.initPromise;
+  }
+
+  getAvailableAudio(soundType) {
+    const pool = this.audioPool[soundType];
+    if (!pool || pool.length === 0) return null;
+
+    // Find an audio instance that's not currently playing
+    for (const audio of pool) {
+      if (audio.paused || audio.ended) {
+        return audio;
+      }
+    }
+
+    // If all are playing, return the first one (will reset it)
+    return pool[0];
   }
 
   async playSound(soundType, retries = 3) {
-    // Ensure audio context is unlocked (iOS requirement)
-    await this.unlockAudioContext();
-
-    // Ensure sounds are loaded
-    await this.preloadSounds();
-
-    // Ensure context is resumed (iOS can suspend it)
-    if (this.audioContext && this.audioContext.state === "suspended") {
-      await this.audioContext.resume();
-    }
-
-    const buffer =
-      soundType === "right" ? this.audioBuffers.right : this.audioBuffers.wrong;
-
-    if (!buffer && this.audioContext) {
-      // Fallback to HTML5 Audio if Web Audio API fails
-      return this.playSoundFallback(soundType);
-    }
-
-    if (this.audioContext && buffer) {
-      try {
-        const source = this.audioContext.createBufferSource();
-        const gainNode = this.audioContext.createGain();
-
-        source.buffer = buffer;
-        gainNode.gain.value = 0.7;
-
-        source.connect(gainNode);
-        gainNode.connect(this.audioContext.destination);
-
-        source.start(0);
-        return true;
-      } catch (error) {
-        console.warn("Web Audio API play failed, using fallback:", error);
-        return this.playSoundFallback(soundType, retries);
+    try {
+      // Ensure initialization
+      if (!this.isInitialized) {
+        await this.initialize();
       }
-    }
 
-    return this.playSoundFallback(soundType, retries);
+      const audio = this.getAvailableAudio(soundType);
+
+      if (!audio) {
+        // Fallback: create new audio on the fly
+        console.warn("No audio in pool, creating new instance");
+        return this.playNewAudio(soundType, retries);
+      }
+
+      // Reset audio to beginning
+      audio.currentTime = 0;
+      audio.volume = 0.7;
+
+      // Attempt to play
+      const attemptPlay = async (attempt = 1) => {
+        try {
+          await audio.play();
+          return true;
+        } catch (error) {
+          if (attempt < retries) {
+            // Wait a bit and retry
+            await new Promise((resolve) => setTimeout(resolve, 50 * attempt));
+            return attemptPlay(attempt + 1);
+          } else {
+            console.warn(
+              `Failed to play ${soundType} sound after ${retries} attempts:`,
+              error
+            );
+            return false;
+          }
+        }
+      };
+
+      return await attemptPlay();
+    } catch (error) {
+      console.error("Error playing sound:", error);
+      // Last resort fallback
+      return this.playNewAudio(soundType, 1);
+    }
   }
 
-  playSoundFallback(soundType, retries = 3) {
+  async playNewAudio(soundType, retries = 3) {
     const url =
       soundType === "right"
         ? "/assets/audio/right answer SFX.wav"
@@ -155,9 +151,9 @@ class SoundEffects {
     return new Promise((resolve) => {
       const audio = new Audio(url);
       audio.volume = 0.7;
-      audio.preload = "auto";
 
       const attemptPlay = (attempt = 1) => {
+        audio.currentTime = 0;
         const playPromise = audio.play();
 
         if (playPromise !== undefined) {
@@ -167,11 +163,10 @@ class SoundEffects {
             })
             .catch((error) => {
               if (attempt < retries) {
-                // Retry after short delay
-                setTimeout(() => attemptPlay(attempt + 1), 100 * attempt);
+                setTimeout(() => attemptPlay(attempt + 1), 50 * attempt);
               } else {
                 console.warn(
-                  `Failed to play ${soundType} sound after ${retries} attempts:`,
+                  `Fallback play failed for ${soundType} sound:`,
                   error
                 );
                 resolve(false);
@@ -182,14 +177,22 @@ class SoundEffects {
         }
       };
 
-      // Wait for audio to be ready
+      // Load and play
       if (audio.readyState >= 2) {
         attemptPlay();
       } else {
         audio.addEventListener("canplaythrough", () => attemptPlay(), {
           once: true,
         });
-        audio.addEventListener("error", () => resolve(false), { once: true });
+        audio.addEventListener(
+          "error",
+          () => {
+            console.error("Audio load error:", url);
+            resolve(false);
+          },
+          { once: true }
+        );
+        audio.load();
       }
     });
   }
@@ -203,29 +206,15 @@ class SoundEffects {
   }
 
   setVolume(volume) {
-    // Volume is handled per-play in Web Audio API
-    // This is kept for backward compatibility
+    // Update volume for all pooled audio
+    for (const soundType in this.audioPool) {
+      this.audioPool[soundType].forEach((audio) => {
+        audio.volume = volume;
+      });
+    }
   }
 }
 
 const soundEffects = new SoundEffects();
-
-// Unlock audio on first user interaction (iOS requirement)
-if (typeof window !== "undefined") {
-  const unlockEvents = ["touchstart", "touchend", "mousedown", "keydown"];
-  const unlockAudio = () => {
-    soundEffects.unlockAudioContext();
-    unlockEvents.forEach((event) => {
-      document.removeEventListener(event, unlockAudio);
-    });
-  };
-
-  unlockEvents.forEach((event) => {
-    document.addEventListener(event, unlockAudio, {
-      once: true,
-      passive: true,
-    });
-  });
-}
 
 export default soundEffects;
