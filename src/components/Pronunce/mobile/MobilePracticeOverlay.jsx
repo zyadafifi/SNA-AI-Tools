@@ -77,11 +77,16 @@ const MobilePracticeOverlay = ({
   const isApiKeyValid = ASSEMBLYAI_API_KEY && ASSEMBLYAI_API_KEY.length > 20;
 
   // Sound effects functions
-  const playCancellationSound = useCallback(() => {
+  const playCancellationSound = useCallback(async () => {
     try {
       // Use Web Audio API for reliable sound generation
-      const audioContext = new (window.AudioContext ||
-        window.webkitAudioContext)();
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      const audioContext = new AudioContext();
+
+      // iOS: Ensure context is resumed if suspended
+      if (audioContext.state === "suspended") {
+        await audioContext.resume();
+      }
 
       // Create a sequence of descending tones for cancellation
       const frequencies = [800, 600, 400];
@@ -107,29 +112,27 @@ const MobilePracticeOverlay = ({
         oscillator.stop(startTime + duration);
       });
     } catch (error) {
-      // Fallback: Use existing audio with different settings
+      // Fallback: Use soundEffects for consistent behavior
       try {
-        const audio1 = new Audio("/assets/audio/right answer SFX.wav");
-        const audio2 = new Audio("/assets/audio/right answer SFX.wav");
-
-        audio1.volume = 0.2;
-        audio1.playbackRate = 1.2;
-        audio1.play();
-
-        setTimeout(() => {
-          audio2.volume = 0.15;
-          audio2.playbackRate = 0.8;
-          audio2.play();
-        }, 100);
-      } catch (fallbackError) {}
+        const soundEffects = (await import("../../../utils/soundEffects"))
+          .default;
+        await soundEffects.playWrongAnswer();
+      } catch (fallbackError) {
+        console.warn("Failed to play cancellation sound:", fallbackError);
+      }
     }
   }, []);
 
-  const playSubmissionSound = useCallback(() => {
+  const playSubmissionSound = useCallback(async () => {
     try {
       // Use Web Audio API for reliable sound generation
-      const audioContext = new (window.AudioContext ||
-        window.webkitAudioContext)();
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      const audioContext = new AudioContext();
+
+      // iOS: Ensure context is resumed if suspended
+      if (audioContext.state === "suspended") {
+        await audioContext.resume();
+      }
 
       // Create an ascending tone sequence for submission
       const frequencies = [400, 600, 800];
@@ -156,13 +159,14 @@ const MobilePracticeOverlay = ({
         oscillator.stop(startTime + duration);
       });
     } catch (error) {
-      // Fallback: Use existing audio with different settings
+      // Fallback: Use soundEffects for consistent behavior
       try {
-        const audio = new Audio("/right-answer-sfx.wav");
-        audio.volume = 0.25;
-        audio.playbackRate = 1.0; // Normal speed for submission
-        audio.play();
-      } catch (fallbackError) {}
+        const soundEffects = (await import("../../../utils/soundEffects"))
+          .default;
+        await soundEffects.playRightAnswer();
+      } catch (fallbackError) {
+        console.warn("Failed to play submission sound:", fallbackError);
+      }
     }
   }, []);
 
@@ -572,9 +576,9 @@ const MobilePracticeOverlay = ({
   }, [cleanup, onMicClick, onShowAlert]);
 
   // Stop recording with submission sound
-  const stopRecording = useCallback(() => {
+  const stopRecording = useCallback(async () => {
     // Play submission sound effect
-    playSubmissionSound();
+    await playSubmissionSound();
 
     if (
       mediaRecorderRef.current &&
@@ -588,9 +592,9 @@ const MobilePracticeOverlay = ({
   }, [cleanup, onStopRecording, playSubmissionSound]);
 
   // Cancel recording with sound effect - desktop behavior
-  const cancelRecording = useCallback(() => {
+  const cancelRecording = useCallback(async () => {
     // Play cancellation sound effect
-    playCancellationSound();
+    await playCancellationSound();
 
     // Set cancellation flag BEFORE stopping the recorder
     isRecordingCancelledRef.current = true;

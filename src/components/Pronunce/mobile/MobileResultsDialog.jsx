@@ -7,6 +7,7 @@ import {
   faHeadphones,
   faPause,
 } from "@fortawesome/free-solid-svg-icons";
+import soundEffects from "../../../utils/soundEffects";
 import "./MobileResultsDialog.css";
 
 const MobileResultsDialog = ({
@@ -32,17 +33,13 @@ const MobileResultsDialog = ({
   useEffect(() => {
     if (show && score >= 0 && !audioPlayed) {
       // Play audio feedback after a short delay
-      setTimeout(() => {
+      setTimeout(async () => {
         if (score >= 50) {
           // Play success sound for scores 50% and above
-          const audio = new Audio("/assets/audio/right answer SFX.wav");
-          audio.volume = 0.5;
-          audio.play().catch(() => {});
+          await soundEffects.playRightAnswer();
         } else {
           // Play error sound for scores less than 50%
-          const audio = new Audio("/assets/audio/wrong answer SFX.wav");
-          audio.volume = 0.5;
-          audio.play().catch(() => {});
+          await soundEffects.playWrongAnswer();
         }
         setAudioPlayed(true);
       }, 500);
