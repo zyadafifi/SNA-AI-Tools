@@ -748,13 +748,12 @@ button.mic-button i,
 /* Recording UI Container */
 .recording-ui-container {
   display: block;
-  margin-top: 1rem;
+  margin: 1rem auto;
   background: var(--gradient-primary);
   border-radius: 50px;
   padding: 8px 12px;
   box-shadow: 0 2px 8px rgba(99, 162, 155, 0.2);
   width: 50%;
-  margin-left: 170px;
 }
 
 /* Recording Controls */
