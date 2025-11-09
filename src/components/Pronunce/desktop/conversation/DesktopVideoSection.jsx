@@ -58,6 +58,7 @@ const DesktopVideoSection = ({
           ref={videoRef}
           className="lesson-video"
           controls
+          controlsList="nodownload"
           id="lessonVideo"
           onLoadedMetadata={onLoadedMetadata}
           onTimeUpdate={onTimeUpdate}
