@@ -2,7 +2,7 @@ import { useState, useEffect, useLayoutEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useProgress } from "../contexts/ProgressContext";
 import { IoIosArrowDown } from "react-icons/io";
-import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaChevronLeft } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import { RiPlayCircleFill } from "react-icons/ri";
 import { IoIosCheckmarkCircle } from "react-icons/io";
@@ -556,7 +556,9 @@ export const TopicsPage = () => {
   };
 
   // Handle back button
-  const handleBackClick = () => {
+  const handleBackClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     navigate("/pronounce/home");
   };
 
@@ -708,53 +710,15 @@ export const TopicsPage = () => {
         {/* Lesson Header */}
         <div className="lesson-header">
           <button
+            type="button"
             onClick={handleBackClick}
             title="Back to Lessons"
+            className="w-11 h-11 rounded-full bg-[#ffc515] border border-white text-white flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 active:scale-100 flex-shrink-0 relative z-50"
             style={{
-              // Complete inline styles - no CSS dependencies
-              width: "44px",
-              height: "44px",
-              borderRadius: "50%",
-              background: "rgba(0, 0, 0, 0.7)",
-              border: "none",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "white",
-              fontSize: "18px",
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-              flexShrink: "0",
-              userSelect: "none",
-              outline: "none",
-              padding: "0",
-              margin: "0",
               marginTop: "-0.5rem",
-              position: "relative",
-              zIndex: "1000",
-              backdropFilter: "blur(10px)",
-              boxSizing: "border-box",
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.background = "rgba(0, 0, 0, 0.9)";
-              e.target.style.transform = "scale(1.1)";
-              e.target.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.3)";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.background = "rgba(0, 0, 0, 0.7)";
-              e.target.style.transform = "scale(1)";
-              e.target.style.boxShadow = "none";
-            }}
-            onMouseDown={(e) => {
-              e.target.style.transform = "scale(1.05)";
-            }}
-            onMouseUp={(e) => {
-              e.target.style.transform = "scale(1.1)";
             }}
           >
-            <span>
-              <FaArrowLeftLong size={20} />
-            </span>
+            <FaChevronLeft size={20} />
           </button>
           <div className="lesson-header-content">
             <h2>Lesson {currentLesson.lessonNumber}</h2>

@@ -243,7 +243,7 @@ const ListeningPhase = ({
         {/* Initial Tap to Start Overlay */}
         {(!hasUserInteracted || showIOSAudioOverlay) && (
           <div
-            className="fixed inset-0   flex items-center justify-center z-[1040] cursor-pointer"
+            className="fixed inset-0 flex items-center justify-center z-[1040] cursor-pointer"
             onClick={handleUserInteraction}
           >
             <div className="w-full px-5">

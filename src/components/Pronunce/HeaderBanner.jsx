@@ -21,8 +21,7 @@ const HeaderBanner = ({ lessons = [] }) => {
   };
 
   const handleTryNow = () => {
-    const currentLesson = getCurrentLesson();
-    navigate(`/pronounce/topics/${currentLesson}`);
+    window.location.href = "https://doulingo-final-test.netlify.app/";
   };
 
   return (
@@ -32,7 +31,7 @@ const HeaderBanner = ({ lessons = [] }) => {
         <div className="header-left">
           <div className="header-title">
             <h1 className="header-main-title">Test Your</h1>
-            <h1 className="header-sub-title">Pronunciation</h1>
+            <h1 className="header-main-title">English Level</h1>
           </div>
 
           <button className="header-cta-button" onClick={handleTryNow}>
@@ -41,37 +40,13 @@ const HeaderBanner = ({ lessons = [] }) => {
           </button>
         </div>
 
-        {/* Right Section - Panda Mascot */}
+        {/* Right Section - Logo Image */}
         <div className="header-right">
-          <div className="panda-mascot">
-            <div className="panda-body">
-              <div className="panda-head">
-                <div className="panda-ears"></div>
-                <div className="panda-face">
-                  <div className="panda-eyes">
-                    <div className="panda-eye left-eye"></div>
-                    <div className="panda-eye right-eye"></div>
-                  </div>
-                  <div className="panda-sunglasses">
-                    <div className="sunglass-lens left-lens"></div>
-                    <div className="sunglass-bridge"></div>
-                    <div className="sunglass-lens right-lens"></div>
-                  </div>
-                  <div className="panda-nose"></div>
-                  <div className="panda-mouth"></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="daily-challenge-sign">
-              <div className="sign-stick left-stick"></div>
-              <div className="sign-board">
-                <div className="sign-text">Daily</div>
-                <div className="sign-text">Challenge</div>
-              </div>
-              <div className="sign-stick right-stick"></div>
-            </div>
-          </div>
+          <img
+            src="/assets/images/logo.png"
+            alt="SNA Logo"
+            className="header-logo"
+          />
         </div>
       </div>
     </div>

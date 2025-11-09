@@ -376,7 +376,7 @@
   width: 50px;
   height: 50px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--sna-primary) 0%, #275151 100%);
+  background: linear-gradient(135deg, #ffc515 0%, #ffaa00 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -516,7 +516,7 @@
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  background: var(--sna-primary);
+  background: #ffc515;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -600,7 +600,7 @@
 
 .topics-page .progress-fill {
   height: 100%;
-  background: linear-gradient(135deg, var(--sna-primary) 0%, #275151 100%);
+  background: linear-gradient(135deg, #ffc515 0%, #ffaa00 100%);
   border-radius: 4px;
   transition: width 0.3s ease;
 }

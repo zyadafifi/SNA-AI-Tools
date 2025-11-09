@@ -280,7 +280,7 @@ export const DesktopConversationPage = () => {
     setIsProcessingAudio(true);
 
     // Play submission sound effect
-    playSubmissionSound();
+    await playSubmissionSound();
 
     if (audioBlob && conversation?.sentences?.[currentSentenceIndex]) {
       const currentSentence = conversation.sentences[currentSentenceIndex];
@@ -310,21 +310,26 @@ export const DesktopConversationPage = () => {
   };
 
   // Handle delete recording
-  const handleDeleteRecording = () => {
+  const handleDeleteRecording = async () => {
     clearRecording();
     setShowRecordingUI(false);
     setIsRecordingCancelled(true);
 
     // Play custom cancellation sound effect
-    playCancellationSound();
+    await playCancellationSound();
   };
 
   // Play custom cancellation sound - simple and reliable approach
-  const playCancellationSound = () => {
+  const playCancellationSound = async () => {
     try {
       // Use Web Audio API for reliable sound generation
-      const audioContext = new (window.AudioContext ||
-        window.webkitAudioContext)();
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      const audioContext = new AudioContext();
+
+      // iOS: Ensure context is resumed if suspended
+      if (audioContext.state === "suspended") {
+        await audioContext.resume();
+      }
 
       const playTone = (frequency, startTime, duration) => {
         const oscillator = audioContext.createOscillator();
@@ -351,34 +356,28 @@ export const DesktopConversationPage = () => {
       playTone(400, currentTime, 0.1); // First beep - higher pitch
       playTone(300, currentTime + 0.12, 0.1); // Second beep - lower pitch, slightly delayed
     } catch (error) {
-      // Fallback: Use existing audio with different settings
-      console.log.error("❌ Error playing cancellation sound:", error);
+      // Fallback: Use soundEffects for consistent behavior
+      console.warn("Error playing cancellation sound:", error);
       try {
-        const audio1 = new Audio("/assets/audio/right answer SFX.wav");
-        const audio2 = new Audio("/assets/audio/right answer SFX.wav");
-
-        audio1.volume = 0.2;
-        audio1.playbackRate = 1.2;
-        audio1.play();
-
-        // Play second beep after short delay
-        setTimeout(() => {
-          audio2.volume = 0.15;
-          audio2.playbackRate = 0.8;
-          audio2.play();
-        }, 100);
+        const soundEffects = (await import("../utils/soundEffects")).default;
+        await soundEffects.playWrongAnswer();
       } catch (e) {
-        // Last resort: just log
+        console.warn("Fallback sound failed:", e);
       }
     }
   };
 
   // Play custom submission sound - positive confirmation sound
-  const playSubmissionSound = () => {
+  const playSubmissionSound = async () => {
     try {
       // Use Web Audio API for reliable sound generation
-      const audioContext = new (window.AudioContext ||
-        window.webkitAudioContext)();
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      const audioContext = new AudioContext();
+
+      // iOS: Ensure context is resumed if suspended
+      if (audioContext.state === "suspended") {
+        await audioContext.resume();
+      }
 
       const playTone = (frequency, startTime, duration, volume = 0.2) => {
         const oscillator = audioContext.createOscillator();
@@ -406,15 +405,13 @@ export const DesktopConversationPage = () => {
       playTone(659, currentTime + 0.05, 0.15, 0.15); // E5 - second note
       playTone(784, currentTime + 0.1, 0.2, 0.2); // G5 - final note (longer)
     } catch (error) {
-      // Fallback: Use existing audio with different settings
-      console.log.error("❌ Error playing submission sound:", error);
+      // Fallback: Use soundEffects for consistent behavior
+      console.warn("Error playing submission sound:", error);
       try {
-        const audio = new Audio("/assets/audio/right answer SFX.wav");
-        audio.volume = 0.25;
-        audio.playbackRate = 1.0; // Normal speed for submission
-        audio.play();
+        const soundEffects = (await import("../utils/soundEffects")).default;
+        await soundEffects.playRightAnswer();
       } catch (e) {
-        // Last resort: just log
+        console.warn("Fallback sound failed:", e);
       }
     }
   };

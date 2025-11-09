@@ -40,9 +40,9 @@ const MobilePracticeOverlay = ({
   transcription = "",
 }) => {
   // State management (only internal UI state)
-  const [waveformBars, setWaveformBars] = useState(
-    Array.from({ length: 26 }, () => 6)
-  );
+  // Removed waveformBars state - using direct DOM manipulation for performance
+  const waveformBarsRef = useRef(Array.from({ length: 26 }, () => 6));
+  const waveformContainerRef = useRef(null);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isPaused, setIsPaused] = useState(false); // Track if speech synthesis is paused
   const [isPlayingRecording, setIsPlayingRecording] = useState(false); // Track if recorded audio is playing
@@ -65,6 +65,7 @@ const MobilePracticeOverlay = ({
   const isRecordingCancelledRef = useRef(false); // Use ref to track cancellation
   const currentUtteranceRef = useRef(null); // Track current speech synthesis utterance
   const currentAudioRef = useRef(null); // Track current recorded audio playback
+  const isStartingRef = useRef(false); // Track if recording is starting (debounce)
   // audioStream is now passed as prop from parent
 
   // AssemblyAI API Key - You can set this as an environment variable
@@ -77,11 +78,16 @@ const MobilePracticeOverlay = ({
   const isApiKeyValid = ASSEMBLYAI_API_KEY && ASSEMBLYAI_API_KEY.length > 20;
 
   // Sound effects functions
-  const playCancellationSound = useCallback(() => {
+  const playCancellationSound = useCallback(async () => {
     try {
       // Use Web Audio API for reliable sound generation
-      const audioContext = new (window.AudioContext ||
-        window.webkitAudioContext)();
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      const audioContext = new AudioContext();
+
+      // iOS: Ensure context is resumed if suspended
+      if (audioContext.state === "suspended") {
+        await audioContext.resume();
+      }
 
       // Create a sequence of descending tones for cancellation
       const frequencies = [800, 600, 400];
@@ -107,29 +113,27 @@ const MobilePracticeOverlay = ({
         oscillator.stop(startTime + duration);
       });
     } catch (error) {
-      // Fallback: Use existing audio with different settings
+      // Fallback: Use soundEffects for consistent behavior
       try {
-        const audio1 = new Audio("/assets/audio/right answer SFX.wav");
-        const audio2 = new Audio("/assets/audio/right answer SFX.wav");
-
-        audio1.volume = 0.2;
-        audio1.playbackRate = 1.2;
-        audio1.play();
-
-        setTimeout(() => {
-          audio2.volume = 0.15;
-          audio2.playbackRate = 0.8;
-          audio2.play();
-        }, 100);
-      } catch (fallbackError) {}
+        const soundEffects = (await import("../../../utils/soundEffects"))
+          .default;
+        await soundEffects.playWrongAnswer();
+      } catch (fallbackError) {
+        console.warn("Failed to play cancellation sound:", fallbackError);
+      }
     }
   }, []);
 
-  const playSubmissionSound = useCallback(() => {
+  const playSubmissionSound = useCallback(async () => {
     try {
       // Use Web Audio API for reliable sound generation
-      const audioContext = new (window.AudioContext ||
-        window.webkitAudioContext)();
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      const audioContext = new AudioContext();
+
+      // iOS: Ensure context is resumed if suspended
+      if (audioContext.state === "suspended") {
+        await audioContext.resume();
+      }
 
       // Create an ascending tone sequence for submission
       const frequencies = [400, 600, 800];
@@ -156,42 +160,83 @@ const MobilePracticeOverlay = ({
         oscillator.stop(startTime + duration);
       });
     } catch (error) {
-      // Fallback: Use existing audio with different settings
+      // Fallback: Use soundEffects for consistent behavior
       try {
-        const audio = new Audio("/right-answer-sfx.wav");
-        audio.volume = 0.25;
-        audio.playbackRate = 1.0; // Normal speed for submission
-        audio.play();
-      } catch (fallbackError) {}
+        const soundEffects = (await import("../../../utils/soundEffects"))
+          .default;
+        await soundEffects.playRightAnswer();
+      } catch (fallbackError) {
+        console.warn("Failed to play submission sound:", fallbackError);
+      }
     }
   }, []);
 
-  // Cleanup function
-  const cleanup = useCallback(() => {
-    if (recordingTimerRef.current) {
-      clearInterval(recordingTimerRef.current);
-      recordingTimerRef.current = null;
+  // Cleanup function - async with comprehensive error handling
+  const cleanup = useCallback(async () => {
+    try {
+      // 1. Cancel animation frame
+      if (waveformAnimationRef.current) {
+        cancelAnimationFrame(waveformAnimationRef.current);
+        waveformAnimationRef.current = null;
+      }
+
+      // 2. Stop timer
+      if (recordingTimerRef.current) {
+        clearInterval(recordingTimerRef.current);
+        recordingTimerRef.current = null;
+      }
+
+      // 3. Stop MediaRecorder
+      if (mediaRecorderRef.current) {
+        if (
+          mediaRecorderRef.current.state === "recording" ||
+          mediaRecorderRef.current.state === "paused"
+        ) {
+          try {
+            mediaRecorderRef.current.stop();
+          } catch (e) {
+            console.warn("MediaRecorder stop error:", e);
+          }
+        }
+        mediaRecorderRef.current = null;
+      }
+
+      // 4. Disconnect audio source
+      if (sourceRef.current) {
+        try {
+          sourceRef.current.disconnect();
+        } catch (e) {
+          console.warn("Source disconnect error:", e);
+        }
+        sourceRef.current = null;
+      }
+
+      // 5. Close AudioContext (iOS-safe)
+      if (audioContextRef.current) {
+        try {
+          // Check state before closing
+          if (audioContextRef.current.state !== "closed") {
+            await audioContextRef.current.close();
+          }
+        } catch (e) {
+          console.warn("AudioContext close error:", e);
+        }
+        audioContextRef.current = null;
+      }
+
+      // 6. Reset waveform bars via DOM (no state update)
+      if (waveformContainerRef.current) {
+        const bars = waveformContainerRef.current.querySelectorAll(
+          ".mobile-waveform-bar"
+        );
+        bars.forEach((bar) => {
+          bar.style.setProperty("--bar-height", "6px");
+          bar.classList.remove("active");
+        });
+      }
+    } catch (error) {
+      console.error("Cleanup error:", error);
     }
-    if (waveformAnimationRef.current) {
-      cancelAnimationFrame(waveformAnimationRef.current);
-      waveformAnimationRef.current = null;
-    }
-    if (
-      mediaRecorderRef.current &&
-      mediaRecorderRef.current.state === "recording"
-    ) {
-      mediaRecorderRef.current.stop();
-    }
-    if (sourceRef.current) {
-      sourceRef.current.disconnect();
-      sourceRef.current = null;
-    }
-    if (audioContextRef.current) {
-      audioContextRef.current.close();
-      audioContextRef.current = null;
-    }
-    // Audio stream cleanup is handled by parent component
-    setWaveformBars(Array.from({ length: 26 }, () => 6));
   }, []);
 
   // Speech synthesis for listening with pause/resume support
@@ -316,6 +361,15 @@ const MobilePracticeOverlay = ({
         audioContextRef.current = new (window.AudioContext ||
           window.webkitAudioContext)();
 
+        // iOS: Resume context if suspended
+        if (audioContextRef.current.state === "suspended") {
+          try {
+            await audioContextRef.current.resume();
+          } catch (e) {
+            console.warn("Failed to resume AudioContext:", e);
+          }
+        }
+
         // Create analyser node
         analyserRef.current = audioContextRef.current.createAnalyser();
         analyserRef.current.fftSize = 64; // EXACTLY like desktop
@@ -330,50 +384,64 @@ const MobilePracticeOverlay = ({
           audioContextRef.current.createMediaStreamSource(audioStream);
         sourceRef.current.connect(analyserRef.current);
 
-        // Start real-time analysis
+        // Start real-time analysis - using direct DOM manipulation for performance
         const analyzeAudio = () => {
           try {
             if (analyserRef.current && dataArrayRef.current) {
               analyserRef.current.getByteFrequencyData(dataArrayRef.current);
 
-              // Convert frequency data to bar heights - EXACTLY like desktop
+              // Convert frequency data to bar heights
               const barCount = 26; // Mobile has more bars
               const dataPerBar = Math.floor(
                 dataArrayRef.current.length / barCount
               );
-              const newBars = [];
 
-              for (let i = 0; i < barCount; i++) {
-                let sum = 0;
-                for (let j = 0; j < dataPerBar; j++) {
-                  sum += dataArrayRef.current[i * dataPerBar + j];
+              // Direct DOM update via CSS variables (FAST - no React re-render)
+              const bars = waveformContainerRef.current?.querySelectorAll(
+                ".mobile-waveform-bar"
+              );
+              if (bars && bars.length === barCount) {
+                for (let i = 0; i < barCount; i++) {
+                  let sum = 0;
+                  for (let j = 0; j < dataPerBar; j++) {
+                    sum += dataArrayRef.current[i * dataPerBar + j];
+                  }
+                  const average = sum / dataPerBar;
+                  // Convert to height (0-255 range to 2-22px range)
+                  const height = Math.max(2, (average / 255) * 20 + 2);
+
+                  // Update CSS custom property (no React re-render)
+                  bars[i].style.setProperty("--bar-height", `${height}px`);
+                  bars[i].classList.toggle("active", height > 12);
                 }
-                const average = sum / dataPerBar;
-                // Convert to height (0-255 range to 2-22px range) - EXACTLY like desktop calculation
-                const height = Math.max(2, (average / 255) * 20 + 2);
-                newBars.push(height);
               }
 
-              setWaveformBars(newBars);
               waveformAnimationRef.current =
                 requestAnimationFrame(analyzeAudio);
             }
           } catch (animationError) {
-            // Continue with fallback animation
-            setWaveformBars((prev) => prev.map(() => Math.random() * 20 + 2));
-            waveformAnimationRef.current = requestAnimationFrame(analyzeAudio);
+            console.error("Animation error:", animationError);
+            // Fallback: stop animation on error
+            if (waveformAnimationRef.current) {
+              cancelAnimationFrame(waveformAnimationRef.current);
+              waveformAnimationRef.current = null;
+            }
           }
         };
 
         analyzeAudio();
       } catch (error) {
         console.error("Error setting up audio analysis:", error);
-        // Fallback to random animation if audio analysis fails - EXACTLY like desktop
-        const animateWaveform = () => {
-          setWaveformBars((prev) => prev.map(() => Math.random() * 20 + 2));
-          waveformAnimationRef.current = requestAnimationFrame(animateWaveform);
-        };
-        animateWaveform();
+        // Fallback: reset bars to default
+        if (waveformContainerRef.current) {
+          const bars = waveformContainerRef.current.querySelectorAll(
+            ".mobile-waveform-bar"
+          );
+          bars.forEach((bar) => {
+            bar.style.setProperty("--bar-height", "6px");
+            bar.classList.remove("active");
+          });
+        }
       }
     };
 
@@ -382,24 +450,55 @@ const MobilePracticeOverlay = ({
     });
 
     return () => {
-      try {
-        if (waveformAnimationRef.current) {
-          cancelAnimationFrame(waveformAnimationRef.current);
+      // Async cleanup in effect cleanup
+      (async () => {
+        try {
+          if (waveformAnimationRef.current) {
+            cancelAnimationFrame(waveformAnimationRef.current);
+            waveformAnimationRef.current = null;
+          }
+          if (sourceRef.current) {
+            try {
+              sourceRef.current.disconnect();
+            } catch (e) {
+              // Ignore disconnect errors
+            }
+            sourceRef.current = null;
+          }
+          if (
+            audioContextRef.current &&
+            audioContextRef.current.state !== "closed"
+          ) {
+            try {
+              await audioContextRef.current.close();
+            } catch (e) {
+              // Ignore close errors
+            }
+            audioContextRef.current = null;
+          }
+        } catch (error) {
+          console.error("Effect cleanup error:", error);
         }
-        if (sourceRef.current) {
-          sourceRef.current.disconnect();
-        }
-        if (audioContextRef.current) {
-          audioContextRef.current.close();
-        }
-      } catch (cleanupError) {}
+      })();
     };
   }, [audioStream]); // EXACTLY like desktop - depend on audioStream prop
 
   // Start recording
   const startRecording = useCallback(async () => {
+    // Prevent rapid clicks
+    if (isStartingRef.current) {
+      console.log("Recording start already in progress");
+      return;
+    }
+
+    isStartingRef.current = true;
+
     try {
-      cleanup();
+      // Ensure previous cleanup is complete
+      await cleanup();
+
+      // Small delay to ensure cleanup finished
+      await new Promise((resolve) => setTimeout(resolve, 100));
 
       // Reset cancellation flags
       isRecordingCancelledRef.current = false;
@@ -567,14 +666,19 @@ const MobilePracticeOverlay = ({
       }
 
       onShowAlert(errorMessage);
-      cleanup();
+      await cleanup();
+    } finally {
+      // Reset flag after delay to prevent rapid clicks
+      setTimeout(() => {
+        isStartingRef.current = false;
+      }, 500);
     }
   }, [cleanup, onMicClick, onShowAlert]);
 
   // Stop recording with submission sound
-  const stopRecording = useCallback(() => {
+  const stopRecording = useCallback(async () => {
     // Play submission sound effect
-    playSubmissionSound();
+    await playSubmissionSound();
 
     if (
       mediaRecorderRef.current &&
@@ -588,9 +692,9 @@ const MobilePracticeOverlay = ({
   }, [cleanup, onStopRecording, playSubmissionSound]);
 
   // Cancel recording with sound effect - desktop behavior
-  const cancelRecording = useCallback(() => {
+  const cancelRecording = useCallback(async () => {
     // Play cancellation sound effect
-    playCancellationSound();
+    await playCancellationSound();
 
     // Set cancellation flag BEFORE stopping the recorder
     isRecordingCancelledRef.current = true;
@@ -955,16 +1059,17 @@ const MobilePracticeOverlay = ({
               </button>
 
               <div className="mobile-waveform-area">
-                <div className="mobile-waveform-bars">
-                  {waveformBars.map((height, index) => (
+                <div
+                  className="mobile-waveform-bars"
+                  ref={waveformContainerRef}
+                >
+                  {waveformBarsRef.current.map((_, index) => (
                     <div
                       key={index}
-                      className={`mobile-waveform-bar ${
-                        height > 12 ? "active" : ""
-                      }`}
+                      className="mobile-waveform-bar"
                       style={{
-                        height: `${height}px`,
-                        transition: "height 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+                        height: "var(--bar-height, 6px)",
+                        transition: "none", // Remove transition for smoother animation
                         animationDelay: `${index * 0.02}s`,
                       }}
                     ></div>
@@ -1022,7 +1127,10 @@ const MobilePracticeOverlay = ({
                 title="Processing audio..."
                 disabled
               >
-                <i className="fas fa-headphones"></i>
+                <FontAwesomeIcon
+                  icon={faHeadphones}
+                  className="fas fa-headphones"
+                />
               </button>
             </div>
           )}

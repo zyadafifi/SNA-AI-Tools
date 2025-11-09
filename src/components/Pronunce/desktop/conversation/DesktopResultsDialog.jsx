@@ -9,6 +9,7 @@ import {
   faRedo,
   faHeadphones,
 } from "@fortawesome/free-solid-svg-icons";
+import soundEffects from "../../../../utils/soundEffects";
 
 const DesktopResultsDialog = ({
   show,
@@ -47,17 +48,13 @@ const DesktopResultsDialog = ({
   useEffect(() => {
     if (show && score !== null && score !== undefined && !audioPlayed) {
       // Play audio feedback after a short delay
-      setTimeout(() => {
+      setTimeout(async () => {
         if (score < 50) {
           // Play error sound for scores less than 50%
-          const audio = new Audio("/assets/audio/wrong answer SFX.wav");
-          audio.volume = 0.5;
-          audio.play().catch(() => {});
+          await soundEffects.playWrongAnswer();
         } else {
           // Play success sound for scores 50% and above
-          const audio = new Audio("/assets/audio/right answer SFX.wav");
-          audio.volume = 0.5;
-          audio.play().catch(() => {});
+          await soundEffects.playRightAnswer();
         }
         setAudioPlayed(true);
       }, 500);

@@ -28,7 +28,7 @@
   right: -3px;
   bottom: -3px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #63a29b 0%, #275151 100%);
+  background: var(--gradient-primary);
   z-index: -1;
 }
 

@@ -97,34 +97,8 @@
   background: #000;
 }
 
-/* Back Button */
-.mobile-back-button {
-  position: absolute;
-  top: 40px;
-  left: 20px;
-  z-index: 1020;
-}
-
-.back-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.7);
-  border: none;
-  color: white;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.back-btn:hover {
-  background: rgba(0, 0, 0, 0.9);
-  transform: scale(1.05);
-}
+/* Back Button - Now using inline Tailwind classes in MobileBackButton.jsx */
+/* Styling moved to component for consistency with listening tool */
 
 /* Video Subtitles - Simple and Clean */
 .video-subtitles {
@@ -1257,7 +1231,7 @@
 /* Subtitle Container - Simple Design */
 .subtitle-container {
   position: absolute;
-  top: 100px; /* Position under the back button (back button is at top: 40px + height: 44px + margin) */
+  top: 125px; /* Increased spacing from back button */
   left: 20px;
   right: 20px;
   z-index: 15; /* Higher than video but lower than overlays */
@@ -1265,11 +1239,18 @@
 }
 
 .subtitle-content {
-  background: rgba(0, 0, 0, 0.8); /* Darker for better visibility */
-  border-radius: 8px;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Lighter background matching listening tool */
+  backdrop-filter: blur(5px); /* Add blur effect like listening tool */
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
+  border-radius: 12px;
   padding: 12px 16px;
   text-align: center;
-  border: 2px solid rgba(255, 255, 255, 0.3); /* Debug border to make it visible */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   min-height: 40px; /* Ensure it has some height */
 }
 
@@ -1294,7 +1275,7 @@
 /* Responsive subtitle positioning */
 @media (max-width: 480px) {
   .subtitle-container {
-    top: 95px; /* Adjust for smaller screens */
+    top: 120px; /* Increased spacing from back button for smaller screens */
     left: 15px;
     right: 15px;
   }
@@ -1307,7 +1288,7 @@
 
 @media (max-width: 320px) {
   .subtitle-container {
-    top: 90px; /* Further adjustment for very small screens */
+    top: 115px; /* Increased spacing from back button for very small screens */
     left: 10px;
     right: 10px;
   }
