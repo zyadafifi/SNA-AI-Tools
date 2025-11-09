@@ -9,10 +9,8 @@ export const Reading = () => {
 
   const levelSections = [
     { title: "Beginner", keys: ["Beginner"] },
-    { title: "Elementary", keys: ["Elementary"] },
     { title: "Pre Intermediate", keys: ["Pre-Intermediate"] },
     { title: "Intermediate", keys: ["Intermediate"] },
-    { title: "Upper Intermediate", keys: ["Upper-Intermediate"] },
     { title: "Advanced", keys: ["Advanced"] },
   ];
 
