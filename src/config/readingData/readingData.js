@@ -21894,5 +21894,3694 @@ export const readingData = [
         }
       }
     ]
+  },
+    {
+    "id": 12,
+    "slug": "lesson-12",
+    "image": "/assets/images/courses_image/Level-C-12.webp",
+    "levelTitle": "Sleeping Beauty Short Version",
+    "levelDescription": "A romantic fairytale in a shorter form than our previous version.",
+    "levelKey": "Pre-Intermediate",
+    "isLocked": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Sleeping Beauty – Short Version : a",
+        "description": "A romantic fairytale in a shorter form than our previous version.",
+        "storyData": {
+          "content": [
+            {
+              "id": 1,
+              "text": "Once upon a time, there lived a King and a Queen, who said every day: “ If only we had a child! ” After many years, their wish came true, and a baby girl was born.",
+              "translationAr": "كان يا ما كان، عاش ملكٌ وملكةٌ كانا يقولان كلَّ يوم: «ليتنا نرزق بطفل!» وبعد سنين كثيرة تحققت الأمنيّة ووُلدت طفلة. يا لفرحِهما!",
+              "audioUrl": ""
+            },
+            {
+              "id": 2,
+              "text": "Oh, how happy they were!",
+              "translationAr": "شاركا فرحتَهما بدعوة سبع جنّياتٍ حكيمات إلى القصر. ولمّا جلست الجنّياتُ للأكل، وجدت كلُّ واحدةٍ هديةً من ذهب بجانب صحنها.",
+              "audioUrl": ""
+            },
+            {
+              "id": 3,
+              "text": "They shared their joy by inviting seven wise fairies to the palace.",
+              "translationAr": "وكانت هناك جنّيةٌ أخرى أعظمَ سحرًا من الجميع معًا، لكنها للأسف كانت شريرةَ القلب. ولمّا سمعت بالاحتفال للأميرة الصغيرة، وعلمت أنها لم تُدعَ، غضبت غضبًا شديدًا.",
+              "audioUrl": ""
+            },
+            {
+              "id": 4,
+              "text": "When the fairies sat down to eat, they each found a gift made of gold by the side of their plate.",
+              "translationAr": "وقرب نهاية السهرة، قدّمت كلُّ جنّيةٍ حكيمةٍ هديةً سحريةً للأميرة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 5,
+              "text": "Now there was one other fairy whose magic was more powerful than all the wise ones put together.",
+              "translationAr": "تمنّت الأولى عقلًا راجحًا، والثانية جمالًا، والثالثة لُطفًا ورشاقة، والرابعة موسيقى، والخامسة رقصًا، والسادسة هديةَ …",
+              "audioUrl": ""
+            },
+            {
+              "id": 6,
+              "text": "Unfortunately, this fairy had an evil heart.",
+              "translationAr": "ولا ندري ماذا كانت ستتمنّى، لأنّ «الجنّية الشريرة» ظهرت في وسط القاعة الكبرى في تلك اللحظة، وفمُها يبتسم ابتسامةً زائفة، وعيناها تشعّان حِقدًا.",
+              "audioUrl": ""
+            },
+            {
+              "id": 7,
+              "text": "When she heard of the celebrations for the baby princess, and found out that she had not been invited, she took great offence.",
+              "translationAr": "قالت: «اعذروني على قدومي بلا دعوة. لن أطيل. جئتُ لأمنح هديتي الخاصة للأميرة.»",
+              "audioUrl": ""
+            },
+            {
+              "id": 8,
+              "text": "Towards the end of the evening, each of the wise fairies gave a magical gift to the baby princess.",
+              "translationAr": "وبينما شغلتْ الشريرةُ أنظارَ الجميع، اختبأت الجنّيةُ السابعة الطيبة خلف الستائر.",
+              "audioUrl": ""
+            },
+            {
+              "id": 9,
+              "text": "The first wished her the gift of reason.",
+              "translationAr": "وتابعت الشريرة: «أتمَنّى أن تكبرَ الأميرةُ الصغيرة حتى تصيرَ فتاةً متألّقةً متقنةً جميلةَ السادسةِ عشرة، قُرّةَ عينَي والديها، ثم في عيد ميلادها السابع عشر تَشُكَّ إصبعَها بإبرةٍ في مِغْزلٍ وتموووووت! ما رأيكم؟ هاهاها!»",
+              "audioUrl": ""
+            },
+            {
+              "id": 10,
+              "text": "The second wished her the gift of beauty.",
+              "translationAr": "وهي تضحك ضحكًا مرعبًا، غادرت القاعة. وسطَ الفوضى خرجت الجنّيةُ السابعةُ الحكيمة من مخبئها ولوّحت بعصاها لتُلقي تعويذةَ الصمت.",
+              "audioUrl": ""
+            },
+            {
+              "id": 11,
+              "text": "The third wished her the gift of grace.",
+              "translationAr": "وقالت: «تبقّى تمنٍّ سابعٌ أخيرٌ لي. ليس في قدرتي إبطالُ الشرِّ كليًّا، لكن أستطيع هذا: حين تشكُّ الأميرةُ إصبعَها، فلا تموتْ، بل تنامْ مئةَ عامٍ حتى يوقِظَها قُبلةُ حُبٍّ صادق.»",
+              "audioUrl": ""
+            },
+            {
+              "id": 12,
+              "text": "The fourth wished her the gift of music.",
+              "translationAr": "وفي اليوم التالي مباشرةً أصدر الملكُ قانونًا يمنع امتلاكَ أيِّ مِغزلٍ في المملكة. ومن بعده لم يتحدّث أحدٌ عن وليمةِ الشؤم. وكبرت الطفلةُ، واسمُها «تاليا»، موهوبةً مثلما هي جميلة. لكنها كانت قويّةَ الرأس، ولمّا منعها الملكُ والملكةُ في عيدها السابع عشر من مغادرة غرفتها، عصتهما.",
+              "audioUrl": ""
+            },
+            {
+              "id": 13,
+              "text": "The fifth wished her the gift of dance.",
+              "translationAr": "وتسلّقت من النافذة لتتجنّب الحارس على الباب، ومشَتْ حول حدائق القصر.",
+              "audioUrl": ""
+            },
+            {
+              "id": 14,
+              "text": "The sixth wished her the gift of …\nWell, we do not know what gift she would have wished for, because at that moment the Evil Fairy appeared in the centre of the great hall, her mouth fixed in a false smile, and her eyes delighting in spite.",
+              "translationAr": "وظنّت أنها اكتشفت كلَّ زاويةٍ وثغرةٍ وهي تلعب «استغماية» طفلةً، لكنّها الآن وجدت مدخلًا لم ترَه من قبل. دخلته وصعدت الدرجَ الحلزونيَّ لبرجٍ عالٍ.",
+              "audioUrl": ""
+            },
+            {
+              "id": 15,
+              "text": "“Do forgive me for dropping by uninvited,” she said, “I will not keep you for long.",
+              "translationAr": "صعدتْ صعدتْ حتى بلغت غرفةً في القمّة. كان الباب مواربًا. في الداخل وجدت امرأةً عجوزًا تعمل بتركيز عند عجلةٍ غريبة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 16,
+              "text": "I have come to wish my own gift upon the baby princess.”\nWhile the Evil Fairy held everyone’s attention, the seventh good fairy hid behind the curtains.",
+              "translationAr": "قالت تاليا: «أخبريني يا امرأةُ الطيّبة، ما هذا؟»",
+              "audioUrl": ""
+            },
+            {
+              "id": 17,
+              "text": "The wicked one continued: “I do so wish that the dear little princess shall grow up to be a radiant, accomplished and beautiful girl of sixteen years, the delight of her parents’ eyes, and then, on her seventeenth birthday, she shall prick her finger on the needle of a spinning wheel and DIE!",
+              "translationAr": "أجابت: «أما تعلمين؟ إنّه قَدَرُكِ يا عزيزتي.»",
+              "audioUrl": ""
+            },
+            {
+              "id": 18,
+              "text": "How do you like that?",
+              "translationAr": "قالت: «إذا كان قدري، أيمكنني أن أجرّبه؟»",
+              "audioUrl": ""
+            },
+            {
+              "id": 19,
+              "text": "Ha ha ha!”\nStill laughing dreadfully, she strode from the hall.",
+              "translationAr": "فتركت العجوزُ الأميرةَ تجلس وتلعب بهذه اللعبة الآسرة. دارت العجلةُ وصعدت الإبرةُ وهبطت.",
+              "audioUrl": ""
+            },
+            {
+              "id": 20,
+              "text": "Amid the uproar, the seventh wise fairy stepped out of hiding and waved her wand to cast the spell of silence.",
+              "translationAr": "هتفت تاليا: «يا لها من متعة!» ولكنّ الأميرة لم تعتَدْ غزلَ الخيط، فشَكَت إصبعَها بالإبرة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 21,
+              "text": "“There remains a seventh and final wish that is mine to make,” she said.",
+              "translationAr": "صرخت: «انظري! إنني أنزف!»",
+              "audioUrl": ""
+            },
+            {
+              "id": 22,
+              "text": "“It is not in my power to entirely overcome the evil wish, but I can at least do this - when the princess pricks her finger, let her not die, but fall asleep for 100 years until she is awoken by true love’s kiss.”\nThe very next day the King passed a law forbidding anyone in the land from owning a spinning wheel.",
+              "translationAr": "نزلت الأميرةُ درجَ البرج، وساقاها تضعفان أكثر فأكثر، ولمّا بلغتْ حديقةَ الورودِ ارتمت على العشب وغرقت في نومٍ عميق.",
+              "audioUrl": ""
+            },
+            {
+              "id": 23,
+              "text": "After that, no one ever spoke of the ill fated banquet.",
+              "translationAr": "حملها رجالُ البلاط إلى غرفتها. واستمرّت نائمةً، ثم غلب النومُ تدريجيًا جميعَ من في القصر.",
+              "audioUrl": ""
+            },
+            {
+              "id": 24,
+              "text": "The child, whose name was Talia, grew up to be as talented as she was beautiful.",
+              "translationAr": "وخلال أقلَّ من أسبوعٍ نمتْ غابةٌ عظيمةٌ حول الأسوار فأحاطت بالقصر تمامًا.",
+              "audioUrl": ""
+            },
+            {
+              "id": 25,
+              "text": "But she was also strong headed, and when, on her seventeenth birthday, the King and Queen forbade her to leave her room, she disobeyed them.",
+              "translationAr": "بعد مئةِ عام، كان أميرٌ يخرج للصيد. سأل رفاقَه: «ما تلك الأبراجُ فوق رؤوس الأشجار؟»",
+              "audioUrl": ""
+            },
+            {
+              "id": 26,
+              "text": "She climbed out of her window to avoid the guard on the door, and walked around the grounds of the palace.",
+              "translationAr": "قال بعضُهم: هناك غولٌ يعيش هناك. وقال آخرون: ساحراتٌ يرقصْنَ عند اكتمال القمر. وقيل أيضًا إنّها أميرةٌ نائمة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 27,
+              "text": "She thought that she discovered every nook and cranny while playing hide and seek as a child, but, oddly enough, she now found an entrance that she had not seen before.",
+              "translationAr": "وجّه الأميرُ الفضوليُّ جوادَه نحو البرج واخترق الأشجار. وسُرعان ما بلغ مكانًا معتمًا تزدحم فيه شجيراتُ الشوك غِلاظًا حدادًا لا يمرّ خلالها أحد.",
+              "audioUrl": ""
+            },
+            {
+              "id": 28,
+              "text": "She went through it and climbed the winding steps of a tower.",
+              "translationAr": "لكن بالنسبة إليه وحده انفرجت العُلّيقُ وفتحت له طريقًا. مضى حتى بوّابات القصر نفسِه، فرأى كلَّ سادةٍ وخدمٍ، وكلَّ خيلٍ وكلابٍ، نيامًا.",
+              "audioUrl": ""
+            },
+            {
+              "id": 29,
+              "text": "Up, up she stepped, until right at the top she came to a room.",
+              "translationAr": "ورأى طعامًا على الأطباق، وكؤوسًا نصفَ مملوءة، ونيرانًا ما تزال تتوهّج، وكلَّ شيءٍ كما كان.",
+              "audioUrl": ""
+            },
+            {
+              "id": 30,
+              "text": "The door was ajar.",
+              "translationAr": "ومشى في رواقٍ من الرخام، وطرق الأبواب وتطلّع في الغُرَف، حتى وجد أخيرًا حجرةً مذهّبة، وفي داخلها، بين أغطيةٍ مُطرَّزةٍ ووسائدَ حريرية، أميرةً نائمة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 31,
+              "text": "Inside she found an old woman, working intently at a strange wheel.",
+              "translationAr": "كانت تنام بسلام. جثا الأميرُ بجانبها، وأمسكَ يدَها وقبّلها. فانفتحت عيناها، وكانتا زرقاوين مليئتين بالفضول.",
+              "audioUrl": ""
+            },
+            {
+              "id": 32,
+              "text": "“Pray tell me, good woman, what is that?” asked Talia.",
+              "translationAr": "سألتْ: «من أنت؟»",
+              "audioUrl": ""
+            }
+          ]
+        },
+        "wordDefinitions": {
+          "a": {
+            "translation": "أداة نكرة",
+            "definition": "article"
+          },
+          "accomplished": {
+            "translation": "متقنة",
+            "definition": "past tense verb"
+          },
+          "after": {
+            "translation": "بعد",
+            "definition": "Common vocabulary in the story"
+          },
+          "ajar": {
+            "translation": "موارب",
+            "definition": "Common vocabulary in the story"
+          },
+          "all": {
+            "translation": "كل",
+            "definition": "Common vocabulary in the story"
+          },
+          "also": {
+            "translation": "أيضًا",
+            "definition": "Common vocabulary in the story"
+          },
+          "amid": {
+            "translation": "وسط",
+            "definition": "Common vocabulary in the story"
+          },
+          "an": {
+            "translation": "اداة نكرة",
+            "definition": "article"
+          },
+          "and": {
+            "translation": "و",
+            "definition": "conjunction"
+          },
+          "anyone": {
+            "translation": "أي شخص",
+            "definition": "Common vocabulary in the story"
+          },
+          "appeared": {
+            "translation": "ظهرت",
+            "definition": "past tense verb"
+          },
+          "around": {
+            "translation": "حول",
+            "definition": "preposition"
+          },
+          "as": {
+            "translation": "مثل",
+            "definition": "Common vocabulary in the story"
+          },
+          "asked": {
+            "translation": "سألت",
+            "definition": "past tense verb"
+          },
+          "asleep": {
+            "translation": "نائم",
+            "definition": "Common vocabulary in the story"
+          },
+          "at": {
+            "translation": "في",
+            "definition": "preposition"
+          },
+          "attention": {
+            "translation": "انتباه",
+            "definition": "Common vocabulary in the story"
+          },
+          "avoid": {
+            "translation": "تتجنّب",
+            "definition": "Common vocabulary in the story"
+          },
+          "awoken": {
+            "translation": "توقظ",
+            "definition": "Common vocabulary in the story"
+          },
+          "baby": {
+            "translation": "طفلة",
+            "definition": "Common vocabulary in the story"
+          },
+          "banquet": {
+            "translation": "وليمة",
+            "definition": "large formal meal"
+          },
+          "be": {
+            "translation": "يكون",
+            "definition": "Common vocabulary in the story"
+          },
+          "beautiful": {
+            "translation": "جميلة",
+            "definition": "Common vocabulary in the story"
+          },
+          "beauty": {
+            "translation": "جمال",
+            "definition": "Common vocabulary in the story"
+          },
+          "because": {
+            "translation": "لأن",
+            "definition": "Common vocabulary in the story"
+          },
+          "been": {
+            "translation": "كان",
+            "definition": "Common vocabulary in the story"
+          },
+          "before": {
+            "translation": "من قبل",
+            "definition": "Common vocabulary in the story"
+          },
+          "behind": {
+            "translation": "خلف",
+            "definition": "preposition"
+          },
+          "birthday": {
+            "translation": "عيد ميلاد",
+            "definition": "Common vocabulary in the story"
+          },
+          "born": {
+            "translation": "وُلِدت",
+            "definition": "Common vocabulary in the story"
+          },
+          "but": {
+            "translation": "لكن",
+            "definition": "conjunction"
+          },
+          "by": {
+            "translation": "بِـ",
+            "definition": "preposition"
+          },
+          "came": {
+            "translation": "وصلت",
+            "definition": "Common vocabulary in the story"
+          },
+          "can": {
+            "translation": "يستطيع",
+            "definition": "Common vocabulary in the story"
+          },
+          "cast": {
+            "translation": "تُلقي",
+            "definition": "Common vocabulary in the story"
+          },
+          "celebrations": {
+            "translation": "احتفالات",
+            "definition": "Common vocabulary in the story"
+          },
+          "centre": {
+            "translation": "وسط",
+            "definition": "Common vocabulary in the story"
+          },
+          "child": {
+            "translation": "طفل/طفلة",
+            "definition": "Common vocabulary in the story"
+          },
+          "climbed": {
+            "translation": "تسلّقت",
+            "definition": "past tense verb"
+          },
+          "come": {
+            "translation": "يأتي",
+            "definition": "Common vocabulary in the story"
+          },
+          "continued": {
+            "translation": "تابعت",
+            "definition": "past tense verb"
+          },
+          "cranny": {
+            "translation": "ثغرة",
+            "definition": "Common vocabulary in the story"
+          },
+          "curtains": {
+            "translation": "ستائر",
+            "definition": "Common vocabulary in the story"
+          },
+          "dance": {
+            "translation": "رقص",
+            "definition": "Common vocabulary in the story"
+          },
+          "day": {
+            "translation": "يوم",
+            "definition": "Common vocabulary in the story"
+          },
+          "dear": {
+            "translation": "عزيزتي",
+            "definition": "Common vocabulary in the story"
+          },
+          "delight": {
+            "translation": "بهجة/قرة عين",
+            "definition": "Common vocabulary in the story"
+          },
+          "delighting": {
+            "translation": "تُظهِر سرورًا",
+            "definition": "present participle"
+          },
+          "die": {
+            "translation": "تموت",
+            "definition": "Common vocabulary in the story"
+          },
+          "discovered": {
+            "translation": "اكتشفت",
+            "definition": "past tense verb"
+          },
+          "disobeyed": {
+            "translation": "عصت",
+            "definition": "past tense verb"
+          },
+          "do": {
+            "translation": "يفعل",
+            "definition": "Common vocabulary in the story"
+          },
+          "door": {
+            "translation": "باب",
+            "definition": "Common vocabulary in the story"
+          },
+          "down": {
+            "translation": "جلس",
+            "definition": "Common vocabulary in the story"
+          },
+          "dreadfully": {
+            "translation": "بشكل مرعب",
+            "definition": "adverb"
+          },
+          "dropping": {
+            "translation": "اسقاط",
+            "definition": "present participle"
+          },
+          "each": {
+            "translation": "كلّ واحدة",
+            "definition": "Common vocabulary in the story"
+          },
+          "eat": {
+            "translation": "يأكل",
+            "definition": "Common vocabulary in the story"
+          },
+          "end": {
+            "translation": "نهاية",
+            "definition": "Common vocabulary in the story"
+          },
+          "enough": {
+            "translation": "كفاية/بما يكفي",
+            "definition": "Common vocabulary in the story"
+          },
+          "entirely": {
+            "translation": "تمامًا",
+            "definition": "adverb"
+          },
+          "entrance": {
+            "translation": "مدخل",
+            "definition": "Common vocabulary in the story"
+          },
+          "evening": {
+            "translation": "سهرة",
+            "definition": "present participle"
+          },
+          "ever": {
+            "translation": "أبدًا",
+            "definition": "Common vocabulary in the story"
+          },
+          "every": {
+            "translation": "كل",
+            "definition": "Common vocabulary in the story"
+          },
+          "everyone": {
+            "translation": "الجميع",
+            "definition": "Common vocabulary in the story"
+          },
+          "evil": {
+            "translation": "شرير",
+            "definition": "Common vocabulary in the story"
+          },
+          "eyes": {
+            "translation": "عينان/عيون",
+            "definition": "Common vocabulary in the story"
+          },
+          "fairies": {
+            "translation": "جنّيات",
+            "definition": "Common vocabulary in the story"
+          },
+          "fairy": {
+            "translation": "جنّية",
+            "definition": "magical being"
+          },
+          "fall": {
+            "translation": "تقع",
+            "definition": "Common vocabulary in the story"
+          },
+          "false": {
+            "translation": "زائف",
+            "definition": "Common vocabulary in the story"
+          },
+          "fated": {
+            "translation": "مقدّر/مشؤوم",
+            "definition": "past tense verb"
+          },
+          "fifth": {
+            "translation": "الخامسة",
+            "definition": "Common vocabulary in the story"
+          },
+          "final": {
+            "translation": "أخير",
+            "definition": "Common vocabulary in the story"
+          },
+          "finger": {
+            "translation": "إصبع",
+            "definition": "Common vocabulary in the story"
+          },
+          "first": {
+            "translation": "الأولى",
+            "definition": "Common vocabulary in the story"
+          },
+          "fixed": {
+            "translation": "ثابت",
+            "definition": "past tense verb"
+          },
+          "for": {
+            "translation": "لـ",
+            "definition": "preposition"
+          },
+          "forbade": {
+            "translation": "منعاها",
+            "definition": "Common vocabulary in the story"
+          },
+          "forbidding": {
+            "translation": "مانع/يحظر",
+            "definition": "present participle"
+          },
+          "forgive": {
+            "translation": "اعذروا",
+            "definition": "Common vocabulary in the story"
+          },
+          "found": {
+            "translation": "وجد",
+            "definition": "Common vocabulary in the story"
+          },
+          "fourth": {
+            "translation": "الرابعة",
+            "definition": "Common vocabulary in the story"
+          },
+          "from": {
+            "translation": "من",
+            "definition": "preposition"
+          },
+          "gave": {
+            "translation": "أعطى/قدّم",
+            "definition": "Common vocabulary in the story"
+          },
+          "gift": {
+            "translation": "هدية",
+            "definition": "Common vocabulary in the story"
+          },
+          "girl": {
+            "translation": "فتاة",
+            "definition": "Common vocabulary in the story"
+          },
+          "gold": {
+            "translation": "ذهب",
+            "definition": "Common vocabulary in the story"
+          },
+          "good": {
+            "translation": "طيبة",
+            "definition": "Common vocabulary in the story"
+          },
+          "grace": {
+            "translation": "لطف/رشاقة",
+            "definition": "Common vocabulary in the story"
+          },
+          "great": {
+            "translation": "عظيمة",
+            "definition": "Common vocabulary in the story"
+          },
+          "grew": {
+            "translation": "كبرت",
+            "definition": "Common vocabulary in the story"
+          },
+          "grounds": {
+            "translation": "حدائق/أراضي",
+            "definition": "Common vocabulary in the story"
+          },
+          "grow": {
+            "translation": "تكبر",
+            "definition": "Common vocabulary in the story"
+          },
+          "guard": {
+            "translation": "حارس",
+            "definition": "Common vocabulary in the story"
+          },
+          "ha": {
+            "translation": "—",
+            "definition": "Common vocabulary in the story"
+          },
+          "had": {
+            "translation": "كان لدينا",
+            "definition": "Common vocabulary in the story"
+          },
+          "hall": {
+            "translation": "رواق",
+            "definition": "Common vocabulary in the story"
+          },
+          "happy": {
+            "translation": "سعيد",
+            "definition": "Common vocabulary in the story"
+          },
+          "have": {
+            "translation": "يملك",
+            "definition": "Common vocabulary in the story"
+          },
+          "headed": {
+            "translation": "الرأس (عنيدة)",
+            "definition": "past tense verb"
+          },
+          "heard": {
+            "translation": "سمع",
+            "definition": "Common vocabulary in the story"
+          },
+          "heart": {
+            "translation": "قلب",
+            "definition": "Common vocabulary in the story"
+          },
+          "held": {
+            "translation": "شغلت",
+            "definition": "Common vocabulary in the story"
+          },
+          "her": {
+            "translation": "لها",
+            "definition": "pronoun/determiner"
+          },
+          "hid": {
+            "translation": "اختبأت",
+            "definition": "Common vocabulary in the story"
+          },
+          "hide": {
+            "translation": "تختبئ",
+            "definition": "Common vocabulary in the story"
+          },
+          "hiding": {
+            "translation": "الاختباء",
+            "definition": "present participle"
+          },
+          "how": {
+            "translation": "كم",
+            "definition": "Common vocabulary in the story"
+          },
+          "i": {
+            "translation": "أنا",
+            "definition": "pronoun/determiner"
+          },
+          "if": {
+            "translation": "لو/إن",
+            "definition": "Common vocabulary in the story"
+          },
+          "ill": {
+            "translation": "سيّئ",
+            "definition": "Common vocabulary in the story"
+          },
+          "in": {
+            "translation": "في",
+            "definition": "preposition"
+          },
+          "inside": {
+            "translation": "داخل",
+            "definition": "Common vocabulary in the story"
+          },
+          "intently": {
+            "translation": "بتركيز",
+            "definition": "adverb"
+          },
+          "invited": {
+            "translation": "مدعوّة",
+            "definition": "past tense verb"
+          },
+          "inviting": {
+            "translation": "دعوة",
+            "definition": "present participle"
+          },
+          "is": {
+            "translation": "هو",
+            "definition": "Common vocabulary in the story"
+          },
+          "it": {
+            "translation": "إنه",
+            "definition": "pronoun/determiner"
+          },
+          "joy": {
+            "translation": "فرح/بهجة",
+            "definition": "Common vocabulary in the story"
+          },
+          "keep": {
+            "translation": "أُطيل/أُبقي",
+            "definition": "Common vocabulary in the story"
+          },
+          "king": {
+            "translation": "ملك",
+            "definition": "male ruler"
+          },
+          "kiss": {
+            "translation": "قبلة",
+            "definition": "Common vocabulary in the story"
+          },
+          "know": {
+            "translation": "تعلمين",
+            "definition": "Common vocabulary in the story"
+          },
+          "land": {
+            "translation": "المملكة",
+            "definition": "Common vocabulary in the story"
+          },
+          "laughing": {
+            "translation": "تضحك",
+            "definition": "present participle"
+          },
+          "law": {
+            "translation": "قانون",
+            "definition": "Common vocabulary in the story"
+          },
+          "least": {
+            "translation": "على الأقل",
+            "definition": "Common vocabulary in the story"
+          },
+          "leave": {
+            "translation": "تغادر",
+            "definition": "Common vocabulary in the story"
+          },
+          "let": {
+            "translation": "سمحت",
+            "definition": "Common vocabulary in the story"
+          },
+          "like": {
+            "translation": "يحب",
+            "definition": "Common vocabulary in the story"
+          },
+          "little": {
+            "translation": "صغيرة",
+            "definition": "Common vocabulary in the story"
+          },
+          "lived": {
+            "translation": "عاش",
+            "definition": "past tense verb"
+          },
+          "long": {
+            "translation": "طويلًا",
+            "definition": "Common vocabulary in the story"
+          },
+          "love": {
+            "translation": "حب",
+            "definition": "Common vocabulary in the story"
+          },
+          "made": {
+            "translation": "صنعت",
+            "definition": "Common vocabulary in the story"
+          },
+          "magic": {
+            "translation": "سحر",
+            "definition": "Common vocabulary in the story"
+          },
+          "magical": {
+            "translation": "سحري",
+            "definition": "Common vocabulary in the story"
+          },
+          "make": {
+            "translation": "أجعل",
+            "definition": "Common vocabulary in the story"
+          },
+          "many": {
+            "translation": "كثير",
+            "definition": "Common vocabulary in the story"
+          },
+          "me": {
+            "translation": "أنا",
+            "definition": "Common vocabulary in the story"
+          },
+          "mine": {
+            "translation": "لي",
+            "definition": "Common vocabulary in the story"
+          },
+          "moment": {
+            "translation": "لحظة",
+            "definition": "Common vocabulary in the story"
+          },
+          "more": {
+            "translation": "أكثر",
+            "definition": "Common vocabulary in the story"
+          },
+          "mouth": {
+            "translation": "فم",
+            "definition": "Common vocabulary in the story"
+          },
+          "music": {
+            "translation": "موسيقى",
+            "definition": "Common vocabulary in the story"
+          },
+          "my": {
+            "translation": "يا",
+            "definition": "pronoun/determiner"
+          },
+          "name": {
+            "translation": "اسم",
+            "definition": "Common vocabulary in the story"
+          },
+          "needle": {
+            "translation": "إبرة",
+            "definition": "thin sharp pin"
+          },
+          "next": {
+            "translation": "التالي",
+            "definition": "Common vocabulary in the story"
+          },
+          "no": {
+            "translation": "لا",
+            "definition": "Common vocabulary in the story"
+          },
+          "nook": {
+            "translation": "زاوية",
+            "definition": "Common vocabulary in the story"
+          },
+          "not": {
+            "translation": "لا",
+            "definition": "Common vocabulary in the story"
+          },
+          "now": {
+            "translation": "الآن",
+            "definition": "Common vocabulary in the story"
+          },
+          "oddly": {
+            "translation": "بغرابة",
+            "definition": "adverb"
+          },
+          "of": {
+            "translation": "من",
+            "definition": "preposition"
+          },
+          "offence": {
+            "translation": "إهانة/غضب",
+            "definition": "Common vocabulary in the story"
+          },
+          "oh": {
+            "translation": "آه",
+            "definition": "Common vocabulary in the story"
+          },
+          "old": {
+            "translation": "عجوز",
+            "definition": "Common vocabulary in the story"
+          },
+          "on": {
+            "translation": "على",
+            "definition": "preposition"
+          },
+          "once": {
+            "translation": "مرة",
+            "definition": "Common vocabulary in the story"
+          },
+          "one": {
+            "translation": "أحد",
+            "definition": "Common vocabulary in the story"
+          },
+          "ones": {
+            "translation": "اللواتي",
+            "definition": "Common vocabulary in the story"
+          },
+          "only": {
+            "translation": "فقط",
+            "definition": "adverb"
+          },
+          "other": {
+            "translation": "أخرى",
+            "definition": "Common vocabulary in the story"
+          },
+          "out": {
+            "translation": "خارجًا",
+            "definition": "Common vocabulary in the story"
+          },
+          "overcome": {
+            "translation": "غُلِب",
+            "definition": "Common vocabulary in the story"
+          },
+          "own": {
+            "translation": "الخاصة",
+            "definition": "Common vocabulary in the story"
+          },
+          "owning": {
+            "translation": "امتلاك",
+            "definition": "present participle"
+          },
+          "palace": {
+            "translation": "قصر",
+            "definition": "royal house"
+          },
+          "parents": {
+            "translation": "والدان",
+            "definition": "Common vocabulary in the story"
+          },
+          "passed": {
+            "translation": "مرّ",
+            "definition": "past tense verb"
+          },
+          "plate": {
+            "translation": "طبق",
+            "definition": "Common vocabulary in the story"
+          },
+          "playing": {
+            "translation": "تلعب",
+            "definition": "present participle"
+          },
+          "power": {
+            "translation": "قدرة",
+            "definition": "Common vocabulary in the story"
+          },
+          "powerful": {
+            "translation": "قوي",
+            "definition": "Common vocabulary in the story"
+          },
+          "pray": {
+            "translation": "أرجوكِ",
+            "definition": "Common vocabulary in the story"
+          },
+          "prick": {
+            "translation": "تشُكّ",
+            "definition": "Common vocabulary in the story"
+          },
+          "pricks": {
+            "translation": "تشُكّ",
+            "definition": "Common vocabulary in the story"
+          },
+          "princess": {
+            "translation": "أميرة",
+            "definition": "king/queen’s daughter"
+          },
+          "put": {
+            "translation": "وُضِعن",
+            "definition": "Common vocabulary in the story"
+          },
+          "queen": {
+            "translation": "ملكة",
+            "definition": "female ruler"
+          },
+          "radiant": {
+            "translation": "متألّقة",
+            "definition": "Common vocabulary in the story"
+          },
+          "reason": {
+            "translation": "عقل",
+            "definition": "Common vocabulary in the story"
+          },
+          "remains": {
+            "translation": "يتبقّى",
+            "definition": "Common vocabulary in the story"
+          },
+          "right": {
+            "translation": "تمامًا",
+            "definition": "Common vocabulary in the story"
+          },
+          "room": {
+            "translation": "غرفة",
+            "definition": "Common vocabulary in the story"
+          },
+          "s": {
+            "translation": "—",
+            "definition": "Common vocabulary in the story"
+          },
+          "said": {
+            "translation": "قال",
+            "definition": "Common vocabulary in the story"
+          },
+          "sat": {
+            "translation": "جلس",
+            "definition": "Common vocabulary in the story"
+          },
+          "second": {
+            "translation": "الثانية",
+            "definition": "Common vocabulary in the story"
+          },
+          "seek": {
+            "translation": "تبحث",
+            "definition": "Common vocabulary in the story"
+          },
+          "seen": {
+            "translation": "ترت/رأَت",
+            "definition": "Common vocabulary in the story"
+          },
+          "seven": {
+            "translation": "سبع",
+            "definition": "Common vocabulary in the story"
+          },
+          "seventeenth": {
+            "translation": "السابعة عشرة",
+            "definition": "Common vocabulary in the story"
+          },
+          "seventh": {
+            "translation": "السابعة",
+            "definition": "Common vocabulary in the story"
+          },
+          "shall": {
+            "translation": "سوف",
+            "definition": "Common vocabulary in the story"
+          },
+          "shared": {
+            "translation": "شاركا",
+            "definition": "past tense verb"
+          },
+          "she": {
+            "translation": "هي",
+            "definition": "pronoun/determiner"
+          },
+          "side": {
+            "translation": "جانب",
+            "definition": "Common vocabulary in the story"
+          },
+          "silence": {
+            "translation": "صمت",
+            "definition": "Common vocabulary in the story"
+          },
+          "sixteen": {
+            "translation": "ستة عشر",
+            "definition": "Common vocabulary in the story"
+          },
+          "sixth": {
+            "translation": "السادسة",
+            "definition": "Common vocabulary in the story"
+          },
+          "smile": {
+            "translation": "ابتسامة",
+            "definition": "Common vocabulary in the story"
+          },
+          "so": {
+            "translation": "لذا",
+            "definition": "Common vocabulary in the story"
+          },
+          "spell": {
+            "translation": "تعويذة",
+            "definition": "magic effect"
+          },
+          "spinning": {
+            "translation": "غزل",
+            "definition": "making thread"
+          },
+          "spite": {
+            "translation": "حقد",
+            "definition": "Common vocabulary in the story"
+          },
+          "spoke": {
+            "translation": "تكلم",
+            "definition": "Common vocabulary in the story"
+          },
+          "stepped": {
+            "translation": "خرجت",
+            "definition": "past tense verb"
+          },
+          "steps": {
+            "translation": "درجات",
+            "definition": "Common vocabulary in the story"
+          },
+          "still": {
+            "translation": "ما تزال",
+            "definition": "Common vocabulary in the story"
+          },
+          "strange": {
+            "translation": "غريب",
+            "definition": "Common vocabulary in the story"
+          },
+          "strode": {
+            "translation": "مضت بخطى واسعة",
+            "definition": "Common vocabulary in the story"
+          },
+          "strong": {
+            "translation": "قوية",
+            "definition": "Common vocabulary in the story"
+          },
+          "talented": {
+            "translation": "موهوبة",
+            "definition": "past tense verb"
+          },
+          "talia": {
+            "translation": "تاليا",
+            "definition": "Common vocabulary in the story"
+          },
+          "tell": {
+            "translation": "أخبِريني",
+            "definition": "Common vocabulary in the story"
+          },
+          "than": {
+            "translation": "من",
+            "definition": "Common vocabulary in the story"
+          },
+          "that": {
+            "translation": "الذي - التي",
+            "definition": "Common vocabulary in the story"
+          },
+          "the": {
+            "translation": "ال",
+            "definition": "article"
+          },
+          "their": {
+            "translation": "ـهم",
+            "definition": "pronoun/determiner"
+          },
+          "them": {
+            "translation": "من خلالها",
+            "definition": "Common vocabulary in the story"
+          },
+          "then": {
+            "translation": "ثم",
+            "definition": "Common vocabulary in the story"
+          },
+          "there": {
+            "translation": "هناك",
+            "definition": "Common vocabulary in the story"
+          },
+          "they": {
+            "translation": "هما",
+            "definition": "pronoun/determiner"
+          },
+          "third": {
+            "translation": "ثالثة",
+            "definition": "Common vocabulary in the story"
+          },
+          "this": {
+            "translation": "هذا",
+            "definition": "Common vocabulary in the story"
+          },
+          "thought": {
+            "translation": "ظنّت",
+            "definition": "Common vocabulary in the story"
+          },
+          "through": {
+            "translation": "خلال",
+            "definition": "preposition"
+          },
+          "time": {
+            "translation": "وقت/زمن",
+            "definition": "Common vocabulary in the story"
+          },
+          "to": {
+            "translation": "إلى",
+            "definition": "preposition"
+          },
+          "together": {
+            "translation": "معًا",
+            "definition": "Common vocabulary in the story"
+          },
+          "took": {
+            "translation": "أخذت",
+            "definition": "Common vocabulary in the story"
+          },
+          "top": {
+            "translation": "قمة",
+            "definition": "Common vocabulary in the story"
+          },
+          "towards": {
+            "translation": "نحو",
+            "definition": "preposition"
+          },
+          "tower": {
+            "translation": "برج",
+            "definition": "tall narrow building"
+          },
+          "true": {
+            "translation": "صادق",
+            "definition": "Common vocabulary in the story"
+          },
+          "unfortunately": {
+            "translation": "للأسف",
+            "definition": "adverb"
+          },
+          "uninvited": {
+            "translation": "بلا دعوة",
+            "definition": "past tense verb"
+          },
+          "until": {
+            "translation": "حتى",
+            "definition": "Common vocabulary in the story"
+          },
+          "up": {
+            "translation": "تصير",
+            "definition": "Common vocabulary in the story"
+          },
+          "upon": {
+            "translation": "على/فوق",
+            "definition": "preposition"
+          },
+          "uproar": {
+            "translation": "جلبة",
+            "definition": "Common vocabulary in the story"
+          },
+          "very": {
+            "translation": "جداً",
+            "definition": "Common vocabulary in the story"
+          },
+          "walked": {
+            "translation": "سارت",
+            "definition": "past tense verb"
+          },
+          "wand": {
+            "translation": "عصا سحرية",
+            "definition": "magic stick"
+          },
+          "was": {
+            "translation": "كانت",
+            "definition": "Common vocabulary in the story"
+          },
+          "waved": {
+            "translation": "لوّحت",
+            "definition": "past tense verb"
+          },
+          "we": {
+            "translation": "نحن",
+            "definition": "pronoun/determiner"
+          },
+          "well": {
+            "translation": "حسنًا",
+            "definition": "Common vocabulary in the story"
+          },
+          "went": {
+            "translation": "قيل/ذهب",
+            "definition": "Common vocabulary in the story"
+          },
+          "were": {
+            "translation": "كانوا",
+            "definition": "Common vocabulary in the story"
+          },
+          "what": {
+            "translation": "ما",
+            "definition": "Common vocabulary in the story"
+          },
+          "wheel": {
+            "translation": "عجلة/مِغزل",
+            "definition": "Common vocabulary in the story"
+          },
+          "when": {
+            "translation": "عندما",
+            "definition": "Common vocabulary in the story"
+          },
+          "while": {
+            "translation": "بينما",
+            "definition": "Common vocabulary in the story"
+          },
+          "who": {
+            "translation": "من",
+            "definition": "Common vocabulary in the story"
+          },
+          "whose": {
+            "translation": "التي يخصّها",
+            "definition": "Common vocabulary in the story"
+          },
+          "wicked": {
+            "translation": "شريرة",
+            "definition": "past tense verb"
+          },
+          "will": {
+            "translation": "سوف",
+            "definition": "Common vocabulary in the story"
+          },
+          "winding": {
+            "translation": "حلزوني",
+            "definition": "present participle"
+          },
+          "window": {
+            "translation": "نافذة",
+            "definition": "Common vocabulary in the story"
+          },
+          "wise": {
+            "translation": "حكيم",
+            "definition": "Common vocabulary in the story"
+          },
+          "wish": {
+            "translation": "أمنية",
+            "definition": "Common vocabulary in the story"
+          },
+          "wished": {
+            "translation": "تمنّت",
+            "definition": "past tense verb"
+          },
+          "woman": {
+            "translation": "امرأة",
+            "definition": "Common vocabulary in the story"
+          },
+          "working": {
+            "translation": "تعمل",
+            "definition": "present participle"
+          },
+          "would": {
+            "translation": "كان",
+            "definition": "Common vocabulary in the story"
+          },
+          "years": {
+            "translation": "سنوات",
+            "definition": "Common vocabulary in the story"
+          },
+          "you": {
+            "translation": "أنتِ",
+            "definition": "pronoun/determiner"
+          }
+        }
+      }
+    ]
+  },
+   {
+    "id": 13,
+    "slug": "lesson-13",
+    "image": "/assets/images/courses_image/Level-C-13.jpg",
+    "levelTitle": "Bertie & Sadie – Short Version",
+    "levelDescription": "Story with Arabic translation and full glossary.",
+    "levelKey": "Pre-Intermediate",
+    "isLocked": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Bertie & Sadie – C Version",
+        "description": "Story with translation and glossary.",
+        "storyData": {
+          "content": [
+            {
+              "id": 1,
+              "text": "Hi everybody. My name is Natasha. And my name is Rob.",
+              "translationAr": "مرحبًا بالجميع. اسمي ناتاشا. واسمي روب.",
+              "audioUrl": ""
+            },
+            {
+              "id": 2,
+              "text": "Here’s some news about Bertie the Frog.",
+              "translationAr": "إليكم بعض الأخبار عن بيرتي الضفدع.",
+              "audioUrl": ""
+            },
+            {
+              "id": 3,
+              "text": "Bertie used to be a handsome prince.",
+              "translationAr": "كان بيرتي سابقًا أميرًا وسيمًا.",
+              "audioUrl": ""
+            },
+            {
+              "id": 4,
+              "text": "Now he lives as a frog in a pond.",
+              "translationAr": "والآن يعيش كضفدع في بركة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 5,
+              "text": "His friend Sadie is a beautiful black swan.",
+              "translationAr": "صديقته سادي بجعة سوداء جميلة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 6,
+              "text": "Sadie likes to imagine she might be a princess.",
+              "translationAr": "تحب سادي أن تتخيل أنها ربما تكون أميرة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 7,
+              "text": "The fish Colin is always grumpy.",
+              "translationAr": "السمكة كولين دائمًا متجهمة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 8,
+              "text": "Colin tells Sadie that she is only a swan.",
+              "translationAr": "يخبر كولين سادي بأنها مجرد بجعة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 9,
+              "text": "Tim the Tadpole says maybe she was turned into a swan.",
+              "translationAr": "يقول تيم الشرغوف ربما تم تحويلها إلى بجعة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 10,
+              "text": "Sadie becomes excited at this idea.",
+              "translationAr": "تصبح سادي متحمسة لهذه الفكرة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 11,
+              "text": "She asks Bertie if she might be a princess.",
+              "translationAr": "تسأل سادي بيرتي إن كانت ربما أميرة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 12,
+              "text": "Bertie tells her about a special princess test.",
+              "translationAr": "يخبرها بيرتي عن اختبار خاص بالأميرات.",
+              "audioUrl": ""
+            },
+            {
+              "id": 13,
+              "text": "If someone agrees to take the test, they are not a real princess.",
+              "translationAr": "إذا وافق أحدهم على الاختبار، فهو ليس أميرة حقيقية.",
+              "audioUrl": ""
+            },
+            {
+              "id": 14,
+              "text": "Sadie feels a little sad but still proud of her beauty.",
+              "translationAr": "تشعر سادي ببعض الحزن لكنها لا تزال فخورة بجمالها.",
+              "audioUrl": ""
+            },
+            {
+              "id": 15,
+              "text": "One cold morning the pond was covered in frost.",
+              "translationAr": "في صباح بارد كانت البركة مغطاة بالصقيع.",
+              "audioUrl": ""
+            },
+            {
+              "id": 16,
+              "text": "Sadie’s feathers turned white from the frost.",
+              "translationAr": "أصبح ريش سادي أبيض بسبب الصقيع.",
+              "audioUrl": ""
+            },
+            {
+              "id": 17,
+              "text": "Tim saw her and thought she was a ghost swan.",
+              "translationAr": "رآها تيم وظن أنها بجعة شبح.",
+              "audioUrl": ""
+            },
+            {
+              "id": 18,
+              "text": "Bertie said ghosts are not real.",
+              "translationAr": "قال بيرتي إن الأشباح ليست حقيقية.",
+              "audioUrl": ""
+            },
+            {
+              "id": 19,
+              "text": "Colin challenged Bertie to talk to the white swan.",
+              "translationAr": "تحدّى كولين بيرتي أن يتحدث مع البجعة البيضاء.",
+              "audioUrl": ""
+            },
+            {
+              "id": 20,
+              "text": "Bertie was nervous but did not run away.",
+              "translationAr": "كان بيرتي متوترًا لكنه لم يهرب.",
+              "audioUrl": ""
+            },
+            {
+              "id": 21,
+              "text": "The white swan came closer.",
+              "translationAr": "اقتربت البجعة البيضاء.",
+              "audioUrl": ""
+            },
+            {
+              "id": 22,
+              "text": "It was Sadie all along.",
+              "translationAr": "لقد كانت سادي طوال الوقت.",
+              "audioUrl": ""
+            },
+            {
+              "id": 23,
+              "text": "She asked Bertie if she looked like a princess.",
+              "translationAr": "سألت سادي بيرتي إن كانت تبدو كأميرة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 24,
+              "text": "Bertie tried to speak but could only croak.",
+              "translationAr": "حاول بيرتي التحدث لكنه لم يستطع سوى النقيق.",
+              "audioUrl": ""
+            },
+            {
+              "id": 25,
+              "text": "Sadie asked if he was feeling ill.",
+              "translationAr": "سألت سادي إن كان يشعر بالمرض.",
+              "audioUrl": ""
+            },
+            {
+              "id": 26,
+              "text": "Tim and Colin thought Bertie was brave.",
+              "translationAr": "اعتقد تيم وكولين أن بيرتي كان شجاعًا.",
+              "audioUrl": ""
+            },
+            {
+              "id": 27,
+              "text": "Sometimes a dog named Barker comes to the pond.",
+              "translationAr": "أحيانًا يأتي كلب اسمه باركر إلى البركة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 28,
+              "text": "Barker barks loudly and scares Tim.",
+              "translationAr": "باركر ينبح بصوت عالٍ ويخيف تيم.",
+              "audioUrl": ""
+            },
+            {
+              "id": 29,
+              "text": "Bertie says princes are not afraid of dogs.",
+              "translationAr": "يقول بيرتي إن الأمراء لا يخافون من الكلاب.",
+              "audioUrl": ""
+            },
+            {
+              "id": 30,
+              "text": "Sadie spreads her wings wide.",
+              "translationAr": "تمد سادي جناحيها على اتساعهما.",
+              "audioUrl": ""
+            },
+            {
+              "id": 31,
+              "text": "Barker sees her and runs away frightened.",
+              "translationAr": "يرى باركر سادي ويهرب خائفًا.",
+              "audioUrl": ""
+            },
+            {
+              "id": 32,
+              "text": "Bertie proudly says he made the dog run.",
+              "translationAr": "يقول بيرتي بفخر إنه جعل الكلب يهرب.",
+              "audioUrl": ""
+            },
+            {
+              "id": 33,
+              "text": "Sadie says Bertie is very brave.",
+              "translationAr": "تقول سادي إن بيرتي شجاع جدًا.",
+              "audioUrl": ""
+            },
+            {
+              "id": 34,
+              "text": "Everyone hopes one day Bertie will become a prince again.",
+              "translationAr": "يأمل الجميع أن يصبح بيرتي أميرًا مرة أخرى يومًا ما.",
+              "audioUrl": ""
+            },
+            {
+              "id": 35,
+              "text": "Maybe he will invite Sadie to live in a beautiful pond.",
+              "translationAr": "ربما سيدعو سادي للعيش في بركة جميلة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 36,
+              "text": "And maybe her dream will almost come true.",
+              "translationAr": "وربما سيتحقق حلمها تقريبًا.",
+              "audioUrl": ""
+            }
+          ]
+        },
+        "wordDefinitions": {
+          "a": {
+            "translation": "أداة نكرة",
+            "definition": "simple common word"
+          },
+          "about": {
+            "translation": "عن",
+            "definition": "simple common word"
+          },
+          "afraid": {
+            "translation": "خائف",
+            "definition": "simple common word"
+          },
+          "again": {
+            "translation": "مرة أخرى",
+            "definition": "simple common word"
+          },
+          "agrees": {
+            "translation": "يوافق",
+            "definition": "simple common word"
+          },
+          "all": {
+            "translation": "كل",
+            "definition": "simple common word"
+          },
+          "almost": {
+            "translation": "تقريبًا",
+            "definition": "simple common word"
+          },
+          "along": {
+            "translation": "طوال",
+            "definition": "simple common word"
+          },
+          "always": {
+            "translation": "دائمًا",
+            "definition": "simple common word"
+          },
+          "and": {
+            "translation": "و",
+            "definition": "simple common word"
+          },
+          "are": {
+            "translation": "يكونون",
+            "definition": "simple common word"
+          },
+          "as": {
+            "translation": "بصفته/كـ",
+            "definition": "simple common word"
+          },
+          "asked": {
+            "translation": "سأل",
+            "definition": "simple common word"
+          },
+          "asks": {
+            "translation": "تسأل",
+            "definition": "simple common word"
+          },
+          "at": {
+            "translation": "عند",
+            "definition": "simple common word"
+          },
+          "away": {
+            "translation": "بعيدًا",
+            "definition": "simple common word"
+          },
+          "barker": {
+            "translation": "باركر",
+            "definition": "simple common word"
+          },
+          "barks": {
+            "translation": "ينبح",
+            "definition": "simple common word"
+          },
+          "be": {
+            "translation": "يكون",
+            "definition": "simple common word"
+          },
+          "beautiful": {
+            "translation": "جميلة",
+            "definition": "simple common word"
+          },
+          "beauty": {
+            "translation": "جمال",
+            "definition": "simple common word"
+          },
+          "become": {
+            "translation": "يصبح",
+            "definition": "simple common word"
+          },
+          "becomes": {
+            "translation": "تصبح",
+            "definition": "simple common word"
+          },
+          "bertie": {
+            "translation": "بيرتي",
+            "definition": "simple common word"
+          },
+          "black": {
+            "translation": "سوداء",
+            "definition": "simple common word"
+          },
+          "brave": {
+            "translation": "شجاع",
+            "definition": "simple common word"
+          },
+          "but": {
+            "translation": "لكن",
+            "definition": "simple common word"
+          },
+          "came": {
+            "translation": "جاء",
+            "definition": "simple common word"
+          },
+          "challenged": {
+            "translation": "تحدى",
+            "definition": "simple common word"
+          },
+          "closer": {
+            "translation": "أقرب",
+            "definition": "simple common word"
+          },
+          "cold": {
+            "translation": "بارد",
+            "definition": "simple common word"
+          },
+          "colin": {
+            "translation": "كولين",
+            "definition": "simple common word"
+          },
+          "come": {
+            "translation": "يحدث/يأتي",
+            "definition": "simple common word"
+          },
+          "comes": {
+            "translation": "يأتي",
+            "definition": "simple common word"
+          },
+          "could": {
+            "translation": "استطاع",
+            "definition": "simple common word"
+          },
+          "covered": {
+            "translation": "مغطاة",
+            "definition": "simple common word"
+          },
+          "croak": {
+            "translation": "ينق",
+            "definition": "simple common word"
+          },
+          "day": {
+            "translation": "يوم",
+            "definition": "simple common word"
+          },
+          "did": {
+            "translation": "فعل/لم",
+            "definition": "simple common word"
+          },
+          "dog": {
+            "translation": "كلب",
+            "definition": "simple common word"
+          },
+          "dogs": {
+            "translation": "كلاب",
+            "definition": "simple common word"
+          },
+          "dream": {
+            "translation": "dream",
+            "definition": "simple common word"
+          },
+          "everybody": {
+            "translation": "الجميع",
+            "definition": "simple common word"
+          },
+          "everyone": {
+            "translation": "الجميع",
+            "definition": "simple common word"
+          },
+          "excited": {
+            "translation": "متحمسة",
+            "definition": "simple common word"
+          },
+          "feathers": {
+            "translation": "ريش",
+            "definition": "simple common word"
+          },
+          "feeling": {
+            "translation": "يشعر",
+            "definition": "simple common word"
+          },
+          "feels": {
+            "translation": "يشعر",
+            "definition": "simple common word"
+          },
+          "fish": {
+            "translation": "سمكة",
+            "definition": "simple common word"
+          },
+          "friend": {
+            "translation": "صديق",
+            "definition": "simple common word"
+          },
+          "frightened": {
+            "translation": "خائف",
+            "definition": "simple common word"
+          },
+          "frog": {
+            "translation": "ضفدع",
+            "definition": "simple common word"
+          },
+          "from": {
+            "translation": "من",
+            "definition": "simple common word"
+          },
+          "frost": {
+            "translation": "صقيع",
+            "definition": "simple common word"
+          },
+          "ghost": {
+            "translation": "شبح",
+            "definition": "simple common word"
+          },
+          "ghosts": {
+            "translation": "أشباح",
+            "definition": "simple common word"
+          },
+          "grumpy": {
+            "translation": "متجهمة",
+            "definition": "simple common word"
+          },
+          "handsome": {
+            "translation": "وسيم",
+            "definition": "simple common word"
+          },
+          "he": {
+            "translation": "هو",
+            "definition": "simple common word"
+          },
+          "her": {
+            "translation": "ها",
+            "definition": "simple common word"
+          },
+          "here": {
+            "translation": "هنا",
+            "definition": "simple common word"
+          },
+          "hi": {
+            "translation": "مرحبًا",
+            "definition": "simple common word"
+          },
+          "his": {
+            "translation": "خاصته",
+            "definition": "simple common word"
+          },
+          "hopes": {
+            "translation": "يأمل",
+            "definition": "simple common word"
+          },
+          "idea": {
+            "translation": "فكرة",
+            "definition": "simple common word"
+          },
+          "if": {
+            "translation": "إن",
+            "definition": "simple common word"
+          },
+          "ill": {
+            "translation": "مريض",
+            "definition": "simple common word"
+          },
+          "imagine": {
+            "translation": "يتخيل",
+            "definition": "simple common word"
+          },
+          "in": {
+            "translation": "في",
+            "definition": "simple common word"
+          },
+          "into": {
+            "translation": "إلى",
+            "definition": "simple common word"
+          },
+          "invite": {
+            "translation": "يدعو",
+            "definition": "simple common word"
+          },
+          "is": {
+            "translation": "يكون",
+            "definition": "simple common word"
+          },
+          "it": {
+            "translation": "هو/هي",
+            "definition": "simple common word"
+          },
+          "like": {
+            "translation": "كـ",
+            "definition": "simple common word"
+          },
+          "likes": {
+            "translation": "تحب",
+            "definition": "simple common word"
+          },
+          "little": {
+            "translation": "قليل",
+            "definition": "simple common word"
+          },
+          "live": {
+            "translation": "يعيش",
+            "definition": "simple common word"
+          },
+          "lives": {
+            "translation": "يعيش",
+            "definition": "simple common word"
+          },
+          "looked": {
+            "translation": "بدت",
+            "definition": "simple common word"
+          },
+          "loudly": {
+            "translation": "بصوت عالٍ",
+            "definition": "simple common word"
+          },
+          "made": {
+            "translation": "جعل",
+            "definition": "simple common word"
+          },
+          "maybe": {
+            "translation": "ربما",
+            "definition": "simple common word"
+          },
+          "might": {
+            "translation": "ربما",
+            "definition": "simple common word"
+          },
+          "morning": {
+            "translation": "صباح",
+            "definition": "simple common word"
+          },
+          "my": {
+            "translation": "خاصتي/اسمي",
+            "definition": "simple common word"
+          },
+          "name": {
+            "translation": "اسم",
+            "definition": "simple common word"
+          },
+          "named": {
+            "translation": "اسمه",
+            "definition": "simple common word"
+          },
+          "natasha": {
+            "translation": "ناتاشا",
+            "definition": "simple common word"
+          },
+          "nervous": {
+            "translation": "متوتر",
+            "definition": "simple common word"
+          },
+          "news": {
+            "translation": "أخبار",
+            "definition": "simple common word"
+          },
+          "not": {
+            "translation": "ليس",
+            "definition": "simple common word"
+          },
+          "now": {
+            "translation": "الآن",
+            "definition": "simple common word"
+          },
+          "of": {
+            "translation": "من",
+            "definition": "simple common word"
+          },
+          "one": {
+            "translation": "واحد",
+            "definition": "simple common word"
+          },
+          "only": {
+            "translation": "فقط",
+            "definition": "simple common word"
+          },
+          "pond": {
+            "translation": "بركة",
+            "definition": "simple common word"
+          },
+          "prince": {
+            "translation": "أمير",
+            "definition": "simple common word"
+          },
+          "princes": {
+            "translation": "أمراء",
+            "definition": "simple common word"
+          },
+          "princess": {
+            "translation": "أميرة",
+            "definition": "simple common word"
+          },
+          "proud": {
+            "translation": "فخور",
+            "definition": "simple common word"
+          },
+          "proudly": {
+            "translation": "بفخر",
+            "definition": "simple common word"
+          },
+          "real": {
+            "translation": "حقيقي",
+            "definition": "simple common word"
+          },
+          "rob": {
+            "translation": "روب",
+            "definition": "simple common word"
+          },
+          "run": {
+            "translation": "يجري",
+            "definition": "simple common word"
+          },
+          "runs": {
+            "translation": "يهرب",
+            "definition": "simple common word"
+          },
+          "s": {
+            "translation": "s",
+            "definition": "simple common word"
+          },
+          "sad": {
+            "translation": "حزين",
+            "definition": "simple common word"
+          },
+          "sadie": {
+            "translation": "سادي",
+            "definition": "simple common word"
+          },
+          "said": {
+            "translation": "قال",
+            "definition": "simple common word"
+          },
+          "saw": {
+            "translation": "رأى",
+            "definition": "simple common word"
+          },
+          "says": {
+            "translation": "يقول",
+            "definition": "simple common word"
+          },
+          "scares": {
+            "translation": "يخيف",
+            "definition": "simple common word"
+          },
+          "sees": {
+            "translation": "يرى",
+            "definition": "simple common word"
+          },
+          "she": {
+            "translation": "هي",
+            "definition": "simple common word"
+          },
+          "some": {
+            "translation": "بعض",
+            "definition": "simple common word"
+          },
+          "someone": {
+            "translation": "أحدهم",
+            "definition": "simple common word"
+          },
+          "sometimes": {
+            "translation": "أحيانًا",
+            "definition": "simple common word"
+          },
+          "speak": {
+            "translation": "يتحدث",
+            "definition": "simple common word"
+          },
+          "special": {
+            "translation": "خاص",
+            "definition": "simple common word"
+          },
+          "spreads": {
+            "translation": "تمد",
+            "definition": "simple common word"
+          },
+          "still": {
+            "translation": "مازال",
+            "definition": "simple common word"
+          },
+          "swan": {
+            "translation": "بجعة",
+            "definition": "simple common word"
+          },
+          "tadpole": {
+            "translation": "شرغوف",
+            "definition": "simple common word"
+          },
+          "take": {
+            "translation": "يأخذ",
+            "definition": "simple common word"
+          },
+          "talk": {
+            "translation": "يتحدث",
+            "definition": "simple common word"
+          },
+          "tells": {
+            "translation": "يخبر",
+            "definition": "simple common word"
+          },
+          "test": {
+            "translation": "اختبار",
+            "definition": "simple common word"
+          },
+          "that": {
+            "translation": "أن",
+            "definition": "simple common word"
+          },
+          "the": {
+            "translation": "ال",
+            "definition": "simple common word"
+          },
+          "they": {
+            "translation": "هم",
+            "definition": "simple common word"
+          },
+          "this": {
+            "translation": "هذه",
+            "definition": "simple common word"
+          },
+          "thought": {
+            "translation": "ظنّ",
+            "definition": "simple common word"
+          },
+          "tim": {
+            "translation": "تيم",
+            "definition": "simple common word"
+          },
+          "to": {
+            "translation": "إلى/أن",
+            "definition": "simple common word"
+          },
+          "tried": {
+            "translation": "حاول",
+            "definition": "simple common word"
+          },
+          "true": {
+            "translation": "حقيقي",
+            "definition": "simple common word"
+          },
+          "turned": {
+            "translation": "تحول",
+            "definition": "simple common word"
+          },
+          "used": {
+            "translation": "كان",
+            "definition": "simple common word"
+          },
+          "very": {
+            "translation": "very",
+            "definition": "simple common word"
+          },
+          "was": {
+            "translation": "كان",
+            "definition": "simple common word"
+          },
+          "white": {
+            "translation": "أبيض",
+            "definition": "simple common word"
+          },
+          "wide": {
+            "translation": "واسعة",
+            "definition": "simple common word"
+          },
+          "will": {
+            "translation": "سوف",
+            "definition": "simple common word"
+          },
+          "wings": {
+            "translation": "أجنحة",
+            "definition": "simple common word"
+          }
+        }
+      }
+    ]
+},
+{
+    "id": 14,
+    "slug": "lesson-14",
+    "image": "/assets/images/courses_image/Level-C-14.webp",
+    "levelTitle": "The Grasshopper and the Ants",
+    "levelDescription": "A grasshopper loves to play music while the ants work, work, work",
+    "levelKey": "Pre-Intermediate",
+    "isLocked": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "The Grasshopper and the Ants",
+        "description": "A grasshopper loves to play music while the ants work, work, work",
+        "storyData": {
+          "content": [
+            {
+              "id": 1,
+              "text": "I’m an artist, and as everyone knows, artists are usually rather poor.",
+              "translationAr": "أنا فنان، وكما يعلم الجميع، فإن الفنانين عادة ما يكونون فقراء.",
+              "audioUrl": ""
+            },
+            {
+              "id": 2,
+              "text": "Normally, I don’t mind about that.",
+              "translationAr": "عادةً، لا يزعجني ذلك.",
+              "audioUrl": ""
+            },
+            {
+              "id": 3,
+              "text": "When the sun is shining, I sit on my favourite blade of grass and play music for everyone to listen to.",
+              "translationAr": "عندما تشرق الشمس، أجلس على نصل عشبي المفضل وأعزف الموسيقى ليستمع الجميع.",
+              "audioUrl": ""
+            },
+            {
+              "id": 4,
+              "text": "I have lots of friends, and together we’ve formed an orchestra.",
+              "translationAr": "لدي الكثير من الأصدقاء، ومعًا شكلنا أوركسترا.",
+              "audioUrl": ""
+            },
+            {
+              "id": 5,
+              "text": "Everyone loves our music and says how cheerful it makes them feel – well almost everyone.",
+              "translationAr": "يحب الجميع موسيقانا ويقولون إنها تجعلهم يشعرون بالبهجة، حسنًا تقريبًا الجميع.",
+              "audioUrl": ""
+            },
+            {
+              "id": 6,
+              "text": "There’s a family of ants who never stop to listen.",
+              "translationAr": "هناك عائلة من النمل لا تتوقف أبدًا للاستماع.",
+              "audioUrl": ""
+            },
+            {
+              "id": 7,
+              "text": "They take themselves far too seriously for music or enjoyment.",
+              "translationAr": "يأخذون أنفسهم على محمل الجد أكثر من اللازم بالنسبة للموسيقى أو المتعة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 8,
+              "text": "All they do is work, work, work – even when the sun is shining.",
+              "translationAr": "كل ما يفعلونه هو العمل والعمل والعمل، حتى عندما تشرق الشمس.",
+              "audioUrl": ""
+            },
+            {
+              "id": 9,
+              "text": "“Hey You Ants,” I said to them.",
+              "translationAr": "قلت لهم: يا أيها النمل! إنه يوم صيف جميل.",
+              "audioUrl": ""
+            },
+            {
+              "id": 10,
+              "text": "“It’s a lovely summer’s day.",
+              "translationAr": "لماذا لا ترتاحون قليلًا وتستمعون إلى موسيقاي العذبة؟",
+              "audioUrl": ""
+            },
+            {
+              "id": 11,
+              "text": "Why don’t you rest your feet for a while, and listen to my sweet music?”\n\n“No time to stop,” one of them said, panting away.",
+              "translationAr": "قال أحدهم وهو يلهث: لا وقت للتوقف.",
+              "audioUrl": ""
+            },
+            {
+              "id": 12,
+              "text": "“We’re far too busy stocking up food for winter.”\n\nThe months went by, and the days got shorter and colder.",
+              "translationAr": "نحن مشغولون جدًا بتخزين الطعام لفصل الشتاء.",
+              "audioUrl": ""
+            },
+            {
+              "id": 13,
+              "text": "I was shivering so much that I couldn’t even sing.",
+              "translationAr": "مرت الشهور، وأصبحت الأيام أقصر وأكثر برودة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 14,
+              "text": "A hard frost was on the ground, and there wasn’t a crumb to eat.",
+              "translationAr": "كنت أرتجف لدرجة أنني لم أستطع حتى الغناء.",
+              "audioUrl": ""
+            },
+            {
+              "id": 15,
+              "text": "I was so hungry!",
+              "translationAr": "كانت الأرض مغطاة بالصقيع القاسي، ولم يكن هناك فتات للأكل.",
+              "audioUrl": ""
+            },
+            {
+              "id": 16,
+              "text": "So I went to see that busy family of ants and said: “Please Sirs, I’m a poor starving musician.",
+              "translationAr": "كنت جائعًا جدًا!",
+              "audioUrl": ""
+            },
+            {
+              "id": 17,
+              "text": "Spare me a few crumbs from your store of food.”\n\nDo you know what?",
+              "translationAr": "ذهبت إلى عائلة النمل تلك وقلت: أرجوكم أيها السادة، أنا موسيقي فقير جائع.",
+              "audioUrl": ""
+            },
+            {
+              "id": 18,
+              "text": "Those ants just turned their noses up at me.",
+              "translationAr": "أعطوني بضع فتات من مخزون طعامكم.",
+              "audioUrl": ""
+            },
+            {
+              "id": 19,
+              "text": "They were so stingy that they wouldn’t share any of their food.",
+              "translationAr": "أتدرون ماذا؟ لقد رفعوا أنوفهم نحوي.",
+              "audioUrl": ""
+            },
+            {
+              "id": 20,
+              "text": "Oh well, I’ll just have to go hungry this winter.",
+              "translationAr": "كانوا بخيلين جدًا لدرجة أنهم لم يشاركوا أيًا من طعامهم.",
+              "audioUrl": ""
+            },
+            {
+              "id": 21,
+              "text": "In the New Year, I’ll make a resolution.",
+              "translationAr": "حسنًا، سأبقى جائعًا هذا الشتاء.",
+              "audioUrl": ""
+            },
+            {
+              "id": 22,
+              "text": "When the times are good, I’ll remember to save some food for a rainy day.",
+              "translationAr": "في العام الجديد، سأضع لنفسي عهدًا.",
+              "audioUrl": ""
+            }
+          ]
+        },
+        "wordDefinitions": {
+          "a": {
+            "translation": "ـ",
+            "definition": "A basic English word used in the story."
+          },
+          "about": {
+            "translation": "عن",
+            "definition": "A basic English word used in the story."
+          },
+          "all": {
+            "translation": "كل",
+            "definition": "A basic English word used in the story."
+          },
+          "almost": {
+            "translation": "تقريبًا",
+            "definition": "A basic English word used in the story."
+          },
+          "an": {
+            "translation": "ـ",
+            "definition": "A basic English word used in the story."
+          },
+          "and": {
+            "translation": "و",
+            "definition": "A basic English word used in the story."
+          },
+          "ants": {
+            "translation": "نمل",
+            "definition": "Small insects that live and work together in groups."
+          },
+          "any": {
+            "translation": "أي",
+            "definition": "A basic English word used in the story."
+          },
+          "are": {
+            "translation": "يكونون/ـ",
+            "definition": "A basic English word used in the story."
+          },
+          "artist": {
+            "translation": "فنان",
+            "definition": "A person who creates art, such as music or painting."
+          },
+          "artists": {
+            "translation": "فنانون",
+            "definition": "People who create art, such as music or painting."
+          },
+          "as": {
+            "translation": "كما/مثل",
+            "definition": "A basic English word used in the story."
+          },
+          "at": {
+            "translation": "عند/في",
+            "definition": "A basic English word used in the story."
+          },
+          "away": {
+            "translation": "بعيدًا",
+            "definition": "A basic English word used in the story."
+          },
+          "blade": {
+            "translation": "نصل",
+            "definition": "A basic English word used in the story."
+          },
+          "busy": {
+            "translation": "مشغول",
+            "definition": "Having many things to do."
+          },
+          "by": {
+            "translation": "مرَّ",
+            "definition": "A basic English word used in the story."
+          },
+          "cheerful": {
+            "translation": "مبهج",
+            "definition": "Feeling or showing happiness."
+          },
+          "colder": {
+            "translation": "أبرد",
+            "definition": "A basic English word used in the story."
+          },
+          "couldn't": {
+            "translation": "لم أستطع",
+            "definition": "A basic English word used in the story."
+          },
+          "crumb": {
+            "translation": "فتات",
+            "definition": "A very small piece of food."
+          },
+          "crumbs": {
+            "translation": "فتات",
+            "definition": "Small pieces of food."
+          },
+          "day": {
+            "translation": "يوم",
+            "definition": "A basic English word used in the story."
+          },
+          "days": {
+            "translation": "أيام",
+            "definition": "A basic English word used in the story."
+          },
+          "do": {
+            "translation": "يفعل",
+            "definition": "A basic English word used in the story."
+          },
+          "don't": {
+            "translation": "لا",
+            "definition": "A basic English word used in the story."
+          },
+          "eat": {
+            "translation": "يأكل",
+            "definition": "A basic English word used in the story."
+          },
+          "enjoyment": {
+            "translation": "متعة",
+            "definition": "A basic English word used in the story."
+          },
+          "even": {
+            "translation": "حتى",
+            "definition": "A basic English word used in the story."
+          },
+          "everyone": {
+            "translation": "الجميع",
+            "definition": "A basic English word used in the story."
+          },
+          "family": {
+            "translation": "عائلة",
+            "definition": "A group of people or animals related to each other."
+          },
+          "far": {
+            "translation": "للغاية/بعيد",
+            "definition": "A basic English word used in the story."
+          },
+          "favourite": {
+            "translation": "مفضل",
+            "definition": "A basic English word used in the story."
+          },
+          "feel": {
+            "translation": "يشعر",
+            "definition": "A basic English word used in the story."
+          },
+          "feet": {
+            "translation": "أقدام",
+            "definition": "A basic English word used in the story."
+          },
+          "few": {
+            "translation": "قليل",
+            "definition": "A basic English word used in the story."
+          },
+          "food": {
+            "translation": "طعام",
+            "definition": "A basic English word used in the story."
+          },
+          "for": {
+            "translation": "لـِ/من أجل",
+            "definition": "A basic English word used in the story."
+          },
+          "formed": {
+            "translation": "شكّل",
+            "definition": "A basic English word used in the story."
+          },
+          "friends": {
+            "translation": "أصدقاء",
+            "definition": "People you like and spend time with."
+          },
+          "from": {
+            "translation": "من",
+            "definition": "A basic English word used in the story."
+          },
+          "frost": {
+            "translation": "صقيع",
+            "definition": "A thin layer of ice on surfaces in cold weather."
+          },
+          "go": {
+            "translation": "أذهب",
+            "definition": "A basic English word used in the story."
+          },
+          "good": {
+            "translation": "جيدة",
+            "definition": "A basic English word used in the story."
+          },
+          "got": {
+            "translation": "أصبح/نال",
+            "definition": "A basic English word used in the story."
+          },
+          "grass": {
+            "translation": "عشب",
+            "definition": "A plant with thin green leaves that grows close to the ground."
+          },
+          "ground": {
+            "translation": "الأرض",
+            "definition": "A basic English word used in the story."
+          },
+          "hard": {
+            "translation": "قاسٍ",
+            "definition": "A basic English word used in the story."
+          },
+          "have": {
+            "translation": "أمتلك/لدي",
+            "definition": "A basic English word used in the story."
+          },
+          "hey": {
+            "translation": "يا",
+            "definition": "A basic English word used in the story."
+          },
+          "how": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "hungry": {
+            "translation": "جائع",
+            "definition": "Feeling the need to eat."
+          },
+          "i": {
+            "translation": "أنا",
+            "definition": "A basic English word used in the story."
+          },
+          "i'll": {
+            "translation": "سأ",
+            "definition": "A basic English word used in the story."
+          },
+          "i'm": {
+            "translation": "أنا",
+            "definition": "A basic English word used in the story."
+          },
+          "in": {
+            "translation": "في",
+            "definition": "A basic English word used in the story."
+          },
+          "is": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "it": {
+            "translation": "هو/هي (لغير العاقل)",
+            "definition": "A basic English word used in the story."
+          },
+          "it's": {
+            "translation": "إنه/إنها",
+            "definition": "A basic English word used in the story."
+          },
+          "just": {
+            "translation": "فقط",
+            "definition": "A basic English word used in the story."
+          },
+          "know": {
+            "translation": "تعرف/أعرف",
+            "definition": "A basic English word used in the story."
+          },
+          "knows": {
+            "translation": "يعرف",
+            "definition": "A basic English word used in the story."
+          },
+          "listen": {
+            "translation": "يستمع",
+            "definition": "To try to hear what someone or something is saying."
+          },
+          "lots": {
+            "translation": "كثير",
+            "definition": "A basic English word used in the story."
+          },
+          "lovely": {
+            "translation": "جميل",
+            "definition": "A basic English word used in the story."
+          },
+          "loves": {
+            "translation": "يحب",
+            "definition": "A basic English word used in the story."
+          },
+          "make": {
+            "translation": "يصنع/يضع",
+            "definition": "A basic English word used in the story."
+          },
+          "makes": {
+            "translation": "يجعل",
+            "definition": "A basic English word used in the story."
+          },
+          "me": {
+            "translation": "أنا/لي",
+            "definition": "A basic English word used in the story."
+          },
+          "mind": {
+            "translation": "أمانع/عقل",
+            "definition": "A basic English word used in the story."
+          },
+          "months": {
+            "translation": "شهور",
+            "definition": "A basic English word used in the story."
+          },
+          "much": {
+            "translation": "كثيرًا",
+            "definition": "A basic English word used in the story."
+          },
+          "music": {
+            "translation": "موسيقى",
+            "definition": "Sounds made in a way that is pleasant to hear."
+          },
+          "musician": {
+            "translation": "موسيقي",
+            "definition": "A person who plays or creates music."
+          },
+          "my": {
+            "translation": "ـي/خاصتي",
+            "definition": "A basic English word used in the story."
+          },
+          "never": {
+            "translation": "أبدًا",
+            "definition": "A basic English word used in the story."
+          },
+          "new": {
+            "translation": "جديد",
+            "definition": "A basic English word used in the story."
+          },
+          "no": {
+            "translation": "لا",
+            "definition": "A basic English word used in the story."
+          },
+          "normally": {
+            "translation": "عادةً",
+            "definition": "A basic English word used in the story."
+          },
+          "noses": {
+            "translation": "أنوف",
+            "definition": "A basic English word used in the story."
+          },
+          "of": {
+            "translation": "من",
+            "definition": "A basic English word used in the story."
+          },
+          "oh": {
+            "translation": "أوه",
+            "definition": "A basic English word used in the story."
+          },
+          "on": {
+            "translation": "على",
+            "definition": "A basic English word used in the story."
+          },
+          "one": {
+            "translation": "واحد",
+            "definition": "A basic English word used in the story."
+          },
+          "or": {
+            "translation": "أو",
+            "definition": "A basic English word used in the story."
+          },
+          "orchestra": {
+            "translation": "أوركسترا",
+            "definition": "A group of musicians who play instruments together."
+          },
+          "our": {
+            "translation": "ـنا",
+            "definition": "A basic English word used in the story."
+          },
+          "panting": {
+            "translation": "يلهث",
+            "definition": "A basic English word used in the story."
+          },
+          "play": {
+            "translation": "يعزف/يلعب",
+            "definition": "A basic English word used in the story."
+          },
+          "please": {
+            "translation": "رجاءً",
+            "definition": "A basic English word used in the story."
+          },
+          "poor": {
+            "translation": "فقير",
+            "definition": "A basic English word used in the story."
+          },
+          "rainy": {
+            "translation": "ممطر",
+            "definition": "A basic English word used in the story."
+          },
+          "rather": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "remember": {
+            "translation": "أتذكر",
+            "definition": "A basic English word used in the story."
+          },
+          "resolution": {
+            "translation": "عهد/قرار",
+            "definition": "A firm decision to do or not do something."
+          },
+          "rest": {
+            "translation": "استرح/راحة",
+            "definition": "A basic English word used in the story."
+          },
+          "said": {
+            "translation": "قال",
+            "definition": "A basic English word used in the story."
+          },
+          "save": {
+            "translation": "أدّخر",
+            "definition": "To keep or store something for the future."
+          },
+          "says": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "see": {
+            "translation": "يرى/أرى",
+            "definition": "A basic English word used in the story."
+          },
+          "seriously": {
+            "translation": "بجدية",
+            "definition": "A basic English word used in the story."
+          },
+          "share": {
+            "translation": "يشارك",
+            "definition": "A basic English word used in the story."
+          },
+          "shining": {
+            "translation": "مشرِقة",
+            "definition": "A basic English word used in the story."
+          },
+          "shivering": {
+            "translation": "يرتعش",
+            "definition": "Shaking because of cold or fear."
+          },
+          "shorter": {
+            "translation": "أقصر",
+            "definition": "A basic English word used in the story."
+          },
+          "sing": {
+            "translation": "يغني",
+            "definition": "A basic English word used in the story."
+          },
+          "sirs": {
+            "translation": "سادة",
+            "definition": "A basic English word used in the story."
+          },
+          "sit": {
+            "translation": "يجلس",
+            "definition": "A basic English word used in the story."
+          },
+          "so": {
+            "translation": "جداً/لذلك",
+            "definition": "A basic English word used in the story."
+          },
+          "some": {
+            "translation": "بعض",
+            "definition": "A basic English word used in the story."
+          },
+          "spare": {
+            "translation": "أعطِ/يوفّر",
+            "definition": "A basic English word used in the story."
+          },
+          "starving": {
+            "translation": "جائع جدًا",
+            "definition": "Extremely hungry."
+          },
+          "stingy": {
+            "translation": "بخيل",
+            "definition": "Not wanting to share or give."
+          },
+          "stocking": {
+            "translation": "تخزين",
+            "definition": "A basic English word used in the story."
+          },
+          "stop": {
+            "translation": "يتوقف",
+            "definition": "A basic English word used in the story."
+          },
+          "store": {
+            "translation": "مخزن/يخزّن",
+            "definition": "A basic English word used in the story."
+          },
+          "summer's": {
+            "translation": "الصيف",
+            "definition": "A basic English word used in the story."
+          },
+          "sun": {
+            "translation": "شمس",
+            "definition": "A basic English word used in the story."
+          },
+          "sweet": {
+            "translation": "عذب",
+            "definition": "A basic English word used in the story."
+          },
+          "take": {
+            "translation": "يأخذ/يتناول",
+            "definition": "A basic English word used in the story."
+          },
+          "that": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "the": {
+            "translation": "الـ",
+            "definition": "A basic English word used in the story."
+          },
+          "their": {
+            "translation": "ـهم",
+            "definition": "A basic English word used in the story."
+          },
+          "them": {
+            "translation": "هم/لهم",
+            "definition": "A basic English word used in the story."
+          },
+          "themselves": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "there": {
+            "translation": "هناك",
+            "definition": "A basic English word used in the story."
+          },
+          "there's": {
+            "translation": "هناك",
+            "definition": "A basic English word used in the story."
+          },
+          "they": {
+            "translation": "هم",
+            "definition": "A basic English word used in the story."
+          },
+          "this": {
+            "translation": "هذا",
+            "definition": "A basic English word used in the story."
+          },
+          "those": {
+            "translation": "أولئك",
+            "definition": "A basic English word used in the story."
+          },
+          "time": {
+            "translation": "وقت",
+            "definition": "A basic English word used in the story."
+          },
+          "times": {
+            "translation": "أوقات",
+            "definition": "A basic English word used in the story."
+          },
+          "to": {
+            "translation": "إلى/أن",
+            "definition": "A basic English word used in the story."
+          },
+          "together": {
+            "translation": "معًا",
+            "definition": "A basic English word used in the story."
+          },
+          "too": {
+            "translation": "أيضًا/جدًا",
+            "definition": "A basic English word used in the story."
+          },
+          "turned": {
+            "translation": "حوّل",
+            "definition": "A basic English word used in the story."
+          },
+          "up": {
+            "translation": "أعلى/إلى أعلى",
+            "definition": "A basic English word used in the story."
+          },
+          "usually": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "was": {
+            "translation": "كان",
+            "definition": "A basic English word used in the story."
+          },
+          "wasn't": {
+            "translation": "لم يكن",
+            "definition": "A basic English word used in the story."
+          },
+          "we're": {
+            "translation": "نحن",
+            "definition": "A basic English word used in the story."
+          },
+          "we've": {
+            "translation": "لقد",
+            "definition": "A basic English word used in the story."
+          },
+          "well": {
+            "translation": "حسنًا",
+            "definition": "A basic English word used in the story."
+          },
+          "went": {
+            "translation": "ذهب",
+            "definition": "A basic English word used in the story."
+          },
+          "were": {
+            "translation": "كانوا",
+            "definition": "A basic English word used in the story."
+          },
+          "what": {
+            "translation": "ماذا",
+            "definition": "A basic English word used in the story."
+          },
+          "when": {
+            "translation": "عندما",
+            "definition": "A basic English word used in the story."
+          },
+          "while": {
+            "translation": "قليلًا/برهة",
+            "definition": "A basic English word used in the story."
+          },
+          "who": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "why": {
+            "translation": "لماذا",
+            "definition": "A basic English word used in the story."
+          },
+          "winter": {
+            "translation": "الشتاء",
+            "definition": "The coldest season of the year."
+          },
+          "work": {
+            "translation": "عمل",
+            "definition": "To do tasks or duties."
+          },
+          "wouldn't": {
+            "translation": "لن يشارك",
+            "definition": "A basic English word used in the story."
+          },
+          "year": {
+            "translation": "سنة",
+            "definition": "A basic English word used in the story."
+          },
+          "you": {
+            "translation": "أنتَ/أنتِ/أنتم",
+            "definition": "A basic English word used in the story."
+          },
+          "your": {
+            "translation": "ـك/ـكم",
+            "definition": "A basic English word used in the story."
+          }
+        }
+      }
+    ]
+  },
+  
+  {
+    "id": 15,
+    "slug": "lesson-15",
+    "image": "/assets/images/courses_image/Level-C-15.webp",
+    "levelTitle": "The Soldier (Rupert Brooke)",
+    "levelDescription": "Reading practice passage about Remembrance Day and Rupert Brooke's poem.",
+    "levelKey": "Pre-Intermediate",
+    "isLocked": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "The Soldier",
+        "description": "Text with Arabic translation and vocabulary.",
+        "storyData": {
+          "content": [
+            {
+              "id": 1,
+              "text": "The First World War ended on 11th November 1918.",
+              "translationAr": "انتهت الحرب العالمية الأولى في 11 نوفمبر عام 1918.",
+              "audioUrl": ""
+            },
+            {
+              "id": 2,
+              "text": "The Sunday nearest to the 11th of November is marked each year as Remembrance Day in many countries.",
+              "translationAr": "يُخصَّص أقرب يوم أحد إلى الحادي عشر من نوفمبر كل عام كيوم الذكرى في العديد من البلدان.",
+              "audioUrl": ""
+            },
+            {
+              "id": 3,
+              "text": "The symbol of day is the red poppy that grew on many of the battle fields.",
+              "translationAr": "رمز هذا اليوم هو زهرة الخشخاش الحمراء التي نمت في العديد من ساحات المعارك.",
+              "audioUrl": ""
+            },
+            {
+              "id": 4,
+              "text": "This poem was written during the First World War by a poet who was also a soldier.",
+              "translationAr": "كُتبت هذه القصيدة خلال الحرب العالمية الأولى على يد شاعر كان أيضًا جنديًا.",
+              "audioUrl": ""
+            },
+            {
+              "id": 5,
+              "text": "His name was Rupert Brooke.",
+              "translationAr": "كان اسمه روبرت بروك.",
+              "audioUrl": ""
+            },
+            {
+              "id": 6,
+              "text": "His father was headmaster of the famous school called Rugby.",
+              "translationAr": "كان والده مديرًا لمدرسة مشهورة تُدعى راغبي.",
+              "audioUrl": ""
+            },
+            {
+              "id": 7,
+              "text": "He later studied at Cambridge University and travelled around Europe before the outbreak of war.",
+              "translationAr": "درس لاحقًا في جامعة كامبريدج وسافر حول أوروبا قبل اندلاع الحرب.",
+              "audioUrl": ""
+            },
+            {
+              "id": 8,
+              "text": "Unlike many war poems, this is a gentle and beautiful piece of verse.",
+              "translationAr": "على عكس العديد من قصائد الحرب، هذه قطعة لطيفة وجميلة من الشعر.",
+              "audioUrl": ""
+            },
+            {
+              "id": 9,
+              "text": "It is describing a land that could not be more different from the horror of the battlefield.",
+              "translationAr": "إنها تصف أرضًا تختلف تمامًا عن رعب ساحة المعركة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 10,
+              "text": "IF I should die, think only this of me: That there’s some corner of a foreign field That is forever England.",
+              "translationAr": "إذا حدث أن أموت، فتذكّر هذا فقط عني:",
+              "audioUrl": ""
+            },
+            {
+              "id": 11,
+              "text": "There shall be In that rich earth a richer dust concealed; A dust whom England bore, shaped, made aware, Gave, once, her flowers to love, her ways to roam, A body of England’s, breathing English air, Washed by the rivers, blest by suns of home.",
+              "translationAr": "أن هناك ركنًا ما من أرضٍ أجنبية سيبقى إنجلترا إلى الأبد.",
+              "audioUrl": ""
+            },
+            {
+              "id": 12,
+              "text": "And think, this heart, all evil shed away, A pulse in the eternal mind, no less Gives somewhere back the thoughts by England given; Her sights and sounds; dreams happy as her day; And laughter, learnt of friends; and gentleness, In hearts at peace, under an English heaven.",
+              "translationAr": "سيكون هناك في تلك الأرض الغنية غبار أغنى مخبوء.",
+              "audioUrl": ""
+            },
+            {
+              "id": 13,
+              "text": "And that was ‘The Soldier’, but Rupert Brooke.",
+              "translationAr": "غبار حملته إنجلترا، وشكّلته، وجعلته واعيًا.",
+              "audioUrl": ""
+            },
+            {
+              "id": 14,
+              "text": "You might like to know that this poem was written in a special form known as a Sonnet.",
+              "translationAr": "أعطته يومًا زهورها ليحب، وطرقها ليجول.",
+              "audioUrl": ""
+            },
+            {
+              "id": 15,
+              "text": "Sonnets always have 14 lines.",
+              "translationAr": "جسد ينتمي لإنجلترا، يتنفس هواء إنجليزيًا.",
+              "audioUrl": ""
+            },
+            {
+              "id": 16,
+              "text": "The famous English playwright William Shakespeare wrote a number of poems in this form.",
+              "translationAr": "غُسِل بأنهارها، وباركته شمس الوطن.",
+              "audioUrl": ""
+            }
+          ]
+        },
+        "wordDefinitions": {
+          "a": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "air": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "all": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "also": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "always": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "an": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "and": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "around": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "as": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "at": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "aware": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "away": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "back": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "battle": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "battlefield": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "be": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "beautiful": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "before": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "blest": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "body": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "bore": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "breathing": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "brooke": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "but": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "by": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "called": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "cambridge": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "concealed": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "corner": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "could": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "countries": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "day": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "describing": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "die": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "different": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "dreams": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "during": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "dust": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "each": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "earth": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "ended": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "england": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "england's": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "english": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "eternal": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "europe": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "evil": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "famous": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "father": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "field": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "fields": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "first": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "flowers": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "foreign": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "forever": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "form": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "friends": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "from": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "gave": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "gentle": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "gentleness": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "given": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "gives": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "grew": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "happy": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "have": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "he": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "headmaster": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "heart": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "hearts": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "heaven": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "her": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "his": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "home": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "horror": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "i": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "if": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "in": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "is": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "it": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "know": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "known": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "land": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "later": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "laughter": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "learnt": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "less": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "like": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "lines": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "love": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "made": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "many": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "marked": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "me": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "might": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "mind": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "more": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "name": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "nearest": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "no": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "not": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "november": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "number": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "of": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "on": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "once": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "only": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "outbreak": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "peace": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "piece": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "playwright": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "poem": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "poems": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "poet": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "poppy": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "pulse": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "red": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "remembrance": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "rich": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "richer": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "rivers": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "roam": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "rugby": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "rupert": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "school": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "shakespeare": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "shall": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "shaped": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "shed": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "should": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "sights": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "soldier": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "soldier'": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "some": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "somewhere": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "sonnet": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "sonnets": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "sounds": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "special": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "studied": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "sunday": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "suns": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "symbol": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "th": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "that": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "the": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "there": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "there's": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "think": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "this": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "thoughts": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "to": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "travelled": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "under": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "university": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "unlike": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "verse": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "war": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "was": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "washed": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "ways": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "who": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "whom": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "william": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "world": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "written": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "wrote": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "year": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          },
+          "you": {
+            "translation": "",
+            "definition": "A basic English word used in the story."
+          }
+        }
+      }
+    ]
   }
 ];
