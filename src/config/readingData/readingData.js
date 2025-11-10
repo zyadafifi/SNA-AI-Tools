@@ -23201,816 +23201,1918 @@ export const readingData = [
     "id": 13,
     "slug": "lesson-13",
     "image": "/assets/images/courses_image/Level-C-13.jpg",
-    "levelTitle": "Bertie & Sadie – Short Version",
-    "levelDescription": "Story with Arabic translation and full glossary.",
+    "levelTitle": "Three Short Bertie Stories",
+    "levelDescription": "Three short and slapstick pond-life stories compiled from the early days of Storynory. Notable for the voice of Rob playing Colin the Carp and Barker the Dog.",
     "levelKey": "Pre-Intermediate",
     "isLocked": false,
     "lessons": [
       {
         "id": 1,
-        "title": "Bertie & Sadie – C Version",
-        "description": "Story with translation and glossary.",
+        "title": "Three Short Bertie Stories",
+        "description": "Three short and slapstick pond-life stories compiled from the early days of Storynory. Notable for the voice of Rob playing Colin the Carp and Barker the Dog.",
         "storyData": {
           "content": [
             {
               "id": 1,
               "text": "Hi everybody. My name is Natasha. And my name is Rob.",
-              "translationAr": "مرحبًا بالجميع. اسمي ناتاشا. واسمي روب.",
+              "translationAr": "مرحبًا جميعًا. اسمي ناتاشا. واسمي روب.",
               "audioUrl": ""
             },
             {
               "id": 2,
-              "text": "Here’s some news about Bertie the Frog.",
-              "translationAr": "إليكم بعض الأخبار عن بيرتي الضفدع.",
+              "text": "Here’s a piece of gossip I just picked up about Bertie the Frog.",
+              "translationAr": "إليكم إشاعةً سمعتها للتو عن بيرتي الضفدع.",
               "audioUrl": ""
             },
             {
               "id": 3,
-              "text": "Bertie used to be a handsome prince.",
-              "translationAr": "كان بيرتي سابقًا أميرًا وسيمًا.",
+              "text": "As you know, Bertie used to be a handsome prince, but now he’s been turned into a frog; and he lives in a pond with tadpoles, birds and fish to keep him company.",
+              "translationAr": "كما تعلمون، كان بيرتي أميرًا وسيماً، لكنه تحوّل الآن إلى ضفدع؛ ويعيش في بركة مع شراغيف وطيور وأسماك تؤنسه.",
               "audioUrl": ""
             },
             {
               "id": 4,
-              "text": "Now he lives as a frog in a pond.",
-              "translationAr": "والآن يعيش كضفدع في بركة.",
+              "text": "Bertie’s friend, Sadie, is a very special swan, who has lots of romantic daydreams.",
+              "translationAr": "صديقة بيرتي، سادي، بجعة مميّزة للغاية ولديها الكثير من أحلام اليقظة الرومانسية.",
               "audioUrl": ""
             },
             {
               "id": 5,
-              "text": "His friend Sadie is a beautiful black swan.",
-              "translationAr": "صديقته سادي بجعة سوداء جميلة.",
+              "text": "Sometimes she looks at her reflection in the pond, and imagines that her beautiful neck is rather royal!",
+              "translationAr": "أحيانًا تنظر إلى انعكاسها في ماء البركة وتتخيل أن عنقها الجميل مَلَكيّ فعلًا!",
               "audioUrl": ""
             },
             {
               "id": 6,
-              "text": "Sadie likes to imagine she might be a princess.",
-              "translationAr": "تحب سادي أن تتخيل أنها ربما تكون أميرة.",
+              "text": "The other creatures say that she’s always asking Bertie what it’s like to be a princess.",
+              "translationAr": "وتقول المخلوقات الأخرى إنها دائمًا ما تسأل بيرتي: كيف يكون شعور أن تكوني أميرة.",
               "audioUrl": ""
             },
             {
               "id": 7,
-              "text": "The fish Colin is always grumpy.",
-              "translationAr": "السمكة كولين دائمًا متجهمة.",
+              "text": "Colin the Carp, who is a very grumpy fish, likes to take Sadie and her lofty ideas down a peg or two.",
+              "translationAr": "أما كولين الشَّبوط، وهو سمكة متجهمة جدًا، فيحب أن يُنزل سادي وأفكارها السامية درجةً أو درجتين.",
               "audioUrl": ""
             },
             {
               "id": 8,
-              "text": "Colin tells Sadie that she is only a swan.",
-              "translationAr": "يخبر كولين سادي بأنها مجرد بجعة.",
+              "text": "Do you know what he said to Sadie today? You don’t? Well, it was rather rude.",
+              "translationAr": "أتدرون ماذا قال لسادي اليوم؟ لا تعرفون؟ حسنًا، كان كلامًا فظًا نوعًا ما.",
               "audioUrl": ""
             },
             {
               "id": 9,
-              "text": "Tim the Tadpole says maybe she was turned into a swan.",
-              "translationAr": "يقول تيم الشرغوف ربما تم تحويلها إلى بجعة.",
+              "text": "He said, “It doesn’t make any difference to you what it’s like being a princess. You’re just a swan. You’re stuck that way.”",
+              "translationAr": "قال: \"لن يغيّر شيئًا بالنسبة لكِ كيف يكون كونك أميرة. أنتِ مجرد بجعة. وستبقين هكذا.\"",
               "audioUrl": ""
             },
             {
               "id": 10,
-              "text": "Sadie becomes excited at this idea.",
-              "translationAr": "تصبح سادي متحمسة لهذه الفكرة.",
+              "text": "But Tim the Tadpole said, “Perhaps she might be a princess really! Maybe someone turned her into a swan.”",
+              "translationAr": "لكن تيم الشرغوف قال: \"ربما تكون أميرة بالفعل! ربما حوّلها أحدهم إلى بجعة.\"",
               "audioUrl": ""
             },
             {
               "id": 11,
-              "text": "She asks Bertie if she might be a princess.",
-              "translationAr": "تسأل سادي بيرتي إن كانت ربما أميرة.",
+              "text": "Sadie became quite excited at the thought of that. “Do you think I’m a princess, Bertie?” she said. “Do you really?”",
+              "translationAr": "تحمّست سادي جدًا للفكرة. وقالت: \"أتظن أنني أميرة يا بيرتي؟ حقًا؟\"",
               "audioUrl": ""
             },
             {
               "id": 12,
-              "text": "Bertie tells her about a special princess test.",
-              "translationAr": "يخبرها بيرتي عن اختبار خاص بالأميرات.",
+              "text": "In reply, Bertie told her a little secret.",
+              "translationAr": "وفي الرد، أخبرها بيرتي سرًا صغيرًا.",
               "audioUrl": ""
             },
             {
               "id": 13,
-              "text": "If someone agrees to take the test, they are not a real princess.",
-              "translationAr": "إذا وافق أحدهم على الاختبار، فهو ليس أميرة حقيقية.",
+              "text": "“The beautiful Princess Beatrice has a special princess test. It helped her to tell who was a princess and who wasn’t. She would just ask them whether they wanted to take the princess test.”",
+              "translationAr": "قال: \"الأميرة الجميلة بياتريس لديها اختبار أميرات خاص. يساعدها على معرفة من هي أميرة ومن ليست كذلك. كانت تسأل فقط إن كنّ يرغبن في خوض الاختبار.\"",
               "audioUrl": ""
             },
             {
               "id": 14,
-              "text": "Sadie feels a little sad but still proud of her beauty.",
-              "translationAr": "تشعر سادي ببعض الحزن لكنها لا تزال فخورة بجمالها.",
+              "text": "“Can I take the princess test?” asked Sadie.",
+              "translationAr": "قالت سادي: \"هل يمكنني خوض اختبار الأميرات؟\"",
               "audioUrl": ""
             },
             {
               "id": 15,
-              "text": "One cold morning the pond was covered in frost.",
-              "translationAr": "في صباح بارد كانت البركة مغطاة بالصقيع.",
+              "text": "“Well,” said Bertie, “If they said yes then they weren’t really a princess, because a real princess doesn’t need to take a test – she just sort of knows.”",
+              "translationAr": "قال بيرتي: \"حسنًا، إذا قلن نعم فهنّ لسن أميراتٍ حقًّا، لأن الأميرة الحقيقية لا تحتاج إلى اختبار—إنها تعرف ذلك فحسب.\"",
               "audioUrl": ""
             },
             {
               "id": 16,
-              "text": "Sadie’s feathers turned white from the frost.",
-              "translationAr": "أصبح ريش سادي أبيض بسبب الصقيع.",
+              "text": "“Oh,” said Sadie, a bit sadly. “I might not be a princess, but I’m the most beautiful swan on this pond!”",
+              "translationAr": "قالت سادي بأسى قليل: \"ربما لست أميرة، لكنني أجمل بجعة في هذه البركة!\"",
               "audioUrl": ""
             },
             {
               "id": 17,
-              "text": "Tim saw her and thought she was a ghost swan.",
-              "translationAr": "رآها تيم وظن أنها بجعة شبح.",
+              "text": "But Colin the Carp wasn’t at all bowled over by her beauty. He grumped back at her, “Well, that’s not saying much. You’re the only swan on this pond.”",
+              "translationAr": "لكن كولين الشَّبوط لم ينبهر بجمالها إطلاقًا. تجهّم قائلًا: \"هذا لا يعني الكثير. أنتِ البجعة الوحيدة في هذه البركة.\"",
               "audioUrl": ""
             },
             {
               "id": 18,
-              "text": "Bertie said ghosts are not real.",
-              "translationAr": "قال بيرتي إن الأشباح ليست حقيقية.",
+              "text": "And everybody laughed – except Sadie, who glided away with as much royal dignity as she could manage.",
+              "translationAr": "وضحك الجميع—إلا سادي، التي انزلقت مبتعدةً بكل ما استطاعت من وقارٍ مَلَكي.",
               "audioUrl": ""
             },
             {
               "id": 19,
-              "text": "Colin challenged Bertie to talk to the white swan.",
-              "translationAr": "تحدّى كولين بيرتي أن يتحدث مع البجعة البيضاء.",
+              "text": "Now, if enough children listen to his stories, one day he will turn back into a prince – and perhaps, just perhaps, he will invite Sadie to come and live on a special ornamental pond, with a golden fountain, and her dream will come true – almost.",
+              "translationAr": "والآن، إذا استمع عددٌ كافٍ من الأطفال إلى قصصه، فسيعود يومًا ما أميرًا—وربما، فقط ربما، سيَدعو سادي لتعيش في بركة زينة خاصة بنافورة ذهبية، وسيتحقق حلمها—تقريبًا.",
               "audioUrl": ""
             },
             {
               "id": 20,
-              "text": "Bertie was nervous but did not run away.",
-              "translationAr": "كان بيرتي متوترًا لكنه لم يهرب.",
+              "text": "Here’s a piece of gossip I’ve just picked up about Bertie the Frog.",
+              "translationAr": "إليكم إشاعةً سمعتها للتو عن بيرتي الضفدع.",
               "audioUrl": ""
             },
             {
               "id": 21,
-              "text": "The white swan came closer.",
-              "translationAr": "اقتربت البجعة البيضاء.",
+              "text": "As you know, he used to be a handsome prince, and when he was royal he was always extremely brave – and that’s why all the creatures who live on his pond always look up to him.",
+              "translationAr": "كما تعلمون، كان أميرًا وسيمًا، وحين كان ملكيًا كان دائمًا شديد الشجاعة—ولهذا تنظر إليه كل مخلوقات البركة بإعجاب.",
               "audioUrl": ""
             },
             {
               "id": 22,
-              "text": "It was Sadie all along.",
-              "translationAr": "لقد كانت سادي طوال الوقت.",
+              "text": "Now this morning it was very chilly weather down on Bertie’s pond.",
+              "translationAr": "وفي هذا الصباح كان الطقس باردًا جدًا عند بركة بيرتي.",
               "audioUrl": ""
             },
             {
               "id": 23,
-              "text": "She asked Bertie if she looked like a princess.",
-              "translationAr": "سألت سادي بيرتي إن كانت تبدو كأميرة.",
+              "text": "Mr Frosty had been through the vegetable patch, and everything was white and snowy, including Sadie the Swan.",
+              "translationAr": "لقد مرّ السيّد صقيع على حديقة الخضار، وصار كل شيء أبيض كالثلج، بما في ذلك سادي البجعة.",
               "audioUrl": ""
             },
             {
               "id": 24,
-              "text": "Bertie tried to speak but could only croak.",
-              "translationAr": "حاول بيرتي التحدث لكنه لم يستطع سوى النقيق.",
+              "text": "Now you might not know this, but normally Sadie is a very special swan because her feathers are jet black.",
+              "translationAr": "وربما لا تعلمون، لكن سادي عادةً بجعة مميزة لأن ريشها أسود كالليل.",
               "audioUrl": ""
             },
             {
               "id": 25,
-              "text": "Sadie asked if he was feeling ill.",
-              "translationAr": "سألت سادي إن كان يشعر بالمرض.",
+              "text": "When Tim the Tadpole looked up from under a pebble in the bottom of the pond, he saw Sadie all glittering and white in the frost, and he was a bit frightened, because he had never seen a white swan before.",
+              "translationAr": "وعندما نظر تيم الشرغوف من تحت حصاة في قاع البركة، رأى سادي تلمع بيضاء من الجليد، فخاف قليلًا لأنه لم يرَ بجعة بيضاء من قبل.",
               "audioUrl": ""
             },
             {
               "id": 26,
-              "text": "Tim and Colin thought Bertie was brave.",
-              "translationAr": "اعتقد تيم وكولين أن بيرتي كان شجاعًا.",
+              "text": "“Oh, ohhh,” squeaked little Tim. “Is that a ghost swan?”",
+              "translationAr": "صرخ تيم الصغير: \"أوه، أوووه! هل تلك بجعة شبح؟\"",
               "audioUrl": ""
             },
             {
               "id": 27,
-              "text": "Sometimes a dog named Barker comes to the pond.",
-              "translationAr": "أحيانًا يأتي كلب اسمه باركر إلى البركة.",
+              "text": "Bertie was used to Tim’s silly questions by now. “Oh no!” he boomed. “Ghosts aren’t real, so that can’t be a ghost. That’s a new type of swan we haven’t seen before.”",
+              "translationAr": "اعتاد بيرتي أسئلة تيم الطفولية. قال بصوت عالٍ: \"لا طبعًا! الأشباح ليست حقيقية، إذن فهي ليست شبحًا. إنها نوع جديد من البجع لم نره من قبل.\"",
               "audioUrl": ""
             },
             {
               "id": 28,
-              "text": "Barker barks loudly and scares Tim.",
-              "translationAr": "باركر ينبح بصوت عالٍ ويخيف تيم.",
+              "text": "When Colin the Carp heard Bertie telling this to Little Tim, he swam over and said, “Well Bertie, since you consider yourself to be the prince of this pond, and a natural-born leader of creatures great and small; perhaps you should go over and introduce yourself to our new friend – if it really is a friend, that is, not a ghost swan.”",
+              "translationAr": "وعندما سمع كولين الشَّبوط بيرتي يقول ذلك لتيم الصغير، سبح نحوه وقال: \"حسنًا يا بيرتي، بما أنك تعتبر نفسك أمير هذه البركة وقائدًا بالفطرة للكبير والصغير؛ فربما عليك أن تذهب وتعرّف نفسك على صديقنا الجديد—إن كان صديقًا فعلًا وليس بجعة شبح.\"",
               "audioUrl": ""
             },
             {
               "id": 29,
-              "text": "Bertie says princes are not afraid of dogs.",
-              "translationAr": "يقول بيرتي إن الأمراء لا يخافون من الكلاب.",
+              "text": "“Oh cripes!” thought Bertie. “What if it is a ghost? It’s all very well when you are a prince to be brave, but when you are a frog, things can be a bit scary sometimes.”",
+              "translationAr": "فكّر بيرتي: \"يا للمصيبة! ماذا لو كان شبحًا؟ لا بأس بالشجاعة حين تكون أميرًا، أما وأنت ضفدع فالأمور قد تكون مخيفة أحيانًا.\"",
               "audioUrl": ""
             },
             {
               "id": 30,
-              "text": "Sadie spreads her wings wide.",
-              "translationAr": "تمد سادي جناحيها على اتساعهما.",
+              "text": "“Go on Bertie,” said Colin. “Go on Bertie,” said Little Tim.",
+              "translationAr": "\"هيا يا بيرتي\" قال كولين. وقال تيم الصغير: \"هيا يا بيرتي\".",
               "audioUrl": ""
             },
             {
               "id": 31,
-              "text": "Barker sees her and runs away frightened.",
-              "translationAr": "يرى باركر سادي ويهرب خائفًا.",
+              "text": "“Er, erm… Croak!” said Bertie.",
+              "translationAr": "قال بيرتي متلعثمًا: \"أه.. أهم.. كرك!\"",
               "audioUrl": ""
             },
             {
               "id": 32,
-              "text": "Bertie proudly says he made the dog run.",
-              "translationAr": "يقول بيرتي بفخر إنه جعل الكلب يهرب.",
+              "text": "Just then the ghostly white swan glided through the mist towards the little group of creatures.",
+              "translationAr": "وفي تلك اللحظة انزلقت البجعة البيضاء الشبحية عبر الضباب نحو مجموعة المخلوقات الصغيرة.",
               "audioUrl": ""
             },
             {
               "id": 33,
-              "text": "Sadie says Bertie is very brave.",
-              "translationAr": "تقول سادي إن بيرتي شجاع جدًا.",
+              "text": "Tim quickly dived down, and hid behind a piece of green slime. Colin the Carp sank to the bottom of the pond and pretended to be a lump of mud.",
+              "translationAr": "غطس تيم بسرعة واختبأ خلف قطعة من الطحلب الأخضر. وغاص كولين الشَّبوط إلى قاع البركة وتظاهر بأنه كتلة طين.",
               "audioUrl": ""
             },
             {
               "id": 34,
-              "text": "Everyone hopes one day Bertie will become a prince again.",
-              "translationAr": "يأمل الجميع أن يصبح بيرتي أميرًا مرة أخرى يومًا ما.",
+              "text": "Bertie wanted to hop away, but he was so scared that he found his legs were numb, and he couldn’t leap off his lily pad.",
+              "translationAr": "أراد بيرتي أن يقفز مبتعدًا، لكنه كان خائفًا لدرجة أن ساقيه خَدِرَتا ولم يستطع القفز عن ورقة الزنبق.",
               "audioUrl": ""
             },
             {
               "id": 35,
-              "text": "Maybe he will invite Sadie to live in a beautiful pond.",
-              "translationAr": "ربما سيدعو سادي للعيش في بركة جميلة.",
+              "text": "The ghostly swan said, “Hello Bertie. It’s so frosty this morning that my feathers are all white. Do you think I look like a princess?”",
+              "translationAr": "قالت البجعة الشبحية: \"مرحبًا يا بيرتي. البرد قارس هذا الصباح حتى صار ريشي أبيض كله. أتراني أبدو كأميرة؟\"",
               "audioUrl": ""
             },
             {
               "id": 36,
-              "text": "And maybe her dream will almost come true.",
-              "translationAr": "وربما سيتحقق حلمها تقريبًا.",
+              "text": "And Bertie recognised the voice of Sadie the Swan – although she was normally a black swan.",
+              "translationAr": "وعرف بيرتي صوت سادي البجعة—مع أنها عادةً بجعة سوداء.",
+              "audioUrl": ""
+            },
+            {
+              "id": 37,
+              "text": "He croaked a little, but no proper words came out of his mouth.",
+              "translationAr": "أطلق نقنقةً خفيفة، لكن لم تخرج كلماتٌ سليمة من فمه.",
+              "audioUrl": ""
+            },
+            {
+              "id": 38,
+              "text": "“Oh my dear Bertie,” said Sadie, sympathetically. “You’re such a pale shade of green today. Are you feeling well?”",
+              "translationAr": "قالت سادي بعطف: \"يا عزيزي بيرتي، أنت أخضر باهت اليوم. أأنت بخير؟\"",
+              "audioUrl": ""
+            },
+            {
+              "id": 39,
+              "text": "“I think,” said Bertie, “that I might be starting a cold.”",
+              "translationAr": "قال بيرتي: \"أظن أنني بدأت أُصاب بالزكام.\"",
+              "audioUrl": ""
+            },
+            {
+              "id": 40,
+              "text": "But Tim and Colin were secretly very impressed that Bertie hadn’t hopped away, and they thought that he may be a brave frog after all.",
+              "translationAr": "لكن تيم وكولين أُعجبا سرًا بأن بيرتي لم يهرب قافزًا، وظنّا أنه ربما يكون ضفدعًا شجاعًا في النهاية.",
+              "audioUrl": ""
+            },
+            {
+              "id": 41,
+              "text": "There’s a dog who lives in the palace, and his name is Barker.",
+              "translationAr": "هناك كلب يعيش في القصر واسمه باركر.",
+              "audioUrl": ""
+            },
+            {
+              "id": 42,
+              "text": "Sometimes Barker comes down to the pond, and do you know why they call him Barker? You don’t? It’s because he barks, and barks, and barks.",
+              "translationAr": "أحيانًا يأتي باركر إلى البركة، وتعرفون لماذا يسمونه باركر؟ لا تعرفون؟ لأنه ينبح وينبح وينبح.",
+              "audioUrl": ""
+            },
+            {
+              "id": 43,
+              "text": "Tim the Tadpole, who is only very small, even for a tadpole, finds that a bit scary.",
+              "translationAr": "تيم الشرغوف، وهو صغير جدًا حتى بالنسبة لشرغوف، يجد ذلك مخيفًا بعض الشيء.",
+              "audioUrl": ""
+            },
+            {
+              "id": 44,
+              "text": "So this morning, Barker was barking, and Tim was hiding behind some green slime.",
+              "translationAr": "ولذلك، هذا الصباح، كان باركر ينبح، وكان تيم يختبئ خلف بعض الطحالب الخضراء.",
+              "audioUrl": ""
+            },
+            {
+              "id": 45,
+              "text": "“I’m a bit scared, Bertie,” said Tim.",
+              "translationAr": "قال تيم: \"أنا خائف قليلًا يا بيرتي.\"",
+              "audioUrl": ""
+            },
+            {
+              "id": 46,
+              "text": "“Don’t be scared, Little Tim,” croaked Bertie, “he’s only a silly old dog.”",
+              "translationAr": "نقنق بيرتي: \"لا تخف يا تيم الصغير، إنه مجرد كلبٍ أحمقٍ عجوز.\"",
+              "audioUrl": ""
+            },
+            {
+              "id": 47,
+              "text": "But Barker was growling, and then he dipped his big snotty nose into the water and started drinking.",
+              "translationAr": "لكن باركر كان يزمجر، ثم غمس أنفه الكبير المبلل بالمخاط في الماء وبدأ يشرب.",
+              "audioUrl": ""
+            },
+            {
+              "id": 48,
+              "text": "Bertie jumped back. “You’re scared as well,” said Colin the Carp.",
+              "translationAr": "قفز بيرتي إلى الخلف. فقال كولين الشَّبوط: \"أنت خائف أيضًا.\"",
+              "audioUrl": ""
+            },
+            {
+              "id": 49,
+              "text": "“Rubbish,” said Bertie. “I used to be a prince, and princes aren’t afraid of anything.”",
+              "translationAr": "قال بيرتي: \"هراء. كنتُ أميرًا، والأمراء لا يخافون من أي شيء.\"",
+              "audioUrl": ""
+            },
+            {
+              "id": 50,
+              "text": "Then Bertie looked across at Sadie the Swan.",
+              "translationAr": "ثم نظر بيرتي إلى سادي البجعة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 51,
+              "text": "Now, Sadie is a very special swan; unlike most swans who are snowy white, she’s jet black and has a wonderful red beak.",
+              "translationAr": "سادي بجعة مميزة؛ فخلافًا لمعظم البجع الأبيض الثلجي، هي سوداء كالليل ولها منقار أحمر رائع.",
+              "audioUrl": ""
+            },
+            {
+              "id": 52,
+              "text": "Although she’s very gentle really, sometimes she can be a bit frightening when she flaps her wings, and hisses, because she is in a bad mood.",
+              "translationAr": "ومع أنها لطيفة جدًا، إلا أنها قد تكون مخيفة قليلًا حين ترفرف بجناحيها وتفحّ لأنها في مزاجٍ سيئ.",
+              "audioUrl": ""
+            },
+            {
+              "id": 53,
+              "text": "Bertie, who was hiding underneath a lily pad, poked his head out of the water and said, “Sadie, how big are your wings?”",
+              "translationAr": "وكان بيرتي يختبئ تحت ورقة زنبق، فأطلّ برأسه من الماء وقال: \"سادي، ما مدى كِبَر جناحيكِ؟\"",
+              "audioUrl": ""
+            },
+            {
+              "id": 54,
+              "text": "Sadie flapped her big black wings. “This big!” she said.",
+              "translationAr": "رفرفت سادي بجناحيها الأسودين الكبيرين وقالت: \"بهذا الكِبَر!\"",
+              "audioUrl": ""
+            },
+            {
+              "id": 55,
+              "text": "Then Barker looked up and the silly dog ran away, because he’s really scared of swans.",
+              "translationAr": "نظر باركر إلى الأعلى ثم هرب الكلب الأحمق، لأنه في الحقيقة يخاف من البجع.",
+              "audioUrl": ""
+            },
+            {
+              "id": 56,
+              "text": "As he started running, Bertie croaked at him as fiercely as he could. “Look, I made him run away!”",
+              "translationAr": "وبينما بدأ يركض، نقنق بيرتي عليه بأشد ما يستطيع: \"أنظروا! جعلته يهرب!\"",
+              "audioUrl": ""
+            },
+            {
+              "id": 57,
+              "text": "“Oh Bertie,” swooned Sadie, “You’re so brave!”",
+              "translationAr": "قالت سادي بإعجاب: \"أوه يا بيرتي، أنت شجاع جدًا!\"",
+              "audioUrl": ""
+            },
+            {
+              "id": 58,
+              "text": "Any time you have a spare moment, drop by at storynory.com where you’ll find loads more stories.",
+              "translationAr": "في أي وقت تجد فيه لحظة فراغ، زر موقع storynory.com حيث ستجد الكثير من القصص.",
+              "audioUrl": ""
+            },
+            {
+              "id": 59,
+              "text": "We have famous stories, which you might have heard before, but I hope you’ll enjoy listening to them again.",
+              "translationAr": "لدينا قصص مشهورة ربما سمعتَ بها من قبل، وأرجو أن تستمتع بسماعها مرة أخرى.",
+              "audioUrl": ""
+            },
+            {
+              "id": 60,
+              "text": "And we have lots of new stories too, so come by and listen.",
+              "translationAr": "ولدينا أيضًا الكثير من القصص الجديدة، فتعال واستمع.",
+              "audioUrl": ""
+            },
+            {
+              "id": 61,
+              "text": "Until then, from me, Natasha. Bye bye!",
+              "translationAr": "إلى أن نلتقي، مني أنا ناتاشا: إلى اللقاء!",
               "audioUrl": ""
             }
           ]
         },
-        "wordDefinitions": {
-          "a": {
-            "translation": "أداة نكرة",
-            "definition": "simple common word"
-          },
-          "about": {
-            "translation": "عن",
-            "definition": "simple common word"
-          },
-          "afraid": {
-            "translation": "خائف",
-            "definition": "simple common word"
-          },
-          "again": {
-            "translation": "مرة أخرى",
-            "definition": "simple common word"
-          },
-          "agrees": {
-            "translation": "يوافق",
-            "definition": "simple common word"
-          },
-          "all": {
-            "translation": "كل",
-            "definition": "simple common word"
-          },
-          "almost": {
-            "translation": "تقريبًا",
-            "definition": "simple common word"
-          },
-          "along": {
-            "translation": "طوال",
-            "definition": "simple common word"
-          },
-          "always": {
-            "translation": "دائمًا",
-            "definition": "simple common word"
-          },
-          "and": {
-            "translation": "و",
-            "definition": "simple common word"
-          },
-          "are": {
-            "translation": "يكونون",
-            "definition": "simple common word"
-          },
-          "as": {
-            "translation": "بصفته/كـ",
-            "definition": "simple common word"
-          },
-          "asked": {
-            "translation": "سأل",
-            "definition": "simple common word"
-          },
-          "asks": {
-            "translation": "تسأل",
-            "definition": "simple common word"
-          },
-          "at": {
-            "translation": "عند",
-            "definition": "simple common word"
-          },
-          "away": {
-            "translation": "بعيدًا",
-            "definition": "simple common word"
-          },
-          "barker": {
-            "translation": "باركر",
-            "definition": "simple common word"
-          },
-          "barks": {
-            "translation": "ينبح",
-            "definition": "simple common word"
-          },
-          "be": {
-            "translation": "يكون",
-            "definition": "simple common word"
-          },
-          "beautiful": {
-            "translation": "جميلة",
-            "definition": "simple common word"
-          },
-          "beauty": {
-            "translation": "جمال",
-            "definition": "simple common word"
-          },
-          "become": {
-            "translation": "يصبح",
-            "definition": "simple common word"
-          },
-          "becomes": {
-            "translation": "تصبح",
-            "definition": "simple common word"
-          },
-          "bertie": {
-            "translation": "بيرتي",
-            "definition": "simple common word"
-          },
-          "black": {
-            "translation": "سوداء",
-            "definition": "simple common word"
-          },
-          "brave": {
-            "translation": "شجاع",
-            "definition": "simple common word"
-          },
-          "but": {
-            "translation": "لكن",
-            "definition": "simple common word"
-          },
-          "came": {
-            "translation": "جاء",
-            "definition": "simple common word"
-          },
-          "challenged": {
-            "translation": "تحدى",
-            "definition": "simple common word"
-          },
-          "closer": {
-            "translation": "أقرب",
-            "definition": "simple common word"
-          },
-          "cold": {
-            "translation": "بارد",
-            "definition": "simple common word"
-          },
-          "colin": {
-            "translation": "كولين",
-            "definition": "simple common word"
-          },
-          "come": {
-            "translation": "يحدث/يأتي",
-            "definition": "simple common word"
-          },
-          "comes": {
-            "translation": "يأتي",
-            "definition": "simple common word"
-          },
-          "could": {
-            "translation": "استطاع",
-            "definition": "simple common word"
-          },
-          "covered": {
-            "translation": "مغطاة",
-            "definition": "simple common word"
-          },
-          "croak": {
-            "translation": "ينق",
-            "definition": "simple common word"
-          },
-          "day": {
-            "translation": "يوم",
-            "definition": "simple common word"
-          },
-          "did": {
-            "translation": "فعل/لم",
-            "definition": "simple common word"
-          },
-          "dog": {
-            "translation": "كلب",
-            "definition": "simple common word"
-          },
-          "dogs": {
-            "translation": "كلاب",
-            "definition": "simple common word"
-          },
-          "dream": {
-            "translation": "dream",
-            "definition": "simple common word"
-          },
-          "everybody": {
-            "translation": "الجميع",
-            "definition": "simple common word"
-          },
-          "everyone": {
-            "translation": "الجميع",
-            "definition": "simple common word"
-          },
-          "excited": {
-            "translation": "متحمسة",
-            "definition": "simple common word"
-          },
-          "feathers": {
-            "translation": "ريش",
-            "definition": "simple common word"
-          },
-          "feeling": {
-            "translation": "يشعر",
-            "definition": "simple common word"
-          },
-          "feels": {
-            "translation": "يشعر",
-            "definition": "simple common word"
-          },
-          "fish": {
-            "translation": "سمكة",
-            "definition": "simple common word"
-          },
-          "friend": {
-            "translation": "صديق",
-            "definition": "simple common word"
-          },
-          "frightened": {
-            "translation": "خائف",
-            "definition": "simple common word"
-          },
-          "frog": {
-            "translation": "ضفدع",
-            "definition": "simple common word"
-          },
-          "from": {
-            "translation": "من",
-            "definition": "simple common word"
-          },
-          "frost": {
-            "translation": "صقيع",
-            "definition": "simple common word"
-          },
-          "ghost": {
-            "translation": "شبح",
-            "definition": "simple common word"
-          },
-          "ghosts": {
-            "translation": "أشباح",
-            "definition": "simple common word"
-          },
-          "grumpy": {
-            "translation": "متجهمة",
-            "definition": "simple common word"
-          },
-          "handsome": {
-            "translation": "وسيم",
-            "definition": "simple common word"
-          },
-          "he": {
-            "translation": "هو",
-            "definition": "simple common word"
-          },
-          "her": {
-            "translation": "ها",
-            "definition": "simple common word"
-          },
-          "here": {
-            "translation": "هنا",
-            "definition": "simple common word"
-          },
-          "hi": {
-            "translation": "مرحبًا",
-            "definition": "simple common word"
-          },
-          "his": {
-            "translation": "خاصته",
-            "definition": "simple common word"
-          },
-          "hopes": {
-            "translation": "يأمل",
-            "definition": "simple common word"
-          },
-          "idea": {
-            "translation": "فكرة",
-            "definition": "simple common word"
-          },
-          "if": {
-            "translation": "إن",
-            "definition": "simple common word"
-          },
-          "ill": {
-            "translation": "مريض",
-            "definition": "simple common word"
-          },
-          "imagine": {
-            "translation": "يتخيل",
-            "definition": "simple common word"
-          },
-          "in": {
-            "translation": "في",
-            "definition": "simple common word"
-          },
-          "into": {
-            "translation": "إلى",
-            "definition": "simple common word"
-          },
-          "invite": {
-            "translation": "يدعو",
-            "definition": "simple common word"
-          },
-          "is": {
-            "translation": "يكون",
-            "definition": "simple common word"
-          },
-          "it": {
-            "translation": "هو/هي",
-            "definition": "simple common word"
-          },
-          "like": {
-            "translation": "كـ",
-            "definition": "simple common word"
-          },
-          "likes": {
-            "translation": "تحب",
-            "definition": "simple common word"
-          },
-          "little": {
-            "translation": "قليل",
-            "definition": "simple common word"
-          },
-          "live": {
-            "translation": "يعيش",
-            "definition": "simple common word"
-          },
-          "lives": {
-            "translation": "يعيش",
-            "definition": "simple common word"
-          },
-          "looked": {
-            "translation": "بدت",
-            "definition": "simple common word"
-          },
-          "loudly": {
-            "translation": "بصوت عالٍ",
-            "definition": "simple common word"
-          },
-          "made": {
-            "translation": "جعل",
-            "definition": "simple common word"
-          },
-          "maybe": {
-            "translation": "ربما",
-            "definition": "simple common word"
-          },
-          "might": {
-            "translation": "ربما",
-            "definition": "simple common word"
-          },
-          "morning": {
-            "translation": "صباح",
-            "definition": "simple common word"
-          },
-          "my": {
-            "translation": "خاصتي/اسمي",
-            "definition": "simple common word"
-          },
-          "name": {
-            "translation": "اسم",
-            "definition": "simple common word"
-          },
-          "named": {
-            "translation": "اسمه",
-            "definition": "simple common word"
-          },
-          "natasha": {
-            "translation": "ناتاشا",
-            "definition": "simple common word"
-          },
-          "nervous": {
-            "translation": "متوتر",
-            "definition": "simple common word"
-          },
-          "news": {
-            "translation": "أخبار",
-            "definition": "simple common word"
-          },
-          "not": {
-            "translation": "ليس",
-            "definition": "simple common word"
-          },
-          "now": {
-            "translation": "الآن",
-            "definition": "simple common word"
-          },
-          "of": {
-            "translation": "من",
-            "definition": "simple common word"
-          },
-          "one": {
-            "translation": "واحد",
-            "definition": "simple common word"
-          },
-          "only": {
-            "translation": "فقط",
-            "definition": "simple common word"
-          },
-          "pond": {
-            "translation": "بركة",
-            "definition": "simple common word"
-          },
-          "prince": {
-            "translation": "أمير",
-            "definition": "simple common word"
-          },
-          "princes": {
-            "translation": "أمراء",
-            "definition": "simple common word"
-          },
-          "princess": {
-            "translation": "أميرة",
-            "definition": "simple common word"
-          },
-          "proud": {
-            "translation": "فخور",
-            "definition": "simple common word"
-          },
-          "proudly": {
-            "translation": "بفخر",
-            "definition": "simple common word"
-          },
-          "real": {
-            "translation": "حقيقي",
-            "definition": "simple common word"
-          },
-          "rob": {
-            "translation": "روب",
-            "definition": "simple common word"
-          },
-          "run": {
-            "translation": "يجري",
-            "definition": "simple common word"
-          },
-          "runs": {
-            "translation": "يهرب",
-            "definition": "simple common word"
-          },
-          "s": {
-            "translation": "s",
-            "definition": "simple common word"
-          },
-          "sad": {
-            "translation": "حزين",
-            "definition": "simple common word"
-          },
-          "sadie": {
-            "translation": "سادي",
-            "definition": "simple common word"
-          },
-          "said": {
-            "translation": "قال",
-            "definition": "simple common word"
-          },
-          "saw": {
-            "translation": "رأى",
-            "definition": "simple common word"
-          },
-          "says": {
-            "translation": "يقول",
-            "definition": "simple common word"
-          },
-          "scares": {
-            "translation": "يخيف",
-            "definition": "simple common word"
-          },
-          "sees": {
-            "translation": "يرى",
-            "definition": "simple common word"
-          },
-          "she": {
-            "translation": "هي",
-            "definition": "simple common word"
-          },
-          "some": {
-            "translation": "بعض",
-            "definition": "simple common word"
-          },
-          "someone": {
-            "translation": "أحدهم",
-            "definition": "simple common word"
-          },
-          "sometimes": {
-            "translation": "أحيانًا",
-            "definition": "simple common word"
-          },
-          "speak": {
-            "translation": "يتحدث",
-            "definition": "simple common word"
-          },
-          "special": {
-            "translation": "خاص",
-            "definition": "simple common word"
-          },
-          "spreads": {
-            "translation": "تمد",
-            "definition": "simple common word"
-          },
-          "still": {
-            "translation": "مازال",
-            "definition": "simple common word"
-          },
-          "swan": {
-            "translation": "بجعة",
-            "definition": "simple common word"
-          },
-          "tadpole": {
-            "translation": "شرغوف",
-            "definition": "simple common word"
-          },
-          "take": {
-            "translation": "يأخذ",
-            "definition": "simple common word"
-          },
-          "talk": {
-            "translation": "يتحدث",
-            "definition": "simple common word"
-          },
-          "tells": {
-            "translation": "يخبر",
-            "definition": "simple common word"
-          },
-          "test": {
-            "translation": "اختبار",
-            "definition": "simple common word"
-          },
-          "that": {
-            "translation": "أن",
-            "definition": "simple common word"
-          },
-          "the": {
-            "translation": "ال",
-            "definition": "simple common word"
-          },
-          "they": {
-            "translation": "هم",
-            "definition": "simple common word"
-          },
-          "this": {
-            "translation": "هذه",
-            "definition": "simple common word"
-          },
-          "thought": {
-            "translation": "ظنّ",
-            "definition": "simple common word"
-          },
-          "tim": {
-            "translation": "تيم",
-            "definition": "simple common word"
-          },
-          "to": {
-            "translation": "إلى/أن",
-            "definition": "simple common word"
-          },
-          "tried": {
-            "translation": "حاول",
-            "definition": "simple common word"
-          },
-          "true": {
-            "translation": "حقيقي",
-            "definition": "simple common word"
-          },
-          "turned": {
-            "translation": "تحول",
-            "definition": "simple common word"
-          },
-          "used": {
-            "translation": "كان",
-            "definition": "simple common word"
-          },
-          "very": {
-            "translation": "very",
-            "definition": "simple common word"
-          },
-          "was": {
-            "translation": "كان",
-            "definition": "simple common word"
-          },
-          "white": {
-            "translation": "أبيض",
-            "definition": "simple common word"
-          },
-          "wide": {
-            "translation": "واسعة",
-            "definition": "simple common word"
-          },
-          "will": {
-            "translation": "سوف",
-            "definition": "simple common word"
-          },
-          "wings": {
-            "translation": "أجنحة",
-            "definition": "simple common word"
-          }
-        }
+          "wordDefinitions": {
+    "a": {
+      "translation": "أداة نكرة (a)",
+      "definition": "Article"
+    },
+    "about": {
+      "translation": "about (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "across": {
+      "translation": "across (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "afraid": {
+      "translation": "afraid (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "afterall": {
+      "translation": "afterall (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "again": {
+      "translation": "again (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "all": {
+      "translation": "all (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "almost": {
+      "translation": "تقريبًا",
+      "definition": "Adverb"
+    },
+    "although": {
+      "translation": "although (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "always": {
+      "translation": "دائمًا",
+      "definition": "Adverb"
+    },
+    "amd": {
+      "translation": "amd (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "and": {
+      "translation": "و",
+      "definition": "Conjunction"
+    },
+    "any": {
+      "translation": "أيّ",
+      "definition": "Vocabulary item from the story"
+    },
+    "anything": {
+      "translation": "anything (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "are": {
+      "translation": "are (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "aren": {
+      "translation": "ليست/ليس",
+      "definition": "Vocabulary item from the story"
+    },
+    "as": {
+      "translation": "كـ / كما",
+      "definition": "Vocabulary item from the story"
+    },
+    "ask": {
+      "translation": "يسأل",
+      "definition": "Verb"
+    },
+    "asked": {
+      "translation": "سأل",
+      "definition": "Verb"
+    },
+    "asking": {
+      "translation": "يسأل",
+      "definition": "Vocabulary item from the story"
+    },
+    "at": {
+      "translation": "عند / في",
+      "definition": "Preposition"
+    },
+    "away": {
+      "translation": "away (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "back": {
+      "translation": "back (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "bad": {
+      "translation": "bad (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "barker": {
+      "translation": "باركر",
+      "definition": "Proper noun"
+    },
+    "barking": {
+      "translation": "barking (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "barks": {
+      "translation": "ينبح",
+      "definition": "Verb"
+    },
+    "be": {
+      "translation": "be (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "beak": {
+      "translation": "منقار",
+      "definition": "Noun"
+    },
+    "beatrice": {
+      "translation": "بياتريس",
+      "definition": "Proper noun"
+    },
+    "beautiful": {
+      "translation": "جميل",
+      "definition": "Adjective"
+    },
+    "beauty": {
+      "translation": "جمال",
+      "definition": "Noun"
+    },
+    "became": {
+      "translation": "أصبح",
+      "definition": "Verb"
+    },
+    "because": {
+      "translation": "because (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "bedind": {
+      "translation": "bedind (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "been": {
+      "translation": "been (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "before": {
+      "translation": "قبل",
+      "definition": "Vocabulary item from the story"
+    },
+    "behind": {
+      "translation": "behind (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "being": {
+      "translation": "being (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "bertie": {
+      "translation": "بيرتي",
+      "definition": "Proper noun"
+    },
+    "big": {
+      "translation": "كبير",
+      "definition": "Adjective"
+    },
+    "birds": {
+      "translation": "طيور",
+      "definition": "Noun"
+    },
+    "bit": {
+      "translation": "bit (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "black": {
+      "translation": "أسود",
+      "definition": "Adjective"
+    },
+    "boomed": {
+      "translation": "boomed (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "born": {
+      "translation": "born (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "bottom": {
+      "translation": "قاع / أسفل",
+      "definition": "Noun"
+    },
+    "bowled": {
+      "translation": "bowled (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "brave": {
+      "translation": "شجاع",
+      "definition": "Adjective"
+    },
+    "but": {
+      "translation": "لكن",
+      "definition": "Conjunction"
+    },
+    "by": {
+      "translation": "by (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "bye": {
+      "translation": "إلى اللقاء",
+      "definition": "Greeting vocabulary"
+    },
+    "call": {
+      "translation": "call (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "came": {
+      "translation": "أتى",
+      "definition": "Vocabulary item from the story"
+    },
+    "can": {
+      "translation": "يستطيع",
+      "definition": "Vocabulary item from the story"
+    },
+    "carp": {
+      "translation": "شَبوط",
+      "definition": "Proper noun"
+    },
+    "children": {
+      "translation": "children (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "chilly": {
+      "translation": "بارد",
+      "definition": "Adjective"
+    },
+    "cold": {
+      "translation": "cold (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "colin": {
+      "translation": "كولين",
+      "definition": "Proper noun"
+    },
+    "com": {
+      "translation": "com (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "come": {
+      "translation": "يأتي",
+      "definition": "Vocabulary item from the story"
+    },
+    "comes": {
+      "translation": "comes (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "company": {
+      "translation": "company (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "consider": {
+      "translation": "consider (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "could": {
+      "translation": "could (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "couldn": {
+      "translation": "لم يستطع",
+      "definition": "Vocabulary item from the story"
+    },
+    "creatures": {
+      "translation": "مخلوقات",
+      "definition": "Noun"
+    },
+    "cripes": {
+      "translation": "cripes (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "croak": {
+      "translation": "ينقنق",
+      "definition": "Verb"
+    },
+    "croaked": {
+      "translation": "نقنق",
+      "definition": "Verb"
+    },
+    "day": {
+      "translation": "يوم",
+      "definition": "Noun"
+    },
+    "daydreams": {
+      "translation": "daydreams (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "dear": {
+      "translation": "dear (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "difference": {
+      "translation": "difference (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "dignity": {
+      "translation": "dignity (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "dipped": {
+      "translation": "غمس",
+      "definition": "Verb"
+    },
+    "dived": {
+      "translation": "dived (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "do": {
+      "translation": "do (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "doesn": {
+      "translation": "لا",
+      "definition": "Vocabulary item from the story"
+    },
+    "dog": {
+      "translation": "dog (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "don": {
+      "translation": "لا",
+      "definition": "Vocabulary item from the story"
+    },
+    "down": {
+      "translation": "إلى الأسفل / أسفل",
+      "definition": "Preposition"
+    },
+    "dream": {
+      "translation": "dream (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "drinking": {
+      "translation": "يشرب",
+      "definition": "Verb"
+    },
+    "drop": {
+      "translation": "drop (بحاجة لمراجعة)",
+      "definition": "Verb"
+    },
+    "enjoy": {
+      "translation": "enjoy (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "enough": {
+      "translation": "كفاية / بما فيه الكفاية",
+      "definition": "Vocabulary item from the story"
+    },
+    "er": {
+      "translation": "er (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "erm": {
+      "translation": "erm (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "even": {
+      "translation": "even (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "everybody": {
+      "translation": "الجميع",
+      "definition": "Vocabulary item from the story"
+    },
+    "everything": {
+      "translation": "everything (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "except": {
+      "translation": "except (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "excited": {
+      "translation": "excited (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "extremely": {
+      "translation": "extremely (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "famous": {
+      "translation": "famous (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "feathers": {
+      "translation": "ريش",
+      "definition": "Noun"
+    },
+    "feeling": {
+      "translation": "شعور",
+      "definition": "Verb"
+    },
+    "fiercely": {
+      "translation": "fiercely (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "find": {
+      "translation": "يجد",
+      "definition": "Verb"
+    },
+    "finds": {
+      "translation": "finds (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "fish": {
+      "translation": "أسماك",
+      "definition": "Noun"
+    },
+    "flapped": {
+      "translation": "رفرفت",
+      "definition": "Verb"
+    },
+    "flaps": {
+      "translation": "flaps (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "for": {
+      "translation": "لأجل / لمدة",
+      "definition": "Vocabulary item from the story"
+    },
+    "found": {
+      "translation": "وجد",
+      "definition": "Verb"
+    },
+    "fountain": {
+      "translation": "نافورة",
+      "definition": "Noun"
+    },
+    "friend": {
+      "translation": "friend (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "frightened": {
+      "translation": "خائف",
+      "definition": "Vocabulary item from the story"
+    },
+    "frightening": {
+      "translation": "frightening (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "frog": {
+      "translation": "ضفدع",
+      "definition": "Proper noun"
+    },
+    "from": {
+      "translation": "من",
+      "definition": "Preposition"
+    },
+    "frost": {
+      "translation": "frost (بحاجة لمراجعة)",
+      "definition": "Weather"
+    },
+    "frosty": {
+      "translation": "صقيع (اسم)",
+      "definition": "Proper noun"
+    },
+    "gentle": {
+      "translation": "لطيف",
+      "definition": "Vocabulary item from the story"
+    },
+    "ghost": {
+      "translation": "شبح",
+      "definition": "Vocabulary item from the story"
+    },
+    "ghostly": {
+      "translation": "شبحي",
+      "definition": "Adjective"
+    },
+    "ghosts": {
+      "translation": "ghosts (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "glided": {
+      "translation": "انزلقت",
+      "definition": "Verb"
+    },
+    "glittering": {
+      "translation": "glittering (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "go": {
+      "translation": "go (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "golden": {
+      "translation": "ذهبي",
+      "definition": "Adjective"
+    },
+    "gossip": {
+      "translation": "إشاعة / نميمة",
+      "definition": "Noun"
+    },
+    "great": {
+      "translation": "great (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "green": {
+      "translation": "أخضر",
+      "definition": "Adjective"
+    },
+    "group": {
+      "translation": "group (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "growling": {
+      "translation": "يَزمجر",
+      "definition": "Verb"
+    },
+    "grumped": {
+      "translation": "grumped (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "grumpy": {
+      "translation": "متجهم / عابس",
+      "definition": "Adjective"
+    },
+    "had": {
+      "translation": "had (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "hadn": {
+      "translation": "hadn (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "handsome": {
+      "translation": "وسيم",
+      "definition": "Adjective"
+    },
+    "has": {
+      "translation": "has (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "have": {
+      "translation": "have (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "haven": {
+      "translation": "haven (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "he": {
+      "translation": "هو",
+      "definition": "Pronoun"
+    },
+    "head": {
+      "translation": "head (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "heard": {
+      "translation": "heard (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "hello": {
+      "translation": "مرحبًا",
+      "definition": "Greeting vocabulary"
+    },
+    "helped": {
+      "translation": "ساعد",
+      "definition": "Verb"
+    },
+    "her": {
+      "translation": "her (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "here": {
+      "translation": "here (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "hi": {
+      "translation": "مرحبًا",
+      "definition": "Greeting vocabulary"
+    },
+    "hid": {
+      "translation": "اختبأ",
+      "definition": "Verb"
+    },
+    "hiding": {
+      "translation": "hiding (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "him": {
+      "translation": "him (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "his": {
+      "translation": "his (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "hisses": {
+      "translation": "يفحّ",
+      "definition": "Verb"
+    },
+    "hop": {
+      "translation": "hop (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "hope": {
+      "translation": "hope (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "hopped": {
+      "translation": "hopped (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "how": {
+      "translation": "how (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "i": {
+      "translation": "أنا",
+      "definition": "Pronoun"
+    },
+    "ideas": {
+      "translation": "أفكار",
+      "definition": "Noun"
+    },
+    "if": {
+      "translation": "if (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "imagines": {
+      "translation": "imagines (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "impressed": {
+      "translation": "impressed (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "in": {
+      "translation": "في",
+      "definition": "Preposition"
+    },
+    "including": {
+      "translation": "including (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "into": {
+      "translation": "إلى داخل",
+      "definition": "Preposition"
+    },
+    "introduce": {
+      "translation": "introduce (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "invite": {
+      "translation": "يدعو",
+      "definition": "Verb"
+    },
+    "is": {
+      "translation": "يكون / هو",
+      "definition": "Vocabulary item from the story"
+    },
+    "it": {
+      "translation": "هو/هي (لغير العاقل)",
+      "definition": "Pronoun"
+    },
+    "jet": {
+      "translation": "jet (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "jumped": {
+      "translation": "jumped (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "just": {
+      "translation": "just (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "keep": {
+      "translation": "يبقي / يحافظ",
+      "definition": "Verb"
+    },
+    "know": {
+      "translation": "يعرف",
+      "definition": "Verb"
+    },
+    "knows": {
+      "translation": "knows (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "laughed": {
+      "translation": "ضحك",
+      "definition": "Verb"
+    },
+    "leader": {
+      "translation": "leader (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "leap": {
+      "translation": "يقفز",
+      "definition": "Verb"
+    },
+    "legs": {
+      "translation": "legs (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "like": {
+      "translation": "مثل / يُعجب",
+      "definition": "Vocabulary item from the story"
+    },
+    "likes": {
+      "translation": "likes (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "lily": {
+      "translation": "زنبق",
+      "definition": "Noun"
+    },
+    "listen": {
+      "translation": "يستمع",
+      "definition": "Verb"
+    },
+    "listening": {
+      "translation": "listening (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "little": {
+      "translation": "صغير / قليل",
+      "definition": "Adjective"
+    },
+    "live": {
+      "translation": "يعيش",
+      "definition": "Verb"
+    },
+    "lives": {
+      "translation": "يعيش",
+      "definition": "Verb"
+    },
+    "ll": {
+      "translation": "ll (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "loads": {
+      "translation": "loads (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "lofty": {
+      "translation": "سامٍ / متعالٍ",
+      "definition": "Adjective"
+    },
+    "look": {
+      "translation": "ينظر / يبدو",
+      "definition": "Verb"
+    },
+    "looked": {
+      "translation": "نظر",
+      "definition": "Verb"
+    },
+    "looks": {
+      "translation": "looks (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "lots": {
+      "translation": "lots (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "lump": {
+      "translation": "lump (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "m": {
+      "translation": "m (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "made": {
+      "translation": "جعل / صنع",
+      "definition": "Verb"
+    },
+    "make": {
+      "translation": "يجعل / يصنع",
+      "definition": "Verb"
+    },
+    "manage": {
+      "translation": "manage (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "may": {
+      "translation": "may (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "maybe": {
+      "translation": "ربما",
+      "definition": "Adverb"
+    },
+    "me": {
+      "translation": "ني / لي",
+      "definition": "Pronoun"
+    },
+    "might": {
+      "translation": "قد / ربما",
+      "definition": "Vocabulary item from the story"
+    },
+    "mist": {
+      "translation": "mist (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "moment": {
+      "translation": "لحظة",
+      "definition": "Noun"
+    },
+    "mood": {
+      "translation": "mood (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "more": {
+      "translation": "أكثر",
+      "definition": "Vocabulary item from the story"
+    },
+    "morning": {
+      "translation": "صباح",
+      "definition": "Noun"
+    },
+    "most": {
+      "translation": "الأكثر / جدًا",
+      "definition": "Vocabulary item from the story"
+    },
+    "mouth": {
+      "translation": "mouth (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "mr": {
+      "translation": "السيد",
+      "definition": "Proper noun"
+    },
+    "much": {
+      "translation": "كثيرًا",
+      "definition": "Vocabulary item from the story"
+    },
+    "mud": {
+      "translation": "طين",
+      "definition": "Noun"
+    },
+    "my": {
+      "translation": "خاصتي / لي",
+      "definition": "Pronoun"
+    },
+    "name": {
+      "translation": "اسم",
+      "definition": "Vocabulary item from the story"
+    },
+    "natasha": {
+      "translation": "ناتاشا",
+      "definition": "Proper noun"
+    },
+    "natural": {
+      "translation": "natural (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "neck": {
+      "translation": "عنق",
+      "definition": "Noun"
+    },
+    "need": {
+      "translation": "يحتاج",
+      "definition": "Verb"
+    },
+    "never": {
+      "translation": "never (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "new": {
+      "translation": "جديد",
+      "definition": "Adjective"
+    },
+    "no": {
+      "translation": "لا / كلا",
+      "definition": "Vocabulary item from the story"
+    },
+    "normally": {
+      "translation": "normally (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "nose": {
+      "translation": "nose (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "not": {
+      "translation": "ليس / لا",
+      "definition": "Vocabulary item from the story"
+    },
+    "now": {
+      "translation": "الآن",
+      "definition": "Adverb"
+    },
+    "numb": {
+      "translation": "numb (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "of": {
+      "translation": "من / لـ",
+      "definition": "Vocabulary item from the story"
+    },
+    "off": {
+      "translation": "off (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "oh": {
+      "translation": "أوه",
+      "definition": "Vocabulary item from the story"
+    },
+    "ohhh": {
+      "translation": "ohhh (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "old": {
+      "translation": "عجوز / قديم",
+      "definition": "Adjective"
+    },
+    "on": {
+      "translation": "على",
+      "definition": "Preposition"
+    },
+    "one": {
+      "translation": "واحد",
+      "definition": "Number"
+    },
+    "only": {
+      "translation": "فقط",
+      "definition": "Vocabulary item from the story"
+    },
+    "or": {
+      "translation": "أو",
+      "definition": "Conjunction"
+    },
+    "ornamental": {
+      "translation": "للزينة",
+      "definition": "Adjective"
+    },
+    "other": {
+      "translation": "other (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "our": {
+      "translation": "our (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "out": {
+      "translation": "خارج",
+      "definition": "Preposition"
+    },
+    "over": {
+      "translation": "فوق / عبر",
+      "definition": "Preposition"
+    },
+    "pad": {
+      "translation": "ورقة / لوح",
+      "definition": "Noun"
+    },
+    "palace": {
+      "translation": "قصر",
+      "definition": "Noun"
+    },
+    "pale": {
+      "translation": "باهت",
+      "definition": "Adjective"
+    },
+    "patch": {
+      "translation": "رقعة / قطعة أرض",
+      "definition": "Noun"
+    },
+    "pebble": {
+      "translation": "حصاة",
+      "definition": "Noun"
+    },
+    "peg": {
+      "translation": "peg (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "perhaps": {
+      "translation": "perhaps (بحاجة لمراجعة)",
+      "definition": "Adverb"
+    },
+    "picked": {
+      "translation": "أخذ / التقط",
+      "definition": "Verb"
+    },
+    "piece": {
+      "translation": "قطعة / جزء",
+      "definition": "Noun"
+    },
+    "poked": {
+      "translation": "poked (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "pond": {
+      "translation": "بركة",
+      "definition": "Noun"
+    },
+    "pretended": {
+      "translation": "تظاهر",
+      "definition": "Verb"
+    },
+    "prince": {
+      "translation": "أمير",
+      "definition": "Proper noun"
+    },
+    "princes": {
+      "translation": "princes (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "princess": {
+      "translation": "أميرة",
+      "definition": "Proper noun"
+    },
+    "proper": {
+      "translation": "proper (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "questions": {
+      "translation": "questions (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "quickly": {
+      "translation": "quickly (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "quite": {
+      "translation": "تمامًا / نوعًا ما",
+      "definition": "Adverb"
+    },
+    "ran": {
+      "translation": "ركض",
+      "definition": "Verb"
+    },
+    "rather": {
+      "translation": "نوعًا ما",
+      "definition": "Adverb"
+    },
+    "re": {
+      "translation": "re (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "real": {
+      "translation": "حقيقي",
+      "definition": "Adjective"
+    },
+    "really": {
+      "translation": "حقًا",
+      "definition": "Adverb"
+    },
+    "recognised": {
+      "translation": "تعرّف على / أدرك",
+      "definition": "Verb"
+    },
+    "red": {
+      "translation": "red (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "reflection": {
+      "translation": "انعكاس",
+      "definition": "Noun"
+    },
+    "reply": {
+      "translation": "reply (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "rob": {
+      "translation": "روب",
+      "definition": "Proper noun"
+    },
+    "romantic": {
+      "translation": "رومانسي",
+      "definition": "Adjective"
+    },
+    "royal": {
+      "translation": "ملكي",
+      "definition": "Adjective"
+    },
+    "rubbish": {
+      "translation": "rubbish (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "rude": {
+      "translation": "وقِح / فظ",
+      "definition": "Vocabulary item from the story"
+    },
+    "run": {
+      "translation": "يركض",
+      "definition": "Verb"
+    },
+    "running": {
+      "translation": "running (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "s": {
+      "translation": "s (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "sadie": {
+      "translation": "سادي",
+      "definition": "Proper noun"
+    },
+    "sadly": {
+      "translation": "sadly (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "said": {
+      "translation": "قال",
+      "definition": "Verb"
+    },
+    "sank": {
+      "translation": "غاص / غرق",
+      "definition": "Verb"
+    },
+    "saw": {
+      "translation": "saw (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "say": {
+      "translation": "يقول",
+      "definition": "Verb"
+    },
+    "saying": {
+      "translation": "saying (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "scared": {
+      "translation": "خائف",
+      "definition": "Vocabulary item from the story"
+    },
+    "scary": {
+      "translation": "scary (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "secret": {
+      "translation": "secret (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "secretly": {
+      "translation": "secretly (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "seen": {
+      "translation": "seen (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "shade": {
+      "translation": "درجة لون / ظل",
+      "definition": "Noun"
+    },
+    "she": {
+      "translation": "هي",
+      "definition": "Pronoun"
+    },
+    "should": {
+      "translation": "should (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "silly": {
+      "translation": "أحمق",
+      "definition": "Adjective"
+    },
+    "since": {
+      "translation": "since (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "slime": {
+      "translation": "slime (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "small": {
+      "translation": "small (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "snotty": {
+      "translation": "snotty (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "snowy": {
+      "translation": "ثلجي",
+      "definition": "Adjective"
+    },
+    "so": {
+      "translation": "so (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "some": {
+      "translation": "بعض",
+      "definition": "Vocabulary item from the story"
+    },
+    "someone": {
+      "translation": "someone (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "sometimes": {
+      "translation": "أحيانًا",
+      "definition": "Adverb"
+    },
+    "sort": {
+      "translation": "sort (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "spare": {
+      "translation": "spare (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "special": {
+      "translation": "خاص / مميز",
+      "definition": "Adjective"
+    },
+    "squeaked": {
+      "translation": "صرصر / صرخ بصوت رفيع",
+      "definition": "Vocabulary item from the story"
+    },
+    "started": {
+      "translation": "بدأ",
+      "definition": "Verb"
+    },
+    "starting": {
+      "translation": "starting (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "stories": {
+      "translation": "قصص",
+      "definition": "Noun"
+    },
+    "storynory": {
+      "translation": "storynory (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "stuck": {
+      "translation": "stuck (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "such": {
+      "translation": "كهذا / شديد",
+      "definition": "Vocabulary item from the story"
+    },
+    "swam": {
+      "translation": "سبح",
+      "definition": "Verb"
+    },
+    "swan": {
+      "translation": "بجعة",
+      "definition": "Noun"
+    },
+    "swans": {
+      "translation": "swans (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "swooned": {
+      "translation": "swooned (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "sympathetically": {
+      "translation": "sympathetically (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "t": {
+      "translation": "—",
+      "definition": "Vocabulary item from the story"
+    },
+    "tadpole": {
+      "translation": "شرغوف",
+      "definition": "Noun"
+    },
+    "tadpoles": {
+      "translation": "شراغيف",
+      "definition": "Noun"
+    },
+    "take": {
+      "translation": "يأخذ / يخوض",
+      "definition": "Verb"
+    },
+    "tell": {
+      "translation": "tell (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "telling": {
+      "translation": "telling (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "test": {
+      "translation": "test (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "that": {
+      "translation": "that (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "the": {
+      "translation": "أداة تعريف (ال)",
+      "definition": "Article"
+    },
+    "them": {
+      "translation": "them (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "then": {
+      "translation": "ثم / حينها",
+      "definition": "Adverb"
+    },
+    "there": {
+      "translation": "there (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "they": {
+      "translation": "هم/هن",
+      "definition": "Pronoun"
+    },
+    "things": {
+      "translation": "things (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "think": {
+      "translation": "يفكّر",
+      "definition": "Verb"
+    },
+    "this": {
+      "translation": "this (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "thought": {
+      "translation": "thought (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "through": {
+      "translation": "through (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "throught": {
+      "translation": "throught (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "tim": {
+      "translation": "تيم",
+      "definition": "Proper noun"
+    },
+    "time": {
+      "translation": "time (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "to": {
+      "translation": "إلى / أن",
+      "definition": "Preposition"
+    },
+    "today": {
+      "translation": "اليوم",
+      "definition": "Vocabulary item from the story"
+    },
+    "told": {
+      "translation": "told (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "too": {
+      "translation": "too (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "towards": {
+      "translation": "towards (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "true": {
+      "translation": "true (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "turn": {
+      "translation": "turn (بحاجة لمراجعة)",
+      "definition": "Verb"
+    },
+    "turned": {
+      "translation": "حوّل / تحوّل",
+      "definition": "Verb"
+    },
+    "two": {
+      "translation": "اثنان",
+      "definition": "Number"
+    },
+    "type": {
+      "translation": "نوع",
+      "definition": "Noun"
+    },
+    "under": {
+      "translation": "تحت",
+      "definition": "Preposition"
+    },
+    "underneath": {
+      "translation": "underneath (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "unlike": {
+      "translation": "unlike (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "until": {
+      "translation": "until (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "up": {
+      "translation": "إلى الأعلى / فوق",
+      "definition": "Preposition"
+    },
+    "used": {
+      "translation": "اعتاد / استُخدم",
+      "definition": "Vocabulary item from the story"
+    },
+    "ve": {
+      "translation": "ve (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "vegetable": {
+      "translation": "خضار",
+      "definition": "Noun"
+    },
+    "very": {
+      "translation": "جداً",
+      "definition": "Adverb"
+    },
+    "voice": {
+      "translation": "صوت",
+      "definition": "Noun"
+    },
+    "wanted": {
+      "translation": "أراد",
+      "definition": "Verb"
+    },
+    "was": {
+      "translation": "was (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "wasn": {
+      "translation": "لم يكن",
+      "definition": "Vocabulary item from the story"
+    },
+    "water": {
+      "translation": "water (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "way": {
+      "translation": "way (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "we": {
+      "translation": "نحن",
+      "definition": "Pronoun"
+    },
+    "weather": {
+      "translation": "weather (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "well": {
+      "translation": "حسنًا",
+      "definition": "Vocabulary item from the story"
+    },
+    "were": {
+      "translation": "were (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "weren": {
+      "translation": "لم يكونوا",
+      "definition": "Vocabulary item from the story"
+    },
+    "what": {
+      "translation": "what (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "when": {
+      "translation": "when (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "where": {
+      "translation": "where (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "whether": {
+      "translation": "whether (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "which": {
+      "translation": "which (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "white": {
+      "translation": "أبيض",
+      "definition": "Adjective"
+    },
+    "who": {
+      "translation": "who (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "why": {
+      "translation": "why (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "will": {
+      "translation": "will (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "wings": {
+      "translation": "أجنحة",
+      "definition": "Noun"
+    },
+    "with": {
+      "translation": "مع",
+      "definition": "Preposition"
+    },
+    "wonderful": {
+      "translation": "wonderful (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "words": {
+      "translation": "words (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "would": {
+      "translation": "would (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "yes": {
+      "translation": "yes (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "you": {
+      "translation": "أنتَ/أنتِ/أنتم",
+      "definition": "Pronoun"
+    },
+    "your": {
+      "translation": "your (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    },
+    "yourself": {
+      "translation": "yourself (بحاجة لمراجعة)",
+      "definition": "Vocabulary item from the story"
+    }
+  }
       }
     ]
-},
+  },
 {
     "id": 14,
     "slug": "lesson-14",
@@ -24162,7 +25264,7 @@ export const readingData = [
         },
         "wordDefinitions": {
           "a": {
-            "translation": "ـ",
+            "translation": "أداة نكرة (أ)",
             "definition": "A basic English word used in the story."
           },
           "about": {
@@ -24904,683 +26006,5810 @@ export const readingData = [
           ]
         },
         "wordDefinitions": {
+    "a": {
+      "translation": "أداة نكرة (أ)",
+      "definition": "A basic English word used in the story."
+    },
+    "air": {
+      "translation": "هواء",
+      "definition": "A basic English word used in the story."
+    },
+    "all": {
+      "translation": "كلّ",
+      "definition": "A basic English word used in the story."
+    },
+    "also": {
+      "translation": "أيضًا",
+      "definition": "A basic English word used in the story."
+    },
+    "always": {
+      "translation": "دائمًا",
+      "definition": "A basic English word used in the story."
+    },
+    "an": {
+      "translation": "أداة نكرة (An)",
+      "definition": "A basic English word used in the story."
+    },
+    "and": {
+      "translation": "وَ",
+      "definition": "A basic English word used in the story."
+    },
+    "around": {
+      "translation": "حول",
+      "definition": "A basic English word used in the story."
+    },
+    "as": {
+      "translation": "كـ / كما",
+      "definition": "A basic English word used in the story."
+    },
+    "at": {
+      "translation": "عند / في",
+      "definition": "A basic English word used in the story."
+    },
+    "aware": {
+      "translation": "واعٍ",
+      "definition": "A basic English word used in the story."
+    },
+    "away": {
+      "translation": "بعيدًا",
+      "definition": "A basic English word used in the story."
+    },
+    "back": {
+      "translation": "ظهر / عودة",
+      "definition": "A basic English word used in the story."
+    },
+    "battle": {
+      "translation": "معركة",
+      "definition": "A basic English word used in the story."
+    },
+    "battlefield": {
+      "translation": "ساحة المعركة",
+      "definition": "A basic English word used in the story."
+    },
+    "be": {
+      "translation": "يكون",
+      "definition": "A basic English word used in the story."
+    },
+    "beautiful": {
+      "translation": "جميل",
+      "definition": "A basic English word used in the story."
+    },
+    "before": {
+      "translation": "قبل",
+      "definition": "A basic English word used in the story."
+    },
+    "blest": {
+      "translation": "مبارَك",
+      "definition": "A basic English word used in the story."
+    },
+    "body": {
+      "translation": "جسد",
+      "definition": "A basic English word used in the story."
+    },
+    "bore": {
+      "translation": "حملَ / أنجبَ",
+      "definition": "A basic English word used in the story."
+    },
+    "breathing": {
+      "translation": "تنفّس",
+      "definition": "A basic English word used in the story."
+    },
+    "brooke": {
+      "translation": "بروك (اسم)",
+      "definition": "A basic English word used in the story."
+    },
+    "but": {
+      "translation": "لكن",
+      "definition": "A basic English word used in the story."
+    },
+    "by": {
+      "translation": "بواسطة / عند",
+      "definition": "A basic English word used in the story."
+    },
+    "called": {
+      "translation": "مُسمّى / يُدعى",
+      "definition": "A basic English word used in the story."
+    },
+    "cambridge": {
+      "translation": "كامبريدج",
+      "definition": "A basic English word used in the story."
+    },
+    "concealed": {
+      "translation": "مخفي / مستور",
+      "definition": "A basic English word used in the story."
+    },
+    "corner": {
+      "translation": "زاوية / ركن",
+      "definition": "A basic English word used in the story."
+    },
+    "could": {
+      "translation": "استطاع / يمكن",
+      "definition": "A basic English word used in the story."
+    },
+    "countries": {
+      "translation": "بلدان / دول",
+      "definition": "A basic English word used in the story."
+    },
+    "day": {
+      "translation": "يوم",
+      "definition": "A basic English word used in the story."
+    },
+    "describing": {
+      "translation": "وصف",
+      "definition": "A basic English word used in the story."
+    },
+    "die": {
+      "translation": "يموت",
+      "definition": "A basic English word used in the story."
+    },
+    "different": {
+      "translation": "مختلف",
+      "definition": "A basic English word used in the story."
+    },
+    "dreams": {
+      "translation": "أحلام",
+      "definition": "A basic English word used in the story."
+    },
+    "during": {
+      "translation": "خلال",
+      "definition": "A basic English word used in the story."
+    },
+    "dust": {
+      "translation": "غبار / تراب",
+      "definition": "A basic English word used in the story."
+    },
+    "each": {
+      "translation": "كلّ / كل واحد",
+      "definition": "A basic English word used in the story."
+    },
+    "earth": {
+      "translation": "الأرض",
+      "definition": "A basic English word used in the story."
+    },
+    "ended": {
+      "translation": "انتهى",
+      "definition": "A basic English word used in the story."
+    },
+    "england": {
+      "translation": "إنجلترا",
+      "definition": "A basic English word used in the story."
+    },
+    "england's": {
+      "translation": "لإنجلترا / الخاصة بإنجلترا",
+      "definition": "A basic English word used in the story."
+    },
+    "english": {
+      "translation": "الإنجليزية",
+      "definition": "A basic English word used in the story."
+    },
+    "eternal": {
+      "translation": "أبدي",
+      "definition": "A basic English word used in the story."
+    },
+    "europe": {
+      "translation": "أوروبا",
+      "definition": "A basic English word used in the story."
+    },
+    "evil": {
+      "translation": "شرّ",
+      "definition": "A basic English word used in the story."
+    },
+    "famous": {
+      "translation": "مشهور",
+      "definition": "A basic English word used in the story."
+    },
+    "father": {
+      "translation": "أب",
+      "definition": "A basic English word used in the story."
+    },
+    "field": {
+      "translation": "حقل / ميدان",
+      "definition": "A basic English word used in the story."
+    },
+    "fields": {
+      "translation": "حقول / ميادين",
+      "definition": "A basic English word used in the story."
+    },
+    "first": {
+      "translation": "أول",
+      "definition": "A basic English word used in the story."
+    },
+    "flowers": {
+      "translation": "زهور",
+      "definition": "A basic English word used in the story."
+    },
+    "foreign": {
+      "translation": "أجنبي",
+      "definition": "A basic English word used in the story."
+    },
+    "forever": {
+      "translation": "إلى الأبد",
+      "definition": "A basic English word used in the story."
+    },
+    "form": {
+      "translation": "شكل / صيغة",
+      "definition": "A basic English word used in the story."
+    },
+    "friends": {
+      "translation": "أصدقاء",
+      "definition": "A basic English word used in the story."
+    },
+    "from": {
+      "translation": "من",
+      "definition": "A basic English word used in the story."
+    },
+    "gave": {
+      "translation": "أعطى",
+      "definition": "A basic English word used in the story."
+    },
+    "gentle": {
+      "translation": "لطيف",
+      "definition": "A basic English word used in the story."
+    },
+    "gentleness": {
+      "translation": "لُطف / رقة",
+      "definition": "A basic English word used in the story."
+    },
+    "given": {
+      "translation": "مُعطى",
+      "definition": "A basic English word used in the story."
+    },
+    "gives": {
+      "translation": "يُعطي",
+      "definition": "A basic English word used in the story."
+    },
+    "grew": {
+      "translation": "نَما / ترعرع",
+      "definition": "A basic English word used in the story."
+    },
+    "happy": {
+      "translation": "سعيد",
+      "definition": "A basic English word used in the story."
+    },
+    "have": {
+      "translation": "يملك / لديه",
+      "definition": "A basic English word used in the story."
+    },
+    "he": {
+      "translation": "هو",
+      "definition": "A basic English word used in the story."
+    },
+    "headmaster": {
+      "translation": "ناظر المدرسة / مديرها",
+      "definition": "A basic English word used in the story."
+    },
+    "heart": {
+      "translation": "قلب",
+      "definition": "A basic English word used in the story."
+    },
+    "hearts": {
+      "translation": "قلوب",
+      "definition": "A basic English word used in the story."
+    },
+    "heaven": {
+      "translation": "السماء / الجنّة",
+      "definition": "A basic English word used in the story."
+    },
+    "her": {
+      "translation": "لها / هي (ضمير مفعول)",
+      "definition": "A basic English word used in the story."
+    },
+    "his": {
+      "translation": "له / خاصته",
+      "definition": "A basic English word used in the story."
+    },
+    "home": {
+      "translation": "منزل / وطن",
+      "definition": "A basic English word used in the story."
+    },
+    "horror": {
+      "translation": "رعب / هول",
+      "definition": "A basic English word used in the story."
+    },
+    "i": {
+      "translation": "أنا",
+      "definition": "A basic English word used in the story."
+    },
+    "if": {
+      "translation": "إذا / لو",
+      "definition": "A basic English word used in the story."
+    },
+    "in": {
+      "translation": "في / داخل",
+      "definition": "A basic English word used in the story."
+    },
+    "is": {
+      "translation": "يكون / هو",
+      "definition": "A basic English word used in the story."
+    },
+    "it": {
+      "translation": "هو/هي (لغير العاقل)",
+      "definition": "A basic English word used in the story."
+    },
+    "know": {
+      "translation": "يعرف",
+      "definition": "A basic English word used in the story."
+    },
+    "known": {
+      "translation": "معروف",
+      "definition": "A basic English word used in the story."
+    },
+    "land": {
+      "translation": "أرض / بلد",
+      "definition": "A basic English word used in the story."
+    },
+    "later": {
+      "translation": "لاحقًا",
+      "definition": "A basic English word used in the story."
+    },
+    "laughter": {
+      "translation": "ضحك",
+      "definition": "A basic English word used in the story."
+    },
+    "learnt": {
+      "translation": "تعلّمَ",
+      "definition": "A basic English word used in the story."
+    },
+    "less": {
+      "translation": "أقلّ",
+      "definition": "A basic English word used in the story."
+    },
+    "like": {
+      "translation": "مثل / يُحبّ",
+      "definition": "A basic English word used in the story."
+    },
+    "lines": {
+      "translation": "أسطر (شعر)",
+      "definition": "A basic English word used in the story."
+    },
+    "love": {
+      "translation": "حبّ",
+      "definition": "A basic English word used in the story."
+    },
+    "made": {
+      "translation": "صنعَ / جعلَ",
+      "definition": "A basic English word used in the story."
+    },
+    "many": {
+      "translation": "عديد / كثير",
+      "definition": "A basic English word used in the story."
+    },
+    "marked": {
+      "translation": "موسوم / مُعلَّم",
+      "definition": "A basic English word used in the story."
+    },
+    "me": {
+      "translation": "ني / لي (ضمير مفعول)",
+      "definition": "A basic English word used in the story."
+    },
+    "might": {
+      "translation": "قد / ربما",
+      "definition": "A basic English word used in the story."
+    },
+    "mind": {
+      "translation": "عقل / ذهن",
+      "definition": "A basic English word used in the story."
+    },
+    "more": {
+      "translation": "أكثر",
+      "definition": "A basic English word used in the story."
+    },
+    "name": {
+      "translation": "اسم",
+      "definition": "A basic English word used in the story."
+    },
+    "nearest": {
+      "translation": "الأقرب",
+      "definition": "A basic English word used in the story."
+    },
+    "no": {
+      "translation": "لا / كلا",
+      "definition": "A basic English word used in the story."
+    },
+    "not": {
+      "translation": "ليس / لا",
+      "definition": "A basic English word used in the story."
+    },
+    "november": {
+      "translation": "نوفمبر",
+      "definition": "A basic English word used in the story."
+    },
+    "number": {
+      "translation": "رقم / عدد",
+      "definition": "A basic English word used in the story."
+    },
+    "of": {
+      "translation": "من / لـ",
+      "definition": "A basic English word used in the story."
+    },
+    "on": {
+      "translation": "على",
+      "definition": "A basic English word used in the story."
+    },
+    "once": {
+      "translation": "مرة / ذات مرة",
+      "definition": "A basic English word used in the story."
+    },
+    "only": {
+      "translation": "فقط / وحده",
+      "definition": "A basic English word used in the story."
+    },
+    "outbreak": {
+      "translation": "اندلاع / تفشّي",
+      "definition": "A basic English word used in the story."
+    },
+    "peace": {
+      "translation": "سلام",
+      "definition": "A basic English word used in the story."
+    },
+    "piece": {
+      "translation": "قطعة",
+      "definition": "A basic English word used in the story."
+    },
+    "playwright": {
+      "translation": "كاتب مسرحي",
+      "definition": "A basic English word used in the story."
+    },
+    "poem": {
+      "translation": "قصيدة",
+      "definition": "A basic English word used in the story."
+    },
+    "poems": {
+      "translation": "قصائد",
+      "definition": "A basic English word used in the story."
+    },
+    "poet": {
+      "translation": "شاعر",
+      "definition": "A basic English word used in the story."
+    },
+    "poppy": {
+      "translation": "شقائق النعمان (زهرة)",
+      "definition": "A basic English word used in the story."
+    },
+    "pulse": {
+      "translation": "نبض",
+      "definition": "A basic English word used in the story."
+    },
+    "red": {
+      "translation": "أحمر",
+      "definition": "A basic English word used in the story."
+    },
+    "remembrance": {
+      "translation": "إحياء الذكرى / تذكّر",
+      "definition": "A basic English word used in the story."
+    },
+    "rich": {
+      "translation": "غني",
+      "definition": "A basic English word used in the story."
+    },
+    "richer": {
+      "translation": "أغنى",
+      "definition": "A basic English word used in the story."
+    },
+    "rivers": {
+      "translation": "أنهار",
+      "definition": "A basic English word used in the story."
+    },
+    "roam": {
+      "translation": "يتجوّل",
+      "definition": "A basic English word used in the story."
+    },
+    "rugby": {
+      "translation": "رجبي (مدينة/مدرسة/لعبة)",
+      "definition": "A basic English word used in the story."
+    },
+    "rupert": {
+      "translation": "روبرت (اسم)",
+      "definition": "A basic English word used in the story."
+    },
+    "school": {
+      "translation": "مدرسة",
+      "definition": "A basic English word used in the story."
+    },
+    "shakespeare": {
+      "translation": "شكسبير",
+      "definition": "A basic English word used in the story."
+    },
+    "shall": {
+      "translation": "سوف / ينبغي",
+      "definition": "A basic English word used in the story."
+    },
+    "shaped": {
+      "translation": "مُشكَّل / صاغَ",
+      "definition": "A basic English word used in the story."
+    },
+    "shed": {
+      "translation": "أراق / سفك",
+      "definition": "A basic English word used in the story."
+    },
+    "should": {
+      "translation": "ينبغي / يجب",
+      "definition": "A basic English word used in the story."
+    },
+    "sights": {
+      "translation": "مناظر / مشاهد",
+      "definition": "A basic English word used in the story."
+    },
+    "soldier": {
+      "translation": "جندي",
+      "definition": "A basic English word used in the story."
+    },
+    "soldier'": {
+      "translation": "جندي (صيغة مضافة)",
+      "definition": "A basic English word used in the story."
+    },
+    "some": {
+      "translation": "بعض",
+      "definition": "A basic English word used in the story."
+    },
+    "somewhere": {
+      "translation": "في مكانٍ ما",
+      "definition": "A basic English word used in the story."
+    },
+    "sonnet": {
+      "translation": "سونيت (قصيدة غزلية)",
+      "definition": "A basic English word used in the story."
+    },
+    "sonnets": {
+      "translation": "سونيتات / قصائد سونيت",
+      "definition": "A basic English word used in the story."
+    },
+    "sounds": {
+      "translation": "أصوات",
+      "definition": "A basic English word used in the story."
+    },
+    "special": {
+      "translation": "خاص / مميّز",
+      "definition": "A basic English word used in the story."
+    },
+    "studied": {
+      "translation": "درسَ",
+      "definition": "A basic English word used in the story."
+    },
+    "sunday": {
+      "translation": "الأحد",
+      "definition": "A basic English word used in the story."
+    },
+    "suns": {
+      "translation": "شموس",
+      "definition": "A basic English word used in the story."
+    },
+    "symbol": {
+      "translation": "رمز",
+      "definition": "A basic English word used in the story."
+    },
+    "th": {
+      "translation": "لاحقة الترتيب «th»",
+      "definition": "A basic English word used in the story."
+    },
+    "that": {
+      "translation": "ذلك / أنّ",
+      "definition": "A basic English word used in the story."
+    },
+    "the": {
+      "translation": "أداة تعريف (ال)",
+      "definition": "A basic English word used in the story."
+    },
+    "there": {
+      "translation": "هناك",
+      "definition": "A basic English word used in the story."
+    },
+    "there's": {
+      "translation": "هناك / يوجد",
+      "definition": "A basic English word used in the story."
+    },
+    "think": {
+      "translation": "يفكّر",
+      "definition": "A basic English word used in the story."
+    },
+    "this": {
+      "translation": "هذا / هذه",
+      "definition": "A basic English word used in the story."
+    },
+    "thoughts": {
+      "translation": "أفكار",
+      "definition": "A basic English word used in the story."
+    },
+    "to": {
+      "translation": "إلى / أن",
+      "definition": "A basic English word used in the story."
+    },
+    "travelled": {
+      "translation": "سافرَ",
+      "definition": "A basic English word used in the story."
+    },
+    "under": {
+      "translation": "تحت",
+      "definition": "A basic English word used in the story."
+    },
+    "university": {
+      "translation": "جامعة",
+      "definition": "A basic English word used in the story."
+    },
+    "unlike": {
+      "translation": "بخلاف / على غير",
+      "definition": "A basic English word used in the story."
+    },
+    "verse": {
+      "translation": "بيت شعري / آية شعرية",
+      "definition": "A basic English word used in the story."
+    },
+    "war": {
+      "translation": "حرب",
+      "definition": "A basic English word used in the story."
+    },
+    "was": {
+      "translation": "كان",
+      "definition": "A basic English word used in the story."
+    },
+    "washed": {
+      "translation": "جرفته / غسلتْ",
+      "definition": "A basic English word used in the story."
+    },
+    "ways": {
+      "translation": "طرق / أساليب",
+      "definition": "A basic English word used in the story."
+    },
+    "who": {
+      "translation": "مَن",
+      "definition": "A basic English word used in the story."
+    },
+    "whom": {
+      "translation": "مَن (ضمير مفعول)",
+      "definition": "A basic English word used in the story."
+    },
+    "william": {
+      "translation": "ويليام",
+      "definition": "A basic English word used in the story."
+    },
+    "world": {
+      "translation": "العالم",
+      "definition": "A basic English word used in the story."
+    },
+    "written": {
+      "translation": "مكتوب",
+      "definition": "A basic English word used in the story."
+    },
+    "wrote": {
+      "translation": "كتبَ",
+      "definition": "A basic English word used in the story."
+    },
+    "year": {
+      "translation": "سنة / عام",
+      "definition": "A basic English word used in the story."
+    },
+    "you": {
+      "translation": "أنتَ / أنتِ / أنتم",
+      "definition": "A basic English word used in the story."
+    }
+  }
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "lesson-16",
+    "image": "/assets/images/courses_image/Level-C-16.webp",
+    "levelTitle": "If",
+    "levelDescription": "Stirring words of advice for life from the author of the Jungle Book.",
+    "levelKey": "Advanced",
+    "isLocked": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "IF",
+        "description": "Stirring words of advice for life from the author of the Jungle Book.",
+        "storyData": {
+          "content": [
+            {
+              "id": 1,
+              "text": "Words by Rudyard Kipling. Read by Richard Scott.",
+              "translationAr": "كلمات روديارد كيبلينج. قراءة ريتشارد سكوت.",
+              "audioUrl": ""
+            },
+            {
+              "id": 2,
+              "text": "Produced by Jana Elizabeth.",
+              "translationAr": "إنتاج جانا إليزابيث.",
+              "audioUrl": ""
+            },
+            {
+              "id": 3,
+              "text": "IF you can keep your head when all about you are losing theirs and blaming it on you,",
+              "translationAr": "إذا استطعت أن تحافظ على هدوءك عندما يفقد من حولك أعصابهم ويلقون باللوم عليك،",
+              "audioUrl": ""
+            },
+            {
+              "id": 4,
+              "text": "If you can trust yourself when all men doubt you, but make allowance for their doubting too;",
+              "translationAr": "وإن وثِقت بنفسك حين يشكّ فيك الجميع، ومع ذلك تتفهم شكهم أيضًا؛",
+              "audioUrl": ""
+            },
+            {
+              "id": 5,
+              "text": "If you can wait and not be tired by waiting, or being lied about, don’t deal in lies,",
+              "translationAr": "وإن قدرت على الانتظار دون أن تنهكك المشقّة، وإن كُذِب عليك فلا تكذب،",
+              "audioUrl": ""
+            },
+            {
+              "id": 6,
+              "text": "Or being hated, don’t give way to hating, and yet don’t look too good, nor talk too wise:",
+              "translationAr": "وإن كُرهت فلا تسلك سبيل الكراهية، ومع ذلك لا تُظهِر نفسك كاملًا ولا تتحدث بتعالٍ وحكمةٍ زائفة.",
+              "audioUrl": ""
+            },
+            {
+              "id": 7,
+              "text": "If you can dream – and not make dreams your master;",
+              "translationAr": "إن استطعت أن تحلم دون أن تجعل أحلامك سيدتك؛",
+              "audioUrl": ""
+            },
+            {
+              "id": 8,
+              "text": "If you can think – and not make thoughts your aim;",
+              "translationAr": "وأن تفكر دون أن تجعل الأفكار غايتك؛",
+              "audioUrl": ""
+            },
+            {
+              "id": 9,
+              "text": "If you can meet with Triumph and Disaster and treat those two impostors just the same;",
+              "translationAr": "وإن لاقيت النصرَ والهزيمة وتعاملت مع هذين الدخيلين معاملةً سواء؛",
+              "audioUrl": ""
+            },
+            {
+              "id": 10,
+              "text": "If you can bear to hear the truth you’ve spoken twisted by knaves to make a trap for fools,",
+              "translationAr": "وإن احتملت سماع الحقيقة التي قلتها تُحرفها الأوغاد لتصنع فخًا للحمقى،",
+              "audioUrl": ""
+            },
+            {
+              "id": 11,
+              "text": "Or watch the things you gave your life to, broken, and stoop and build ’em up with worn-out tools:",
+              "translationAr": "أو رأيت ما أفنيتَ فيه حياتك مكسورًا، فانحنيت لتبنيه مجددًا بأدواتٍ بالية:",
+              "audioUrl": ""
+            },
+            {
+              "id": 12,
+              "text": "If you can make one heap of all your winnings and risk it on one turn of pitch-and-toss,",
+              "translationAr": "إن جمعت مكاسبك كلها في كومة واحدة وخاطرت بها في رميةٍ واحدةٍ من لعبةٍ تُقذَف فيها العملة،",
+              "audioUrl": ""
+            },
+            {
+              "id": 13,
+              "text": "And lose, and start again at your beginnings and never breathe a word about your loss;",
+              "translationAr": "ثم خسرت، وبدأت من جديد من حيث ابتدأت، دون أن تهمس ولو بكلمةٍ عن خسارتك؛",
+              "audioUrl": ""
+            },
+            {
+              "id": 14,
+              "text": "If you can force your heart and nerve and sinew to serve your turn long after they are gone,",
+              "translationAr": "وإن أجبرت قلبك وأعصابك وأوتارك أن تخدمك طويلًا بعد أن تَخور قواها،",
+              "audioUrl": ""
+            },
+            {
+              "id": 15,
+              "text": "And so hold on when there is nothing in you except the Will which says to them: ‘Hold on!’",
+              "translationAr": "وصمدتَ حين لا يبقى فيك شيء إلا إرادةٌ تقول لها: «تماسكي!»",
+              "audioUrl": ""
+            },
+            {
+              "id": 16,
+              "text": "If you can talk with crowds and keep your virtue, or walk with Kings – nor lose the common touch,",
+              "translationAr": "إن استطعت أن تخاطب الجموع وتحافظ على فضيلتك، أو تمشي مع الملوك دون أن تفقد بساطتك وقربك من الناس،",
+              "audioUrl": ""
+            },
+            {
+              "id": 17,
+              "text": "If neither foes nor loving friends can hurt you, if all men count with you, but none too much;",
+              "translationAr": "إن لم يقدر لا الأعداء ولا الأصدقاء المحبون على إيذائك، وإن اعتُدّ كل الناس عندك بلا إفراطٍ في أحد؛",
+              "audioUrl": ""
+            },
+            {
+              "id": 18,
+              "text": "If you can fill the unforgiving minute with sixty seconds’ worth of distance run,",
+              "translationAr": "إن استطعت أن تملأ الدقيقة التي لا ترحم بستين ثانية من العدوّ والمسير،",
+              "audioUrl": ""
+            },
+            {
+              "id": 19,
+              "text": "Yours is the Earth and everything that’s in it, and – which is more – you’ll be a Man, my son!",
+              "translationAr": "فستكون الأرض وما فيها لك، وأزيد من ذلك—ستكون رجلًا يا بُني!",
+              "audioUrl": ""
+            }
+          ]
+        },
+        "wordDefinitions": {
           "a": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "a (بحاجة لمراجعة)",
+            "definition": "Article"
           },
-          "air": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "about": {
+            "translation": "عن",
+            "definition": "Adverb"
+          },
+          "after": {
+            "translation": "بعد",
+            "definition": "Vocabulary"
+          },
+          "again": {
+            "translation": "مرة أخرى",
+            "definition": "Adverb"
+          },
+          "aim": {
+            "translation": "غاية/هدف",
+            "definition": "Noun"
           },
           "all": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "كل",
+            "definition": "Vocabulary"
           },
-          "also": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "always": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "an": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "allowance": {
+            "translation": "تفهّم/سماح",
+            "definition": "Noun"
           },
           "and": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "و",
+            "definition": "Conjunction"
           },
-          "around": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "as": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "are": {
+            "translation": "يكونون/هم",
+            "definition": "Vocabulary"
           },
           "at": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "aware": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "away": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "back": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "battle": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "battlefield": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "at (بحاجة لمراجعة)",
+            "definition": "Vocabulary"
           },
           "be": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "يكون",
+            "definition": "Vocabulary"
           },
-          "beautiful": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "bear": {
+            "translation": "يتحمل",
+            "definition": "Verb"
           },
-          "before": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "beginnings": {
+            "translation": "البدايات",
+            "definition": "Noun"
           },
-          "blest": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "being": {
+            "translation": "كون/حال",
+            "definition": "Vocabulary"
           },
-          "body": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "blaming": {
+            "translation": "يلومون",
+            "definition": "Vocabulary"
           },
-          "bore": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "breathe": {
+            "translation": "يتنفس",
+            "definition": "Verb"
           },
-          "breathing": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "broken": {
+            "translation": "محطّم",
+            "definition": "Adjective"
           },
-          "brooke": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "build": {
+            "translation": "يبني",
+            "definition": "Verb"
           },
           "but": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "لكن",
+            "definition": "Conjunction"
           },
           "by": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "بـ",
+            "definition": "Vocabulary"
           },
-          "called": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "can": {
+            "translation": "تستطيع",
+            "definition": "Vocabulary"
           },
-          "cambridge": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "common": {
+            "translation": "البسيط/العادي",
+            "definition": "Adjective"
           },
-          "concealed": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "count": {
+            "translation": "يحسب/يعتدّ",
+            "definition": "Verb"
           },
-          "corner": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "crowds": {
+            "translation": "حشود",
+            "definition": "Noun"
           },
-          "could": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "deal": {
+            "translation": "يتعامل",
+            "definition": "Verb"
           },
-          "countries": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "disaster": {
+            "translation": "كارثة",
+            "definition": "Noun"
           },
-          "day": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "distance": {
+            "translation": "مسافة",
+            "definition": "Noun"
           },
-          "describing": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "don": {
+            "translation": "don (بحاجة لمراجعة)",
+            "definition": "Vocabulary"
           },
-          "die": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "doubt": {
+            "translation": "يشك",
+            "definition": "Vocabulary"
           },
-          "different": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "doubting": {
+            "translation": "الشك",
+            "definition": "Vocabulary"
+          },
+          "dream": {
+            "translation": "حلم/يحلم",
+            "definition": "Noun"
           },
           "dreams": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "during": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "dust": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "each": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "أحلام",
+            "definition": "Noun"
           },
           "earth": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "الأرض",
+            "definition": "Noun"
           },
-          "ended": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "elizabeth": {
+            "translation": "إليزابيث",
+            "definition": "Vocabulary"
           },
-          "england": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "em": {
+            "translation": "em (بحاجة لمراجعة)",
+            "definition": "Vocabulary"
           },
-          "england's": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "everything": {
+            "translation": "كل شيء",
+            "definition": "Noun"
           },
-          "english": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "except": {
+            "translation": "باستثناء",
+            "definition": "Vocabulary"
           },
-          "eternal": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "fill": {
+            "translation": "يملأ",
+            "definition": "Verb"
           },
-          "europe": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "foes": {
+            "translation": "أعداء",
+            "definition": "Noun"
           },
-          "evil": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "fools": {
+            "translation": "حمقى",
+            "definition": "Noun"
           },
-          "famous": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "for": {
+            "translation": "لـ",
+            "definition": "Vocabulary"
           },
-          "father": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "field": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "fields": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "first": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "flowers": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "foreign": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "forever": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "form": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "force": {
+            "translation": "يُجبر/يدفع",
+            "definition": "Verb"
           },
           "friends": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "from": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "أصدقاء",
+            "definition": "Noun"
           },
           "gave": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "أعطيت/منحت",
+            "definition": "Vocabulary"
           },
-          "gentle": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "give": {
+            "translation": "يعطي",
+            "definition": "Vocabulary"
           },
-          "gentleness": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "gone": {
+            "translation": "رحلوا/انتهوا",
+            "definition": "Vocabulary"
           },
-          "given": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "good": {
+            "translation": "جيّد",
+            "definition": "Vocabulary"
           },
-          "gives": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "hated": {
+            "translation": "مكروه",
+            "definition": "Vocabulary"
           },
-          "grew": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "hating": {
+            "translation": "الكراهية",
+            "definition": "Vocabulary"
           },
-          "happy": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "head": {
+            "translation": "رأس",
+            "definition": "Noun"
           },
-          "have": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "heap": {
+            "translation": "كومة",
+            "definition": "Noun"
           },
-          "he": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "headmaster": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "hear": {
+            "translation": "يسمع",
+            "definition": "Verb"
           },
           "heart": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "قلب",
+            "definition": "Noun"
           },
-          "hearts": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "hold": {
+            "translation": "تمسّك",
+            "definition": "Verb"
           },
-          "heaven": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "her": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "his": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "home": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "horror": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "i": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "hurt": {
+            "translation": "يؤذي",
+            "definition": "Verb"
           },
           "if": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "إن",
+            "definition": "Vocabulary"
+          },
+          "impostors": {
+            "translation": "مدّعون/دخيلان",
+            "definition": "Noun"
           },
           "in": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "في",
+            "definition": "Vocabulary"
           },
           "is": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "يكون",
+            "definition": "Vocabulary"
           },
           "it": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "هو/هي (لغير العاقل)",
+            "definition": "Pronoun"
           },
-          "know": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "jana": {
+            "translation": "جانا",
+            "definition": "Vocabulary"
           },
-          "known": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "just": {
+            "translation": "فقط/تمامًا",
+            "definition": "Adjective"
           },
-          "land": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "keep": {
+            "translation": "تحافظ",
+            "definition": "Verb"
           },
-          "later": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "kings": {
+            "translation": "الملوك",
+            "definition": "Noun"
           },
-          "laughter": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "kipling": {
+            "translation": "كيبلينج",
+            "definition": "Vocabulary"
           },
-          "learnt": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "knaves": {
+            "translation": "أوغاد",
+            "definition": "Vocabulary"
           },
-          "less": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "lied": {
+            "translation": "كُذِب",
+            "definition": "Vocabulary"
           },
-          "like": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "lies": {
+            "translation": "أكاذيب",
+            "definition": "Vocabulary"
           },
-          "lines": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "life": {
+            "translation": "حياة",
+            "definition": "Noun"
           },
-          "love": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "ll": {
+            "translation": "ll (بحاجة لمراجعة)",
+            "definition": "Vocabulary"
           },
-          "made": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "long": {
+            "translation": "طويلًا",
+            "definition": "Adverb"
           },
-          "many": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "look": {
+            "translation": "ينظر/يبدو",
+            "definition": "Verb"
           },
-          "marked": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "lose": {
+            "translation": "تفقد",
+            "definition": "Verb"
           },
-          "me": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "losing": {
+            "translation": "يفقدون",
+            "definition": "Vocabulary"
           },
-          "might": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "loss": {
+            "translation": "خسارة",
+            "definition": "Noun"
           },
-          "mind": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "loving": {
+            "translation": "محبّون",
+            "definition": "Adjective"
+          },
+          "make": {
+            "translation": "يجعل",
+            "definition": "Vocabulary"
+          },
+          "man": {
+            "translation": "رجل",
+            "definition": "Noun"
+          },
+          "master": {
+            "translation": "سيّد",
+            "definition": "Noun"
+          },
+          "meet": {
+            "translation": "يلتقي/يواجه",
+            "definition": "Verb"
+          },
+          "men": {
+            "translation": "الرجال",
+            "definition": "Noun"
+          },
+          "minute": {
+            "translation": "دقيقة",
+            "definition": "Noun"
           },
           "more": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "أكثر",
+            "definition": "Adjective"
           },
-          "name": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "much": {
+            "translation": "كثيرًا",
+            "definition": "Vocabulary"
           },
-          "nearest": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "my": {
+            "translation": "يا/لي",
+            "definition": "Pronoun"
           },
-          "no": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "neither": {
+            "translation": "لا هذا ولا ذاك",
+            "definition": "Vocabulary"
+          },
+          "nerve": {
+            "translation": "عصب",
+            "definition": "Noun"
+          },
+          "never": {
+            "translation": "أبدًا",
+            "definition": "Adverb"
+          },
+          "none": {
+            "translation": "لا أحد",
+            "definition": "Vocabulary"
+          },
+          "nor": {
+            "translation": "ولا",
+            "definition": "Conjunction"
           },
           "not": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "لا",
+            "definition": "Vocabulary"
           },
-          "november": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "number": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "nothing": {
+            "translation": "لا شيء",
+            "definition": "Adjective"
           },
           "of": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "of (بحاجة لمراجعة)",
+            "definition": "Vocabulary"
           },
           "on": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "على/استمر",
+            "definition": "Adverb"
           },
-          "once": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "one": {
+            "translation": "واحد",
+            "definition": "Vocabulary"
           },
-          "only": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "or": {
+            "translation": "أو",
+            "definition": "Conjunction"
           },
-          "outbreak": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "out": {
+            "translation": "خارج/تمامًا",
+            "definition": "Adverb"
           },
-          "peace": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "pitch": {
+            "translation": "رمي",
+            "definition": "Noun"
           },
-          "piece": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "produced": {
+            "translation": "إنتاج",
+            "definition": "Vocabulary"
           },
-          "playwright": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "read": {
+            "translation": "قراءة",
+            "definition": "Vocabulary"
           },
-          "poem": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "richard": {
+            "translation": "ريتشارد",
+            "definition": "Vocabulary"
           },
-          "poems": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "risk": {
+            "translation": "يُخاطر",
+            "definition": "Verb"
           },
-          "poet": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "rudyard": {
+            "translation": "روديارد",
+            "definition": "Vocabulary"
           },
-          "poppy": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "run": {
+            "translation": "عدو/يركض",
+            "definition": "Verb"
           },
-          "pulse": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "s": {
+            "translation": "s (بحاجة لمراجعة)",
+            "definition": "Vocabulary"
           },
-          "red": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "same": {
+            "translation": "نفسه",
+            "definition": "Adjective"
           },
-          "remembrance": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "says": {
+            "translation": "تقول",
+            "definition": "Verb"
           },
-          "rich": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "scott": {
+            "translation": "سكوت",
+            "definition": "Vocabulary"
           },
-          "richer": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "seconds": {
+            "translation": "ثوانٍ",
+            "definition": "Noun"
           },
-          "rivers": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "serve": {
+            "translation": "يخدم",
+            "definition": "Verb"
           },
-          "roam": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "sinew": {
+            "translation": "وتر",
+            "definition": "Noun"
           },
-          "rugby": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "sixty": {
+            "translation": "ستون",
+            "definition": "Vocabulary"
           },
-          "rupert": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "so": {
+            "translation": "لذا",
+            "definition": "Adverb"
           },
-          "school": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "son": {
+            "translation": "ابني",
+            "definition": "Noun"
           },
-          "shakespeare": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "spoken": {
+            "translation": "قيل/نُطق",
+            "definition": "Vocabulary"
           },
-          "shall": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "start": {
+            "translation": "يبدأ",
+            "definition": "Verb"
           },
-          "shaped": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "stoop": {
+            "translation": "ينحني",
+            "definition": "Verb"
           },
-          "shed": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "t": {
+            "translation": "t (بحاجة لمراجعة)",
+            "definition": "Vocabulary"
           },
-          "should": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "sights": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "soldier": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "soldier'": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "some": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "somewhere": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "sonnet": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "sonnets": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "sounds": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "special": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "studied": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "sunday": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "suns": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "symbol": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
-          },
-          "th": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "talk": {
+            "translation": "تحدث",
+            "definition": "Verb"
           },
           "that": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "that (بحاجة لمراجعة)",
+            "definition": "Vocabulary"
           },
           "the": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "ال",
+            "definition": "Article"
+          },
+          "their": {
+            "translation": "لهم/خاصتهم",
+            "definition": "Pronoun"
+          },
+          "theirs": {
+            "translation": "خاصتهم",
+            "definition": "Vocabulary"
+          },
+          "them": {
+            "translation": "لهم/إياهم",
+            "definition": "Pronoun"
           },
           "there": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "هناك",
+            "definition": "Adverb"
           },
-          "there's": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "they": {
+            "translation": "هم",
+            "definition": "Pronoun"
+          },
+          "things": {
+            "translation": "أشياء",
+            "definition": "Noun"
           },
           "think": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "يفكر",
+            "definition": "Verb"
           },
-          "this": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "those": {
+            "translation": "أولئك",
+            "definition": "Vocabulary"
           },
           "thoughts": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "أفكار",
+            "definition": "Noun"
+          },
+          "tired": {
+            "translation": "متعب",
+            "definition": "Adjective"
           },
           "to": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "إلى",
+            "definition": "Vocabulary"
           },
-          "travelled": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "too": {
+            "translation": "جداً/زيادة",
+            "definition": "Adverb"
           },
-          "under": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "tools": {
+            "translation": "أدوات",
+            "definition": "Noun"
           },
-          "university": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "toss": {
+            "translation": "قذف/قرعة",
+            "definition": "Noun"
           },
-          "unlike": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "touch": {
+            "translation": "مسحة/صلة",
+            "definition": "Vocabulary"
           },
-          "verse": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "trap": {
+            "translation": "فخ",
+            "definition": "Noun"
           },
-          "war": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "treat": {
+            "translation": "يعامل",
+            "definition": "Verb"
           },
-          "was": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "triumph": {
+            "translation": "نصر",
+            "definition": "Noun"
           },
-          "washed": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "trust": {
+            "translation": "يثق",
+            "definition": "Verb"
           },
-          "ways": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "truth": {
+            "translation": "حقيقة",
+            "definition": "Noun"
           },
-          "who": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "turn": {
+            "translation": "دور/لفة",
+            "definition": "Noun"
           },
-          "whom": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "twisted": {
+            "translation": "محرّف",
+            "definition": "Adjective"
           },
-          "william": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "two": {
+            "translation": "اثنان",
+            "definition": "Vocabulary"
           },
-          "world": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "unforgiving": {
+            "translation": "لا يرحم",
+            "definition": "Adjective"
           },
-          "written": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "up": {
+            "translation": "إلى أعلى/من جديد",
+            "definition": "Adverb"
           },
-          "wrote": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "ve": {
+            "translation": "ve (بحاجة لمراجعة)",
+            "definition": "Vocabulary"
           },
-          "year": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+          "virtue": {
+            "translation": "فضيلة",
+            "definition": "Noun"
+          },
+          "wait": {
+            "translation": "ينتظر",
+            "definition": "Verb"
+          },
+          "waiting": {
+            "translation": "الانتظار",
+            "definition": "Vocabulary"
+          },
+          "walk": {
+            "translation": "يمشي",
+            "definition": "Verb"
+          },
+          "watch": {
+            "translation": "يراقب/يشاهد",
+            "definition": "Verb"
+          },
+          "way": {
+            "translation": "طريق/مجال",
+            "definition": "Vocabulary"
+          },
+          "when": {
+            "translation": "عندما",
+            "definition": "Vocabulary"
+          },
+          "which": {
+            "translation": "الذي/التي",
+            "definition": "Vocabulary"
+          },
+          "will": {
+            "translation": "إرادة",
+            "definition": "Noun"
+          },
+          "winnings": {
+            "translation": "مكاسب",
+            "definition": "Noun"
+          },
+          "wise": {
+            "translation": "حكيم",
+            "definition": "Vocabulary"
+          },
+          "with": {
+            "translation": "مع",
+            "definition": "Vocabulary"
+          },
+          "word": {
+            "translation": "كلمة",
+            "definition": "Noun"
+          },
+          "words": {
+            "translation": "كلمات",
+            "definition": "Vocabulary"
+          },
+          "worn": {
+            "translation": "بالي/مستهلك",
+            "definition": "Adjective"
+          },
+          "worth": {
+            "translation": "بقدر/قيمة",
+            "definition": "Vocabulary"
+          },
+          "yet": {
+            "translation": "ومع ذلك",
+            "definition": "Vocabulary"
           },
           "you": {
-            "translation": "",
-            "definition": "A basic English word used in the story."
+            "translation": "أنت",
+            "definition": "Pronoun"
+          },
+          "your": {
+            "translation": "خاصتك",
+            "definition": "Pronoun"
+          },
+          "yours": {
+            "translation": "لك",
+            "definition": "Pronoun"
+          },
+          "yourself": {
+            "translation": "نفسك",
+            "definition": "Pronoun"
           }
         }
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "lesson-17",
+    "image": "/assets/images/courses_image/Level-C-17.webp",
+    "levelTitle": "The Fox and the Crow",
+    "levelDescription": "Did you know that foxes love cheese? If you didn’t, you should hear this short story with a moral by Aesop about a cunning fox who flatters and tricks a vain crow.",
+    "levelKey": "Advanced",
+    "isLocked": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "The Fox and the Crow",
+        "description": "Did you know that foxes love cheese? If you didn’t, you should hear this short story with a moral by Aesop about a cunning fox who flatters and tricks a vain crow.",
+        "storyData": {
+          "content": [
+      {
+        "id": 1,
+        "text": "I bet you can’t guess what I like to eat best of all?",
+        "translationAr": "أراهن أنك لا تستطيع أن تخمّن ما أحبه أكثر من أي طعام آخر؟",
+        "audioUrl": ""
+      },
+      {
+        "id": 2,
+        "text": "Yes, I knew that you would say that foxes like to eat hens best, and stolen ones at that.",
+        "translationAr": "نعم، كنت أعلم أنك ستقول إن الثعالب تحب أكل الدجاج أكثر شيء، وخاصة المسروق منه.",
+        "audioUrl": ""
+      },
+      {
+        "id": 3,
+        "text": "I don’t mind admitting that I wouldn’t ever say no to a nice fat chicken wing once in a while.",
+        "translationAr": "لا أمانع الاعتراف بأنني لا أرفض جناح دجاجة سمين من حين لآخر.",
+        "audioUrl": ""
+      },
+      {
+        "id": 4,
+        "text": "But not many people know that what foxes appreciate even more than chicken, is a nice piece of cheese once in a while.",
+        "translationAr": "ولكن ليس كثير من الناس يعرفون أن ما يقدّره الثعلب أكثر من الدجاج هو قطعة جبن لذيذة بين الحين والآخر.",
+        "audioUrl": ""
+      },
+      {
+        "id": 5,
+        "text": "Well today I ate a wonderfully rich and creamy slice of cheddar for my breakfast.",
+        "translationAr": "حسنًا، اليوم تناولت شريحة شيدر غنية ودسمة على الإفطار.",
+        "audioUrl": ""
+      },
+      {
+        "id": 6,
+        "text": "It was kindly given to me by a beautiful black-feathered bird whose voice is even more wonderful than her looks.",
+        "translationAr": "وقد أعطتني إياها طائر جميل ذو ريش أسود، صوته أروع حتى من مظهره.",
+        "audioUrl": ""
+      },
+      {
+        "id": 7,
+        "text": "No, I don’t mean a sky-lark, or a fancy bird of paradise.",
+        "translationAr": "لا، لا أقصد القبرة، ولا طائر الجنة المتفاخر.",
+        "audioUrl": ""
+      },
+      {
+        "id": 8,
+        "text": "I’m talking about Miss Crow, up in that tree.",
+        "translationAr": "أنا أتحدث عن الآنسة غراب، هناك على الشجرة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 9,
+        "text": "It was a fine bright morning, and I was following my sharp nose through the woods in search of a bite to eat, when I caught a cheesy smell on the breeze.",
+        "translationAr": "كان صباحًا جميلًا ومشرقًا، وكنت أتتبع أنفي الحاد في الغابة بحثًا عن لقمة آكلها، عندما التقطت رائحة الجبن محمولة على النسيم.",
+        "audioUrl": ""
+      },
+      {
+        "id": 10,
+        "text": "I looked up into the tree and there on the branch I saw Miss Crow, looking terribly pleased with herself, for in her beak she held a large piece of cheese.",
+        "translationAr": "نظرت إلى أعلى الشجرة، فإذا بالآنسة غراب تجلس على الغصن راضية جدًا عن نفسها، وفي منقارها قطعة جبن كبيرة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 11,
+        "text": "It was stolen, no doubt, from the farmer over the hill, but I’m not one to go around accusing people of this and that.",
+        "translationAr": "لم يكن هناك شك أنها مسروقة من المزارع خلف التل، لكنني لست ممن يتهمون الناس دون دليل.",
+        "audioUrl": ""
+      },
+      {
+        "id": 12,
+        "text": "I called up to my neighbour and said: “Good morning Miss Crow, you are looking very lovely today, if I may say so.”",
+        "translationAr": "ناديت جاري وقلت: “صباح الخير يا آنسة غراب، تبدين جميلة جدًا اليوم، إن جاز لي القول.”",
+        "audioUrl": ""
+      },
+      {
+        "id": 13,
+        "text": "Miss Crow cocked her head on one side and looked at me with her beady little eye, but she kept her beak firmly closed on the cheese.",
+        "translationAr": "أمالت الآنسة غراب رأسها إلى جانب ونظرت إلي بعينها الصغيرة اللامعة، لكنها أبقت منقارها مغلقًا بإحكام على الجبن.",
+        "audioUrl": ""
+      },
+      {
+        "id": 14,
+        "text": "“Such a charming creature,” I mused to myself, making sure nevertheless that she could overhear.",
+        "translationAr": "قلت لنفسي متعمدًا أن تسمع: “يا لها من مخلوقة جذابة.”",
+        "audioUrl": ""
+      },
+      {
+        "id": 15,
+        "text": "“Such a fine sheen on those wondrous black feathers. What wings! What legs! And that beak, exquisite!”",
+        "translationAr": "“يا لهذا البريق الرائع على ريشها الأسود العجيب. ما تلك الأجنحة! ما تلك الساقان! وذلك المنقار، بديع!”",
+        "audioUrl": ""
+      },
+      {
+        "id": 16,
+        "text": "I could see that Miss Crow was paying close attention to my words, even though she was pretending ever so hard not to hear.",
+        "translationAr": "كنت أرى أن الآنسة غراب تنصت جيدًا لكلامي، رغم أنها تتظاهر بأنها لا تسمع شيئًا.",
+        "audioUrl": ""
+      },
+      {
+        "id": 17,
+        "text": "So I gazed up at the tree with admiration and love in my eyes and said: “Ah, my heart is smitten by this wonderful bird.",
+        "translationAr": "فرفعت بصري إلى الشجرة بإعجاب ومحبة وقلت: “آه، لقد سحر قلبي هذا الطائر الرائع.",
+        "audioUrl": ""
+      },
+      {
+        "id": 18,
+        "text": "If only I could hear her voice.",
+        "translationAr": "لو أنني فقط أستطيع سماع صوتها.",
+        "audioUrl": ""
+      },
+      {
+        "id": 19,
+        "text": "I’m sure that such a charming creature must sing most sweetly!",
+        "translationAr": "أنا متأكد أن مثل هذه المخلوقة الساحرة لابد أن تغني أعذب الألحان!",
+        "audioUrl": ""
+      },
+      {
+        "id": 20,
+        "text": "If I could but hear one line of her song, I would hail her as the Princess of The Forest!”",
+        "translationAr": "لو سمعت فقط سطرًا واحدًا من أغنيتها، لأعلنتها أميرة الغابة!",
+        "audioUrl": ""
+      },
+      {
+        "id": 21,
+        "text": "Now I could see my words had hit home.",
+        "translationAr": "والآن أدركت أن كلماتي قد بلغت هدفها.",
+        "audioUrl": ""
+      },
+      {
+        "id": 22,
+        "text": "Swelling with pride, Miss Crow puffed up her feathers and began to sing the most lovely music I have ever heard.",
+        "translationAr": "امتلأت الآنسة غراب بالغرور، فنفشت ريشها وبدأت تغني أجمل أغنية سمعتها في حياتي.",
+        "audioUrl": ""
+      },
+      {
+        "id": 24,
+        "text": "Well alright, I know that you are saying that Miss Crow’s voice is not exactly star quality,",
+        "translationAr": "حسنًا، أعلم أنك ستقول إن صوت الآنسة غراب ليس تمامًا صوت نجم.",
+        "audioUrl": ""
+      },
+      {
+        "id": 25,
+        "text": "but to me that “cawww!” was just the sound that I’d been waiting for.",
+        "translationAr": "لكن بالنسبة لي ذلك الـ“كاو!” كان الصوت الذي كنت أنتظره.",
+        "audioUrl": ""
+      },
+      {
+        "id": 26,
+        "text": "Because as soon as she opened her beak, the cheese fell to the ground and I snapped up my breakfast.",
+        "translationAr": "لأنه بمجرد أن فتحت منقارها، سقط الجبن على الأرض فخطفته فورًا وتناولته للإفطار.",
+        "audioUrl": ""
+      },
+      {
+        "id": 27,
+        "text": "Which only goes to show that: Flattery will get you everywhere.",
+        "translationAr": "وهذا يثبت ببساطة: المديح الزائد يفتح كل الأبواب.",
+        "audioUrl": ""
+      }
+    ]
+        },
+        
+  "wordDefinitions": {
+    "a": {
+      "translation": "أداة نكرة",
+      "definition": "Article"
+    },
+    "about": {
+      "translation": "عن",
+      "definition": "Vocabulary"
+    },
+    "accusing": {
+      "translation": "اتهام",
+      "definition": "Vocabulary"
+    },
+    "admiration": {
+      "translation": "إعجاب",
+      "definition": "Noun"
+    },
+    "admitting": {
+      "translation": "الاعتراف",
+      "definition": "Vocabulary"
+    },
+    "ah": {
+      "translation": "آه",
+      "definition": "Vocabulary"
+    },
+    "all": {
+      "translation": "كل",
+      "definition": "Vocabulary"
+    },
+    "alright": {
+      "translation": "حسنًا",
+      "definition": "Adjective"
+    },
+    "and": {
+      "translation": "و",
+      "definition": "Conjunction"
+    },
+    "appreciate": {
+      "translation": "يقدّرون",
+      "definition": "Verb"
+    },
+    "are": {
+      "translation": "أنتِ/أنتَ تكون",
+      "definition": "Vocabulary"
+    },
+    "around": {
+      "translation": "حول",
+      "definition": "Adverb"
+    },
+    "as": {
+      "translation": "حالما/بينما/كما",
+      "definition": "Conjunction"
+    },
+    "at": {
+      "translation": "عند/في",
+      "definition": "Vocabulary"
+    },
+    "ate": {
+      "translation": "أكلت",
+      "definition": "Verb"
+    },
+    "attention": {
+      "translation": "اهتمام",
+      "definition": "Vocabulary"
+    },
+    "beady": {
+      "translation": "لامعة/خرزية",
+      "definition": "Adjective"
+    },
+    "beak": {
+      "translation": "منقار",
+      "definition": "Noun"
+    },
+    "beautiful": {
+      "translation": "جميل",
+      "definition": "Adjective"
+    },
+    "because": {
+      "translation": "لأن",
+      "definition": "Conjunction"
+    },
+    "been": {
+      "translation": "كنت قد",
+      "definition": "Vocabulary"
+    },
+    "began": {
+      "translation": "بدأت",
+      "definition": "Verb"
+    },
+    "best": {
+      "translation": "الأفضل",
+      "definition": "Vocabulary"
+    },
+    "bet": {
+      "translation": "أراهن",
+      "definition": "Verb"
+    },
+    "bird": {
+      "translation": "طائر",
+      "definition": "Noun"
+    },
+    "bite": {
+      "translation": "لقمة/عضة",
+      "definition": "Noun"
+    },
+    "black": {
+      "translation": "أسود",
+      "definition": "Adjective"
+    },
+    "branch": {
+      "translation": "غصن",
+      "definition": "Noun"
+    },
+    "breakfast": {
+      "translation": "فطوري/الإفطار",
+      "definition": "Noun"
+    },
+    "breeze": {
+      "translation": "نسيم",
+      "definition": "Noun"
+    },
+    "bright": {
+      "translation": "مشرق",
+      "definition": "Adjective"
+    },
+    "but": {
+      "translation": "لكن",
+      "definition": "Conjunction"
+    },
+    "by": {
+      "translation": "بواسطة",
+      "definition": "Vocabulary"
+    },
+    "caawwwwwwwww": {
+      "translation": "caawwwwwwwww (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "called": {
+      "translation": "نادت/دعوت",
+      "definition": "Verb"
+    },
+    "can't": {
+      "translation": "لا تستطيع",
+      "definition": "Vocabulary"
+    },
+    "caught": {
+      "translation": "التقط/شمّ",
+      "definition": "Verb"
+    },
+    "cawww": {
+      "translation": "cawww (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "charming": {
+      "translation": "ساحر/جذاب",
+      "definition": "Adjective"
+    },
+    "cheddar": {
+      "translation": "تشيدر",
+      "definition": "Noun"
+    },
+    "cheese": {
+      "translation": "جبن",
+      "definition": "Noun"
+    },
+    "cheesy": {
+      "translation": "برائحة الجبن",
+      "definition": "Adjective"
+    },
+    "chicken": {
+      "translation": "دجاج",
+      "definition": "Vocabulary"
+    },
+    "close": {
+      "translation": "عن كثب/قريب",
+      "definition": "Adjective"
+    },
+    "closed": {
+      "translation": "مغلق",
+      "definition": "Vocabulary"
+    },
+    "cocked": {
+      "translation": "أمالت",
+      "definition": "Vocabulary"
+    },
+    "could": {
+      "translation": "أستطيع",
+      "definition": "Verb"
+    },
+    "creamy": {
+      "translation": "كريمي/دهني",
+      "definition": "Adjective"
+    },
+    "creature": {
+      "translation": "مخلوقة",
+      "definition": "Vocabulary"
+    },
+    "crow": {
+      "translation": "غراب",
+      "definition": "Noun"
+    },
+    "crow's": {
+      "translation": "crow's (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "don't": {
+      "translation": "لا",
+      "definition": "Vocabulary"
+    },
+    "doubt": {
+      "translation": "شك",
+      "definition": "Noun"
+    },
+    "eat": {
+      "translation": "يأكل",
+      "definition": "Verb"
+    },
+    "even": {
+      "translation": "حتى",
+      "definition": "Vocabulary"
+    },
+    "ever": {
+      "translation": "قط/أبدًا",
+      "definition": "Adverb"
+    },
+    "everywhere": {
+      "translation": "كل مكان",
+      "definition": "Adjective"
+    },
+    "exactly": {
+      "translation": "تمامًا",
+      "definition": "Adjective"
+    },
+    "exquisite": {
+      "translation": "بديع/فاتن",
+      "definition": "Adjective"
+    },
+    "eye": {
+      "translation": "عين",
+      "definition": "Noun"
+    },
+    "eyes": {
+      "translation": "عيناي",
+      "definition": "Noun"
+    },
+    "fancy": {
+      "translation": "متفاخر/فاخر",
+      "definition": "Vocabulary"
+    },
+    "farmer": {
+      "translation": "مزارع",
+      "definition": "Noun"
+    },
+    "fat": {
+      "translation": "سمين",
+      "definition": "Adjective"
+    },
+    "feathered": {
+      "translation": "مكسو بالريش",
+      "definition": "Vocabulary"
+    },
+    "feathers": {
+      "translation": "ريش",
+      "definition": "Noun"
+    },
+    "fell": {
+      "translation": "سقط",
+      "definition": "Verb"
+    },
+    "fine": {
+      "translation": "رائع",
+      "definition": "Adjective"
+    },
+    "firmly": {
+      "translation": "بإحكام",
+      "definition": "Adjective"
+    },
+    "flattery": {
+      "translation": "المديح/التملّق",
+      "definition": "Noun"
+    },
+    "following": {
+      "translation": "أتتبع",
+      "definition": "Verb"
+    },
+    "for": {
+      "translation": "لـ/من أجل",
+      "definition": "Vocabulary"
+    },
+    "forest": {
+      "translation": "الغابة",
+      "definition": "Noun"
+    },
+    "foxes": {
+      "translation": "ثعالب",
+      "definition": "Noun"
+    },
+    "from": {
+      "translation": "from (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "gazed": {
+      "translation": "حدّقت/رفعت بصري",
+      "definition": "Verb"
+    },
+    "get": {
+      "translation": "ينال/يجلب",
+      "definition": "Verb"
+    },
+    "given": {
+      "translation": "أُعطي",
+      "definition": "Verb"
+    },
+    "go": {
+      "translation": "أذهب/يمضي",
+      "definition": "Vocabulary"
+    },
+    "goes": {
+      "translation": "يفيد/يبيّن",
+      "definition": "Verb"
+    },
+    "good": {
+      "translation": "طيب/جيد",
+      "definition": "Adjective"
+    },
+    "ground": {
+      "translation": "الأرض",
+      "definition": "Noun"
+    },
+    "guess": {
+      "translation": "تخمن",
+      "definition": "Verb"
+    },
+    "had": {
+      "translation": "قد",
+      "definition": "Verb"
+    },
+    "hail": {
+      "translation": "أعلن/يمدح",
+      "definition": "Verb"
+    },
+    "hard": {
+      "translation": "بشدة",
+      "definition": "Vocabulary"
+    },
+    "have": {
+      "translation": "have (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "head": {
+      "translation": "رأس",
+      "definition": "Noun"
+    },
+    "hear": {
+      "translation": "تسمع",
+      "definition": "Verb"
+    },
+    "heard": {
+      "translation": "سمعت",
+      "definition": "Verb"
+    },
+    "heart": {
+      "translation": "قلبي",
+      "definition": "Noun"
+    },
+    "held": {
+      "translation": "تمسِك/تحمل",
+      "definition": "Verb"
+    },
+    "hens": {
+      "translation": "دجاجات",
+      "definition": "Noun"
+    },
+    "her": {
+      "translation": "لها/هي",
+      "definition": "Pronoun"
+    },
+    "herself": {
+      "translation": "نفسها",
+      "definition": "Pronoun"
+    },
+    "hill": {
+      "translation": "تل",
+      "definition": "Noun"
+    },
+    "hit": {
+      "translation": "أصاب/بلغ",
+      "definition": "Verb"
+    },
+    "home": {
+      "translation": "هدفه/البيت",
+      "definition": "Vocabulary"
+    },
+    "i": {
+      "translation": "أنا",
+      "definition": "Pronoun"
+    },
+    "i'd": {
+      "translation": "i'd (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "i'm": {
+      "translation": "أنا",
+      "definition": "Vocabulary"
+    },
+    "if": {
+      "translation": "إذا",
+      "definition": "Conjunction"
+    },
+    "in": {
+      "translation": "في",
+      "definition": "Vocabulary"
+    },
+    "into": {
+      "translation": "إلى داخل",
+      "definition": "Adverb"
+    },
+    "is": {
+      "translation": "يكون",
+      "definition": "Vocabulary"
+    },
+    "it": {
+      "translation": "إنه/ذلك",
+      "definition": "Pronoun"
+    },
+    "just": {
+      "translation": "فقط/تمامًا",
+      "definition": "Adverb"
+    },
+    "kept": {
+      "translation": "أبقت",
+      "definition": "Verb"
+    },
+    "kindly": {
+      "translation": "بلطف",
+      "definition": "Vocabulary"
+    },
+    "knew": {
+      "translation": "كنت أعلم",
+      "definition": "Vocabulary"
+    },
+    "know": {
+      "translation": "يعرفون",
+      "definition": "Verb"
+    },
+    "large": {
+      "translation": "كبير",
+      "definition": "Adjective"
+    },
+    "lark": {
+      "translation": "قبرة",
+      "definition": "Noun"
+    },
+    "legs": {
+      "translation": "سيقان",
+      "definition": "Noun"
+    },
+    "like": {
+      "translation": "يحب/مثل",
+      "definition": "Verb"
+    },
+    "line": {
+      "translation": "سطر/مقطع",
+      "definition": "Noun"
+    },
+    "little": {
+      "translation": "صغيرة",
+      "definition": "Adjective"
+    },
+    "looked": {
+      "translation": "نظرت",
+      "definition": "Verb"
+    },
+    "looking": {
+      "translation": "تنظر/تبدو",
+      "definition": "Vocabulary"
+    },
+    "looks": {
+      "translation": "المظهر",
+      "definition": "Noun"
+    },
+    "love": {
+      "translation": "محبة/حب",
+      "definition": "Noun"
+    },
+    "lovely": {
+      "translation": "جميلة",
+      "definition": "Adjective"
+    },
+    "making": {
+      "translation": "جاعلاً",
+      "definition": "Verb"
+    },
+    "many": {
+      "translation": "كثير من",
+      "definition": "Adjective"
+    },
+    "may": {
+      "translation": "يسمح/ربما",
+      "definition": "Vocabulary"
+    },
+    "me": {
+      "translation": "بالنسبة لي",
+      "definition": "Pronoun"
+    },
+    "mean": {
+      "translation": "أقصد",
+      "definition": "Verb"
+    },
+    "mind": {
+      "translation": "أمانع/عقل",
+      "definition": "Vocabulary"
+    },
+    "miss": {
+      "translation": "الآنسة",
+      "definition": "Noun"
+    },
+    "more": {
+      "translation": "أكثر",
+      "definition": "Adjective"
+    },
+    "morning": {
+      "translation": "صباح الخير",
+      "definition": "Noun"
+    },
+    "most": {
+      "translation": "أجمل/أشد",
+      "definition": "Adjective"
+    },
+    "mused": {
+      "translation": "قال في نفسه/تمتم",
+      "definition": "Verb"
+    },
+    "music": {
+      "translation": "موسيقى/غناء",
+      "definition": "Noun"
+    },
+    "must": {
+      "translation": "لا بد أن",
+      "definition": "Vocabulary"
+    },
+    "my": {
+      "translation": "خاصتي/لي",
+      "definition": "Pronoun"
+    },
+    "myself": {
+      "translation": "نفسي",
+      "definition": "Vocabulary"
+    },
+    "neighbour": {
+      "translation": "جار/جارتي",
+      "definition": "Noun"
+    },
+    "nevertheless": {
+      "translation": "مع ذلك/برغم ذلك",
+      "definition": "Vocabulary"
+    },
+    "nice": {
+      "translation": "لذيذ/لطيف",
+      "definition": "Adjective"
+    },
+    "no": {
+      "translation": "لا",
+      "definition": "Vocabulary"
+    },
+    "nose": {
+      "translation": "أنف",
+      "definition": "Noun"
+    },
+    "not": {
+      "translation": "ليس/لا",
+      "definition": "Vocabulary"
+    },
+    "now": {
+      "translation": "الآن",
+      "definition": "Adverb"
+    },
+    "of": {
+      "translation": "من",
+      "definition": "Vocabulary"
+    },
+    "on": {
+      "translation": "على",
+      "definition": "Vocabulary"
+    },
+    "once": {
+      "translation": "مرة",
+      "definition": "Adverb"
+    },
+    "one": {
+      "translation": "واحد/شخص",
+      "definition": "Vocabulary"
+    },
+    "ones": {
+      "translation": "القطع/الأشياء",
+      "definition": "Vocabulary"
+    },
+    "only": {
+      "translation": "فقط",
+      "definition": "Adverb"
+    },
+    "opened": {
+      "translation": "فتحت",
+      "definition": "Verb"
+    },
+    "or": {
+      "translation": "or (بحاجة لمراجعة)",
+      "definition": "Conjunction"
+    },
+    "over": {
+      "translation": "خلف/على",
+      "definition": "Adverb"
+    },
+    "overhear": {
+      "translation": "تلتقط السمع",
+      "definition": "Verb"
+    },
+    "paradise": {
+      "translation": "الجنة",
+      "definition": "Noun"
+    },
+    "paying": {
+      "translation": "تولي/تدفع",
+      "definition": "Verb"
+    },
+    "people": {
+      "translation": "الناس",
+      "definition": "Noun"
+    },
+    "piece": {
+      "translation": "قطعة",
+      "definition": "Noun"
+    },
+    "pleased": {
+      "translation": "مسرورة",
+      "definition": "Adjective"
+    },
+    "pretending": {
+      "translation": "تتظاهر",
+      "definition": "Verb"
+    },
+    "pride": {
+      "translation": "فخر",
+      "definition": "Noun"
+    },
+    "princess": {
+      "translation": "أميرة",
+      "definition": "Noun"
+    },
+    "puffed": {
+      "translation": "نفشت",
+      "definition": "Verb"
+    },
+    "quality": {
+      "translation": "جودة/مستوى",
+      "definition": "Vocabulary"
+    },
+    "rich": {
+      "translation": "غني/دسم",
+      "definition": "Adjective"
+    },
+    "said": {
+      "translation": "قال",
+      "definition": "Verb"
+    },
+    "saw": {
+      "translation": "رأيت",
+      "definition": "Verb"
+    },
+    "say": {
+      "translation": "يقول",
+      "definition": "Verb"
+    },
+    "saying": {
+      "translation": "saying (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "search": {
+      "translation": "بحث",
+      "definition": "Noun"
+    },
+    "see": {
+      "translation": "أرى",
+      "definition": "Verb"
+    },
+    "sharp": {
+      "translation": "حاد",
+      "definition": "Adjective"
+    },
+    "she": {
+      "translation": "she (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "sheen": {
+      "translation": "بريق",
+      "definition": "Noun"
+    },
+    "show": {
+      "translation": "يُظهر/يبيّن",
+      "definition": "Verb"
+    },
+    "side": {
+      "translation": "جانب",
+      "definition": "Noun"
+    },
+    "sing": {
+      "translation": "تغني",
+      "definition": "Verb"
+    },
+    "sky": {
+      "translation": "سماء",
+      "definition": "Noun"
+    },
+    "slice": {
+      "translation": "شريحة",
+      "definition": "Noun"
+    },
+    "smell": {
+      "translation": "رائحة",
+      "definition": "Noun"
+    },
+    "smitten": {
+      "translation": "مسحور/مفتون",
+      "definition": "Vocabulary"
+    },
+    "snapped": {
+      "translation": "خطف",
+      "definition": "Verb"
+    },
+    "so": {
+      "translation": "لذلك",
+      "definition": "Conjunction"
+    },
+    "song": {
+      "translation": "أغنية",
+      "definition": "Noun"
+    },
+    "soon": {
+      "translation": "حالًا/قريبًا",
+      "definition": "Adverb"
+    },
+    "sound": {
+      "translation": "صوت",
+      "definition": "Noun"
+    },
+    "star": {
+      "translation": "نجم",
+      "definition": "Adjective"
+    },
+    "stolen": {
+      "translation": "مسروقة",
+      "definition": "Adjective"
+    },
+    "such": {
+      "translation": "يا له من/مثل هذا",
+      "definition": "Vocabulary"
+    },
+    "sure": {
+      "translation": "متأكد",
+      "definition": "Vocabulary"
+    },
+    "sweetly": {
+      "translation": "بعذوبة",
+      "definition": "Adjective"
+    },
+    "swelling": {
+      "translation": "منتفخة/متورمة",
+      "definition": "Vocabulary"
+    },
+    "talking": {
+      "translation": "أتحدث",
+      "definition": "Verb"
+    },
+    "terribly": {
+      "translation": "بشدة/جداً",
+      "definition": "Adjective"
+    },
+    "than": {
+      "translation": "من",
+      "definition": "Vocabulary"
+    },
+    "that": {
+      "translation": "ذاك",
+      "definition": "Pronoun"
+    },
+    "the": {
+      "translation": "ال",
+      "definition": "Article"
+    },
+    "there": {
+      "translation": "there (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "this": {
+      "translation": "هذا",
+      "definition": "Pronoun"
+    },
+    "those": {
+      "translation": "تلك",
+      "definition": "Pronoun"
+    },
+    "though": {
+      "translation": "رغم أن",
+      "definition": "Conjunction"
+    },
+    "through": {
+      "translation": "عبر",
+      "definition": "Vocabulary"
+    },
+    "to": {
+      "translation": "إلى/أن",
+      "definition": "Vocabulary"
+    },
+    "today": {
+      "translation": "اليوم",
+      "definition": "Noun"
+    },
+    "tree": {
+      "translation": "شجرة",
+      "definition": "Noun"
+    },
+    "up": {
+      "translation": "في الأعلى",
+      "definition": "Adverb"
+    },
+    "very": {
+      "translation": "جداً",
+      "definition": "Vocabulary"
+    },
+    "voice": {
+      "translation": "صوت",
+      "definition": "Noun"
+    },
+    "waiting": {
+      "translation": "أنتظر",
+      "definition": "Verb"
+    },
+    "was": {
+      "translation": "كان",
+      "definition": "Vocabulary"
+    },
+    "well": {
+      "translation": "حسنًا",
+      "definition": "Adverb"
+    },
+    "what": {
+      "translation": "ما/يا له من",
+      "definition": "Vocabulary"
+    },
+    "when": {
+      "translation": "عندما",
+      "definition": "Conjunction"
+    },
+    "which": {
+      "translation": "والذي",
+      "definition": "Vocabulary"
+    },
+    "while": {
+      "translation": "حين/وقت",
+      "definition": "Vocabulary"
+    },
+    "whose": {
+      "translation": "التي/الذي يملك",
+      "definition": "Pronoun"
+    },
+    "will": {
+      "translation": "سوف/سـ",
+      "definition": "Vocabulary"
+    },
+    "wing": {
+      "translation": "جناح",
+      "definition": "Vocabulary"
+    },
+    "wings": {
+      "translation": "أجنحة",
+      "definition": "Noun"
+    },
+    "with": {
+      "translation": "مع",
+      "definition": "Vocabulary"
+    },
+    "wonderful": {
+      "translation": "رائع",
+      "definition": "Vocabulary"
+    },
+    "wonderfully": {
+      "translation": "بشكل رائع",
+      "definition": "Adjective"
+    },
+    "wondrous": {
+      "translation": "عجيب",
+      "definition": "Adjective"
+    },
+    "woods": {
+      "translation": "الغابة/الأحراش",
+      "definition": "Noun"
+    },
+    "words": {
+      "translation": "كلماتي/كلمات",
+      "definition": "Noun"
+    },
+    "would": {
+      "translation": "سأ/كنت سأ",
+      "definition": "Vocabulary"
+    },
+    "wouldn't": {
+      "translation": "لن/ما كنت لأ",
+      "definition": "Vocabulary"
+    },
+    "yes": {
+      "translation": "نعم",
+      "definition": "Vocabulary"
+    },
+    "you": {
+      "translation": "ك/لك",
+      "definition": "Pronoun"
+    }
+  }
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "slug": "lesson-18",
+    "image": "/assets/images/courses_image/Level-C-18.webp",
+    "levelTitle": "My Shadow",
+    "levelDescription": "A short and sweet poem about a shadow that follows a child around all day – but who likes to stay in bed before the sun is up. By ROBERT LOUIS STEVENSON",
+    "levelKey": "Advanced",
+    "isLocked": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "My Shadow",
+        "description": "A short and sweet poem about a shadow that follows a child around all day – but who likes to stay in bed before the sun is up. By ROBERT LOUIS STEVENSON",
+        "storyData": {
+          "content": [
+      {
+        "id": 1,
+        "text": "I have a little shadow that goes in and out with me,",
+        "translationAr": "لدي ظل صغير يرافقني ويدخل ويخرج معي،",
+        "audioUrl": ""
+      },
+      {
+        "id": 2,
+        "text": "And what can be the use of him is more than I can see.",
+        "translationAr": "ولا أعرف ما فائدته، فهذا أبعد من فهمي.",
+        "audioUrl": ""
+      },
+      {
+        "id": 3,
+        "text": "He is very, very like me from the heels up to the head;",
+        "translationAr": "إنه يشبهني كثيرًا جدًا، من الكعب حتى الرأس؛",
+        "audioUrl": ""
+      },
+      {
+        "id": 4,
+        "text": "And I see him jump before me, when I jump into my bed.",
+        "translationAr": "وأراه يقفز قبلي عندما أقفز إلى سريري.",
+        "audioUrl": ""
+      },
+      {
+        "id": 5,
+        "text": "The funniest thing about him is the way he likes to grow —",
+        "translationAr": "أطرف شيء فيه هو الطريقة التي يحب أن ينمو بها —",
+        "audioUrl": ""
+      },
+      {
+        "id": 6,
+        "text": "Not at all like proper children, which is always very slow;",
+        "translationAr": "ليس مثل الأطفال العاديين الذين يكبرون ببطء شديد؛",
+        "audioUrl": ""
+      },
+      {
+        "id": 7,
+        "text": "For he sometimes shoots up taller like an india-rubber ball,",
+        "translationAr": "فهو أحيانًا يصبح أطول فجأة مثل كرة المطاط؛",
+        "audioUrl": ""
+      },
+      {
+        "id": 8,
+        "text": "And he sometimes gets so little that there’s none of him at all.",
+        "translationAr": "وأحيانًا يصغر جدًا حتى يكاد يختفي تمامًا.",
+        "audioUrl": ""
+      },
+      {
+        "id": 9,
+        "text": "He hasn’t got a notion of how children ought to play,",
+        "translationAr": "ليس لديه أي فكرة عن كيف يجب أن يلعب الأطفال،",
+        "audioUrl": ""
+      },
+      {
+        "id": 10,
+        "text": "And can only make a fool of me in every sort of way.",
+        "translationAr": "وكل ما يفعله هو جعلي أبدو أحمقًا بكل طريقة ممكنة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 11,
+        "text": "He stays so close beside me, he’s a coward you can see;",
+        "translationAr": "يبقى قريبًا جدًا مني، إنه جبان كما ترى؛",
+        "audioUrl": ""
+      },
+      {
+        "id": 12,
+        "text": "I’d think shame to stick to nursie as that shadow sticks to me!",
+        "translationAr": "أعتقد أنني سأشعر بالخجل لو التصقت بالمربية كما يلتصق هو بي!",
+        "audioUrl": ""
+      },
+      {
+        "id": 13,
+        "text": "One morning, very early, before the sun was up,",
+        "translationAr": "في صباح باكر جدًا، قبل أن تشرق الشمس،",
+        "audioUrl": ""
+      },
+      {
+        "id": 14,
+        "text": "I rose and found the shining dew on every buttercup;",
+        "translationAr": "استيقظت فوجدت الندى اللامع على كل زهرة صفراء صغيرة،",
+        "audioUrl": ""
+      },
+      {
+        "id": 15,
+        "text": "But my lazy little shadow, like an arrant sleepy-head,",
+        "translationAr": "ولكن ظلي الصغير الكسول، مثل شخص نائم نومًا عميقًا،",
+        "audioUrl": ""
+      },
+      {
+        "id": 16,
+        "text": "Had stayed at home behind me and was fast asleep in bed.",
+        "translationAr": "بقي في المنزل خلفي وكان نائمًا بعمق في السرير.",
+        "audioUrl": ""
+      }
+    ]
+        }, 
+      "wordDefinitions": {
+    "a": {
+      "translation": "أداة نكرة",
+      "definition": "Article"
+    },
+    "about": {
+      "translation": "عن",
+      "definition": "Vocabulary"
+    },
+    "all": {
+      "translation": "كل",
+      "definition": "Vocabulary"
+    },
+    "always": {
+      "translation": "دائمًا",
+      "definition": "Vocabulary"
+    },
+    "an": {
+      "translation": "أداة نكرة",
+      "definition": "Article"
+    },
+    "and": {
+      "translation": "و",
+      "definition": "Conjunction"
+    },
+    "arrant": {
+      "translation": "تمامًا/بشكل واضح",
+      "definition": "Vocabulary"
+    },
+    "as": {
+      "translation": "مثل",
+      "definition": "Vocabulary"
+    },
+    "asleep": {
+      "translation": "نائم",
+      "definition": "Vocabulary"
+    },
+    "at": {
+      "translation": "عند",
+      "definition": "Vocabulary"
+    },
+    "ball": {
+      "translation": "كرة",
+      "definition": "Noun"
+    },
+    "be": {
+      "translation": "يكون",
+      "definition": "Verb"
+    },
+    "bed": {
+      "translation": "سرير",
+      "definition": "Vocabulary"
+    },
+    "before": {
+      "translation": "قبل",
+      "definition": "Vocabulary"
+    },
+    "behind": {
+      "translation": "خلف",
+      "definition": "Vocabulary"
+    },
+    "beside": {
+      "translation": "بجانب",
+      "definition": "Vocabulary"
+    },
+    "but": {
+      "translation": "لكن",
+      "definition": "Conjunction"
+    },
+    "buttercup": {
+      "translation": "زهرة صفراء صغيرة",
+      "definition": "Noun"
+    },
+    "can": {
+      "translation": "يستطيع",
+      "definition": "Verb"
+    },
+    "children": {
+      "translation": "أطفال",
+      "definition": "Noun"
+    },
+    "close": {
+      "translation": "قريب",
+      "definition": "Vocabulary"
+    },
+    "coward": {
+      "translation": "جبان",
+      "definition": "Noun"
+    },
+    "dew": {
+      "translation": "ندى",
+      "definition": "Noun"
+    },
+    "early": {
+      "translation": "مبكر",
+      "definition": "Vocabulary"
+    },
+    "every": {
+      "translation": "كل",
+      "definition": "Vocabulary"
+    },
+    "fast": {
+      "translation": "بعمق",
+      "definition": "Vocabulary"
+    },
+    "fool": {
+      "translation": "أحمق",
+      "definition": "Noun"
+    },
+    "for": {
+      "translation": "لأجل",
+      "definition": "Vocabulary"
+    },
+    "found": {
+      "translation": "وجدت",
+      "definition": "Verb"
+    },
+    "from": {
+      "translation": "من",
+      "definition": "Vocabulary"
+    },
+    "funniest": {
+      "translation": "الأطرف",
+      "definition": "Adjective"
+    },
+    "gets": {
+      "translation": "يصبح",
+      "definition": "Verb"
+    },
+    "goes": {
+      "translation": "يذهب",
+      "definition": "Verb"
+    },
+    "got": {
+      "translation": "حصل/يملك",
+      "definition": "Vocabulary"
+    },
+    "grow": {
+      "translation": "ينمو",
+      "definition": "Verb"
+    },
+    "had": {
+      "translation": "كان/امتلك",
+      "definition": "Vocabulary"
+    },
+    "hasn't": {
+      "translation": "لا يملك",
+      "definition": "Vocabulary"
+    },
+    "have": {
+      "translation": "أملك",
+      "definition": "Verb"
+    },
+    "he": {
+      "translation": "هو",
+      "definition": "Pronoun"
+    },
+    "he's": {
+      "translation": "هو",
+      "definition": "Vocabulary"
+    },
+    "head": {
+      "translation": "رأس",
+      "definition": "Noun"
+    },
+    "heels": {
+      "translation": "كعبين",
+      "definition": "Noun"
+    },
+    "him": {
+      "translation": "هو",
+      "definition": "Pronoun"
+    },
+    "home": {
+      "translation": "المنزل",
+      "definition": "Noun"
+    },
+    "how": {
+      "translation": "كيف",
+      "definition": "Vocabulary"
+    },
+    "i": {
+      "translation": "أنا",
+      "definition": "Pronoun"
+    },
+    "i'd": {
+      "translation": "كنت سأ",
+      "definition": "Vocabulary"
+    },
+    "in": {
+      "translation": "في",
+      "definition": "Vocabulary"
+    },
+    "india": {
+      "translation": "الهند",
+      "definition": "Noun"
+    },
+    "into": {
+      "translation": "إلى داخل",
+      "definition": "Vocabulary"
+    },
+    "is": {
+      "translation": "يكون",
+      "definition": "Verb"
+    },
+    "jump": {
+      "translation": "يقفز",
+      "definition": "Verb"
+    },
+    "lazy": {
+      "translation": "كسول",
+      "definition": "Adjective"
+    },
+    "like": {
+      "translation": "يشبه/مثل",
+      "definition": "Verb"
+    },
+    "likes": {
+      "translation": "يحب",
+      "definition": "Vocabulary"
+    },
+    "little": {
+      "translation": "صغير",
+      "definition": "Adjective"
+    },
+    "make": {
+      "translation": "يجعل",
+      "definition": "Verb"
+    },
+    "me": {
+      "translation": "أنا/ني",
+      "definition": "Pronoun"
+    },
+    "more": {
+      "translation": "أكثر",
+      "definition": "Vocabulary"
+    },
+    "morning": {
+      "translation": "صباح",
+      "definition": "Noun"
+    },
+    "my": {
+      "translation": "خاصتي",
+      "definition": "Pronoun"
+    },
+    "none": {
+      "translation": "لا شيء",
+      "definition": "Vocabulary"
+    },
+    "not": {
+      "translation": "ليس",
+      "definition": "Vocabulary"
+    },
+    "notion": {
+      "translation": "فكرة",
+      "definition": "Noun"
+    },
+    "nursie": {
+      "translation": "المربية",
+      "definition": "Noun"
+    },
+    "of": {
+      "translation": "من",
+      "definition": "Vocabulary"
+    },
+    "on": {
+      "translation": "على",
+      "definition": "Vocabulary"
+    },
+    "one": {
+      "translation": "واحد",
+      "definition": "Vocabulary"
+    },
+    "only": {
+      "translation": "فقط",
+      "definition": "Adverb"
+    },
+    "ought": {
+      "translation": "يجب",
+      "definition": "Vocabulary"
+    },
+    "out": {
+      "translation": "خارج",
+      "definition": "Vocabulary"
+    },
+    "play": {
+      "translation": "يلعب",
+      "definition": "Verb"
+    },
+    "proper": {
+      "translation": "حقيقي/صحيح",
+      "definition": "Adjective"
+    },
+    "rose": {
+      "translation": "استيقظت/نهضت",
+      "definition": "Verb"
+    },
+    "rubber": {
+      "translation": "مطاط",
+      "definition": "Noun"
+    },
+    "see": {
+      "translation": "أرى",
+      "definition": "Verb"
+    },
+    "shadow": {
+      "translation": "ظل",
+      "definition": "Noun"
+    },
+    "shame": {
+      "translation": "خجل",
+      "definition": "Vocabulary"
+    },
+    "shining": {
+      "translation": "لامع",
+      "definition": "Vocabulary"
+    },
+    "shoots": {
+      "translation": "يقفز/يتمدّد",
+      "definition": "Vocabulary"
+    },
+    "sleepy": {
+      "translation": "نعسان",
+      "definition": "Adjective"
+    },
+    "slow": {
+      "translation": "بطيء",
+      "definition": "Adjective"
+    },
+    "so": {
+      "translation": "جداً",
+      "definition": "Adverb"
+    },
+    "sometimes": {
+      "translation": "أحيانًا",
+      "definition": "Adverb"
+    },
+    "sort": {
+      "translation": "نوع",
+      "definition": "Noun"
+    },
+    "stayed": {
+      "translation": "بقي",
+      "definition": "Verb"
+    },
+    "stays": {
+      "translation": "يبقى",
+      "definition": "Verb"
+    },
+    "stick": {
+      "translation": "يلتصق",
+      "definition": "Verb"
+    },
+    "sticks": {
+      "translation": "يلتصق",
+      "definition": "Verb"
+    },
+    "sun": {
+      "translation": "الشمس",
+      "definition": "Noun"
+    },
+    "taller": {
+      "translation": "أطول",
+      "definition": "Adjective"
+    },
+    "than": {
+      "translation": "من",
+      "definition": "Vocabulary"
+    },
+    "that": {
+      "translation": "الذي",
+      "definition": "Vocabulary"
+    },
+    "the": {
+      "translation": "ال",
+      "definition": "Article"
+    },
+    "there's": {
+      "translation": "هناك",
+      "definition": "Vocabulary"
+    },
+    "thing": {
+      "translation": "شيء",
+      "definition": "Noun"
+    },
+    "think": {
+      "translation": "أعتقد",
+      "definition": "Vocabulary"
+    },
+    "to": {
+      "translation": "إلى",
+      "definition": "Vocabulary"
+    },
+    "up": {
+      "translation": "عالياً",
+      "definition": "Vocabulary"
+    },
+    "use": {
+      "translation": "فائدة",
+      "definition": "Vocabulary"
+    },
+    "very": {
+      "translation": "جداً",
+      "definition": "Adverb"
+    },
+    "was": {
+      "translation": "كان",
+      "definition": "Vocabulary"
+    },
+    "way": {
+      "translation": "طريقة",
+      "definition": "Noun"
+    },
+    "what": {
+      "translation": "ماذا",
+      "definition": "Vocabulary"
+    },
+    "when": {
+      "translation": "متى",
+      "definition": "Vocabulary"
+    },
+    "which": {
+      "translation": "التي",
+      "definition": "Vocabulary"
+    },
+    "with": {
+      "translation": "مع",
+      "definition": "Vocabulary"
+    },
+    "you": {
+      "translation": "أنت",
+      "definition": "Pronoun"
+    }
+  }
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "slug": "lesson-19",
+    "image": "/assets/images/courses_image/Level-C-19.webp",
+    "levelTitle": "The Enchanted Deer",
+    "levelDescription": "A deer transforms into a beautiful girl and visits the village in search of a husband. A Hausa story from Nigeria.",
+    "levelKey": "Advanced",
+    "isLocked": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "The Enchanted Deer",
+        "description": "A deer transforms into a beautiful girl and visits the village in search of a husband. A Hausa story from Nigeria.",
+        "storyData": {
+          "content": [
+      {
+        "id": 1,
+        "text": "Hello, This is Jana, and I’m here with another Hausa story from Northern Nigeria.",
+        "translationAr": "مرحبًا، هذه جنى، وأنا هنا مع قصة هاوسا جديدة من شمال نيجيريا.",
+        "audioUrl": ""
+      },
+      {
+        "id": 2,
+        "text": "Our friend, Umar Isa Dandago is on the line.",
+        "translationAr": "صديقنا عمر عيسى دانداغو معنا على الخط.",
+        "audioUrl": ""
+      },
+      {
+        "id": 3,
+        "text": "Hi Umar, how are you?",
+        "translationAr": "مرحبًا عمر، كيف حالك؟",
+        "audioUrl": ""
+      },
+      {
+        "id": 4,
+        "text": "Once upon a time, in a magical forest, a deer transformed into a lovely young woman.",
+        "translationAr": "في قديم الزمان، في غابة سحرية، تحولت غزالة إلى فتاة جميلة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 5,
+        "text": "Then she left the forest, carrying a small, intricately woven basket, and headed for a nearby village, where she placed the basket down in the square.",
+        "translationAr": "ثم غادرت الغابة حاملة سلة صغيرة منسوجة بإتقان، وتوجهت إلى قرية قريبة، ووضعت السلة في ساحة القرية.",
+        "audioUrl": ""
+      },
+      {
+        "id": 6,
+        "text": "She addressed the crowd in the square: “Whosoever can open this basket with a single toss of a stone shall win my heart.”",
+        "translationAr": "وخاطبت الناس في الساحة: «من يتمكن من فتح هذه السلة برمية حجر واحدة سيفوز بقلبي.»",
+        "audioUrl": ""
+      },
+      {
+        "id": 7,
+        "text": "One by one, men tried.",
+        "translationAr": "جرب الرجال واحدًا تلو الآخر.",
+        "audioUrl": ""
+      },
+      {
+        "id": 8,
+        "text": "Some nearly succeeded, but the basket remained shut.",
+        "translationAr": "اقترب بعضهم من النجاح، لكن السلة بقيت مغلقة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 9,
+        "text": "Until, with a twist of fate, a young villager’s stone gently tapped the basket, causing it to open.",
+        "translationAr": "حتى حدثت مفاجأة، حيث لامس حجر شاب من القرية السلة برفق فانفتحت.",
+        "audioUrl": ""
+      },
+      {
+        "id": 10,
+        "text": "Joyous cheers filled the air.",
+        "translationAr": "امتلأت الأجواء بالهتاف والفرح.",
+        "audioUrl": ""
+      },
+      {
+        "id": 11,
+        "text": "Smiling at the young man, she said, “I have found a perfect husband”.",
+        "translationAr": "ابتسمت للشاب وقالت: «لقد وجدت الزوج المثالي.»",
+        "audioUrl": ""
+      },
+      {
+        "id": 12,
+        "text": "The two fell in love and were soon wed.",
+        "translationAr": "وقع الاثنان في الحب وتزوجا قريبًا.",
+        "audioUrl": ""
+      },
+      {
+        "id": 13,
+        "text": "The woman went to live with her new family.",
+        "translationAr": "ذهبت المرأة لتعيش مع عائلة زوجها الجديدة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 14,
+        "text": "The young man’s mother had always managed the household, and the newcomer was eager to help.",
+        "translationAr": "كانت والدة الشاب تدير المنزل دائمًا، وكانت الوافدة الجديدة حريصة على المساعدة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 15,
+        "text": "Sometimes the mother would send the young wife to the family’s farm to gather fresh okra for the soup.",
+        "translationAr": "أحيانًا كانت الأم ترسل الزوجة الشابة إلى مزرعة العائلة لجمع البامية الطازجة للشوربة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 16,
+        "text": "But little did the family know what she got up to when she reached the farm.",
+        "translationAr": "لكن العائلة لم تكن تعلم ما الذي تفعله عندما تصل إلى المزرعة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 17,
+        "text": "With a whisper of an ancient spell, she transformed back into her true deer form.",
+        "translationAr": "بهمسة تعويذة قديمة، كانت تعود إلى شكلها الحقيقي كغزالة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 18,
+        "text": "When she called out softly, her deer sisters emerged from the shadows of the forest, and together, they feasted on the okra.",
+        "translationAr": "وعندما كانت تنادي بهدوء، كانت أخواتها الغزالات يظهرن من ظلال الغابة، ويأكلن البامية معًا.",
+        "audioUrl": ""
+      },
+      {
+        "id": 19,
+        "text": "As the sun dipped below the horizon and it was time to depart, they touched noses in farewell, promising to reunite soon.",
+        "translationAr": "وعندما كانت الشمس تغرب ويحين وقت الرحيل، كانت تلامس أنوفهن كتحية وداع، واعدات بالالتقاء قريبًا.",
+        "audioUrl": ""
+      },
+      {
+        "id": 20,
+        "text": "Then she changed back into her human form and returned home, but her basket would always be empty.",
+        "translationAr": "ثم تعود إلى شكلها البشري وتعود للمنزل، لكن سلتها كانت دائمًا فارغة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 21,
+        "text": "With a dramatic sigh, she would lament, “Why send me so far to the farm when there’s nothing left? Someone or something seems to be enjoying our okra before I can even get to it.”",
+        "translationAr": "ومع تنهيدة درامية، كانت تتذمر: «لماذا ترسلونني بعيدًا إلى المزرعة ولا يوجد شيء؟ يبدو أن شخصًا أو شيئًا ما يستمتع بباميتنا قبلي.»",
+        "audioUrl": ""
+      },
+      {
+        "id": 22,
+        "text": "The family was very puzzled by the tales of the phantom okra thieves.",
+        "translationAr": "كانت العائلة في حيرة شديدة من قصص لصوص البامية الخفيين.",
+        "audioUrl": ""
+      },
+      {
+        "id": 23,
+        "text": "So one afternoon, the curious husband decided to observe his wife on her next trip to the farm.",
+        "translationAr": "لذلك، في أحد الأيام، قرر الزوج الفضولي مراقبة زوجته في رحلتها التالية إلى المزرعة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 24,
+        "text": "He set out early before her and hid himself among the branches of a lofty tree.",
+        "translationAr": "ذهب مبكرًا قبلها واختبأ بين أغصان شجرة عالية.",
+        "audioUrl": ""
+      },
+      {
+        "id": 25,
+        "text": "From his perch, he saw his wife arrive.",
+        "translationAr": "ومن مكانه العالي رأى زوجته تصل.",
+        "audioUrl": ""
+      },
+      {
+        "id": 26,
+        "text": "Then he watched in astonishment as her form shimmered and changed.",
+        "translationAr": "ثم شاهد بدهشة شكلها يتلألأ ويتغير.",
+        "audioUrl": ""
+      },
+      {
+        "id": 27,
+        "text": "Before his eyes, his wife transformed into a graceful deer, her coat gleaming like gold in the sunlight.",
+        "translationAr": "أمام عينيه، تحولت زوجته إلى غزالة رشيقة، وفراؤها يلمع كالذهب تحت أشعة الشمس.",
+        "audioUrl": ""
+      },
+      {
+        "id": 28,
+        "text": "Soon other deer emerged from the shadowy depths of the forest, and together, they feasted on the okra.",
+        "translationAr": "سرعان ما ظهرت غزالات أخرى من أعماق الغابة المظلمة، وأكلن البامية معًا.",
+        "audioUrl": ""
+      },
+      {
+        "id": 29,
+        "text": "Unable to contain his shock and anger any longer, he leapt from the tree, landing with a resounding thud.",
+        "translationAr": "غير قادر على كتم صدمته وغضبه أكثر، قفز من الشجرة محدثًا صوتًا قويًا.",
+        "audioUrl": ""
+      },
+      {
+        "id": 30,
+        "text": "“Get away you thieves!” he cried out.",
+        "translationAr": "صرخ قائلاً: «ابتعدن يا لصوص!»",
+        "audioUrl": ""
+      },
+      {
+        "id": 31,
+        "text": "The deer scattered in all directions, their hooves beating a hasty retreat against the soft earth.",
+        "translationAr": "تفرقت الغزالات في كل اتجاه، وأقدامهن تضرب الأرض الناعمة بسرعة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 32,
+        "text": "Only his wife, in her deer form, remained still for a brief moment, her eyes locking onto his.",
+        "translationAr": "وبقيت زوجته، في شكل الغزالة، ثابتة للحظة قصيرة، وعيناها تتلاقى بعينيه.",
+        "audioUrl": ""
+      },
+      {
+        "id": 33,
+        "text": "Those soft brown eyes spoke volumes – of secrets shared and now exposed.",
+        "translationAr": "تلك العيون البنية الناعمة قالت الكثير — عن أسرار كانت مشتركة وأصبحت مكشوفة الآن.",
+        "audioUrl": ""
+      },
+      {
+        "id": 34,
+        "text": "Then, with a toss of her head and a swish of her tail, she turned and gracefully bounded away, disappearing into the depths of the forest, never to be seen again.",
+        "translationAr": "ثم بحركة من رأسها ورفّة من ذيلها، ابتعدت بخفة، واختفت في أعماق الغابة، دون أن تُرى مرة أخرى.",
+        "audioUrl": ""
+      },
+      {
+        "id": 35,
+        "text": "The husband stood watching the place where she had vanished.",
+        "translationAr": "وقف الزوج يراقب المكان الذي اختفت فيه.",
+        "audioUrl": ""
+      },
+      {
+        "id": 36,
+        "text": "Without a word, he slowly made his way back to their home.",
+        "translationAr": "وبدون كلمة، عاد ببطء إلى المنزل.",
+        "audioUrl": ""
+      }
+    ]
+        }, 
+        "wordDefinitions": {
+    "a": {
+      "translation": "أداة نكرة",
+      "definition": "Article"
+    },
+    "addressed": {
+      "translation": "خاطبت",
+      "definition": "Verb"
+    },
+    "afternoon": {
+      "translation": "عصر/بعد الظهر",
+      "definition": "Noun"
+    },
+    "again": {
+      "translation": "مرة أخرى",
+      "definition": "Adverb"
+    },
+    "against": {
+      "translation": "على/ضد",
+      "definition": "Vocabulary"
+    },
+    "air": {
+      "translation": "الهواء",
+      "definition": "Noun"
+    },
+    "all": {
+      "translation": "all (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "always": {
+      "translation": "دائمًا",
+      "definition": "Adverb"
+    },
+    "among": {
+      "translation": "بين",
+      "definition": "Vocabulary"
+    },
+    "an": {
+      "translation": "an (بحاجة لمراجعة)",
+      "definition": "Article"
+    },
+    "ancient": {
+      "translation": "قديمة",
+      "definition": "Adjective"
+    },
+    "and": {
+      "translation": "و",
+      "definition": "Conjunction"
+    },
+    "anger": {
+      "translation": "غضب",
+      "definition": "Noun"
+    },
+    "another": {
+      "translation": "أخرى",
+      "definition": "Vocabulary"
+    },
+    "any": {
+      "translation": "أي",
+      "definition": "Vocabulary"
+    },
+    "are": {
+      "translation": "تكون/هل",
+      "definition": "Verb"
+    },
+    "arrive": {
+      "translation": "تصل",
+      "definition": "Verb"
+    },
+    "as": {
+      "translation": "بينما/عندما/كما",
+      "definition": "Conjunction"
+    },
+    "astonishment": {
+      "translation": "دهشة",
+      "definition": "Noun"
+    },
+    "at": {
+      "translation": "إلى",
+      "definition": "Vocabulary"
+    },
+    "away": {
+      "translation": "بعيدًا",
+      "definition": "Vocabulary"
+    },
+    "back": {
+      "translation": "عائدًا",
+      "definition": "Vocabulary"
+    },
+    "basket": {
+      "translation": "سلة",
+      "definition": "Noun"
+    },
+    "be": {
+      "translation": "تكون",
+      "definition": "Vocabulary"
+    },
+    "beating": {
+      "translation": "تضرب",
+      "definition": "Verb"
+    },
+    "before": {
+      "translation": "أمام",
+      "definition": "Conjunction"
+    },
+    "below": {
+      "translation": "أدنى/تحت",
+      "definition": "Vocabulary"
+    },
+    "bounded": {
+      "translation": "قفزت/وثبت",
+      "definition": "Verb"
+    },
+    "branches": {
+      "translation": "أغصان",
+      "definition": "Noun"
+    },
+    "brief": {
+      "translation": "قصير",
+      "definition": "Adjective"
+    },
+    "brown": {
+      "translation": "بنية",
+      "definition": "Adjective"
+    },
+    "but": {
+      "translation": "لكن",
+      "definition": "Conjunction"
+    },
+    "by": {
+      "translation": "على/بـ",
+      "definition": "Vocabulary"
+    },
+    "called": {
+      "translation": "نادت",
+      "definition": "Verb"
+    },
+    "can": {
+      "translation": "يستطيع",
+      "definition": "Verb"
+    },
+    "carrying": {
+      "translation": "حاملة",
+      "definition": "Verb"
+    },
+    "causing": {
+      "translation": "مسببًا",
+      "definition": "Verb"
+    },
+    "changed": {
+      "translation": "تغيّرت",
+      "definition": "Verb"
+    },
+    "cheers": {
+      "translation": "هتافات",
+      "definition": "Noun"
+    },
+    "coat": {
+      "translation": "فرو/معطف",
+      "definition": "Noun"
+    },
+    "contain": {
+      "translation": "يكتم/يحتوي",
+      "definition": "Verb"
+    },
+    "cried": {
+      "translation": "صاح",
+      "definition": "Verb"
+    },
+    "crowd": {
+      "translation": "حشد/الناس",
+      "definition": "Noun"
+    },
+    "curious": {
+      "translation": "فضولي",
+      "definition": "Vocabulary"
+    },
+    "dandago": {
+      "translation": "دانداغو",
+      "definition": "Vocabulary"
+    },
+    "decided": {
+      "translation": "قرر",
+      "definition": "Verb"
+    },
+    "deer": {
+      "translation": "غزالة/أيل",
+      "definition": "Noun"
+    },
+    "depart": {
+      "translation": "الرحيل",
+      "definition": "Vocabulary"
+    },
+    "depths": {
+      "translation": "أعماق",
+      "definition": "Noun"
+    },
+    "did": {
+      "translation": "فعلت/كانت",
+      "definition": "Vocabulary"
+    },
+    "dipped": {
+      "translation": "غابت/انخفضت",
+      "definition": "Verb"
+    },
+    "directions": {
+      "translation": "اتجاهات",
+      "definition": "Noun"
+    },
+    "disappearing": {
+      "translation": "تختفي",
+      "definition": "Verb"
+    },
+    "down": {
+      "translation": "أسفل/على الأرض",
+      "definition": "Vocabulary"
+    },
+    "dramatic": {
+      "translation": "درامية",
+      "definition": "Vocabulary"
+    },
+    "eager": {
+      "translation": "حريصة",
+      "definition": "Adjective"
+    },
+    "early": {
+      "translation": "مبكرًا",
+      "definition": "Vocabulary"
+    },
+    "earth": {
+      "translation": "الأرض",
+      "definition": "Noun"
+    },
+    "emerged": {
+      "translation": "ظهرت",
+      "definition": "Verb"
+    },
+    "empty": {
+      "translation": "فارغة",
+      "definition": "Vocabulary"
+    },
+    "enjoying": {
+      "translation": "يستمتع",
+      "definition": "Verb"
+    },
+    "even": {
+      "translation": "حتى",
+      "definition": "Vocabulary"
+    },
+    "exposed": {
+      "translation": "مكشوفة",
+      "definition": "Vocabulary"
+    },
+    "eyes": {
+      "translation": "عينان",
+      "definition": "Noun"
+    },
+    "family": {
+      "translation": "العائلة",
+      "definition": "Noun"
+    },
+    "family's": {
+      "translation": "family's (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "far": {
+      "translation": "بعيدًا",
+      "definition": "Vocabulary"
+    },
+    "farewell": {
+      "translation": "وداع",
+      "definition": "Noun"
+    },
+    "farm": {
+      "translation": "مزرعة",
+      "definition": "Noun"
+    },
+    "fate": {
+      "translation": "قدر/حظ",
+      "definition": "Noun"
+    },
+    "feasted": {
+      "translation": "التهمن/أكلن بشهية",
+      "definition": "Verb"
+    },
+    "fell": {
+      "translation": "وقعا",
+      "definition": "Verb"
+    },
+    "filled": {
+      "translation": "ملأت",
+      "definition": "Verb"
+    },
+    "for": {
+      "translation": "إلى/من أجل",
+      "definition": "Vocabulary"
+    },
+    "forest": {
+      "translation": "غابة",
+      "definition": "Noun"
+    },
+    "form": {
+      "translation": "هيئة/شكل",
+      "definition": "Noun"
+    },
+    "found": {
+      "translation": "وجدت",
+      "definition": "Verb"
+    },
+    "fresh": {
+      "translation": "طازجة",
+      "definition": "Adjective"
+    },
+    "friend": {
+      "translation": "صديق",
+      "definition": "Noun"
+    },
+    "from": {
+      "translation": "من",
+      "definition": "Vocabulary"
+    },
+    "gather": {
+      "translation": "تجمع",
+      "definition": "Verb"
+    },
+    "gently": {
+      "translation": "برفق",
+      "definition": "Adverb"
+    },
+    "get": {
+      "translation": "ابتعدوا",
+      "definition": "Verb"
+    },
+    "gleaming": {
+      "translation": "يلمع",
+      "definition": "Adjective"
+    },
+    "gold": {
+      "translation": "ذهب",
+      "definition": "Noun"
+    },
+    "got": {
+      "translation": "كانت تفعل/حصلت",
+      "definition": "Vocabulary"
+    },
+    "graceful": {
+      "translation": "رشيقة",
+      "definition": "Adjective"
+    },
+    "gracefully": {
+      "translation": "برشاقة",
+      "definition": "Vocabulary"
+    },
+    "had": {
+      "translation": "كانت/لديها",
+      "definition": "Vocabulary"
+    },
+    "hasty": {
+      "translation": "سريع",
+      "definition": "Adjective"
+    },
+    "hausa": {
+      "translation": "لغة الهوسا/هاوسا",
+      "definition": "Noun"
+    },
+    "have": {
+      "translation": "وجدت/أملك",
+      "definition": "Verb"
+    },
+    "he": {
+      "translation": "he (بحاجة لمراجعة)",
+      "definition": "Pronoun"
+    },
+    "head": {
+      "translation": "رأس",
+      "definition": "Noun"
+    },
+    "headed": {
+      "translation": "توجهت",
+      "definition": "Verb"
+    },
+    "heart": {
+      "translation": "قلب",
+      "definition": "Noun"
+    },
+    "hello": {
+      "translation": "مرحبًا",
+      "definition": "Vocabulary"
+    },
+    "help": {
+      "translation": "تساعد/مساعدة",
+      "definition": "Vocabulary"
+    },
+    "her": {
+      "translation": "زوجته/ها",
+      "definition": "Pronoun"
+    },
+    "here": {
+      "translation": "هنا",
+      "definition": "Vocabulary"
+    },
+    "hi": {
+      "translation": "مرحبًا",
+      "definition": "Vocabulary"
+    },
+    "hid": {
+      "translation": "اختبأ",
+      "definition": "Verb"
+    },
+    "himself": {
+      "translation": "نفسه",
+      "definition": "Pronoun"
+    },
+    "his": {
+      "translation": "له/خاصته",
+      "definition": "Pronoun"
+    },
+    "home": {
+      "translation": "المنزل",
+      "definition": "Noun"
+    },
+    "hooves": {
+      "translation": "حوافر",
+      "definition": "Noun"
+    },
+    "horizon": {
+      "translation": "الأفق",
+      "definition": "Noun"
+    },
+    "household": {
+      "translation": "شؤون البيت",
+      "definition": "Noun"
+    },
+    "how": {
+      "translation": "كيف",
+      "definition": "Vocabulary"
+    },
+    "human": {
+      "translation": "بشري",
+      "definition": "Vocabulary"
+    },
+    "husband": {
+      "translation": "الزوج",
+      "definition": "Noun"
+    },
+    "i": {
+      "translation": "i (بحاجة لمراجعة)",
+      "definition": "Pronoun"
+    },
+    "i'm": {
+      "translation": "أنا",
+      "definition": "Vocabulary"
+    },
+    "in": {
+      "translation": "في",
+      "definition": "Vocabulary"
+    },
+    "into": {
+      "translation": "إلى",
+      "definition": "Vocabulary"
+    },
+    "intricately": {
+      "translation": "بإتقان/بتعقيد",
+      "definition": "Adjective"
+    },
+    "is": {
+      "translation": "يكون/هو",
+      "definition": "Verb"
+    },
+    "isa": {
+      "translation": "عيسى",
+      "definition": "Vocabulary"
+    },
+    "it": {
+      "translation": "إياه/ذلك",
+      "definition": "Vocabulary"
+    },
+    "jana": {
+      "translation": "جنى",
+      "definition": "Vocabulary"
+    },
+    "joyous": {
+      "translation": "مبتهج/مليء بالفرح",
+      "definition": "Adjective"
+    },
+    "know": {
+      "translation": "تعرف",
+      "definition": "Verb"
+    },
+    "lament": {
+      "translation": "تتذمر/تندب",
+      "definition": "Verb"
+    },
+    "landing": {
+      "translation": "هبط/سقط",
+      "definition": "Verb"
+    },
+    "leapt": {
+      "translation": "قفز",
+      "definition": "Verb"
+    },
+    "left": {
+      "translation": "متبقٍ",
+      "definition": "Vocabulary"
+    },
+    "like": {
+      "translation": "مثل",
+      "definition": "Vocabulary"
+    },
+    "line": {
+      "translation": "الخط",
+      "definition": "Noun"
+    },
+    "little": {
+      "translation": "قليلًا/قليل",
+      "definition": "Vocabulary"
+    },
+    "live": {
+      "translation": "تعيش",
+      "definition": "Verb"
+    },
+    "locking": {
+      "translation": "تتلاقى/تتشابك",
+      "definition": "Vocabulary"
+    },
+    "lofty": {
+      "translation": "عالية/سامقة",
+      "definition": "Adjective"
+    },
+    "longer": {
+      "translation": "أكثر",
+      "definition": "Vocabulary"
+    },
+    "love": {
+      "translation": "حب/في الحب",
+      "definition": "Noun"
+    },
+    "lovely": {
+      "translation": "جميلة/رائعة",
+      "definition": "Adjective"
+    },
+    "made": {
+      "translation": "شَقَّ/سار",
+      "definition": "Verb"
+    },
+    "magical": {
+      "translation": "سحرية",
+      "definition": "Adjective"
+    },
+    "man": {
+      "translation": "رجل",
+      "definition": "Noun"
+    },
+    "man's": {
+      "translation": "man's (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "managed": {
+      "translation": "أدارت",
+      "definition": "Verb"
+    },
+    "me": {
+      "translation": "me (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "men": {
+      "translation": "رجال",
+      "definition": "Noun"
+    },
+    "moment": {
+      "translation": "لحظة",
+      "definition": "Noun"
+    },
+    "mother": {
+      "translation": "الأم",
+      "definition": "Noun"
+    },
+    "my": {
+      "translation": "قلبي/خاصتي",
+      "definition": "Pronoun"
+    },
+    "nearby": {
+      "translation": "قريبة",
+      "definition": "Adjective"
+    },
+    "nearly": {
+      "translation": "يكاد/قريبًا من",
+      "definition": "Vocabulary"
+    },
+    "never": {
+      "translation": "أبدًا",
+      "definition": "Adverb"
+    },
+    "new": {
+      "translation": "جديدة",
+      "definition": "Adjective"
+    },
+    "newcomer": {
+      "translation": "الوافدة الجديدة",
+      "definition": "Noun"
+    },
+    "next": {
+      "translation": "التالية",
+      "definition": "Vocabulary"
+    },
+    "nigeria": {
+      "translation": "نيجيريا",
+      "definition": "Noun"
+    },
+    "northern": {
+      "translation": "شمالي",
+      "definition": "Vocabulary"
+    },
+    "noses": {
+      "translation": "الأنوف",
+      "definition": "Vocabulary"
+    },
+    "nothing": {
+      "translation": "لا شيء",
+      "definition": "Vocabulary"
+    },
+    "now": {
+      "translation": "الآن",
+      "definition": "Adverb"
+    },
+    "observe": {
+      "translation": "يراقب",
+      "definition": "Verb"
+    },
+    "of": {
+      "translation": "من",
+      "definition": "Vocabulary"
+    },
+    "okra": {
+      "translation": "بامية",
+      "definition": "Noun"
+    },
+    "on": {
+      "translation": "على",
+      "definition": "Vocabulary"
+    },
+    "once": {
+      "translation": "ذات مرة/في قديم الزمان",
+      "definition": "Vocabulary"
+    },
+    "one": {
+      "translation": "واحد",
+      "definition": "Vocabulary"
+    },
+    "only": {
+      "translation": "فقط",
+      "definition": "Vocabulary"
+    },
+    "onto": {
+      "translation": "onto (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "open": {
+      "translation": "يفتح",
+      "definition": "Verb"
+    },
+    "or": {
+      "translation": "or (بحاجة لمراجعة)",
+      "definition": "Conjunction"
+    },
+    "other": {
+      "translation": "أخرى",
+      "definition": "Adjective"
+    },
+    "our": {
+      "translation": "خاصتنا/لدينا",
+      "definition": "Pronoun"
+    },
+    "out": {
+      "translation": "صارخًا",
+      "definition": "Vocabulary"
+    },
+    "perch": {
+      "translation": "موضع عالٍ/غصن مرتفع",
+      "definition": "Noun"
+    },
+    "perfect": {
+      "translation": "مثالي",
+      "definition": "Adjective"
+    },
+    "phantom": {
+      "translation": "شبح/خفي",
+      "definition": "Vocabulary"
+    },
+    "place": {
+      "translation": "المكان",
+      "definition": "Noun"
+    },
+    "placed": {
+      "translation": "وضعت",
+      "definition": "Verb"
+    },
+    "promising": {
+      "translation": "واعدات",
+      "definition": "Verb"
+    },
+    "puzzled": {
+      "translation": "في حيرة",
+      "definition": "Vocabulary"
+    },
+    "reached": {
+      "translation": "وصلت",
+      "definition": "Verb"
+    },
+    "remained": {
+      "translation": "بقيت",
+      "definition": "Verb"
+    },
+    "resounding": {
+      "translation": "مدوٍّ",
+      "definition": "Vocabulary"
+    },
+    "retreat": {
+      "translation": "انسحاب",
+      "definition": "Noun"
+    },
+    "returned": {
+      "translation": "عادت",
+      "definition": "Verb"
+    },
+    "reunite": {
+      "translation": "يلتقي مجددًا",
+      "definition": "Verb"
+    },
+    "said": {
+      "translation": "قالت",
+      "definition": "Verb"
+    },
+    "saw": {
+      "translation": "رأى",
+      "definition": "Verb"
+    },
+    "scattered": {
+      "translation": "تفرقت",
+      "definition": "Verb"
+    },
+    "secrets": {
+      "translation": "أسرار",
+      "definition": "Noun"
+    },
+    "seems": {
+      "translation": "يبدو",
+      "definition": "Verb"
+    },
+    "seen": {
+      "translation": "تُرى",
+      "definition": "Vocabulary"
+    },
+    "send": {
+      "translation": "ترسلون",
+      "definition": "Verb"
+    },
+    "set": {
+      "translation": "انطلق",
+      "definition": "Verb"
+    },
+    "shadows": {
+      "translation": "ظلال",
+      "definition": "Noun"
+    },
+    "shadowy": {
+      "translation": "مظلمة/موحشة",
+      "definition": "Adjective"
+    },
+    "shall": {
+      "translation": "سوف/سي",
+      "definition": "Vocabulary"
+    },
+    "shared": {
+      "translation": "مشتركة",
+      "definition": "Vocabulary"
+    },
+    "she": {
+      "translation": "هي",
+      "definition": "Pronoun"
+    },
+    "shimmered": {
+      "translation": "تلألأت",
+      "definition": "Verb"
+    },
+    "shock": {
+      "translation": "صدمة",
+      "definition": "Noun"
+    },
+    "shut": {
+      "translation": "مغلقة",
+      "definition": "Vocabulary"
+    },
+    "sigh": {
+      "translation": "تنهيدة",
+      "definition": "Noun"
+    },
+    "single": {
+      "translation": "واحدة",
+      "definition": "Vocabulary"
+    },
+    "sisters": {
+      "translation": "أخوات",
+      "definition": "Noun"
+    },
+    "slowly": {
+      "translation": "ببطء",
+      "definition": "Adjective"
+    },
+    "small": {
+      "translation": "صغيرة",
+      "definition": "Adjective"
+    },
+    "smiling": {
+      "translation": "مبتسمة",
+      "definition": "Verb"
+    },
+    "so": {
+      "translation": "so (بحاجة لمراجعة)",
+      "definition": "Conjunction"
+    },
+    "soft": {
+      "translation": "ناعمة",
+      "definition": "Adjective"
+    },
+    "softly": {
+      "translation": "بلطف/بهدوء",
+      "definition": "Vocabulary"
+    },
+    "some": {
+      "translation": "بعض",
+      "definition": "Vocabulary"
+    },
+    "someone": {
+      "translation": "شخص ما",
+      "definition": "Vocabulary"
+    },
+    "something": {
+      "translation": "شيء ما",
+      "definition": "Vocabulary"
+    },
+    "sometimes": {
+      "translation": "أحيانًا",
+      "definition": "Vocabulary"
+    },
+    "soon": {
+      "translation": "سريعًا",
+      "definition": "Adverb"
+    },
+    "soup": {
+      "translation": "شوربة",
+      "definition": "Noun"
+    },
+    "spell": {
+      "translation": "تعويذة",
+      "definition": "Noun"
+    },
+    "spoke": {
+      "translation": "قالت/تحدثت",
+      "definition": "Verb"
+    },
+    "square": {
+      "translation": "الساحة",
+      "definition": "Noun"
+    },
+    "still": {
+      "translation": "ثابتة/لا تزال",
+      "definition": "Vocabulary"
+    },
+    "stone": {
+      "translation": "حجر",
+      "definition": "Noun"
+    },
+    "stood": {
+      "translation": "وقف",
+      "definition": "Verb"
+    },
+    "story": {
+      "translation": "قصة",
+      "definition": "Noun"
+    },
+    "succeeded": {
+      "translation": "نجحوا",
+      "definition": "Verb"
+    },
+    "sun": {
+      "translation": "الشمس",
+      "definition": "Noun"
+    },
+    "sunlight": {
+      "translation": "أشعة الشمس",
+      "definition": "Noun"
+    },
+    "swish": {
+      "translation": "رفّة/خفق",
+      "definition": "Vocabulary"
+    },
+    "tail": {
+      "translation": "ذيل",
+      "definition": "Noun"
+    },
+    "tales": {
+      "translation": "حكايات/قصص",
+      "definition": "Noun"
+    },
+    "tapped": {
+      "translation": "طرق/لامس",
+      "definition": "Verb"
+    },
+    "the": {
+      "translation": "ال",
+      "definition": "Article"
+    },
+    "their": {
+      "translation": "منزلهم/خاصتهم",
+      "definition": "Pronoun"
+    },
+    "then": {
+      "translation": "ثم",
+      "definition": "Conjunction"
+    },
+    "there's": {
+      "translation": "لا يوجد/هناك",
+      "definition": "Vocabulary"
+    },
+    "they": {
+      "translation": "هن/هم",
+      "definition": "Pronoun"
+    },
+    "thieves": {
+      "translation": "لصوص",
+      "definition": "Noun"
+    },
+    "this": {
+      "translation": "هذه",
+      "definition": "Vocabulary"
+    },
+    "those": {
+      "translation": "تلك",
+      "definition": "Vocabulary"
+    },
+    "thud": {
+      "translation": "دوي/طَخ",
+      "definition": "Noun"
+    },
+    "time": {
+      "translation": "وقت",
+      "definition": "Noun"
+    },
+    "to": {
+      "translation": "إلى",
+      "definition": "Vocabulary"
+    },
+    "together": {
+      "translation": "معًا",
+      "definition": "Adverb"
+    },
+    "toss": {
+      "translation": "حركة/هزة",
+      "definition": "Vocabulary"
+    },
+    "touched": {
+      "translation": "لامسن",
+      "definition": "Verb"
+    },
+    "transformed": {
+      "translation": "تحولت",
+      "definition": "Verb"
+    },
+    "tree": {
+      "translation": "شجرة",
+      "definition": "Noun"
+    },
+    "tried": {
+      "translation": "حاولوا",
+      "definition": "Verb"
+    },
+    "trip": {
+      "translation": "رحلة",
+      "definition": "Noun"
+    },
+    "true": {
+      "translation": "الحقيقي",
+      "definition": "Adjective"
+    },
+    "turned": {
+      "translation": "استدارت",
+      "definition": "Verb"
+    },
+    "twist": {
+      "translation": "انعطافة/مصادفة",
+      "definition": "Vocabulary"
+    },
+    "two": {
+      "translation": "اثنان",
+      "definition": "Vocabulary"
+    },
+    "umar": {
+      "translation": "عمر",
+      "definition": "Vocabulary"
+    },
+    "unable": {
+      "translation": "غير قادر",
+      "definition": "Vocabulary"
+    },
+    "until": {
+      "translation": "حتى",
+      "definition": "Conjunction"
+    },
+    "up": {
+      "translation": "فوق/تفعل",
+      "definition": "Vocabulary"
+    },
+    "upon": {
+      "translation": "على",
+      "definition": "Vocabulary"
+    },
+    "vanished": {
+      "translation": "اختفت",
+      "definition": "Verb"
+    },
+    "very": {
+      "translation": "جداً",
+      "definition": "Vocabulary"
+    },
+    "village": {
+      "translation": "قرية",
+      "definition": "Noun"
+    },
+    "villager's": {
+      "translation": "القروي",
+      "definition": "Vocabulary"
+    },
+    "volumes": {
+      "translation": "الكثير/مطولًا",
+      "definition": "Vocabulary"
+    },
+    "was": {
+      "translation": "كان",
+      "definition": "Verb"
+    },
+    "watched": {
+      "translation": "راقب",
+      "definition": "Verb"
+    },
+    "watching": {
+      "translation": "يراقب",
+      "definition": "Verb"
+    },
+    "way": {
+      "translation": "طريق",
+      "definition": "Noun"
+    },
+    "wed": {
+      "translation": "تزوجا",
+      "definition": "Verb"
+    },
+    "went": {
+      "translation": "ذهبت",
+      "definition": "Verb"
+    },
+    "were": {
+      "translation": "كانا",
+      "definition": "Verb"
+    },
+    "what": {
+      "translation": "ما",
+      "definition": "Vocabulary"
+    },
+    "when": {
+      "translation": "عندما",
+      "definition": "Vocabulary"
+    },
+    "where": {
+      "translation": "حيث",
+      "definition": "Vocabulary"
+    },
+    "whisper": {
+      "translation": "همسة",
+      "definition": "Noun"
+    },
+    "whosoever": {
+      "translation": "من يستطيع/أيًّا كان",
+      "definition": "Vocabulary"
+    },
+    "why": {
+      "translation": "لماذا",
+      "definition": "Vocabulary"
+    },
+    "wife": {
+      "translation": "زوجة",
+      "definition": "Vocabulary"
+    },
+    "win": {
+      "translation": "ينال/يفوز",
+      "definition": "Verb"
+    },
+    "with": {
+      "translation": "مع",
+      "definition": "Vocabulary"
+    },
+    "without": {
+      "translation": "بدون",
+      "definition": "Vocabulary"
+    },
+    "woman": {
+      "translation": "امرأة",
+      "definition": "Noun"
+    },
+    "word": {
+      "translation": "كلمة",
+      "definition": "Noun"
+    },
+    "would": {
+      "translation": "كانت",
+      "definition": "Vocabulary"
+    },
+    "woven": {
+      "translation": "منسوجة",
+      "definition": "Adjective"
+    },
+    "you": {
+      "translation": "أنت",
+      "definition": "Pronoun"
+    },
+    "young": {
+      "translation": "شاب",
+      "definition": "Adjective"
+    }
+  }
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "slug": "lesson-20",
+    "image": "/assets/images/courses_image/Level-C-20.webp",
+    "levelTitle": "Limericks",
+    "levelDescription": "Limericks old and new, whole stories in five silly lines of poetry! Join us on this journey down Limerick Lane. Sponsoored by Kiwico key word Story",
+    "levelKey": "Advanced",
+    "isLocked": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "The Enchanted Deer",
+        "description": "Limericks old and new, whole stories in five silly lines of poetry! Join us on this journey down Limerick Lane. Sponsoored by Kiwico key word Story",
+        "storyData": {
+          "content": [
+      {
+        "id": 1,
+        "text": "Hello everyone, Welcome to Storynory, and this week we will dive into the fun and silly world of limericks.",
+        "translationAr": "مرحبًا بالجميع، أهلاً بكم في ستورينوري وهذا الأسبوع سنغوص في عالم الليميركس المليء بالمرح والضحك.",
+        "audioUrl": ""
+      },
+      {
+        "id": 2,
+        "text": "I’m your host, Lucy Limerick! Well, actually I’m Jana, but Lucy Limerick is quite a fitting name for this episode.",
+        "translationAr": "أنا مضيفتكم، لوسي ليميرك! حسنًا، في الحقيقة أنا جنى، لكن اسم لوسي ليميرك مناسب جدًا لهذه الحلقة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 3,
+        "text": "Now what is a limerick? It’s a funny little poem with five lines.",
+        "translationAr": "ما هو الليميرك؟ إنه قصيدة قصيرة مضحكة مكوّنة من خمسة أسطر.",
+        "audioUrl": ""
+      },
+      {
+        "id": 4,
+        "text": "Three of them rhyme, and there’s also a little rhyming couplet.",
+        "translationAr": "ثلاثة من هذه الأسطر تتناغم في القافية، وهناك أيضًا زوج من الأسطر متناغم معها.",
+        "audioUrl": ""
+      },
+      {
+        "id": 5,
+        "text": "It’s simple. I’ll give you an example, and you’ll soon grasp it.",
+        "translationAr": "الأمر بسيط. سأعطيكم مثالًا، وستفهمونه بسرعة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 6,
+        "text": "Listen to this classic Limerick.",
+        "translationAr": "استمعوا إلى هذا الليميرك الكلاسيكي.",
+        "audioUrl": ""
+      },
+      {
+        "id": 7,
+        "text": "There was an Old Man with a beard, Who said, ‘It is just as I feared! Two Owls and a Hen, Four Larks and a Wren, Have all built their nests in my beard!’",
+        "translationAr": "كان هناك رجل مسن ذو لحية قال: «لقد حدث تمامًا كما كنت أخشى! بومتان ودجاجة، وأربع قبرة وطائر صغير، جميعهم بنوا أعشاشهم في لحيتي!»",
+        "audioUrl": ""
+      },
+      {
+        "id": 8,
+        "text": "Did you hear how the lines flowed and rhymed?",
+        "translationAr": "هل سمعتم كيف انسابت الأسطر وتناسقت قوافيها؟",
+        "audioUrl": ""
+      },
+      {
+        "id": 9,
+        "text": "That limerick was by Edward Lear, a Victorian poet who wrote loads of limericks and published them in his Book of Nonsense.",
+        "translationAr": "هذا الليميرك كتبه إدوارد لير، شاعر من العصر الفيكتوري كتب الكثير من الليميركس ونشرها في كتابه «كتاب اللامعنى».",
+        "audioUrl": ""
+      },
+      {
+        "id": 10,
+        "text": "He even drew funny cartoons to accompany his verses!",
+        "translationAr": "حتى إنه رسم رسومات مضحكة مرافقة لقصائده!",
+        "audioUrl": ""
+      },
+      {
+        "id": 11,
+        "text": "It’s amazing how much you can say in just five silly lines.",
+        "translationAr": "من المدهش كم يمكن للمرء أن يقول في خمسة أسطر مضحكة فقط.",
+        "audioUrl": ""
+      },
+      {
+        "id": 12,
+        "text": "Let’s take a magical ride through some famous stories transformed into limericks!",
+        "translationAr": "هيا بنا في رحلة سحرية عبر قصص مشهورة تمت صياغتها كليميركس.",
+        "audioUrl": ""
+      },
+      {
+        "id": 13,
+        "text": "Here’s a story I’m sure you all know. It’s about a girl with a glass slipper!",
+        "translationAr": "إليكم قصة أعرف أنكم جميعًا تعرفونها. إنها عن فتاة بحذاء زجاجي!",
+        "audioUrl": ""
+      },
+      {
+        "id": 14,
+        "text": "There once was a maid named Cinderella, Whose stepsisters were not very stellar. With a pumpkin and mice, And a slipper so nice, She danced with her prince; what a fella!",
+        "translationAr": "كان هناك فتاة تدعى سندريلا، وكانت أخواتها غير لطيفات. ومع قرع وفئران، وحذاء جميل، رقصت مع أميرها؛ يا له من شاب!",
+        "audioUrl": ""
+      },
+      {
+        "id": 15,
+        "text": "Ah, Cinderella! What a magical evening she had!",
+        "translationAr": "آه يا سندريلا! يا لها من أمسية سحرية عاشت بها!",
+        "audioUrl": ""
+      },
+      {
+        "id": 16,
+        "text": "Now, let’s visit a brave little mouse from one of our Storynory tales, called “The Cat That Went Ting-A-Ling”.",
+        "translationAr": "والآن، لنزر فأرًا صغيرًا شجاعًا من إحدى قصص Storynory، بعنوان «القط الذي كان يصدر صوت تنغ-أ-لنغ».",
+        "audioUrl": ""
+      },
+      {
+        "id": 17,
+        "text": "Brave little Jimmy, a mouse of great might, Tied the bell to the cat in the night. With a “ting-a-ling” warning, From dusk until morning, No more did the cat cause a fright!",
+        "translationAr": "جيمي الصغير الشجاع، فأر ذو قوة كبيرة، ربط الجرس بالقط في الليل. وبصوت «تنغ-أ-لنغ» من الغروب حتى الفجر، لم يعد القط يخيف أحدًا!",
+        "audioUrl": ""
+      },
+      {
+        "id": 18,
+        "text": "Great job, little Jimmy! He saved the day (or night)!",
+        "translationAr": "عمل رائع، يا جيمي الصغير! لقد أنقذ الموقف (أو الليل)!",
+        "audioUrl": ""
+      },
+      {
+        "id": 19,
+        "text": "Now, we’re off to Aesop’s Meadow, where a crafty fox meets his match!",
+        "translationAr": "والآن، ننطلق إلى مرعى إيسوب، حيث يلتقي ثعلب ماكر بمن يفوقه ذكاءً!",
+        "audioUrl": ""
+      },
+      {
+        "id": 20,
+        "text": "There once was a fox, sly and neat, Who craved a plump hen for a treat? But the hen was wise, She saw through his disguise, And left Mr. Fox with no meat.",
+        "translationAr": "كان هناك ثعلب ماكر، اشتهى دجاجة سمينة، لكن الدجاجة كانت حكيمة، فرأت خدعته وتركت السيد ثعلب بلا لحم.",
+        "audioUrl": ""
+      },
+      {
+        "id": 21,
+        "text": "There’s a lesson to learn from every fable. The wise hen certainly showed that fox who’s boss!",
+        "translationAr": "هناك عِبرة نتعلمها من كل حكاية. الدجاجة الحكيمة أظهرت للثعلب من هو المسؤول!",
+        "audioUrl": ""
+      },
+      {
+        "id": 22,
+        "text": "On to Ancient Greece for an epic limerick of the tale of Troy!",
+        "translationAr": "لننتقل إلى اليونان القديمة لليميرك ملحمي عن قصة طروادة!",
+        "audioUrl": ""
+      },
+      {
+        "id": 23,
+        "text": "A horse made of wood was the ruse, That Odysseus did cleverly use. The Trojans beguiled, Brought it in and then smiled, Until out sprang the Greeks, and lit the fuse!",
+        "translationAr": "كان هناك حصان مصنوع من الخشب، استخدمه أوديسيوس بذكاء. خدع الطرواديون، فأدخلوا الحصان وهم يبتسمون، حتى خرج الإغريق منه وأشعلوا المعركة!",
+        "audioUrl": ""
+      },
+      {
+        "id": 24,
+        "text": "Wow, what an epic battle that was!",
+        "translationAr": "واو، يا لها من معركة ملحمية!",
+        "audioUrl": ""
+      },
+      {
+        "id": 25,
+        "text": "Our final story takes us to the Enchanted Forest, where Little Red Riding Hood has an adventure!",
+        "translationAr": "قصتنا الأخيرة تأخذنا إلى الغابة المسحورة، حيث تخوض ذات الرداء الأحمر مغامرة!",
+        "audioUrl": ""
+      },
+      {
+        "id": 26,
+        "text": "In the woods, Little Red was quite happy, With a basket of treats, for her granny. Met a wolf in disguise, Who had big, greedy eyes, But the woodsman made his end short and snappy.",
+        "translationAr": "في الغابة كانت ذات الرداء الأحمر سعيدة، ومعها سلة حلوى لجدتها. التقت بذئب متخفٍ بعينين جشعتين، لكن الحطاب أنهى أمره بسرعة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 27,
+        "text": "The woodsman saved the day! You can never get tired of that story.",
+        "translationAr": "لقد أنقذ الحطاب الموقف! لا يمكن أن نمل من هذه القصة.",
+        "audioUrl": ""
+      },
+      {
+        "id": 28,
+        "text": "Thank you for joining me on this whimsical journey down Limerick Lane.",
+        "translationAr": "شكرًا لانضمامكم إليّ في هذه الرحلة الخيالية في عالم الليميركس.",
+        "audioUrl": ""
+      },
+      {
+        "id": 29,
+        "text": "Remember, limericks are a fun and creative way to tell stories. So why not make up your own?",
+        "translationAr": "تذكروا، الليميركس طريقة ممتعة وإبداعية لقول القصص. فلماذا لا تؤلفون واحدًا بأنفسكم؟",
+        "audioUrl": ""
+      }
+    ]
+        }, 
+         "wordDefinitions": {
+    "a": {
+      "translation": "اداة نكرة",
+      "definition": "Article"
+    },
+    "about": {
+      "translation": "عن",
+      "definition": "Vocabulary"
+    },
+    "accompany": {
+      "translation": "ترافق",
+      "definition": "Vocabulary"
+    },
+    "actually": {
+      "translation": "في الحقيقة",
+      "definition": "Vocabulary"
+    },
+    "adventure": {
+      "translation": "adventure (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "aesop's": {
+      "translation": "إيسوب",
+      "definition": "Vocabulary"
+    },
+    "ah": {
+      "translation": "آه",
+      "definition": "Vocabulary"
+    },
+    "all": {
+      "translation": "جميعًا",
+      "definition": "Vocabulary"
+    },
+    "also": {
+      "translation": "أيضًا",
+      "definition": "Vocabulary"
+    },
+    "amazing": {
+      "translation": "مذهل",
+      "definition": "Adjective"
+    },
+    "an": {
+      "translation": "أداة نكرة",
+      "definition": "Article"
+    },
+    "ancient": {
+      "translation": "قديمة",
+      "definition": "Adjective"
+    },
+    "and": {
+      "translation": "و",
+      "definition": "Conjunction"
+    },
+    "are": {
+      "translation": "are (بحاجة لمراجعة)",
+      "definition": "Verb"
+    },
+    "as": {
+      "translation": "كما",
+      "definition": "Conjunction"
+    },
+    "basket": {
+      "translation": "سلة",
+      "definition": "Noun"
+    },
+    "battle": {
+      "translation": "معركة",
+      "definition": "Noun"
+    },
+    "beard": {
+      "translation": "لحية",
+      "definition": "Noun"
+    },
+    "beguiled": {
+      "translation": "خُدعوا",
+      "definition": "Vocabulary"
+    },
+    "bell": {
+      "translation": "جرس",
+      "definition": "Noun"
+    },
+    "big": {
+      "translation": "big (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "book": {
+      "translation": "كتاب",
+      "definition": "Noun"
+    },
+    "boss": {
+      "translation": "boss (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "brave": {
+      "translation": "شجاع",
+      "definition": "Adjective"
+    },
+    "brought": {
+      "translation": "أدخلوا",
+      "definition": "Verb"
+    },
+    "built": {
+      "translation": "بنوا",
+      "definition": "Vocabulary"
+    },
+    "but": {
+      "translation": "لكن",
+      "definition": "Conjunction"
+    },
+    "by": {
+      "translation": "بقلم/بواسطة",
+      "definition": "Vocabulary"
+    },
+    "called": {
+      "translation": "بعنوان",
+      "definition": "Vocabulary"
+    },
+    "can": {
+      "translation": "يمكن",
+      "definition": "Vocabulary"
+    },
+    "cartoons": {
+      "translation": "رسوم كرتونية",
+      "definition": "Noun"
+    },
+    "cat": {
+      "translation": "قط",
+      "definition": "Noun"
+    },
+    "cause": {
+      "translation": "يسبب",
+      "definition": "Vocabulary"
+    },
+    "certainly": {
+      "translation": "certainly (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "cinderella": {
+      "translation": "سندريلا",
+      "definition": "Noun"
+    },
+    "classic": {
+      "translation": "كلاسيكي",
+      "definition": "Adjective"
+    },
+    "cleverly": {
+      "translation": "بذكاء",
+      "definition": "Vocabulary"
+    },
+    "couplet": {
+      "translation": "بيتان",
+      "definition": "Noun"
+    },
+    "crafty": {
+      "translation": "ماكر",
+      "definition": "Vocabulary"
+    },
+    "craved": {
+      "translation": "اشتهى",
+      "definition": "Vocabulary"
+    },
+    "creative": {
+      "translation": "إبداعية",
+      "definition": "Adjective"
+    },
+    "danced": {
+      "translation": "danced (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "day": {
+      "translation": "الموقف/اليوم",
+      "definition": "Vocabulary"
+    },
+    "did": {
+      "translation": "فعل",
+      "definition": "Vocabulary"
+    },
+    "disguise": {
+      "translation": "تنكّر/خدعة",
+      "definition": "Vocabulary"
+    },
+    "dive": {
+      "translation": "نغوص",
+      "definition": "Verb"
+    },
+    "down": {
+      "translation": "في/على امتداد",
+      "definition": "Adverb"
+    },
+    "drew": {
+      "translation": "رسم",
+      "definition": "Verb"
+    },
+    "dusk": {
+      "translation": "الغروب",
+      "definition": "Noun"
+    },
+    "edward": {
+      "translation": "إدوارد",
+      "definition": "Vocabulary"
+    },
+    "enchanted": {
+      "translation": "المسحورة",
+      "definition": "Adjective"
+    },
+    "end": {
+      "translation": "نهايته",
+      "definition": "Vocabulary"
+    },
+    "epic": {
+      "translation": "ملحمي",
+      "definition": "Adjective"
+    },
+    "episode": {
+      "translation": "حلقة",
+      "definition": "Noun"
+    },
+    "even": {
+      "translation": "حتى",
+      "definition": "Adverb"
+    },
+    "evening": {
+      "translation": "evening (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "every": {
+      "translation": "كل",
+      "definition": "Vocabulary"
+    },
+    "everyone": {
+      "translation": "الجميع",
+      "definition": "Vocabulary"
+    },
+    "example": {
+      "translation": "مثال",
+      "definition": "Noun"
+    },
+    "eyes": {
+      "translation": "عيون",
+      "definition": "Noun"
+    },
+    "fable": {
+      "translation": "حكاية",
+      "definition": "Noun"
+    },
+    "famous": {
+      "translation": "مشهور",
+      "definition": "Adjective"
+    },
+    "feared": {
+      "translation": "خشيت",
+      "definition": "Vocabulary"
+    },
+    "fella": {
+      "translation": "شاب",
+      "definition": "Noun"
+    },
+    "final": {
+      "translation": "final (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "fitting": {
+      "translation": "مناسب",
+      "definition": "Vocabulary"
+    },
+    "five": {
+      "translation": "خمسة",
+      "definition": "Vocabulary"
+    },
+    "flowed": {
+      "translation": "انسياب",
+      "definition": "Verb"
+    },
+    "for": {
+      "translation": "لـ/من أجل",
+      "definition": "Vocabulary"
+    },
+    "forest": {
+      "translation": "غابة",
+      "definition": "Noun"
+    },
+    "four": {
+      "translation": "أربع",
+      "definition": "Vocabulary"
+    },
+    "fox": {
+      "translation": "ثعلب",
+      "definition": "Noun"
+    },
+    "fright": {
+      "translation": "خوف/فزع",
+      "definition": "Vocabulary"
+    },
+    "from": {
+      "translation": "from (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "fun": {
+      "translation": "المرح",
+      "definition": "Adjective"
+    },
+    "funny": {
+      "translation": "مضحكة",
+      "definition": "Vocabulary"
+    },
+    "fuse": {
+      "translation": "الفتيل/الشرارة",
+      "definition": "Noun"
+    },
+    "get": {
+      "translation": "get (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "girl": {
+      "translation": "فتاة",
+      "definition": "Noun"
+    },
+    "give": {
+      "translation": "أعطي",
+      "definition": "Verb"
+    },
+    "glass": {
+      "translation": "زجاجي",
+      "definition": "Vocabulary"
+    },
+    "granny": {
+      "translation": "الجدة",
+      "definition": "Noun"
+    },
+    "grasp": {
+      "translation": "تَفهم",
+      "definition": "Verb"
+    },
+    "great": {
+      "translation": "عظيم",
+      "definition": "Vocabulary"
+    },
+    "greece": {
+      "translation": "اليونان",
+      "definition": "Noun"
+    },
+    "greedy": {
+      "translation": "جشع",
+      "definition": "Adjective"
+    },
+    "greeks": {
+      "translation": "الإغريق",
+      "definition": "Noun"
+    },
+    "had": {
+      "translation": "had (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "happy": {
+      "translation": "سعيدة",
+      "definition": "Vocabulary"
+    },
+    "has": {
+      "translation": "has (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "have": {
+      "translation": "قد",
+      "definition": "Vocabulary"
+    },
+    "he": {
+      "translation": "هو",
+      "definition": "Pronoun"
+    },
+    "hear": {
+      "translation": "تسمع",
+      "definition": "Verb"
+    },
+    "hello": {
+      "translation": "مرحبًا",
+      "definition": "Adjective"
+    },
+    "hen": {
+      "translation": "دجاجة",
+      "definition": "Noun"
+    },
+    "her": {
+      "translation": "her (بحاجة لمراجعة)",
+      "definition": "Pronoun"
+    },
+    "here's": {
+      "translation": "إليكم",
+      "definition": "Vocabulary"
+    },
+    "his": {
+      "translation": "خصمه/خاصته",
+      "definition": "Pronoun"
+    },
+    "hood": {
+      "translation": "ـ",
+      "definition": "Vocabulary"
+    },
+    "horse": {
+      "translation": "حصان",
+      "definition": "Noun"
+    },
+    "host": {
+      "translation": "المُضيف",
+      "definition": "Noun"
+    },
+    "how": {
+      "translation": "كم",
+      "definition": "Vocabulary"
+    },
+    "i": {
+      "translation": "أنا",
+      "definition": "Pronoun"
+    },
+    "i'll": {
+      "translation": "سأ",
+      "definition": "Vocabulary"
+    },
+    "i'm": {
+      "translation": "أنا",
+      "definition": "Vocabulary"
+    },
+    "in": {
+      "translation": "في",
+      "definition": "Vocabulary"
+    },
+    "into": {
+      "translation": "في",
+      "definition": "Vocabulary"
+    },
+    "is": {
+      "translation": "يكون",
+      "definition": "Verb"
+    },
+    "it": {
+      "translation": "إنه",
+      "definition": "Pronoun"
+    },
+    "it's": {
+      "translation": "إنها",
+      "definition": "Vocabulary"
+    },
+    "jana": {
+      "translation": "جنى",
+      "definition": "Vocabulary"
+    },
+    "jimmy": {
+      "translation": "جيمي",
+      "definition": "Vocabulary"
+    },
+    "job": {
+      "translation": "job (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "joining": {
+      "translation": "لانضمامكم",
+      "definition": "Vocabulary"
+    },
+    "journey": {
+      "translation": "رحلة",
+      "definition": "Noun"
+    },
+    "just": {
+      "translation": "فقط",
+      "definition": "Adverb"
+    },
+    "know": {
+      "translation": "تعرفون",
+      "definition": "Verb"
+    },
+    "lane": {
+      "translation": "ممر/شارع",
+      "definition": "Noun"
+    },
+    "larks": {
+      "translation": "قبرة",
+      "definition": "Noun"
+    },
+    "lear": {
+      "translation": "لير",
+      "definition": "Vocabulary"
+    },
+    "learn": {
+      "translation": "نتعلم",
+      "definition": "Vocabulary"
+    },
+    "left": {
+      "translation": "تركت",
+      "definition": "Verb"
+    },
+    "lesson": {
+      "translation": "عبرة",
+      "definition": "Noun"
+    },
+    "let's": {
+      "translation": "هيا",
+      "definition": "Vocabulary"
+    },
+    "limerick": {
+      "translation": "ليميرك",
+      "definition": "Vocabulary"
+    },
+    "limericks": {
+      "translation": "ليميركس/قصائد فكاهية",
+      "definition": "Noun"
+    },
+    "lines": {
+      "translation": "أسطر",
+      "definition": "Noun"
+    },
+    "ling": {
+      "translation": "لنغ",
+      "definition": "Vocabulary"
+    },
+    "listen": {
+      "translation": "استمع",
+      "definition": "Verb"
+    },
+    "lit": {
+      "translation": "أشعلوا",
+      "definition": "Verb"
+    },
+    "little": {
+      "translation": "صغيرة",
+      "definition": "Adjective"
+    },
+    "loads": {
+      "translation": "الكثير",
+      "definition": "Vocabulary"
+    },
+    "lucy": {
+      "translation": "لوسي",
+      "definition": "Vocabulary"
+    },
+    "made": {
+      "translation": "جعل/أنهى",
+      "definition": "Vocabulary"
+    },
+    "magical": {
+      "translation": "سحرية",
+      "definition": "Adjective"
+    },
+    "maid": {
+      "translation": "فتاة/خادمة",
+      "definition": "Noun"
+    },
+    "make": {
+      "translation": "تؤلفوا/تصنعوا",
+      "definition": "Verb"
+    },
+    "man": {
+      "translation": "رجل",
+      "definition": "Noun"
+    },
+    "match": {
+      "translation": "من يساويه",
+      "definition": "Noun"
+    },
+    "me": {
+      "translation": "me (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "meadow": {
+      "translation": "مرعى",
+      "definition": "Noun"
+    },
+    "meat": {
+      "translation": "لحم",
+      "definition": "Noun"
+    },
+    "meets": {
+      "translation": "يلتقي",
+      "definition": "Vocabulary"
+    },
+    "met": {
+      "translation": "التقت",
+      "definition": "Verb"
+    },
+    "mice": {
+      "translation": "فئران",
+      "definition": "Noun"
+    },
+    "might": {
+      "translation": "قوة/بأس",
+      "definition": "Vocabulary"
+    },
+    "more": {
+      "translation": "بعد الآن",
+      "definition": "Vocabulary"
+    },
+    "morning": {
+      "translation": "الفجر/الصباح",
+      "definition": "Noun"
+    },
+    "mouse": {
+      "translation": "فأر",
+      "definition": "Noun"
+    },
+    "mr": {
+      "translation": "السيد",
+      "definition": "Noun"
+    },
+    "much": {
+      "translation": "كثير",
+      "definition": "Vocabulary"
+    },
+    "my": {
+      "translation": "لحيتي/خاصتي",
+      "definition": "Pronoun"
+    },
+    "name": {
+      "translation": "اسم",
+      "definition": "Noun"
+    },
+    "named": {
+      "translation": "سُمِّيت",
+      "definition": "Verb"
+    },
+    "neat": {
+      "translation": "neat (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "nests": {
+      "translation": "أعشاش",
+      "definition": "Noun"
+    },
+    "never": {
+      "translation": "never (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "nice": {
+      "translation": "nice (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "night": {
+      "translation": "ليل",
+      "definition": "Vocabulary"
+    },
+    "no": {
+      "translation": "لم/لا",
+      "definition": "Vocabulary"
+    },
+    "nonsense": {
+      "translation": "اللامعنى",
+      "definition": "Noun"
+    },
+    "not": {
+      "translation": "لا",
+      "definition": "Vocabulary"
+    },
+    "now": {
+      "translation": "الآن",
+      "definition": "Conjunction"
+    },
+    "odysseus": {
+      "translation": "أوديسيوس",
+      "definition": "Noun"
+    },
+    "of": {
+      "translation": "ـ",
+      "definition": "Vocabulary"
+    },
+    "off": {
+      "translation": "ننطلق إلى",
+      "definition": "Vocabulary"
+    },
+    "old": {
+      "translation": "عجوز",
+      "definition": "Adjective"
+    },
+    "on": {
+      "translation": "on (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "once": {
+      "translation": "مرة",
+      "definition": "Vocabulary"
+    },
+    "one": {
+      "translation": "one (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "or": {
+      "translation": "or (بحاجة لمراجعة)",
+      "definition": "Conjunction"
+    },
+    "our": {
+      "translation": "قصصنا/خاصتنا",
+      "definition": "Vocabulary"
+    },
+    "out": {
+      "translation": "خارج",
+      "definition": "Vocabulary"
+    },
+    "owls": {
+      "translation": "بومتان",
+      "definition": "Noun"
+    },
+    "own": {
+      "translation": "خاص بكم",
+      "definition": "Vocabulary"
+    },
+    "plump": {
+      "translation": "سمينة",
+      "definition": "Adjective"
+    },
+    "poem": {
+      "translation": "قصيدة",
+      "definition": "Noun"
+    },
+    "poet": {
+      "translation": "شاعر",
+      "definition": "Vocabulary"
+    },
+    "prince": {
+      "translation": "أمير",
+      "definition": "Noun"
+    },
+    "published": {
+      "translation": "نشر",
+      "definition": "Verb"
+    },
+    "pumpkin": {
+      "translation": "قرع",
+      "definition": "Noun"
+    },
+    "quite": {
+      "translation": "إلى حد كبير",
+      "definition": "Vocabulary"
+    },
+    "red": {
+      "translation": "ذات الرداء الأحمر/أحمر",
+      "definition": "Vocabulary"
+    },
+    "remember": {
+      "translation": "تذكروا",
+      "definition": "Verb"
+    },
+    "rhyme": {
+      "translation": "تتقافى/سجع",
+      "definition": "Vocabulary"
+    },
+    "rhymed": {
+      "translation": "تقافَت/سجعت",
+      "definition": "Verb"
+    },
+    "rhyming": {
+      "translation": "rhyming (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "ride": {
+      "translation": "جولة",
+      "definition": "Noun"
+    },
+    "riding": {
+      "translation": "ـ",
+      "definition": "Vocabulary"
+    },
+    "ruse": {
+      "translation": "خدعة",
+      "definition": "Noun"
+    },
+    "said": {
+      "translation": "قال",
+      "definition": "Vocabulary"
+    },
+    "saved": {
+      "translation": "أنقذ",
+      "definition": "Verb"
+    },
+    "saw": {
+      "translation": "رأت",
+      "definition": "Verb"
+    },
+    "say": {
+      "translation": "يقول/نقول",
+      "definition": "Verb"
+    },
+    "she": {
+      "translation": "she (بحاجة لمراجعة)",
+      "definition": "Pronoun"
+    },
+    "short": {
+      "translation": "قصيرة",
+      "definition": "Adjective"
+    },
+    "showed": {
+      "translation": "showed (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "silly": {
+      "translation": "المضحك",
+      "definition": "Adjective"
+    },
+    "simple": {
+      "translation": "بسيط",
+      "definition": "Vocabulary"
+    },
+    "slipper": {
+      "translation": "حذاء",
+      "definition": "Noun"
+    },
+    "sly": {
+      "translation": "sly (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "smiled": {
+      "translation": "ابتسموا",
+      "definition": "Vocabulary"
+    },
+    "snappy": {
+      "translation": "حاسمة",
+      "definition": "Adjective"
+    },
+    "so": {
+      "translation": "so (بحاجة لمراجعة)",
+      "definition": "Conjunction"
+    },
+    "some": {
+      "translation": "بعض",
+      "definition": "Vocabulary"
+    },
+    "soon": {
+      "translation": "سريعًا",
+      "definition": "Adverb"
+    },
+    "sprang": {
+      "translation": "خرجوا قفزًا",
+      "definition": "Verb"
+    },
+    "stellar": {
+      "translation": "ممتازات",
+      "definition": "Vocabulary"
+    },
+    "stepsisters": {
+      "translation": "أخوات غير شقيقات",
+      "definition": "Vocabulary"
+    },
+    "stories": {
+      "translation": "قصص",
+      "definition": "Noun"
+    },
+    "story": {
+      "translation": "قصة",
+      "definition": "Noun"
+    },
+    "storynory": {
+      "translation": "storynory (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "sure": {
+      "translation": "متأكدة",
+      "definition": "Vocabulary"
+    },
+    "take": {
+      "translation": "نأخذ",
+      "definition": "Verb"
+    },
+    "takes": {
+      "translation": "takes (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "tale": {
+      "translation": "قصة",
+      "definition": "Noun"
+    },
+    "tales": {
+      "translation": "حكايات",
+      "definition": "Noun"
+    },
+    "tell": {
+      "translation": "سرد/قول",
+      "definition": "Verb"
+    },
+    "thank": {
+      "translation": "شكرًا",
+      "definition": "Vocabulary"
+    },
+    "that": {
+      "translation": "الذي",
+      "definition": "Vocabulary"
+    },
+    "the": {
+      "translation": "ال",
+      "definition": "Article"
+    },
+    "their": {
+      "translation": "أعشاشهم/خاصتهم",
+      "definition": "Pronoun"
+    },
+    "them": {
+      "translation": "إياها",
+      "definition": "Pronoun"
+    },
+    "then": {
+      "translation": "then (بحاجة لمراجعة)",
+      "definition": "Conjunction"
+    },
+    "there": {
+      "translation": "كان",
+      "definition": "Adverb"
+    },
+    "there's": {
+      "translation": "هناك",
+      "definition": "Vocabulary"
+    },
+    "this": {
+      "translation": "هذا",
+      "definition": "Vocabulary"
+    },
+    "three": {
+      "translation": "ثلاثة",
+      "definition": "Vocabulary"
+    },
+    "through": {
+      "translation": "من خلال/خلال",
+      "definition": "Vocabulary"
+    },
+    "tied": {
+      "translation": "ربط",
+      "definition": "Vocabulary"
+    },
+    "ting": {
+      "translation": "تنغ",
+      "definition": "Vocabulary"
+    },
+    "tired": {
+      "translation": "tired (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "to": {
+      "translation": "إلى",
+      "definition": "Vocabulary"
+    },
+    "transformed": {
+      "translation": "حُوِّلت",
+      "definition": "Verb"
+    },
+    "treat": {
+      "translation": "وجبة/لقمة",
+      "definition": "Noun"
+    },
+    "treats": {
+      "translation": "حلويات/أطايب",
+      "definition": "Noun"
+    },
+    "trojans": {
+      "translation": "الطرواديون",
+      "definition": "Noun"
+    },
+    "troy": {
+      "translation": "طروادة",
+      "definition": "Noun"
+    },
+    "two": {
+      "translation": "اثنان",
+      "definition": "Vocabulary"
+    },
+    "until": {
+      "translation": "حتى",
+      "definition": "Conjunction"
+    },
+    "up": {
+      "translation": "up (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "us": {
+      "translation": "us (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "use": {
+      "translation": "يستخدم/استعمل",
+      "definition": "Verb"
+    },
+    "verses": {
+      "translation": "أبيات قصيرة",
+      "definition": "Noun"
+    },
+    "very": {
+      "translation": "جداً",
+      "definition": "Vocabulary"
+    },
+    "victorian": {
+      "translation": "فيكتوري",
+      "definition": "Adjective"
+    },
+    "visit": {
+      "translation": "visit (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "warning": {
+      "translation": "تحذير",
+      "definition": "Noun"
+    },
+    "was": {
+      "translation": "كان",
+      "definition": "Verb"
+    },
+    "way": {
+      "translation": "طريقة",
+      "definition": "Vocabulary"
+    },
+    "we": {
+      "translation": "نحن",
+      "definition": "Pronoun"
+    },
+    "we're": {
+      "translation": "we're (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "week": {
+      "translation": "الأسبوع",
+      "definition": "Vocabulary"
+    },
+    "welcome": {
+      "translation": "أهلًا بكم",
+      "definition": "Vocabulary"
+    },
+    "well": {
+      "translation": "حسنًا",
+      "definition": "Vocabulary"
+    },
+    "went": {
+      "translation": "ذهب/صار",
+      "definition": "Vocabulary"
+    },
+    "were": {
+      "translation": "كنَّ",
+      "definition": "Verb"
+    },
+    "what": {
+      "translation": "يا له من",
+      "definition": "Vocabulary"
+    },
+    "where": {
+      "translation": "where (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "whimsical": {
+      "translation": "خيالي/طريف",
+      "definition": "Adjective"
+    },
+    "who": {
+      "translation": "الذي",
+      "definition": "Vocabulary"
+    },
+    "who's": {
+      "translation": "who's (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "whose": {
+      "translation": "التي",
+      "definition": "Vocabulary"
+    },
+    "why": {
+      "translation": "لماذا",
+      "definition": "Vocabulary"
+    },
+    "will": {
+      "translation": "سوف",
+      "definition": "Verb"
+    },
+    "wise": {
+      "translation": "حكيمة",
+      "definition": "Adjective"
+    },
+    "with": {
+      "translation": "مع",
+      "definition": "Vocabulary"
+    },
+    "wolf": {
+      "translation": "ذئب",
+      "definition": "Noun"
+    },
+    "wood": {
+      "translation": "خشب",
+      "definition": "Noun"
+    },
+    "woods": {
+      "translation": "woods (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "woodsman": {
+      "translation": "حطّاب",
+      "definition": "Noun"
+    },
+    "world": {
+      "translation": "عالم",
+      "definition": "Noun"
+    },
+    "wow": {
+      "translation": "واو",
+      "definition": "Vocabulary"
+    },
+    "wren": {
+      "translation": "طائر نمنمة/طائر صغير",
+      "definition": "Noun"
+    },
+    "wrote": {
+      "translation": "كتب",
+      "definition": "Verb"
+    },
+    "you": {
+      "translation": "أنتم",
+      "definition": "Pronoun"
+    },
+    "you'll": {
+      "translation": "you'll (بحاجة لمراجعة)",
+      "definition": "Vocabulary"
+    },
+    "your": {
+      "translation": "أنفسكم/خاصتكم",
+      "definition": "Pronoun"
+    }
+  }
       }
     ]
   }
