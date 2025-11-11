@@ -98,7 +98,7 @@ export const readingData = [
             },
             {
               id: 13,
-              text: "If you let me out, I’ll be your friend for life! I’ll follow you like a dog. I’ll guard your house! I’ll... I’ll eat only vegetables! ”",
+              text: "If you let me out, I’ll be your friend for life! I’ll follow you like a dog. I’ll guard your house! I’ll ... I’ll eat only vegetables! ”",
               translationAr:
                 'إن أطلقتَ سراحي سأكون صديقك مدى الحياة! سأتبَعك ككلبٍ وفيّ، وسأحرس بيتك! وسأ... سأأكل الخضار فقط!"',
               audioUrl: "",
@@ -111,7 +111,7 @@ export const readingData = [
             },
             {
               id: 15,
-              text: "“ Oh right ” he said, scratching his chin. “ But you’re a tiger and tigers eat people.”",
+              text: "“ Oh right ” he said, scratching his chin. “ But you’re a tiger and tigers eat people. ”",
               translationAr:
                 'وقال وهو يحكّ ذقنه: "حسنًا... لكنك نمر، والنمور تأكل الناس."',
               audioUrl: "",
@@ -150,7 +150,7 @@ export const readingData = [
             },
             {
               id: 21,
-              text: "“ Thank you very much,” said the tiger, licking his lips “I’m so hungry, I could eat a whole picnic — and you’re it! ”",
+              text: "“ Thank you very much, ” said the tiger, licking his lips “ I’m so hungry, I could eat a whole picnic — and you’re it! ”",
               translationAr:
                 'قال النمر وهو يلحس شفتيه: "شكرًا جزيلًا. إنني جائعٌ جدًّا، أستطيع التهام نُزهةٍ كاملة—وأنتَ وجبتها!"',
               audioUrl: "",
@@ -169,7 +169,7 @@ export const readingData = [
             },
             {
               id: 24,
-              text: "I did you a big favour, and this is how you repay me? By eating me up!”",
+              text: "I did you a big favour, and this is how you repay me? By eating me up! ”",
               translationAr:
                 'لقد أسديتُ إليك معروفًا كبيرًا، أفتكافئني بأن تلتهمني؟!"',
               audioUrl: "",
@@ -189,7 +189,7 @@ export const readingData = [
             },
             {
               id: 27,
-              text: "I played a trick, and you fell for it. Now I’m going to eat you. It’s the natural order. What’s unfair about that?”",
+              text: "I played a trick, and you fell for it. Now I’m going to eat you. It’s the natural order. What’s unfair about that? ”",
               translationAr:
                 'لقد خدعتُك فانطلت عليك الحيلة. والآن سأأكلك. هذه هي السنّةُ الطبيعية. فأين الظلم في ذلك؟"',
               audioUrl: "",
@@ -209,7 +209,7 @@ export const readingData = [
             },
             {
               id: 30,
-              text: "“ All right, all right,” said the Tiger.",
+              text: "“ All right, all right, ” said the Tiger.",
               translationAr: 'قال النمر: "حسنًا، حسنًا."',
               audioUrl: "",
             },
@@ -326,7 +326,7 @@ export const readingData = [
             },
             {
               id: 48,
-              text: "Do they ever say thank you? No. Life, my friend, is one long trudge.”",
+              text: "Do they ever say thank you? No. Life, my friend, is one long trudge. ”",
               translationAr:
                 'أفيقولون شكرًا يومًا؟ كلا. إن الحياة يا صاحبي مَسيرٌ مُضنٍ طويل."',
               audioUrl: "",
@@ -365,7 +365,7 @@ export const readingData = [
             },
             {
               id: 54,
-              text: "“ Good day!” said the jackal, politely.",
+              text: "“ Good day! ” said the jackal, politely.",
               translationAr: 'قال ابنُ آوى بأدب: "نهارُكم سعيد!"',
               audioUrl: "",
             },
@@ -378,7 +378,7 @@ export const readingData = [
             },
             {
               id: 56,
-              text: "Who was in the cage again?”",
+              text: "Who was in the cage again? ”",
               translationAr: '"من الذي كان في القفص مرةً أخرى؟"',
               audioUrl: "",
             },
@@ -2265,7 +2265,7 @@ export const readingData = [
             },
             {
               "id": 13,
-              "text": "We small, humble creatures should know better than to challenge something so dangerous as the sea!”",
+              "text": "We small, humble creatures should know better than to challenge something so dangerous as the sea! ”",
               "translationAr": "ونحنُ صغارٌ متواضعون، أَولى بنا ألّا نتحدّى ما هو خطرٌ كالبحر!»",
               "audioUrl": ""
             },
@@ -2277,7 +2277,7 @@ export const readingData = [
             },
             {
               "id": 15,
-              "text": "Does an elephant deserve more than a mouse? Does the law of nature proclaim an oak superior to a daisy?”",
+              "text": "Does an elephant deserve more than a mouse? Does the law of nature proclaim an oak superior to a daisy? ”",
               "translationAr": "أفيلٌ أحقُّ من فأر؟ وهل تقضي سنّةُ الطبيعة بأن السنديان أفضل من الأقحوان؟»",
               "audioUrl": ""
             },
@@ -2313,7 +2313,7 @@ export const readingData = [
             },
             {
               "id": 21,
-              "text": "When the Tittibha birds flew off to find food, the sea sent her waves creeping and climbing, and then—whoosh—scooped up the eggs.",
+              "text": "When the Tittibha birds flew off to find food, the sea sent her waves creeping and climbing, and then — whoosh — scooped up the eggs.",
               "translationAr": "وما إن طار الطيران يلتمسان القوت، حتى دفعت البحرُ أمواجَها زاحفةً صاعدة، ثم—هس—اختطفت البيض.",
               "audioUrl": ""
             },
@@ -2337,7 +2337,7 @@ export const readingData = [
             },
             {
               "id": 25,
-              "text": "He pulled himself up to his full height—all six inches—and declared: “ I will fight the sea. I will dry her up, one beakful at a time! ”",
+              "text": "He pulled himself up to his full height — all six inches — and declared: “ I will fight the sea. I will dry her up, one beakful at a time! ”",
               "translationAr": "فانتفخ على طوله كلّه—ستُّ بوصات—وقال: «سأحارب البحر. سأجفّفه منقَارًا بعد منقار!»",
               "audioUrl": ""
             },
@@ -2349,7 +2349,7 @@ export const readingData = [
             },
             {
               "id": 27,
-              "text": "“ Yes! Fairness isn’t just for the big and powerful—it’s for little birds too! ”",
+              "text": "“ Yes! Fairness isn’t just for the big and powerful — it’s for little birds too! ”",
               "translationAr": "قال: «نعم! إنَّ العدل ليس للأقوياء وحدهم، بل للصغارِ أيضًا!»",
               "audioUrl": ""
             },
@@ -2463,13 +2463,13 @@ export const readingData = [
             },
             {
               "id": 46,
-              "text": "You may be a God, but you’re still a bird. To take on the sea is simply absurd.”",
+              "text": "You may be a God, but you’re still a bird. To take on the sea is simply absurd. ”",
               "translationAr": "«قد تكون إلهًا، ولكنّك طائرٌ في النهاية؛ ومنازلة البحر محضُ عبث.»",
               "audioUrl": ""
             },
             {
               "id": 47,
-              "text": "Just then, a flash of light split the sky. Lord Vishnu descended, his four arms holding a conch, discus, mace, and—a thunderbolt.",
+              "text": "Just then, a flash of light split the sky. Lord Vishnu descended, his four arms holding a conch, discus, mace, and — a thunderbolt.",
               "translationAr": "وإذ ببرقٍ يشقُّ السماء، ونزل السيّد فيشنو، وفي أذرعه الأربع صَدَفَةٌ ودِرْقٌ ومِقمَعَة—وصاعقة.",
               "audioUrl": ""
             },
@@ -4387,14 +4387,14 @@ export const readingData = [
     "slug": "lesson-3",
     "image": "/assets/images/courses_image/Level-C-3.webp",
     "levelTitle": "Halloween at the Café",
-    "levelDescription": "A Halloween-themed story about Jimmy the Mouse and his friends who mistook ghosts for real, before discovering a noisy children's party and the delicious crumbs it left behind.",
+    "levelDescription": "A Halloween - themed story about Jimmy the Mouse and his friends who mistook ghosts for real, before discovering a noisy children's party and the delicious crumbs it left behind.",
     "levelKey": "Beginner",
     "isLocked": false,
     "lessons": [
       {
         "id": 1,
         "title": "Halloween at the Café",
-        "description": "A Halloween-themed story about Jimmy the Mouse and his friends who mistook ghosts for real, before discovering a noisy children's party and the delicious crumbs it left behind.",
+        "description": "A Halloween - themed story about Jimmy the Mouse and his friends who mistook ghosts for real, before discovering a noisy children's party and the delicious crumbs it left behind.",
         "storyData": {
           "content": [
             {
@@ -4627,13 +4627,13 @@ export const readingData = [
             },
             {
               "id": 39,
-              "text": "In the early evening, ghost-like figures flooded in — pirates with swords, witches with floppy hats, and little goblins clutching bags of sweets.",
+              "text": "In the early evening, ghost - like figures flooded in — pirates with swords, witches with floppy hats, and little goblins clutching bags of sweets.",
               "translationAr": "مع أول المساء، تدفّقت هيئاتٌ تشبه الأشباح—قراصنة بسيوف، وساحراتٌ بقلنسواتٍ مترهّلة، وعفاريتُ صغار يشدّون أكياس الحلوى.",
               "audioUrl": ""
             },
             {
               "id": 40,
-              "text": "At first, Jimmy whispered, “ g-g-ghosts! ” , but soon he noticed wobbly rubber swords and oversized hats.",
+              "text": "At first, Jimmy whispered, “ g - g - ghosts! ” , but soon he noticed wobbly rubber swords and oversized hats.",
               "translationAr": "في البدء همس جيمي: «أ… أ… أشباح!»، لكنه ما لبث أن رأى سيوفًا مطاطيةً متمايلة وقلنسواتٍ أكبرَ من اللازم.",
               "audioUrl": ""
             },
@@ -4651,7 +4651,7 @@ export const readingData = [
             },
             {
               "id": 43,
-              "text": "Meanwhile, little ghosts and ghouls stuffed their faces with cakes, toffee apples and chocolates as the café floor grew sticky with apple-bobbing water.",
+              "text": "Meanwhile, little ghosts and ghouls stuffed their faces with cakes, toffee apples and chocolates as the café floor grew sticky with apple - bobbing water.",
               "translationAr": "وفي الأثناء ملأ «الأشباح» و«الأشاوذ» الصغار أفواههم بالكيك وتفاح الكراميل والشوكولاتة، وأرضُ المقهى تزداد دَبَقًا بماء لعبة التقاط التفاح.",
               "audioUrl": ""
             },
@@ -4693,13 +4693,13 @@ export const readingData = [
             },
             {
               "id": 50,
-              "text": "“ But are you sure there aren’t any ghosts?” asked Rodina. “ Yes, I’m sure — they’re all gone! ”",
+              "text": "“ But are you sure there aren’t any ghosts? ” asked Rodina. “ Yes, I’m sure — they’re all gone! ”",
               "translationAr": "«أمتأكّدٌ من عدم وجود أشباح؟» سألت رودينا. «نعم، متيقّن—لقد مضوا جميعًا!»",
               "audioUrl": ""
             },
             {
               "id": 51,
-              "text": "“ You’re a hero, Jimmy,” declared Grandpa Mouse. “ Come on everyone, let’s hurry back to the café! ”",
+              "text": "“ You’re a hero, Jimmy, ” declared Grandpa Mouse. “ Come on everyone, let’s hurry back to the café! ”",
               "translationAr": "قال الجدّ الفأر: «أنت بطلٌ يا جيمي. هلمّوا جميعًا ولنُسرع إلى المقهى!»",
               "audioUrl": ""
             },
@@ -6777,7 +6777,7 @@ export const readingData = [
             },
             {
               "id": 15,
-              "text": "She set a second test: “ In the house there are three puppies. Each of you give one to the woman you mean to marry. Whichever dog turns out the best, its mistress will be my favourite daughter-in-law. ”",
+              "text": "She set a second test: “ In the house there are three puppies. Each of you give one to the woman you mean to marry. Whichever dog turns out the best, its mistress will be my favourite daughter - in - law. ”",
               "translationAr": "ثم وضعت اختبارًا ثانيًا: «في البيت ثلاثةُ جراء. ليأخذ كلٌّ منكم جروًا ويعطه لمن يريد الزواج بها، فمن ربّتْه أحسنَ تربية فستكون كنّتي المفضّلة.»",
               "audioUrl": ""
             },
@@ -6795,7 +6795,7 @@ export const readingData = [
             },
             {
               "id": 18,
-              "text": "The mother was overjoyed: “ This is the most beautiful little dog I have ever seen! You have won a pearl of a wife! ” Then she set a third test: “ Here are three shirts. Whoever sews the best will be my favourite daughter-in-law. ”",
+              "text": "The mother was overjoyed: “ This is the most beautiful little dog I have ever seen! You have won a pearl of a wife! ” Then she set a third test: “ Here are three shirts. Whoever sews the best will be my favourite daughter - in - law. ”",
               "translationAr": "فابتهجت الأم: «هذا أجمل جروٍ رأيتُه قط! لقد ظفرتَ بجوهرةٍ من زوجة!» ثم وضعت اختبارًا ثالثًا: «هذه ثلاثةُ قمصان؛ مَن خاطت أفضلَها فهي كنّتي المفضّلة.»",
               "audioUrl": ""
             },
@@ -6813,7 +6813,7 @@ export const readingData = [
             },
             {
               "id": 21,
-              "text": "She asked, “ Will you take me for a wife?” He wondered, “ What should I do with you as a wife? ” She insisted, “ Will you have me, or will you not?” He replied, “ I will neither take you nor refuse you. ”",
+              "text": "She asked, “ Will you take me for a wife? ” He wondered, “ What should I do with you as a wife? ” She insisted, “ Will you have me, or will you not? ” He replied, “ I will neither take you nor refuse you. ”",
               "translationAr": "قالت: «أتتّخذني زوجة؟» فتعجّب: «وماذا أصنع بك زوجةً؟» فقالت مؤكِّدة: «أتقبلني أم ترفضني؟» قال: «لا أقبلك ولا أرفضك.»",
               "audioUrl": ""
             },
@@ -6843,7 +6843,7 @@ export const readingData = [
             },
             {
               "id": 26,
-              "text": "The witches vanished. The youth and his lovely bride drove to his mother’s home. She rejoiced at her youngest son’s fortune. A beautiful house was built for them, and the new bride became the favourite daughter-in-law. They lived happily ever after.",
+              "text": "The witches vanished. The youth and his lovely bride drove to his mother’s home. She rejoiced at her youngest son’s fortune. A beautiful house was built for them, and the new bride became the favourite daughter - in - law. They lived happily ever after.",
               "translationAr": "ثم غابت الساحرات. ومضى الشابُّ مع عروسه الجميلة إلى بيت أمّه، ففرحت بحظّ ابنها الأصغر، وبُنِي لهما بيتٌ جميل، وصارت العروس كنَّتها المفضّلة، وعاشا في سرورٍ وهناء.",
               "audioUrl": ""
             },
@@ -8515,7 +8515,7 @@ export const readingData = [
             },
             {
               "id": 28,
-              "text": "Later, when Mum and Elle returned home, Elle burst into Jake’s room holding up a shiny yellow shirt and 70s style bell-bottom jeans with flowers on the thighs.",
+              "text": "Later, when Mum and Elle returned home, Elle burst into Jake’s room holding up a shiny yellow shirt and 70s style bell - bottom jeans with flowers on the thighs.",
               "translationAr": "وعندما عادتا، اقتحمت «إيلي» غرفة جِيك رافعةً قميصًا أصفر لامعًا وسروال جينز «شارلستون» من طراز السبعينيات مزدانًا بالزهور عند الفخذين.",
               "audioUrl": ""
             },
@@ -8581,7 +8581,7 @@ export const readingData = [
             },
             {
               "id": 39,
-              "text": "After dinner, Jake retreated to his room, flopping onto his bed with a groan. His mind began to whirl with images of the garage—dark corners filled with creepy-crawlies, spiders the size of his fist, and who knew what else lurking in the shadows.",
+              "text": "After dinner, Jake retreated to his room, flopping onto his bed with a groan. His mind began to whirl with images of the garage — dark corners filled with creepy - crawlies, spiders the size of his fist, and who knew what else lurking in the shadows.",
               "translationAr": "بعد العشاء، انزوى إلى غرفته وألقى بنفسه على سريره متأوّهًا. وأخذت تدور في ذهنه صور المرأب—زوايا مظلمة تعجُّ بالحشرات المقزّزة، وعناكب بحجم قبضة يده، ومن يدري ماذا بعد كامنٌ في الظلال.",
               "audioUrl": ""
             },
@@ -8611,7 +8611,7 @@ export const readingData = [
             },
             {
               "id": 44,
-              "text": "Jake eyed the dark corners warily, half-expecting a rat to jump out at him. Dad rolled up his sleeves, giving Jake an encouraging smile.",
+              "text": "Jake eyed the dark corners warily, half - expecting a rat to jump out at him. Dad rolled up his sleeves, giving Jake an encouraging smile.",
               "translationAr": "كان جِيك يرمق الزوايا المعتمة بتحفّز، كأنه يتوقّع أن يقفز فأرٌ عليه. وشمّر الأبُ عن ساعديه، وألقى إلى جِيك بابتسامةٍ مشجّعة.",
               "audioUrl": ""
             },
@@ -8629,7 +8629,7 @@ export const readingData = [
             },
             {
               "id": 47,
-              "text": "Pulling down a dusty box, Jake coughed as a cloud of dust enveloped him. He opened the box to find a collection of his old toys: action figures, building blocks, and a well-worn teddy bear.",
+              "text": "Pulling down a dusty box, Jake coughed as a cloud of dust enveloped him. He opened the box to find a collection of his old toys: action figures, building blocks, and a well - worn teddy bear.",
               "translationAr": "ولما أنزل صندوقًا مُغبرًّا سعل إذ أحاطت به سحابةُ غبار. وفتح الصندوق فوجد مجموعةً من ألعابه القديمة: دُمًى مقاتِلة، وقطعَ بناء، ودبًّا قماشيًّا باليًا.",
               "audioUrl": ""
             },
@@ -8677,13 +8677,13 @@ export const readingData = [
             },
             {
               "id": 55,
-              "text": "“ I guess Mum really knows how to take care of things.” Dad smiled, clearly pleased. “ She sure does.",
+              "text": "“ I guess Mum really knows how to take care of things. ” Dad smiled, clearly pleased. “ She sure does.",
               "translationAr": "«أظن أن أمّي تعرف حقًّا كيف تعتني بالأشياء.» ابتسم الأبُ راضيًا. «بلى، بلا شك.",
               "audioUrl": ""
             },
             {
               "id": 56,
-              "text": "I was sad to see her old car leave the drive for the last time. An unusual car, full of memories.” And Jake replied, “ Yeah Dad, you’re right. I miss Mum’s old car too. ”",
+              "text": "I was sad to see her old car leave the drive for the last time. An unusual car, full of memories. ” And Jake replied, “ Yeah Dad, you’re right. I miss Mum’s old car too. ”",
               "translationAr": "حزنتُ حين غادرت سيارتها القديمة الممرَّ للمرة الأخيرة. سيارة غير مألوفة، مفعمة بالذكريات.» فقال جِيك: «نعم يا أبي، معك حق. أفتقد سيارة أمّي القديمة أيضًا.»",
               "audioUrl": ""
             },
@@ -11367,7 +11367,7 @@ export const readingData = [
             },
             {
               "id": 4,
-              "text": "The Queen said: “Ah me, if only I had a child with skin as white as snow, and lips as red as blood, and hair as black as the ebony window.”",
+              "text": "The Queen said: “Ah me, if only I had a child with skin as white as snow, and lips as red as blood, and hair as black as the ebony window. ”",
               "translationAr": "وقالت الملكة: «آهٍ لي، لو أن لي طفلًا جلدُه أبيضُ كالثلج، وشفاهُه حمراءُ كالدم، وشعرُه أسودُ كإطار النافذة الأبنوسي.»",
               "audioUrl": ""
             },
@@ -11391,13 +11391,13 @@ export const readingData = [
             },
             {
               "id": 8,
-              "text": "“Mirror, mirror on the wall, who is the fairest of them all?”",
+              "text": "“ Mirror, mirror on the wall, who is the fairest of them all? ”",
               "translationAr": "«أيتها المرآةُ على الجدار، من هي الأجملُ بين الجميع؟»",
               "audioUrl": ""
             },
             {
               "id": 9,
-              "text": "And when the mirror replied: “Thou, oh Queen, are the fairest of them all,” her vain heart rejoiced.",
+              "text": "And when the mirror replied: “ Thou, oh Queen, are the fairest of them all, ” her vain heart rejoiced.",
               "translationAr": "فإذا أجابت المرآة: «أنتِ، أيتها الملكة، الأجملُ بين الجميع»، طرب قلبُها المغرور.",
               "audioUrl": ""
             },
@@ -11415,7 +11415,7 @@ export const readingData = [
             },
             {
               "id": 12,
-              "text": "“Oh Queen, if truth be told, Snow White is fairest now she is 16 years old.”",
+              "text": "“ Oh Queen, if truth be told, Snow White is fairest now she is 16 years old. ”",
               "translationAr": "«أيتها الملكة، إن قيل الحق، فبياض الثلج هي الأجمل الآن وقد بلغت السادسةَ عشرة.»",
               "audioUrl": ""
             },
@@ -11433,7 +11433,7 @@ export const readingData = [
             },
             {
               "id": 15,
-              "text": "“Take Snow White out and don’t bother to bring back anything but her heart.”",
+              "text": "“ Take Snow White out and don’t bother to bring back anything but her heart. ”",
               "translationAr": "«خُذ بياض الثلج إلى الخارج، ولا تُعنِ نفسك بإعادة شيءٍ إلا قلبَها.»",
               "audioUrl": ""
             },
@@ -11463,7 +11463,7 @@ export const readingData = [
             },
             {
               "id": 20,
-              "text": "The door was open. She went inside and saw that the furniture was child-sized.",
+              "text": "The door was open. She went inside and saw that the furniture was child - sized.",
               "translationAr": "وكان البابُ مفتوحًا. دخلت فرأت الأثاثَ صغيرًا كأنه لأطفال.",
               "audioUrl": ""
             },
@@ -11487,19 +11487,19 @@ export const readingData = [
             },
             {
               "id": 24,
-              "text": "“Oh my, what a pretty child!” one of them exclaimed.",
+              "text": "“ Oh my, what a pretty child! ” one of them exclaimed.",
               "translationAr": "«يا للعجب! ما أجملَ هذه الصغيرة!» هتف أحدُهم.",
               "audioUrl": ""
             },
             {
               "id": 25,
-              "text": "“Ssshh! Don’t wake her up!” ordered another. “Where shall I sleep?” asked a third. “She’s taken my bed?”",
+              "text": "“ Ssshh! Don’t wake her up! ” ordered another. “ Where shall I sleep? ” asked a third. “ She’s taken my bed? ”",
               "translationAr": "«صَه! لا توقِظوها!» أمر آخر. «وأين أنامُ أنا؟» سأل ثالث. «لقد أخذت سريري!»",
               "audioUrl": ""
             },
             {
               "id": 26,
-              "text": "“Well, there are seven hours in the night, so every hour, one of us must get out of bed and take a turn at sleeping in the chair.”",
+              "text": "“ Well, there are seven hours in the night, so every hour, one of us must get out of bed and take a turn at sleeping in the chair. ”",
               "translationAr": "«حسنًا، ساعاتُ الليل سبع، فليخرجْ أحدُنا كلَّ ساعةٍ من السرير وليأخذْ دورَه في النوم على الكرسي.»",
               "audioUrl": ""
             },
@@ -11517,13 +11517,13 @@ export const readingData = [
             },
             {
               "id": 29,
-              "text": "But they were friendly, and asked her name. “Snow White,” she replied.",
+              "text": "But they were friendly, and asked her name. “ Snow White, ” she replied.",
               "translationAr": "لكنهم كانوا لطافًا، فسألوها اسمَها. فقالت: «بياض الثلج.»",
               "audioUrl": ""
             },
             {
               "id": 30,
-              "text": "The eldest dwarf said, “Well, Snow White, if you will take care of our house, then you may live here.”",
+              "text": "The eldest dwarf said, “ Well, Snow White, if you will take care of our house, then you may live here. ”",
               "translationAr": "فقال الأكبر: «حسنًا يا بياض الثلج، إنْ تولَّيتِ رعايةَ بيتنا فلك أن تقيمي هنا.»",
               "audioUrl": ""
             },
@@ -11541,49 +11541,49 @@ export const readingData = [
             },
             {
               "id": 33,
-              "text": "Meanwhile, the Queen asked her mirror, “Who is the fairest of all?”",
+              "text": "Meanwhile, the Queen asked her mirror, “ Who is the fairest of all? ”",
               "translationAr": "وفي تلك الأثناء، سألت الملكةُ مرآتَها: «من الأجملُ بين الجميع؟»",
               "audioUrl": ""
             },
             {
               "id": 34,
-              "text": "And the mirror answered: “O Lady Queen, though fair ye be, Snow White is fairer far to see. Over the hills and far away, she lives with seven dwarfs today.”",
+              "text": "And the mirror answered: “ O Lady Queen, though fair ye be, Snow White is fairer far to see. Over the hills and far away, she lives with seven dwarfs today. ”",
               "translationAr": "فأجابت المرآة: «يا سيدتي الملكة، وإن كنتِ حسناء، فبياضُ الثلج أحسنُ مرأى. وراءَ التلالِ في أقصى الفِجاج، تعيش اليومَ مع سبعة أقزام.»",
               "audioUrl": ""
             },
             {
               "id": 35,
-              "text": "“Liar!” screeched the Queen in her rage. But she soon realised that the hunter must have tricked her.",
+              "text": "“ Liar! ” screeched the Queen in her rage. But she soon realised that the hunter must have tricked her.",
               "translationAr": "«كاذبة!» صرخت الملكةُ في غيظها. لكنها أدركت سريعًا أن الصيّاد لا بد أنه خدعها.",
               "audioUrl": ""
             },
             {
               "id": 36,
-              "text": "She decided to dress herself like an old pedlar woman, and in this disguise she visited the dwarfs’ cottage, and knocked at their door crying: “Pretty things, very cheap, very cheap.”",
+              "text": "She decided to dress herself like an old pedlar woman, and in this disguise she visited the dwarfs’ cottage, and knocked at their door crying: “ Pretty things, very cheap, very cheap. ”",
               "translationAr": "وقررت أن تتنكر بزيِّ عجوزٍ دلاّلة، وبهذه الحيلة قصدت كوخَ الأقزام وطرقت بابَهم منادية: «أشياءُ جميلة! بثمنٍ بخس! بثمنٍ بخس!»",
               "audioUrl": ""
             },
             {
               "id": 37,
-              "text": "Snow White peeped from the window and said: “Good day, good woman. What are your wares?”",
+              "text": "Snow White peeped from the window and said: “ Good day, good woman. What are your wares? ”",
               "translationAr": "فتطاولت بياضُ الثلج من النافذة وقالت: «مرحبًا أيتها الطيبة، ما بضاعتُكِ؟»",
               "audioUrl": ""
             },
             {
               "id": 38,
-              "text": "“All sorts of pretty things, my dear.”",
+              "text": "“ All sorts of pretty things, my dear. ”",
               "translationAr": "«كلُّ ما هو جميلٌ يا عزيزتي.»",
               "audioUrl": ""
             },
             {
               "id": 39,
-              "text": "“Thank you,” said Snow White. “Your scarves and laces are indeed pretty, but I will not buy any today.”",
+              "text": "“ Thank you, ” said Snow White. “ Your scarves and laces are indeed pretty, but I will not buy any today. ”",
               "translationAr": "«شكرًا لكِ»، قالت بياضُ الثلج. «أوشحتُكِ وأربطتُكِ جميلةٌ حقًا، لكني لن أشتري اليوم.»",
               "audioUrl": ""
             },
             {
               "id": 40,
-              "text": "“It is a pity,” said the old woman. “But never mind. I will give you this apple, and perhaps you shall remember me another time.”",
+              "text": "“ It is a pity, ” said the old woman. “ But never mind. I will give you this apple, and perhaps you shall remember me another time. ”",
               "translationAr": "«يا للأسف»، قالت العجوز. «لا بأس. سأهديكِ هذه التفاحة، ولعلّكِ تذكرينني في مرةٍ أخرى.»",
               "audioUrl": ""
             },
@@ -13089,31 +13089,31 @@ export const readingData = [
             },
             {
               "id": 5,
-              "text": "“Dad, my tummy’s grumbling,” complained Jake with a pained look on his face.",
+              "text": "“ Dad, my tummy’s grumbling, ” complained Jake with a pained look on his face.",
               "translationAr": "قال جيك شاكيًا وبملامح متألمة: «أبي، بطني يقرقر.»",
               "audioUrl": ""
             },
             {
               "id": 6,
-              "text": "“You mean rumbling?” corrected Dad.",
+              "text": "“ You mean rumbling? ” corrected Dad.",
               "translationAr": "قال الأب مصححًا: «تقصد يهدِر؟»",
               "audioUrl": ""
             },
             {
               "id": 7,
-              "text": "“No, it’s grumbling. I really need chocolate to make it better. I’m hungry, Dad,” he pleaded.",
+              "text": "“ No, it’s grumbling. I really need chocolate to make it better. I’m hungry, Dad, ” he pleaded.",
               "translationAr": "«لا، إنه يقرقر. أحتاج حقًا إلى شوكولاتة ليهدأ. أنا جائع يا أبي»، توسل.",
               "audioUrl": ""
             },
             {
               "id": 8,
-              "text": "“How about a nice stick of celery?” Dad grinned, pointing to the salad department.",
+              "text": "“ How about a nice stick of celery? ” Dad grinned, pointing to the salad department.",
               "translationAr": "ابتسم الأب مشيرًا إلى قسم السلطة: «ما رأيك بعيدان كرفس لذيذة؟»",
               "audioUrl": ""
             },
             {
               "id": 9,
-              "text": "“Celery, yuk! I’m not eating a plant!”",
+              "text": "“ Celery, yuk! I’m not eating a plant! ”",
               "translationAr": "«كرفس! أُفّ! لن آكل نباتًا!»",
               "audioUrl": ""
             },
@@ -13137,55 +13137,55 @@ export const readingData = [
             },
             {
               "id": 13,
-              "text": "“The news is full of health scares at the moment,” said Mum, looking up briefly from her laptop.",
+              "text": "“ The news is full of health scares at the moment, ” said Mum, looking up briefly from her laptop.",
               "translationAr": "قالت الأم رافعة نظرها عن الحاسوب المحمول لوهلة: «الأخبار مليئة حاليًا بالتحذيرات الصحية.»",
               "audioUrl": ""
             },
             {
               "id": 14,
-              "text": "“We’re going to start eating healthier from now on.",
+              "text": "“ We’re going to start eating healthier from now on.",
               "translationAr": "«سنبدأ من الآن بالأكل الصحي أكثر.",
               "audioUrl": ""
             },
             {
               "id": 15,
-              "text": "There’s an article here that says sugar affects your development,” she told the kids.",
+              "text": "There’s an article here that says sugar affects your development, ” she told the kids.",
               "translationAr": "هنا مقال يقول إن السكر يؤثر في نموكم»، قالت للأطفال.",
               "audioUrl": ""
             },
             {
               "id": 16,
-              "text": "“What does that mean?” asked Jake, dismayed.",
+              "text": "“ What does that mean? ” asked Jake, dismayed.",
               "translationAr": "سأل جيك بقلق: «وما معنى ذلك؟»",
               "audioUrl": ""
             },
             {
               "id": 17,
-              "text": "“It means that sugar doesn’t just make you fat, it makes you annoying too.”",
+              "text": "“ It means that sugar doesn’t just make you fat, it makes you annoying too. ”",
               "translationAr": "«يعني أن السكر لا يجعلك سمينًا فحسب، بل يجعلك مُزعجًا أيضًا.»",
               "audioUrl": ""
             },
             {
               "id": 18,
-              "text": "“Don’t say ‘fat’!” shot back Jake.",
+              "text": "“ Don’t say ‘ fat ’! ” shot back Jake.",
               "translationAr": "قال جيك بسرعة: «لا تقل: سمين!»",
               "audioUrl": ""
             },
             {
               "id": 19,
-              "text": "“And don’t say ‘annoying’!” screamed his hot-tempered little sister, stamping her foot.",
+              "text": "“ And don’t say ‘ annoying ’! ” screamed his hot - tempered little sister, stamping her foot.",
               "translationAr": "وصرخت أخته الصغرى السريعة الغضب وهي تضرب الأرض بقدمها: «ولا تقل: مزعج!»",
               "audioUrl": ""
             },
             {
               "id": 20,
-              "text": "“Ok, ok, you’re right,” admitted Mum with a sigh.",
+              "text": "“ Ok, ok, you’re right, ” admitted Mum with a sigh.",
               "translationAr": "تنهدت الأم معترفة: «حسنًا، حسنًا، معكما حق.»",
               "audioUrl": ""
             },
             {
               "id": 21,
-              "text": "“We must all watch our language.",
+              "text": "“ We must all watch our language.",
               "translationAr": "«علينا جميعًا أن ننتبه لألفاظنا.",
               "audioUrl": ""
             },
@@ -13209,7 +13209,7 @@ export const readingData = [
             },
             {
               "id": 25,
-              "text": "Am I allowed to mention that? I mean, do we still have free speech in our house?”",
+              "text": "Am I allowed to mention that? I mean, do we still have free speech in our house? ”",
               "translationAr": "هل يُسمح لي بذكر ذلك؟ أعني، هل لا يزال لدينا حرية التعبير في بيتنا؟»",
               "audioUrl": ""
             },
@@ -13233,49 +13233,49 @@ export const readingData = [
             },
             {
               "id": 29,
-              "text": "Jake glanced at the window, his heart lifting a little. “Birdy!”",
+              "text": "Jake glanced at the window, his heart lifting a little. “ Birdy! ”",
               "translationAr": "نظر جيك نحو النافذة وارتفع قلبه قليلًا: «بيردي!»",
               "audioUrl": ""
             },
             {
               "id": 30,
-              "text": "Birdy, a jet-black crow with a sharp gaze, hopped into the room.",
+              "text": "Birdy, a jet - black crow with a sharp gaze, hopped into the room.",
               "translationAr": "قفز بيردي، وهو غراب أسود فاحم ذو نظرة حادّة، إلى الغرفة.",
               "audioUrl": ""
             },
             {
               "id": 31,
-              "text": "“What’s this long face for?” he asked, tilting his head in concern.",
+              "text": "“ What’s this long face for? ” he asked, tilting his head in concern.",
               "translationAr": "سأل وهو يميل رأسه بقلق: «ولماذا هذا الوجه العابس؟»",
               "audioUrl": ""
             },
             {
               "id": 32,
-              "text": "“It’s a disaster, Birdy!” Jake wailed.",
+              "text": "“ It’s a disaster, Birdy! ” Jake wailed.",
               "translationAr": "قال جيك بنواح: «إنها مصيبة يا بيردي!»",
               "audioUrl": ""
             },
             {
               "id": 33,
-              "text": "Birdy fluffed his feathers in alarm. “Oh? What tragedy has befallen you?”",
+              "text": "Birdy fluffed his feathers in alarm. “ Oh? What tragedy has befallen you? ”",
               "translationAr": "انتفش ريش بيردي بفزع: «أوه؟ أي مأساة حلت بك؟»",
               "audioUrl": ""
             },
             {
               "id": 34,
-              "text": "“You’d never guess what’s happened!”",
+              "text": "“ You’d never guess what’s happened! ”",
               "translationAr": "«لن تتوقع ما حدث!»",
               "audioUrl": ""
             },
             {
               "id": 35,
-              "text": "“Get on and spit it out then,” answered Birdy.",
+              "text": "“ Get on and spit it out then, ” answered Birdy.",
               "translationAr": "أجاب بيردي: «هيا تفوّه بها إذن.»",
               "audioUrl": ""
             },
             {
               "id": 36,
-              "text": "“Mum has banned chocolate and crisps from my life! And fizzy drinks!”",
+              "text": "“ Mum has banned chocolate and crisps from my life! And fizzy drinks! ”",
               "translationAr": "«أمّي حظرت الشوكولاتة والرقائق من حياتي! وكذلك المشروبات الغازية!»",
               "audioUrl": ""
             },
@@ -13287,73 +13287,73 @@ export const readingData = [
             },
             {
               "id": 38,
-              "text": "Birdy gasped, his wings fluttering. “What’s left? Tree bark and birdseed?”",
+              "text": "Birdy gasped, his wings fluttering. “ What’s left? Tree bark and birdseed? ”",
               "translationAr": "شهق بيردي وهو يرفرف بجناحيه: «وماذا تبقى؟ قشر الشجر وبذور الطيور؟»",
               "audioUrl": ""
             },
             {
               "id": 39,
-              "text": "“Close,” Jake muttered. “Carrots, celery, and this weird goo Mum calls hummus.",
+              "text": "“ Close, ” Jake muttered. “ Carrots, celery, and this weird goo Mum calls hummus.",
               "translationAr": "قال جيك هامسًا: «قريب من ذلك: جزر وكرفس وهذا المعجون الغريب الذي تسميه أمي حمصًا.",
               "audioUrl": ""
             },
             {
               "id": 40,
-              "text": "She says it’s nutritious, but to me it tastes like wallpaper paste.”",
+              "text": "She says it’s nutritious, but to me it tastes like wallpaper paste. ”",
               "translationAr": "تقول إنه مغذٍّ، لكنه بالنسبة لي بطعم معجون لصق ورق الجدران.»",
               "audioUrl": ""
             },
             {
               "id": 41,
-              "text": "“Yikes,” Birdy sympathised. “So, what’s the plan? Stage a rebellion?”",
+              "text": "“ Yikes, ” Birdy sympathised. “ So, what’s the plan? Stage a rebellion? ”",
               "translationAr": "قال بيردي متعاطفًا: «يا ساتر. إذن ما الخطة؟ ثورة؟»",
               "audioUrl": ""
             },
             {
               "id": 42,
-              "text": "Jake sighed dramatically. “Oh, I wish. Birdy, can we actually live without chocolate?”",
+              "text": "Jake sighed dramatically. “ Oh, I wish. Birdy, can we actually live without chocolate? ”",
               "translationAr": "تنهد جيك بحرارة: «ليت ذلك. بيردي، هل نستطيع حقًا أن نعيش بلا شوكولاتة؟»",
               "audioUrl": ""
             },
             {
               "id": 43,
-              "text": "“Ah, chocolate. The most magical bean of them all,” Birdy began, more serious now.",
+              "text": "“ Ah, chocolate. The most magical bean of them all, ” Birdy began, more serious now.",
               "translationAr": "قال بيردي بنبرة أكثر جدية: «آه، الشوكولاتة.. أروع الحبوب سحرًا على الإطلاق.»",
               "audioUrl": ""
             },
             {
               "id": 44,
-              "text": "“Humans can live without chocolate for surprisingly long periods of time.",
+              "text": "“ Humans can live without chocolate for surprisingly long periods of time.",
               "translationAr": "«البشر يستطيعون العيش دون شوكولاتة لفترات طويلة على نحو مدهش.",
               "audioUrl": ""
             },
             {
               "id": 45,
-              "text": "During World War II, they had to ration it—four ounces a month!”",
+              "text": "During World War II, they had to ration it — four ounces a month! ”",
               "translationAr": "أثناء الحرب العالمية الثانية تم تقنينها — أربعة أونصات في الشهر!»",
               "audioUrl": ""
             },
             {
               "id": 46,
-              "text": "“Four ounces? That’s like one tiny bite!” Jake’s eyes widened.",
+              "text": "“ Four ounces? That’s like one tiny bite! ” Jake’s eyes widened.",
               "translationAr": "اتسعت عينا جيك: «أربع أونصات؟ هذه قضمة صغيرة!»",
               "audioUrl": ""
             },
             {
               "id": 47,
-              "text": "“Exactly. And after the war, rationing continued for years.”",
+              "text": "“ Exactly. And after the war, rationing continued for years. ”",
               "translationAr": "«بالضبط. وحتى بعد الحرب استمر التقنين لسنوات.»",
               "audioUrl": ""
             },
             {
               "id": 48,
-              "text": "“Years?! No chocolate for years? That’s torture!”",
+              "text": "“ Years?! No chocolate for years? That’s torture! ”",
               "translationAr": "«سنوات؟! بلا شوكولاتة لسنوات؟ هذه تعذيب!»",
               "audioUrl": ""
             },
             {
               "id": 49,
-              "text": "“Chocolate has a history and a magic that goes back to ancient times. Ever heard of the Mayans?”",
+              "text": "“ Chocolate has a history and a magic that goes back to ancient times. Ever heard of the Mayans? ”",
               "translationAr": "«للشوكولاتة تاريخ وسحر يعودان إلى العصور القديمة. هل سمعت بالمايا؟»",
               "audioUrl": ""
             },
@@ -13365,7 +13365,7 @@ export const readingData = [
             },
             {
               "id": 51,
-              "text": "“The Mayans were a great civilization in Mexico long before Europeans arrived.",
+              "text": "“ The Mayans were a great civilization in Mexico long before Europeans arrived.",
               "translationAr": "«كان المايا حضارة عظيمة في المكسيك قبل قدوم الأوروبيين بوقت طويل.",
               "audioUrl": ""
             },
@@ -13377,7 +13377,7 @@ export const readingData = [
             },
             {
               "id": 53,
-              "text": "One of their most cherished treasures was a tree—the chocolate tree.",
+              "text": "One of their most cherished treasures was a tree — the chocolate tree.",
               "translationAr": "ومن أعزّ كنوزهم شجرة — شجرة الشوكولاتة.",
               "audioUrl": ""
             },
@@ -13389,25 +13389,25 @@ export const readingData = [
             },
             {
               "id": 55,
-              "text": "The chocolate wasn’t just delicious; it made people wise, strong, and happy.”",
+              "text": "The chocolate wasn’t just delicious; it made people wise, strong, and happy. ”",
               "translationAr": "ولم تكن الشوكولاتة لذيذة فحسب؛ بل جعلت الناس حكماء أقوياء سعداء.»",
               "audioUrl": ""
             },
             {
               "id": 56,
-              "text": "“So chocolate’s like… magic?”",
+              "text": "“ So chocolate’s like… magic? ”",
               "translationAr": "«إذًا الشوكولاتة مثل… السحر؟»",
               "audioUrl": ""
             },
             {
               "id": 57,
-              "text": "“Indeed. The Mayans believed it was a gift from the gods — a little magic in every bite.”",
+              "text": "“ Indeed. The Mayans believed it was a gift from the gods — a little magic in every bite. ”",
               "translationAr": "«بالفعل. كان المايا يرونها هدية من الآلهة — قليل من السحر في كل قضمة.»",
               "audioUrl": ""
             },
             {
               "id": 58,
-              "text": "Jake smiled. “Awesome story, Birdy. But now I could really do with some chocolate. Do you have some?”",
+              "text": "Jake smiled. “ Awesome story, Birdy. But now I could really do with some chocolate. Do you have some? ”",
               "translationAr": "ابتسم جيك: «قصة رائعة يا بيردي. لكنني الآن أحتاج حقًا إلى شوكولاتة. أتملك بعضًا منها؟»",
               "audioUrl": ""
             },
@@ -13437,7 +13437,7 @@ export const readingData = [
             },
             {
               "id": 63,
-              "text": "“Mum, Birdy told me about a Magic Chocolate tree in Mexico.",
+              "text": "“ Mum, Birdy told me about a Magic Chocolate tree in Mexico.",
               "translationAr": "«أمي، أخبرني بيردي عن شجرة شوكولاتة سحرية في المكسيك.",
               "audioUrl": ""
             },
@@ -13449,19 +13449,19 @@ export const readingData = [
             },
             {
               "id": 65,
-              "text": "It even makes you clever and helps you pass all your exams.”",
+              "text": "It even makes you clever and helps you pass all your exams. ”",
               "translationAr": "بل تجعلك ذكيًا وتساعدك على النجاح في كل امتحاناتك.»",
               "audioUrl": ""
             },
             {
               "id": 66,
-              "text": "“Oh Birdy this, Birdy that,” sighed Mum.",
+              "text": "“ Oh Birdy this, Birdy that, ” sighed Mum.",
               "translationAr": "تنهدت الأم: «بيردي هذا وبيردي ذاك.»",
               "audioUrl": ""
             },
             {
               "id": 67,
-              "text": "“Come on, dreamy head. Time to get up for school.”",
+              "text": "“ Come on, dreamy head. Time to get up for school. ”",
               "translationAr": "«هيا يا حالم، حان وقت الذهاب إلى المدرسة.»",
               "audioUrl": ""
             },
@@ -13491,67 +13491,67 @@ export const readingData = [
             },
             {
               "id": 72,
-              "text": "“Birdy! Where have you been? I was so worried!”",
+              "text": "“ Birdy! Where have you been? I was so worried! ”",
               "translationAr": "«بيردي! أين كنت؟ لقد قلقت كثيرًا!»",
               "audioUrl": ""
             },
             {
               "id": 73,
-              "text": "Birdy placed the object on the desk — a small, ancient-looking bean with a faint magical glow.",
+              "text": "Birdy placed the object on the desk — a small, ancient - looking bean with a faint magical glow.",
               "translationAr": "وضع بيردي الشيء على المكتب — حبة صغيرة تبدو قديمة تشع وهجًا سحريًا خافتًا.",
               "audioUrl": ""
             },
             {
               "id": 74,
-              "text": "“Sorry for the delay, Jake. I had to make a special trip.”",
+              "text": "“ Sorry for the delay, Jake. I had to make a special trip. ”",
               "translationAr": "«آسف على التأخر يا جيك. اضطررت لرحلة خاصة.»",
               "audioUrl": ""
             },
             {
               "id": 75,
-              "text": "“What is that?” Jake asked.",
+              "text": "“ What is that? ” Jake asked.",
               "translationAr": "سأل جيك: «ما هذا؟»",
               "audioUrl": ""
             },
             {
               "id": 76,
-              "text": "“This is a magic cocoa bean. I brought it back from ancient Mexico.",
+              "text": "“ This is a magic cocoa bean. I brought it back from ancient Mexico.",
               "translationAr": "«إنها حبة كاكاو سحرية. جئت بها من المكسيك القديمة.",
               "audioUrl": ""
             },
             {
               "id": 77,
-              "text": "I had to travel through time and space to get it, but it’s worth it.”",
+              "text": "I had to travel through time and space to get it, but it’s worth it. ”",
               "translationAr": "اضطررت للسفر عبر الزمان والمكان لأحصل عليها، لكنه كان يستحق.»",
               "audioUrl": ""
             },
             {
               "id": 78,
-              "text": "“What does it do?”",
+              "text": "“ What does it do? ”",
               "translationAr": "«وماذا تفعل؟»",
               "audioUrl": ""
             },
             {
               "id": 79,
-              "text": "“If you plant it, it will grow into a tree like the Mayans had.",
+              "text": "“ If you plant it, it will grow into a tree like the Mayans had.",
               "translationAr": "«إذا زرعتها، ستنمو شجرة مثل التي كانت عند المايا.",
               "audioUrl": ""
             },
             {
               "id": 80,
-              "text": "It will bear fruit filled with the crumbliest, flakiest chocolate — like chocolate never tasted before.”",
+              "text": "It will bear fruit filled with the crumbliest, flakiest chocolate — like chocolate never tasted before. ”",
               "translationAr": "وستثمر شوكولاتة متفتتة رقائقيّة لم يسبق أن تذوقت مثلها.»",
               "audioUrl": ""
             },
             {
               "id": 81,
-              "text": "“Can we plant it now? Will it really grow?”",
+              "text": "“ Can we plant it now? Will it really grow? ”",
               "translationAr": "«هل نزرعها الآن؟ وهل ستنمو حقًا؟»",
               "audioUrl": ""
             },
             {
               "id": 82,
-              "text": "“Only one way to find out,” said Birdy. “Follow my instructions carefully.”",
+              "text": "“ Only one way to find out, ” said Birdy. “ Follow my instructions carefully. ”",
               "translationAr": "قال بيردي: «طريقة واحدة لنعرف. اتبع تعليماتي جيدًا.»",
               "audioUrl": ""
             },
@@ -13599,7 +13599,7 @@ export const readingData = [
             },
             {
               "id": 90,
-              "text": "Dad tried the chocolate first. “Oh my! That’s absolutely delicious!”",
+              "text": "Dad tried the chocolate first. “ Oh my! That’s absolutely delicious! ”",
               "translationAr": "تذوق الأب الشوكولاتة أولًا: «يا إلهي! إنها لذيذة للغاية!»",
               "audioUrl": ""
             },
@@ -13617,43 +13617,43 @@ export const readingData = [
             },
             {
               "id": 93,
-              "text": "A week later Birdy returned. “Well, Jake, how did it go?”",
+              "text": "A week later Birdy returned. “ Well, Jake, how did it go? ”",
               "translationAr": "عاد بيردي بعد أسبوع: «حسنًا يا جيك، كيف جرى الأمر؟»",
               "audioUrl": ""
             },
             {
               "id": 94,
-              "text": "“It worked! The chocolate is amazing, and something even better happened,” Jake said.",
+              "text": "“ It worked! The chocolate is amazing, and something even better happened, ” Jake said.",
               "translationAr": "قال جيك: «نجح الأمر! الشوكولاتة رائعة، بل حدث ما هو أفضل.»",
               "audioUrl": ""
             },
             {
               "id": 95,
-              "text": "“Dad got a promotion, Mum got new customers, Elle won the 200 metres, and I passed all my exams!”",
+              "text": "“ Dad got a promotion, Mum got new customers, Elle won the 200 metres, and I passed all my exams! ”",
               "translationAr": "«حصل أبي على ترقية، وأمي على زبائن جدد، وفازت إيل بسباق 200 متر، وأنا نجحت في كل امتحاناتي!»",
               "audioUrl": ""
             },
             {
               "id": 96,
-              "text": "“It’s all thanks to the magic chocolate!”",
+              "text": "“ It’s all thanks to the magic chocolate! ”",
               "translationAr": "«وكل ذلك بفضل الشوكولاتة السحرية!»",
               "audioUrl": ""
             },
             {
               "id": 97,
-              "text": "Birdy chuckled. “A little magic and a little chocolate can do wonders.",
+              "text": "Birdy chuckled. “ A little magic and a little chocolate can do wonders.",
               "translationAr": "ضحك بيردي: «قليل من السحر وقليل من الشوكولاتة يصنع المعجزات.",
               "audioUrl": ""
             },
             {
               "id": 98,
-              "text": "But remember, the true power was in the belief, hope, and effort everyone put in.”",
+              "text": "But remember, the true power was in the belief, hope, and effort everyone put in. ”",
               "translationAr": "لكن تذكّر أن القوة الحقيقية كانت في الإيمان والأمل والجهد الذي بذله الجميع.»",
               "audioUrl": ""
             },
             {
               "id": 99,
-              "text": "“I’ll never forget that, Birdy.”",
+              "text": "“ I’ll never forget that, Birdy. ”",
               "translationAr": "«لن أنسى ذلك أبدًا يا بيردي.»",
               "audioUrl": ""
             },
@@ -13677,7 +13677,7 @@ export const readingData = [
             },
             {
               "id": 103,
-              "text": "“One day I’ll have to meet that little bird and thank him.”",
+              "text": "“ One day I’ll have to meet that little bird and thank him. ”",
               "translationAr": "«يومًا ما عليّ أن ألتقي ذلك الطائر الصغير وأشكره.»",
               "audioUrl": ""
             },
@@ -15857,13 +15857,13 @@ export const readingData = [
             },
             {
               "id": 6,
-              "text": "Her alarmed husband asked, “What troubles you, dear wife?”",
+              "text": "Her alarmed husband asked, “ What troubles you, dear wife? ”",
               "translationAr": "فسألها زوجُها فزعًا: \"ما الذي يقلقكِ يا زوجتي العزيزة؟\"",
               "audioUrl": ""
             },
             {
               "id": 7,
-              "text": "She replied, “If I cannot eat some of the rapunzel in the garden behind our house, I shall die.”",
+              "text": "She replied, “ If I cannot eat some of the rapunzel in the garden behind our house, I shall die. ”",
               "translationAr": "فقالت: \"إن لم آكل شيئًا من rapunzel الذي في الحديقة خلف بيتنا فسأموت.\"",
               "audioUrl": ""
             },
@@ -15899,7 +15899,7 @@ export const readingData = [
             },
             {
               "id": 13,
-              "text": "She cried angrily, “How dare you climb into my garden and steal my rapunzel like a thief? You shall suffer for it!”",
+              "text": "She cried angrily, “ How dare you climb into my garden and steal my rapunzel like a thief? You shall suffer for it! ”",
               "translationAr": "وصاحت غاضبة: \"كيف تجرؤ أن تصعد إلى حديقتي وتسرق rapunzel خاصّتي كأنك لصّ؟ ستدفع الثمن!\"",
               "audioUrl": ""
             },
@@ -15935,7 +15935,7 @@ export const readingData = [
             },
             {
               "id": 19,
-              "text": "When the enchantress wanted to enter she stood beneath and cried, “Rapunzel, Rapunzel; let down your hair to me.”",
+              "text": "When the enchantress wanted to enter she stood beneath and cried, “ Rapunzel, Rapunzel; let down your hair to me. ”",
               "translationAr": "وكانت إذا أرادت الدخول وقفت أسفلَه ونادت: \"rapunzel، rapunzel؛ أرسلي شعرك إليّ.\"",
               "audioUrl": ""
             },
@@ -15953,7 +15953,7 @@ export const readingData = [
             },
             {
               "id": 22,
-              "text": "He saw the enchantress call up and decided to try the same words at dusk: “Rapunzel, Rapunzel; let down your hair to me.”",
+              "text": "He saw the enchantress call up and decided to try the same words at dusk : “ Rapunzel, Rapunzel; let down your hair to me. ”",
               "translationAr": "ورآها تنادي لتصعد، فعزم أن يجرب الكلمات ذاتها عند الغسق: \"rapunzel، rapunzel؛ أرسلي شعرك إليّ.\"",
               "audioUrl": ""
             },
@@ -18826,14 +18826,14 @@ export const readingData = [
     "slug": "lesson-10",
     "image": "/assets/images/courses_image/Level-C-10.jpeg",
     "levelTitle": "Cinderella – Shorter Version",
-    "levelDescription": "A shorter Cinderella story with sentence-by-sentence Arabic translation.",
+    "levelDescription": "A shorter Cinderella story with sentence - by - sentence Arabic translation.",
     "levelKey": "Intermediate",
     "isLocked": false,
     "lessons": [
       {
         "id": 1,
         "title": "Cinderella – Shorter Version : a",
-        "description": "Single-lesson version of Cinderella with Arabic translation and full glossary.",
+        "description": "Single - lesson version of Cinderella with Arabic translation and full glossary.",
         "storyData": {
           "content": [
             {
@@ -18874,7 +18874,7 @@ export const readingData = [
             },
             {
               "id": 7,
-              "text": "“Cinders!",
+              "text": "“ Cinders! ",
               "translationAr": "«سيندرز! ما تتبطئيش. ولّعي النار، واعملي لي حمّام سخن ومعاه شموع ريحتها حلوة!»",
               "audioUrl": ""
             },
@@ -18892,7 +18892,7 @@ export const readingData = [
             },
             {
               "id": 10,
-              "text": "Get it?”",
+              "text": "Get it? ”",
               "translationAr": "في الشتاء، دُعِيت الشابّات إلى الحفل الملكي.",
               "audioUrl": ""
             },
@@ -18904,7 +18904,7 @@ export const readingData = [
             },
             {
               "id": 12,
-              "text": "“Cinders!",
+              "text": "“ Cinders!",
               "translationAr": "وطبعًا كانت سندريلا هي التي تُساعِدهنّ في ارتداء ملابسهنَّ الفاخرة وخلعها، وتَكوي وتَطوي كلَّ شيء.",
               "audioUrl": ""
             },
@@ -18916,19 +18916,19 @@ export const readingData = [
             },
             {
               "id": 14,
-              "text": "Light up the fire and make me a hot bath with sweet smelling candles!”",
+              "text": "Light up the fire and make me a hot bath with sweet smelling candles! ”",
               "translationAr": "جاءت الليلةُ الكبيرة، وبقيت سندريلا في البيت، جالسةً وحدَها عند الموقد.",
               "audioUrl": ""
             },
             {
               "id": 15,
-              "text": "And as she was heating the bath, the horrid mother said, “Cinders!",
+              "text": "And as she was heating the bath, the horrid mother said, “ Cinders!",
               "translationAr": "اقترب منها فأرٌ وقال: «لا تقلقي يا عزيزتي؛ فيه جنّية طيبة برا، وبتقول إنك هتروحي الحفلة.»",
               "audioUrl": ""
             },
             {
               "id": 16,
-              "text": "Why haven’t you been to the market yet?”",
+              "text": "Why haven’t you been to the market yet? ”",
               "translationAr": "جَرَت سندريلا إلى الفِناء حيث قالت الجنّية الطيبة للفتاة:",
               "audioUrl": ""
             },
@@ -18970,13 +18970,13 @@ export const readingData = [
             },
             {
               "id": 23,
-              "text": "A mouse came up to her and said, “Dear, dear, don’t fret.",
+              "text": "A mouse came up to her and said, “ Dear, dear, don’t fret.",
               "translationAr": "«آسفة! لازم أمشي!» قالتها سندريلا وركضت نحو الباب.",
               "audioUrl": ""
             },
             {
               "id": 24,
-              "text": "A good fairy is outside, and she says that you shall go to the ball.”",
+              "text": "A good fairy is outside, and she says that you shall go to the ball. ”",
               "translationAr": "وبينما تهبط الدرج، وقع أحدُ حذائي الرقص من قدمها، فاضطرّت أن تقفز حتى وصلت إلى العربة.",
               "audioUrl": ""
             },
@@ -18988,7 +18988,7 @@ export const readingData = [
             },
             {
               "id": 26,
-              "text": "“Be sure to leave the ball before the clock strikes midnight, or you will be more embarrassed than you ever have been in your life!”",
+              "text": "“ Be sure to leave the ball before the clock strikes midnight, or you will be more embarrassed than you ever have been in your life! ”",
               "translationAr": "ولمّا وصل خدَمُ الأمير إلى البيت الذي تسكن فيه سندريلا، سارعت الأختان البغيضتان لتجربة الحذاء.",
               "audioUrl": ""
             },
@@ -19024,13 +19024,13 @@ export const readingData = [
             },
             {
               "id": 32,
-              "text": "“Oh!",
+              "text": "“ Oh!",
               "translationAr": "قالت سندريلا: «أحبّ أجرب، شكرًا.» فانزلقت قدمُها فيه تمامًا.",
               "audioUrl": ""
             },
             {
               "id": 33,
-              "text": "You must excuse me!” exclaimed Cinderella and she ran for the door.",
+              "text": "You must excuse me! ” exclaimed Cinderella and she ran for the door.",
               "translationAr": "قال الخادم: «مين كان يصدّق؟ لقد اكتمل بحثُنا.»",
               "audioUrl": ""
             },
@@ -19054,13 +19054,13 @@ export const readingData = [
             },
             {
               "id": 37,
-              "text": "“It fits me perfectly,” said the first, but she could not shove her heal inside.",
+              "text": "“ It fits me perfectly, ” said the first, but she could not shove her heal inside.",
               "translationAr": "وأثناء خروج سندريلا من البيت، صاحت أمُّ الفتاتين: «برّه! كفاية وَقاحة!»",
               "audioUrl": ""
             },
             {
               "id": 38,
-              "text": "“You can call me, ‘Your Royal Highness’ because my foot fits better,” said the second.",
+              "text": "“ You can call me, ‘ Your Royal Highness ’ because my foot fits better, ” said the second.",
               "translationAr": "لكن سندريلا كانت تعرف أنّها وجدت الحبَّ الحقيقي، وفي اليوم التالي مباشرةً تزوّجت من الأمير، ودقّت الأجراس في كلّ أرجاء البلاد.",
               "audioUrl": ""
             }
@@ -20252,14 +20252,14 @@ export const readingData = [
     "slug": "lesson-11",
     "image": "/assets/images/courses_image/Level-C-11.webp",
     "levelTitle": "Beauty and the Beast – Shorter Version",
-    "levelDescription": "A shorter Beauty and the Beast story with sentence-by-sentence Arabic translation.",
+    "levelDescription": "A shorter Beauty and the Beast story with sentence - by - sentence Arabic translation.",
     "levelKey": "Pre-Intermediate",
     "isLocked": false,
     "lessons": [
       {
         "id": 1,
         "title": "Beauty and the Beast – Shorter Version : a",
-        "description": "Single-lesson version with Arabic translation and full glossary skeleton.",
+        "description": "Single - lesson version with Arabic translation and full glossary skeleton.",
         "storyData": {
           "content": [
             {
@@ -20348,19 +20348,19 @@ export const readingData = [
             },
             {
               "id": 15,
-              "text": "As he wandered around the grounds, his eyes fell upon a red rose and he thought, “Ah!",
+              "text": "As he wandered around the grounds, his eyes fell upon a red rose and he thought, “ Ah!",
               "translationAr": "«مَن الذي سمح لك بأن تُخرِّب حديقتي؟»",
               "audioUrl": ""
             },
             {
               "id": 16,
-              "text": "A gift for my Belle!” As he picked the rose, a growling voice startled him from behind:",
+              "text": "A gift for my Belle! ” As he picked the rose, a growling voice startled him from behind:",
               "translationAr": "استدار التاجرُ فرأى نفسَه يحدّق في عينَي وحشٍ قبيحٍ يشتعلان.",
               "audioUrl": ""
             },
             {
               "id": 17,
-              "text": "“Who said you could trash my garden?”",
+              "text": "“ Who said you could trash my garden? ”",
               "translationAr": "قال الوحشُ غاضبًا: «ستدفع ثمنَ هذه الوردة دمًا!»",
               "audioUrl": ""
             },
@@ -20372,25 +20372,25 @@ export const readingData = [
             },
             {
               "id": 19,
-              "text": "“You shall pay for this rose with blood!” raged the monster.",
+              "text": "“ You shall pay for this rose with blood! ” raged the monster.",
               "translationAr": "قال الوحش: «ابنةٌ تقول؟ إنْ جاءت إليَّ، نجوتَ بحياتك، وإنْ رفضتْ، زرتُ بيتَك وهلكتَ.»",
               "audioUrl": ""
             },
             {
               "id": 20,
-              "text": "“I, I mean no harm.",
+              "text": "“ I, I mean no harm.",
               "translationAr": "لم يشكَّ التاجرُ في وعيدِ الوحش.",
               "audioUrl": ""
             },
             {
               "id": 21,
-              "text": "I wanted a rose for my youngest daughter.”",
+              "text": "I wanted a rose for my youngest daughter. ”",
               "translationAr": "عاد إلى البيت رجلًا محكومًا عليه، غيرَ مُتوقِّعٍ لحظةً أن توافقَ بِل على البقاء مع المخلوق.",
               "audioUrl": ""
             },
             {
               "id": 22,
-              "text": "“Daughter you say?",
+              "text": "“ Daughter you say?",
               "translationAr": "ولمّا قصَّ عليهم القصةَ المروّعة، لامتْه الأُخرياتُ لأن بِل طلبت وردةً حمراء.",
               "audioUrl": ""
             },
@@ -20402,7 +20402,7 @@ export const readingData = [
             },
             {
               "id": 24,
-              "text": "But should she refuse, I shall visit your house and you shall die.”",
+              "text": "But should she refuse, I shall visit your house and you shall die. ”",
               "translationAr": "سلّم التاجرُ بِل إلى الوحش وقبّلها وداعًا، وربما إلى الأبد.",
               "audioUrl": ""
             },
@@ -20426,7 +20426,7 @@ export const readingData = [
             },
             {
               "id": 28,
-              "text": "She herself said, “Father, you must take me to this beast before he comes for you.”",
+              "text": "She herself said, “ Father, you must take me to this beast before he comes for you. ”",
               "translationAr": "في النهار كانت تتجوّل في الحديقة وتُحدّث الطيور.",
               "audioUrl": ""
             },
@@ -20462,7 +20462,7 @@ export const readingData = [
             },
             {
               "id": 34,
-              "text": "“Pretty, sweet, feathered creatures, your ways are so gentle, how can you stand the rough, ugly beast?”",
+              "text": "“ Pretty, sweet, feathered creatures, your ways are so gentle, how can you stand the rough, ugly beast? ”",
               "translationAr": "قال الوحشُ بحزن: «هذا اختيارُك.»",
               "audioUrl": ""
             },
@@ -20474,49 +20474,49 @@ export const readingData = [
             },
             {
               "id": 36,
-              "text": "“He is ugly but his heart is kind, and he is sad, poor beast, because no girl will love him.” Belle either did not understand, or did not believe these tweets, and she badly missed her home.",
+              "text": "“ He is ugly but his heart is kind, and he is sad, poor beast, because no girl will love him. ” Belle either did not understand, or did not believe these tweets, and she badly missed her home.",
               "translationAr": "فكّر الوحش وقال: «يمكنك الذهاب، ولكن إن لم تعودي بعد أسبوع، سيحدث أمرٌ مُروّع.»",
               "audioUrl": ""
             },
             {
               "id": 37,
-              "text": "One evening, the Beast came to her room and asked gruffly, “Belle, will you marry me?”",
+              "text": "One evening, the Beast came to her room and asked gruffly, “ Belle, will you marry me? ”",
               "translationAr": "عادت بِل إلى بيتها في عربةٍ أعدّها الوحش.",
               "audioUrl": ""
             },
             {
               "id": 38,
-              "text": "Belle felt sick at the thought and replied, “No Beast, do not hope that I could marry you.”",
+              "text": "Belle felt sick at the thought and replied, “ No Beast, do not hope that I could marry you. ”",
               "translationAr": "تفاجأت أخواتُها برؤيتها، وازداد عجبُهنَّ حين حدّثتهنَّ عن حياتِها الجديدة.",
               "audioUrl": ""
             },
             {
               "id": 39,
-              "text": "“That is your choice,” said the Beast sadly.",
+              "text": "“ That is your choice, ” said the Beast sadly.",
               "translationAr": "بل واغتَرنَ حين سمعنَ عن رَفاهية القصر، وحاولنَ تأخيرَ عودتِها.",
               "audioUrl": ""
             },
             {
               "id": 40,
-              "text": "“Beast,” said Belle.",
+              "text": "“ Beast, ” said Belle.",
               "translationAr": "تمهّلت بِل حتى نظرتْ يومًا إلى يدِها فرأت خاتمًا كان الوحش أعطاها إيّاه.",
               "audioUrl": ""
             },
             {
               "id": 41,
-              "text": "“If you have good in your heart, you will let me visit my home just for one week.”",
+              "text": "“ If you have good in your heart, you will let me visit my home just for one week. ”",
               "translationAr": "فقالت في نفسها: «ما هذا الإحساس الغريب؟ أأشتاق إليه؟»",
               "audioUrl": ""
             },
             {
               "id": 42,
-              "text": "The Beast thought and said, “You may go.",
+              "text": "The Beast thought and said, “ You may go.",
               "translationAr": "ففركتِ الخاتمَ، وفي لحظةٍ عادت إلى القصر.",
               "audioUrl": ""
             },
             {
               "id": 43,
-              "text": "But if you do not return after one week, something dreadful will happen.”",
+              "text": "But if you do not return after one week, something dreadful will happen. ”",
               "translationAr": "ونادت وهي تُسرع في الرواق: «يا وحش، أين أنت؟»",
               "audioUrl": ""
             },
@@ -20546,13 +20546,13 @@ export const readingData = [
             },
             {
               "id": 48,
-              "text": "“What is this strange feeling?” she thought.",
+              "text": "“ What is this strange feeling? ” she thought.",
               "translationAr": "دخلتْها فرأت الوحش مُمدّدًا، وقد ولّى وجهَه القبيحَ نحو الجدار الحجري البارد.",
               "audioUrl": ""
             },
             {
               "id": 49,
-              "text": "“Can it be that I miss him?”",
+              "text": "“ Can it be that I miss him? ”",
               "translationAr": "همس: «لقد عدتِ.»",
               "audioUrl": ""
             },
@@ -20564,25 +20564,25 @@ export const readingData = [
             },
             {
               "id": 51,
-              "text": "“Beast, where are you?” she called as she hurried through the echoing halls in search of him.",
+              "text": "“ Beast, where are you? ” she called as she hurried through the echoing halls in search of him.",
               "translationAr": "قال: «أأنا قبيحٌ أكثرَ من أن أُحَبّ؟»",
               "audioUrl": ""
             },
             {
               "id": 52,
-              "text": "She recalled his words that something dreadful might happen, and she thought, “Did he mean to me or to him, or to both of us?”",
+              "text": "She recalled his words that something dreadful might happen, and she thought, “ Did he mean to me or to him, or to both of us? ”",
               "translationAr": "همست: «ليس وأنت طيّبٌ رقيق.»",
               "audioUrl": ""
             },
             {
               "id": 53,
-              "text": "Once out in the garden she ran up and down the hedgerows crying, “Beast, Beast, where are you?”",
+              "text": "Once out in the garden she ran up and down the hedgerows crying, “ Beast, Beast, where are you? ”",
               "translationAr": "وقالت: «أرى أنك مريض... لن تموت، أليس كذلك؟»",
               "audioUrl": ""
             },
             {
               "id": 54,
-              "text": "The birds tweeted, “Hurry, Hurry, he is hiding in the folly and there is no time to lose.”",
+              "text": "The birds tweeted, “ Hurry, Hurry, he is hiding in the folly and there is no time to lose. ”",
               "translationAr": "لم يُجب.",
               "audioUrl": ""
             },
@@ -21996,19 +21996,19 @@ export const readingData = [
             },
             {
               "id": 15,
-              "text": "“Do forgive me for dropping by uninvited,” she said, “I will not keep you for long.",
+              "text": "“ Do forgive me for dropping by uninvited, ” she said, “ I will not keep you for long.",
               "translationAr": "صعدتْ صعدتْ حتى بلغت غرفةً في القمّة. كان الباب مواربًا. في الداخل وجدت امرأةً عجوزًا تعمل بتركيز عند عجلةٍ غريبة.",
               "audioUrl": ""
             },
             {
               "id": 16,
-              "text": "I have come to wish my own gift upon the baby princess.”\nWhile the Evil Fairy held everyone’s attention, the seventh good fairy hid behind the curtains.",
+              "text": "I have come to wish my own gift upon the baby princess. ”\nWhile the Evil Fairy held everyone’s attention, the seventh good fairy hid behind the curtains.",
               "translationAr": "قالت تاليا: «أخبريني يا امرأةُ الطيّبة، ما هذا؟»",
               "audioUrl": ""
             },
             {
               "id": 17,
-              "text": "The wicked one continued: “I do so wish that the dear little princess shall grow up to be a radiant, accomplished and beautiful girl of sixteen years, the delight of her parents’ eyes, and then, on her seventeenth birthday, she shall prick her finger on the needle of a spinning wheel and DIE!",
+              "text": "The wicked one continued: “ I do so wish that the dear little princess shall grow up to be a radiant, accomplished and beautiful girl of sixteen years, the delight of her parents’ eyes, and then, on her seventeenth birthday, she shall prick her finger on the needle of a spinning wheel and DIE!",
               "translationAr": "أجابت: «أما تعلمين؟ إنّه قَدَرُكِ يا عزيزتي.»",
               "audioUrl": ""
             },
@@ -22020,7 +22020,7 @@ export const readingData = [
             },
             {
               "id": 19,
-              "text": "Ha ha ha!”\nStill laughing dreadfully, she strode from the hall.",
+              "text": "Ha ha ha! ” \nStill laughing dreadfully, she strode from the hall.",
               "translationAr": "فتركت العجوزُ الأميرةَ تجلس وتلعب بهذه اللعبة الآسرة. دارت العجلةُ وصعدت الإبرةُ وهبطت.",
               "audioUrl": ""
             },
@@ -22032,13 +22032,13 @@ export const readingData = [
             },
             {
               "id": 21,
-              "text": "“There remains a seventh and final wish that is mine to make,” she said.",
+              "text": "“ There remains a seventh and final wish that is mine to make, ” she said.",
               "translationAr": "صرخت: «انظري! إنني أنزف!»",
               "audioUrl": ""
             },
             {
               "id": 22,
-              "text": "“It is not in my power to entirely overcome the evil wish, but I can at least do this - when the princess pricks her finger, let her not die, but fall asleep for 100 years until she is awoken by true love’s kiss.”\nThe very next day the King passed a law forbidding anyone in the land from owning a spinning wheel.",
+              "text": "“ It is not in my power to entirely overcome the evil wish, but I can at least do this - when the princess pricks her finger, let her not die, but fall asleep for 100 years until she is awoken by true love’s kiss. ” \nThe very next day the King passed a law forbidding anyone in the land from owning a spinning wheel.",
               "translationAr": "نزلت الأميرةُ درجَ البرج، وساقاها تضعفان أكثر فأكثر، ولمّا بلغتْ حديقةَ الورودِ ارتمت على العشب وغرقت في نومٍ عميق.",
               "audioUrl": ""
             },
@@ -22098,7 +22098,7 @@ export const readingData = [
             },
             {
               "id": 32,
-              "text": "“Pray tell me, good woman, what is that?” asked Talia.",
+              "text": "“ Pray tell me, good woman, what is that? ” asked Talia.",
               "translationAr": "سألتْ: «من أنت؟»",
               "audioUrl": ""
             }
@@ -23202,14 +23202,14 @@ export const readingData = [
     "slug": "lesson-13",
     "image": "/assets/images/courses_image/Level-C-13.jpg",
     "levelTitle": "Three Short Bertie Stories",
-    "levelDescription": "Three short and slapstick pond-life stories compiled from the early days of Storynory. Notable for the voice of Rob playing Colin the Carp and Barker the Dog.",
+    "levelDescription": "Three short and slapstick pond - life stories compiled from the early days of Storynory. Notable for the voice of Rob playing Colin the Carp and Barker the Dog.",
     "levelKey": "Pre-Intermediate",
     "isLocked": false,
     "lessons": [
       {
         "id": 1,
         "title": "Three Short Bertie Stories",
-        "description": "Three short and slapstick pond-life stories compiled from the early days of Storynory. Notable for the voice of Rob playing Colin the Carp and Barker the Dog.",
+        "description": "Three short and slapstick pond - life stories compiled from the early days of Storynory. Notable for the voice of Rob playing Colin the Carp and Barker the Dog.",
         "storyData": {
           "content": [
             {
@@ -23262,19 +23262,19 @@ export const readingData = [
             },
             {
               "id": 9,
-              "text": "He said, “It doesn’t make any difference to you what it’s like being a princess. You’re just a swan. You’re stuck that way.”",
+              "text": "He said, “ It doesn’t make any difference to you what it’s like being a princess. You’re just a swan. You’re stuck that way. ”",
               "translationAr": "قال: \"لن يغيّر شيئًا بالنسبة لكِ كيف يكون كونك أميرة. أنتِ مجرد بجعة. وستبقين هكذا.\"",
               "audioUrl": ""
             },
             {
               "id": 10,
-              "text": "But Tim the Tadpole said, “Perhaps she might be a princess really! Maybe someone turned her into a swan.”",
+              "text": "But Tim the Tadpole said, “ Perhaps she might be a princess really! Maybe someone turned her into a swan. ”",
               "translationAr": "لكن تيم الشرغوف قال: \"ربما تكون أميرة بالفعل! ربما حوّلها أحدهم إلى بجعة.\"",
               "audioUrl": ""
             },
             {
               "id": 11,
-              "text": "Sadie became quite excited at the thought of that. “Do you think I’m a princess, Bertie?” she said. “Do you really?”",
+              "text": "Sadie became quite excited at the thought of that. “ Do you think I’m a princess, Bertie? ” she said. “ Do you really? ”",
               "translationAr": "تحمّست سادي جدًا للفكرة. وقالت: \"أتظن أنني أميرة يا بيرتي؟ حقًا؟\"",
               "audioUrl": ""
             },
@@ -23286,31 +23286,31 @@ export const readingData = [
             },
             {
               "id": 13,
-              "text": "“The beautiful Princess Beatrice has a special princess test. It helped her to tell who was a princess and who wasn’t. She would just ask them whether they wanted to take the princess test.”",
+              "text": "“ The beautiful Princess Beatrice has a special princess test. It helped her to tell who was a princess and who wasn’t. She would just ask them whether they wanted to take the princess test. ”",
               "translationAr": "قال: \"الأميرة الجميلة بياتريس لديها اختبار أميرات خاص. يساعدها على معرفة من هي أميرة ومن ليست كذلك. كانت تسأل فقط إن كنّ يرغبن في خوض الاختبار.\"",
               "audioUrl": ""
             },
             {
               "id": 14,
-              "text": "“Can I take the princess test?” asked Sadie.",
+              "text": "“ Can I take the princess test? ” asked Sadie.",
               "translationAr": "قالت سادي: \"هل يمكنني خوض اختبار الأميرات؟\"",
               "audioUrl": ""
             },
             {
               "id": 15,
-              "text": "“Well,” said Bertie, “If they said yes then they weren’t really a princess, because a real princess doesn’t need to take a test – she just sort of knows.”",
+              "text": "“ Well, ” said Bertie, “ If they said yes then they weren’t really a princess, because a real princess doesn’t need to take a test – she just sort of knows. ”",
               "translationAr": "قال بيرتي: \"حسنًا، إذا قلن نعم فهنّ لسن أميراتٍ حقًّا، لأن الأميرة الحقيقية لا تحتاج إلى اختبار—إنها تعرف ذلك فحسب.\"",
               "audioUrl": ""
             },
             {
               "id": 16,
-              "text": "“Oh,” said Sadie, a bit sadly. “I might not be a princess, but I’m the most beautiful swan on this pond!”",
+              "text": "“ Oh, ” said Sadie, a bit sadly. “ I might not be a princess, but I’m the most beautiful swan on this pond! ”",
               "translationAr": "قالت سادي بأسى قليل: \"ربما لست أميرة، لكنني أجمل بجعة في هذه البركة!\"",
               "audioUrl": ""
             },
             {
               "id": 17,
-              "text": "But Colin the Carp wasn’t at all bowled over by her beauty. He grumped back at her, “Well, that’s not saying much. You’re the only swan on this pond.”",
+              "text": "But Colin the Carp wasn’t at all bowled over by her beauty. He grumped back at her, “ Well, that’s not saying much. You’re the only swan on this pond. ”",
               "translationAr": "لكن كولين الشَّبوط لم ينبهر بجمالها إطلاقًا. تجهّم قائلًا: \"هذا لا يعني الكثير. أنتِ البجعة الوحيدة في هذه البركة.\"",
               "audioUrl": ""
             },
@@ -23364,37 +23364,37 @@ export const readingData = [
             },
             {
               "id": 26,
-              "text": "“Oh, ohhh,” squeaked little Tim. “Is that a ghost swan?”",
+              "text": "“ Oh, ohhh, ” squeaked little Tim. “ Is that a ghost swan? ”",
               "translationAr": "صرخ تيم الصغير: \"أوه، أوووه! هل تلك بجعة شبح؟\"",
               "audioUrl": ""
             },
             {
               "id": 27,
-              "text": "Bertie was used to Tim’s silly questions by now. “Oh no!” he boomed. “Ghosts aren’t real, so that can’t be a ghost. That’s a new type of swan we haven’t seen before.”",
+              "text": "Bertie was used to Tim’s silly questions by now. “ Oh no! ” he boomed. “ Ghosts aren’t real, so that can’t be a ghost. That’s a new type of swan we haven’t seen before. ”",
               "translationAr": "اعتاد بيرتي أسئلة تيم الطفولية. قال بصوت عالٍ: \"لا طبعًا! الأشباح ليست حقيقية، إذن فهي ليست شبحًا. إنها نوع جديد من البجع لم نره من قبل.\"",
               "audioUrl": ""
             },
             {
               "id": 28,
-              "text": "When Colin the Carp heard Bertie telling this to Little Tim, he swam over and said, “Well Bertie, since you consider yourself to be the prince of this pond, and a natural-born leader of creatures great and small; perhaps you should go over and introduce yourself to our new friend – if it really is a friend, that is, not a ghost swan.”",
+              "text": "When Colin the Carp heard Bertie telling this to Little Tim, he swam over and said, “ Well Bertie, since you consider yourself to be the prince of this pond, and a natural - born leader of creatures great and small; perhaps you should go over and introduce yourself to our new friend – if it really is a friend, that is, not a ghost swan. ”",
               "translationAr": "وعندما سمع كولين الشَّبوط بيرتي يقول ذلك لتيم الصغير، سبح نحوه وقال: \"حسنًا يا بيرتي، بما أنك تعتبر نفسك أمير هذه البركة وقائدًا بالفطرة للكبير والصغير؛ فربما عليك أن تذهب وتعرّف نفسك على صديقنا الجديد—إن كان صديقًا فعلًا وليس بجعة شبح.\"",
               "audioUrl": ""
             },
             {
               "id": 29,
-              "text": "“Oh cripes!” thought Bertie. “What if it is a ghost? It’s all very well when you are a prince to be brave, but when you are a frog, things can be a bit scary sometimes.”",
+              "text": "“ Oh cripes! ” thought Bertie. “ What if it is a ghost? It’s all very well when you are a prince to be brave, but when you are a frog, things can be a bit scary sometimes. ”",
               "translationAr": "فكّر بيرتي: \"يا للمصيبة! ماذا لو كان شبحًا؟ لا بأس بالشجاعة حين تكون أميرًا، أما وأنت ضفدع فالأمور قد تكون مخيفة أحيانًا.\"",
               "audioUrl": ""
             },
             {
               "id": 30,
-              "text": "“Go on Bertie,” said Colin. “Go on Bertie,” said Little Tim.",
+              "text": "“ Go on Bertie, ” said Colin. “ Go on Bertie, ” said Little Tim.",
               "translationAr": "\"هيا يا بيرتي\" قال كولين. وقال تيم الصغير: \"هيا يا بيرتي\".",
               "audioUrl": ""
             },
             {
               "id": 31,
-              "text": "“Er, erm… Croak!” said Bertie.",
+              "text": "“ Er, erm … Croak! ” said Bertie.",
               "translationAr": "قال بيرتي متلعثمًا: \"أه.. أهم.. كرك!\"",
               "audioUrl": ""
             },
@@ -23418,7 +23418,7 @@ export const readingData = [
             },
             {
               "id": 35,
-              "text": "The ghostly swan said, “Hello Bertie. It’s so frosty this morning that my feathers are all white. Do you think I look like a princess?”",
+              "text": "The ghostly swan said, “ Hello Bertie. It’s so frosty this morning that my feathers are all white. Do you think I look like a princess? ”",
               "translationAr": "قالت البجعة الشبحية: \"مرحبًا يا بيرتي. البرد قارس هذا الصباح حتى صار ريشي أبيض كله. أتراني أبدو كأميرة؟\"",
               "audioUrl": ""
             },
@@ -23436,13 +23436,13 @@ export const readingData = [
             },
             {
               "id": 38,
-              "text": "“Oh my dear Bertie,” said Sadie, sympathetically. “You’re such a pale shade of green today. Are you feeling well?”",
+              "text": "“ Oh my dear Bertie, ” said Sadie, sympathetically. “ You’re such a pale shade of green today. Are you feeling well? ”",
               "translationAr": "قالت سادي بعطف: \"يا عزيزي بيرتي، أنت أخضر باهت اليوم. أأنت بخير؟\"",
               "audioUrl": ""
             },
             {
               "id": 39,
-              "text": "“I think,” said Bertie, “that I might be starting a cold.”",
+              "text": "“ I think, ” said Bertie, “ that I might be starting a cold. ”",
               "translationAr": "قال بيرتي: \"أظن أنني بدأت أُصاب بالزكام.\"",
               "audioUrl": ""
             },
@@ -23478,13 +23478,13 @@ export const readingData = [
             },
             {
               "id": 45,
-              "text": "“I’m a bit scared, Bertie,” said Tim.",
+              "text": "“ I’m a bit scared, Bertie, ” said Tim.",
               "translationAr": "قال تيم: \"أنا خائف قليلًا يا بيرتي.\"",
               "audioUrl": ""
             },
             {
               "id": 46,
-              "text": "“Don’t be scared, Little Tim,” croaked Bertie, “he’s only a silly old dog.”",
+              "text": "“ Don’t be scared, Little Tim, ” croaked Bertie, “ he’s only a silly old dog. ”",
               "translationAr": "نقنق بيرتي: \"لا تخف يا تيم الصغير، إنه مجرد كلبٍ أحمقٍ عجوز.\"",
               "audioUrl": ""
             },
@@ -23496,13 +23496,13 @@ export const readingData = [
             },
             {
               "id": 48,
-              "text": "Bertie jumped back. “You’re scared as well,” said Colin the Carp.",
+              "text": "Bertie jumped back. “ You’re scared as well, ” said Colin the Carp.",
               "translationAr": "قفز بيرتي إلى الخلف. فقال كولين الشَّبوط: \"أنت خائف أيضًا.\"",
               "audioUrl": ""
             },
             {
               "id": 49,
-              "text": "“Rubbish,” said Bertie. “I used to be a prince, and princes aren’t afraid of anything.”",
+              "text": "“ Rubbish, ” said Bertie. “ I used to be a prince, and princes aren’t afraid of anything. ”",
               "translationAr": "قال بيرتي: \"هراء. كنتُ أميرًا، والأمراء لا يخافون من أي شيء.\"",
               "audioUrl": ""
             },
@@ -23526,13 +23526,13 @@ export const readingData = [
             },
             {
               "id": 53,
-              "text": "Bertie, who was hiding underneath a lily pad, poked his head out of the water and said, “Sadie, how big are your wings?”",
+              "text": "Bertie, who was hiding underneath a lily pad, poked his head out of the water and said, “ Sadie, how big are your wings? ”",
               "translationAr": "وكان بيرتي يختبئ تحت ورقة زنبق، فأطلّ برأسه من الماء وقال: \"سادي، ما مدى كِبَر جناحيكِ؟\"",
               "audioUrl": ""
             },
             {
               "id": 54,
-              "text": "Sadie flapped her big black wings. “This big!” she said.",
+              "text": "Sadie flapped her big black wings. “ This big! ” she said.",
               "translationAr": "رفرفت سادي بجناحيها الأسودين الكبيرين وقالت: \"بهذا الكِبَر!\"",
               "audioUrl": ""
             },
@@ -23544,13 +23544,13 @@ export const readingData = [
             },
             {
               "id": 56,
-              "text": "As he started running, Bertie croaked at him as fiercely as he could. “Look, I made him run away!”",
+              "text": "As he started running, Bertie croaked at him as fiercely as he could. “ Look, I made him run away! ”",
               "translationAr": "وبينما بدأ يركض، نقنق بيرتي عليه بأشد ما يستطيع: \"أنظروا! جعلته يهرب!\"",
               "audioUrl": ""
             },
             {
               "id": 57,
-              "text": "“Oh Bertie,” swooned Sadie, “You’re so brave!”",
+              "text": "“ Oh Bertie, ” swooned Sadie, “ You’re so brave! ”",
               "translationAr": "قالت سادي بإعجاب: \"أوه يا بيرتي، أنت شجاع جدًا!\"",
               "audioUrl": ""
             },
@@ -25178,25 +25178,25 @@ export const readingData = [
             },
             {
               "id": 9,
-              "text": "“Hey You Ants,” I said to them.",
+              "text": "“ Hey You Ants, ” I said to them.",
               "translationAr": "قلت لهم: يا أيها النمل! إنه يوم صيف جميل.",
               "audioUrl": ""
             },
             {
               "id": 10,
-              "text": "“It’s a lovely summer’s day.",
+              "text": "“ It’s a lovely summer’s day.",
               "translationAr": "لماذا لا ترتاحون قليلًا وتستمعون إلى موسيقاي العذبة؟",
               "audioUrl": ""
             },
             {
               "id": 11,
-              "text": "Why don’t you rest your feet for a while, and listen to my sweet music?”\n\n“No time to stop,” one of them said, panting away.",
+              "text": "Why don’t you rest your feet for a while, and listen to my sweet music? ”\n\n “ No time to stop, ” one of them said, panting away.",
               "translationAr": "قال أحدهم وهو يلهث: لا وقت للتوقف.",
               "audioUrl": ""
             },
             {
               "id": 12,
-              "text": "“We’re far too busy stocking up food for winter.”\n\nThe months went by, and the days got shorter and colder.",
+              "text": "“ We’re far too busy stocking up food for winter. ” \n\nThe months went by, and the days got shorter and colder.",
               "translationAr": "نحن مشغولون جدًا بتخزين الطعام لفصل الشتاء.",
               "audioUrl": ""
             },
@@ -25220,13 +25220,13 @@ export const readingData = [
             },
             {
               "id": 16,
-              "text": "So I went to see that busy family of ants and said: “Please Sirs, I’m a poor starving musician.",
+              "text": "So I went to see that busy family of ants and said : “ Please Sirs, I’m a poor starving musician.",
               "translationAr": "كنت جائعًا جدًا!",
               "audioUrl": ""
             },
             {
               "id": 17,
-              "text": "Spare me a few crumbs from your store of food.”\n\nDo you know what?",
+              "text": "Spare me a few crumbs from your store of food. ” \n\nDo you know what?",
               "translationAr": "ذهبت إلى عائلة النمل تلك وقلت: أرجوكم أيها السادة، أنا موسيقي فقير جائع.",
               "audioUrl": ""
             },
@@ -26769,7 +26769,7 @@ export const readingData = [
             },
             {
               "id": 12,
-              "text": "If you can make one heap of all your winnings and risk it on one turn of pitch-and-toss,",
+              "text": "If you can make one heap of all your winnings and risk it on one turn of pitch - and - toss,",
               "translationAr": "إن جمعت مكاسبك كلها في كومة واحدة وخاطرت بها في رميةٍ واحدةٍ من لعبةٍ تُقذَف فيها العملة،",
               "audioUrl": ""
             },
@@ -27541,13 +27541,13 @@ export const readingData = [
       },
       {
         "id": 6,
-        "text": "It was kindly given to me by a beautiful black-feathered bird whose voice is even more wonderful than her looks.",
+        "text": "It was kindly given to me by a beautiful black - feathered bird whose voice is even more wonderful than her looks.",
         "translationAr": "وقد أعطتني إياها طائر جميل ذو ريش أسود، صوته أروع حتى من مظهره.",
         "audioUrl": ""
       },
       {
         "id": 7,
-        "text": "No, I don’t mean a sky-lark, or a fancy bird of paradise.",
+        "text": "No, I don’t mean a sky - lark, or a fancy bird of paradise.",
         "translationAr": "لا، لا أقصد القبرة، ولا طائر الجنة المتفاخر.",
         "audioUrl": ""
       },
@@ -27577,8 +27577,8 @@ export const readingData = [
       },
       {
         "id": 12,
-        "text": "I called up to my neighbour and said: “Good morning Miss Crow, you are looking very lovely today, if I may say so.”",
-        "translationAr": "ناديت جاري وقلت: “صباح الخير يا آنسة غراب، تبدين جميلة جدًا اليوم، إن جاز لي القول.”",
+        "text": "I called up to my neighbour and said: “ Good morning Miss Crow, you are looking very lovely today, if I may say so. ”",
+        "translationAr": "ناديت جاري وقلت: “صباح الخير يا آنسة غراب، تبدين جميلة جدًا اليوم، إن جاز لي القول. ”",
         "audioUrl": ""
       },
       {
@@ -27589,14 +27589,14 @@ export const readingData = [
       },
       {
         "id": 14,
-        "text": "“Such a charming creature,” I mused to myself, making sure nevertheless that she could overhear.",
+        "text": "“ Such a charming creature, ” I mused to myself, making sure nevertheless that she could overhear.",
         "translationAr": "قلت لنفسي متعمدًا أن تسمع: “يا لها من مخلوقة جذابة.”",
         "audioUrl": ""
       },
       {
         "id": 15,
-        "text": "“Such a fine sheen on those wondrous black feathers. What wings! What legs! And that beak, exquisite!”",
-        "translationAr": "“يا لهذا البريق الرائع على ريشها الأسود العجيب. ما تلك الأجنحة! ما تلك الساقان! وذلك المنقار، بديع!”",
+        "text": "“ Such a fine sheen on those wondrous black feathers. What wings! What legs! And that beak, exquisite! ”",
+        "translationAr": "“ يا لهذا البريق الرائع على ريشها الأسود العجيب. ما تلك الأجنحة! ما تلك الساقان! وذلك المنقار، بديع! ”",
         "audioUrl": ""
       },
       {
@@ -27607,7 +27607,7 @@ export const readingData = [
       },
       {
         "id": 17,
-        "text": "So I gazed up at the tree with admiration and love in my eyes and said: “Ah, my heart is smitten by this wonderful bird.",
+        "text": "So I gazed up at the tree with admiration and love in my eyes and said: “ Ah, my heart is smitten by this wonderful bird.",
         "translationAr": "فرفعت بصري إلى الشجرة بإعجاب ومحبة وقلت: “آه، لقد سحر قلبي هذا الطائر الرائع.",
         "audioUrl": ""
       },
@@ -27625,7 +27625,7 @@ export const readingData = [
       },
       {
         "id": 20,
-        "text": "If I could but hear one line of her song, I would hail her as the Princess of The Forest!”",
+        "text": "If I could but hear one line of her song, I would hail her as the Princess of The Forest! ”",
         "translationAr": "لو سمعت فقط سطرًا واحدًا من أغنيتها، لأعلنتها أميرة الغابة!",
         "audioUrl": ""
       },
@@ -27649,7 +27649,7 @@ export const readingData = [
       },
       {
         "id": 25,
-        "text": "but to me that “cawww!” was just the sound that I’d been waiting for.",
+        "text": "but to me that “ cawww! ” was just the sound that I’d been waiting for.",
         "translationAr": "لكن بالنسبة لي ذلك الـ“كاو!” كان الصوت الذي كنت أنتظره.",
         "audioUrl": ""
       },
@@ -28642,7 +28642,7 @@ export const readingData = [
       },
       {
         "id": 7,
-        "text": "For he sometimes shoots up taller like an india-rubber ball,",
+        "text": "For he sometimes shoots up taller like an india - rubber ball,",
         "translationAr": "فهو أحيانًا يصبح أطول فجأة مثل كرة المطاط؛",
         "audioUrl": ""
       },
@@ -28690,7 +28690,7 @@ export const readingData = [
       },
       {
         "id": 15,
-        "text": "But my lazy little shadow, like an arrant sleepy-head,",
+        "text": "But my lazy little shadow, like an arrant sleepy - head,",
         "translationAr": "ولكن ظلي الصغير الكسول، مثل شخص نائم نومًا عميقًا،",
         "audioUrl": ""
       },
@@ -29186,7 +29186,7 @@ export const readingData = [
       },
       {
         "id": 6,
-        "text": "She addressed the crowd in the square: “Whosoever can open this basket with a single toss of a stone shall win my heart.”",
+        "text": "She addressed the crowd in the square: “ Whosoever can open this basket with a single toss of a stone shall win my heart. ”",
         "translationAr": "وخاطبت الناس في الساحة: «من يتمكن من فتح هذه السلة برمية حجر واحدة سيفوز بقلبي.»",
         "audioUrl": ""
       },
@@ -29216,7 +29216,7 @@ export const readingData = [
       },
       {
         "id": 11,
-        "text": "Smiling at the young man, she said, “I have found a perfect husband”.",
+        "text": "Smiling at the young man, she said, “ I have found a perfect husband ”.",
         "translationAr": "ابتسمت للشاب وقالت: «لقد وجدت الزوج المثالي.»",
         "audioUrl": ""
       },
@@ -29276,7 +29276,7 @@ export const readingData = [
       },
       {
         "id": 21,
-        "text": "With a dramatic sigh, she would lament, “Why send me so far to the farm when there’s nothing left? Someone or something seems to be enjoying our okra before I can even get to it.”",
+        "text": "With a dramatic sigh, she would lament, “ Why send me so far to the farm when there’s nothing left? Someone or something seems to be enjoying our okra before I can even get to it. ”",
         "translationAr": "ومع تنهيدة درامية، كانت تتذمر: «لماذا ترسلونني بعيدًا إلى المزرعة ولا يوجد شيء؟ يبدو أن شخصًا أو شيئًا ما يستمتع بباميتنا قبلي.»",
         "audioUrl": ""
       },
@@ -29330,7 +29330,7 @@ export const readingData = [
       },
       {
         "id": 30,
-        "text": "“Get away you thieves!” he cried out.",
+        "text": "“ Get away you thieves! ” he cried out.",
         "translationAr": "صرخ قائلاً: «ابتعدن يا لصوص!»",
         "audioUrl": ""
       },
@@ -30612,13 +30612,13 @@ export const readingData = [
       },
       {
         "id": 16,
-        "text": "Now, let’s visit a brave little mouse from one of our Storynory tales, called “The Cat That Went Ting-A-Ling”.",
+        "text": "Now, let’s visit a brave little mouse from one of our Storynory tales, called “ The Cat That Went Ting - A - Ling ”.",
         "translationAr": "والآن، لنزر فأرًا صغيرًا شجاعًا من إحدى قصص Storynory، بعنوان «القط الذي كان يصدر صوت تنغ-أ-لنغ».",
         "audioUrl": ""
       },
       {
         "id": 17,
-        "text": "Brave little Jimmy, a mouse of great might, Tied the bell to the cat in the night. With a “ting-a-ling” warning, From dusk until morning, No more did the cat cause a fright!",
+        "text": "Brave little Jimmy, a mouse of great might, Tied the bell to the cat in the night. With a “ ting - a - ling ” warning, From dusk until morning, No more did the cat cause a fright!",
         "translationAr": "جيمي الصغير الشجاع، فأر ذو قوة كبيرة، ربط الجرس بالقط في الليل. وبصوت «تنغ-أ-لنغ» من الغروب حتى الفجر، لم يعد القط يخيف أحدًا!",
         "audioUrl": ""
       },
