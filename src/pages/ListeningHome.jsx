@@ -81,15 +81,7 @@ export const ListeningHome = () => {
   };
 
   return (
-    <div
-      className="min-h-screen"
-      style={{
-        background: 'url("/assets/images/gradient-background.png") #fff',
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "left",
-      }}
-    >
+    <div className="gradient-background">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Hero Section */}
         <div className="relative">

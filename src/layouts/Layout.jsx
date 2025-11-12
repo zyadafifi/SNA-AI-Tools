@@ -1,7 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { NavBar } from "../components";
 import { useEffect } from "react";
-import background from "/assets/images/gradient-background.png";
 
 export function Layout() {
   const location = useLocation();
