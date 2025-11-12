@@ -20258,341 +20258,335 @@ export const readingData = [
     "lessons": [
       {
         "id": 1,
-        "title": "Beauty and the Beast – Shorter Version : a",
+        "title": "Beauty and the Beast – Shorter Version",
         "description": "Single - lesson version with Arabic translation and full glossary skeleton.",
         "storyData": {
           "content": [
-            {
-              "id": 1,
-              "text": "Many years ago, a merchant had six daughters.",
-              "translationAr": "منذ سنواتٍ كثيرة، كان لتاجرٍ ستُّ بنات.",
-              "audioUrl": ""
-            },
-            {
-              "id": 2,
-              "text": "The first five were born when business was good, and he spoiled them rotten.",
-              "translationAr": "وُلدت الخمسُ الأُوَل في أيام ازدهار التجارة، فأغدق عليهنَّ ودلَّلهنَّ كثيرًا.",
-              "audioUrl": ""
-            },
-            {
-              "id": 3,
-              "text": "How they loved their fine clothes, pearl necklaces, and pretty ponies!",
-              "translationAr": "كم أحببنَ ثيابَهُنَّ الأنيقةَ وقلائدَ اللؤلؤ والمهورَ الجميلة!",
-              "audioUrl": ""
-            },
-            {
-              "id": 4,
-              "text": "The youngest came as a gift to brighten up hard times.",
-              "translationAr": "وجاءت الصغرى هديةً تُضيء الأوقاتَ العصيبة؛ كان اسمُها بِل، وكانت جميلةً اسمًا وشكلًا وطبعًا.",
-              "audioUrl": ""
-            },
-            {
-              "id": 5,
-              "text": "Her name was Belle and she was beautiful in name, looks, and temper.",
-              "translationAr": "كان على التاجر أن يسافر إلى خارج البلاد، فسأل البناتِ: أيَّ هدايا أُحضر؟",
-              "audioUrl": ""
-            },
-            {
-              "id": 6,
-              "text": "The merchant was due to go abroad.",
-              "translationAr": "طالبت الأخواتُ الكُبرَيَاتُ بأشياء غالية، أمّا بِل فطلبت وردةً حمراء فقط.",
-              "audioUrl": ""
-            },
-            {
-              "id": 7,
-              "text": "He asked the girls what gifts he should bring back.",
-              "translationAr": "وللأسف، ساءت رحلةُ العمل.",
-              "audioUrl": ""
-            },
-            {
-              "id": 8,
-              "text": "The elder sisters demanded expensive things, but Belle asked merely for a red rose.",
-              "translationAr": "تأخّرت سفينةُ التاجر، ولم يَعُد قادرًا على شراء الهدايا الموعودة لبناته.",
-              "audioUrl": ""
-            },
-            {
-              "id": 9,
-              "text": "I am sorry to say that the business trip went badly.",
-              "translationAr": "وفي طريق عودته، شارِدًا في أفكاره، سلك منعطفًا خاطئًا.",
-              "audioUrl": ""
-            },
-            {
-              "id": 10,
-              "text": "The merchant’s ship failed to come in, and he could not afford to buy the promised presents for his daughters.",
-              "translationAr": "حلَّ الظلامُ وهبَّت عاصفة.",
-              "audioUrl": ""
-            },
-            {
-              "id": 11,
-              "text": "On his journey home, lost in thought, he took a wrong turn.",
-              "translationAr": "ثم، وبشكلٍ غير متوقَّع، وفي وسط غابة، وصل إلى مكانٍ تشرق فيه الشمس.",
-              "audioUrl": ""
-            },
-            {
-              "id": 12,
-              "text": "Darkness fell and a storm blew up.",
-              "translationAr": "سار في ممرٍّ طويلٍ من الأشجار حتى بلغ قصرًا بحديقةٍ جميلة.",
-              "audioUrl": ""
-            },
-            {
-              "id": 13,
-              "text": "Then, quite unexpectedly, in the middle of a forest, he came to a place where the sun was shining.",
-              "translationAr": "وأثناء تجواله في البُستان، وقعت عيناه على وردةٍ حمراء فقال: «آه! هديةٌ لِبِلّي!»",
-              "audioUrl": ""
-            },
-            {
-              "id": 14,
-              "text": "He followed a long avenue of trees until he came upon a palace with a beautiful garden.",
-              "translationAr": "ولمّا قطفها، أفزعه صوتٌ هادرٌ من خلفه:",
-              "audioUrl": ""
-            },
-            {
-              "id": 15,
-              "text": "As he wandered around the grounds, his eyes fell upon a red rose and he thought, “ Ah!",
-              "translationAr": "«مَن الذي سمح لك بأن تُخرِّب حديقتي؟»",
-              "audioUrl": ""
-            },
-            {
-              "id": 16,
-              "text": "A gift for my Belle! ” As he picked the rose, a growling voice startled him from behind:",
-              "translationAr": "استدار التاجرُ فرأى نفسَه يحدّق في عينَي وحشٍ قبيحٍ يشتعلان.",
-              "audioUrl": ""
-            },
-            {
-              "id": 17,
-              "text": "“ Who said you could trash my garden? ”",
-              "translationAr": "قال الوحشُ غاضبًا: «ستدفع ثمنَ هذه الوردة دمًا!»",
-              "audioUrl": ""
-            },
-            {
-              "id": 18,
-              "text": "The merchant spun round and found himself staring into the blazing eyes of a hideous beast.",
-              "translationAr": "قال التاجر متلعثمًا: «لا أقصدُ سوءًا، أردتُ وردةً لابنتي الصغرى.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 19,
-              "text": "“ You shall pay for this rose with blood! ” raged the monster.",
-              "translationAr": "قال الوحش: «ابنةٌ تقول؟ إنْ جاءت إليَّ، نجوتَ بحياتك، وإنْ رفضتْ، زرتُ بيتَك وهلكتَ.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 20,
-              "text": "“ I, I mean no harm.",
-              "translationAr": "لم يشكَّ التاجرُ في وعيدِ الوحش.",
-              "audioUrl": ""
-            },
-            {
-              "id": 21,
-              "text": "I wanted a rose for my youngest daughter. ”",
-              "translationAr": "عاد إلى البيت رجلًا محكومًا عليه، غيرَ مُتوقِّعٍ لحظةً أن توافقَ بِل على البقاء مع المخلوق.",
-              "audioUrl": ""
-            },
-            {
-              "id": 22,
-              "text": "“ Daughter you say?",
-              "translationAr": "ولمّا قصَّ عليهم القصةَ المروّعة، لامتْه الأُخرياتُ لأن بِل طلبت وردةً حمراء.",
-              "audioUrl": ""
-            },
-            {
-              "id": 23,
-              "text": "If she will come to me, you may live.",
-              "translationAr": "وقالت بِل: «يا أبي، عليك أن تأخذني إلى هذا الوحش قبل أن يأتيكَ.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 24,
-              "text": "But should she refuse, I shall visit your house and you shall die. ”",
-              "translationAr": "سلّم التاجرُ بِل إلى الوحش وقبّلها وداعًا، وربما إلى الأبد.",
-              "audioUrl": ""
-            },
-            {
-              "id": 25,
-              "text": "The merchant did not doubt the word of the beast.",
-              "translationAr": "حاولت بِل أن تنظر إلى وجه الوحش، لكنها صرفت بصرَها لقُبحِه في عينيها.",
-              "audioUrl": ""
-            },
-            {
-              "id": 26,
-              "text": "He returned home as a doomed man, not thinking for a moment that Belle would agree to stay with the creature.",
-              "translationAr": "لكن الوحش كان مهذَّبًا، وأعطاها غرفةً مريحة.",
-              "audioUrl": ""
-            },
-            {
-              "id": 27,
-              "text": "When he told the terrible story to his daughters, the elder ones blamed Belle for selfishly demanding a red rose as a gift.",
-              "translationAr": "وكانت خَدَمٌ خفيةٌ تأتيها بالطعام وتَقضي لها حاجتَها.",
-              "audioUrl": ""
-            },
-            {
-              "id": 28,
-              "text": "She herself said, “ Father, you must take me to this beast before he comes for you. ”",
-              "translationAr": "في النهار كانت تتجوّل في الحديقة وتُحدّث الطيور.",
-              "audioUrl": ""
-            },
-            {
-              "id": 29,
-              "text": "The merchant delivered Belle to the Beast and kissed her goodbye, perhaps for ever.",
-              "translationAr": "وقالت: «أيتها المخلوقاتُ الرقيقةُ الجميلةُ المُجنّحة، كيف تحتملْنَ وحشًا خشنًا قبيحًا؟»",
-              "audioUrl": ""
-            },
-            {
-              "id": 30,
-              "text": "Belle tried to look into the face of the Beast, but had to glance away because he was so disgusting to her eyes.",
-              "translationAr": "وزقزقت الطيورُ جوابًا: «هو قبيحٌ لكن قلبَه طيب، وهو حزينٌ، مسكينٌ، لأنّ فتاةً لا تُحِبّه.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 31,
-              "text": "But the Beast was courteous, and gave her a comfortable room.",
-              "translationAr": "لم تفهم بِل أو لم تُصدّق هذه التغريدات، وكانت تشتاق إلى بيتها كثيرًا.",
-              "audioUrl": ""
-            },
-            {
-              "id": 32,
-              "text": "Invisible servants brought her food, and took care of all her needs.",
-              "translationAr": "في مساءٍ من الأمسيات، دخل الوحش غرفتها وسأل بخشونة: «يا بِل، هل تتزوّجينني؟»",
-              "audioUrl": ""
-            },
-            {
-              "id": 33,
-              "text": "In the daytime, she wandered around the garden, and spoke to the birds.",
-              "translationAr": "سقِمتْ بِل من الفكرة وأجابت: «لا يا وحش، لا تأمُلْ أن أتزوّجك.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 34,
-              "text": "“ Pretty, sweet, feathered creatures, your ways are so gentle, how can you stand the rough, ugly beast? ”",
-              "translationAr": "قال الوحشُ بحزن: «هذا اختيارُك.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 35,
-              "text": "And the birds twittered back.",
-              "translationAr": "قالت بِل: «إنْ كان في قلبِك خير، فاسمح لي أن أزورَ بيتي أسبوعًا واحدًا فقط.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 36,
-              "text": "“ He is ugly but his heart is kind, and he is sad, poor beast, because no girl will love him. ” Belle either did not understand, or did not believe these tweets, and she badly missed her home.",
-              "translationAr": "فكّر الوحش وقال: «يمكنك الذهاب، ولكن إن لم تعودي بعد أسبوع، سيحدث أمرٌ مُروّع.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 37,
-              "text": "One evening, the Beast came to her room and asked gruffly, “ Belle, will you marry me? ”",
-              "translationAr": "عادت بِل إلى بيتها في عربةٍ أعدّها الوحش.",
-              "audioUrl": ""
-            },
-            {
-              "id": 38,
-              "text": "Belle felt sick at the thought and replied, “ No Beast, do not hope that I could marry you. ”",
-              "translationAr": "تفاجأت أخواتُها برؤيتها، وازداد عجبُهنَّ حين حدّثتهنَّ عن حياتِها الجديدة.",
-              "audioUrl": ""
-            },
-            {
-              "id": 39,
-              "text": "“ That is your choice, ” said the Beast sadly.",
-              "translationAr": "بل واغتَرنَ حين سمعنَ عن رَفاهية القصر، وحاولنَ تأخيرَ عودتِها.",
-              "audioUrl": ""
-            },
-            {
-              "id": 40,
-              "text": "“ Beast, ” said Belle.",
-              "translationAr": "تمهّلت بِل حتى نظرتْ يومًا إلى يدِها فرأت خاتمًا كان الوحش أعطاها إيّاه.",
-              "audioUrl": ""
-            },
-            {
-              "id": 41,
-              "text": "“ If you have good in your heart, you will let me visit my home just for one week. ”",
-              "translationAr": "فقالت في نفسها: «ما هذا الإحساس الغريب؟ أأشتاق إليه؟»",
-              "audioUrl": ""
-            },
-            {
-              "id": 42,
-              "text": "The Beast thought and said, “ You may go.",
-              "translationAr": "ففركتِ الخاتمَ، وفي لحظةٍ عادت إلى القصر.",
-              "audioUrl": ""
-            },
-            {
-              "id": 43,
-              "text": "But if you do not return after one week, something dreadful will happen. ”",
-              "translationAr": "ونادت وهي تُسرع في الرواق: «يا وحش، أين أنت؟»",
-              "audioUrl": ""
-            },
-            {
-              "id": 44,
-              "text": "Belle went home in a carriage arranged by the Beast.",
-              "translationAr": "وتذكّرتْ قولَه إن شيئًا مروّعًا قد يحدث، وقالت: «أكان يقصدني أم يقصده أم كِلاَنا؟»",
-              "audioUrl": ""
-            },
-            {
-              "id": 45,
-              "text": "Her sisters were surprised to see her, and even more amazed when she told them about about her new life.",
-              "translationAr": "وما إن خرجت إلى الحديقة حتى أخذت تجري صعودًا وهبوطًا بين الأسيجة وهي تنادي: «يا وحش! أين أنت؟»",
-              "audioUrl": ""
-            },
-            {
-              "id": 46,
-              "text": "They were even jealous when they heard about the luxury of the palace, and they tried to delay her return.",
-              "translationAr": "وزقزقت الطيور: «أسرعي، أسرعي، إنّه يختبئ في المِقْصَف، والوقتُ يداهمنا.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 47,
-              "text": "Belle lingered until, one day, she looked at her hand and saw a ring that the Beast had given her.",
-              "translationAr": "وقادتها رفّةُ أجنحةٍ وحركةٌ سريعةٌ إلى مَغارةٍ في آخر الحديقة.",
-              "audioUrl": ""
-            },
-            {
-              "id": 48,
-              "text": "“ What is this strange feeling? ” she thought.",
-              "translationAr": "دخلتْها فرأت الوحش مُمدّدًا، وقد ولّى وجهَه القبيحَ نحو الجدار الحجري البارد.",
-              "audioUrl": ""
-            },
-            {
-              "id": 49,
-              "text": "“ Can it be that I miss him? ”",
-              "translationAr": "همس: «لقد عدتِ.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 50,
-              "text": "She rubbed the ring and in an instant she was transported back to the palace.",
-              "translationAr": "قالت: «طبعًا، لأنني أُحِبّك.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 51,
-              "text": "“ Beast, where are you? ” she called as she hurried through the echoing halls in search of him.",
-              "translationAr": "قال: «أأنا قبيحٌ أكثرَ من أن أُحَبّ؟»",
-              "audioUrl": ""
-            },
-            {
-              "id": 52,
-              "text": "She recalled his words that something dreadful might happen, and she thought, “ Did he mean to me or to him, or to both of us? ”",
-              "translationAr": "همست: «ليس وأنت طيّبٌ رقيق.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 53,
-              "text": "Once out in the garden she ran up and down the hedgerows crying, “ Beast, Beast, where are you? ”",
-              "translationAr": "وقالت: «أرى أنك مريض... لن تموت، أليس كذلك؟»",
-              "audioUrl": ""
-            },
-            {
-              "id": 54,
-              "text": "The birds tweeted, “ Hurry, Hurry, he is hiding in the folly and there is no time to lose. ”",
-              "translationAr": "لم يُجب.",
-              "audioUrl": ""
-            },
-            {
-              "id": 55,
-              "text": "A flurry and fluttering led Belle to a grotto at the end of the garden.",
-              "translationAr": "فقبّلت ظهرَ رأسِه المُبقّع، ومع القُبلة بدأ يتحوّل تدريجيًّا إلى رجلٍ وسيم، أميرٍ، وفي اليوم نفسِه تزوّجت بِل والوحش.",
-              "audioUrl": ""
-            }
-          ]
+    {
+      "id": 1,
+      "text": "Many years ago, a merchant had six daughters.",
+      "translationAr": "منذ سنوات كثيرة كان هناك تاجر له ست بنات.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2002.mp3"
+    },
+    {
+      "id": 2,
+      "text": "The first five were born when business was good, and he spoiled them rotten.",
+      "translationAr": "وُلِدت الخمس الأُوَل وقت ازدهار تجارته، فدلَّلهنَّ كثيرًا.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2003.mp3"
+    },
+    {
+      "id": 3,
+      "text": "How they loved their fine clothes, pearl necklaces, and pretty ponies!",
+      "translationAr": "كم أحببن ثيابهنَّ الأنيقة وقلائد اللؤلؤ والمهور الجميلة!",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2004.mp3"
+    },
+    {
+      "id": 4,
+      "text": "The youngest came as a gift to brighten up hard times.",
+      "translationAr": "وجاءت الصغرى كهدية تُضيء الأوقات العصيبة.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2005.mp3"
+    },
+    {
+      "id": 5,
+      "text": "Her name was Belle and she was beautiful in name, looks, and temper.",
+      "translationAr": "كان اسمها بِل، وكانت جميلة اسمًا وشكلًا وطبعًا.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2006.mp3"
+    },
+    {
+      "id": 6,
+      "text": "The merchant was due to go abroad.",
+      "translationAr": "كان مُقررًا أن يسافر التاجر إلى الخارج.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2007.mp3"
+    },
+    {
+      "id": 7,
+      "text": "He asked the girls what gifts he should bring back.",
+      "translationAr": "سأل بناته عمّا يرغبن أن يُحضر لهن من هدايا.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2008.mp3"
+    },
+    {
+      "id": 8,
+      "text": "The elder sisters demanded expensive things, but Belle asked merely for a red rose.",
+      "translationAr": "طلبت الأخواتُ الأكبر هدايا ثمينة، أمّا بِل فطلبت وردةً حمراء فقط.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2009.mp3"
+    },
+    {
+      "id": 9,
+      "text": "I am sorry to say that the business trip went badly.",
+      "translationAr": "يؤسفني القول إن رحلة العمل سارت على نحوٍ سيئ.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2010.mp3"
+    },
+    {
+      "id": 10,
+      "text": "The merchant’s ship failed to come in, and he could not afford to buy the promised presents for his daughters.",
+      "translationAr": "تأخرت سفينة التاجر، فلم يستطع شراء الهدايا التي وعد بها بناته.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2011.mp3"
+    },
+    {
+      "id": 11,
+      "text": "On his journey home, lost in thought, he took a wrong turn.",
+      "translationAr": "وفي طريق عودته، شاردًا في أفكاره، سلك منعطفًا خاطئًا.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2012.mp3"
+    },
+    {
+      "id": 12,
+      "text": "Darkness fell and a storm blew up.",
+      "translationAr": "حلَّ الظلامُ وهاجت عاصفة.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2013.mp3"
+    },
+    {
+      "id": 13,
+      "text": "Then, quite unexpectedly, in the middle of a forest, he came to a place where the sun was shining.",
+      "translationAr": "ثم، وبشكل غير متوقع، بلغ وسط الغابة مكانًا تُشرق فيه الشمس.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2014.mp3"
+    },
+    {
+      "id": 14,
+      "text": "He followed a long avenue of trees until he came upon a palace with a beautiful garden.",
+      "translationAr": "سار في ممر طويل من الأشجار حتى وصل إلى قصرٍ ذي حديقة جميلة.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2015.mp3"
+    },
+    {
+      "id": 15,
+      "text": "As he wandered around the grounds, his eyes fell upon a red rose and he thought, “ Ah!",
+      "translationAr": "وبينما كان يتجوّل في البستان، وقعت عيناه على وردةٍ حمراء وقال: «آه!",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2016.mp3"
+    },
+    {
+      "id": 16,
+      "text": "A gift for my Belle! ” As he picked the rose, a growling voice startled him from behind:",
+      "translationAr": "هذه هديةٌ لِبِل!» وما إن قطفها حتى أفزعه من خلفه صوتٌ هادر:",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2017.mp3"
+    },
+    {
+      "id": 17,
+      "text": "“ Who said you could trash my garden? ”",
+      "translationAr": "«مَن قال إنك تستطيع إفساد حديقتي؟»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2018.mp3"
+    },
+    {
+      "id": 18,
+      "text": "The merchant spun round and found himself staring into the blazing eyes of a hideous beast.",
+      "translationAr": "استدار التاجرُ ليجد نفسَه يحدّق في عيني وحشٍ قبيحٍ متّقدتين.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2019.mp3"
+    },
+    {
+      "id": 19,
+      "text": "“ You shall pay for this rose with blood! ” raged the monster.",
+      "translationAr": "زأر الوحش: «ستدفع ثمن هذه الوردة دمًا!»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2020.mp3"
+    },
+    {
+      "id": 20,
+      "text": "“ I, I mean no harm. I wanted a rose for my youngest daughter. ”",
+      "translationAr": "قال متلعثمًا: «لم أقصد سوءًا، أردتُ وردةً لابنتي الصغرى.»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2021.mp3"
+    },
+    {
+      "id": 22,
+      "text": "“ Daughter you say?",
+      "translationAr": "«أتقول إن لديك ابنة؟»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2022.mp3"
+    },
+    {
+      "id": 23,
+      "text": "If she will come to me, you may live.",
+      "translationAr": "إن جاءت إليَّ فستنجو بحياتك.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2023.mp3"
+    },
+    {
+      "id": 24,
+      "text": "But should she refuse, I shall visit your house and you shall die. ”",
+      "translationAr": "لكن إن رفضتْ سأزور بيتك وستموت.»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2024.mp3"
+    },
+    {
+      "id": 25,
+      "text": "The merchant did not doubt the word of the beast.",
+      "translationAr": "لم يشكّ التاجرُ في وعيد الوحش.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2025.mp3"
+    },
+    {
+      "id": 26,
+      "text": "He returned home as a doomed man, not thinking for a moment that Belle would agree to stay with the creature.",
+      "translationAr": "عاد إلى بيته كالمحكوم عليه، ولم يخطر بباله لحظة أن بِل ستوافق على البقاء مع ذلك المخلوق.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2026.mp3"
+    },
+    {
+      "id": 27,
+      "text": "When he told the terrible story to his daughters, the elder ones blamed Belle for selfishly demanding a red rose as a gift.",
+      "translationAr": "ولما قصّ على بناته القصة المروّعة، لامت الأخواتُ الكُبرى بِل لأنها طلبت وردةً حمراء.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2027.mp3"
+    },
+    {
+      "id": 28,
+      "text": "She herself said, “ Father, you must take me to this beast before he comes for you. ”",
+      "translationAr": "فقالت بِل نفسها: «يا أبي، يجب أن تأخذني إلى هذا الوحش قبل أن يأتيكَ.»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2028.mp3"
+    },
+    {
+      "id": 29,
+      "text": "The merchant delivered Belle to the Beast and kissed her goodbye, perhaps for ever.",
+      "translationAr": "سلّم التاجرُ بِل إلى الوحش وقبّلها مودِّعًا، وربما إلى الأبد.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2039.mp3"
+    },
+    {
+      "id": 30,
+      "text": "Belle tried to look into the face of the Beast, but had to glance away because he was so disgusting to her eyes.",
+      "translationAr": "حاولت بِل النظر إلى وجه الوحش، لكنها صرفت بصرها لقبحه في عينيها.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2030.mp3"
+    },
+    {
+      "id": 31,
+      "text": "But the Beast was courteous, and gave her a comfortable room.",
+      "translationAr": "لكن الوحش كان مؤدّبًا، وأعطاها غرفة مريحة.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2031.mp3"
+    },
+    {
+      "id": 32,
+      "text": "Invisible servants brought her food, and took care of all her needs.",
+      "translationAr": "وكانت خَدَمٌ غير مرئيةٍ تأتيها بالطعام وتقضي لها حاجتها.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2032.mp3"
+    },
+    {
+      "id": 33,
+      "text": "In the daytime, she wandered around the garden, and spoke to the birds.",
+      "translationAr": "وفي النهار كانت تتجوّل في الحديقة وتُحادث الطيور.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2033.mp3"
+    },
+    {
+      "id": 34,
+      "text": "“ Pretty, sweet, feathered creatures, your ways are so gentle, how can you stand the rough, ugly beast? ”",
+      "translationAr": "«أيتها المخلوقات الرقيقة الجميلة المُجنّحة، طريقتكن لطيفة، كيف تحتملْنَ الوحش الخشن القبيح؟»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2034.mp3"
+    },
+    {
+      "id": 35,
+      "text": "And the birds twittered back.",
+      "translationAr": "وزقزقت الطيورُ جوابًا.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2035.mp3"
+    },
+    {
+      "id": 36,
+      "text": "“ He is ugly but his heart is kind, and he is sad, poor beast, because no girl will love him. ” Belle either did not understand, or did not believe these tweets, and she badly missed her home.",
+      "translationAr": "«هو قبيح، لكن قلبه طيب، وهو حزين، أيها الوحش المسكين، لأنّ فتاةً لن تُحبه.» ولم تفهم بِل هذه الزقزقات أو لم تُصدّقها، وكانت تشتاق كثيرًا إلى بيتها.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2036.mp3"
+    },
+    {
+      "id": 37,
+      "text": "One evening, the Beast came to her room and asked gruffly, “ Belle, will you marry me? ”",
+      "translationAr": "في مساءٍ ما، دخل الوحش غرفتها وسأل بخشونة: «يا بِل، هل تتزوجينني؟»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2037.mp3"
+    },
+    {
+      "id": 38,
+      "text": "Belle felt sick at the thought and replied, “ No Beast, do not hope that I could marry you. ”",
+      "translationAr": "ساءها الأمر وأجابت: «لا يا وحش، لا تأمُل أن أتزوجك.»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2038.mp3"
+    },
+    {
+      "id": 39,
+      "text": "“ That is your choice, ” said the Beast sadly.",
+      "translationAr": "قال الوحش بحزن: «ذلك اختيارك.»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2039.mp3"
+    },
+    {
+      "id": 40,
+      "text": "“ Beast, ” said Belle.",
+      "translationAr": "قالت بِل: «يا وحش...»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2040.mp3"
+    },
+    {
+      "id": 41,
+      "text": "“ If you have good in your heart, you will let me visit my home just for one week. ”",
+      "translationAr": "«إن كان في قلبك خير، فاسمح لي أن أزور بيتي لأسبوعٍ واحد فقط.»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2041.mp3"
+    },
+    {
+      "id": 42,
+      "text": "The Beast thought and said, “ You may go.",
+      "translationAr": "فكّر الوحش وقال: «يمكنك الذهاب.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2042.mp3"
+    },
+    {
+      "id": 43,
+      "text": "But if you do not return after one week, something dreadful will happen. ”",
+      "translationAr": "لكن إن لم تعودي بعد أسبوع سيحدث أمرٌ مُروّع.»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2043.mp3"
+    },
+    {
+      "id": 44,
+      "text": "Belle went home in a carriage arranged by the Beast.",
+      "translationAr": "عادت بِل إلى بيتها في عربةٍ دبّرها الوحش.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2044.mp3"
+    },
+    {
+      "id": 45,
+      "text": "Her sisters were surprised to see her, and even more amazed when she told them about about her new life.",
+      "translationAr": "تفاجأت أخواتها برؤيتها، وازداد عجبهن حين حدّثتهن عن حياتها الجديدة.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2045.mp3"
+    },
+    {
+      "id": 46,
+      "text": "They were even jealous when they heard about the luxury of the palace, and they tried to delay her return.",
+      "translationAr": "بل وشعرن بالغيرة حين سمعن عن رفاهية القصر، وحاولن تأخير عودتها.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2046.mp3"
+    },
+    {
+      "id": 47,
+      "text": "Belle lingered until, one day, she looked at her hand and saw a ring that the Beast had given her.",
+      "translationAr": "تراخت بِل في العودة حتى نظرت يومًا إلى يدها فرأت خاتمًا كان الوحش قد أعطاها إياه.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2047.mp3"
+    },
+    {
+      "id": 48,
+      "text": "“ What is this strange feeling? ” she thought.",
+      "translationAr": "«ما هذا الإحساس الغريب؟» تساءلت.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2048.mp3"
+    },
+    {
+      "id": 49,
+      "text": "“ Can it be that I miss him? ”",
+      "translationAr": "«أيمكن أنني أشتاق إليه؟»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2049.mp3"
+    },
+    {
+      "id": 50,
+      "text": "She rubbed the ring and in an instant she was transported back to the palace.",
+      "translationAr": "ففركت الخاتم، وفي لحظةٍ وجدت نفسها قد عادت إلى القصر.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2050.mp3"
+    },
+    {
+      "id": 51,
+      "text": "“ Beast, where are you? ” she called as she hurried through the echoing halls in search of him.",
+      "translationAr": "«يا وحش، أين أنت؟» كانت تنادي وهي تُسرع عبر الأروقة الصادحة تبحث عنه.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2051.mp3"
+    },
+    {
+      "id": 52,
+      "text": "She recalled his words that something dreadful might happen, and she thought, “ Did he mean to me or to him, or to both of us? ”",
+      "translationAr": "تذكّرت قوله إن شيئًا مروّعًا قد يحدث، وقالت في نفسها: «أكان يقصدني أم يقصده أم كلينا؟»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2052.mp3"
+    },
+    {
+      "id": 53,
+      "text": "Once out in the garden she ran up and down the hedgerows crying, “ Beast, Beast, where are you? ”",
+      "translationAr": "وما إن خرجت إلى الحديقة حتى بدأت تجري صعودًا وهبوطًا بين الأسيجة وهي تصيح: «يا وحش، أين أنت؟»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2053.mp3"
+    },
+    {
+      "id": 54,
+      "text": "The birds tweeted, “ Hurry, Hurry, he is hiding in the folly and there is no time to lose. ”",
+      "translationAr": "وزقزقت الطيور: «أسرعي، أسرعي، إنه يختبئ في المقصورة ولا وقت لنضيعه.»",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2054.mp3"
+    },
+    {
+      "id": 55,
+      "text": "A flurry and fluttering led Belle to a grotto at the end of the garden.",
+      "translationAr": "قادتها رفرفة الأجنحة وحركةٌ سريعةٌ إلى مغارةٍ في آخر الحديقة. دخلتها فرأت الوحش ممدّدًا وقد ولّى وجهه القبيح نحو الجدار الحجري البارد. فقبّلت ظهر رأسه، ومع القبلة بدأ يتحول شيئًا فشيئًا إلى رجلٍ وسيمٍ، أميرٍ، وفي اليوم نفسه تزوجت بِل والوحش.",
+      "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Beauty%20and%20the%20Beast/Beauty%20and%20the%20Beast%20S%2055.mp3"
+    }
+  ]
         },
         "wordDefinitions": {
           "a": {
