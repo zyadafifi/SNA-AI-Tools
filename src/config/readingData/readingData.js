@@ -8355,391 +8355,391 @@ export const readingData = [
               "id": 1,
               "text": "Jake has an unusual best friend.",
               "translationAr": "جِيك صديقٌ حميم غير مألوف.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2002.mp3"
             },
             {
               "id": 2,
               "text": "His name is Birdy and he is a black crow.",
               "translationAr": "اسمه «بيردي»، وهو غرابٌ أسود.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2003.mp3"
             },
             {
               "id": 3,
               "text": "One evening, when Birdy tapped at his window, Jake was curious.",
               "translationAr": "في مساءٍ ما، طرق «بيردي» نافذته، فاستبدّ الفضول بجِيك.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2004.mp3"
             },
             {
               "id": 4,
               "text": "“ Birdy, you’re a magical bird, right? ”",
               "translationAr": "«بيردي، أنت طائرٌ سحري، أليس كذلك؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2005.mp3"
             },
             {
               "id": 5,
               "text": "“ Well you could say that I’m no ordinary bird. ”",
               "translationAr": "«يمكن القول إنني لستُ طائرًا عاديًّا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2006.mp3"
             },
             {
               "id": 6,
               "text": "“ In that case, can you grant me three wishes? ”",
               "translationAr": "«إذًا هل تمنحني ثلاث أمنيات؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2007.mp3"
             },
             {
               "id": 7,
               "text": "Birdy thought for a moment with his head on one side.",
               "translationAr": "فكّر «بيردي» لحظةً وهو يميل رأسه إلى جانب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2008.mp3"
             },
             {
               "id": 8,
               "text": "“ Sorry, not my kind of service. But if you want to impress your friends, I could teach you a card trick or two? ”",
               "translationAr": "«عذرًا، ذلك ليس من نوع خدماتي. لكن إن أردت أن تُدهِش أصدقاءك، أستطيع أن أعلّمك خُدعةً أو اثنتين بورق اللعب؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2009.mp3"
             },
             {
               "id": 9,
               "text": "“ No thanks Birdy, ” said Jake adamantly. “ Card tricks are fake. I want some real magic, you know, like in a fairytale. ”",
               "translationAr": "«لا شكرًا يا بيردي»، قال جِيك بإصرار. «خُدع الورق مزيفة. أريد سحرًا حقيقيًّا، كما في الحكايات الخرافية.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2010.mp3"
             },
             {
               "id": 10,
               "text": "“ Well it’s like this, If I gave you three wishes, you wouldn’t learn anything. Worse, you might learn the wrong sort of lesson, ” he said sternly.",
               "translationAr": "«الأمر هكذا: لو منحتُك ثلاث أمنيات، لما تعلّمتَ شيئًا. بل أسوأ من ذلك، قد تتعلّم درسًا خاطئًا»، قال بصرامة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2011.mp3"
             },
             {
               "id": 11,
               "text": "“ Awwwe! ” exclaimed Jake throwing up his arms. He wasn’t happy. Birdy sounded just like his Dad! Which wasn’t cool at all.",
               "translationAr": "«آآه!» صرخ جِيك رافعًا ذراعيه. لم يكن مسرورًا. كان «بيردي» يبدو تمامًا كأبيه! وذلك لم يكن رائعًا البتة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2012.mp3"
             },
             {
               "id": 12,
               "text": "In fact, when he woke up the next morning, he felt cross with Birdy for the first time ever. “ It’s not fair Mum. I want three wishes, ” he moaned, toying with his breakfast. And Mum replied.",
               "translationAr": "وفي الحقيقة، حين استيقظ صباح اليوم التالي، شعر بالغيظ من «بيردي» لأول مرة. «هذا غير عادل يا أمّي. أريد ثلاث أمنيات»، تمتم وهو يعبث بفطوره. فردّت الأم.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2013.mp3"
             },
             {
               "id": 13,
               "text": "“ Well I’ll give you three wishes. I wish you’d eat up your porridge, get your shoes on, and get to school. ”",
               "translationAr": "«حسنًا، سأمنحك ثلاث أمنيات. أتمنّى أن تُنهي عصيدتك، وأن ترتدي حذاءك، وأن تذهب إلى المدرسة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2014.mp3"
             },
             {
               "id": 14,
               "text": "The following Friday, Jake felt tired and moody after football practice. He slouched on the sofa, glaring through the window at Mum’s old car parked outside.",
               "translationAr": "في الجمعة التالية، شعر جِيك بالتعب وسوء المزاج بعد تدريب كرة القدم. ارتمى على الأريكة، وحدّق عبر النافذة في سيارة أمّه القديمة المتوقفة بالخارج.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2015.mp3"
             },
             {
               "id": 15,
               "text": "Its rounded edges and bright teal colour made it look like something out of an ancient TV show. To Jake though, it was the epitome of uncool.",
               "translationAr": "كانت حوافها المستديرة ولونها الأزرق الفيروزي الساطع يجعلانها تبدو كشيئٍ من مسلسلٍ قديم. لكنها في نظر جِيك كانت قمّة «اللا-روعة».",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2016.mp3"
             },
             {
               "id": 16,
               "text": "“ Hello, Jake, ” Birdy greeted him after dinner. “ What’s with the frown? ”",
               "translationAr": "«مرحبًا يا جِيك»، حيّاه «بيردي» بعد العشاء. «وما بال هذا العبوس؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2017.mp3"
             },
             {
               "id": 17,
               "text": "“ We’re visiting my aunty and uncle for their anniversary in a couple of weeks. Loads of people are going to be there and they’ll see Mum’s old car.",
               "translationAr": "«سنزور خالتي وخالي في ذكرى زواجهما بعد أسبوعين. سيكون هناك كثيرون، وسيرون سيارة أمّي القديمة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2018.mp3"
             },
             {
               "id": 18,
               "text": "It’s embarrassing showing up at my cousin’s house in Mum’s tin can. You know, my uncle’s two cars go from 0 to 60 in half a second. Mum’s would take a week. I wish you could use some magic? ”",
               "translationAr": "من المُحرِج أن أصل إلى بيت ابن عمي في «علبة الصفيح» الخاصة بأمي. تعلم، سيارتا خالي تنطلقان من صفر إلى ستين في نصف ثانية. أمّا سيارة أمّي فتحتاج أسبوعًا! ليتك تستخدم بعض السحر؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2019.mp3"
             },
             {
               "id": 19,
               "text": "Birdy tilted his head. “ Your mum’s car has character. But I predict your wish will come true. ”",
               "translationAr": "مال «بيردي» رأسه. «سيارة أمّك ذات شخصية. لكنني أتنبّأ بأن أمنيتك ستتحقّق.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2020.mp3"
             },
             {
               "id": 20,
               "text": "Jake was excited, but the car stayed the same. “ Did Birdy cheat me? ” he wondered.",
               "translationAr": "تحمّس جِيك، لكن السيارة بقيت كما هي. «هل خدعني بيردي؟» تساءل.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2021.mp3"
             },
             {
               "id": 21,
               "text": "Out of the blue on Sunday morning, a man knocked on the door. “ Sorry to bother you, but I couldn’t help but notice your car in your driveway. It’s a classic. I’ve been looking for one like that for a long time. Would you consider selling it? ”",
               "translationAr": "وفجأةً صباح الأحد، طرق رجلٌ الباب. «عذرًا على الإزعاج، لكن لفتت نظري سيارتُكم في الممر. إنها كلاسيكية. بحثت طويلًا عن واحدةٍ مثلها. أتفكّرون في بيعها؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2022.mp3"
             },
             {
               "id": 22,
               "text": "Mum, surprised, agreed to sell the car as he offered a very generous price. A week later, a sleek new car sat in the driveway. “ What do you think, Jake? ” Mum asked. Jake was pleased. “ It’s awesome, Mum! ”",
               "translationAr": "وافقت الأمُّ متعجّبةً على البيع بعدما عرض ثمنًا سخيًّا. وبعد أسبوعٍ استقرّت في الممرّ سيارةٌ جديدة أنيقة. «ما رأيك يا جِيك؟» سألت. سرَّ جِيك. «إنها رائعة يا أمّي!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2023.mp3"
             },
             {
               "id": 23,
               "text": "And he was in a good mood all week.",
               "translationAr": "وظلَّ طيبَ المزاج طَوال الأسبوع.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2024.mp3"
             },
             {
               "id": 24,
               "text": "Next Saturday afternoon, Mum called out, “ Come on Jake, we’re going shopping for new clothes! ” Jake groaned. “ Shopping is boring. ” But Mum was firm.",
               "translationAr": "وفي ظهر السبت التالي نادت الأم: «هيا يا جِيك، سنخرج لشراء ثيابٍ جديدة!» تأوّه جِيك: «التسوّق ممل.» لكن الأمَّ كانت حازمة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2025.mp3"
             },
             {
               "id": 25,
               "text": "Jake dragged himself downstairs, to find his sister Elle bouncing around eager to get going. “ Mummy’s promised me I’m finally collecting my street dance uniform for my club, and brand new trainers too, ” she squealed in delight.",
               "translationAr": "هبط متكاسلًا، فإذا بأخته «إيلي» تقفز فرحًا متشوّقةً للانطلاق. «أمّي وعدتني أن أستلم أخيرًا زيَّ رقص الشارع لناديّ، وحذاءً رياضيًّا جديدًا أيضًا»، صاحت فرِحة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2026.mp3"
             },
             {
               "id": 26,
               "text": "Jake’s face turned pale with dread. “ I wish I didn’t have to go shopping with Elle. ” For him, a shopping trip with his little sister was like being trapped in a horror film — an endless parade of girly shops.",
               "translationAr": "شحب وجهُه رعبًا. «ليتني لا أذهب للتسوّق مع إيلي.» كان الخروجُ مع أخته الصغرى بالنسبة إليه كأنه الوقوعُ في فيلم رعب—عرضٌ لا ينتهي من المحال النسائية.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2027.mp3"
             },
             {
               "id": 27,
               "text": "“ All right, ” sighed Mum. “ But don’t blame us if we buy clothes you don’t like! ” “ Don’t worry, I’ll choose really cool clothes for you Jake, ” piped up Elle.",
               "translationAr": "«حسنًا»، تنهدت الأم. «لكن لا تلومننا إن اشترينا ثيابًا لا تعجبك!» فقالت «إيلي»: «لا تقلق، سأختار لك ثيابًا رائعة حقًّا يا جِيك.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2028.mp3"
             },
             {
               "id": 28,
               "text": "Later, when Mum and Elle returned home, Elle burst into Jake’s room holding up a shiny yellow shirt and 70s style bell - bottom jeans with flowers on the thighs.",
               "translationAr": "وعندما عادتا، اقتحمت «إيلي» غرفة جِيك رافعةً قميصًا أصفر لامعًا وسروال جينز «شارلستون» من طراز السبعينيات مزدانًا بالزهور عند الفخذين.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2029.mp3"
             },
             {
               "id": 29,
               "text": "“ No way am I wearing those! ” Jake protested, horrified.",
               "translationAr": "«مستحيل أن أرتدي هذا!» احتجّ جِيك مذعورًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2030.mp3"
             },
             {
               "id": 30,
               "text": "That evening, he whispered, “ I am not wearing these ridiculous clothes. ” Birdy appeared at the window.",
               "translationAr": "في المساء همس: «لن أرتدي هذه الثياب المضحكة.» وظهر «بيردي» عند النافذة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2031.mp3"
             },
             {
               "id": 31,
               "text": "“ Look at this stuff, Birdy! What was Elle thinking, picking out these weird outfits? I’m going to be the laughingstock at school. ”",
               "translationAr": "«انظر إلى هذا يا بيردي! بمَ كانت تفكّر «إيلي» وهي تختار هذه الأزياء الغريبة؟ سأكون أضحوكة المدرسة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2032.mp3"
             },
             {
               "id": 32,
               "text": "Birdy cawed softly. “ Fashion is subjective. But I can see you wish you didn’t have to wear those clothes? ” “ Oh, please, Birdy! ” Birdy didn’t even caw, he just flapped his wings.",
               "translationAr": "نعق «بيردي» بخفوت. «الذوق في اللباس أمرٌ نسبي. لكنني أرى أنك تتمنى لو لم تضطر إلى ارتداء تلك الثياب؟» «أرجوك يا بيردي!» ولم ينعق «بيردي» حتى، بل رفرف بجناحيه فحسب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2033.mp3"
             },
             {
               "id": 33,
               "text": "The next morning, Elle barged into her brother’s room unannounced. “ Jake, I’ve been thinking.. I don’t think these clothes suit you after all! Do you mind if I keep them? ”",
               "translationAr": "وفي الصباح، اقتحمت «إيلي» غرفة أخيها دون استئذان. «يا جِيك، فكّرتُ قليلًا.. لا أظن أن هذه الثياب تناسبك في النهاية! أتعترض إن احتفظتُ بها؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2034.mp3"
             },
             {
               "id": 34,
               "text": "Jake heaved a sigh of relief. “ You definitely can. ” Mum overheard. “ Come down Jake, and we’ll order some new clothes online. ” Jake smiled. “ Sounds good, Mum. ”",
               "translationAr": "تنفّس جِيك الصعداء. «بالتأكيد خذيها.» وسمعت الأمُّ ذلك فقالت: «انزل يا جِيك، وسنطلب بعض الثياب الجديدة عبر الإنترنت.» فابتسم: «يبدو ذلك جيدًا يا أمّي.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2035.mp3"
             },
             {
               "id": 35,
               "text": "And he whispered, “ Thanks for granting my wish, Birdy! ”",
               "translationAr": "وهمس: «شكرًا لتحقيق أمنيتي يا بيردي!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2036.mp3"
             },
             {
               "id": 36,
               "text": "The week went by smoothly until Friday evening, when Dad looked up from his dinner plate and asked Jake to help him tackle the garage.",
               "translationAr": "ومضى الأسبوع بسلاسة حتى مساء الجمعة، حين رفع الأبُ رأسه عن طبقه وطلب من جِيك مساعدته في ترتيب المرأب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2037.mp3"
             },
             {
               "id": 37,
               "text": "“ I’ve been putting it off, but it’s high time for us to get it cleaned out. ”",
               "translationAr": "«كنتُ أؤجّل ذلك، لكن حان الوقت لنُخليه من الفوضى.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2038.mp3"
             },
             {
               "id": 38,
               "text": "Jake’s heart sank. The garage was a disaster zone, still damp and cluttered from the recent flood. Cleaning it out was the last thing he wanted to do.",
               "translationAr": "هبط قلبُه. كان المرأب منطقة كوارث، ما يزال رطبًا ومزدحمًا منذ الفيضان الأخير. وكان آخرَ ما يريده أن ينظّفه.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2039.mp3"
             },
             {
               "id": 39,
               "text": "After dinner, Jake retreated to his room, flopping onto his bed with a groan. His mind began to whirl with images of the garage — dark corners filled with creepy - crawlies, spiders the size of his fist, and who knew what else lurking in the shadows.",
               "translationAr": "بعد العشاء، انزوى إلى غرفته وألقى بنفسه على سريره متأوّهًا. وأخذت تدور في ذهنه صور المرأب—زوايا مظلمة تعجُّ بالحشرات المقزّزة، وعناكب بحجم قبضة يده، ومن يدري ماذا بعد كامنٌ في الظلال.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2040.mp3"
             },
             {
               "id": 40,
               "text": "Birdy flew in, landing gracefully on Jake’s desk. “ Trouble brewing? ” Jake sighed. “ Dad wants me to help clean the garage. I wish I didn’t have to. ”",
               "translationAr": "حلّ «بيردي» طائرًا، وحطَّ برشاقة على مكتب جِيك. «تلوح متاعب؟» تنهد جِيك: «يريدني أبي أن أساعد في تنظيف المرأب. ليتني لا أضطرّ إلى ذلك.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2041.mp3"
             },
             {
               "id": 41,
               "text": "“ I’ll tell you what. On this occasion, I’ll grant you half a wish. You’ll have to help your dad with the garage, but you’ll enjoy it. ”",
               "translationAr": "«سأقول لك: في هذه المرّة سأمنحك نصف أمنية. سَتُعين أباك في المرأب، لكنك ستستمتع بذلك.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2042.mp3"
             },
             {
               "id": 42,
               "text": "“ Enjoy it? You’ve got to be kidding! ” “ Take it or leave it. ”",
               "translationAr": "«أستمتع؟ لا بد أنك تمزح!» «خُذها أو دَعْها.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2043.mp3"
             },
             {
               "id": 43,
               "text": "Saturday morning arrived, and Jake reluctantly joined Dad in the garage. The air was damp, and boxes were stacked haphazardly, some soggy and some falling apart.",
               "translationAr": "جاء صباح السبت، فالتحق جِيك مُكرَهًا بأبيه في المرأب. كان الهواءُ رطبًا، والصناديقُ مكدّسةً عشوائيًّا، منها المبتلّ ومنها المتداعي.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2044.mp3"
             },
             {
               "id": 44,
               "text": "Jake eyed the dark corners warily, half - expecting a rat to jump out at him. Dad rolled up his sleeves, giving Jake an encouraging smile.",
               "translationAr": "كان جِيك يرمق الزوايا المعتمة بتحفّز، كأنه يتوقّع أن يقفز فأرٌ عليه. وشمّر الأبُ عن ساعديه، وألقى إلى جِيك بابتسامةٍ مشجّعة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2045.mp3"
             },
             {
               "id": 45,
               "text": "“ Let’s get to it, Jake. The sooner we start, the sooner we’ll be done. ” They began sorting through the mess, tossing ruined items and organising what could be saved.",
               "translationAr": "«فلنبدأ يا جِيك. كلّما بدأنا أبكر فرغنا أسرع.» وشرعا يفرزان الفوضى، فيلقيان التالف، ويرتّبان ما يمكن إنقاذه.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2046.mp3"
             },
             {
               "id": 46,
               "text": "As they worked, Dad took on the heavy lifting, while Jake focused on the shelves that had escaped the worst of January’s flood, when the river overflowed and reached their back garden.",
               "translationAr": "وأثناء العمل تولّى الأبُ الأحمال الثقيلة، بينما ركّز جِيك على الرفوف التي نجت من أسوأ ما في فيضان يناير، حين فاض النهر وبلغ حديقة بيتهم الخلفية.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2047.mp3"
             },
             {
               "id": 47,
               "text": "Pulling down a dusty box, Jake coughed as a cloud of dust enveloped him. He opened the box to find a collection of his old toys: action figures, building blocks, and a well - worn teddy bear.",
               "translationAr": "ولما أنزل صندوقًا مُغبرًّا سعل إذ أحاطت به سحابةُ غبار. وفتح الصندوق فوجد مجموعةً من ألعابه القديمة: دُمًى مقاتِلة، وقطعَ بناء، ودبًّا قماشيًّا باليًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2048.mp3"
             },
             {
               "id": 48,
               "text": "“ Hey, Dad, look at this! ” Jake exclaimed, holding up the bear. ” Dad glanced over: “ I remember when you wouldn’t go anywhere without that bear. You used to call him Mr. Bud. ”",
               "translationAr": "«أبي! انظر إلى هذا!» هتف وهو يرفع الدبَّ. لمح الأبُ وقال: «أذكر أنك لم تكن تذهب إلى مكانٍ من دونه. كنت تسميه السيد «باد».»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2049.mp3"
             },
             {
               "id": 49,
               "text": "Digging deeper into the box, his fingers closed around something solid and metallic. He pulled out a detailed toy car, its paint slightly chipped but still gleaming.",
               "translationAr": "وحين غاص أكثر في الصندوق، قبضت أصابعه على شيءٍ صلبٍ معدني. وأخرج سيارةَ لعبةٍ مُتقَنة التفاصيل، طِلاءُها مقشورٌ قليلًا لكنها ما تزال لامعة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2050.mp3"
             },
             {
               "id": 50,
               "text": "His eyes widened as he recognized the model: “ Wow, this looks just like Mum’s car! ” Jake said, turning it over in his hands.",
               "translationAr": "واتّسعت عيناه إذ عرف الطراز: «واو! تبدو كسيارة أمّي تمامًا!» قال وهو يقلّبها في يديه.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2051.mp3"
             },
             {
               "id": 51,
               "text": "Dad walked over for a closer look. “ Well, would you look at that? This was my favourite toy car as a kid. Your mum was driving this same exact model only for real, when we met. ”",
               "translationAr": "تقدّم الأب ليلقي نظرةً أدقّ. «أترى؟ كانت هذه سيارة لعبتي المفضّلة حين كنتُ صغيرًا. وكانت أمُّك تقود الطراز نفسَه—ولكن الحقيقي—حين التقينا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2052.mp3"
             },
             {
               "id": 52,
               "text": "Jake studied the toy car, noticing the intricate details and classic design. Then he noticed a crack in the windshield and a chip in the paint. “ It’s pretty cool, but it’s a bit beat up. ”",
               "translationAr": "تفرّس جِيك في السيارة اللعبة، يلاحظ تفاصيلها الدقيقة وتصميمها الكلاسيكي. ثم لاحظ شرخًا في الزجاج الأمامي وكسرةً في الطلاء. «إنها رائعة، لكنها مهترئة قليلًا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2053.mp3"
             },
             {
               "id": 53,
               "text": "Dad sighed. “ Yeah, and it’s missing the original box too. You know, if it were in perfect condition with the box, it would be worth a lot of money now. ”",
               "translationAr": "تنهد الأب. «نعم، وهي بلا علبةٍ أصلية أيضًا. تعلم، لو كانت بحالةٍ ممتازة مع العلبة لساوت اليوم مالًا كثيرًا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2054.mp3"
             },
             {
               "id": 54,
               "text": "Jake nodded thoughtfully, realising how smart Mum had been to keep her old car in such good condition and sell it for a good sum.",
               "translationAr": "هزَّ جِيك رأسه متفكّرًا، وقد أدرك مدى فطنة أمّه في حفظ سيارتها القديمة بحالةٍ جيدة وبيعها بثمنٍ طيب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2055.mp3"
             },
             {
               "id": 55,
               "text": "“ I guess Mum really knows how to take care of things. ” Dad smiled, clearly pleased. “ She sure does.",
               "translationAr": "«أظن أن أمّي تعرف حقًّا كيف تعتني بالأشياء.» ابتسم الأبُ راضيًا. «بلى، بلا شك.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2056.mp3"
             },
             {
               "id": 56,
               "text": "I was sad to see her old car leave the drive for the last time. An unusual car, full of memories. ” And Jake replied, “ Yeah Dad, you’re right. I miss Mum’s old car too. ”",
               "translationAr": "حزنتُ حين غادرت سيارتها القديمة الممرَّ للمرة الأخيرة. سيارة غير مألوفة، مفعمة بالذكريات.» فقال جِيك: «نعم يا أبي، معك حق. أفتقد سيارة أمّي القديمة أيضًا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2057.mp3"
             },
             {
               "id": 57,
               "text": "They continued working, uncovering more treasures, including Dad’s old comic books, one of which was all about a talking bird. “ Dad, is this just a coincidence? ” Jake asked.",
               "translationAr": "واستمرّا يعملان ويكشفان عن مزيدٍ من الكنوز، منها مجلّداتُ قصصٍ مصوّرة قديمة للأب—وكان أحدها كلّه عن طائرٍ يتكلم. «أبي، أهذا مجردُ صدفة؟» سأل جِيك.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2058.mp3"
             },
             {
               "id": 58,
               "text": "“ Well, well, ” said Dad. “ This was my favourite comic. But it was just a story, you know. ” “ But my Birdy is real, ” said Jake proudly.",
               "translationAr": "«ها قد رأيتَ»، قال الأب. «كانت هذه قصتي المصوّرة المفضّلة. لكنها مجرد قصة، كما تعلم.» فقال جِيك بفخر: «لكن «بيردي» خاصتي حقيقي.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2059.mp3"
             },
             {
               "id": 59,
               "text": "The hours flew by as they shared stories and laughs. By early evening, the garage was clean and organised, and both of them were tired but satisfied.",
               "translationAr": "ومضت الساعاتُ سريعةً وهما يتبادلان القصص والضحكات. ومع أوّل المساء كان المرأبُ نظيفًا مرتبًا، وقد أجهدهما العملُ لكنهما راضيان.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2060.mp3"
             },
             {
               "id": 60,
               "text": "As they packed up the last box, Dad ruffled Jake’s hair affectionately. “ Thanks for all your help today, Jake. Couldn’t have done it without you. ” Jake smiled at his dad. “ It was actually kinda fun. ”",
               "translationAr": "وأثناء إغلاق آخر صندوق، عبث الأبُ بحنانٍ بشعر جِيك. «شكرًا على مساعدتك اليوم يا جِيك. ما كنتُ لأُنجز ذلك من دونك.» فابتسم جِيك لأبيه: «في الحقيقة كان الأمر مسليًا نوعًا ما.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2061.mp3"
             },
             {
               "id": 61,
               "text": "That evening, as the sun set and the sky turned shades of orange and pink, Birdy arrived at Jake’s window with a little tap tap tap. Jake eagerly let him in.",
               "translationAr": "في المساء، ومع الغروب وتلوّن السماء بدرجات البرتقالي والوردي، حضر «بيردي» إلى نافذة جِيك يَقرُع قرعاتٍ خفيفة، فأدخله جِيك متلهّفًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2062.mp3"
             },
             {
               "id": 62,
               "text": "“ How did it go? ” Birdy asked, settling comfortably on the windowsill.",
               "translationAr": "«كيف سارت الأمور؟» سأل «بيردي» وهو يستقرُّ عند مصطبة النافذة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2063.mp3"
             },
             {
               "id": 63,
               "text": "“ It was great! We found all sorts of cool stuff, like my old toys and teddy I thought I’d lost. We even found this valuable toy car that looks just like Mum’s old one. I realised that her car was actually pretty awesome. Thanks for granting me half a wish. It was better than nothing. ”",
               "translationAr": "«كانت رائعة! وجدنا أشياءَ ممتعةً شتّى، مثل ألعابي القديمة والدُّب الذي ظننتُ أني فقدته. ووجدنا أيضًا سيارة لعبة قيّمة تشبه سيارة أمّي القديمة تمامًا. وأدركتُ أن سيارتها كانت في الحقيقة رائعةً بحق. شكرًا لمنحي نصف أمنية. كان ذلك خيرًا من لا شيء.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2064.mp3"
             },
             {
               "id": 64,
               "text": "“ I think it might have turned out just the same. Even without half a wish. The more you put into something, the more you get out of it. Wish or no wish. That’s just the way life is. ”",
               "translationAr": "«أظن أنه كان سيؤول إلى الأمر نفسه حتى بلا نصف أمنية. فكلما بذلتَ في الشيء أكثر، جنيتَ منه أكثر—أكانت هناك أمنية أم لا. هكذا هي الحياة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2065.mp3"
             },
             {
               "id": 65,
               "text": "“ Thanks, Birdy. I’ll remember that, ” Jake murmured, stifling a yawn, sleep suddenly weighing on him. The day had been exhausting in the garage, but totally worth it.",
               "translationAr": "«شكرًا يا بيردي. سأحفظ هذا الدرس»، همس جِيك وهو يكتم تثاؤبه، وقد هجم عليه النُّعاس فجأة. كان اليوم مُرهِقًا في المرأب، لكنه كان يستحق العناء تمامًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes/Birdy%E2%80%99s%20Two%20and%20a%20Half%20Wishes%20S%2066.mp3"
             }
           ]
         },
