@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Play, Lock, Clock } from "lucide-react";
+import { Play, Lock, Clock, Ban } from "lucide-react";
 import { useProgress } from "../../contexts/WritingProgressContext";
 
 export default function TopicCards() {
@@ -9,7 +9,7 @@ export default function TopicCards() {
 
   if (loading) {
     return (
-      <div className="min-h-screen py-16 bg-white flex items-center justify-center">
+      <div className="min-h-screen py-16 flex items-center justify-center">
         <div className="text-center">
           <div className="w-8 h-8 border-4 border-teal-200 border-t-teal-500 rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-gray-600">Loading topics...</p>
@@ -20,7 +20,7 @@ export default function TopicCards() {
 
   if (error) {
     return (
-      <div className="min-h-screen py-16 bg-white flex items-center justify-center">
+      <div className="min-h-screen py-16 flex items-center justify-center">
         <div className="text-center max-w-md px-4">
           <div className="text-red-500 text-5xl mb-4">⚠️</div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">
@@ -39,17 +39,29 @@ export default function TopicCards() {
   }
 
   return (
-    <div className="min-h-screen py-16 bg-white">
+    <div className="min-h-screen py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            English Learning Topics
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
-            Master English step by step. Complete each topic to unlock the next
-            one.
-          </p>
+        <div className="mb-12">
+          <div className="bg-[#F8F8F8] rounded-2xl p-12 py-16 relative overflow-hidden">
+            {/* Gradient overlay on the left */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to right, rgba(255, 251, 235, 0.8) 0%, rgba(255, 251, 235, 0.4) 30%, transparent 60%)",
+              }}
+            />
+            <div className="relative z-10 text-center">
+              <h1 className="text-4xl font-bold text-[#4A4A4A] mb-6">
+                English Learning Topics
+              </h1>
+              <p className="text-lg text-[#6B7280] max-w-2xl mx-auto leading-relaxed">
+                Master English step by step. Complete each topic to unlock the
+                next one.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Topics Grid */}
@@ -63,7 +75,7 @@ export default function TopicCards() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -4 }}
-                className={`bg-gray-50 rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col h-full min-h-[320px] ${
+                className={`bg-gray-50 rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col h-full min-h-[320px] relative group ${
                   topicProgress.isUnlocked ? "cursor-pointer" : "cursor-default"
                 }`}
               >
@@ -106,8 +118,9 @@ export default function TopicCards() {
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div
-                          className="bg-gradient-to-r from-teal-500 to-blue-500 h-2 rounded-full transition-all duration-300"
+                          className="h-2 rounded-full transition-all duration-300"
                           style={{
+                            background: "var(--gradient-primary)",
                             width:
                               topicProgress.phase === "not-started"
                                 ? "0%"
@@ -164,7 +177,8 @@ export default function TopicCards() {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={() => startTopic(topic.id)}
-                            className="w-full bg-gradient-to-r from-teal-500 to-blue-500 text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center space-x-2 hover:from-teal-600 hover:to-blue-600 transition-all duration-200 cursor-pointer"
+                            className="w-full text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center space-x-2 transition-all duration-200 cursor-pointer"
+                            style={{ background: "var(--gradient-primary)" }}
                           >
                             <Play className="w-4 h-4" />
                             <span>Start Reading</span>
@@ -175,7 +189,8 @@ export default function TopicCards() {
                           <motion.button
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="w-full bg-gradient-to-r from-teal-500 to-blue-500 text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center space-x-2 hover:from-teal-600 hover:to-blue-600 transition-all duration-200 cursor-pointer"
+                            className="w-full text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center space-x-2 transition-all duration-200 cursor-pointer"
+                            style={{ background: "var(--gradient-primary)" }}
                           >
                             <Play className="w-4 h-4" />
                             <span>Answer Questions</span>
@@ -186,7 +201,8 @@ export default function TopicCards() {
                           <motion.button
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center space-x-2 hover:from-green-600 hover:to-emerald-600 transition-all duration-200 cursor-pointer"
+                            className="w-full text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center space-x-2 transition-all duration-200 cursor-pointer"
+                            style={{ background: "var(--gradient-primary)" }}
                           >
                             <Play className="w-4 h-4" />
                             <span>View Results</span>
@@ -198,7 +214,8 @@ export default function TopicCards() {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={() => startTopic(topic.id)}
-                            className="w-full bg-gradient-to-r from-teal-500 to-blue-500 text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center space-x-2 hover:from-teal-600 hover:to-blue-600 transition-all duration-200 cursor-pointer"
+                            className="w-full text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center space-x-2 transition-all duration-200 cursor-pointer"
+                            style={{ background: "var(--gradient-primary)" }}
                           >
                             <Play className="w-4 h-4" />
                             <span>Start Reading</span>
@@ -208,9 +225,12 @@ export default function TopicCards() {
                     ) : (
                       <button
                         disabled
-                        className="w-full bg-gray-200 text-gray-500 font-medium py-3 px-4 rounded-xl flex items-center justify-center space-x-2 cursor-not-allowed"
+                        className="w-full bg-gray-200 text-gray-500 font-medium py-3 px-4 rounded-xl flex items-center justify-center space-x-2 cursor-not-allowed relative"
                       >
-                        <Lock className="w-4 h-4 text-yellow-500" />
+                        <div className="relative w-4 h-4 flex items-center justify-center">
+                          <Lock className="w-4 h-4 text-yellow-500 group-hover:opacity-0 transition-opacity absolute" />
+                          <Ban className="w-4 h-4 text-red-500 opacity-0 group-hover:opacity-100 transition-opacity absolute" />
+                        </div>
                         <span>Locked</span>
                       </button>
                     )}

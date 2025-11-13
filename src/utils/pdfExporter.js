@@ -409,3 +409,268 @@ export const generatePDFDataURL = (articleData, options = {}) => {
   const doc = generatePDF(articleData, options);
   return doc.output("dataurlstring");
 };
+
+/**
+ * Generate PDF report for listening lesson results
+ * @param {Object} lessonData - Lesson and results data
+ * @returns {jsPDF} PDF document
+ */
+export const generateListeningLessonPDF = (lessonData) => {
+  const {
+    lessonTitle = "Listening Lesson",
+    questions = [],
+    questionScores = [],
+    userAnswers = [],
+    averageScore = 0,
+    totalQuestions = 0,
+    completedQuestions = 0,
+  } = lessonData;
+
+  // Create new PDF document
+  const doc = new jsPDF();
+  let yPosition = PDF_CONFIG.margins.top;
+  const pageWidth =
+    PDF_CONFIG.pageWidth - PDF_CONFIG.margins.left - PDF_CONFIG.margins.right;
+  const maxWidth = pageWidth;
+
+  // Helper function to add text with word wrapping
+  const addText = (text, x, y, options = {}) => {
+    const {
+      fontSize: textSize = PDF_CONFIG.fonts.body,
+      color = PDF_CONFIG.colors.text,
+      align = "left",
+      maxWidth: textMaxWidth = maxWidth,
+    } = options;
+
+    doc.setFontSize(textSize);
+    doc.setTextColor(color);
+
+    const lines = doc.splitTextToSize(text, textMaxWidth);
+    const lineHeight = textSize * 0.35; // Line height multiplier
+
+    // Check if we need a new page before adding text
+    const requiredHeight = lines.length * lineHeight;
+    let currentY = y;
+    if (
+      currentY + requiredHeight >
+      PDF_CONFIG.pageHeight - PDF_CONFIG.margins.bottom - 10
+    ) {
+      doc.addPage();
+      currentY = PDF_CONFIG.margins.top;
+    }
+
+    doc.text(lines, x, currentY, { align });
+
+    return currentY + lines.length * lineHeight; // Return new Y position
+  };
+
+  // Helper function to add a line break
+  const addLineBreak = (spacing = 5) => {
+    return yPosition + spacing;
+  };
+
+  // Helper function to check if we need a new page
+  const checkNewPage = (requiredSpace = 20) => {
+    if (
+      yPosition + requiredSpace >
+      PDF_CONFIG.pageHeight - PDF_CONFIG.margins.bottom - 10
+    ) {
+      doc.addPage();
+      yPosition = PDF_CONFIG.margins.top;
+      return true;
+    }
+    return false;
+  };
+
+  // Header
+  // For center alignment, x should be the center of the page
+  const centerX = PDF_CONFIG.pageWidth / 2;
+  yPosition = addText(lessonTitle, centerX, yPosition, {
+    fontSize: PDF_CONFIG.fonts.title,
+    color: PDF_CONFIG.colors.primary,
+    align: "center",
+  });
+
+  yPosition = addLineBreak(10);
+
+  // Date
+  const currentDate = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  yPosition = addText(`Generated on ${currentDate}`, centerX, yPosition, {
+    fontSize: PDF_CONFIG.fonts.small,
+    color: PDF_CONFIG.colors.light,
+    align: "center",
+  });
+
+  yPosition = addLineBreak(15);
+
+  // Overall Statistics
+  checkNewPage(40);
+
+  yPosition = addText(
+    "Overall Performance",
+    PDF_CONFIG.margins.left,
+    yPosition,
+    {
+      fontSize: PDF_CONFIG.fonts.subtitle,
+      color: PDF_CONFIG.colors.primary,
+    }
+  );
+
+  yPosition = addLineBreak(8);
+
+  // Average Score
+  const scoreColor =
+    averageScore >= 90
+      ? "#10B981"
+      : averageScore >= 75
+      ? "#F59E0B"
+      : averageScore >= 60
+      ? "#FFC107"
+      : "#EF4444";
+
+  yPosition = addText(
+    `Average Score: ${averageScore}%`,
+    PDF_CONFIG.margins.left,
+    yPosition,
+    {
+      fontSize: PDF_CONFIG.fonts.body,
+      color: scoreColor,
+    }
+  );
+
+  yPosition = addLineBreak(5);
+
+  yPosition = addText(
+    `Exercises Completed: ${completedQuestions} / ${totalQuestions}`,
+    PDF_CONFIG.margins.left,
+    yPosition,
+    {
+      fontSize: PDF_CONFIG.fonts.body,
+      color: PDF_CONFIG.colors.text,
+    }
+  );
+
+  yPosition = addLineBreak(15);
+
+  // Detailed Results
+  checkNewPage(30);
+
+  yPosition = addText("Detailed Results", PDF_CONFIG.margins.left, yPosition, {
+    fontSize: PDF_CONFIG.fonts.subtitle,
+    color: PDF_CONFIG.colors.primary,
+  });
+
+  yPosition = addLineBreak(10);
+
+  // Loop through questions
+  questions.forEach((question, index) => {
+    // Check if we need a new page (estimate space needed for one question)
+    const estimatedSpace = 80; // Space for question number, user answer, correct answer, and score
+    checkNewPage(estimatedSpace);
+
+    // Question number
+    yPosition = addText(
+      `Question ${index + 1}`,
+      PDF_CONFIG.margins.left,
+      yPosition,
+      {
+        fontSize: PDF_CONFIG.fonts.body,
+        color: PDF_CONFIG.colors.secondary,
+        maxWidth: maxWidth,
+      }
+    );
+
+    yPosition = addLineBreak(8);
+
+    // User's answer
+    const userAnswer = userAnswers[index] || "No answer provided";
+    yPosition = addText(
+      `Your Answer: ${userAnswer}`,
+      PDF_CONFIG.margins.left,
+      yPosition,
+      {
+        fontSize: PDF_CONFIG.fonts.small,
+        color: PDF_CONFIG.colors.text,
+        maxWidth: maxWidth,
+      }
+    );
+
+    yPosition = addLineBreak(5);
+
+    // Correct text
+    yPosition = addText(
+      `Correct Answer: ${question.text || "N/A"}`,
+      PDF_CONFIG.margins.left,
+      yPosition,
+      {
+        fontSize: PDF_CONFIG.fonts.small,
+        color: "#10B981",
+        maxWidth: maxWidth,
+      }
+    );
+
+    yPosition = addLineBreak(5);
+
+    // Score
+    const score =
+      questionScores[index] !== undefined ? questionScores[index] : "N/A";
+    const questionScoreColor =
+      score === "N/A"
+        ? PDF_CONFIG.colors.light
+        : score >= 90
+        ? "#10B981"
+        : score >= 75
+        ? "#F59E0B"
+        : score >= 60
+        ? "#FFC107"
+        : "#EF4444";
+
+    yPosition = addText(
+      `Score: ${score === "N/A" ? "N/A" : `${score}%`}`,
+      PDF_CONFIG.margins.left,
+      yPosition,
+      {
+        fontSize: PDF_CONFIG.fonts.small,
+        color: questionScoreColor,
+        maxWidth: maxWidth,
+      }
+    );
+
+    yPosition = addLineBreak(12);
+  });
+
+  // Footer
+  const pageCount = doc.internal.getNumberOfPages();
+
+  for (let i = 1; i <= pageCount; i++) {
+    doc.setPage(i);
+    doc.setFontSize(PDF_CONFIG.fonts.small);
+    doc.setTextColor(PDF_CONFIG.colors.light);
+    doc.text(
+      `Page ${i} of ${pageCount}`,
+      PDF_CONFIG.pageWidth - PDF_CONFIG.margins.right - 20,
+      PDF_CONFIG.pageHeight - 10,
+      { align: "right" }
+    );
+  }
+
+  return doc;
+};
+
+/**
+ * Generate and download listening lesson PDF report
+ * @param {Object} lessonData - Lesson and results data
+ * @param {string} filename - Filename for download
+ */
+export const generateAndDownloadListeningLessonPDF = (
+  lessonData,
+  filename = "listening-lesson-report.pdf"
+) => {
+  const doc = generateListeningLessonPDF(lessonData);
+  doc.save(filename);
+};

@@ -4,7 +4,7 @@ import { BookOpen, Home } from "lucide-react";
 
 export default function Layout({ children }) {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="gradient-background">
       {/* Header */}
       <motion.div
         className="bg-white shadow-sm border-b border-gray-200"
@@ -20,7 +20,8 @@ export default function Layout({ children }) {
               className="flex items-center space-x-3 cursor-pointer group"
             >
               <motion.div
-                className="w-10 h-10 rounded-xl bg-gradient-to-r from-teal-500 to-blue-500 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300"
+                className="w-10 h-10 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300"
+                style={{ background: "var(--gradient-primary)" }}
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}

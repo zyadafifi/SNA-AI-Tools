@@ -14,6 +14,8 @@ const DictationPhase = ({
   onListenAgain,
   onComplete,
   isDesktop = false,
+  onScoreUpdate,
+  onAnswerUpdate,
 }) => {
   // Determine mode before any state depends on it
   const isQuestionMode = !!correctText;
@@ -76,6 +78,14 @@ const DictationPhase = ({
     const isCorrect = analysis.isPerfect;
     setFeedback({ type: "writing", analysis, isCorrect });
 
+    // Update score and answer in parent if in question mode
+    if (isQuestionMode && onScoreUpdate) {
+      onScoreUpdate(score);
+    }
+    if (isQuestionMode && onAnswerUpdate) {
+      onAnswerUpdate(userAnswer.trim());
+    }
+
     // Play sound effect
     if (isCorrect) {
       soundEffects.playRightAnswer();
@@ -99,12 +109,16 @@ const DictationPhase = ({
   const handleNext = async () => {
     if (isQuestionMode) {
       // In per-question mode delegate next to parent
-      onComplete && onComplete();
+      if (onComplete) {
+        await onComplete();
+      }
       return;
     }
     if (isLastExercise) {
       await dataService.completeLesson(lesson.id);
-      onComplete && onComplete();
+      if (onComplete) {
+        await onComplete();
+      }
     } else {
       setCurrentExerciseIndex((prev) => prev + 1);
       setUserAnswer("");
