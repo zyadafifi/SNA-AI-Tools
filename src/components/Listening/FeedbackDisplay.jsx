@@ -145,8 +145,12 @@ const FeedbackDisplay = ({
             Retry
           </button>
           <button
-            onClick={onNext}
-            className="w-[100px] h-[38px] rounded-full bg-[#FFC107] text-white text-sm font-semibold shadow-[0_4px_12px_rgba(255,193,7,0.35)] hover:bg-[#FFB300] transition"
+            onClick={() => {
+              if (onNext) {
+                onNext();
+              }
+            }}
+            className="w-[100px] h-[38px] rounded-full bg-[#FFC107] text-white text-sm font-semibold shadow-[0_4px_12px_rgba(255,193,7,0.35)] hover:bg-[#FFB300] transition cursor-pointer"
           >
             Next
           </button>

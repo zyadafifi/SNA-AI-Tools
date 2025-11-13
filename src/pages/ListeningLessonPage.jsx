@@ -6,6 +6,7 @@ import dataService from "../services/dataService";
 import ListeningPhase from "../components/Listening/LessonPhase/ListeningPhase";
 import DictationPhase from "../components/Listening/LessonPhase/DictationPhase";
 import TipsPanel from "../components/Listening/TipsPanel";
+import CompletionDialog from "../components/Listening/CompletionDialog";
 
 export const ListeningLessonPage = () => {
   const { id } = useParams();
@@ -16,6 +17,9 @@ export const ListeningLessonPage = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [showCompletionDialog, setShowCompletionDialog] = useState(false);
+  const [questionScores, setQuestionScores] = useState([]);
+  const [userAnswers, setUserAnswers] = useState([]);
 
   useEffect(() => {
     const loadLesson = async () => {
@@ -68,8 +72,28 @@ export const ListeningLessonPage = () => {
 
   const handleLessonComplete = async () => {
     await dataService.completeLesson(parseInt(id));
-    alert("Congratulations! You have completed this lesson!");
+    // Dialog will be shown by handleDictationCompleted
+  };
+
+  const handleDialogClose = () => {
+    setShowCompletionDialog(false);
     navigate("/listening/home");
+  };
+
+  const handleScoreUpdate = (score) => {
+    setQuestionScores((prev) => {
+      const newScores = [...prev];
+      newScores[currentQuestionIndex] = score;
+      return newScores;
+    });
+  };
+
+  const handleAnswerUpdate = (answer) => {
+    setUserAnswers((prev) => {
+      const newAnswers = [...prev];
+      newAnswers[currentQuestionIndex] = answer;
+      return newAnswers;
+    });
   };
 
   const handleDictationCompleted = async () => {
@@ -80,7 +104,9 @@ export const ListeningLessonPage = () => {
     const newProgress = Math.min(100, Math.round((nextIndex / total) * 100));
     await dataService.updateLessonProgress(lessonId, newProgress);
     if (nextIndex >= total) {
+      // Mark lesson as complete and show dialog
       await handleLessonComplete();
+      setShowCompletionDialog(true);
       return;
     }
     setCurrentQuestionIndex(nextIndex);
@@ -110,23 +136,38 @@ export const ListeningLessonPage = () => {
             correctText={questions[currentQuestionIndex].text}
             onComplete={handleDictationCompleted}
             onListenAgain={() => setCurrentPhase("video")}
+            onScoreUpdate={handleScoreUpdate}
+            onAnswerUpdate={handleAnswerUpdate}
           />
         )}
+
+        {/* Completion Dialog */}
+        <CompletionDialog
+          show={showCompletionDialog}
+          onClose={handleDialogClose}
+          onContinue={handleDialogClose}
+          lessonTitle={lesson?.title}
+          totalQuestions={questions.length || 5}
+          completedQuestions={questions.length || 5}
+          averageScore={
+            questionScores.length > 0
+              ? Math.round(
+                  questionScores.reduce((sum, score) => sum + (score || 0), 0) /
+                    questionScores.length
+                )
+              : 0
+          }
+          questions={questions}
+          questionScores={questionScores}
+          userAnswers={userAnswers}
+        />
       </div>
     );
   }
 
   // Desktop layout - combined video and dictation view
   return (
-    <div
-      className="min-h-screen"
-      style={{
-        background: 'url("/assets/images/gradient-background.png") #fff',
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "left",
-      }}
-    >
+    <div className="gradient-background">
       <div className="max-w-4xl mx-auto px-4 py-6 lg:px-6">
         {/* Progress Indicator - All bullets solid yellow, connected by light gray line */}
         <div className="mb-5">
@@ -188,6 +229,8 @@ export const ListeningLessonPage = () => {
                 // The video is always visible on desktop, so no phase switching needed
               }}
               isDesktop={true}
+              onScoreUpdate={handleScoreUpdate}
+              onAnswerUpdate={handleAnswerUpdate}
             />
           )}
         </div>
@@ -195,6 +238,30 @@ export const ListeningLessonPage = () => {
 
       {/* Tips Panel */}
       <TipsPanel isOpen={showTips} onClose={() => setShowTips(false)} />
+
+      {/* Completion Dialog */}
+      <CompletionDialog
+        show={showCompletionDialog}
+        onClose={handleDialogClose}
+        onContinue={handleDialogClose}
+        lessonTitle={lesson?.title}
+        totalQuestions={questions.length || 5}
+        completedQuestions={questions.length || 5}
+        averageScore={
+          questionScores.filter((s) => s !== undefined && s !== null).length > 0
+            ? Math.round(
+                questionScores
+                  .filter((s) => s !== undefined && s !== null)
+                  .reduce((sum, score) => sum + score, 0) /
+                  questionScores.filter((s) => s !== undefined && s !== null)
+                    .length
+              )
+            : 0
+        }
+        questions={questions}
+        questionScores={questionScores}
+        userAnswers={userAnswers}
+      />
     </div>
   );
 };

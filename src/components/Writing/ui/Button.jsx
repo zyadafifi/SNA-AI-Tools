@@ -21,8 +21,7 @@ const Button = ({
     secondary:
       "bg-white text-primary-600 border border-primary-200 shadow-soft hover:shadow-medium hover:bg-primary-50 focus:ring-primary-500",
     ghost: "text-primary-600 hover:bg-primary-50 focus:ring-primary-500",
-    gradient:
-      "bg-gradient-to-r from-primary-500 to-accent-500 text-white shadow-soft hover:shadow-glow focus:ring-primary-500",
+    gradient: "text-white shadow-soft hover:shadow-glow focus:ring-primary-500",
   };
 
   const sizes = {
@@ -48,6 +47,11 @@ const Button = ({
       whileHover={{ y: -2, scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.15 }}
+      style={
+        variant === "gradient"
+          ? { background: "var(--gradient-primary)", ...props.style }
+          : props.style
+      }
       {...props}
     >
       {loading && (

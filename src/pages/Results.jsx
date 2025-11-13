@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Layout from "../components/Writing/Layout";
 import { Button, Card } from "../components/Writing/ui";
 import WritingAnalysis from "../components/Writing/WritingAnalysis";
+import ResultsDialog from "../components/Writing/ResultsDialog";
 import { FileText, Info, Download, RotateCcw, Award } from "lucide-react";
 import { analyzeText } from "../utils/grammarChecker";
 import { generateAndDownloadPDF } from "../utils/pdfExporter";
@@ -17,6 +18,7 @@ export default function Results() {
   const [showOriginal, setShowOriginal] = useState(false);
   const [quotaInfo, setQuotaInfo] = useState(null);
   const [isExporting, setIsExporting] = useState(false);
+  const [showResultsDialog, setShowResultsDialog] = useState(false);
 
   useEffect(() => {
     // Get answers from sessionStorage
@@ -51,6 +53,8 @@ export default function Results() {
       }
 
       setIsLoading(false);
+      // Show results dialog after analysis is complete
+      setShowResultsDialog(true);
     }, 2000); // Processing time
 
     return () => clearTimeout(timer);
@@ -304,7 +308,9 @@ export default function Results() {
                     questions first.
                   </p>
                   <Link to={`/questions/${topicId}`}>
-                    <Button className="cursor-pointer bg-primary-600 hover:bg-primary-700">Start Reflection</Button>
+                    <Button className="cursor-pointer bg-primary-600 hover:bg-primary-700">
+                      Start Reflection
+                    </Button>
                   </Link>
                 </motion.div>
               )}
@@ -406,6 +412,15 @@ export default function Results() {
           </Button>
         </motion.div>
       </div>
+
+      {/* Results Dialog */}
+      <ResultsDialog
+        show={showResultsDialog}
+        onClose={() => setShowResultsDialog(false)}
+        overallScore={grammarResult?.overallScore || 0}
+        grammarResult={grammarResult}
+        compiledArticle={compiledArticle}
+      />
     </Layout>
   );
 }
