@@ -12,7 +12,6 @@ import {
   Pause,
   RotateCcw,
   Volume2,
-  BookOpen,
   Trash2,
   Globe2,
   Turtle,
@@ -256,7 +255,7 @@ const evaluatePronunciation = (userText, originalText, confidence) => {
 const MicrophonePermissionAlert = ({ permission, onRequestPermission }) => {
   if (permission !== "denied") return null;
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded shadow-lg z-50 max-w-md w-full">
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded shadow-lg z-[1000000] max-w-md w-full">
       <div className="flex items-center">
         <div className="flex-shrink-0">
           <svg
@@ -301,12 +300,12 @@ const RecordingModal = ({
   originalText,
   sentenceAudioUrl,
   onStartRecording,
+  onStopRecording,
   onContinue,
   onRetry,
   playAudioFile,
   playRecordedAudio,
   audioLevels,
-  recognitionRef, // ⬅️ أضف هذا الـ prop
 }) => {
   if (!isOpen) return null;
 
@@ -490,6 +489,9 @@ const RecordingModal = ({
   const androidOptimizedClass = isAndroid() ? "android-optimized" : "";
 
   const handleDeleteRecording = () => {
+     if (isRecording && onStopRecording) {
+      onStopRecording();
+    }
     if (recordingResult?.audioUrl) {
       URL.revokeObjectURL(recordingResult.audioUrl);
     }
@@ -498,12 +500,8 @@ const RecordingModal = ({
 
   // ⬅️ الدالة الجديدة لإيقاف التسجيل فقط
   const handleStopRecording = () => {
-    if (recognitionRef?.current) {
-      try {
-        recognitionRef.current.stop();
-      } catch (e) {
-        console.log("Recognition already stopped");
-      }
+    if (onStopRecording) {
+      onStopRecording();
     }
   };
 
@@ -521,13 +519,13 @@ const RecordingModal = ({
       >
         <div className={`max-h-[95vh] overflow-y-auto`}>
           <div className="relative px-5 pt-4 pb-3 border-b">
-            <p className="text-center text-[22px] font-bold text-[var(--secondary-color)]">
+            <p className="text-center text-[22px] font-bold text-[var(--primary-color)]">
               Your turn!
             </p>
             <p className="text-center text-sm text-gray-600">
               Press the{" "}
               <span className="inline-flex translate-y-[2px]">
-                <IoIosMic className="text-[var(--secondary-color)]" />
+                <IoIosMic className="text-[var(--primary-color)]" />
               </span>{" "}
               and record your voice.
             </p>
@@ -569,12 +567,12 @@ const RecordingModal = ({
                     sentenceAudioUrl && playAudioFile(sentenceAudioUrl, 1)
                   }
                   disabled={!sentenceAudioUrl}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-gray-800 text-sm font-medium ${
+                  className={`inline-flex items-center gap-2 transition-all px-4 py-2 rounded-full text-white text-sm font-medium ${
                     isAndroid() ? "min-h-[44px]" : ""
                   } ${
                     sentenceAudioUrl
-                      ? "bg-gray-100 hover:bg-gray-200"
-                      : "bg-gray-100 opacity-50 cursor-not-allowed"
+                      ? "bg-[var(--primary-color)] hover:scale-105 hover:shadow-md"
+                      : "bg-[var(--primary-color)] opacity-50 cursor-not-allowed"
                   }`}
                 >
                   <Volume2 size={16} />
@@ -584,9 +582,9 @@ const RecordingModal = ({
                 <button
                   onClick={onStartRecording}
                   className={[
-                    "grid place-items-center rounded-full shadow-lg transition-all",
+                    "grid place-items-center rounded-full shadow-md transition-all",
                     isAndroid() ? "w-[80px] h-[80px]" : "w-[72px] h-[72px]",
-                    "bg-[var(--secondary-color)] text-white hover:bg-[var(--primary-color)]",
+                    "bg-[var(--primary-color)] text-white hover:scale-105 hover:shadow-lg",
                   ].join(" ")}
                   title="Tap to start speaking"
                   aria-label="Record"
@@ -599,12 +597,12 @@ const RecordingModal = ({
                     sentenceAudioUrl && playAudioFile(sentenceAudioUrl, 0.75)
                   }
                   disabled={!sentenceAudioUrl}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-gray-800 text-sm font-medium ${
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-white text-sm font-medium ${
                     isAndroid() ? "min-h-[44px]" : ""
                   } ${
                     sentenceAudioUrl
-                      ? "bg-gray-100 hover:bg-gray-200"
-                      : "bg-gray-100 opacity-50 cursor-not-allowed"
+                      ? "bg-[var(--primary-color)] hover:scale-105 hover:shadow-md"
+                      : "bg-[var(--primary-color)] opacity-50 cursor-not-allowed"
                   }`}
                   title="Listen (slow)"
                 >
@@ -743,19 +741,7 @@ const RecordingModal = ({
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      {recordingResult.evaluation.score < 50 ? (
-                        <button
-                          onClick={onRetry}
-                          className={`w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium transition-colors ${
-                            isAndroid() ? "min-h-[48px]" : ""
-                          }`}
-                        >
-                          <RotateCcw size={18} />
-                          <span className="arabic_font">
-                            إعادة المحاولة (مطلوب)
-                          </span>
-                        </button>
-                      ) : (
+                      
                         <>
                           <button
                             onClick={onRetry}
@@ -778,7 +764,7 @@ const RecordingModal = ({
                             </button>
                           )}
                         </>
-                      )}
+                     
                     </div>
                   </>
                 ) : (
@@ -895,6 +881,7 @@ RecordingModal.propTypes = {
     confidence: PropTypes.number,
   }),
   onStartRecording: PropTypes.func.isRequired,
+  onStopRecording: PropTypes.func.isRequired,
   onContinue: PropTypes.func.isRequired,
   onRetry: PropTypes.func.isRequired,
   playAudioFile: PropTypes.func.isRequired,
@@ -913,36 +900,46 @@ const ClickableWord = ({
 }) => {
   const wordRef = useRef(null);
 
-  const handleClick = useCallback((e) => {
-    e.stopPropagation();
-    
-    const cleanWord = word.replace(/[.,!?;:'"]/g, "");
-    const toLowerWord = cleanWord.toLowerCase();
-    const wordData = wordDefinitions[toLowerWord];
+  const handleClick = useCallback(
+    (e) => {
+      e.stopPropagation();
 
-    if (!wordRef.current) return;
+      const cleanWord = word.replace(/[.,!?;:'"]/g, "");
+      const toLowerWord = cleanWord.toLowerCase();
+      const wordData = wordDefinitions[toLowerWord];
 
-    // حساب موقع الكلمة بالنسبة للصفحة
-    const rect = wordRef.current.getBoundingClientRect();
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-    
-    const position = {
-      top: rect.top + scrollTop,
-      bottom: rect.bottom + scrollTop,
-      left: rect.left + scrollLeft + rect.width / 2,
-    };
+      if (!wordRef.current) return;
 
-    onPlayWordAudio(cleanWord);
+      // حساب موقع الكلمة بالنسبة للصفحة
+      const rect = wordRef.current.getBoundingClientRect();
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollLeft =
+        window.pageXOffset || document.documentElement.scrollLeft;
 
-    onWordClick({
-      word: cleanWord,
-      translation: wordData ? wordData.translation : "ترجمة غير متوفرة",
-      definition: wordData ? wordData.definition : "Definition not available",
-      partOfSpeech: wordData ? wordData.partOfSpeech : "word",
-      rank: wordData ? wordData.rank : Math.floor(Math.random() * 1000) + 1,
-    }, position);
-  }, [word, onWordClick, wordDefinitions, onPlayWordAudio]);
+      const position = {
+        top: rect.top + scrollTop,
+        bottom: rect.bottom + scrollTop,
+        left: rect.left + scrollLeft + rect.width / 2,
+      };
+
+      onPlayWordAudio(cleanWord);
+
+      onWordClick(
+        {
+          word: cleanWord,
+          translation: wordData ? wordData.translation : "ترجمة غير متوفرة",
+          definition: wordData
+            ? wordData.definition
+            : "Definition not available",
+          partOfSpeech: wordData ? wordData.partOfSpeech : "word",
+          rank: wordData ? wordData.rank : Math.floor(Math.random() * 1000) + 1,
+        },
+        position
+      );
+    },
+    [word, onWordClick, wordDefinitions, onPlayWordAudio]
+  );
 
   const cleanWord = word.replace(/[.,!?;:'"]/g, "");
   const punctuation = word.slice(cleanWord.length);
@@ -1067,7 +1064,13 @@ Sentence.propTypes = {
 /* ------------------------------------------------------------------ */
 /* Word Popover (replaces Sidebar)                                   */
 /* ------------------------------------------------------------------ */
-const WordPopover = ({ isOpen, selectedWordData, position, onClose, onPlayWordAudio }) => {
+const WordPopover = ({
+  isOpen,
+  selectedWordData,
+  position,
+  onClose,
+  onPlayWordAudio,
+}) => {
   if (!isOpen || !selectedWordData || !position) return null;
 
   const popoverWidth = 320;
@@ -1104,7 +1107,7 @@ const WordPopover = ({ isOpen, selectedWordData, position, onClose, onPlayWordAu
         className="fixed inset-0 z-40 bg-black bg-opacity-20 md:bg-transparent"
         onClick={onClose}
       />
-      
+
       {/* Popover */}
       <div
         className="absolute z-50 bg-white rounded-xl shadow-2xl border border-gray-200"
@@ -1112,7 +1115,7 @@ const WordPopover = ({ isOpen, selectedWordData, position, onClose, onPlayWordAu
           top: `${top - 65}px`,
           left: `${left}px`,
           width: `${popoverWidth}px`,
-          maxWidth: 'calc(100vw - 40px)',
+          maxWidth: "calc(100vw - 40px)",
         }}
       >
         {/* Header */}
@@ -1120,7 +1123,7 @@ const WordPopover = ({ isOpen, selectedWordData, position, onClose, onPlayWordAu
           <h3 className="text-lg font-bold text-gray-800 break-all flex-1 mr-2">
             {selectedWordData.word}
           </h3>
-         <div className="flex items-center gap-1 flex-shrink-0">
+          <div className="flex items-center gap-1 flex-shrink-0">
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -1169,9 +1172,9 @@ const WordPopover = ({ isOpen, selectedWordData, position, onClose, onPlayWordAu
         {/* Arrow pointer */}
         <div
           className={`absolute w-3 h-3 bg-white border border-gray-200 transform rotate-45 ${
-            showBelow 
-              ? 'border-b-0 border-r-0 -top-[7px]' 
-              : 'border-t-0 border-l-0 -bottom-[7px]'
+            showBelow
+              ? "border-b-0 border-r-0 -top-[7px]"
+              : "border-t-0 border-l-0 -bottom-[7px]"
           }`}
           style={{
             left: `${Math.max(10, Math.min(arrowLeft, popoverWidth - 10))}px`,
@@ -1193,7 +1196,6 @@ WordPopover.propTypes = {
   onClose: PropTypes.func,
   onPlayWordAudio: PropTypes.func,
 };
-
 
 /* ================================ Enhanced ShowLesson with Android Support ================================ */
 export function ShowLesson() {
@@ -1225,7 +1227,7 @@ export function ShowLesson() {
 
   // audio/voice
   const [voices, setVoices] = useState([]);
-  const [playbackRate, setPlaybackRate] = useState(0.75);
+  const [playbackRate, setPlaybackRate] = useState(1);
   const [loopEnabled, setLoopEnabled] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -1502,7 +1504,7 @@ export function ShowLesson() {
       recognitionRef.current = new SpeechRecognition();
 
       // إعدادات أساسية
-      recognitionRef.current.continuous = false;
+      recognitionRef.current.continuous = true; // ✅ تغيير إلى true لعدم التوقف التلقائي
       recognitionRef.current.interimResults = false;
       recognitionRef.current.lang = "en-US";
       recognitionRef.current.maxAlternatives = 1;
@@ -1516,19 +1518,18 @@ export function ShowLesson() {
       };
 
       recognitionRef.current.onresult = (event) => {
-        const transcript = event.results[0][0].transcript.toLowerCase().trim();
-        const confidence = event.results[0][0].confidence;
+        // أخذ آخر نتيجة من التسجيل
+        const lastResultIndex = event.results.length - 1;
+        const transcript = event.results[lastResultIndex][0].transcript
+          .toLowerCase()
+          .trim();
+        const confidence = event.results[lastResultIndex][0].confidence;
 
-        // بدء تسجيل صوتي منفصل للأندرويد بعد الحصول على النتيجة
-        if (isAndroid()) {
-          startQuickAudioRecording(() => {
-            handleRecognitionResult(transcript, confidence);
-          });
-        } else {
-          setTimeout(() => {
-            handleRecognitionResult(transcript, confidence);
-          }, 200);
+        // حفظ النتيجة الأخيرة في ref لاستخدامها عند الإيقاف
+        if (!window.lastRecognitionResult) {
+          window.lastRecognitionResult = { transcript: "", confidence: 0 };
         }
+        window.lastRecognitionResult = { transcript, confidence };
       };
 
       recognitionRef.current.onerror = (event) => {
@@ -1561,6 +1562,29 @@ export function ShowLesson() {
         setIsRecording(false);
         if (!isAndroid()) {
           stopAudioRecording();
+        }
+
+        // معالجة النتيجة النهائية
+        if (
+          window.lastRecognitionResult &&
+          window.lastRecognitionResult.transcript
+        ) {
+          const { transcript, confidence } = window.lastRecognitionResult;
+
+          // بدء تسجيل صوتي منفصل للأندرويد بعد الحصول على النتيجة
+          if (isAndroid()) {
+            startQuickAudioRecording(() => {
+              handleRecognitionResult(transcript, confidence);
+              // تنظيف النتيجة المؤقتة
+              window.lastRecognitionResult = null;
+            });
+          } else {
+            setTimeout(() => {
+              handleRecognitionResult(transcript, confidence);
+              // تنظيف النتيجة المؤقتة
+              window.lastRecognitionResult = null;
+            }, 200);
+          }
         }
       };
     } else {
@@ -1830,25 +1854,8 @@ export function ShowLesson() {
           if (average > SILENCE_THRESHOLD) {
             silenceStart = Date.now();
             hasSpoken = true;
-          } else if (hasSpoken) {
-            const silenceDuration = Date.now() - silenceStart;
-            const speakingDuration =
-              Date.now() - silenceStart + SILENCE_DURATION;
-
-            if (
-              silenceDuration > SILENCE_DURATION &&
-              speakingDuration > MIN_SPEAKING_TIME
-            ) {
-              if (recognitionRef.current && isRecordingActiveRef.current) {
-                try {
-                  recognitionRef.current.stop();
-                } catch (e) {
-                  console.log("Recognition already stopped");
-                }
-              }
-              return;
-            }
           }
+          // Auto-stop removed - recording continues until manual submit
 
           if (silenceTimeoutRef.current) {
             cancelAnimationFrame(silenceTimeoutRef.current);
@@ -1947,6 +1954,9 @@ export function ShowLesson() {
 
       setRecordingResult(null);
 
+      // تنظيف النتيجة المؤقتة من التسجيل السابق
+      window.lastRecognitionResult = null;
+
       // للأندرويد: استخدم Speech Recognition فقط (بدون MediaRecorder متزامن)
       if (isAndroid()) {
         // تنظيف سريع
@@ -1975,6 +1985,19 @@ export function ShowLesson() {
     }
   }, [microphonePermission, requestMicrophonePermission]);
 
+  const stopRecordingManually = useCallback(() => {
+    if (recognitionRef.current && isRecording) {
+      try {
+        recognitionRef.current.stop();
+      } catch (e) {
+        console.log("Recognition already stopped");
+      }
+    }
+    if (!isAndroid()) {
+      stopAudioRecording();
+    }
+  }, [isRecording]);
+
   const continueToNextSentence = () => {
     setShowRecordingModal(false);
     setRecordingResult(null);
@@ -1998,6 +2021,8 @@ export function ShowLesson() {
     }
     setRecordingResult(null);
     setIsWaitingForRecording(false);
+    // تنظيف النتيجة المؤقتة
+    window.lastRecognitionResult = null;
     // Start new recording immediately
     setTimeout(() => {
       startRecording();
@@ -2542,7 +2567,7 @@ export function ShowLesson() {
         </div>
       </div>
 
-       {/* Word Popover */}
+      {/* Word Popover */}
       <WordPopover
         isOpen={popoverOpen}
         selectedWordData={selectedWordData}
@@ -2558,6 +2583,7 @@ export function ShowLesson() {
         isWaitingForRecording={isWaitingForRecording}
         recordingResult={recordingResult}
         onStartRecording={startRecording}
+        onStopRecording={stopRecordingManually}
         originalText={currentSentenceText}
         sentenceAudioUrl={currentSentenceAudioUrl}
         onContinue={continueToNextSentence}
