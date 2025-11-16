@@ -11351,319 +11351,319 @@ export const readingData = [
               "id": 1,
               "text": "A long time ago, when the snowflakes fell like feathers, a Queen sat sewing at a window.",
               "translationAr": "منذ زمن بعيد، حين كانت ندفُ الثلج تهطل كأنها ريشٌ طائر، جلست ملكةٌ تخيط عند نافذة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2001.mp3"
             },
             {
               "id": 2,
               "text": "She pricked her finger on a needle so that three drops of blood fell upon the snow.",
               "translationAr": "وخزت إصبعَها بإبرةٍ فسقطت ثلاثُ قطراتٍ من الدم على الثلج.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2002.mp3"
             },
             {
               "id": 3,
               "text": "How pretty her red blood looked dazzling on the whiteness!",
               "translationAr": "يالَروعةِ الدم الأحمر متلألئًا على البياض!",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2003.mp3"
             },
             {
               "id": 4,
               "text": "The Queen said: “Ah me, if only I had a child with skin as white as snow, and lips as red as blood, and hair as black as the ebony window. ”",
               "translationAr": "وقالت الملكة: «آهٍ لي، لو أن لي طفلًا جلدُه أبيضُ كالثلج، وشفاهُه حمراءُ كالدم، وشعرُه أسودُ كإطار النافذة الأبنوسي.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2004.mp3"
             },
             {
               "id": 5,
               "text": "In the spring, she had a child who was just as she had imagined, and everyone called her Snow White.",
               "translationAr": "وفي الربيع رُزقت بطفلةٍ كما تخيّلت تمامًا، وسمّاها الجميعُ «بياض الثلج».",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2005.mp3"
             },
             {
               "id": 6,
               "text": "But alas! The good Queen died, and the King married a new Queen, whose heart was evil.",
               "translationAr": "ولكن وا أسفاه! ماتت الملكةُ الصالحة، وتزوّج الملكُ بملكةٍ جديدةٍ كان قلبُها شريرًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2006.mp3"
             },
             {
               "id": 7,
               "text": "This Wicked Queen had a magical mirror, and when she stood and gazed into it, she asked:",
               "translationAr": "وكانت تلك الملكةُ الشريرة تملك مرآةً سحرية، فإذا قامت تتأمل فيها سألت:",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2007.mp3"
             },
             {
               "id": 8,
               "text": "“ Mirror, mirror on the wall, who is the fairest of them all? ”",
               "translationAr": "«أيتها المرآةُ على الجدار، من هي الأجملُ بين الجميع؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2008.mp3"
             },
             {
               "id": 9,
               "text": "And when the mirror replied: “ Thou, oh Queen, are the fairest of them all, ” her vain heart rejoiced.",
               "translationAr": "فإذا أجابت المرآة: «أنتِ، أيتها الملكة، الأجملُ بين الجميع»، طرب قلبُها المغرور.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2009.mp3"
             },
             {
               "id": 10,
               "text": "Snow White grew more and more beautiful with every passing year.",
               "translationAr": "وكان جمالُ بياض الثلج يزدادُ عامًا بعد عام.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2010.mp3"
             },
             {
               "id": 11,
               "text": "At last, the time came when the mirror said:",
               "translationAr": "حتى جاء يومٌ قالت فيه المرآة:",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2011.mp3"
             },
             {
               "id": 12,
               "text": "“ Oh Queen, if truth be told, Snow White is fairest now she is 16 years old. ”",
               "translationAr": "«أيتها الملكة، إن قيل الحق، فبياض الثلج هي الأجمل الآن وقد بلغت السادسةَ عشرة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2012.mp3"
             },
             {
               "id": 13,
               "text": "And the Queen almost smashed the mirror in her rage.",
               "translationAr": "فكادت الملكةُ تحطم المرآةَ من شدة الغضب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2013.mp3"
             },
             {
               "id": 14,
               "text": "The next morning, she summoned a hunter and gave him orders:",
               "translationAr": "وفي الصباح استدعت صيّادًا وأمرتْه:",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2014.mp3"
             },
             {
               "id": 15,
               "text": "“ Take Snow White out and don’t bother to bring back anything but her heart. ”",
               "translationAr": "«خُذ بياض الثلج إلى الخارج، ولا تُعنِ نفسك بإعادة شيءٍ إلا قلبَها.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2015.mp3"
             },
             {
               "id": 16,
               "text": "The hunter led Snow White to the woods where, taking pity on her innocent heart, he told her to run and hide.",
               "translationAr": "فقاد الصيّادُ بياض الثلج إلى الغابة، ثم أشفق على قلبِها البريء وقال لها أن تركض وتختبئ.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2016.mp3"
             },
             {
               "id": 17,
               "text": "She ran and ran, cutting herself on brambles.",
               "translationAr": "فركضت ورَكَضت، حتى جرحتها العُلَّيقُ بأشواكه.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2017.mp3"
             },
             {
               "id": 18,
               "text": "Meanwhile the hunter returned to the Queen with the heart of a deer.",
               "translationAr": "أما الصيّاد فعاد إلى الملكة بقلبِ ظبي.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2018.mp3"
             },
             {
               "id": 19,
               "text": "Snow White fled until she came upon a cottage in the middle of the woods.",
               "translationAr": "وفرّت بياض الثلج حتى بلغت كوخًا في وسط الغابة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2019.mp3"
             },
             {
               "id": 20,
               "text": "The door was open. She went inside and saw that the furniture was child - sized.",
               "translationAr": "وكان البابُ مفتوحًا. دخلت فرأت الأثاثَ صغيرًا كأنه لأطفال.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2020.mp3"
             },
             {
               "id": 21,
               "text": "She curled up on one of seven little beds and fell asleep.",
               "translationAr": "فانكمشت على أحد الأسِرّة السبعة ونامت.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2021.mp3"
             },
             {
               "id": 22,
               "text": "The owners of the cottage were seven dwarfs, who spent the day mining for gold in the heart of the mountain.",
               "translationAr": "وكان أصحابُ الكوخ سبعةَ أقزام، يقضون النهارَ في التنقيب عن الذهب في قلب الجبل.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2022.mp3"
             },
             {
               "id": 23,
               "text": "When they came home that night, they lit their seven candles, and saw that an uninvited visitor was sleeping in one of their seven beds.",
               "translationAr": "ولما عادوا ليلًا أوقدوا الشموعَ السبع، فإذا بزائرةٍ غير مدعوةٍ تنام على أحد أسِرّتهم السبعة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2023.mp3"
             },
             {
               "id": 24,
               "text": "“ Oh my, what a pretty child! ” one of them exclaimed.",
               "translationAr": "«يا للعجب! ما أجملَ هذه الصغيرة!» هتف أحدُهم.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2024.mp3"
             },
             {
               "id": 25,
               "text": "“ Ssshh! Don’t wake her up! ” ordered another. “ Where shall I sleep? ” asked a third. “ She’s taken my bed? ”",
               "translationAr": "«صَه! لا توقِظوها!» أمر آخر. «وأين أنامُ أنا؟» سأل ثالث. «لقد أخذت سريري!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2025.mp3"
             },
             {
               "id": 26,
               "text": "“ Well, there are seven hours in the night, so every hour, one of us must get out of bed and take a turn at sleeping in the chair. ”",
               "translationAr": "«حسنًا، ساعاتُ الليل سبع، فليخرجْ أحدُنا كلَّ ساعةٍ من السرير وليأخذْ دورَه في النوم على الكرسي.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2026.mp3"
             },
             {
               "id": 27,
               "text": "And they all agreed that was only fair.",
               "translationAr": "فاتفقوا جميعًا على أن ذلك أعدل.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2027.mp3"
             },
             {
               "id": 28,
               "text": "When the sun rose, Snow White awoke. How frightened she was when she saw the seven dwarfs!",
               "translationAr": "وحين طلعت الشمسُ استيقظت بياض الثلج. ويا لهولِ ما رأت حين أبصرت الأقزامَ السبعة!",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2028.mp3"
             },
             {
               "id": 29,
               "text": "But they were friendly, and asked her name. “ Snow White, ” she replied.",
               "translationAr": "لكنهم كانوا لطافًا، فسألوها اسمَها. فقالت: «بياض الثلج.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2029.mp3"
             },
             {
               "id": 30,
               "text": "The eldest dwarf said, “ Well, Snow White, if you will take care of our house, then you may live here. ”",
               "translationAr": "فقال الأكبر: «حسنًا يا بياض الثلج، إنْ تولَّيتِ رعايةَ بيتنا فلك أن تقيمي هنا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2030.mp3"
             },
             {
               "id": 31,
               "text": "And Snow White agreed with all her heart.",
               "translationAr": "فرضيت بياضُ الثلج من صميم قلبها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2031.mp3"
             },
             {
               "id": 32,
               "text": "Every morning, the seven dwarfs went out to the mountain, and Snow White stayed at home to cook and keep the house.",
               "translationAr": "وكان الأقزامُ السبعة يخرجون كلَّ صباحٍ إلى الجبل، وتبقى بياضُ الثلج في البيت تطبخ وتعتني بالمنزل.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2032.mp3"
             },
             {
               "id": 33,
               "text": "Meanwhile, the Queen asked her mirror, “ Who is the fairest of all? ”",
               "translationAr": "وفي تلك الأثناء، سألت الملكةُ مرآتَها: «من الأجملُ بين الجميع؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2033.mp3"
             },
             {
               "id": 34,
               "text": "And the mirror answered: “ O Lady Queen, though fair ye be, Snow White is fairer far to see. Over the hills and far away, she lives with seven dwarfs today. ”",
               "translationAr": "فأجابت المرآة: «يا سيدتي الملكة، وإن كنتِ حسناء، فبياضُ الثلج أحسنُ مرأى. وراءَ التلالِ في أقصى الفِجاج، تعيش اليومَ مع سبعة أقزام.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2034.mp3"
             },
             {
               "id": 35,
               "text": "“ Liar! ” screeched the Queen in her rage. But she soon realised that the hunter must have tricked her.",
               "translationAr": "«كاذبة!» صرخت الملكةُ في غيظها. لكنها أدركت سريعًا أن الصيّاد لا بد أنه خدعها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2035.mp3"
             },
             {
               "id": 36,
               "text": "She decided to dress herself like an old pedlar woman, and in this disguise she visited the dwarfs’ cottage, and knocked at their door crying: “ Pretty things, very cheap, very cheap. ”",
               "translationAr": "وقررت أن تتنكر بزيِّ عجوزٍ دلاّلة، وبهذه الحيلة قصدت كوخَ الأقزام وطرقت بابَهم منادية: «أشياءُ جميلة! بثمنٍ بخس! بثمنٍ بخس!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2036.mp3"
             },
             {
               "id": 37,
               "text": "Snow White peeped from the window and said: “ Good day, good woman. What are your wares? ”",
               "translationAr": "فتطاولت بياضُ الثلج من النافذة وقالت: «مرحبًا أيتها الطيبة، ما بضاعتُكِ؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2037.mp3"
             },
             {
               "id": 38,
               "text": "“ All sorts of pretty things, my dear. ”",
               "translationAr": "«كلُّ ما هو جميلٌ يا عزيزتي.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2038.mp3"
             },
             {
               "id": 39,
               "text": "“ Thank you, ” said Snow White. “ Your scarves and laces are indeed pretty, but I will not buy any today. ”",
               "translationAr": "«شكرًا لكِ»، قالت بياضُ الثلج. «أوشحتُكِ وأربطتُكِ جميلةٌ حقًا، لكني لن أشتري اليوم.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2039.mp3"
             },
             {
               "id": 40,
               "text": "“ It is a pity, ” said the old woman. “ But never mind. I will give you this apple, and perhaps you shall remember me another time. ”",
               "translationAr": "«يا للأسف»، قالت العجوز. «لا بأس. سأهديكِ هذه التفاحة، ولعلّكِ تذكرينني في مرةٍ أخرى.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2040.mp3"
             },
             {
               "id": 41,
               "text": "The pedlar woman took a bite out of the green side of the apple, and handed the rest through the window.",
               "translationAr": "فأخذت الدلاّلةُ قضمةً من الجانب الأخضر للتفاحة، ثم ناولت الباقي عبر النافذة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2041.mp3"
             },
             {
               "id": 42,
               "text": "Snow White thanked the old woman and bit into the fruit.",
               "translationAr": "فشكرت بياضُ الثلج العجوزَ وعضّت الثمرة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2042.mp3"
             },
             {
               "id": 43,
               "text": "Little did she realise that the Wicked Queen had poisoned the rosy side of the apple, the part that Snow White now swallowed.",
               "translationAr": "وما كانت تدري أن الملكة الشريرة قد سمّت الجانبَ الورديَّ من التفاحة، وهو ما ابتلعته بياضُ الثلج الآن.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2043.mp3"
             },
             {
               "id": 44,
               "text": "That night, when the dwarfs came home, they found Snow White lying upon the floor. No breath came from her lips.",
               "translationAr": "وفي تلك الليلة، لما عاد الأقزامُ إلى البيت وجدوا بياضَ الثلج ممدّدةً على الأرض، لا نفسَ يخرج من شفتيها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2044.mp3"
             },
             {
               "id": 45,
               "text": "They sat round her and wept for three whole days.",
               "translationAr": "فجلسوا حولها يبكون ثلاثةَ أيامٍ كاملة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2045.mp3"
             },
             {
               "id": 46,
               "text": "Then they made a coffin of shining glass, laid her in it, and placed her on top of the mountain.",
               "translationAr": "ثم صنعوا لها نعشًا من زجاجٍ لامع، ووضعوها فيه، وأقاموها على قمّة الجبل.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2046.mp3"
             },
             {
               "id": 47,
               "text": "It happened that a prince, out hunting, came across the glass coffin.",
               "translationAr": "واتفق أن أميرًا، كان في الصيد، مرَّ بتلك التابوت الزجاجي.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2047.mp3"
             },
             {
               "id": 48,
               "text": "He was very much taken by the pale girl who lay so still inside it, and he thought she must be a statue left there by the ancients.",
               "translationAr": "فراعه منظرُ الفتاة الشاحبة الساكنة في داخله، وظنها تمثالًا خلّفه الأقدمون.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2048.mp3"
             },
             {
               "id": 49,
               "text": "He ordered his servants to pick up the unusual object and carry it home.",
               "translationAr": "فأمر خدمَه أن يرفعوا ذلك الشيءَ العجيب ويحملوه إلى داره.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2049.mp3"
             },
             {
               "id": 50,
               "text": "In doing so, one of them stumbled, and the glass box fell to the ground.",
               "translationAr": "وبينما هم كذلك عثر أحدُهم، فسقط الصندوق الزجاجي إلى الأرض.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2050.mp3"
             },
             {
               "id": 51,
               "text": "It shook terribly, and the piece of poisonous apple which had lodged in Snow White’s throat came out, so that she opened her eyes, alive once more.",
               "translationAr": "فاهتزَّ اهتزازًا شديدًا، وخرجت قطعةُ التفاحة المسمومة التي علقت بحلق بياض الثلج، فانفتحت عينُها وعادت إلى الحياة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2051.mp3"
             },
             {
               "id": 52,
               "text": "Snow White and the Prince were soon wed.",
               "translationAr": "وسرعان ما تزوّجت بياضُ الثلج بالأمير.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2052.mp3"
             },
             {
               "id": 53,
               "text": "They and the Seven Dwarfs, lived long and happy lives, while the Wicked Queen went mad with envy, for she could never be the fairest of them all.",
               "translationAr": "وعاشا مع الأقزام السبعة أعمارًا مديدةً سعيدة، بينما جُنَّت الملكةُ الشريرة من الحسد، إذ لم تعُد قط الأجملَ بين الجميع.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Snow%20White/Snow%20White%20S%2053.mp3"
             }
           ]
         },
@@ -17744,237 +17744,219 @@ export const readingData = [
     "content": [
       {
         "id": 1,
-        "text": "Hello this is Bertie,",
-        "translationAr": "مرحبًا، أنا بيرتي.",
-        "audioUrl": ""
-      },
-      {
-        "id": 2,
-        "text": "And I’m here with some more ancient history based on the writings of Herodotus.",
-        "translationAr": "وأنا هنا مع المزيد من التاريخ القديم بناءً على كتابات هيرودوت.",
-        "audioUrl": ""
+        "text": "Hello this is Bertie, And I’m here with some more ancient history based on the writings of Herodotus.",
+        "translationAr": "مرحبًا، أنا بيرتي، وأنا هنا مع المزيد من التاريخ القديم استنادًا إلى كتابات هيرودوت.",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2001.mp3"
       },
       {
         "id": 3,
         "text": "In the second book of his Histories he describes ancient Egypt and in this episode I’m going to be talking about the Egyptian gods.",
         "translationAr": "في الكتاب الثاني من كتابه «التواريخ» يصف مصر القديمة، وفي هذه الحلقة سأتحدث عن الآلهة المصرية.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2002.mp3"
       },
       {
         "id": 4,
         "text": "Herodotus gathered much of his information about Egypt by talking to the scribes and priests in the temples.",
         "translationAr": "جمع هيرودوت الكثير من معلوماته عن مصر من خلال التحدث إلى الكتبة والكهنة في المعابد.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2003.mp3"
       },
       {
         "id": 5,
         "text": "They informed him about the country's traditions and beliefs.",
         "translationAr": "وقد أخبروه بتقاليد البلاد ومعتقداتها.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2004.mp3"
       },
       {
         "id": 6,
         "text": "He himself believed that no nation was more right about religion than any other.",
         "translationAr": "وكان هو نفسه يرى أن لا أمة أحق من غيرها بالدين.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2005.mp3"
       },
       {
         "id": 7,
         "text": "He thought that the Greeks had probably imported most of their beliefs from Egypt.",
         "translationAr": "وكان يعتقد أن الإغريق قد استوردوا أغلب معتقداتهم من مصر.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2006.mp3"
       },
       {
         "id": 8,
         "text": "And he often gives the Egyptian gods Greek names.",
         "translationAr": "وكان غالبًا يعطي الآلهة المصرية أسماء يونانية.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2007.mp3"
       },
       {
         "id": 9,
         "text": "For instance, he tells us that he spoke to the priests of Hephaestus in the Egyptian city of Memphis.",
         "translationAr": "على سبيل المثال، يخبرنا أنه تحدث إلى كهنة «هيفايستوس» في مدينة منف المصرية.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2008.mp3"
       },
       {
         "id": 10,
         "text": "Hephaestus was the Greek name for the blacksmith god who worked with metal, making divine weapons and tools.",
         "translationAr": "هيفايستوس هو الاسم اليوناني لإله الحداد الذي يعمل بالمعادن ويصنع الأسلحة والأدوات المقدسة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2009.mp3"
       },
       {
         "id": 11,
         "text": "The Egyptian name for this god was Ptah.",
         "translationAr": "الاسم المصري لهذا الإله كان «بتاح».",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2010.mp3"
       },
       {
         "id": 12,
         "text": "Ptah was the patron of craftsmen, architects, and builders.",
         "translationAr": "كان بتاح راعي الحرفيين والمهندسين والبنّائين.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2011.mp3"
       },
       {
         "id": 13,
         "text": "Memphis, the capital of ancient Egypt, was full of activity and trades.",
         "translationAr": "كانت مدينة منف، عاصمة مصر القديمة، مليئة بالحرف والنشاط.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2012.mp3"
       },
       {
         "id": 14,
         "text": "So Herodotus assumed that Ptah was the same as Hephaestus.",
         "translationAr": "لذا افترض هيرودوت أن بتاح هو نفسه هيفايستوس.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2013.mp3"
       },
       {
         "id": 15,
-        "text": "Sometimes Herodotus directly links an Egyptian god to a Greek one.",
+        "text": "Sometimes Herodotus is quite specific about linking an Egyptian God to a Greek one",
         "translationAr": "أحيانًا يربط هيرودوت بشكل مباشر بين إله مصري وآخر يوناني.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2014.mp3"
       },
       {
         "id": 16,
         "text": "He says that Isis and Osiris were considered very holy all over Egypt.",
         "translationAr": "يقول إن «إيزيس» و«أوزوريس» كانا مقدسين في جميع أنحاء مصر.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2015.mp3"
       },
       {
         "id": 17,
         "text": "He adds that Osiris is called Dionysus in Greek.",
         "translationAr": "ويضيف أن أوزوريس كان يُسمى «ديونيسوس» باللغة اليونانية.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2016.mp3"
       },
       {
         "id": 18,
-        "text": "Dionysus was the god of wine, pleasure, and celebration.",
-        "translationAr": "وكان ديونيسوس إله الخمر والاحتفال والبهجة.",
-        "audioUrl": ""
+        "text": "Dionysus, known as Baccus in Rome, was the god of wine.",
+        "translationAr": "ديونيسوس، المعروف باسم باكوس في روما، كان إله الخمر.",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2017.mp3"
       },
       {
         "id": 19,
-        "text": "So celebrations of Osiris included music, dancing, and wine.",
-        "translationAr": "ولذلك شملت احتفالات أوزوريس الموسيقى والرقص والخمر.",
-        "audioUrl": ""
+        "text": "I think we can assume that the celebrations of Osiris included wild parties and wine drinking!",
+        "translationAr": "أعتقد أننا نستطيع أن نفترض أن احتفالات أوزوريس كانت تتضمن حفلات صاخبة وشرب الخمر!",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2018.mp3"
       },
       {
         "id": 20,
-        "text": "The myth of Osiris is central to Egyptian religion.",
-        "translationAr": "أسطورة أوزوريس أساسية في الدين المصري.",
-        "audioUrl": ""
+        "text": "The myth of Isis and Osiris was central to ancient Egyptan beliefs,",
+        "translationAr": "كانت أسطورة إيزيس وأوزوريس محورية في المعتقدات المصرية القديمة،",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2019.mp3"
       },
       {
         "id": 21,
         "text": "According to the myth, Osiris was the first king of Egypt.",
         "translationAr": "وفقًا للأسطورة، كان أوزوريس أول ملوك مصر.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2020.mp3"
       },
       {
         "id": 22,
-        "text": "His brother Set was jealous and killed him.",
-        "translationAr": "كان أخوه «ست» غيورًا فقتله.",
-        "audioUrl": ""
+        "text": "His brother Set, was jealous and wanted to rule in his place, and so he murdered him.",
+        "translationAr": "وكان أخوه ست يغار منه ويريد أن يحكم مكانه، فقتله.",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2021.mp3"
       },
       {
         "id": 23,
-        "text": "Set cut Osiris into pieces and scattered them across Egypt.",
-        "translationAr": "وقطع ست جسد أوزوريس إلى أجزاء وفرقها في أنحاء مصر.",
-        "audioUrl": ""
+        "text": "Set cut Osiris up into little bits and scattered him all over Egypt.",
+        "translationAr": "قام ست بتقطيع أوزوريس إلى أجزاء صغيرة ونشره في جميع أنحاء مصر.",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2022.mp3"
       },
       {
         "id": 24,
         "text": "Isis searched for the pieces and reassembled her husband.",
         "translationAr": "وبحثت إيزيس عن الأجزاء وجمعت جسده.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2023.mp3"
       },
       {
         "id": 25,
-        "text": "She wrapped him and created the first Egyptian mummy.",
-        "translationAr": "ثم لفّته لتصنع أول مومياء مصرية.",
-        "audioUrl": ""
+        "text": "She found all his pieces, wrapped him up, and made him into the first Egyptian Mummy.",
+        "translationAr": "لقد وجدت كل أجزائه، ولفته، وحولته إلى أول مومياء مصرية.",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2024.mp3"
       },
       {
         "id": 26,
-        "text": "With the help of the gods, she brought Osiris back to life.",
+        "text": "with the help of some of the other gods, she brought him back to life.",
         "translationAr": "وبمساعدة الآلهة أعادت أوزوريس إلى الحياة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2025.mp3"
       },
       {
         "id": 27,
-        "text": "Osiris then became the god of the underworld and judge of the dead.",
+        "text": "Osiris and Isis ruled the underworld and judged the dead.",
         "translationAr": "ثم أصبح أوزوريس إله العالم السفلي وقاضي الموتى.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2026.mp3"
       },
       {
         "id": 28,
-        "text": "Isis was worshiped as the goddess of magic, motherhood, and healing.",
-        "translationAr": "وعُبدت إيزيس كإلهة السحر والأمومة والشفاء.",
-        "audioUrl": ""
+        "text": "The son of Osiris and Isis was Horos, the sky god, who is sometimes shown as a hunting bird called a falken,",
+        "translationAr": "كان ابن أوزوريس وإيزيس هو حورس، إله السماء، الذي يظهر أحيانًا على شكل طائر صيد يسمى الصقر،",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2027.mp3"
       },
       {
         "id": 29,
-        "text": "Their son Horus was the sky god, often shown as a falcon.",
-        "translationAr": "وكان ابنهما «حورس» إله السماء وغالبًا ما يصوّر بصورة صقر.",
-        "audioUrl": ""
+        "text": "and sometimes simply as the Egyptian eye. Horos is the eye of the gods who sees everything.",
+        "translationAr": "وأحياناً أخرى، تُشير ببساطة إلى العين المصرية. حورس هي عين الآلهة التي ترى كل شيء.",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2028.mp3"
       },
       {
         "id": 30,
-        "text": "The eye of Horus symbolized protection and watchfulness.",
-        "translationAr": "وترمز عين حورس إلى الحماية والمراقبة.",
-        "audioUrl": ""
+        "text": "Anubis, the Egyptian god with the head of a dog. He was a little like Kerberos, the god with three heads who guarded the underworld in Greek mythology.",
+        "translationAr": "أنوبيس، الإله المصري برأس كلب. كان يشبه إلى حد ما كيربيروس، الإله ذو الرؤوس الثلاثة، حارس العالم السفلي في الأساطير اليونانية.",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2029.mp3"
       },
       {
         "id": 31,
-        "text": "Anubis, with the head of a jackal, guarded the gates of the underworld.",
-        "translationAr": "وكان أنوبيس، ذو رأس ابن آوى، يحرس أبواب العالم السفلي.",
-        "audioUrl": ""
+        "text": "were many other interesting gods, who were popular in various parts of Egypt.",
+        "translationAr": "وكان هناك العديد من الآلهة الأخرى المثيرة للاهتمام، والتي كانت شعبية في أجزاء مختلفة من مصر.",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2030.mp3"
       },
       {
         "id": 32,
-        "text": "Many other gods were worshiped across Egypt.",
-        "translationAr": "كانت هناك آلهة كثيرة أخرى تُعبد عبر مصر.",
-        "audioUrl": ""
+        "text": "For instance, Herodotus identifies the Egyptian cat - goddess, Bastet, as Artemis the huntress.",
+        "translationAr": "على سبيل المثال، حدد هيرودوت إلهة القطة المصرية، باستيت، على أنها أرتميس الصيادة.",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2031.mp3"
       },
       {
         "id": 33,
-        "text": "For example, Bastet, the cat goddess, was associated with protection and joy.",
+        "text": "Bastet’s temple was at Per - Bast – also known as Bubastis – on the river Nile, and was home to thousands of cats.",
         "translationAr": "على سبيل المثال، كانت «باستت» إلهة القطط مرتبطة بالحماية والبهجة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2032.mp3"
       },
       {
         "id": 34,
-        "text": "Her temple at Bubastis was home to many cats, honored and mummified.",
-        "translationAr": "وكان معبدها في بوباستيس موطنًا للعديد من القطط التي كانت تُكرم وتُحنّط.",
-        "audioUrl": ""
+        "text": "Egyptians loved their pets, and mourned them when they died.",
+        "translationAr": "كان المصريون يحبون حيواناتهم الأليفة، ويحزنون عليها عندما تموت.",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2033.mp3"
       },
       {
         "id": 35,
-        "text": "Ancient Egyptians deeply loved their animals.",
-        "translationAr": "كان المصريون القدماء يحبون حيواناتهم بشدة.",
-        "audioUrl": ""
+        "text": "Maybe Herodotus thought that if he showed that the stories of the Egyptian gods were not the same as the Greek ones,",
+        "translationAr": "ربما اعتقد هيرودوت أنه إذا أظهر أن قصص الآلهة المصرية ليست مثل القصص اليونانية،",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2034.mp3"
       },
       {
         "id": 36,
-        "text": "Herodotus wondered about the similarities and differences between religions.",
+        "text": "However, it is interesting to know that two and a half thousand years ago, Herodotus travelled from Greece to Egypt and concluded that the religions of the two countries were more similar than different.",
         "translationAr": "تساءل هيرودوت عن أوجه التشابه والاختلاف بين الأديان.",
-        "audioUrl": ""
-      },
-      {
-        "id": 37,
-        "text": "He believed that many religions share common ideas about life, death, and morality.",
-        "translationAr": "وكان يعتقد أن العديد من الأديان تشترك في أفكار مشتركة حول الحياة والموت والأخلاق.",
-        "audioUrl": ""
-      },
-      {
-        "id": 38,
-        "text": "So he concluded that Egyptian and Greek religions were more similar than different.",
-        "translationAr": "لذا خلص إلى أن الديانتين المصرية واليونانية كانتا أكثر تشابهًا من اختلاف.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2035.mp3"
       },
       {
         "id": 39,
         "text": "Goodbye!",
         "translationAr": "إلى اللقاء!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Herodotus%20on%20Egyptian%20Gods/Herodotus%20on%20Egyptian%20Gods%20S%2036.mp3"
       }
     ]
   },
@@ -25066,133 +25048,115 @@ export const readingData = [
               "id": 1,
               "text": "I’m an artist, and as everyone knows, artists are usually rather poor.",
               "translationAr": "أنا فنان، وكما يعلم الجميع، فإن الفنانين عادة ما يكونون فقراء.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2001.mp3"
             },
             {
               "id": 2,
               "text": "Normally, I don’t mind about that.",
               "translationAr": "عادةً، لا يزعجني ذلك.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2002.mp3"
             },
             {
               "id": 3,
               "text": "When the sun is shining, I sit on my favourite blade of grass and play music for everyone to listen to.",
               "translationAr": "عندما تشرق الشمس، أجلس على نصل عشبي المفضل وأعزف الموسيقى ليستمع الجميع.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2003.mp3"
             },
             {
               "id": 4,
               "text": "I have lots of friends, and together we’ve formed an orchestra.",
               "translationAr": "لدي الكثير من الأصدقاء، ومعًا شكلنا أوركسترا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2004.mp3"
             },
             {
               "id": 5,
               "text": "Everyone loves our music and says how cheerful it makes them feel – well almost everyone.",
               "translationAr": "يحب الجميع موسيقانا ويقولون إنها تجعلهم يشعرون بالبهجة، حسنًا تقريبًا الجميع.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2005.mp3"
             },
             {
               "id": 6,
               "text": "There’s a family of ants who never stop to listen.",
               "translationAr": "هناك عائلة من النمل لا تتوقف أبدًا للاستماع.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2006.mp3"
             },
             {
               "id": 7,
               "text": "They take themselves far too seriously for music or enjoyment.",
               "translationAr": "يأخذون أنفسهم على محمل الجد أكثر من اللازم بالنسبة للموسيقى أو المتعة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2007.mp3"
             },
             {
               "id": 8,
               "text": "All they do is work, work, work – even when the sun is shining.",
               "translationAr": "كل ما يفعلونه هو العمل والعمل والعمل، حتى عندما تشرق الشمس.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2008.mp3"
             },
             {
               "id": 9,
-              "text": "“ Hey You Ants, ” I said to them.",
-              "translationAr": "قلت لهم: يا أيها النمل! إنه يوم صيف جميل.",
-              "audioUrl": ""
-            },
-            {
-              "id": 10,
-              "text": "“ It’s a lovely summer’s day.",
-              "translationAr": "لماذا لا ترتاحون قليلًا وتستمعون إلى موسيقاي العذبة؟",
-              "audioUrl": ""
+              "text": "“ Hey You Ants, ” I said to them “ It’s a lovely summer’s day.",
+              "translationAr": "مرحبًا أيها النمل، قلت لهم، إنه يوم صيفي جميل.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2009.mp3"
             },
             {
               "id": 11,
               "text": "Why don’t you rest your feet for a while, and listen to my sweet music? ”\n\n “ No time to stop, ” one of them said, panting away.",
-              "translationAr": "قال أحدهم وهو يلهث: لا وقت للتوقف.",
-              "audioUrl": ""
+              "translationAr": "لماذا لا تستريح قدميك لبعض الوقت وتستمع إلى موسيقاي الجميلة؟ لا وقت للتوقف، قال أحدهم وهو يلهث.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2010.mp3"
             },
             {
               "id": 12,
               "text": "“ We’re far too busy stocking up food for winter. ” \n\nThe months went by, and the days got shorter and colder.",
-              "translationAr": "نحن مشغولون جدًا بتخزين الطعام لفصل الشتاء.",
-              "audioUrl": ""
+              "translationAr": "نحن مشغولون جدًا بتخزين الطعام لفصل الشتاء. مرت الأشهر، وأصبحت الأيام أقصر وأبرد.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2011.mp3"
             },
             {
               "id": 13,
               "text": "I was shivering so much that I couldn’t even sing.",
-              "translationAr": "مرت الشهور، وأصبحت الأيام أقصر وأكثر برودة.",
-              "audioUrl": ""
+              "translationAr": "كنت أرتجف كثيرًا لدرجة أنني لم أتمكن حتى من الغناء.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2012.mp3"
             },
             {
               "id": 14,
               "text": "A hard frost was on the ground, and there wasn’t a crumb to eat.",
               "translationAr": "كنت أرتجف لدرجة أنني لم أستطع حتى الغناء.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2013.mp3"
             },
             {
               "id": 15,
               "text": "I was so hungry!",
-              "translationAr": "كانت الأرض مغطاة بالصقيع القاسي، ولم يكن هناك فتات للأكل.",
-              "audioUrl": ""
+              "translationAr": "لقد كنت جائعا جدا!",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2014.mp3"
             },
             {
               "id": 16,
               "text": "So I went to see that busy family of ants and said : “ Please Sirs, I’m a poor starving musician.",
-              "translationAr": "كنت جائعًا جدًا!",
-              "audioUrl": ""
+              "translationAr": "كان هناك صقيع شديد على الأرض، ولم يكن هناك فتات للأكل.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2015.mp3"
             },
             {
               "id": 17,
-              "text": "Spare me a few crumbs from your store of food. ” \n\nDo you know what?",
-              "translationAr": "ذهبت إلى عائلة النمل تلك وقلت: أرجوكم أيها السادة، أنا موسيقي فقير جائع.",
-              "audioUrl": ""
-            },
-            {
-              "id": 18,
-              "text": "Those ants just turned their noses up at me.",
-              "translationAr": "أعطوني بضع فتات من مخزون طعامكم.",
-              "audioUrl": ""
-            },
-            {
-              "id": 19,
               "text": "They were so stingy that they wouldn’t share any of their food.",
-              "translationAr": "أتدرون ماذا؟ لقد رفعوا أنوفهم نحوي.",
-              "audioUrl": ""
+              "translationAr": "كانوا بخيلين جدًا لدرجة أنهم لم يشاركوا أيًا من طعامهم.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2016.mp3"
             },
             {
               "id": 20,
               "text": "Oh well, I’ll just have to go hungry this winter.",
-              "translationAr": "كانوا بخيلين جدًا لدرجة أنهم لم يشاركوا أيًا من طعامهم.",
-              "audioUrl": ""
+              "translationAr": "حسنًا، سأبقى جائعًا هذا الشتاء.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2017.mp3"
             },
             {
               "id": 21,
               "text": "In the New Year, I’ll make a resolution.",
-              "translationAr": "حسنًا، سأبقى جائعًا هذا الشتاء.",
-              "audioUrl": ""
+              "translationAr": "في العام الجديد، سأضع لنفسي عهدًا.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2018.mp3"
             },
             {
               "id": 22,
               "text": "When the times are good, I’ll remember to save some food for a rainy day.",
-              "translationAr": "في العام الجديد، سأضع لنفسي عهدًا.",
-              "audioUrl": ""
+              "translationAr": "عندما تكون الأوقات جيدة، سأتذكر أن أحفظ بعض الطعام للأيام الصعبة.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Grasshopper%20and%20the%20Ants/The%20Grasshopper%20and%20the%20Ants%20S%2019.mp3"
             }
           ]
         },
@@ -25842,100 +25806,76 @@ export const readingData = [
         "storyData": {
           "content": [
             {
-              "id": 1,
-              "text": "The First World War ended on 11th November 1918.",
-              "translationAr": "انتهت الحرب العالمية الأولى في 11 نوفمبر عام 1918.",
-              "audioUrl": ""
-            },
-            {
-              "id": 2,
-              "text": "The Sunday nearest to the 11th of November is marked each year as Remembrance Day in many countries.",
-              "translationAr": "يُخصَّص أقرب يوم أحد إلى الحادي عشر من نوفمبر كل عام كيوم الذكرى في العديد من البلدان.",
-              "audioUrl": ""
-            },
-            {
-              "id": 3,
-              "text": "The symbol of day is the red poppy that grew on many of the battle fields.",
-              "translationAr": "رمز هذا اليوم هو زهرة الخشخاش الحمراء التي نمت في العديد من ساحات المعارك.",
-              "audioUrl": ""
-            },
-            {
-              "id": 4,
-              "text": "This poem was written during the First World War by a poet who was also a soldier.",
-              "translationAr": "كُتبت هذه القصيدة خلال الحرب العالمية الأولى على يد شاعر كان أيضًا جنديًا.",
-              "audioUrl": ""
-            },
-            {
               "id": 5,
               "text": "His name was Rupert Brooke.",
               "translationAr": "كان اسمه روبرت بروك.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Soldier/The%20Soldier%20S%2003.mp3"
             },
             {
               "id": 6,
               "text": "His father was headmaster of the famous school called Rugby.",
               "translationAr": "كان والده مديرًا لمدرسة مشهورة تُدعى راغبي.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Soldier/The%20Soldier%20S%2004.mp3"
             },
             {
               "id": 7,
               "text": "He later studied at Cambridge University and travelled around Europe before the outbreak of war.",
               "translationAr": "درس لاحقًا في جامعة كامبريدج وسافر حول أوروبا قبل اندلاع الحرب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Soldier/The%20Soldier%20S%2005.mp3"
             },
             {
               "id": 8,
               "text": "Unlike many war poems, this is a gentle and beautiful piece of verse.",
               "translationAr": "على عكس العديد من قصائد الحرب، هذه قطعة لطيفة وجميلة من الشعر.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Soldier/The%20Soldier%20S%2006.mp3"
             },
             {
               "id": 9,
               "text": "It is describing a land that could not be more different from the horror of the battlefield.",
               "translationAr": "إنها تصف أرضًا تختلف تمامًا عن رعب ساحة المعركة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Soldier/The%20Soldier%20S%2007.mp3"
             },
             {
               "id": 10,
               "text": "IF I should die, think only this of me: That there’s some corner of a foreign field That is forever England.",
-              "translationAr": "إذا حدث أن أموت، فتذكّر هذا فقط عني:",
-              "audioUrl": ""
+              "translationAr": "إذا متُّ، فكِّروا في هذا فقط: هناك زاوية ما في حقل أجنبي ستكون إنجلترا إلى الأبد.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Soldier/The%20Soldier%20S%2008.mp3"
             },
             {
               "id": 11,
               "text": "There shall be In that rich earth a richer dust concealed; A dust whom England bore, shaped, made aware, Gave, once, her flowers to love, her ways to roam, A body of England’s, breathing English air, Washed by the rivers, blest by suns of home.",
-              "translationAr": "أن هناك ركنًا ما من أرضٍ أجنبية سيبقى إنجلترا إلى الأبد.",
-              "audioUrl": ""
+              "translationAr": "سيكون هناك في تلك الأرض الغنية غبار أكثر ثراءً مخفيًا؛ غبار تحملته إنجلترا، وشكلته، وجعلته واعيًا، وأعطى، ذات مرة، أزهارها للحب، وطرقها للتجوال، وجسد إنجلترا، يتنفس الهواء الإنجليزي، تغسله الأنهار، وتباركه شمس الوطن.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Soldier/The%20Soldier%20S%2009.mp3"
             },
             {
               "id": 12,
               "text": "And think, this heart, all evil shed away, A pulse in the eternal mind, no less Gives somewhere back the thoughts by England given; Her sights and sounds; dreams happy as her day; And laughter, learnt of friends; and gentleness, In hearts at peace, under an English heaven.",
-              "translationAr": "سيكون هناك في تلك الأرض الغنية غبار أغنى مخبوء.",
-              "audioUrl": ""
+              "translationAr": "وفكر، هذا القلب، كل الشرور تتساقط، نبض في العقل الأبدي، لا يقل عن يعيد إلى مكان ما الأفكار التي قدمتها إنجلترا؛ مشاهدها وأصواتها؛ أحلام سعيدة مثل يومها؛ والضحك، تعلمته من الأصدقاء؛ واللطف، في قلوب في سلام، تحت سماء إنجليزية.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Soldier/The%20Soldier%20S%2010.mp3"
             },
             {
               "id": 13,
               "text": "And that was ‘The Soldier’, but Rupert Brooke.",
-              "translationAr": "غبار حملته إنجلترا، وشكّلته، وجعلته واعيًا.",
-              "audioUrl": ""
+              "translationAr": "وكان هذاالجندي، ولكن روبرت بروك.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Soldier/The%20Soldier%20S%2011.mp3"
             },
             {
               "id": 14,
               "text": "You might like to know that this poem was written in a special form known as a Sonnet.",
-              "translationAr": "أعطته يومًا زهورها ليحب، وطرقها ليجول.",
-              "audioUrl": ""
+              "translationAr": "ربما يعجبك أن تعرف أن هذه القصيدة كتبت في شكل خاص يعرف باسم السوناتة.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Soldier/The%20Soldier%20S%2012.mp3"
             },
             {
               "id": 15,
               "text": "Sonnets always have 14 lines.",
-              "translationAr": "جسد ينتمي لإنجلترا، يتنفس هواء إنجليزيًا.",
-              "audioUrl": ""
+              "translationAr": "تحتوي السوناتات دائمًا على 14 سطرًا.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Soldier/The%20Soldier%20S%2013.mp3"
             },
             {
               "id": 16,
               "text": "The famous English playwright William Shakespeare wrote a number of poems in this form.",
-              "translationAr": "غُسِل بأنهارها، وباركته شمس الوطن.",
-              "audioUrl": ""
+              "translationAr": "وقد كتب الكاتب المسرحي الإنجليزي الشهير ويليام شكسبير عددًا من القصائد بهذا الشكل.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Soldier/The%20Soldier%20S%2014.mp3"
             }
           ]
         },
@@ -27435,31 +27375,31 @@ export const readingData = [
         "id": 1,
         "text": "I bet you can’t guess what I like to eat best of all?",
         "translationAr": "أراهن أنك لا تستطيع أن تخمّن ما أحبه أكثر من أي طعام آخر؟",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S01.mp3"
       },
       {
         "id": 2,
         "text": "Yes, I knew that you would say that foxes like to eat hens best, and stolen ones at that.",
         "translationAr": "نعم، كنت أعلم أنك ستقول إن الثعالب تحب أكل الدجاج أكثر شيء، وخاصة المسروق منه.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S02.mp3"
       },
       {
         "id": 3,
         "text": "I don’t mind admitting that I wouldn’t ever say no to a nice fat chicken wing once in a while.",
         "translationAr": "لا أمانع الاعتراف بأنني لا أرفض جناح دجاجة سمين من حين لآخر.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S03.mp3"
       },
       {
         "id": 4,
         "text": "But not many people know that what foxes appreciate even more than chicken, is a nice piece of cheese once in a while.",
         "translationAr": "ولكن ليس كثير من الناس يعرفون أن ما يقدّره الثعلب أكثر من الدجاج هو قطعة جبن لذيذة بين الحين والآخر.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S04.mp3"
       },
       {
         "id": 5,
         "text": "Well today I ate a wonderfully rich and creamy slice of cheddar for my breakfast.",
         "translationAr": "حسنًا، اليوم تناولت شريحة شيدر غنية ودسمة على الإفطار.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S05.mp3"
       },
       {
         "id": 6,
@@ -28530,97 +28470,97 @@ export const readingData = [
         "id": 1,
         "text": "I have a little shadow that goes in and out with me,",
         "translationAr": "لدي ظل صغير يرافقني ويدخل ويخرج معي،",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2001.mp3"
       },
       {
         "id": 2,
         "text": "And what can be the use of him is more than I can see.",
         "translationAr": "ولا أعرف ما فائدته، فهذا أبعد من فهمي.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2002.mp3"
       },
       {
         "id": 3,
         "text": "He is very, very like me from the heels up to the head;",
         "translationAr": "إنه يشبهني كثيرًا جدًا، من الكعب حتى الرأس؛",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2003.mp3"
       },
       {
         "id": 4,
         "text": "And I see him jump before me, when I jump into my bed.",
         "translationAr": "وأراه يقفز قبلي عندما أقفز إلى سريري.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2004.mp3"
       },
       {
         "id": 5,
         "text": "The funniest thing about him is the way he likes to grow —",
         "translationAr": "أطرف شيء فيه هو الطريقة التي يحب أن ينمو بها —",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2005.mp3"
       },
       {
         "id": 6,
         "text": "Not at all like proper children, which is always very slow;",
         "translationAr": "ليس مثل الأطفال العاديين الذين يكبرون ببطء شديد؛",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2006.mp3"
       },
       {
         "id": 7,
         "text": "For he sometimes shoots up taller like an india - rubber ball,",
         "translationAr": "فهو أحيانًا يصبح أطول فجأة مثل كرة المطاط؛",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2007.mp3"
       },
       {
         "id": 8,
         "text": "And he sometimes gets so little that there’s none of him at all.",
         "translationAr": "وأحيانًا يصغر جدًا حتى يكاد يختفي تمامًا.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2008.mp3"
       },
       {
         "id": 9,
         "text": "He hasn’t got a notion of how children ought to play,",
         "translationAr": "ليس لديه أي فكرة عن كيف يجب أن يلعب الأطفال،",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2009.mp3"
       },
       {
         "id": 10,
         "text": "And can only make a fool of me in every sort of way.",
         "translationAr": "وكل ما يفعله هو جعلي أبدو أحمقًا بكل طريقة ممكنة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2010.mp3"
       },
       {
         "id": 11,
         "text": "He stays so close beside me, he’s a coward you can see;",
         "translationAr": "يبقى قريبًا جدًا مني، إنه جبان كما ترى؛",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2011.mp3"
       },
       {
         "id": 12,
         "text": "I’d think shame to stick to nursie as that shadow sticks to me!",
         "translationAr": "أعتقد أنني سأشعر بالخجل لو التصقت بالمربية كما يلتصق هو بي!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2012.mp3"
       },
       {
         "id": 13,
         "text": "One morning, very early, before the sun was up,",
         "translationAr": "في صباح باكر جدًا، قبل أن تشرق الشمس،",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2013.mp3"
       },
       {
         "id": 14,
         "text": "I rose and found the shining dew on every buttercup;",
         "translationAr": "استيقظت فوجدت الندى اللامع على كل زهرة صفراء صغيرة،",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2014.mp3"
       },
       {
         "id": 15,
         "text": "But my lazy little shadow, like an arrant sleepy - head,",
         "translationAr": "ولكن ظلي الصغير الكسول، مثل شخص نائم نومًا عميقًا،",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2015.mp3"
       },
       {
         "id": 16,
         "text": "Had stayed at home behind me and was fast asleep in bed.",
         "translationAr": "بقي في المنزل خلفي وكان نائمًا بعمق في السرير.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/My%20Shadow/My%20Shadow%20S%2016.mp3"
       }
     ]
         }, 
