@@ -13067,637 +13067,637 @@ export const readingData = [
               "id": 1,
               "text": "Birdy and the Magic Chocolate Tree",
               "translationAr": "بيردي وشجرة الشوكولاتة السحرية",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2001.mp3"
             },
             {
               "id": 2,
               "text": "Hello, this is Jana and I’m dropping by with a delicious Birdy story.",
               "translationAr": "مرحبًا، أنا يانا وأزوركم بقصة لذيذة عن بيردي.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2002.mp3"
             },
             {
               "id": 3,
               "text": "Every day when Mum or Dad picked up Jake from school, they would walk home past the sweet shop.",
               "translationAr": "كل يوم عندما كانت الأم أو الأب يأخذان جيك من المدرسة، كانا يمران في طريق العودة بجانب متجر الحلوى.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2003.mp3"
             },
             {
               "id": 4,
               "text": "Well it sold real food too, but Jake was only interested in the sweet treats.",
               "translationAr": "صحيح أنه كان يبيع طعامًا حقيقيًا أيضًا، لكن جيك لم يكن يهتم إلا بالحلوى.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2004.mp3"
             },
             {
               "id": 5,
               "text": "“ Dad, my tummy’s grumbling, ” complained Jake with a pained look on his face.",
               "translationAr": "قال جيك شاكيًا وبملامح متألمة: «أبي، بطني يقرقر.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2005.mp3"
             },
             {
               "id": 6,
               "text": "“ You mean rumbling? ” corrected Dad.",
               "translationAr": "قال الأب مصححًا: «تقصد يهدِر؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2006.mp3"
             },
             {
               "id": 7,
               "text": "“ No, it’s grumbling. I really need chocolate to make it better. I’m hungry, Dad, ” he pleaded.",
               "translationAr": "«لا، إنه يقرقر. أحتاج حقًا إلى شوكولاتة ليهدأ. أنا جائع يا أبي»، توسل.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2007.mp3"
             },
             {
               "id": 8,
               "text": "“ How about a nice stick of celery? ” Dad grinned, pointing to the salad department.",
               "translationAr": "ابتسم الأب مشيرًا إلى قسم السلطة: «ما رأيك بعيدان كرفس لذيذة؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2008.mp3"
             },
             {
               "id": 9,
               "text": "“ Celery, yuk! I’m not eating a plant! ”",
               "translationAr": "«كرفس! أُفّ! لن آكل نباتًا!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2009.mp3"
             },
             {
               "id": 10,
               "text": "Jake would persist and plead until Dad gave in to a Snickers or Mars bar.",
               "translationAr": "كان جيك يُلحّ ويتوسل حتى يرضخ الأب ويشتري له شوكولاتة سنيكرز أو مارس.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2010.mp3"
             },
             {
               "id": 11,
               "text": "But then one day, disaster struck.",
               "translationAr": "لكن في يوم من الأيام وقع ما يشبه الكارثة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2011.mp3"
             },
             {
               "id": 12,
               "text": "Mum announced a crack down on eating sweets and crisps and sugary cans of soda.",
               "translationAr": "أعلنت الأم حملة صارمة على أكل الحلويات والرقائق والمشروبات الغازية السكرية.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2012.mp3"
             },
             {
               "id": 13,
               "text": "“ The news is full of health scares at the moment, ” said Mum, looking up briefly from her laptop.",
               "translationAr": "قالت الأم رافعة نظرها عن الحاسوب المحمول لوهلة: «الأخبار مليئة حاليًا بالتحذيرات الصحية.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2013.mp3"
             },
             {
               "id": 14,
               "text": "“ We’re going to start eating healthier from now on.",
               "translationAr": "«سنبدأ من الآن بالأكل الصحي أكثر.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2014.mp3"
             },
             {
               "id": 15,
               "text": "There’s an article here that says sugar affects your development, ” she told the kids.",
               "translationAr": "هنا مقال يقول إن السكر يؤثر في نموكم»، قالت للأطفال.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2015.mp3"
             },
             {
               "id": 16,
               "text": "“ What does that mean? ” asked Jake, dismayed.",
               "translationAr": "سأل جيك بقلق: «وما معنى ذلك؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2016.mp3"
             },
             {
               "id": 17,
               "text": "“ It means that sugar doesn’t just make you fat, it makes you annoying too. ”",
               "translationAr": "«يعني أن السكر لا يجعلك سمينًا فحسب، بل يجعلك مُزعجًا أيضًا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2017.mp3"
             },
             {
               "id": 18,
               "text": "“ Don’t say ‘ fat ’! ” shot back Jake.",
               "translationAr": "قال جيك بسرعة: «لا تقل: سمين!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2018.mp3"
             },
             {
               "id": 19,
               "text": "“ And don’t say ‘ annoying ’! ” screamed his hot - tempered little sister, stamping her foot.",
               "translationAr": "وصرخت أخته الصغرى السريعة الغضب وهي تضرب الأرض بقدمها: «ولا تقل: مزعج!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2019.mp3"
             },
             {
               "id": 20,
               "text": "“ Ok, ok, you’re right, ” admitted Mum with a sigh.",
               "translationAr": "تنهدت الأم معترفة: «حسنًا، حسنًا، معكما حق.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2020.mp3"
             },
             {
               "id": 21,
               "text": "“ We must all watch our language.",
               "translationAr": "«علينا جميعًا أن ننتبه لألفاظنا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2021.mp3"
             },
             {
               "id": 22,
               "text": "Let’s just say that sugar is bad for you, so from now on, we are cutting back drastically.",
               "translationAr": "لنقل إن السكر مضرّ لكم، ولذلك سنقلله كثيرًا من الآن فصاعدًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2022.mp3"
             },
             {
               "id": 23,
               "text": "And by the way, the dentist doesn’t approve of sugar.",
               "translationAr": "وبالمناسبة، طبيب الأسنان لا يوافق على السكر.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2023.mp3"
             },
             {
               "id": 24,
               "text": "He says it rots your teeth too.",
               "translationAr": "يقول إنه يُفسد أسنانكم أيضًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2024.mp3"
             },
             {
               "id": 25,
               "text": "Am I allowed to mention that? I mean, do we still have free speech in our house? ”",
               "translationAr": "هل يُسمح لي بذكر ذلك؟ أعني، هل لا يزال لدينا حرية التعبير في بيتنا؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2025.mp3"
             },
             {
               "id": 26,
               "text": "That afternoon, Mum prepared a snack consisting of cut up apples, cucumber, carrot sticks, and hummus.",
               "translationAr": "في ذلك العصر، أعدّت الأم وجبة خفيفة من تفاح مقطع وخيار وأعواد جزر وحمص.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2026.mp3"
             },
             {
               "id": 27,
               "text": "Mum and Dad thought it was delicious, but Jake still preferred crisps or a bag of Maltesers.",
               "translationAr": "رأى الأبوان أنها لذيذة، لكن جيك ظل يفضّل الرقائق أو كيسًا من مالتيزرز.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2027.mp3"
             },
             {
               "id": 28,
               "text": "Later, when he was in his room, Birdy paid him a visit.",
               "translationAr": "لاحقًا، عندما كان في غرفته، زاره بيردي.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2028.mp3"
             },
             {
               "id": 29,
               "text": "Jake glanced at the window, his heart lifting a little. “ Birdy! ”",
               "translationAr": "نظر جيك نحو النافذة وارتفع قلبه قليلًا: «بيردي!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2029.mp3"
             },
             {
               "id": 30,
               "text": "Birdy, a jet - black crow with a sharp gaze, hopped into the room.",
               "translationAr": "قفز بيردي، وهو غراب أسود فاحم ذو نظرة حادّة، إلى الغرفة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2030.mp3"
             },
             {
               "id": 31,
               "text": "“ What’s this long face for? ” he asked, tilting his head in concern.",
               "translationAr": "سأل وهو يميل رأسه بقلق: «ولماذا هذا الوجه العابس؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2031.mp3"
             },
             {
               "id": 32,
               "text": "“ It’s a disaster, Birdy! ” Jake wailed.",
               "translationAr": "قال جيك بنواح: «إنها مصيبة يا بيردي!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2032.mp3"
             },
             {
               "id": 33,
               "text": "Birdy fluffed his feathers in alarm. “ Oh? What tragedy has befallen you? ”",
               "translationAr": "انتفش ريش بيردي بفزع: «أوه؟ أي مأساة حلت بك؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2033.mp3"
             },
             {
               "id": 34,
               "text": "“ You’d never guess what’s happened! ”",
               "translationAr": "«لن تتوقع ما حدث!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2034.mp3"
             },
             {
               "id": 35,
               "text": "“ Get on and spit it out then, ” answered Birdy.",
               "translationAr": "أجاب بيردي: «هيا تفوّه بها إذن.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2035.mp3"
             },
             {
               "id": 36,
               "text": "“ Mum has banned chocolate and crisps from my life! And fizzy drinks! ”",
               "translationAr": "«أمّي حظرت الشوكولاتة والرقائق من حياتي! وكذلك المشروبات الغازية!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2036.mp3"
             },
             {
               "id": 37,
               "text": "Jake threw himself back onto his bed, as if the weight of the world rested on his small shoulders.",
               "translationAr": "ألقى جيك بنفسه على سريره كأنما يحمل همّ العالم على كتفيه الصغيرتين.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2037.mp3"
             },
             {
               "id": 38,
               "text": "Birdy gasped, his wings fluttering. “ What’s left? Tree bark and birdseed? ”",
               "translationAr": "شهق بيردي وهو يرفرف بجناحيه: «وماذا تبقى؟ قشر الشجر وبذور الطيور؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2038.mp3"
             },
             {
               "id": 39,
               "text": "“ Close, ” Jake muttered. “ Carrots, celery, and this weird goo Mum calls hummus.",
               "translationAr": "قال جيك هامسًا: «قريب من ذلك: جزر وكرفس وهذا المعجون الغريب الذي تسميه أمي حمصًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2039.mp3"
             },
             {
               "id": 40,
               "text": "She says it’s nutritious, but to me it tastes like wallpaper paste. ”",
               "translationAr": "تقول إنه مغذٍّ، لكنه بالنسبة لي بطعم معجون لصق ورق الجدران.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2040.mp3"
             },
             {
               "id": 41,
               "text": "“ Yikes, ” Birdy sympathised. “ So, what’s the plan? Stage a rebellion? ”",
               "translationAr": "قال بيردي متعاطفًا: «يا ساتر. إذن ما الخطة؟ ثورة؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2041.mp3"
             },
             {
               "id": 42,
               "text": "Jake sighed dramatically. “ Oh, I wish. Birdy, can we actually live without chocolate? ”",
               "translationAr": "تنهد جيك بحرارة: «ليت ذلك. بيردي، هل نستطيع حقًا أن نعيش بلا شوكولاتة؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2042.mp3"
             },
             {
               "id": 43,
               "text": "“ Ah, chocolate. The most magical bean of them all, ” Birdy began, more serious now.",
               "translationAr": "قال بيردي بنبرة أكثر جدية: «آه، الشوكولاتة.. أروع الحبوب سحرًا على الإطلاق.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2043.mp3"
             },
             {
               "id": 44,
               "text": "“ Humans can live without chocolate for surprisingly long periods of time.",
               "translationAr": "«البشر يستطيعون العيش دون شوكولاتة لفترات طويلة على نحو مدهش.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2044.mp3"
             },
             {
               "id": 45,
               "text": "During World War II, they had to ration it — four ounces a month! ”",
               "translationAr": "أثناء الحرب العالمية الثانية تم تقنينها — أربعة أونصات في الشهر!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2045.mp3"
             },
             {
               "id": 46,
               "text": "“ Four ounces? That’s like one tiny bite! ” Jake’s eyes widened.",
               "translationAr": "اتسعت عينا جيك: «أربع أونصات؟ هذه قضمة صغيرة!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2046.mp3"
             },
             {
               "id": 47,
               "text": "“ Exactly. And after the war, rationing continued for years. ”",
               "translationAr": "«بالضبط. وحتى بعد الحرب استمر التقنين لسنوات.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2047.mp3"
             },
             {
               "id": 48,
               "text": "“ Years?! No chocolate for years? That’s torture! ”",
               "translationAr": "«سنوات؟! بلا شوكولاتة لسنوات؟ هذه تعذيب!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2048.mp3"
             },
             {
               "id": 49,
               "text": "“ Chocolate has a history and a magic that goes back to ancient times. Ever heard of the Mayans? ”",
               "translationAr": "«للشوكولاتة تاريخ وسحر يعودان إلى العصور القديمة. هل سمعت بالمايا؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2049.mp3"
             },
             {
               "id": 50,
               "text": "Jake shook his head, intrigued.",
               "translationAr": "هز جيك رأسه وقد أثار الأمر فضوله.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2050.mp3"
             },
             {
               "id": 51,
               "text": "“ The Mayans were a great civilization in Mexico long before Europeans arrived.",
               "translationAr": "«كان المايا حضارة عظيمة في المكسيك قبل قدوم الأوروبيين بوقت طويل.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2051.mp3"
             },
             {
               "id": 52,
               "text": "They built cities with grand temples and pyramids.",
               "translationAr": "بنوا مدنًا بمعابد وأهرام مهيبة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2052.mp3"
             },
             {
               "id": 53,
               "text": "One of their most cherished treasures was a tree — the chocolate tree.",
               "translationAr": "ومن أعزّ كنوزهم شجرة — شجرة الشوكولاتة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2053.mp3"
             },
             {
               "id": 54,
               "text": "It was said the god Kukulkan brought it from a magical mountain to help the people.",
               "translationAr": "وكان يُقال إن الإله كوكولكان جلبها من جبل سحري لمساعدة الناس.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2054.mp3"
             },
             {
               "id": 55,
               "text": "The chocolate wasn’t just delicious; it made people wise, strong, and happy. ”",
               "translationAr": "ولم تكن الشوكولاتة لذيذة فحسب؛ بل جعلت الناس حكماء أقوياء سعداء.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2055.mp3"
             },
             {
               "id": 56,
               "text": "“ So chocolate’s like… magic? ”",
               "translationAr": "«إذًا الشوكولاتة مثل… السحر؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2056.mp3"
             },
             {
               "id": 57,
               "text": "“ Indeed. The Mayans believed it was a gift from the gods — a little magic in every bite. ”",
               "translationAr": "«بالفعل. كان المايا يرونها هدية من الآلهة — قليل من السحر في كل قضمة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2057.mp3"
             },
             {
               "id": 58,
               "text": "Jake smiled. “ Awesome story, Birdy. But now I could really do with some chocolate. Do you have some? ”",
               "translationAr": "ابتسم جيك: «قصة رائعة يا بيردي. لكنني الآن أحتاج حقًا إلى شوكولاتة. أتملك بعضًا منها؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2058.mp3"
             },
             {
               "id": 59,
               "text": "Birdy looked under his wing but couldn’t find any.",
               "translationAr": "بحث بيردي تحت جناحه لكنه لم يجد شيئًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2059.mp3"
             },
             {
               "id": 60,
               "text": "It wasn’t easy for Jake to fall asleep.",
               "translationAr": "لم يكن من السهل على جيك أن ينام.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2060.mp3"
             },
             {
               "id": 61,
               "text": "When he finally drifted off, he dreamed of the Mayan magic chocolate tree.",
               "translationAr": "وعندما غفا أخيرًا، حلم بشجرة الشوكولاتة السحرية عند المايا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2061.mp3"
             },
             {
               "id": 62,
               "text": "In the morning, when Mum woke him up, he said sleepily,",
               "translationAr": "في الصباح، حين أيقظته الأم، قال بنعاس:",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2062.mp3"
             },
             {
               "id": 63,
               "text": "“ Mum, Birdy told me about a Magic Chocolate tree in Mexico.",
               "translationAr": "«أمي، أخبرني بيردي عن شجرة شوكولاتة سحرية في المكسيك.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2063.mp3"
             },
             {
               "id": 64,
               "text": "He says it’s a gift from the gods and its chocolate fruit is really good for you.",
               "translationAr": "يقول إنها هدية من الآلهة وثمر الشوكولاتة فيها مفيد حقًا لنا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2064.mp3"
             },
             {
               "id": 65,
               "text": "It even makes you clever and helps you pass all your exams. ”",
               "translationAr": "بل تجعلك ذكيًا وتساعدك على النجاح في كل امتحاناتك.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2065.mp3"
             },
             {
               "id": 66,
               "text": "“ Oh Birdy this, Birdy that, ” sighed Mum.",
               "translationAr": "تنهدت الأم: «بيردي هذا وبيردي ذاك.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2066.mp3"
             },
             {
               "id": 67,
               "text": "“ Come on, dreamy head. Time to get up for school. ”",
               "translationAr": "«هيا يا حالم، حان وقت الذهاب إلى المدرسة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2067.mp3"
             },
             {
               "id": 68,
               "text": "Jake spent the next few days waiting for Birdy to visit again, but there was no sign of him.",
               "translationAr": "قضى جيك الأيام التالية ينتظر زيارة بيردي من جديد، لكن لم تظهر له أي علامة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2068.mp3"
             },
             {
               "id": 69,
               "text": "As the days went by, Jake began to worry. What if Birdy wasn’t coming back?",
               "translationAr": "ومع مرور الأيام بدأ جيك يقلق: ماذا لو أن بيردي لن يعود؟",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2069.mp3"
             },
             {
               "id": 70,
               "text": "One evening, as the sky darkened, Jake heard a faint tap at his window.",
               "translationAr": "ذات مساء ومع اسوداد السماء، سمع جيك طَرقًا خفيفًا على نافذته.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2070.mp3"
             },
             {
               "id": 71,
               "text": "He rushed over to find Birdy perched on the windowsill, holding a small, mysterious object in his beak.",
               "translationAr": "أسرع ليجد بيردي واقفًا على حافة النافذة ممسكًا بمنقاره شيئًا صغيرًا غامضًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2071.mp3"
             },
             {
               "id": 72,
               "text": "“ Birdy! Where have you been? I was so worried! ”",
               "translationAr": "«بيردي! أين كنت؟ لقد قلقت كثيرًا!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2072.mp3"
             },
             {
               "id": 73,
               "text": "Birdy placed the object on the desk — a small, ancient - looking bean with a faint magical glow.",
               "translationAr": "وضع بيردي الشيء على المكتب — حبة صغيرة تبدو قديمة تشع وهجًا سحريًا خافتًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2073.mp3"
             },
             {
               "id": 74,
               "text": "“ Sorry for the delay, Jake. I had to make a special trip. ”",
               "translationAr": "«آسف على التأخر يا جيك. اضطررت لرحلة خاصة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2074.mp3"
             },
             {
               "id": 75,
               "text": "“ What is that? ” Jake asked.",
               "translationAr": "سأل جيك: «ما هذا؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2075.mp3"
             },
             {
               "id": 76,
               "text": "“ This is a magic cocoa bean. I brought it back from ancient Mexico.",
               "translationAr": "«إنها حبة كاكاو سحرية. جئت بها من المكسيك القديمة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2076.mp3"
             },
             {
               "id": 77,
               "text": "I had to travel through time and space to get it, but it’s worth it. ”",
               "translationAr": "اضطررت للسفر عبر الزمان والمكان لأحصل عليها، لكنه كان يستحق.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2077.mp3"
             },
             {
               "id": 78,
               "text": "“ What does it do? ”",
               "translationAr": "«وماذا تفعل؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2078.mp3"
             },
             {
               "id": 79,
               "text": "“ If you plant it, it will grow into a tree like the Mayans had.",
               "translationAr": "«إذا زرعتها، ستنمو شجرة مثل التي كانت عند المايا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2079.mp3"
             },
             {
               "id": 80,
               "text": "It will bear fruit filled with the crumbliest, flakiest chocolate — like chocolate never tasted before. ”",
               "translationAr": "وستثمر شوكولاتة متفتتة رقائقيّة لم يسبق أن تذوقت مثلها.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2080.mp3"
             },
             {
               "id": 81,
               "text": "“ Can we plant it now? Will it really grow? ”",
               "translationAr": "«هل نزرعها الآن؟ وهل ستنمو حقًا؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2081.mp3"
             },
             {
               "id": 82,
               "text": "“ Only one way to find out, ” said Birdy. “ Follow my instructions carefully. ”",
               "translationAr": "قال بيردي: «طريقة واحدة لنعرف. اتبع تعليماتي جيدًا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2082.mp3"
             },
             {
               "id": 83,
               "text": "Jake grabbed a small spade and, guided by Birdy, planted the bean in a sunny spot in the garden.",
               "translationAr": "أمسك جيك مجرفة صغيرة، وبإرشاد بيردي زرع الحبة في مكان مشمس في الحديقة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2083.mp3"
             },
             {
               "id": 84,
               "text": "He watered it gently and waited.",
               "translationAr": "سقاها برفق وانتظر.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2084.mp3"
             },
             {
               "id": 85,
               "text": "By the next morning, a tiny green sprout had appeared.",
               "translationAr": "وبحلول صباح اليوم التالي ظهرت شتلة خضراء صغيرة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2085.mp3"
             },
             {
               "id": 86,
               "text": "Over the following days, it grew into a sapling and then a full tree, much faster than normal.",
               "translationAr": "وخلال الأيام التالية صارت غرسة ثم شجرة كاملة أسرع بكثير من المعتاد.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2086.mp3"
             },
             {
               "id": 87,
               "text": "Jake’s parents noticed the tree but assumed it was just another of his projects.",
               "translationAr": "لاحظ والدا جيك الشجرة لكنهما افترضا أنها مشروع آخر من مشاريعه.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2087.mp3"
             },
             {
               "id": 88,
               "text": "But this tree was different — its leaves were dark and glossy, and the air around it seemed to hum with energy.",
               "translationAr": "لكن هذه الشجرة كانت مختلفة — أوراقها داكنة لامعة، والهواء حولها بدا كأنه يهمهم بطاقة خفية.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2088.mp3"
             },
             {
               "id": 89,
               "text": "Just before Jake’s exams, the tree began to bear fruit — shiny pearls of chocolate with a divine smell.",
               "translationAr": "وقبيل امتحانات جيك بدأت الشجرة تثمر — لآلئ لامعة من الشوكولاتة برائحة ساحرة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2089.mp3"
             },
             {
               "id": 90,
               "text": "Dad tried the chocolate first. “ Oh my! That’s absolutely delicious! ”",
               "translationAr": "تذوق الأب الشوكولاتة أولًا: «يا إلهي! إنها لذيذة للغاية!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2090.mp3"
             },
             {
               "id": 91,
               "text": "Mum hesitated but then smiled with delight after a bite.",
               "translationAr": "ترددت الأم ثم ابتسمت سرورًا بعد أن تذوقت قطعة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2091.mp3"
             },
             {
               "id": 92,
               "text": "Even Elle, Jake’s picky little sister, couldn’t get enough of it.",
               "translationAr": "حتى إيل، أخت جيك الصغرى التي تنتقي طعامها، لم تشبع منها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2092.mp3"
             },
             {
               "id": 93,
               "text": "A week later Birdy returned. “ Well, Jake, how did it go? ”",
               "translationAr": "عاد بيردي بعد أسبوع: «حسنًا يا جيك، كيف جرى الأمر؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2093.mp3"
             },
             {
               "id": 94,
               "text": "“ It worked! The chocolate is amazing, and something even better happened, ” Jake said.",
               "translationAr": "قال جيك: «نجح الأمر! الشوكولاتة رائعة، بل حدث ما هو أفضل.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2094.mp3"
             },
             {
               "id": 95,
               "text": "“ Dad got a promotion, Mum got new customers, Elle won the 200 metres, and I passed all my exams! ”",
               "translationAr": "«حصل أبي على ترقية، وأمي على زبائن جدد، وفازت إيل بسباق 200 متر، وأنا نجحت في كل امتحاناتي!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2095.mp3"
             },
             {
               "id": 96,
               "text": "“ It’s all thanks to the magic chocolate! ”",
               "translationAr": "«وكل ذلك بفضل الشوكولاتة السحرية!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2096.mp3"
             },
             {
               "id": 97,
               "text": "Birdy chuckled. “ A little magic and a little chocolate can do wonders.",
               "translationAr": "ضحك بيردي: «قليل من السحر وقليل من الشوكولاتة يصنع المعجزات.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2097.mp3"
             },
             {
               "id": 98,
               "text": "But remember, the true power was in the belief, hope, and effort everyone put in. ”",
               "translationAr": "لكن تذكّر أن القوة الحقيقية كانت في الإيمان والأمل والجهد الذي بذله الجميع.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2098.mp3"
             },
             {
               "id": 99,
               "text": "“ I’ll never forget that, Birdy. ”",
               "translationAr": "«لن أنسى ذلك أبدًا يا بيردي.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%2099.mp3"
             },
             {
               "id": 100,
               "text": "Mum and Dad were happy because Jake and Elle stopped nagging them for sweets.",
               "translationAr": "سعد الأبوان لأن جيك وإيل توقفا عن إلحاحهما اليومي طلبًا للحلوى.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%20100.mp3"
             },
             {
               "id": 101,
               "text": "At the dentist, instead of a lecture, they received praise for taking good care of their teeth.",
               "translationAr": "وعند طبيب الأسنان تلقّوا ثناءً بدل المحاضرة المعتادة على حسن عنايتهم بأسنانهم.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%20101.mp3"
             },
             {
               "id": 102,
               "text": "When Jake said it was all thanks to Birdy, even Mum smiled and said,",
               "translationAr": "وعندما قال جيك إن الفضل كله لبيردي، ابتسمت الأم حتى وقالت:",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%20102.mp3"
             },
             {
               "id": 103,
               "text": "“ One day I’ll have to meet that little bird and thank him. ”",
               "translationAr": "«يومًا ما عليّ أن ألتقي ذلك الطائر الصغير وأشكره.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%20103.mp3"
             },
             {
               "id": 104,
               "text": "And that was ‘Birdy and the Magic Chocolate Tree’, read by Jana for Storynory.com.",
               "translationAr": "وهكذا كانت «بيردي وشجرة الشوكولاتة السحرية»، قرأتها يانا لموقع ستورينوري.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%20104.mp3"
             },
             {
               "id": 105,
               "text": "Come back soon for more exciting stories!",
               "translationAr": "عودوا قريبًا لمزيد من القصص المشوقة!",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%20105.mp3"
             },
             {
               "id": 106,
               "text": "From me, Jana, bye for now.",
               "translationAr": "مني أنا يانا، إلى اللقاء الآن.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Birdy%20and%20the%20chocolate%20dream/Birdy%20and%20the%20chocolate%20dream%20S%20106.mp3"
             }
           ]
         },
@@ -15829,205 +15829,199 @@ export const readingData = [
               "id": 1,
               "text": "There were once a man and a woman who had long wished for a child – but without any luck.",
               "translationAr": "كان هناك رجلٌ وامرأةٌ طالما تمنّيا طفلًا، ولكن دون توفيق.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2001.mp3"
             },
             {
               "id": 2,
               "text": "At last, the woman hoped that God was about to grant her desire.",
               "translationAr": "وأخيرًا رجَت المرأةُ أن يمنحها الله رغبتها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2002.mp3"
             },
             {
               "id": 3,
               "text": "They had a little window at the back of their house from which a splendid garden could be seen, full of beautiful flowers and herbs.",
               "translationAr": "كان في مؤخرة بيتهما نافذةٌ صغيرة تُرى منها حديقةٌ بديعة، مملوءة بأجمل الزهور والأعشاب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2003.mp3"
             },
             {
               "id": 4,
-              "text": "However, it was surrounded by a high wall, and no one dared enter because it belonged to an enchantress dreaded by all.",
+              "text": "it was However surrounded by a high wall, and no one dared enter because it belonged to an enchantress dreaded by all.",
               "translationAr": "غير أنّها كانت محاطةً بسورٍ عالٍ، ولا يجرؤ أحدٌ على دخولها لأنّها ملكٌ لساحرةٍ ترهبها الدنيا كلّها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2004.mp3"
             },
             {
               "id": 5,
               "text": "One day the woman stood by the window and saw a bed planted with a beautiful plant called rapunzel; she longed for it and grew pale and miserable.",
               "translationAr": "وفي يومٍ وقفت المرأةُ عند النافذة فرأت حوضًا غُرِس فيه نباتٌ جميل يُدعى rapunzel؛ فاشتاقت إليه وبدت شاحبةً بائسة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2005.mp3"
             },
             {
               "id": 6,
               "text": "Her alarmed husband asked, “ What troubles you, dear wife? ”",
               "translationAr": "فسألها زوجُها فزعًا: \"ما الذي يقلقكِ يا زوجتي العزيزة؟\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2006.mp3"
             },
             {
               "id": 7,
               "text": "She replied, “ If I cannot eat some of the rapunzel in the garden behind our house, I shall die. ”",
               "translationAr": "فقالت: \"إن لم آكل شيئًا من rapunzel الذي في الحديقة خلف بيتنا فسأموت.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2007.mp3"
             },
             {
               "id": 8,
-              "text": "The loving husband thought it better to bring her some, whatever the cost.",
-              "translationAr": "فقال الرجلُ المحب في نفسه إنّ الأفضل أن يأتيها ببعضٍ منه، وليكن ما يكون من ثمن.",
-              "audioUrl": ""
+              "text": "The man, who loved her, thought, “ Sooner than let your wife die, better bring her some of the rapunzel – let it cost you what it will. ”",
+              "translationAr": "فكر الرجل الذي أحبها: بدلاً من أن تترك زوجتك تموت، من الأفضل أن تحضر لها بعضًا من نبات الرابونزل - دعها تكلفك ما ستكلفك .",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2008.mp3"
             },
             {
               "id": 9,
-              "text": "At dusk he climbed over the wall into the enchantress’s garden, grabbed a handful of rapunzel, and took it to his wife.",
+              "text": "he climbed over the wall into the enchantress’s garden, grabbed a handful of rapunzel, and took it to his wife.",
               "translationAr": "وعند الغسق تسلّق السورَ إلى حديقة الساحرة، وخطف قبضةً من rapunzel وأتى بها إلى زوجته.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2009.mp3"
             },
             {
               "id": 10,
-              "text": "She made a salad at once and ate greedily; it tasted so good that the next day she longed for it three times as much.",
-              "translationAr": "فأعدّت منه سلطةً والتهمتها بنهم؛ وراقت لها جدًّا حتى إنها في اليوم التالي اشتاقت إليه ثلاثة أضعاف.",
-              "audioUrl": ""
+              "text": "She at once made herself a salad of it, and ate it greedily. It tasted so good to her – so very good that the next day she longed for it three times as much as before",
+              "translationAr": "صنعت لنفسها سلطةً منها على الفور، وأكلتها بشراهة. كان طعمها لذيذًا جدًا بالنسبة لها - لذيذًا جدًا لدرجة أنها في اليوم التالي اشتقت إليها ثلاثة أضعاف ما كانت عليه من قبل.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2010.mp3"
             },
             {
               "id": 11,
-              "text": "So the husband had to descend again into the garden to find some rest from her longing.",
-              "translationAr": "فكان على الزوج أن ينزل مرةً أخرى إلى الحديقة لينال قسطًا من الراحة من شوقها.",
-              "audioUrl": ""
+              "text": "If he was to have any rest, her husband must once more descend into the garden.",
+              "translationAr": "لكي يحصل زوجها على أي راحة، يجب عليه أن ينزل مرة أخرى إلى الحديقة.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2011.mp3"
             },
             {
               "id": 12,
-              "text": "In the evening gloom he let himself down, but he was terrified to find the enchantress standing before him.",
-              "translationAr": "وفي عتمة المساء دلّى نفسه، ففزع إذ رأى الساحرة واقفةً أمامه.",
-              "audioUrl": ""
+              "text": "In the gloom of evening therefore, he let himself down again; but when he had clambered down the wall he was struck with terror, for he saw the enchantress standing before him.",
+              "translationAr": "وفي ظلام المساء، نزل مرة أخرى؛ ولكن عندما نزل من الجدار أصيب بالرعب، لأنه رأى الساحرة واقفة أمامه.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2012.mp3"
             },
             {
               "id": 13,
-              "text": "She cried angrily, “ How dare you climb into my garden and steal my rapunzel like a thief? You shall suffer for it! ”",
-              "translationAr": "وصاحت غاضبة: \"كيف تجرؤ أن تصعد إلى حديقتي وتسرق rapunzel خاصّتي كأنك لصّ؟ ستدفع الثمن!\"",
-              "audioUrl": ""
+              "text": "“ How dare you climb into my garden and steal my rapunzel like a thief? You shall suffer for it! ”",
+              "translationAr": "كيف تجرؤ على تسلق حديقتي وسرقة رابونزل كالسارق؟ ستعاني عقابًا على ذلك!",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2013.mp3"
             },
             {
               "id": 14,
-              "text": "He pleaded for mercy, explaining his wife’s desperate longing and that she would have died without it.",
-              "translationAr": "فتوسّل إلى رحمتها وشرح شوق زوجته الشديد وأنها كانت لتهلك من دونه.",
-              "audioUrl": ""
+              "text": "“ Ah, ” answered he, “ let mercy take the place of justice, I only made up my mind to do it out of necessity. My wife saw your rapunzel from the window, and felt such a longing for it that she would have died if she had not gotten some to eat. ”",
+              "translationAr": "أجاب: آه، لتحل الرحمة محل العدل، لقد قررتُ ذلك لضرورة. رأت زوجتي رابونزلك من النافذة، وشعرت بشوقٍ شديدٍ إليها لدرجة أنها كادت تموت لو لم تأكل شيئًا منها.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2014.mp3"
             },
             {
               "id": 15,
-              "text": "The enchantress softened and said he might take as much as he wished on one condition: he must give her the child his wife would bear.",
-              "translationAr": "فرقّت الساحرة وقالت إنه قد يأخذ ما شاء بشرطٍ واحد: أن يسلّمها الطفل الذي ستضعه زوجته.",
-              "audioUrl": ""
+              "text": "Then the enchantress allowed her anger to be softened, and said to him, “ If you speak the truth, I will allow you to take away with you as much rapunzel as you will, only I make one condition, you must give me the child which your wife will bring into the world ;",
+              "translationAr": "ثم سمحت الساحرة لغضبها أن يخفف، وقالت له، إذا كنت تقول الحقيقة، فسوف أسمح لك أن تأخذ معك ما تريد من رابونزل، فقط لدي شرط واحد، يجب أن تعطيني الطفل الذي ستجلبه زوجتك إلى العالم؛",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2015.mp3"
             },
             {
               "id": 16,
-              "text": "In terror he agreed; when the child was born, the enchantress appeared, named the child Rapunzel, and took her away.",
-              "translationAr": "فوافق فزعًا؛ ولمّا وُلِدت الطفلة ظهرت الساحرة، وسمّتها Rapunzel وأخذتها معها.",
-              "audioUrl": ""
+              "text": "The man in his terror agreed to everything, and when the child was born, the enchantress appeared at once, gave the child the name of Rapunzel, and took it away with her",
+              "translationAr": "وافق الرجل في رعبه على كل شيء، وعندما وُلِد الطفل، ظهرت الساحرة على الفور، وأطلقت على الطفل اسم رابونزل، وأخذته معها.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2016.mp3"
             },
             {
               "id": 17,
               "text": "Rapunzel grew into the most beautiful child under the sun.",
               "translationAr": "نشأت Rapunzel فكانت أجمل طفلةٍ تحت الشمس.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2017.mp3"
             },
             {
               "id": 18,
-              "text": "At twelve, the enchantress shut her in a tower in a forest with no stairs or door, only a little window at the top.",
-              "translationAr": "ولما بلغت الثانية عشرة حبستها الساحرة في برجٍ بالغابة لا سُلَّم له ولا باب، وفي أعلاه نافذةٌ صغيرة.",
-              "audioUrl": ""
+              "text": "When she was twelve years old, the enchantress shut her in a tower, which lay in a forest, and had neither stairs nor door, but quite at the top was a little window.",
+              "translationAr": "عندما كانت في الثانية عشرة من عمرها، حبستها الساحرة في برج يقع في الغابة، ولم يكن به درج ولا باب، ولكن في الأعلى كانت هناك نافذة صغيرة.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2018.mp3"
             },
             {
               "id": 19,
-              "text": "When the enchantress wanted to enter she stood beneath and cried, “ Rapunzel, Rapunzel; let down your hair to me. ”",
+              "text": "When the enchantress wanted to enter she stood beneath and cried, “ Rapunzel, Rapunzel; let down your hair for me. ”",
               "translationAr": "وكانت إذا أرادت الدخول وقفت أسفلَه ونادت: \"rapunzel، rapunzel؛ أرسلي شعرك إليّ.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2019.mp3"
             },
             {
               "id": 20,
-              "text": "Rapunzel’s hair was long and fine as spun gold; she unfastened her braided tresses, wound them around a hook, and the hair fell twenty yards for the enchantress to climb.",
-              "translationAr": "وكان شعر Rapunzel طويلًا ناعمًا كذهبٍ مغزول؛ تفكّ ضفائرها وتلفّها على خطّافٍ فتسقط عشرين ياردة لتتسلّق الساحرة.",
-              "audioUrl": ""
+              "text": "Rapunzel had magnificent long hair, fine as spun gold, and when she heard the voice of the enchantress she unfastened her braided tresses, wound them around one of the hooks of the window above. Then the hair fell twenty yards down, and the enchantress climbed up by it.",
+              "translationAr": "كان لرابونزل شعرٌ طويلٌ رائع، ناعمٌ كالذهب، وعندما سمعت صوت الساحرة، فكّت ضفائرها، ولفّتها حول أحد خطافات النافذة العلوية. فسقط الشعر عشرين ياردة، وصعدت الساحرة به.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2020.mp3"
             },
             {
               "id": 21,
-              "text": "After a year or two, the king’s son passed the tower and heard Rapunzel’s charming song; it touched his heart so deeply that he returned daily to listen.",
-              "translationAr": "وبعد عامٍ أو عامين مرّ ابنُ الملك بالبرج فسمع أنشودة Rapunzel الساحرة، فمسّت قلبه حتى صار يعود كل يومٍ ليستمع.",
-              "audioUrl": ""
+              "text": "After a year or two, it happened that the king’s son rode through the forest and passed by the tower. Then he heard a song, which was so charming that he stood still and listened. This was Rapunzel, who in her solitude passed her time in letting her sweet voice sing out. The king’s son wanted to climb up to her, and looked for the door of the tower, but none was to be found. He rode home, but the singing had so deeply touched his heart that every day he went out into the forest and listened to it.",
+              "translationAr": "بعد عام أو عامين، صادف أن ركب ابن الملك عبر الغابة ومر بالبرج. ثم سمع أغنيةً آسرةً جدًا، فتوقف واستمع إليها. كانت هذه رابونزل، التي كانت تقضي وقتها في عزلتها تُغني بصوتها العذب. أراد ابن الملك الصعود إليها، فبحث عن باب البرج، لكنه لم يُعثر عليه. عاد إلى منزله، لكن الغناء كان قد لامس قلبه بعمق، لدرجة أنه كان يخرج كل يوم إلى الغابة ويستمع إليه.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2021.mp3"
             },
             {
               "id": 22,
-              "text": "He saw the enchantress call up and decided to try the same words at dusk : “ Rapunzel, Rapunzel; let down your hair to me. ”",
-              "translationAr": "ورآها تنادي لتصعد، فعزم أن يجرب الكلمات ذاتها عند الغسق: \"rapunzel، rapunzel؛ أرسلي شعرك إليّ.\"",
-              "audioUrl": ""
+              "text": "he saw that an enchantress came there, and he heard how she cried, “ Rapunzel, Rapunzel ; let down your hair to me.",
+              "translationAr": "فرأى ساحرة جاءت إلى هناك، وسمعها تنادي: رابونزل، رابونزل؛ أنزلي شعرك إليّ.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2022.mp3"
             },
             {
               "id": 23,
-              "text": "The hair fell and the prince climbed up; Rapunzel was frightened at first, but he spoke kindly and his heart had found no rest until he saw her.",
-              "translationAr": "فهوى الشعر وصعد الأمير؛ وفزعت Rapunzel أولًا، غير أنه خاطبها برفق وأخبرها أنه لم يهدأ قلبه حتى رآها.",
-              "audioUrl": ""
+              "text": "the hair fell down and the prince climbed up; at first Rapunzel was terribly frightened when a man, such as her eyes had never yet beheld, came to her ; but the king’s son began to talk to her quite like a friend, and told her that his heart had been so stirred that it had let him have no rest – he had been forced to see her.",
+              "translationAr": "سقط الشعر وصعد الأمير؛ في البداية كانت رابونزل خائفة للغاية عندما جاء إليها رجل لم تره عيناها من قبل؛ لكن ابن الملك بدأ يتحدث معها تمامًا مثل صديق، وأخبرها أن قلبه كان مضطربًا للغاية لدرجة أنه لم يترك له أي راحة - لقد أُجبر على رؤيتها.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2023.mp3"
             },
             {
               "id": 24,
-              "text": "When he asked for her hand and she saw he was young and handsome, she agreed.",
-              "translationAr": "ولما طلب يدها ورأتْه شابًا وسيماً وافقت.",
-              "audioUrl": ""
+              "text": "when he asked her if she would take him for her husband, and she saw that he was young and handsome, she thought,",
+              "translationAr": "عندما سألها إذا كانت ستقبل به زوجًا لها، ورأت أنه شاب ووسيم، فكرت،",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2024.mp3"
             },
             {
               "id": 25,
-              "text": "She said he should bring a ball of silk each time so she could weave a ladder; when it was ready, she would climb down and he would take her on his horse.",
-              "translationAr": "وقالت: عليه أن يأتي بكُرة حرير كل مرة لتنسج سلّمًا؛ فإذا تمّ نزلتَ وتحملها على فرسك.",
-              "audioUrl": ""
+              "text": "She said, “ I will willingly go away with you, but I do not know how to get down. Bring with you a ball of silk every time that you come, and I will weave a ladder with it. When that is ready I will climb down, and you will take me on your horse. ”",
+              "translationAr": "قالت: سأذهب معك طوعًا، لكنني لا أعرف كيف أنزل. أحضر معك كرة من الحرير كلما أتيت، وسأنسج منها سلمًا. عندما تكون جاهزة، سأنزل، وستأخذني على حصانك.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2025.mp3"
             },
             {
               "id": 26,
-              "text": "They agreed he would visit in the evenings, for the old woman came by day.",
-              "translationAr": "واتفقا أن يزورها مساءً، لأن العجوز كانت تأتي نهارًا.",
-              "audioUrl": ""
+              "text": "They agreed that until that time he should come to her every evening, for the old woman came by day.",
+              "translationAr": "واتفقا على أنه حتى ذلك الوقت يجب أن يأتي إليها كل مساء، لأن المرأة العجوز كانت تأتي في النهار.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2026.mp3"
             },
             {
               "id": 27,
-              "text": "The enchantress noticed nothing until Rapunzel remarked that the young king’s son was lighter to pull up than Dame Gothel.",
-              "translationAr": "ولم تَفطن الساحرة حتى قالت Rapunzel إن ابن الملك أخفّ رفعًا من Dame Gothel.",
-              "audioUrl": ""
+              "text": "The enchantress remarked nothing of this, until once Rapunzel said to her, “ Tell me, Dame Gothel, how it happens that you are so much heavier for me to draw up than the young king’s son – he is with me in a moment. ”",
+              "translationAr": "ولم تلاحظ الساحرة أي شيء من هذا، حتى قالت لها رابونزل ذات مرة: أخبريني يا سيدة جوثيل، كيف حدث أن وزنك أثقل بكثير من ابن الملك الشاب - سيكون معي في لحظة.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2027.mp3"
             },
             {
               "id": 28,
-              "text": "In anger the enchantress cut off Rapunzel’s beautiful hair and cast her into a desert to live in grief and misery.",
-              "translationAr": "ففي غضبها قصّت الساحرة شعر Rapunzel الجميل وطرحتها في صحراء لتعيش في حزنٍ وبؤس.",
-              "audioUrl": ""
+              "text": "In her anger she clutched Rapunzel’s beautiful hair, wrapped it twice around her left hand, seized a pair of scissors with the right, and snip snap; they were cut off, and the lovely braids lay on the ground. She was so pitiless that she took poor Rapunzel into a desert where she had to live in great grief and misery.",
+              "translationAr": "في غضبها، تشبثت بشعر رابونزل الجميل، ولفّته مرتين حول يدها اليسرى، وأمسكت بمقصّ باليمنى، وقصّته بعنف؛ فانقطع، وسقطت الضفائر الجميلة على الأرض. كانت قاسية لدرجة أنها أخذت رابونزل المسكينة إلى صحراء حيث اضطرت للعيش في حزن وبؤس شديدين.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2028.mp3"
             },
             {
               "id": 29,
-              "text": "She fastened the cut braids to the hook; when the prince called and climbed, he found the enchantress instead, who mocked him.",
-              "translationAr": "ثم ثبتت الضفائر المقطوعة في الخطاف؛ فلما نادى الأمير وصعد وجد الساحرة تهزأ به.",
-              "audioUrl": ""
+              "text": "the enchantress fastened the braids of hair, which she had cut off, to the hook of the window, and when the king’s son came and cried,",
+              "translationAr": "فربطت الساحرة ضفائر الشعر التي قطعتها بخطاف النافذة، وعندما جاء ابن الملك وبكى،",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2029.mp3"
             },
             {
               "id": 30,
-              "text": "In despair he leaped from the tower; he lived, but thorns pierced his eyes and he wandered blind for years.",
-              "translationAr": "وفي يأسه قفز من البرج؛ نجا بحياته، غير أن الأشواك خزَزت عينيه فهام أعمى أعوامًا.",
-              "audioUrl": ""
+              "text": "and at last came to the desert where Rapunzel, with the twins to which she had given birth; a boy and a girl, lived in wretchedness.",
+              "translationAr": "وأخيرًا وصلوا إلى الصحراء حيث عاشت رابونزل مع التوأمين اللذين أنجبتهما؛ صبي وفتاة، في بؤس.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2030.mp3"
             },
             {
               "id": 31,
-              "text": "At last he reached the desert where Rapunzel lived with her twins, a boy and a girl, in wretchedness.",
-              "translationAr": "وأخيرًا بلغ الصحراء حيث كانت Rapunzel تعيش في شقاءٍ مع توأميها: صبيّ وبنت.",
-              "audioUrl": ""
-            },
-            {
-              "id": 32,
-              "text": "Hearing a familiar voice, he went toward it; Rapunzel recognized him, fell on his neck, and wept.",
-              "translationAr": "وإذ سمع صوتًا مألوفًا قصد نحوه، فعرفته Rapunzel وألقت بنفسها على عنقه تبكي.",
-              "audioUrl": ""
+              "text": "He heard a voice, and it seemed so familiar to him that he went towards it,",
+              "translationAr": "سمع صوتًا، وبدا له مألوفًا جدًا لدرجة أنه ذهب نحوه،",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2031.mp3"
             },
             {
               "id": 33,
               "text": "Two of her tears wetted his eyes, and they grew clear again; he could see as before.",
               "translationAr": "فابتلّت عيناه بدمعتين منها فانجلتا وأبصر كما كان.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2032.mp3"
             },
             {
               "id": 34,
               "text": "He led her to his kingdom, where they were joyfully received, and they lived long, happy and contented.",
               "translationAr": "ثم قادها إلى مملكته حيث استُقبلا بالفرح، وعاشا طويلًا في سعادةٍ ورضًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/rapunzel/rapunzel%20S%2033.mp3"
             }
           ]
         },
@@ -18832,7 +18826,7 @@ export const readingData = [
     "lessons": [
       {
         "id": 1,
-        "title": "Cinderella – Shorter Version : a",
+        "title": "Cinderella – Shorter Version",
         "description": "Single - lesson version of Cinderella with Arabic translation and full glossary.",
         "storyData": {
           "content": [
@@ -18840,229 +18834,175 @@ export const readingData = [
               "id": 1,
               "text": "Once, there lived a sweet tempered girl whose name was Cinderella.",
               "translationAr": "كان يا ما كان، عاشت فتاة طيبةُ الطبع اسمُها سندريلا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2001.mp3"
             },
             {
               "id": 2,
               "text": "Unfortunately, her mother died young, and her father married again.",
               "translationAr": "للأسف، ماتت أمُّها وهي صغيرة، وتزوّج أبوها امرأةً أخرى.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2002.mp3"
             },
             {
               "id": 3,
               "text": "His second wife had a sharp temper and her two daughters were just like her.",
               "translationAr": "وكانت الزوجةُ الثانية حادّةَ الطبع، وابنتاها تُشبِهانها؛ بكلمة واحدة: بغيضتان.",
-              "audioUrl": ""
-            },
-            {
-              "id": 4,
-              "text": "In a word – horrid.",
-              "translationAr": "كانت الأختان البغيضتان تُحِبّان التسلّط على سندريلا. قالت الأولى:",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2003.mp3"
             },
             {
               "id": 5,
               "text": "The horrid sisters loved to boss Cinderella.",
               "translationAr": "«سيندرز! شُغلك تنظيف الموقد؛ عشان كده اسمِك سيندرز! فهمتي؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2004.mp3"
             },
             {
               "id": 6,
-              "text": "The first said:",
-              "translationAr": "وقبل أن تنهي كنس الشبّاك، قالت الأختُ الثانية:",
-              "audioUrl": ""
-            },
-            {
-              "id": 7,
-              "text": "“ Cinders! ",
-              "translationAr": "«سيندرز! ما تتبطئيش. ولّعي النار، واعملي لي حمّام سخن ومعاه شموع ريحتها حلوة!»",
-              "audioUrl": ""
-            },
-            {
-              "id": 8,
-              "text": "It’s your job to clean the fireplace.",
-              "translationAr": "وبينما كانت تُسخّن الحوض، قالت الأمُّ البغيضة: «سيندرز! ليه ما رحتِش السوق لحد دلوقتي؟»",
-              "audioUrl": ""
-            },
-            {
-              "id": 9,
-              "text": "That’s why you’re called Cinders!",
-              "translationAr": "طَوال اليوم، كانت سندريلا تكنس، وتدعك، وتأتي بما يُطلَب، وتحمل الأغراض.",
-              "audioUrl": ""
-            },
-            {
-              "id": 10,
-              "text": "Get it? ”",
-              "translationAr": "في الشتاء، دُعِيت الشابّات إلى الحفل الملكي.",
-              "audioUrl": ""
+              "text": "The first said: “ Cinders! It’s your job to clean the fireplace. That’s why you’re called Cinders! Get it? ”",
+              "translationAr": "قال الأولي: يا سيندرس! مهمتك تنظيف المدفأة. لهذا السبب تُدعى رمادًا! فهمت؟",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2005.mp3"
             },
             {
               "id": 11,
               "text": "And before she had finished sweeping the grate, the second sister said,",
-              "translationAr": "شهرٌ كاملٌ وهنّ يُجَرِّبن فساتين التفتة، وطبقات التنانير المُزركشة، وأحذيةً بشرائط.",
-              "audioUrl": ""
+              "translationAr": "وقبل أن تنتهي من كنس الموقد، قالت الأخت الثانية.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2006.mp3"
             },
             {
               "id": 12,
-              "text": "“ Cinders!",
-              "translationAr": "وطبعًا كانت سندريلا هي التي تُساعِدهنّ في ارتداء ملابسهنَّ الفاخرة وخلعها، وتَكوي وتَطوي كلَّ شيء.",
-              "audioUrl": ""
-            },
-            {
-              "id": 13,
-              "text": "Don’t dawdle.",
-              "translationAr": "أمّا ثيابها هي فكانت شبه خِرَق.",
-              "audioUrl": ""
-            },
-            {
-              "id": 14,
-              "text": "Light up the fire and make me a hot bath with sweet smelling candles! ”",
-              "translationAr": "جاءت الليلةُ الكبيرة، وبقيت سندريلا في البيت، جالسةً وحدَها عند الموقد.",
-              "audioUrl": ""
+              "text": "“ Cinders! Don’t dawdle. Light up the fire and make me a hot bath with sweet smelling candles! ”",
+              "translationAr": "يا سيندرس! لا تتباطأ. أشعل النار وحضّر لي حمامًا ساخنًا مع شموع عطرة!",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2007.mp3"
             },
             {
               "id": 15,
-              "text": "And as she was heating the bath, the horrid mother said, “ Cinders!",
-              "translationAr": "اقترب منها فأرٌ وقال: «لا تقلقي يا عزيزتي؛ فيه جنّية طيبة برا، وبتقول إنك هتروحي الحفلة.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 16,
-              "text": "Why haven’t you been to the market yet? ”",
-              "translationAr": "جَرَت سندريلا إلى الفِناء حيث قالت الجنّية الطيبة للفتاة:",
-              "audioUrl": ""
+              "text": "And as she was heating the bath, the horrid mother said, “ Cinders! Why haven’t you been to the market yet? ”",
+              "translationAr": "وبينما كانت تُسخّن الحمام، قالت الأمّ الفظيعة: يا سيندرس! لماذا لم تذهب إلى السوق بعد؟              ",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2008.mp3"
             },
             {
               "id": 17,
               "text": "All day long, Cinderella swept, and scrubbed, and fetched and carried.",
               "translationAr": "«إيّاكِ تتأخّري عن منتصف الليل؛ لازم تمشي قبل ما الجرس يضرب اتناشر، وإلا هتتعرضي لموقف مُحرِج جدًّا!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2009.mp3"
             },
             {
               "id": 18,
               "text": "In winter, the young ladies were invited to the Royal Ball.",
               "translationAr": "أخذتها عربةٌ ذهبية إلى القصر، وفي الطريق تبدّلت ثيابها إلى فستانٍ رائع.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2010.mp3"
             },
             {
               "id": 19,
               "text": "For a whole month they tried on taffeta ball gowns, frilly petticoats, and strappy shoes.",
               "translationAr": "ولمّا دخلت قاعة الرقص، التفتت إليها كلُّ العيون، حتى أختاها لم تعرفاها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2011.mp3"
             },
             {
               "id": 20,
               "text": "It was Cinderella, of course, who helped them in and out of their rich costumes, and who pressed and folded everything.",
               "translationAr": "طلب الأمير من الضيفة الجديدة الرقص، ليس مرةً واحدة، بل مرارًا وتكرارًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2012.mp3"
             },
             {
               "id": 21,
               "text": "Her own clothes were practically rags.",
               "translationAr": "وقبل أن تنتهي السهرة، كان قد وقع في حبّ الجميلة الغامضة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2013.mp3"
             },
             {
               "id": 22,
               "text": "The big night came and poor Cinderella was left at home, sitting alone by the fireplace.",
               "translationAr": "وكان على وشك أن يطلب يدَها للزواج حين بدأ الجرس يضرب الثانية عشرة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2014.mp3"
             },
             {
               "id": 23,
               "text": "A mouse came up to her and said, “ Dear, dear, don’t fret.",
               "translationAr": "«آسفة! لازم أمشي!» قالتها سندريلا وركضت نحو الباب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2015.mp3"
             },
             {
               "id": 24,
               "text": "A good fairy is outside, and she says that you shall go to the ball. ”",
               "translationAr": "وبينما تهبط الدرج، وقع أحدُ حذائي الرقص من قدمها، فاضطرّت أن تقفز حتى وصلت إلى العربة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2016.mp3"
             },
             {
               "id": 25,
               "text": "Cinderella ran out to the courtyard where the good fairy told the young girl:",
               "translationAr": "في الصباح، وجد الأميرُ الحذاءَ المفقود وأمر خدَمه أن يطوفوا به البلاد حتى يجدوا القدمَ التي تُطابقه تمامًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2017.mp3"
             },
             {
               "id": 26,
               "text": "“ Be sure to leave the ball before the clock strikes midnight, or you will be more embarrassed than you ever have been in your life! ”",
               "translationAr": "ولمّا وصل خدَمُ الأمير إلى البيت الذي تسكن فيه سندريلا، سارعت الأختان البغيضتان لتجربة الحذاء.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2018.mp3"
             },
             {
               "id": 27,
               "text": "A golden coach took her to the palace, and on the way she changed into a beautiful gown.",
               "translationAr": "قالت الأولى: «مِقاسي تمامًا»، لكنّها لم تستطع إدخال عقب قدمها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2019.mp3"
             },
             {
               "id": 28,
               "text": "When she entered the ballroom, all eyes were upon her, including those of her sisters who did not recognise her.",
               "translationAr": "وقالت الثانية: «نادوني يا صاحبة السمو الملكي، رجلي بتلبس أحسن»، لكنّ الواضح أنّ قدمها كانت أقلَّ قدرةً على الدخول.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2020.mp3"
             },
             {
               "id": 29,
               "text": "The prince asked the new arrival to dance, not once, but again and again.",
               "translationAr": "نظر الخادمُ الملكيُّ فرأى سندريلا جالسةً عند الموقد تنظّفه، وعلى أنفها قليلٌ من السناج، فزادها دَلالًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2021.mp3"
             },
             {
               "id": 30,
               "text": "Before the evening was out, he had fallen in love with the mysterious young beauty.",
               "translationAr": "قال لها: «تحبّي تجربي الحذاء يا آنسة؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2022.mp3"
             },
             {
               "id": 31,
               "text": "He was about to ask for her hand in marriage when the clock began to strike twelve.",
               "translationAr": "قالت أمُّ الأختين البغيضتين: «ليه نِضيّع وقتنا معها؟ دي مجرد خادمة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2023.mp3"
             },
             {
               "id": 32,
-              "text": "“ Oh!",
-              "translationAr": "قالت سندريلا: «أحبّ أجرب، شكرًا.» فانزلقت قدمُها فيه تمامًا.",
-              "audioUrl": ""
-            },
-            {
-              "id": 33,
-              "text": "You must excuse me! ” exclaimed Cinderella and she ran for the door.",
-              "translationAr": "قال الخادم: «مين كان يصدّق؟ لقد اكتمل بحثُنا.»",
-              "audioUrl": ""
+              "text": "“ Oh! You must excuse me! ” exclaimed Cinderella and she ran for the door.",
+              "translationAr": "أوه! يجب أن تعذريني! صرخت سندريلا وركضت نحو الباب.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2024.mp3"
             },
             {
               "id": 34,
               "text": "As she dashed down the steps, one of her dancing slippers fell from her foot and she had to hop to the coach.",
-              "translationAr": "صرخت الأم: «إزّاي! بتهزّر؟»",
-              "audioUrl": ""
+              "translationAr": "وبينما كانت تنزل الدرج مسرعة، سقط أحد نعال الرقص من قدميها واضطرت إلى القفز إلى العربة.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2025.mp3"
             },
             {
               "id": 35,
               "text": "In the morning, the Prince found the lost slipper and ordered his servants to take it up and down the land until they discovered the foot that exactly fitted it.",
-              "translationAr": "واحتجّت الأختان البغيضتان: «يا أحمق! جَبْت البِنت الغلط!»",
-              "audioUrl": ""
+              "translationAr": "وفي الصباح وجد الأمير الحذاء المفقود وأمر خدمه بحمله في أنحاء الأرض حتى وجدوا القدم التي تناسبه تماماً.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2026.mp3"
             },
             {
               "id": 36,
               "text": "When the Prince’s servants came to the house where Cinderella lived, her horrid sisters were eager to try on the slipper.",
-              "translationAr": "لكنّ الخادم كان قد نادى السائق ليأخذ سندريلا إلى القصر، وهي بثيابها الرثّة كما هي، ترتدي حذاءها العادي في قدم، وحذاء الرقص في الأخرى.",
-              "audioUrl": ""
+              "translationAr": "عندما جاء خدم الأمير إلى المنزل الذي تعيش فيه سندريلا، كانت أخواتها البشعات حريصات على تجربة الحذاء.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2027.mp3"
             },
             {
               "id": 37,
               "text": "“ It fits me perfectly, ” said the first, but she could not shove her heal inside.",
-              "translationAr": "وأثناء خروج سندريلا من البيت، صاحت أمُّ الفتاتين: «برّه! كفاية وَقاحة!»",
-              "audioUrl": ""
+              "translationAr": "إنه يناسبني تمامًا، قالت الأولى، لكنها لم تستطع دفع كعبها إلى الداخل.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2028.mp3"
             },
             {
               "id": 38,
               "text": "“ You can call me, ‘ Your Royal Highness ’ because my foot fits better, ” said the second.",
-              "translationAr": "لكن سندريلا كانت تعرف أنّها وجدت الحبَّ الحقيقي، وفي اليوم التالي مباشرةً تزوّجت من الأمير، ودقّت الأجراس في كلّ أرجاء البلاد.",
-              "audioUrl": ""
+              "translationAr": "يمكنك أن تناديني بـ صاحب السمو الملكي لأن قدمي تناسبني بشكل أفضل، قال الثاني.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/cinderella-shorter-version/Cinderella%20shorter%20version%20S%2029.mp3"
             }
           ]
         },
@@ -26696,118 +26636,106 @@ export const readingData = [
         "storyData": {
           "content": [
             {
-              "id": 1,
-              "text": "Words by Rudyard Kipling. Read by Richard Scott.",
-              "translationAr": "كلمات روديارد كيبلينج. قراءة ريتشارد سكوت.",
-              "audioUrl": ""
-            },
-            {
-              "id": 2,
-              "text": "Produced by Jana Elizabeth.",
-              "translationAr": "إنتاج جانا إليزابيث.",
-              "audioUrl": ""
-            },
-            {
               "id": 3,
               "text": "IF you can keep your head when all about you are losing theirs and blaming it on you,",
               "translationAr": "إذا استطعت أن تحافظ على هدوءك عندما يفقد من حولك أعصابهم ويلقون باللوم عليك،",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2002.mp3"
             },
             {
               "id": 4,
               "text": "If you can trust yourself when all men doubt you, but make allowance for their doubting too;",
               "translationAr": "وإن وثِقت بنفسك حين يشكّ فيك الجميع، ومع ذلك تتفهم شكهم أيضًا؛",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2003.mp3"
             },
             {
               "id": 5,
               "text": "If you can wait and not be tired by waiting, or being lied about, don’t deal in lies,",
               "translationAr": "وإن قدرت على الانتظار دون أن تنهكك المشقّة، وإن كُذِب عليك فلا تكذب،",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2004.mp3"
             },
             {
               "id": 6,
               "text": "Or being hated, don’t give way to hating, and yet don’t look too good, nor talk too wise:",
               "translationAr": "وإن كُرهت فلا تسلك سبيل الكراهية، ومع ذلك لا تُظهِر نفسك كاملًا ولا تتحدث بتعالٍ وحكمةٍ زائفة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2005.mp3"
             },
             {
               "id": 7,
               "text": "If you can dream – and not make dreams your master;",
               "translationAr": "إن استطعت أن تحلم دون أن تجعل أحلامك سيدتك؛",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2006.mp3"
             },
             {
               "id": 8,
               "text": "If you can think – and not make thoughts your aim;",
               "translationAr": "وأن تفكر دون أن تجعل الأفكار غايتك؛",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2007.mp3"
             },
             {
               "id": 9,
               "text": "If you can meet with Triumph and Disaster and treat those two impostors just the same;",
               "translationAr": "وإن لاقيت النصرَ والهزيمة وتعاملت مع هذين الدخيلين معاملةً سواء؛",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2008.mp3"
             },
             {
               "id": 10,
               "text": "If you can bear to hear the truth you’ve spoken twisted by knaves to make a trap for fools,",
               "translationAr": "وإن احتملت سماع الحقيقة التي قلتها تُحرفها الأوغاد لتصنع فخًا للحمقى،",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2009.mp3"
             },
             {
               "id": 11,
               "text": "Or watch the things you gave your life to, broken, and stoop and build ’em up with worn-out tools:",
               "translationAr": "أو رأيت ما أفنيتَ فيه حياتك مكسورًا، فانحنيت لتبنيه مجددًا بأدواتٍ بالية:",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2010.mp3"
             },
             {
               "id": 12,
               "text": "If you can make one heap of all your winnings and risk it on one turn of pitch - and - toss,",
               "translationAr": "إن جمعت مكاسبك كلها في كومة واحدة وخاطرت بها في رميةٍ واحدةٍ من لعبةٍ تُقذَف فيها العملة،",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2011.mp3"
             },
             {
               "id": 13,
               "text": "And lose, and start again at your beginnings and never breathe a word about your loss;",
               "translationAr": "ثم خسرت، وبدأت من جديد من حيث ابتدأت، دون أن تهمس ولو بكلمةٍ عن خسارتك؛",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2012.mp3"
             },
             {
               "id": 14,
               "text": "If you can force your heart and nerve and sinew to serve your turn long after they are gone,",
               "translationAr": "وإن أجبرت قلبك وأعصابك وأوتارك أن تخدمك طويلًا بعد أن تَخور قواها،",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2013.mp3"
             },
             {
               "id": 15,
               "text": "And so hold on when there is nothing in you except the Will which says to them: ‘Hold on!’",
               "translationAr": "وصمدتَ حين لا يبقى فيك شيء إلا إرادةٌ تقول لها: «تماسكي!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2014.mp3"
             },
             {
               "id": 16,
               "text": "If you can talk with crowds and keep your virtue, or walk with Kings – nor lose the common touch,",
               "translationAr": "إن استطعت أن تخاطب الجموع وتحافظ على فضيلتك، أو تمشي مع الملوك دون أن تفقد بساطتك وقربك من الناس،",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2015.mp3"
             },
             {
               "id": 17,
               "text": "If neither foes nor loving friends can hurt you, if all men count with you, but none too much;",
               "translationAr": "إن لم يقدر لا الأعداء ولا الأصدقاء المحبون على إيذائك، وإن اعتُدّ كل الناس عندك بلا إفراطٍ في أحد؛",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2016.mp3"
             },
             {
               "id": 18,
               "text": "If you can fill the unforgiving minute with sixty seconds’ worth of distance run,",
               "translationAr": "إن استطعت أن تملأ الدقيقة التي لا ترحم بستين ثانية من العدوّ والمسير،",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2017.mp3"
             },
             {
               "id": 19,
               "text": "Yours is the Earth and everything that’s in it, and – which is more – you’ll be a Man, my son!",
               "translationAr": "فستكون الأرض وما فيها لك، وأزيد من ذلك—ستكون رجلًا يا بُني!",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/IF/IF%20S%2018.mp3"
             }
           ]
         },
@@ -29152,217 +29080,205 @@ export const readingData = [
         "id": 1,
         "text": "Hello, This is Jana, and I’m here with another Hausa story from Northern Nigeria.",
         "translationAr": "مرحبًا، هذه جنى، وأنا هنا مع قصة هاوسا جديدة من شمال نيجيريا.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2001.mp3"
       },
       {
         "id": 2,
         "text": "Our friend, Umar Isa Dandago is on the line.",
         "translationAr": "صديقنا عمر عيسى دانداغو معنا على الخط.",
-        "audioUrl": ""
-      },
-      {
-        "id": 3,
-        "text": "Hi Umar, how are you?",
-        "translationAr": "مرحبًا عمر، كيف حالك؟",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2002.mp3"
       },
       {
         "id": 4,
         "text": "Once upon a time, in a magical forest, a deer transformed into a lovely young woman.",
         "translationAr": "في قديم الزمان، في غابة سحرية، تحولت غزالة إلى فتاة جميلة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2003.mp3"
       },
       {
         "id": 5,
         "text": "Then she left the forest, carrying a small, intricately woven basket, and headed for a nearby village, where she placed the basket down in the square.",
         "translationAr": "ثم غادرت الغابة حاملة سلة صغيرة منسوجة بإتقان، وتوجهت إلى قرية قريبة، ووضعت السلة في ساحة القرية.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2004.mp3"
       },
       {
         "id": 6,
         "text": "She addressed the crowd in the square: “ Whosoever can open this basket with a single toss of a stone shall win my heart. ”",
         "translationAr": "وخاطبت الناس في الساحة: «من يتمكن من فتح هذه السلة برمية حجر واحدة سيفوز بقلبي.»",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2005.mp3"
       },
       {
         "id": 7,
         "text": "One by one, men tried.",
         "translationAr": "جرب الرجال واحدًا تلو الآخر.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2006.mp3"
       },
       {
         "id": 8,
         "text": "Some nearly succeeded, but the basket remained shut.",
         "translationAr": "اقترب بعضهم من النجاح، لكن السلة بقيت مغلقة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2007.mp3"
       },
       {
         "id": 9,
         "text": "Until, with a twist of fate, a young villager’s stone gently tapped the basket, causing it to open.",
         "translationAr": "حتى حدثت مفاجأة، حيث لامس حجر شاب من القرية السلة برفق فانفتحت.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2008.mp3"
       },
       {
         "id": 10,
         "text": "Joyous cheers filled the air.",
         "translationAr": "امتلأت الأجواء بالهتاف والفرح.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2009.mp3"
       },
       {
         "id": 11,
         "text": "Smiling at the young man, she said, “ I have found a perfect husband ”.",
         "translationAr": "ابتسمت للشاب وقالت: «لقد وجدت الزوج المثالي.»",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2010.mp3"
       },
       {
         "id": 12,
         "text": "The two fell in love and were soon wed.",
         "translationAr": "وقع الاثنان في الحب وتزوجا قريبًا.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2011.mp3"
       },
       {
         "id": 13,
         "text": "The woman went to live with her new family.",
         "translationAr": "ذهبت المرأة لتعيش مع عائلة زوجها الجديدة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2012.mp3"
       },
       {
         "id": 14,
         "text": "The young man’s mother had always managed the household, and the newcomer was eager to help.",
         "translationAr": "كانت والدة الشاب تدير المنزل دائمًا، وكانت الوافدة الجديدة حريصة على المساعدة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2013.mp3"
       },
       {
         "id": 15,
         "text": "Sometimes the mother would send the young wife to the family’s farm to gather fresh okra for the soup.",
         "translationAr": "أحيانًا كانت الأم ترسل الزوجة الشابة إلى مزرعة العائلة لجمع البامية الطازجة للشوربة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2014.mp3"
       },
       {
         "id": 16,
         "text": "But little did the family know what she got up to when she reached the farm.",
         "translationAr": "لكن العائلة لم تكن تعلم ما الذي تفعله عندما تصل إلى المزرعة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2015.mp3"
       },
       {
         "id": 17,
         "text": "With a whisper of an ancient spell, she transformed back into her true deer form.",
         "translationAr": "بهمسة تعويذة قديمة، كانت تعود إلى شكلها الحقيقي كغزالة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2016.mp3"
       },
       {
         "id": 18,
         "text": "When she called out softly, her deer sisters emerged from the shadows of the forest, and together, they feasted on the okra.",
         "translationAr": "وعندما كانت تنادي بهدوء، كانت أخواتها الغزالات يظهرن من ظلال الغابة، ويأكلن البامية معًا.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2017.mp3"
       },
       {
         "id": 19,
         "text": "As the sun dipped below the horizon and it was time to depart, they touched noses in farewell, promising to reunite soon.",
         "translationAr": "وعندما كانت الشمس تغرب ويحين وقت الرحيل، كانت تلامس أنوفهن كتحية وداع، واعدات بالالتقاء قريبًا.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2018.mp3"
       },
       {
         "id": 20,
         "text": "Then she changed back into her human form and returned home, but her basket would always be empty.",
         "translationAr": "ثم تعود إلى شكلها البشري وتعود للمنزل، لكن سلتها كانت دائمًا فارغة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2019.mp3"
       },
       {
         "id": 21,
         "text": "With a dramatic sigh, she would lament, “ Why send me so far to the farm when there’s nothing left? Someone or something seems to be enjoying our okra before I can even get to it. ”",
         "translationAr": "ومع تنهيدة درامية، كانت تتذمر: «لماذا ترسلونني بعيدًا إلى المزرعة ولا يوجد شيء؟ يبدو أن شخصًا أو شيئًا ما يستمتع بباميتنا قبلي.»",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2020.mp3"
       },
       {
         "id": 22,
         "text": "The family was very puzzled by the tales of the phantom okra thieves.",
         "translationAr": "كانت العائلة في حيرة شديدة من قصص لصوص البامية الخفيين.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2021.mp3"
       },
       {
         "id": 23,
         "text": "So one afternoon, the curious husband decided to observe his wife on her next trip to the farm.",
         "translationAr": "لذلك، في أحد الأيام، قرر الزوج الفضولي مراقبة زوجته في رحلتها التالية إلى المزرعة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2022.mp3"
       },
       {
         "id": 24,
         "text": "He set out early before her and hid himself among the branches of a lofty tree.",
         "translationAr": "ذهب مبكرًا قبلها واختبأ بين أغصان شجرة عالية.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2023.mp3"
       },
       {
         "id": 25,
         "text": "From his perch, he saw his wife arrive.",
         "translationAr": "ومن مكانه العالي رأى زوجته تصل.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2024.mp3"
       },
       {
         "id": 26,
         "text": "Then he watched in astonishment as her form shimmered and changed.",
         "translationAr": "ثم شاهد بدهشة شكلها يتلألأ ويتغير.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2025.mp3"
       },
       {
         "id": 27,
         "text": "Before his eyes, his wife transformed into a graceful deer, her coat gleaming like gold in the sunlight.",
         "translationAr": "أمام عينيه، تحولت زوجته إلى غزالة رشيقة، وفراؤها يلمع كالذهب تحت أشعة الشمس.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2026.mp3"
       },
       {
         "id": 28,
         "text": "Soon other deer emerged from the shadowy depths of the forest, and together, they feasted on the okra.",
         "translationAr": "سرعان ما ظهرت غزالات أخرى من أعماق الغابة المظلمة، وأكلن البامية معًا.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2027.mp3"
       },
       {
         "id": 29,
         "text": "Unable to contain his shock and anger any longer, he leapt from the tree, landing with a resounding thud.",
         "translationAr": "غير قادر على كتم صدمته وغضبه أكثر، قفز من الشجرة محدثًا صوتًا قويًا.",
-        "audioUrl": ""
-      },
-      {
-        "id": 30,
-        "text": "“ Get away you thieves! ” he cried out.",
-        "translationAr": "صرخ قائلاً: «ابتعدن يا لصوص!»",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2028.mp3"
       },
       {
         "id": 31,
         "text": "The deer scattered in all directions, their hooves beating a hasty retreat against the soft earth.",
         "translationAr": "تفرقت الغزالات في كل اتجاه، وأقدامهن تضرب الأرض الناعمة بسرعة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2029.mp3"
       },
       {
         "id": 32,
         "text": "Only his wife, in her deer form, remained still for a brief moment, her eyes locking onto his.",
         "translationAr": "وبقيت زوجته، في شكل الغزالة، ثابتة للحظة قصيرة، وعيناها تتلاقى بعينيه.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2030.mp3"
       },
       {
         "id": 33,
         "text": "Those soft brown eyes spoke volumes – of secrets shared and now exposed.",
         "translationAr": "تلك العيون البنية الناعمة قالت الكثير — عن أسرار كانت مشتركة وأصبحت مكشوفة الآن.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2031.mp3"
       },
       {
         "id": 34,
         "text": "Then, with a toss of her head and a swish of her tail, she turned and gracefully bounded away, disappearing into the depths of the forest, never to be seen again.",
         "translationAr": "ثم بحركة من رأسها ورفّة من ذيلها، ابتعدت بخفة، واختفت في أعماق الغابة، دون أن تُرى مرة أخرى.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2032.mp3"
       },
       {
         "id": 35,
         "text": "The husband stood watching the place where she had vanished.",
         "translationAr": "وقف الزوج يراقب المكان الذي اختفت فيه.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2033.mp3"
       },
       {
         "id": 36,
         "text": "Without a word, he slowly made his way back to their home.",
         "translationAr": "وبدون كلمة، عاد ببطء إلى المنزل.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/enchanted-deer-storynory/enchanted-deer-storynory%20S%2034.mp3"
       }
     ]
         }, 
