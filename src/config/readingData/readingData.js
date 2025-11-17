@@ -20,538 +20,423 @@ export const readingData = [
               id: 1,
               text: "Hello, this is Jana and I’m here with an ancient story from India.",
               translationAr: "مرحبًا، أنا جَنا ومعي قصةٌ قديمة من الهند.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2001.mp3",
             },
             {
               id: 2,
               text: "It features a variety of characters, including a Tiger, a buffalo, a tree, and a road.",
               translationAr:
                 "تتضمّن القصةُ مجموعةً من الشخصيات، منها نمرٌ وجاموسةٌ وشجرةٌ وطريق.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2002.mp3",
             },
             {
               id: 3,
               text: "Yes, that’s an unusual collection, and there are more too.",
               translationAr: "نعم، إنها مجموعة غير مألوفة، وهناك أيضًا غيرهم.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2003.mp3",
             },
             {
               id: 4,
               text: "It starts with the tiger, and a man who has led a soft and sheltered life.",
               translationAr:
                 "تبدأ بالقصة مع النمر ورجلٍ عاش حياةً مرفَّهةً ومحميّة.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2004.mp3",
             },
             {
               id: 5,
               text: "A long time ago, in the jungle, a tiger was caught in a trap.",
               translationAr: "منذ زمنٍ بعيد، في الغابة، وقع نمرٌ في فخّ.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2005.mp3",
             },
             {
               id: 6,
               text: "It was like a wooden cage that dropped down from a tree and caught him tight.",
               translationAr:
                 "كان الفخ كقَفَصٍ خشبيٍّ هبط من شجرةٍ فأمسك به بإحكام.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2006.mp3",
             },
             {
               id: 7,
               text: "He wiggled and jiggled, but those bars wouldn’t budge.",
               translationAr:
                 "تحرّك وتلوّى، لكن تلك القضبان لم تتحرّك قيد أنملة.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2007.mp3",
             },
             {
               id: 8,
               text: "Eventually, a gentleman came strolling down the forest path, humming a happy tune and twirling a walking stick.",
               translationAr:
                 "وأخيرًا مرَّ رجلٌ مهذّب يتنزّه في ممرِّ الغابة، يُدندن بلحنٍ سعيد ويُدوّر عصا المشي.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2008.mp3",
             },
             {
               id: 9,
               text: "He had a kind face and a soft heart — perhaps a little too soft.",
               translationAr:
                 "كان ذا وجهٍ طيّب وقلبٍ رقيق—وربما رقيقٍ أكثر من اللازم.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2009.mp3",
             },
             {
               id: 10,
               text: "The tiger’s ears heard this happy tune.",
               translationAr: "سمعت أذنا النمر ذلك اللحن السعيد.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2010.mp3",
             },
             {
               id: 11,
               text: "“ Oh good sir! ” he called out, putting on his most pitiful voice.",
               translationAr:
                 'قال مناديًا بأشدِّ نبرةٍ مُستعطِفة: "أيها السيد الكريم!"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2011.mp3",
             },
             {
               id: 12,
               text: "“ Please, please help me! I’m stuck in this dreadful cage.",
               translationAr:
                 '"أرجوك، أرجوك ساعدني! أنا عالقٌ في هذا القفص المروّع.',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2012.mp3",
             },
             {
               id: 13,
               text: "If you let me out, I’ll be your friend for life! I’ll follow you like a dog. I’ll guard your house! I’ll ... I’ll eat only vegetables! ”",
               translationAr:
                 'إن أطلقتَ سراحي سأكون صديقك مدى الحياة! سأتبَعك ككلبٍ وفيّ، وسأحرس بيتك! وسأ... سأأكل الخضار فقط!"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2013.mp3",
             },
             {
               id: 14,
               text: "The man stopped and looked the tiger up and down.",
               translationAr: "توقّف الرجل وتفحّص النمر من رأسه إلى ذيله.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2014.mp3",
             },
             {
               id: 15,
               text: "“ Oh right ” he said, scratching his chin. “ But you’re a tiger and tigers eat people. ”",
               translationAr:
                 'وقال وهو يحكّ ذقنه: "حسنًا... لكنك نمر، والنمور تأكل الناس."',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2015.mp3",
             },
             {
               id: 16,
               text: "“ Not you! ” cried the tiger.",
               translationAr: 'صاح النمر: "ليس أنت!"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2016.mp3",
             },
             {
               id: 17,
               text: "“ Why would I eat you? If you save me, I’d be ever so grateful. ”",
               translationAr:
                 '"ولِمَ آكلك؟ إن أنقذتني سأكون ممتنًّا لك أشدَّ الامتنان."',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2017.mp3",
             },
             {
               id: 18,
               text: "The tiger gave a sniff and blinked his big golden eyes.",
               translationAr:
                 "وشمّ النمر الهواءَ وطرف بعينيه الذهبيّتين الكبيرتين.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2018.mp3",
             },
             {
               id: 19,
               text: "Well, the man’s heart went all soft and syrupy.",
               translationAr: "عندئذٍ لان قلبُ الرجل وذاب رِقّةً.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2019.mp3",
             },
             {
               id: 20,
-              text: "He opened the latch — click — and out sprang the tiger.",
+              text: "He opened the latch and out sprang the tiger.",
               translationAr: "ففتح المِزلاج—كليك!—وانطلق النمر خارجًا.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2020.mp3",
             },
             {
               id: 21,
               text: "“ Thank you very much, ” said the tiger, licking his lips “ I’m so hungry, I could eat a whole picnic — and you’re it! ”",
               translationAr:
                 'قال النمر وهو يلحس شفتيه: "شكرًا جزيلًا. إنني جائعٌ جدًّا، أستطيع التهام نُزهةٍ كاملة—وأنتَ وجبتها!"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2021.mp3",
             },
             {
               id: 22,
-              text: "The man gasped.",
-              translationAr: "شهق الرجل ذهلًا.",
-              audioUrl: "",
-            },
-            {
-              id: 23,
-              text: "“ Hold on a minute! That’s not fair.",
-              translationAr: '"تمهّل لحظة! هذا ليس عادلًا.',
-              audioUrl: "",
+              text: "The man gasped. Hold on a minute! That’s not fair.",
+              translationAr: "شهق الرجل ذهلًا. تمهّل لحظة! هذا ليس عادلًا.",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2022.mp3",
             },
             {
               id: 24,
               text: "I did you a big favour, and this is how you repay me? By eating me up! ”",
               translationAr:
                 'لقد أسديتُ إليك معروفًا كبيرًا، أفتكافئني بأن تلتهمني؟!"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2023.mp3",
             },
             {
               id: 25,
               text: "“ Unfair! Is that what you say? ” replied the tiger.",
               translationAr: 'قال النمر: "غير عادل! أهذا ما تقول؟"',
-              audioUrl: "",
-            },
-            {
-              id: 26,
-              text: "“ What a complainer! What a miserable whiner! What a poor loser you are!",
-              translationAr:
-                '"يا لك من كثير الشكوى! ويا لك من متذمّرٍ بائس! ويا لك من خاسرٍ مُثيرٍ للشفقة!',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2024.mp3",
             },
             {
               id: 27,
               text: "I played a trick, and you fell for it. Now I’m going to eat you. It’s the natural order. What’s unfair about that? ”",
               translationAr:
                 'لقد خدعتُك فانطلت عليك الحيلة. والآن سأأكلك. هذه هي السنّةُ الطبيعية. فأين الظلم في ذلك؟"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2026.mp3",
             },
             {
               id: 28,
-              text: "But the man carried on complaining.",
-              translationAr: "لكن الرجل واصل الاعتراض.",
-              audioUrl: "",
-            },
-            {
-              id: 29,
-              text: "“ You are most unjust. We had a bargain, and you broke it! ”",
-              translationAr:
-                '"إنك لفي غاية الجَور. لقد عقدنا اتفاقًا فَنقضتَه!"',
-              audioUrl: "",
+              text: "But the man carried on complaining. “ You are most unjust. We had a bargain, and you broke it! ”",
+              translationAr: " لكن الرجل واصل الاعتراض.إنك لفي غاية الجَور. لقد عقدنا اتفاقًا فَنقضتَه!",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2027.mp3",
             },
             {
               id: 30,
               text: "“ All right, all right, ” said the Tiger.",
               translationAr: 'قال النمر: "حسنًا، حسنًا."',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2028.mp3",
             },
             {
               id: 31,
               text: "“ I’ll tell you what we’ll do. You ask three others if they think I’m treating you unfairly.",
               translationAr:
                 '"سأخبرك ما سنفعل: اسأل ثلاثة آخرين هل أُعاملك بظلمٍ أم لا.',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2029.mp3",
             },
             {
               id: 32,
               text: "If any one agrees with you, then I’ll let you go scot free. I can’t say fairer than that, can I? ”",
               translationAr:
                 'إن وافقك واحدٌ منهم فحسب، أطلقتُك حرًّا بلا قيد. أفيكون العدلُ أوضحَ من هذا؟"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2030.mp3",
             },
             {
               id: 33,
               text: "The man agreed. He had no choice.",
               translationAr: "وافق الرجل، فلم يكن له خيار.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2031.mp3",
             },
             {
               id: 34,
               text: "First, he asked a great tree that had roots like ropes and branches like umbrellas.",
               translationAr:
                 "سأل أوّلًا شجرةً عظيمةً جذورها كالحبال وأغصانها كالمظلات.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2032.mp3",
             },
             {
               id: 35,
               text: "“ Tree, ” said the man, “ I saved the tiger, and now he wants to eat me. Is that fair? ”",
               translationAr:
                 'قال الرجل: "أيتها الشجرة، لقد أنقذتُ النمر، والآن يريد أن يأكلني. أهذا عادل؟"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2033.mp3",
             },
             {
               id: 36,
               text: "The tree rustled sadly.",
               translationAr: "اهتزّت الشجرةُ حزنًا.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2034.mp3",
             },
             {
               id: 37,
-              text: "“ I give shade to all, and yet people snap off my branches to feed their goats.",
+              text: "“ I give shade to all, and yet people snap off my branches to feed their goats. Fairness? I’ve seen none of it. ”",
               translationAr:
-                '"أبذل الظلَّ للجميع، ومع ذلك يكسر الناسُ أغصاني ليُطعموا ماعزهم.',
-              audioUrl: "",
-            },
-            {
-              id: 38,
-              text: "Fairness? I’ve seen none of it. ”",
-              translationAr: 'العدل؟ لم أرَ منه شيئًا."',
-              audioUrl: "",
-            },
-            {
-              id: 39,
-              text: "Next, the man asked an old buffalo who was plodding round and round, turning a creaky water wheel mill.",
-              translationAr:
-                "ثم سأل جاموسةً عجوزًا كانت تخطو مُتثاقلةً حول الرحى تُدير دولاب الماء الصرير.",
-              audioUrl: "",
+                '"أبذل الظلَّ للجميع، ومع ذلك يكسر الناسُ أغصاني ليُطعموا ماعزهم. العدل؟ لم أرَ منه شيئًا.',
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2035.mp3",
             },
             {
               id: 40,
               text: "“ Buffalo, ” he said, “ am I being treated unjustly ? ”",
               translationAr: 'قال: "أيتها الجاموسة، هل أُعامَل بظلم؟"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2036.mp3",
             },
             {
               id: 41,
-              text: "The buffalo snorted.",
-              translationAr: "خطمت الجاموسةُ نَفَسًا غليظًا.",
-              audioUrl: "",
-            },
-            {
-              id: 42,
-              text: "“ I gave milk all my life. Now I’m old, they feed me scraps and make me work like a machine.",
-              translationAr:
-                '"لقد أعطيتُ اللبن طيلة حياتي. والآن وقد شختُ، يطعمونني الفُتات ويُشغِّلونني كآلة.',
-              audioUrl: "",
+              text: "The buffalo snorted. “ I gave milk all my life. Now I’m old, they feed me scraps and make me work like a machine.",
+              translationAr: "تذمر الجاموس قائلًا: لقد كنتُ أُعطي الحليب طوال حياتي. الآن، كبرت، يُطعمونني فتاتًا ويُجبرونني على العمل كآلة.",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2037.mp3",
             },
             {
               id: 43,
               text: "The world is a wheel, and fairness is not part of it.”",
               translationAr: 'الدنيا دولابٌ يدور، وليس العدل جزءًا منه."',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2038.mp3",
             },
             {
               id: 44,
               text: "Then, the man asked the dusty road beneath his feet.",
               translationAr: "ثم سأل الرجلُ الطريقَ المغبرَّ تحت قدميه.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2039.mp3",
             },
             {
               id: 45,
               text: "“ Road, please, ” he begged, “ tell me, is the tiger fair? ”",
               translationAr:
                 'توسّل قائلًا: "أيتها الطريق، أخبريني، هل النمر عادل؟"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2040.mp3",
             },
             {
               id: 46,
-              text: "The road groaned.",
-              translationAr: "تأوّهت الطريق.",
-              audioUrl: "",
-            },
-            {
-              id: 47,
-              text: "“ People walk all over me, carts roll over me, even donkeys drop things on me.",
-              translationAr:
-                '"يمشي الناس فوقي، وتدُرّ العربات عليّ، وحتى الحمير تُسقِط الأشياء على ظهري.',
-              audioUrl: "",
+              text: "The road groaned. “ People walk all over me, carts roll over me, even donkeys drop things on me.",
+              translationAr: "تأوّهت الطريق. يمشي الناس فوقي، وتدُرّ العربات عليّ، وحتى الحمير تُسقِط الأشياء على ظهري.",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2041.mp3",
             },
             {
               id: 48,
               text: "Do they ever say thank you? No. Life, my friend, is one long trudge. ”",
               translationAr:
                 'أفيقولون شكرًا يومًا؟ كلا. إن الحياة يا صاحبي مَسيرٌ مُضنٍ طويل."',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2042.mp3",
             },
             {
               id: 49,
               text: "By now, the man was trembling.",
               translationAr: "عندئذٍ كان الرجل يرتجف.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2043.mp3",
             },
             {
               id: 50,
               text: "He had no idea there was so much suffering and injustice in the world.",
               translationAr:
                 "لم يكن يدري أن في العالم هذا القدر من المعاناة والجَور.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2044.mp3",
             },
             {
               id: 51,
               text: "And he was almost ready to give up.",
               translationAr: "وكاد يستسلم.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2045.mp3",
             },
             {
               id: 52,
               text: "The tiger was licking his paws in anticipation.",
               translationAr: "وكان النمر يلحس كفّيه مترقّبًا.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2046.mp3",
             },
             {
               id: 53,
               text: "Just then, out of the undergrowth trotted a jackal looking all sleepy and dreamy.",
               translationAr:
                 "في تلك اللحظة خرج من الشجيرات ابنُ آوى يمشي متثائبًا حالِمًا.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2047.mp3",
             },
             {
               id: 54,
               text: "“ Good day! ” said the jackal, politely.",
               translationAr: 'قال ابنُ آوى بأدب: "نهارُكم سعيد!"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2048.mp3",
             },
             {
               id: 55,
               text: "“ I’ve been listening. But I’m a simple creature, not too clever, and this story — oh dear — it’s rather muddled in my poor little head.",
               translationAr:
                 '"لقد كنتُ أستمع. لكنني مخلوقٌ بسيط، لستُ ذكيًّا جدًّا، وهذه القصة—يا للأسف—مضطربةٌ في رأسي الصغير."',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2049.mp3",
             },
             {
               id: 56,
               text: "Who was in the cage again? ”",
               translationAr: '"من الذي كان في القفص مرةً أخرى؟"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2050.mp3",
             },
             {
               id: 57,
               text: "“ I was. Oh do keep up, ” said the tiger impatiently.",
               translationAr: 'قال النمر بضيق: "أنا. ألا تُحسن متابعة الحديث؟"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2051.mp3",
             },
             {
               id: 58,
               text: "“ Oh, I see, I see, ” said the jackal.",
               translationAr: 'قال ابنُ آوى: "آه، فهمتُ، فهمتُ."',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2052.mp3",
             },
             {
               id: 59,
               text: "“ I was in the cage, the tiger walked by, and the man was the judge, or … oh dear, I’m in such a muddle. ”",
               translationAr:
                 '"كنتُ أنا في القفص، والنمر مرَّ من هنا، والرجل كان القاضي، أو... يا ويلي! لقد اختلط عليَّ الأمر."',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2053.mp3",
             },
             {
               id: 60,
               text: "“ Grrrrr, ” growled the Tiger, “ Why can’t you get the story straight? ”",
               translationAr: 'زأر النمر: "غررر... لِمَ لا تُحسن ترتيب القصة؟"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2054.mp3",
             },
             {
               id: 61,
               text: "“ Oh, but I still don’t quite understand. Where were you. Can you show me? ”",
               translationAr:
                 '"ولكنني لا أفهم تمامًا بعد. أين كنتَ؟ هل تُريني؟"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2055.mp3",
             },
             {
               id: 62,
               text: "“ With pleasure, ” said the tiger, who wanted the whole jungle to know how clever he was.",
               translationAr:
                 'قال النمر مسرورًا، وكان يريد أن تعرف الغابة كلها مدى ذكائه: "بكل سرور."',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2056.mp3",
             },
             {
               id: 63,
               text: "He stepped into the cage to show him how it all had been.",
               translationAr: "دخل إلى القفص ليُريه كيف كان الأمر.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2057.mp3",
             },
             {
               id: 64,
               text: "“ You were there? ” asked the jackal, wide - eyed.",
               translationAr: 'سأل ابنُ آوى بعينين مُتَّسعتين: "كنتَ هنا؟"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2058.mp3",
             },
             {
               id: 65,
               text: "“ Yes! Exactly! ”",
               translationAr: '"نعم! بالضبط!"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2059.mp3",
             },
             {
               id: 66,
               text: "“ And the door was shut like this? ” said the jackal, swinging it closed with a click.",
               translationAr:
                 'قال ابنُ آوى وهو يُغلق الباب بنقرة: "وكان الباب مُغلقًا هكذا؟"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2060.mp3",
             },
             {
               id: 67,
               text: "The tiger blinked. “ Wait... ”",
               translationAr: 'طرف النمر بعينيه وقال: "مهلًا..."',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2061.mp3",
             },
             {
               id: 68,
               text: "“ Perfect! ” said the jackal, dusting off his paws. “ Now I understand completely. Thank you so much! ”",
               translationAr:
                 'قال ابنُ آوى وهو ينفض كفّيه: "تامّ! الآن فهمتُ تمامًا. شكرًا جزيلًا!"',
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2062.mp3",
             },
             {
               id: 69,
               text: "The man burst out laughing.",
               translationAr: "انفجر الرجل ضحكًا.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2063.mp3",
             },
             {
               id: 70,
               text: "The jackal gave a cheeky bow.",
               translationAr: "وأومأ ابنُ آوى بانحناءةٍ ماكرة.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2064.mp3",
             },
             {
               id: 71,
               text: "Together, they walked away, leaving the tiger behind the bars, muttering about the unfairness of it all.",
               translationAr:
                 "ومضيا معًا تاركَين النمر خلف القضبان يتمتم عن ظُلم الدنيا بأسرها.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2065.mp3",
             },
             {
               id: 72,
               text: "And from that day on, the man was never quite so gullible, and the jackal — well, he remained as clever as ever.",
               translationAr:
                 "ومنذ ذلك اليوم لم يعد الرجلُ بهذه السذاجة، وأمّا ابنُ آوى—فقد ظلَّ ذكيًّا كما كان دائمًا.",
-              audioUrl: "",
-            },
-            {
-              id: 73,
-              text: "And that was “ The Gentleman who set the tiger free ” read by me Jana for Storynory.com",
-              translationAr:
-                'وكانت تلك قصة "السيد الذي أطلق سراح النمر"، قرأتها لكم أنا جَنا لموقع Storynory.com.',
-              audioUrl: "",
-            },
-            {
-              id: 74,
-              text: "Bye bye for now!",
-              translationAr: "إلى اللقاء في ما بعد!",
-              audioUrl: "",
-            },
-            {
-              id: 75,
-              text: "Before I go, I’d like to mention Olivia, who listens to Storynory on Spotify every night.",
-              translationAr:
-                "وقبل أن أرحل، أود أن أذكر أوليفيا التي تستمع إلى Storynory على سبوتيفاي كلَّ ليلة.",
-              audioUrl: "",
-            },
-            {
-              id: 76,
-              text: "Thank you Olivia.",
-              translationAr: "شكرًا لكِ يا أوليفيا.",
-              audioUrl: "",
-            },
-            {
-              id: 77,
-              text: "And yes, our podcast is on Spotify, and all good podcast apps.",
-              translationAr:
-                "ونعم، تجدون بودكاستنا على سبوتيفاي وعلى جميع تطبيقات البودكاست الجيدة.",
-              audioUrl: "",
-            },
-            {
-              id: 78,
-              text: "And a special mention goes to an Irish storyteller, Kitti Caboodle, who was reading our Story, The Samurai and the Teamaster in a very fitting place.",
-              translationAr:
-                'وذكرٌ خاصٌّ لساردة القصص الإيرلندية كيتي كابودل التي قرأت قصّتنا "الساموراي وساقي الشاي" في مكانٍ ملائمٍ جدًّا.',
-              audioUrl: "",
-            },
-            {
-              id: 79,
-              text: "In the wooden tearoom of the The Lafcadio Hearn Gardens - not in Japan - but in Ireland! Thank you Kitti",
-              translationAr:
-                "في غرفة شايٍ خشبية بحدائق لافكاديو هيرن—ليس في اليابان—بل في إيرلندا! شكرًا لكِ يا كيتي.",
-              audioUrl: "",
-            },
-            {
-              id: 80,
-              text: "And If any of our listeners would like to support Storynory that would be wonderful.",
-              translationAr:
-                "وإن رغب أيٌّ من مستمعينا في دعم Storynory فذلك سيكون رائعًا.",
-              audioUrl: "",
-            },
-            {
-              id: 81,
-              text: "One way is via Paypal You can find details at Storynory.com.",
-              translationAr:
-                "ومن الطرق المتاحة باي بال، وتجدون التفاصيل على Storynory.com.",
-              audioUrl: "",
-            },
-            {
-              id: 82,
-              text: "And do remember to drop us an email with a brief message so we can give you a nice thank you.",
-              translationAr:
-                "ولا تنسوا أن تُرسلوا إلينا بريدًا مع رسالةٍ قصيرة كي نوجّه لكم شكرًا لطيفًا.",
-              audioUrl: "",
+              audioUrl: "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal/The%20Tiger%2C%20the%20Gentleman%2C%20and%20the%20Jackal%20S%2066.mp3",
             },
           ],
         },
