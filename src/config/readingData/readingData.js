@@ -21815,14 +21815,14 @@ export const readingData = [
     "id": 12,
     "slug": "lesson-12",
     "image": "/assets/images/courses_image/Level-C-12.webp",
-    "levelTitle": "Sleeping Beauty Short Version",
+    "levelTitle": "Sleeping Beauty",
     "levelDescription": "A romantic fairytale in a shorter form than our previous version.",
     "levelKey": "Pre-Intermediate",
     "isLocked": false,
     "lessons": [
       {
         "id": 1,
-        "title": "Sleeping Beauty – Short Version : a",
+        "title": "Sleeping Beauty",
         "description": "A romantic fairytale in a shorter form than our previous version.",
         "storyData": {
           "content": [
@@ -21830,193 +21830,181 @@ export const readingData = [
               "id": 1,
               "text": "Once upon a time, there lived a King and a Queen, who said every day: “ If only we had a child! ” After many years, their wish came true, and a baby girl was born.",
               "translationAr": "كان يا ما كان، عاش ملكٌ وملكةٌ كانا يقولان كلَّ يوم: «ليتنا نرزق بطفل!» وبعد سنين كثيرة تحققت الأمنيّة ووُلدت طفلة. يا لفرحِهما!",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2001.mp3"
             },
             {
               "id": 2,
               "text": "Oh, how happy they were!",
               "translationAr": "شاركا فرحتَهما بدعوة سبع جنّياتٍ حكيمات إلى القصر. ولمّا جلست الجنّياتُ للأكل، وجدت كلُّ واحدةٍ هديةً من ذهب بجانب صحنها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2002.mp3"
             },
             {
               "id": 3,
               "text": "They shared their joy by inviting seven wise fairies to the palace.",
               "translationAr": "وكانت هناك جنّيةٌ أخرى أعظمَ سحرًا من الجميع معًا، لكنها للأسف كانت شريرةَ القلب. ولمّا سمعت بالاحتفال للأميرة الصغيرة، وعلمت أنها لم تُدعَ، غضبت غضبًا شديدًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2003.mp3"
             },
             {
               "id": 4,
               "text": "When the fairies sat down to eat, they each found a gift made of gold by the side of their plate.",
               "translationAr": "وقرب نهاية السهرة، قدّمت كلُّ جنّيةٍ حكيمةٍ هديةً سحريةً للأميرة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2004.mp3"
             },
             {
               "id": 5,
               "text": "Now there was one other fairy whose magic was more powerful than all the wise ones put together.",
               "translationAr": "تمنّت الأولى عقلًا راجحًا، والثانية جمالًا، والثالثة لُطفًا ورشاقة، والرابعة موسيقى، والخامسة رقصًا، والسادسة هديةَ …",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2005.mp3"
             },
             {
               "id": 6,
               "text": "Unfortunately, this fairy had an evil heart.",
               "translationAr": "ولا ندري ماذا كانت ستتمنّى، لأنّ «الجنّية الشريرة» ظهرت في وسط القاعة الكبرى في تلك اللحظة، وفمُها يبتسم ابتسامةً زائفة، وعيناها تشعّان حِقدًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2006.mp3"
             },
             {
               "id": 7,
               "text": "When she heard of the celebrations for the baby princess, and found out that she had not been invited, she took great offence.",
               "translationAr": "قالت: «اعذروني على قدومي بلا دعوة. لن أطيل. جئتُ لأمنح هديتي الخاصة للأميرة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2007.mp3"
             },
             {
               "id": 8,
               "text": "Towards the end of the evening, each of the wise fairies gave a magical gift to the baby princess.",
               "translationAr": "وبينما شغلتْ الشريرةُ أنظارَ الجميع، اختبأت الجنّيةُ السابعة الطيبة خلف الستائر.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2008.mp3"
             },
             {
               "id": 9,
               "text": "The first wished her the gift of reason.",
               "translationAr": "وتابعت الشريرة: «أتمَنّى أن تكبرَ الأميرةُ الصغيرة حتى تصيرَ فتاةً متألّقةً متقنةً جميلةَ السادسةِ عشرة، قُرّةَ عينَي والديها، ثم في عيد ميلادها السابع عشر تَشُكَّ إصبعَها بإبرةٍ في مِغْزلٍ وتموووووت! ما رأيكم؟ هاهاها!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2009.mp3"
             },
             {
               "id": 10,
               "text": "The second wished her the gift of beauty.",
               "translationAr": "وهي تضحك ضحكًا مرعبًا، غادرت القاعة. وسطَ الفوضى خرجت الجنّيةُ السابعةُ الحكيمة من مخبئها ولوّحت بعصاها لتُلقي تعويذةَ الصمت.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2010.mp3"
             },
             {
               "id": 11,
               "text": "The third wished her the gift of grace.",
               "translationAr": "وقالت: «تبقّى تمنٍّ سابعٌ أخيرٌ لي. ليس في قدرتي إبطالُ الشرِّ كليًّا، لكن أستطيع هذا: حين تشكُّ الأميرةُ إصبعَها، فلا تموتْ، بل تنامْ مئةَ عامٍ حتى يوقِظَها قُبلةُ حُبٍّ صادق.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2011.mp3"
             },
             {
               "id": 12,
               "text": "The fourth wished her the gift of music.",
               "translationAr": "وفي اليوم التالي مباشرةً أصدر الملكُ قانونًا يمنع امتلاكَ أيِّ مِغزلٍ في المملكة. ومن بعده لم يتحدّث أحدٌ عن وليمةِ الشؤم. وكبرت الطفلةُ، واسمُها «تاليا»، موهوبةً مثلما هي جميلة. لكنها كانت قويّةَ الرأس، ولمّا منعها الملكُ والملكةُ في عيدها السابع عشر من مغادرة غرفتها، عصتهما.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2012.mp3"
             },
             {
               "id": 13,
               "text": "The fifth wished her the gift of dance.",
               "translationAr": "وتسلّقت من النافذة لتتجنّب الحارس على الباب، ومشَتْ حول حدائق القصر.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2013.mp3"
             },
             {
               "id": 14,
               "text": "The sixth wished her the gift of …\nWell, we do not know what gift she would have wished for, because at that moment the Evil Fairy appeared in the centre of the great hall, her mouth fixed in a false smile, and her eyes delighting in spite.",
               "translationAr": "وظنّت أنها اكتشفت كلَّ زاويةٍ وثغرةٍ وهي تلعب «استغماية» طفلةً، لكنّها الآن وجدت مدخلًا لم ترَه من قبل. دخلته وصعدت الدرجَ الحلزونيَّ لبرجٍ عالٍ.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2014.mp3"
             },
             {
               "id": 15,
               "text": "“ Do forgive me for dropping by uninvited, ” she said, “ I will not keep you for long.",
               "translationAr": "صعدتْ صعدتْ حتى بلغت غرفةً في القمّة. كان الباب مواربًا. في الداخل وجدت امرأةً عجوزًا تعمل بتركيز عند عجلةٍ غريبة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2015.mp3"
             },
             {
               "id": 16,
               "text": "I have come to wish my own gift upon the baby princess. ”\nWhile the Evil Fairy held everyone’s attention, the seventh good fairy hid behind the curtains.",
               "translationAr": "قالت تاليا: «أخبريني يا امرأةُ الطيّبة، ما هذا؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2016.mp3"
             },
             {
               "id": 17,
               "text": "The wicked one continued: “ I do so wish that the dear little princess shall grow up to be a radiant, accomplished and beautiful girl of sixteen years, the delight of her parents’ eyes, and then, on her seventeenth birthday, she shall prick her finger on the needle of a spinning wheel and DIE!",
               "translationAr": "أجابت: «أما تعلمين؟ إنّه قَدَرُكِ يا عزيزتي.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 18,
-              "text": "How do you like that?",
-              "translationAr": "قالت: «إذا كان قدري، أيمكنني أن أجرّبه؟»",
-              "audioUrl": ""
-            },
-            {
-              "id": 19,
-              "text": "Ha ha ha! ” \nStill laughing dreadfully, she strode from the hall.",
-              "translationAr": "فتركت العجوزُ الأميرةَ تجلس وتلعب بهذه اللعبة الآسرة. دارت العجلةُ وصعدت الإبرةُ وهبطت.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2017.mp3"
             },
             {
               "id": 20,
               "text": "Amid the uproar, the seventh wise fairy stepped out of hiding and waved her wand to cast the spell of silence.",
               "translationAr": "هتفت تاليا: «يا لها من متعة!» ولكنّ الأميرة لم تعتَدْ غزلَ الخيط، فشَكَت إصبعَها بالإبرة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2018.mp3"
             },
             {
               "id": 21,
               "text": "“ There remains a seventh and final wish that is mine to make, ” she said.",
               "translationAr": "صرخت: «انظري! إنني أنزف!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2019.mp3"
             },
             {
               "id": 22,
               "text": "“ It is not in my power to entirely overcome the evil wish, but I can at least do this - when the princess pricks her finger, let her not die, but fall asleep for 100 years until she is awoken by true love’s kiss. ” \nThe very next day the King passed a law forbidding anyone in the land from owning a spinning wheel.",
               "translationAr": "نزلت الأميرةُ درجَ البرج، وساقاها تضعفان أكثر فأكثر، ولمّا بلغتْ حديقةَ الورودِ ارتمت على العشب وغرقت في نومٍ عميق.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2020.mp3"
             },
             {
               "id": 23,
               "text": "After that, no one ever spoke of the ill fated banquet.",
               "translationAr": "حملها رجالُ البلاط إلى غرفتها. واستمرّت نائمةً، ثم غلب النومُ تدريجيًا جميعَ من في القصر.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2021.mp3"
             },
             {
               "id": 24,
               "text": "The child, whose name was Talia, grew up to be as talented as she was beautiful.",
               "translationAr": "وخلال أقلَّ من أسبوعٍ نمتْ غابةٌ عظيمةٌ حول الأسوار فأحاطت بالقصر تمامًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2022.mp3"
             },
             {
               "id": 25,
               "text": "But she was also strong headed, and when, on her seventeenth birthday, the King and Queen forbade her to leave her room, she disobeyed them.",
               "translationAr": "بعد مئةِ عام، كان أميرٌ يخرج للصيد. سأل رفاقَه: «ما تلك الأبراجُ فوق رؤوس الأشجار؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2023.mp3"
             },
             {
               "id": 26,
               "text": "She climbed out of her window to avoid the guard on the door, and walked around the grounds of the palace.",
               "translationAr": "قال بعضُهم: هناك غولٌ يعيش هناك. وقال آخرون: ساحراتٌ يرقصْنَ عند اكتمال القمر. وقيل أيضًا إنّها أميرةٌ نائمة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2024.mp3"
             },
             {
               "id": 27,
               "text": "She thought that she discovered every nook and cranny while playing hide and seek as a child, but, oddly enough, she now found an entrance that she had not seen before.",
               "translationAr": "وجّه الأميرُ الفضوليُّ جوادَه نحو البرج واخترق الأشجار. وسُرعان ما بلغ مكانًا معتمًا تزدحم فيه شجيراتُ الشوك غِلاظًا حدادًا لا يمرّ خلالها أحد.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2025.mp3"
             },
             {
               "id": 28,
               "text": "She went through it and climbed the winding steps of a tower.",
               "translationAr": "لكن بالنسبة إليه وحده انفرجت العُلّيقُ وفتحت له طريقًا. مضى حتى بوّابات القصر نفسِه، فرأى كلَّ سادةٍ وخدمٍ، وكلَّ خيلٍ وكلابٍ، نيامًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2026.mp3"
             },
             {
               "id": 29,
               "text": "Up, up she stepped, until right at the top she came to a room.",
               "translationAr": "ورأى طعامًا على الأطباق، وكؤوسًا نصفَ مملوءة، ونيرانًا ما تزال تتوهّج، وكلَّ شيءٍ كما كان.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2027.mp3"
             },
             {
               "id": 30,
               "text": "The door was ajar.",
               "translationAr": "ومشى في رواقٍ من الرخام، وطرق الأبواب وتطلّع في الغُرَف، حتى وجد أخيرًا حجرةً مذهّبة، وفي داخلها، بين أغطيةٍ مُطرَّزةٍ ووسائدَ حريرية، أميرةً نائمة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2028.mp3"
             },
             {
               "id": 31,
               "text": "Inside she found an old woman, working intently at a strange wheel.",
               "translationAr": "كانت تنام بسلام. جثا الأميرُ بجانبها، وأمسكَ يدَها وقبّلها. فانفتحت عيناها، وكانتا زرقاوين مليئتين بالفضول.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2029.mp3"
             },
             {
               "id": 32,
               "text": "“ Pray tell me, good woman, what is that? ” asked Talia.",
               "translationAr": "سألتْ: «من أنت؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Sleeping%20Beauty%20%E2%80%93%20Short%20Version/Sleeping%20Beauty%20%E2%80%93%20Short%20Version%20S%2030.mp3"
             }
           ]
         },
@@ -27396,136 +27384,70 @@ export const readingData = [
         "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S04.mp3"
       },
       {
-        "id": 5,
-        "text": "Well today I ate a wonderfully rich and creamy slice of cheddar for my breakfast.",
-        "translationAr": "حسنًا، اليوم تناولت شريحة شيدر غنية ودسمة على الإفطار.",
-        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S05.mp3"
-      },
-      {
-        "id": 6,
-        "text": "It was kindly given to me by a beautiful black - feathered bird whose voice is even more wonderful than her looks.",
-        "translationAr": "وقد أعطتني إياها طائر جميل ذو ريش أسود، صوته أروع حتى من مظهره.",
-        "audioUrl": ""
-      },
-      {
-        "id": 7,
-        "text": "No, I don’t mean a sky - lark, or a fancy bird of paradise.",
-        "translationAr": "لا، لا أقصد القبرة، ولا طائر الجنة المتفاخر.",
-        "audioUrl": ""
-      },
-      {
-        "id": 8,
-        "text": "I’m talking about Miss Crow, up in that tree.",
-        "translationAr": "أنا أتحدث عن الآنسة غراب، هناك على الشجرة.",
-        "audioUrl": ""
-      },
-      {
         "id": 9,
         "text": "It was a fine bright morning, and I was following my sharp nose through the woods in search of a bite to eat, when I caught a cheesy smell on the breeze.",
         "translationAr": "كان صباحًا جميلًا ومشرقًا، وكنت أتتبع أنفي الحاد في الغابة بحثًا عن لقمة آكلها، عندما التقطت رائحة الجبن محمولة على النسيم.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S05.mp3"
       },
       {
         "id": 10,
         "text": "I looked up into the tree and there on the branch I saw Miss Crow, looking terribly pleased with herself, for in her beak she held a large piece of cheese.",
         "translationAr": "نظرت إلى أعلى الشجرة، فإذا بالآنسة غراب تجلس على الغصن راضية جدًا عن نفسها، وفي منقارها قطعة جبن كبيرة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S06.mp3"
       },
       {
         "id": 11,
-        "text": "It was stolen, no doubt, from the farmer over the hill, but I’m not one to go around accusing people of this and that.",
-        "translationAr": "لم يكن هناك شك أنها مسروقة من المزارع خلف التل، لكنني لست ممن يتهمون الناس دون دليل.",
-        "audioUrl": ""
+        "text": "It was stolen, no doubt,",
+        "translationAr": "لقد سُرقت، بلا شك،",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S07.mp3"
       },
       {
         "id": 12,
         "text": "I called up to my neighbour and said: “ Good morning Miss Crow, you are looking very lovely today, if I may say so. ”",
         "translationAr": "ناديت جاري وقلت: “صباح الخير يا آنسة غراب، تبدين جميلة جدًا اليوم، إن جاز لي القول. ”",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S08.mp3"
       },
       {
         "id": 13,
         "text": "Miss Crow cocked her head on one side and looked at me with her beady little eye, but she kept her beak firmly closed on the cheese.",
         "translationAr": "أمالت الآنسة غراب رأسها إلى جانب ونظرت إلي بعينها الصغيرة اللامعة، لكنها أبقت منقارها مغلقًا بإحكام على الجبن.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S09.mp3"
       },
       {
         "id": 14,
-        "text": "“ Such a charming creature, ” I mused to myself, making sure nevertheless that she could overhear.",
+        "text": "“ Such a charming creature, ” I mused to myself,",
         "translationAr": "قلت لنفسي متعمدًا أن تسمع: “يا لها من مخلوقة جذابة.”",
-        "audioUrl": ""
-      },
-      {
-        "id": 15,
-        "text": "“ Such a fine sheen on those wondrous black feathers. What wings! What legs! And that beak, exquisite! ”",
-        "translationAr": "“ يا لهذا البريق الرائع على ريشها الأسود العجيب. ما تلك الأجنحة! ما تلك الساقان! وذلك المنقار، بديع! ”",
-        "audioUrl": ""
-      },
-      {
-        "id": 16,
-        "text": "I could see that Miss Crow was paying close attention to my words, even though she was pretending ever so hard not to hear.",
-        "translationAr": "كنت أرى أن الآنسة غراب تنصت جيدًا لكلامي، رغم أنها تتظاهر بأنها لا تسمع شيئًا.",
-        "audioUrl": ""
-      },
-      {
-        "id": 17,
-        "text": "So I gazed up at the tree with admiration and love in my eyes and said: “ Ah, my heart is smitten by this wonderful bird.",
-        "translationAr": "فرفعت بصري إلى الشجرة بإعجاب ومحبة وقلت: “آه، لقد سحر قلبي هذا الطائر الرائع.",
-        "audioUrl": ""
-      },
-      {
-        "id": 18,
-        "text": "If only I could hear her voice.",
-        "translationAr": "لو أنني فقط أستطيع سماع صوتها.",
-        "audioUrl": ""
-      },
-      {
-        "id": 19,
-        "text": "I’m sure that such a charming creature must sing most sweetly!",
-        "translationAr": "أنا متأكد أن مثل هذه المخلوقة الساحرة لابد أن تغني أعذب الألحان!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S10.mp3"
       },
       {
         "id": 20,
         "text": "If I could but hear one line of her song, I would hail her as the Princess of The Forest! ”",
         "translationAr": "لو سمعت فقط سطرًا واحدًا من أغنيتها، لأعلنتها أميرة الغابة!",
-        "audioUrl": ""
-      },
-      {
-        "id": 21,
-        "text": "Now I could see my words had hit home.",
-        "translationAr": "والآن أدركت أن كلماتي قد بلغت هدفها.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S11.mp3"
       },
       {
         "id": 22,
-        "text": "Swelling with pride, Miss Crow puffed up her feathers and began to sing the most lovely music I have ever heard.",
-        "translationAr": "امتلأت الآنسة غراب بالغرور، فنفشت ريشها وبدأت تغني أجمل أغنية سمعتها في حياتي.",
-        "audioUrl": ""
+        "text": "Now I could see my words had hit home. Swelling with pride, Miss Crow puffed up her feathers and began to sing the most lovely music I have ever heard.",
+        "translationAr": "الآن أدركتُ أن كلماتي قد وصلت إلى مسامعي. فخرًا، امتلأت الآنسة غراب بالغرور، فنفشت ريشها وبدأت تغني أجمل أغنية سمعتها في حياتي.",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S13.mp3"
       },
       {
         "id": 24,
-        "text": "Well alright, I know that you are saying that Miss Crow’s voice is not exactly star quality,",
-        "translationAr": "حسنًا، أعلم أنك ستقول إن صوت الآنسة غراب ليس تمامًا صوت نجم.",
-        "audioUrl": ""
-      },
-      {
-        "id": 25,
-        "text": "but to me that “ cawww! ” was just the sound that I’d been waiting for.",
-        "translationAr": "لكن بالنسبة لي ذلك الـ“كاو!” كان الصوت الذي كنت أنتظره.",
-        "audioUrl": ""
+        "text": "Well alright, I know that you are saying that Miss Crow’s voice is not exactly star quality, but to me that “ cawww! ” was just the sound that I’d been waiting for.",
+        "translationAr": "حسنًا، أعلم أنك تقول إن صوت الآنسة كرو ليس بجودة النجوم تمامًا، لكن بالنسبة لي ",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S14.mp3"
       },
       {
         "id": 26,
         "text": "Because as soon as she opened her beak, the cheese fell to the ground and I snapped up my breakfast.",
         "translationAr": "لأنه بمجرد أن فتحت منقارها، سقط الجبن على الأرض فخطفته فورًا وتناولته للإفطار.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S15.mp3"
       },
       {
         "id": 27,
         "text": "Which only goes to show that: Flattery will get you everywhere.",
         "translationAr": "وهذا يثبت ببساطة: المديح الزائد يفتح كل الأبواب.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Fox%20and%20the%20Crow/The%20Fox%20and%20the%20Crow%20S16.mp3"
       }
     ]
         },
@@ -30366,184 +30288,160 @@ export const readingData = [
     "lessons": [
       {
         "id": 1,
-        "title": "The Enchanted Deer",
+        "title": "Limericks",
         "description": "Limericks old and new, whole stories in five silly lines of poetry! Join us on this journey down Limerick Lane. Sponsoored by Kiwico key word Story",
         "storyData": {
           "content": [
       {
-        "id": 1,
-        "text": "Hello everyone, Welcome to Storynory, and this week we will dive into the fun and silly world of limericks.",
-        "translationAr": "مرحبًا بالجميع، أهلاً بكم في ستورينوري وهذا الأسبوع سنغوص في عالم الليميركس المليء بالمرح والضحك.",
-        "audioUrl": ""
-      },
-      {
         "id": 2,
         "text": "I’m your host, Lucy Limerick! Well, actually I’m Jana, but Lucy Limerick is quite a fitting name for this episode.",
         "translationAr": "أنا مضيفتكم، لوسي ليميرك! حسنًا، في الحقيقة أنا جنى، لكن اسم لوسي ليميرك مناسب جدًا لهذه الحلقة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2002.mp3"
       },
       {
         "id": 3,
         "text": "Now what is a limerick? It’s a funny little poem with five lines.",
         "translationAr": "ما هو الليميرك؟ إنه قصيدة قصيرة مضحكة مكوّنة من خمسة أسطر.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2003.mp3"
       },
       {
         "id": 4,
         "text": "Three of them rhyme, and there’s also a little rhyming couplet.",
         "translationAr": "ثلاثة من هذه الأسطر تتناغم في القافية، وهناك أيضًا زوج من الأسطر متناغم معها.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2004.mp3"
       },
       {
         "id": 5,
         "text": "It’s simple. I’ll give you an example, and you’ll soon grasp it.",
         "translationAr": "الأمر بسيط. سأعطيكم مثالًا، وستفهمونه بسرعة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2005.mp3"
       },
       {
         "id": 6,
         "text": "Listen to this classic Limerick.",
         "translationAr": "استمعوا إلى هذا الليميرك الكلاسيكي.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2006.mp3"
       },
       {
         "id": 7,
         "text": "There was an Old Man with a beard, Who said, ‘It is just as I feared! Two Owls and a Hen, Four Larks and a Wren, Have all built their nests in my beard!’",
         "translationAr": "كان هناك رجل مسن ذو لحية قال: «لقد حدث تمامًا كما كنت أخشى! بومتان ودجاجة، وأربع قبرة وطائر صغير، جميعهم بنوا أعشاشهم في لحيتي!»",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2007.mp3"
       },
       {
         "id": 8,
         "text": "Did you hear how the lines flowed and rhymed?",
         "translationAr": "هل سمعتم كيف انسابت الأسطر وتناسقت قوافيها؟",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2008.mp3"
       },
       {
         "id": 9,
         "text": "That limerick was by Edward Lear, a Victorian poet who wrote loads of limericks and published them in his Book of Nonsense.",
         "translationAr": "هذا الليميرك كتبه إدوارد لير، شاعر من العصر الفيكتوري كتب الكثير من الليميركس ونشرها في كتابه «كتاب اللامعنى».",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2009.mp3"
       },
       {
         "id": 10,
         "text": "He even drew funny cartoons to accompany his verses!",
         "translationAr": "حتى إنه رسم رسومات مضحكة مرافقة لقصائده!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2010.mp3"
       },
       {
         "id": 11,
         "text": "It’s amazing how much you can say in just five silly lines.",
         "translationAr": "من المدهش كم يمكن للمرء أن يقول في خمسة أسطر مضحكة فقط.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2011.mp3"
       },
       {
         "id": 12,
         "text": "Let’s take a magical ride through some famous stories transformed into limericks!",
         "translationAr": "هيا بنا في رحلة سحرية عبر قصص مشهورة تمت صياغتها كليميركس.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2012.mp3"
       },
       {
         "id": 13,
         "text": "Here’s a story I’m sure you all know. It’s about a girl with a glass slipper!",
         "translationAr": "إليكم قصة أعرف أنكم جميعًا تعرفونها. إنها عن فتاة بحذاء زجاجي!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2013.mp3"
       },
       {
         "id": 14,
         "text": "There once was a maid named Cinderella, Whose stepsisters were not very stellar. With a pumpkin and mice, And a slipper so nice, She danced with her prince; what a fella!",
         "translationAr": "كان هناك فتاة تدعى سندريلا، وكانت أخواتها غير لطيفات. ومع قرع وفئران، وحذاء جميل، رقصت مع أميرها؛ يا له من شاب!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2014.mp3"
       },
       {
         "id": 15,
         "text": "Ah, Cinderella! What a magical evening she had!",
         "translationAr": "آه يا سندريلا! يا لها من أمسية سحرية عاشت بها!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2015.mp3"
       },
       {
         "id": 16,
         "text": "Now, let’s visit a brave little mouse from one of our Storynory tales, called “ The Cat That Went Ting - A - Ling ”.",
         "translationAr": "والآن، لنزر فأرًا صغيرًا شجاعًا من إحدى قصص Storynory، بعنوان «القط الذي كان يصدر صوت تنغ-أ-لنغ».",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2016.mp3"
       },
       {
         "id": 17,
         "text": "Brave little Jimmy, a mouse of great might, Tied the bell to the cat in the night. With a “ ting - a - ling ” warning, From dusk until morning, No more did the cat cause a fright!",
         "translationAr": "جيمي الصغير الشجاع، فأر ذو قوة كبيرة، ربط الجرس بالقط في الليل. وبصوت «تنغ-أ-لنغ» من الغروب حتى الفجر، لم يعد القط يخيف أحدًا!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2017.mp3"
       },
       {
         "id": 18,
-        "text": "Great job, little Jimmy! He saved the day (or night)!",
-        "translationAr": "عمل رائع، يا جيمي الصغير! لقد أنقذ الموقف (أو الليل)!",
-        "audioUrl": ""
+        "text": "Great job, little Jimmy!",
+        "translationAr": "عمل رائع، يا جيمي !",
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2018.mp3"
       },
       {
         "id": 19,
         "text": "Now, we’re off to Aesop’s Meadow, where a crafty fox meets his match!",
         "translationAr": "والآن، ننطلق إلى مرعى إيسوب، حيث يلتقي ثعلب ماكر بمن يفوقه ذكاءً!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2019.mp3"
       },
       {
         "id": 20,
         "text": "There once was a fox, sly and neat, Who craved a plump hen for a treat? But the hen was wise, She saw through his disguise, And left Mr. Fox with no meat.",
         "translationAr": "كان هناك ثعلب ماكر، اشتهى دجاجة سمينة، لكن الدجاجة كانت حكيمة، فرأت خدعته وتركت السيد ثعلب بلا لحم.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2020.mp3"
       },
       {
         "id": 21,
         "text": "There’s a lesson to learn from every fable. The wise hen certainly showed that fox who’s boss!",
         "translationAr": "هناك عِبرة نتعلمها من كل حكاية. الدجاجة الحكيمة أظهرت للثعلب من هو المسؤول!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2021.mp3"
       },
       {
         "id": 22,
         "text": "On to Ancient Greece for an epic limerick of the tale of Troy!",
         "translationAr": "لننتقل إلى اليونان القديمة لليميرك ملحمي عن قصة طروادة!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2022.mp3"
       },
       {
         "id": 23,
         "text": "A horse made of wood was the ruse, That Odysseus did cleverly use. The Trojans beguiled, Brought it in and then smiled, Until out sprang the Greeks, and lit the fuse!",
         "translationAr": "كان هناك حصان مصنوع من الخشب، استخدمه أوديسيوس بذكاء. خدع الطرواديون، فأدخلوا الحصان وهم يبتسمون، حتى خرج الإغريق منه وأشعلوا المعركة!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2023.mp3"
       },
       {
         "id": 24,
         "text": "Wow, what an epic battle that was!",
         "translationAr": "واو، يا لها من معركة ملحمية!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2024.mp3"
       },
       {
         "id": 25,
         "text": "Our final story takes us to the Enchanted Forest, where Little Red Riding Hood has an adventure!",
         "translationAr": "قصتنا الأخيرة تأخذنا إلى الغابة المسحورة، حيث تخوض ذات الرداء الأحمر مغامرة!",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2025.mp3"
       },
       {
         "id": 26,
         "text": "In the woods, Little Red was quite happy, With a basket of treats, for her granny. Met a wolf in disguise, Who had big, greedy eyes, But the woodsman made his end short and snappy.",
         "translationAr": "في الغابة كانت ذات الرداء الأحمر سعيدة، ومعها سلة حلوى لجدتها. التقت بذئب متخفٍ بعينين جشعتين، لكن الحطاب أنهى أمره بسرعة.",
-        "audioUrl": ""
+        "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/limericks/limericks%20S%2026.mp3"
       },
-      {
-        "id": 27,
-        "text": "The woodsman saved the day! You can never get tired of that story.",
-        "translationAr": "لقد أنقذ الحطاب الموقف! لا يمكن أن نمل من هذه القصة.",
-        "audioUrl": ""
-      },
-      {
-        "id": 28,
-        "text": "Thank you for joining me on this whimsical journey down Limerick Lane.",
-        "translationAr": "شكرًا لانضمامكم إليّ في هذه الرحلة الخيالية في عالم الليميركس.",
-        "audioUrl": ""
-      },
-      {
-        "id": 29,
-        "text": "Remember, limericks are a fun and creative way to tell stories. So why not make up your own?",
-        "translationAr": "تذكروا، الليميركس طريقة ممتعة وإبداعية لقول القصص. فلماذا لا تؤلفون واحدًا بأنفسكم؟",
-        "audioUrl": ""
-      }
     ]
         }, 
          "wordDefinitions": {
@@ -31044,7 +30942,7 @@ export const readingData = [
       "definition": "Vocabulary"
     },
     "limerick": {
-      "translation": "ليميرك",
+      "translation": "قصيدة فكاهية",
       "definition": "Vocabulary"
     },
     "limericks": {
