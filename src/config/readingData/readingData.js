@@ -2224,224 +2224,200 @@ export const readingData = [
               "id": 26,
               "text": "“ You are going to drink the entire sea? Don’t you know the water is very salty? ”",
               "translationAr": "قالت: «أتشرب البحر كلَّه؟ ألا تعلم أن ماءه مِلْحٌ أُجاج؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2025.mp3"
             },
             {
               "id": 27,
               "text": "“ Yes! Fairness isn’t just for the big and powerful — it’s for little birds too! ”",
               "translationAr": "قال: «نعم! إنَّ العدل ليس للأقوياء وحدهم، بل للصغارِ أيضًا!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2026.mp3"
             },
             {
               "id": 28,
               "text": "Just then the sea rushed into the shore and covered him with a wave, but the little Tittibha’s head emerged above the foam and he cried: “ Fight! Fight! Fight! For what is right right right! ”",
               "translationAr": "وإذا بالبحر يندفع إلى الشاطئ ويغمره بموجة؛ غير أنّ رأس التيتيبها الصغير برز فوق الزَّبد، وصرخ: «قاتِلْ! قاتِلْ! قاتِلْ! لأجل الحقِّ الحقِّ الحقِّ!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2027.mp3"
             },
             {
               "id": 29,
               "text": "The gulls flying overhead echoed back, “ Fight! Fight! Fight! For what is right right right! ” The mother bird shook her head.",
               "translationAr": "فردّدت النوارسُ الطائرة: «قاتِلْ! لأجل الحق!» وهزّت الأُنثى رأسها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2028.mp3"
             },
             {
               "id": 30,
               "text": "“ Fine. If you’re going to take on the sea, you’d better call your friends. ”",
               "translationAr": "وقالت: «حسنًا؛ إن كنت ستتحدّى البحر فادعُ إخوتكَ الطير.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2029.mp3"
             },
             {
               "id": 31,
               "text": "So, he summoned the swan, the crane, the peacock, and every other bird he knew. They gathered on the shore, eyeing the vast sea.",
               "translationAr": "فاستنفر البجعة والكرْكِيَّ والطاووس، وكلَّ طائرٍ يعرفه، فاجتمعوا على الشاطئ يحدّقون في البحر الفسيح.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2030.mp3"
             },
             {
               "id": 32,
               "text": "The peacock shook his head. “ This is ridiculous. You can’t drink the sea. ”",
               "translationAr": "وهزّ الطاووس رأسه وقال: «هذا عبث؛ لا تستطيع شرب البحر.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2031.mp3"
             },
             {
               "id": 33,
               "text": "“ Can too! ” said the father bird. “ We’ll all take turns. ”",
               "translationAr": "قال الذكر: «بل نستطيع! نتناوب جميعًا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2032.mp3"
             },
             {
               "id": 34,
               "text": "“ No can do, I’m afraid. Far too salty for my taste, ” muttered the crane.",
               "translationAr": "تمتم الكركيّ: «لا طاقة لنا—مِلْحه فوق الاحتمال.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2033.mp3"
             },
             {
               "id": 35,
               "text": "The swan suggested, “ Why not ask King Garuda for help? He’s wise, powerful, and might actually have a plan. ”",
               "translationAr": "وقالت البجعةُ مُقترِحة: «لِمَ لا نستغيث بملك الطير جارودا؟ فهو حكيمٌ قويّ، ولعلَّ عنده خطة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2034.mp3"
             },
             {
               "id": 36,
               "text": "Garuda, the king of the birds, was perched on a mountain peak, gazing down at the clouds.",
               "translationAr": "كان جارودا، ملك الطير، جاثمًا على ذُرى جبلٍ يرمق السحاب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2035.mp3"
             },
             {
               "id": 37,
               "text": "His huge wings glinted with golden feathers and he had a beak as sharp as a sword.",
               "translationAr": "تتلألأ في جناحيه الضخمين ريشاتٌ ذهبية، ومنقاره ماضٍ كسيف.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2036.mp3"
             },
             {
               "id": 38,
               "text": "His royal Highness was surprised to see that the little Tittibha bird had flown all the way up to speak to him.",
               "translationAr": "وقد دُهِشَ جلالته حين رأى طائر التيتيبها الصغير قد حلق إليه يُكلمه.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2037.mp3"
             },
             {
               "id": 39,
               "text": "“ Why do you disturb me? ” he asked, in a deep voice rolling like thunder.",
               "translationAr": "وسأله بصوتٍ عميقٍ كالرعد: «لِمَ تُقلقني؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2038.mp3"
             },
             {
               "id": 40,
               "text": "The father bird fluttered forward. “ O King, the sea has stolen our eggs. She thinks she can do as she pleases just because she’s big. But justice is for little birds too! We need your help. ”",
               "translationAr": "فتقدّم الذكر قائلًا: «أيها الملك، لقد سرق البحرُ بيضَنا، ويظنُّ أنَّ كِبَرَه يبيح له ما يشاء. ولكنّ العدل للصغار أيضًا. نلتمس نصرتك.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2039.mp3"
             },
             {
               "id": 41,
               "text": "Garuda’s eyes blazed with anger: “ The sea has indeed insulted my birds! Unacceptable. I will ensure justice! ”",
               "translationAr": "فالتَهَبَتْ عينا جارودا غضبًا وقال: «لقد أهان البحرُ طيري—وهذا غيرُ مقبول. سأستوفي الحق!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2040.mp3"
             },
             {
               "id": 42,
               "text": "Garuda soared down to the shore. He landed before the sea, who rolled back her waves lazily.",
               "translationAr": "وانقضَّ جارودا نحو الساحل، وحطَّ أمام البحر، فتراجعت أمواجه كسلَى.",
-              "audioUrl": ""
-            },
-            {
-              "id": 43,
-              "text": "“ Garuda, ” she said, “ why all this drama? Is this about those tiny birds? Let it go! Let it go! ”",
-              "translationAr": "وقالت: «يا جارودا، ما هذا التهويل؟ أهو بشأن تلك الطيور الصغيرة؟ دَع الأمر يمضي.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2042.mp3"
             },
             {
               "id": 44,
-              "text": "“ You swallowed their eggs. Return them, or face my wrath! ” boomed Garuda.",
+              "text": "“ You swallowed their eggs. Return them now, or face my wrath! ” boomed Garuda.",
               "translationAr": "فدوّى جارودا: «لقد ابتلعتِ بيضهم؛ أعِيديه وإلّا تلقيتِ سَخطي!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2043.mp3"
             },
             {
               "id": 45,
               "text": "The sea foamed. “ Your wrath? Please, what can you do? I am the sea! Rivers bow to me. Do not try me! Even the sun cannot dry me!",
               "translationAr": "فارَ الزَّبَد وقالت: «سخطُك؟ وما عساك تصنع؟ أنا البحر، والأنهارُ تخضع لي؛ فلا تُجَرِّبني! حتى الشمس لا تُجفِّفني!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2044.mp3"
             },
             {
               "id": 46,
               "text": "You may be a God, but you’re still a bird. To take on the sea is simply absurd. ”",
               "translationAr": "«قد تكون إلهًا، ولكنّك طائرٌ في النهاية؛ ومنازلة البحر محضُ عبث.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2045.mp3"
             },
             {
               "id": 47,
               "text": "Just then, a flash of light split the sky. Lord Vishnu descended, his four arms holding a conch, discus, mace, and — a thunderbolt.",
               "translationAr": "وإذ ببرقٍ يشقُّ السماء، ونزل السيّد فيشنو، وفي أذرعه الأربع صَدَفَةٌ ودِرْقٌ ومِقمَعَة—وصاعقة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2046.mp3"
             },
             {
               "id": 48,
               "text": "“ Good morning, Sea, ” said Vishnu, “ You, it seems, have stolen the eggs of my servant’s servant. Return them at once. ”",
               "translationAr": "وقال: «صباح الخير أيتها البحار؛ بلغني أنّك سرقتِ بيضَ خادمِ خادمي، فردّيه حالًا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2047.mp3"
             },
             {
               "id": 49,
-              "text": "The sea rolled her waves in mock defiance and warned of chaos if struck.",
-              "translationAr": "فدحرجت البحرُ أمواجَها تحدّيًا مصطنعًا، وحذّرت من الفوضى إن ضُرِبَتْ بالصاعقة: طوفانٌ، وبحّارةٌ جرحى، ومحاصيلُ تالفة.",
-              "audioUrl": ""
+              "text": "The sea rolled her waves in mock defiance.",
+              "translationAr": "فدحرجت البحرُ أمواجَها تحدّيًا مصطنعًا.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2048.mp3"
             },
             {
               "id": 50,
               "text": "Vishnu raised the thunderbolt, and the sea quivered. “ Return the eggs now or face the consequences. ”",
               "translationAr": "فرفع فيشنو الصاعقة فارتعد البحر، وقال: «أعيدي البيضَ الآن وإلّا تحمّلتِ العاقبة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2049.mp3"
             },
             {
               "id": 51,
               "text": "The sea sighed deeply. “ Fine, fine. You win this time. I’ll give back the eggs. Though I say, the sea does not forget. ”",
               "translationAr": "فزفرت البحرُ وقالت: «حسنًا، لقد غلبتم هذه المرّة. سأُعيد البيض، غيرَ أنّ البحر لا ينسى.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2050.mp3"
             },
             {
               "id": 52,
               "text": "The eggs were returned to the delighted Tittibha birds.",
               "translationAr": "فعاد البيضُ إلى طيري التيتيبها المسرورين.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2051.mp3"
             },
             {
               "id": 53,
               "text": "The father bird fluffed his feathers proudly. “ See? Justice is for little birds too. ”",
               "translationAr": "ونفش الذكرُ ريشَه فخرًا وقال: «أرأيتِ؟ العدلُ للصغار أيضًا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2052.mp3"
             },
             {
               "id": 54,
               "text": "The mother bird gave him a sideways look. “ You’re lucky Vishnu and Garuda agreed. Otherwise, you’d still be drinking the sea. ”",
               "translationAr": "ونظرت إليه الأُنثى مائلةً وقالت: «لقد أسعدك رضا فيشنو وجارودا؛ ولولا ذلك لظللتَ تشرب البحر.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2053.mp3"
             },
             {
               "id": 55,
               "text": "The sea rumbled one last time, muttering, “ Tiny little birds, giant egos, ” as she retreated.",
               "translationAr": "وهدرت البحر آخر مرةٍ وهي تنكفئ: «طيورٌ صغيرة، وأنَى عظيمة.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 56,
-              "text": "And that was ‘The Tiny Birds and the Mighty Sea.’ Read by me Jana for Storynory.com.",
-              "translationAr": "وهذه كانت «الطيور الصغيرة والبحر العظيم»، قرأتُها لكم أنا جَنا لموقع Storynory.com.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2054.mp3"
             },
             {
               "id": 57,
               "text": "So who do you think is right? Should little creatures stand up for justice, like the father bird believes?",
               "translationAr": "فبرأيكم من المصيب؟ أَيجدرُ بالمخلوقات الصغيرة أن تنتصر للعدالة كما يرى طائرُنا؟",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2056.mp3"
             },
             {
               "id": 58,
               "text": "Or is the mother bird more realistic, saying the small should be careful not to upset the powerful?",
               "translationAr": "أم أن رأي الأُمّ أَوْلى، إذ ترى أن على الصغار أن يتحفّظوا لئلّا يُغضِبوا الأقوياء؟",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2057.mp3"
             },
             {
               "id": 59,
               "text": "And if you do run up against somebody bigger than you, will laws and rules protect you?",
               "translationAr": "وإن صادفتم من هو أكبرُ شأنًا، فهل تُجيركم القوانين والأنظمة؟",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2058.mp3"
             },
             {
               "id": 60,
               "text": "What idea do you think is more realistic in the world? It’s something you can think about and discuss.",
               "translationAr": "فأيُّ الرأيين أَصْدقُ بواقع الدنيا؟ فكرةٌ تستحقُّ التأمّل والنقاش.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2059.mp3"
             },
-            {
-              "id": 61,
-              "text": "And I’d like to thank Nithya (6) and Adarsh (8) — and their cousins from India, Kethan (6) and Karunya (13) — for supporting Storynory and for introducing the Tittibha birds to us.",
-              "translationAr": "وأودُّ أن أشكر نيثيا (٦) وأدارش (٨)، وابني عمهما من الهند كيثان (٦) وكارونيا (١٣)، لدعمهم سترونوري ولتعريفنا بطيور التيتيبها.",
-              "audioUrl": ""
-            },
-            {
-              "id": 62,
-              "text": "And if any of our listeners would like to support us, the best way is via PayPal. See Storynory.com for details.",
-              "translationAr": "وإن رغب أحد مستمعينا في دعمنا، فأفضل السبل عبر «باي بال». تجدون التفاصيل على Storynory.com.",
-              "audioUrl": ""
-            }
           ]
         },
         "wordDefinitions": {
