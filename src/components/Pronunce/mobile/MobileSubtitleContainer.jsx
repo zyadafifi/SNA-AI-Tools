@@ -1,26 +1,20 @@
 import React from "react";
 
 const MobileSubtitleContainer = ({
-  englishText,
-  arabicText,
   currentSubtitle,
   showVideoSubtitles = false,
   isMobile = false,
 }) => {
-  // Use video subtitles if available and we're on mobile, otherwise fallback to static text
-  const displayEnglish =
-    showVideoSubtitles && isMobile && currentSubtitle?.englishText
-      ? currentSubtitle.englishText
-      : englishText;
+  // ONLY show subtitles from SRT files, never from pronounceData.json
+  // Only display if we have currentSubtitle from SRT files
+  if (!showVideoSubtitles || !isMobile || !currentSubtitle) {
+    return null; // Don't render if no SRT subtitle available
+  }
 
-  const displayArabic =
-    showVideoSubtitles && isMobile && currentSubtitle?.arabicText
-      ? currentSubtitle.arabicText
-      : arabicText;
+  const displayEnglish = currentSubtitle?.englishText;
+  const displayArabic = currentSubtitle?.arabicText;
 
-  // Debug logging
-
-  // Always render the container, but only show content if we have text to display
+  // Only render if we have subtitle text from SRT
   const hasContent = displayEnglish || displayArabic;
 
   if (!hasContent) {

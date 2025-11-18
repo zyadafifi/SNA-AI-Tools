@@ -19,25 +19,16 @@ import { FaMicrophone, FaRegLightbulb } from "react-icons/fa";
 import "./MobileLessonPage.css";
 
 export const MobileLessonPage = () => {
-  const { lessonNumber, topicId, conversationId } = useParams();
+  const { lessonNumber } = useParams();
   const navigate = useNavigate();
-  const {
-    setCurrentLesson,
-    setCurrentTopic,
-    setCurrentConversation,
-    updateTopicProgress,
-    updateLessonProgressByTopics,
-  } = useProgress();
+  const { setCurrentLesson, completeLesson } = useProgress();
 
   const [lesson, setLesson] = useState(null);
-  const [topic, setTopic] = useState(null);
-  const [conversation, setConversation] = useState(null);
   const [lessonsData, setLessonsData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [showPracticeOverlay, setShowPracticeOverlay] = useState(false);
   const [showReplayOverlay, setShowReplayOverlay] = useState(false);
   const [showCompletionCard, setShowCompletionCard] = useState(false);
-  const [topicCompletedStatus, setTopicCompletedStatus] = useState(false);
   const [lessonCompletedStatus, setLessonCompletedStatus] = useState(false);
   const [showResultsDialog, setShowResultsDialog] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -69,8 +60,8 @@ export const MobileLessonPage = () => {
     resetConversation,
     setCurrentSentenceIndex,
   } = useConversationProgress(
-    conversationId ? parseInt(conversationId) : 0,
-    conversation?.sentences?.length || 0
+    lessonNumber ? parseInt(lessonNumber) : 0,
+    lesson?.sentences?.length || 0
   );
 
   const {
@@ -183,7 +174,7 @@ export const MobileLessonPage = () => {
     loadLessonsData();
   }, []);
 
-  // Load conversation data
+  // Load lesson data
   useEffect(() => {
     if (!lessonsData) return;
 
@@ -194,41 +185,11 @@ export const MobileLessonPage = () => {
     if (currentLesson) {
       setLesson(currentLesson);
       setCurrentLesson(currentLesson.lessonNumber);
-
-      const currentTopic = currentLesson.topics.find(
-        (t) => t.id === parseInt(topicId)
-      );
-
-      if (currentTopic) {
-        setTopic(currentTopic);
-        setCurrentTopic(currentTopic.id);
-
-        const currentConversation = currentTopic.conversations.find(
-          (c) => c.id === parseInt(conversationId)
-        );
-
-        if (currentConversation) {
-          setConversation(currentConversation);
-          setCurrentConversation(currentConversation.id);
-        } else {
-          console.error("Conversation not found with ID:", conversationId);
-        }
-      } else {
-        console.error("Topic not found with ID:", topicId);
-      }
     } else {
       console.error("Lesson not found with number:", lessonNumber);
     }
     setIsLoading(false);
-  }, [
-    lessonNumber,
-    topicId,
-    conversationId,
-    lessonsData,
-    setCurrentLesson,
-    setCurrentTopic,
-    setCurrentConversation,
-  ]);
+  }, [lessonNumber, lessonsData, setCurrentLesson]);
 
   // Retry video loading function
   const retryVideoLoad = useCallback(
@@ -255,14 +216,10 @@ export const MobileLessonPage = () => {
     [setVideoSource]
   );
 
-  // Set video source when conversation changes
+  // Set video source when lesson changes
   useEffect(() => {
-    if (
-      conversation &&
-      conversation.sentences &&
-      conversation.sentences[currentSentenceIndex]
-    ) {
-      const currentSentence = conversation.sentences[currentSentenceIndex];
+    if (lesson && lesson.sentences && lesson.sentences[currentSentenceIndex]) {
+      const currentSentence = lesson.sentences[currentSentenceIndex];
       if (
         currentSentence.videoSrc &&
         currentSentence.videoSrc !== currentVideoSrc
@@ -275,8 +232,6 @@ export const MobileLessonPage = () => {
         if (isMobile) {
           loadSubtitlesForSentence(
             parseInt(lessonNumber),
-            parseInt(topicId),
-            parseInt(conversationId),
             currentSentenceIndex + 1 // SRT files are 1-based
           );
         }
@@ -304,70 +259,47 @@ export const MobileLessonPage = () => {
       }
     }
   }, [
-    conversation,
+    lesson,
     currentSentenceIndex,
     currentVideoSrc,
     hasUserInteracted,
     retryVideoLoad,
     isMobile,
     lessonNumber,
-    topicId,
-    conversationId,
     loadSubtitlesForSentence,
   ]);
 
-  // Handle conversation completion and update topic/lesson progress
-  const handleConversationCompleted = useCallback(
-    (completedConversationId, finalScore) => {
-      if (topic && lesson && lessonsData) {
-        // Update topic progress based on all conversations in the topic
-        const topicResult = updateTopicProgress(parseInt(topicId), topic);
-
-        // If topic is completed, update lesson progress
-        if (topicResult.completed) {
-          setTopicCompletedStatus(true);
-
-          const lessonResult = updateLessonProgressByTopics(
-            parseInt(lessonNumber),
-            lessonsData.lessons
-          );
-
-          if (lessonResult.completed) {
-            setLessonCompletedStatus(true);
-          }
-        }
+  // Handle lesson completion and update progress
+  const handleLessonCompleted = useCallback(
+    (finalScore) => {
+      if (lesson && lessonsData) {
+        // Mark lesson as completed
+        completeLesson(lesson.lessonNumber);
+        setLessonCompletedStatus(true);
       }
     },
-    [
-      topic,
-      lesson,
-      lessonsData,
-      topicId,
-      lessonNumber,
-      updateTopicProgress,
-      updateLessonProgressByTopics,
-    ]
+    [lesson, lessonsData, completeLesson]
   );
 
-  // Set up global conversation completion callback
+  // Set up global lesson completion callback
   useEffect(() => {
-    window.onConversationCompleted = handleConversationCompleted;
+    window.onLessonCompleted = handleLessonCompleted;
     return () => {
-      window.onConversationCompleted = null;
+      window.onLessonCompleted = null;
     };
-  }, [handleConversationCompleted]);
+  }, [handleLessonCompleted]);
 
-  // Show completion card only when conversation is actually completed
+  // Show completion card only when lesson is actually completed
   useEffect(() => {
     if (
       isConversationCompleted &&
-      currentSentenceIndex >= conversation?.sentences?.length - 1
+      currentSentenceIndex >= lesson?.sentences?.length - 1
     ) {
       setShowCompletionCard(true);
 
-      // Trigger conversation completion handling
-      if (conversation && topic && lesson) {
-        handleConversationCompleted(conversation.id, overallScore);
+      // Trigger lesson completion handling
+      if (lesson) {
+        handleLessonCompleted(overallScore);
       }
     } else {
       setShowCompletionCard(false);
@@ -375,11 +307,9 @@ export const MobileLessonPage = () => {
   }, [
     isConversationCompleted,
     currentSentenceIndex,
-    conversation,
-    topic,
     lesson,
     overallScore,
-    handleConversationCompleted,
+    handleLessonCompleted,
   ]);
 
   // Detect if we're on mobile and set initial overlay state
@@ -395,7 +325,7 @@ export const MobileLessonPage = () => {
   }, [isMobile, hasUserInteracted]);
 
   const handleBackClick = () => {
-    navigate(`/pronounce/topics/${lessonNumber}`);
+    navigate(`/pronounce/home`);
   };
 
   const handleVideoEnd = () => {
@@ -430,12 +360,8 @@ export const MobileLessonPage = () => {
       userInteractionRef.current = true;
     }
 
-    if (
-      conversation &&
-      conversation.sentences &&
-      conversation.sentences[currentSentenceIndex]
-    ) {
-      const currentSentence = conversation.sentences[currentSentenceIndex];
+    if (lesson && lesson.sentences && lesson.sentences[currentSentenceIndex]) {
+      const currentSentence = lesson.sentences[currentSentenceIndex];
       if (isMobile) {
         mobileSpeakSentence(currentSentence.english);
       } else {
@@ -451,12 +377,8 @@ export const MobileLessonPage = () => {
       userInteractionRef.current = true;
     }
 
-    if (
-      conversation &&
-      conversation.sentences &&
-      conversation.sentences[currentSentenceIndex]
-    ) {
-      const currentSentence = conversation.sentences[currentSentenceIndex];
+    if (lesson && lesson.sentences && lesson.sentences[currentSentenceIndex]) {
+      const currentSentence = lesson.sentences[currentSentenceIndex];
       if (isMobile) {
         mobileSpeakSentence(currentSentence.english, true);
       } else {
@@ -509,17 +431,13 @@ export const MobileLessonPage = () => {
     setShowResultsDialog(false);
     clearRecording();
 
-    if (
-      conversation &&
-      conversation.sentences &&
-      conversation.sentences[currentSentenceIndex]
-    ) {
-      const currentSentence = conversation.sentences[currentSentenceIndex];
+    if (lesson && lesson.sentences && lesson.sentences[currentSentenceIndex]) {
+      const currentSentence = lesson.sentences[currentSentenceIndex];
       completeSentence(currentSentenceIndex, lastScore);
 
       // Move to next sentence if not completed
       // Note: completeSentence already updates currentSentenceIndex internally
-      if (currentSentenceIndex < conversation.sentences.length - 1) {
+      if (currentSentenceIndex < lesson.sentences.length - 1) {
         const nextSentenceIndex = currentSentenceIndex + 1;
 
         // Hide practice overlay and replay overlay
@@ -530,22 +448,24 @@ export const MobileLessonPage = () => {
         if (isMobile) {
           loadSubtitlesForSentence(
             parseInt(lessonNumber),
-            parseInt(topicId),
-            parseInt(conversationId),
             nextSentenceIndex + 1 // SRT files are 1-based
           );
         }
 
-        // Auto-play next video (only if user has interacted)
-        // Use setTimeout to ensure state from completeSentence has updated
+        // Auto-play next video after first sentence is completed
         setTimeout(() => {
           if (hasUserInteracted || userInteractionRef.current) {
             setTimeout(async () => {
-              if (conversation.sentences[nextSentenceIndex]?.videoSrc) {
-                setVideoSource(
-                  conversation.sentences[nextSentenceIndex].videoSrc
-                );
-                // Video is loaded but paused - user must click to play
+              if (lesson.sentences[nextSentenceIndex]?.videoSrc) {
+                setVideoSource(lesson.sentences[nextSentenceIndex].videoSrc);
+                // Auto-play the next video
+                setTimeout(async () => {
+                  try {
+                    await safeVideoPlay();
+                  } catch (error) {
+                    console.error("Auto-play error:", error);
+                  }
+                }, 300);
               }
             }, 500);
           }
@@ -556,10 +476,10 @@ export const MobileLessonPage = () => {
 
   const handleBackToLessons = () => {
     // Save progress before navigating back
-    if (lesson && topic && conversation) {
+    if (lesson) {
       // Progress is already saved through the ProgressContext
     }
-    navigate(`/pronounce/topics/${lessonNumber}`);
+    navigate(`/pronounce/home`);
   };
 
   const showAlertMessage = (message) => {
@@ -654,16 +574,12 @@ export const MobileLessonPage = () => {
     );
   }
 
-  if (!lesson || !topic || !conversation) {
+  if (!lesson) {
     return (
       <div className="mobile-video-container">
         <div className="mobile-loading show">
           <span>
-            {!lesson && `Lesson ${lessonNumber} not found. `}
-            {!topic && `Topic ${topicId} not found. `}
-            {!conversation && `Conversation ${conversationId} not found. `}
-            <br />
-            URL: /mobile/{lessonNumber}/{topicId}/{conversationId}
+            Lesson {lessonNumber} not found.
             <br />
             <button
               onClick={() => navigate("/")}
@@ -685,7 +601,7 @@ export const MobileLessonPage = () => {
     );
   }
 
-  const currentSentence = conversation.sentences[currentSentenceIndex];
+  const currentSentence = lesson.sentences[currentSentenceIndex];
 
   return (
     <>
@@ -695,7 +611,7 @@ export const MobileLessonPage = () => {
           <ProgressBar
             currentSentenceIndex={currentSentenceIndex}
             sentenceProgress={0}
-            sentences={conversation.sentences}
+            sentences={lesson.sentences}
             completedSentences={completedSentences.size}
           />
         </div>
@@ -777,10 +693,8 @@ export const MobileLessonPage = () => {
           </div>
         )}
 
-        {/* Subtitle Container */}
+        {/* Subtitle Container - Only shows SRT subtitles */}
         <MobileSubtitleContainer
-          englishText={currentSentence?.english}
-          arabicText={currentSentence?.arabic}
           currentSubtitle={currentSubtitle}
           showVideoSubtitles={true}
           isMobile={isMobile}
@@ -828,7 +742,6 @@ export const MobileLessonPage = () => {
           show={showCompletionCard}
           overallScore={overallScore}
           onBackToLessons={handleBackToLessons}
-          topicCompleted={topicCompletedStatus}
           lessonCompleted={lessonCompletedStatus}
         />
 
@@ -848,7 +761,7 @@ export const MobileLessonPage = () => {
           recognizedText={recognizedText}
           missingWords={missingWords}
           isProcessing={isProcessing}
-          targetText={conversation?.sentences?.[currentSentenceIndex]?.english}
+          targetText={lesson?.sentences?.[currentSentenceIndex]?.english}
           recordedBlob={recordedAudio}
           onRetry={handleRetry}
           onContinue={handleContinue}

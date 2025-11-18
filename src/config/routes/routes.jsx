@@ -18,9 +18,7 @@ import {
 import { ListeningHome } from "../../pages/ListeningHome";
 import { ListeningLessonPage } from "../../pages/ListeningLessonPage";
 import { PronounceHomePage } from "../../pages/PronounceHomePage";
-import { TopicsPage } from "../../pages/TopicsPage";
 import { MobileLessonPage } from "../../pages/MobileLessonPage";
-import { DesktopConversationPage } from "../../pages/DesktopConversationPage";
 import { WritingHome } from "../../pages/WritingHome";
 import Article from "../../pages/Article";
 import Questions from "../../pages/Questions";
@@ -77,16 +75,8 @@ export const Routes = createBrowserRouter([
         element: <PronounceHomePage />,
       },
       {
-        path: "pronounce/topics/:lessonNumber",
-        element: <TopicsPage />,
-      },
-      {
-        path: "pronounce/mobile/:lessonNumber/:topicId/:conversationId",
+        path: "pronounce/lesson/:lessonNumber",
         element: <MobileLessonPage />,
-      },
-      {
-        path: "pronounce/desktop/:lessonNumber/:topicId/:conversationId",
-        element: <DesktopConversationPage />,
       },
       {
         path: "pronounce/progress",

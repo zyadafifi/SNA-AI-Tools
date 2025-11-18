@@ -456,15 +456,15 @@ export const DesktopConversationPage = () => {
     }
   };
 
-  // Handle back to topics
-  const handleBackToTopics = () => {
-    navigate(`/pronounce/topics/${lessonNumber}`);
+  // Handle back to home
+  const handleBackToHome = () => {
+    navigate(`/pronounce/home`);
   };
 
   // Handle close completion modal
   const handleCloseCompletionModal = () => {
     setShowCompletionModal(false);
-    navigate(`/pronounce/topics/${lessonNumber}`);
+    navigate(`/pronounce/home`);
   };
 
   // Cleanup on unmount
@@ -498,8 +498,8 @@ export const DesktopConversationPage = () => {
               {!topic && `Topic ${topicId} not found. `}
               {!conversation && `Conversation ${conversationId} not found. `}
             </p>
-            <button onClick={handleBackToTopics} className="btn btn-primary">
-              Back to Topics
+            <button onClick={handleBackToHome} className="btn btn-primary">
+              Back to Home
             </button>
           </div>
         </div>

@@ -375,39 +375,35 @@
   gap: 16px;
 }
 
-/* Mobile-specific control buttons - SEPARATE from desktop */
+/* Mobile-specific control buttons - Circular with color */
 .mobile-practice-overlay .control-btn {
-  background: transparent;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffc515 0%, #cc6a15 100%);
   border: none;
+  color: white;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  padding: 8px;
-  border-radius: 12px;
-  min-width: 60px;
-  width: auto; /* Override desktop width */
-  height: auto; /* Override desktop height */
-  font-size: inherit; /* Reset desktop font-size */
-  box-shadow: none; /* Remove desktop shadow */
-  position: static; /* Reset desktop position */
+  box-shadow: 0 4px 12px rgba(255, 197, 21, 0.3);
+  position: relative;
+  font-size: 24px;
 }
 
 .mobile-practice-overlay .control-btn::before {
-  display: none; /* Remove desktop pseudo-element */
+  display: none;
 }
 
 .mobile-practice-overlay .control-btn:hover {
-  background: rgba(255, 197, 21, 0.1);
-  transform: none; /* Remove desktop transform */
-  box-shadow: none; /* Remove desktop shadow */
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 197, 21, 0.4);
 }
 
 .mobile-practice-overlay .control-btn:active {
-  transform: none; /* Remove desktop transform */
-  box-shadow: none; /* Remove desktop shadow */
+  transform: scale(0.95);
 }
 
 .mobile-practice-overlay .control-btn i {
@@ -415,14 +411,109 @@
 }
 
 .mobile-practice-overlay .control-btn span {
-  font-size: 12px;
-  color: #666;
-  font-weight: 600;
+  display: none; /* Hide text labels */
 }
 
-/* Microphone Button - Center */
+/* Listen Button - With Background Color (Circular) */
+.mobile-practice-overlay .control-btn.listen-btn {
+  background: linear-gradient(
+    135deg,
+    var(--sna-primary) 0%,
+    var(--sna-secondary) 100%
+  );
+  box-shadow: 0 4px 12px rgba(255, 197, 21, 0.3);
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  padding: 0;
+  min-width: 56px;
+}
 
-.mic-btn::before {
+.mobile-practice-overlay .control-btn.listen-btn i {
+  color: white;
+  font-size: 24px;
+}
+
+.mobile-practice-overlay .control-btn.listen-btn:hover {
+  background: linear-gradient(
+    135deg,
+    var(--sna-primary-light) 0%,
+    var(--sna-secondary) 100%
+  );
+  box-shadow: 0 6px 16px rgba(255, 197, 21, 0.4);
+}
+
+.mobile-practice-overlay .control-btn.listen-btn.speaking {
+  background: linear-gradient(
+    135deg,
+    var(--sna-primary) 0%,
+    var(--sna-secondary) 100%
+  );
+  box-shadow: 0 6px 16px rgba(255, 197, 21, 0.4);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Listen Slow Button - With Background Color (Circular) */
+.mobile-practice-overlay .control-btn.listen-slow-btn {
+  background: linear-gradient(
+    135deg,
+    var(--sna-primary) 0%,
+    var(--sna-secondary) 100%
+  );
+  box-shadow: 0 4px 12px rgba(255, 197, 21, 0.3);
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  padding: 0;
+  min-width: 56px;
+}
+
+.mobile-practice-overlay .control-btn.listen-slow-btn svg {
+  color: white;
+  width: 24px;
+  height: 24px;
+}
+
+.mobile-practice-overlay .control-btn.listen-slow-btn:hover {
+  background: linear-gradient(
+    135deg,
+    var(--sna-primary-light) 0%,
+    var(--sna-secondary) 100%
+  );
+  box-shadow: 0 6px 16px rgba(255, 197, 21, 0.4);
+}
+
+.mobile-practice-overlay .control-btn.listen-slow-btn.speaking {
+  background: linear-gradient(
+    135deg,
+    var(--sna-primary) 0%,
+    var(--sna-secondary) 100%
+  );
+  box-shadow: 0 6px 16px rgba(255, 197, 21, 0.4);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Microphone Button - Center with Ring */
+.mobile-practice-overlay .mic-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffc515 0%, #cc6a15 100%);
+  border: none;
+  color: white;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(255, 197, 21, 0.4);
+  position: relative;
+}
+
+.mobile-practice-overlay .mic-btn::before {
   content: "";
   position: absolute;
   inset: -4px;
@@ -430,6 +521,7 @@
   border: 2px solid var(--sna-primary);
   opacity: 0;
   animation: ripple 2s infinite;
+  z-index: -1;
 }
 
 @keyframes ripple {
@@ -443,12 +535,12 @@
   }
 }
 
-.mic-btn:hover {
+.mobile-practice-overlay .mic-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 24px rgba(255, 197, 21, 0.5);
 }
 
-.mic-btn:active {
+.mobile-practice-overlay .mic-btn:active {
   transform: scale(0.95);
 }
 
@@ -668,19 +760,7 @@
     font-size: 16px;
   }
 
-  .mic-btn {
-    width: 70px;
-    height: 70px;
-    font-size: 28px;
-  }
-
-  .control-btn i {
-    font-size: 20px;
-  }
-
-  .control-btn span {
-    font-size: 11px;
-  }
+  /* Mic button uses original styling from index.css */
 }
 
 /* Overlay transition animations */
@@ -1291,54 +1371,6 @@
     top: 115px; /* Increased spacing from back button for very small screens */
     left: 10px;
     right: 10px;
-  }
-}
-
-/* Mobile Cancelled Recording State - Match Desktop */
-.mic-btn.cancelled {
-  background: linear-gradient(135deg, #dc3545 0%, #ff6b6b 100%) !important;
-  animation: mobileCancelShake 0.6s ease-in-out !important;
-  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4) !important;
-}
-
-.mic-btn.cancelled::before {
-  border-color: #dc3545 !important;
-}
-
-.mic-btn.cancelled:hover {
-  background: linear-gradient(135deg, #cc0000 0%, #ff4444 100%) !important;
-  transform: scale(1.05);
-}
-
-.mic-btn.cancelled:hover::before {
-  border-color: #cc0000 !important;
-}
-
-/* Mobile control button states - Match desktop */
-.control-btn.speaking {
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-.control-btn.paused {
-  background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
-  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
-}
-
-.control-btn.disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
   }
 }
 
