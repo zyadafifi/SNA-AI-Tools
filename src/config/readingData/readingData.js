@@ -6544,176 +6544,152 @@ export const readingData = [
               "id": 1,
               "text": "Hi everybody. My name is Natasha, and I’ve been commanded by His Royal Highness, Prince Bertie the Frog, to tell you a Storynory.",
               "translationAr": "مرحبًا يا أصدقائي. اسمي ناتاشا، وقد أمرني صاحب السموّ الملكي، الأمير بيرتي الضفدع، أن أحكي لكم قصةً من «ستورينوري».",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2001.mp3"
             },
             {
               "id": 2,
               "text": "Did you know that Prince Bertie lives in a pond, not a palace? His friend, Tim the Tadpole, asked him yesterday: “ Prince Bertie, when I grow up, will I be a green frog just like you? ”",
               "translationAr": "هل تعلمون أن الأمير بيرتي يسكن في بركةٍ لا في قصر؟ لقد سأله صديقه «تِم الشرغوف» أمس: «يا أمير بيرتي، حين أكبر، هل أصبح ضفدعًا أخضر مثلك؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2002.mp3"
             },
             {
               "id": 3,
-              "text": "Prince Bertie replied: “ If you want to grow up to be a nice green frog like me, you must eat plenty of green slime, little Tim. ”",
-              "translationAr": "فأجابه الأمير بيرتي: «إن أردت أن تغدو ضفدعًا أخضر ظريفًا مثلي، فعليك أن تأكل كثيرًا من الطحالب الخضراء يا تِم الصغير.»",
-              "audioUrl": ""
+              "text": "Prince Bertie said to Tim the Tadpole: “If you want to grow up to be a nice green frog like me, you have to eat up lots and lots of green, green slime,",
+              "translationAr": "فأجابه الأمير بيرتي: «إن أردت أن تغدو ضفدعًا أخضر ظريفًا مثلي، فعليك أن تأكل كثيرًا من الطحالب الخضراء.»",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2003.mp3"
             },
             {
               "id": 4,
               "text": "If enough children keep listening to Prince Bertie’s stories, Tim the Tadpole will eat his slime and grow into a handsome frog just like Bertie. So keep listening, and tell your friends to tune in to Storynory.com as well.",
               "translationAr": "وإن واصل كثيرٌ من الأطفال الإصغاء إلى حكايات الأمير بيرتي، فسوف يأكل تِم طحالبَه ويكبر ليصير ضفدعًا وسيماً كالأمير. فتابعوا الاستماع، وأخبروا أصدقاءكم بزيارة Storynory.com أيضًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2004.mp3"
             },
             {
               "id": 5,
               "text": "Now … Do you really want me to read a Storynory? Did you say yes? Alright, listen quietly, and I will tell you the Storynory of The Frog, from The Violet Fairy Book by Andrew Lang.",
               "translationAr": "والآن… أتريدون حقًّا أن أقرأ لكم قصةً من «ستورينوري»؟ أجبتم نعم؟ حسنًا، أصغوا بهدوء، وسأحكي لكم قصة «الضفدعة» من «كتاب القصص البنفسجية» لأندرو لانغ.",
-              "audioUrl": ""
-            },
-            {
-              "id": 6,
-              "text": "Proofread by Claire Deakin & Jana Elizabeth. THE FROG –",
-              "translationAr": "قامت بالمراجعة: كلير ديكن وجَنا إليزابيث. — «الضفدعة».",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2005.mp3"
             },
             {
               "id": 7,
               "text": "Once upon a time there was a rich farmer woman who had three sons. One day all three told their mother they wanted to get married.",
               "translationAr": "كان يا ما كان، امرأةُ فلّاحةٌ غنيّة لها ثلاثةُ أبناء. وفي يومٍ ما أخبرها أبناؤها الثلاثة أنهم يرغبون في الزواج.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2006.mp3"
             },
             {
               "id": 8,
-              "text": "Their mother said: “ Do as you like, but choose good wives. To be sure, take these three balls of wool and give them to the girls to knit. Whoever knits the best pair of socks shall be my favourite daughter - in - law. ”",
-              "translationAr": "فقالت أمُّهم: «افعلوا ما شئتم، ولكن اختاروا زوجاتٍ صالحات. ولأطمئنّ إلى حُسن الاختيار، خُذْن هذه الكُرَر الثلاث من الصوف وأعطينها للفتيات ليحبكنها. وأيُّهنّ تنسج أجملَ جوربين فستكون كنّتي المفضّلة.»",
-              "audioUrl": ""
+              "text": "To which their mother replied: “ Do as you like, but see that you choose good wives ; and to make certain of this, take with you these three balls of wool, and give it to the girls to knit. Whoever knits the best pair of socks will be my favourite daughter - in - law. ”",
+              "translationAr": "فأجابت أمهم: افعلوا ما يحلو لكم، ولكن احرصوا على اختيار زوجات صالحات؛ وللتأكد من ذلك، خذوا معكم هذه الكرات الصوفية الثلاث، وأعطوها للفتيات ليحيكنها. من يحيك أفضل زوج من الجوارب ستكون كنتي المفضلة.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2007.mp3"
             },
             {
               "id": 9,
-              "text": "The two eldest had already chosen their sweethearts and carried the wool to them. But the youngest knew no girl at all and wandered from place to place asking for help. The girls laughed at him and teased him. In despair he left the villages and sat by a pond and wept.",
-              "translationAr": "كان الابنان الأكبران قد اختارا بالفعل عروسَيْهما وحملا الصوف إليهما. أمّا الأصغر فلم يكن يعرف فتاةً أصلًا، فراح يتنقّل يسأل من يلقاهن أن ينسجن له، فكنّ يضحكن منه ويداعبنَه بالسخرية. ويائسًا ترك القرى وجلس على ضفة بركةٍ يبكي.",
-              "audioUrl": ""
+              "text": "Now the two eldest sons had already chosen their wives; so they took the wool from their mother, and carried it off with them, to have it knitted as she had said. The youngest son, however, was puzzled what to do with his wool, as he knew no girl (never having spoken to any) to whom he could give it to be knitted. He wandered here and there, asking the girls that he met if they would undertake the job for him, but at the sight of the wool they laughed in his face and teased him. Then in despair he left their villages, and went out into the country, and sitting on the bank of a pond, began to cry bitterly.",
+              "translationAr": "كان الابنان الأكبران قد اختارا زوجتيهما، فأخذا الصوف من أمهما، وحملاه معهما ليُحاك كما قالت. أما الابن الأصغر، فقد احتار في أمره، إذ لم يكن يعرف فتاة (ولم يُكلّم إحداهن قط) ليُعطيها إياها لتُحاك. فتجول هنا وهناك، يسأل الفتيات اللواتي قابلهن إن كنّ يقبلن القيام بهذه المهمة نيابةً عنه، ولكن عندما رأين الصوف، ضحكن في وجهه وسخرن منه. ثم غادر قراهم يائسًا، وخرج إلى الريف، وجلس على ضفة بركة، وبدأ يبكي بكاءً مرًا.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2008.mp3"
             },
             {
               "id": 10,
-              "text": "Suddenly a frog leapt from the water and asked him why he was crying. He told her his trouble: his brothers would bring socks from their promised brides, but nobody would knit his.",
-              "translationAr": "وإذْ بقفزةِ ضفدعةٍ من الماء تسأله لِمَ يبكي. فقصّ عليها ما به: إنّ إخوته سيعودون بجوارب نسجتها مخطوبتاهما، وأمّا هو فلا أحد ينسج له.",
-              "audioUrl": ""
+              "text": "Suddenly there was a noise close beside him, and a frog jumped out of the water on to the bank and asked him why he was crying. The young man told her of his trouble, and how his brothers would bring home beautifully knitted pairs of socks from their promised wives, but that no one would knit his socks for him.",
+              "translationAr": "فجأةً، سُمع ضجيجٌ بالقرب منه، وقفز ضفدعٌ من الماء إلى الضفة وسأله عن سبب بكائه. أخبرها الشاب عن معاناته، وكيف أن إخوته سيحضرون إلى المنزل جواربٍ محبوكةٍ بإتقان من زوجاتهم الموعودة، لكن لا أحد سيحيك له جواربه.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2009.mp3"
             },
             {
               "id": 11,
-              "text": "The frog said, “ Do not weep. Give me the wool and I will knit it for you. ” She took the wool and flopped back into the pond. The youth went home, not knowing what would happen next.",
-              "translationAr": "قالت الضفدعة: «لا تبكِ. أعطني الصوف وأنا أنسجه لك.» ثم تناولته وقفزت عائدةً إلى البركة. وعاد الشاب إلى بيته لا يدري ما الذي سيحدث.",
-              "audioUrl": ""
+              "text": "Then the frog answered: “ Do not weep because of that. Give me the wool, and I will knit it for you. ” Having said this, she took it out of his hand, and flopped back into the water, and the youth went back, not knowing what would happen next.",
+              "translationAr": "فأجابت الضفدع: لا تبكي على هذا. أعطني الصوف، وسأنسجه لك. وبعد أن قالت هذا، أخذته من يده، وسقطت في الماء، فعاد الشاب وهو لا يدري ما سيحدث.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2010.mp3"
             },
             {
               "id": 12,
-              "text": "Soon the two elder brothers returned with socks knitted by their chosen wives. The youngest had nothing to show, and sadly went back to the pond and wept.",
-              "translationAr": "عاد الشقيقان الأكبران سريعًا بجواربَ حاكتها مختارتاهما. وأمّا الأصغر فلم يكن عنده ما يريه، فعاد حزينًا إلى البركة يبكي.",
-              "audioUrl": ""
+              "text": "In a short time the two elder brothers came home, and their mother asked to see the pairs of socks that had been knitted out of the wool that she had given them. All three left the room; and in a few minutes the two eldest returned, bringing with them the socks that had been knitted by their chosen wives – but the youngest brother was greatly troubled – for he had nothing to show. Sadly he took himself to the pond, and sitting down on the bank, began to weep.",
+              "translationAr": "بعد قليل، عاد الأخوان الأكبران إلى المنزل، وطلبت أمهما رؤية الجوارب الصوفية التي أهدتهما إياها. غادر الثلاثة الغرفة، وبعد دقائق عاد الأكبران، ومعهما الجوارب التي حاكتها زوجتاهما المختارتان - لكن الأخ الأصغر كان في غاية الاضطراب - لأنه لم يكن لديه ما يُريه. للأسف، ذهب إلى البركة، وجلس على ضفتها، وبدأ يبكي.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2011.mp3"
             },
             {
               "id": 13,
-              "text": "Flop! The frog appeared and said, “ Take this. Here are the socks I have knitted for you. ”",
-              "translationAr": "وإذا بالضفدعة تظهر: «خُذ هذا. هذه الجوارب التي نسجتُها لك.»",
-              "audioUrl": ""
+              "text": "Flop! And the frog appeared out of the water close beside him. “ Take this, ” she said. “ Here are the socks that I have knitted for you. ”",
+              "translationAr": "سقط! وظهر الضفدع من الماء قريبًا منه. قال: خذ هذا، هذه هي الجوارب التي حاكتها لك.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2012.mp3"
             },
             {
               "id": 14,
-              "text": "The mother declared she had never seen such warm, beautiful, woollen socks — far finer than the ones the elder brothers brought.",
-              "translationAr": "فقالت الأم إنّها لم ترَ مثل هذه الجوارب الصوفية دفئًا وجمالًا، بل هي أبهى بكثير مما جاء به الشقيقان.",
-              "audioUrl": ""
+              "text": "You may imagine how delighted the young man was. She put the socks into his hands, and he took it straight back to his mother, who was so pleased with it that she declared she had never seen such beautiful warm woollen socks, and that they were much nicer than the socks that the two elder brothers had brought home.",
+              "translationAr": "لعلكم تتخيلون فرحة الشاب. وضعت الجوارب بين يديه، فأخذها على الفور إلى والدته، التي كانت في غاية السرور حتى إنها قالت إنها لم ترَ جوارب صوفية دافئة وجميلة كهذه من قبل، وإنها أجمل بكثير من الجوارب التي أحضرها الأخوان الأكبر إلى المنزل.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2013.mp3"
             },
             {
               "id": 15,
-              "text": "She set a second test: “ In the house there are three puppies. Each of you give one to the woman you mean to marry. Whichever dog turns out the best, its mistress will be my favourite daughter - in - law. ”",
-              "translationAr": "ثم وضعت اختبارًا ثانيًا: «في البيت ثلاثةُ جراء. ليأخذ كلٌّ منكم جروًا ويعطه لمن يريد الزواج بها، فمن ربّتْه أحسنَ تربية فستكون كنّتي المفضّلة.»",
-              "audioUrl": ""
+              "text": "Then she turned to her sons and said: “ This is not enough, my sons. I must have other proof as to what sort of wives you have chosen. In the house there are three puppies. Each of you take one, and give it to the woman whom you mean to bring home as your wife. She must train it and bring it up. Whichever dog turns out the best, its mistress will be my favourite daughter - in - law. ”",
+              "translationAr": "ثم التفتت إلى أبنائها وقالت: هذا لا يكفي يا أبنائي. يجب أن يكون لديّ دليل آخر على نوع الزوجات اللواتي اخترتموهن. في المنزل ثلاثة جراء. يأخذ كل منكم واحدًا، ويعطيه للمرأة التي تنوين إحضارها إلى المنزل زوجةً له. يجب أن تُدرّبه وتُربيه. أيّ كلبٍ يكون الأفضل، ستكون سيدته زوجة ابني المُفضّلة.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2014.mp3"
             },
             {
               "id": 16,
-              "text": "Again the youngest returned to the pond and wept. Again the frog appeared: “ Give me the puppy, and I will bring it up for you. ” She took the little creature and vanished into the water.",
-              "translationAr": "عاد الأصغر إلى البركة باكيًا، فظهرت الضفدعة ثانيةً وقالت: «أعطني الجروَ وأنا أُربِّه لك.» ثم أخذت الصغير وغابت في الماء.",
-              "audioUrl": ""
+              "text": "So the young men set out on their different ways, each taking a puppy with him. The youngest, not knowing where to go, returned to the pond, sat down once more on the bank, and began to weep. Flop! Close beside him, he saw the frog. “Why are you weeping?” She said. Then he told her his difficulty, and that he did not know to whom he should take the puppy.“ Give it to me, ” she said, “ and I will bring it up for you. ” And, seeing that the youth hesitated, she took the little creature out of his arms, and disappeared with it into the pond.",
+              "translationAr": "فانطلق الشبان في طريقهم، كلٌّ منهم يأخذ جروًا معه. الأصغر، إذ لم يكن يدري إلى أين يذهب، عاد إلى البركة، وجلس على ضفافها، وبدأ يبكي. فلو! رأى الضفدع بجانبه. قالت: لماذا تبكي؟. ثم أخبرها بمحنته، وأنه لا يدري لمن يأخذ الجروقالت: أعطني الجرو، وسأحضره لك. ولما رأت تردد الشاب، أخذت الجرو الصغير من بين ذراعيه، واختفت معه في البركة.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2015.mp3"
             },
             {
               "id": 17,
-              "text": "Weeks and months went by. The two elder brothers brought back fierce guard dogs. The youngest called the frog, and she gave him a lovely little dog that sat up, begged, and performed delightful tricks.",
-              "translationAr": "ومضت أسابيع وأشهر. جاء الأخوان الأكبران بكلابِ حراسةٍ شرسة، ونادى الأصغرُ الضفدعة فأعطته كلبًا صغيرًا رائعًا، يجلس متأدّبًا ويستعطف بكفّيه ويؤدّي أظرف الحركات.",
-              "audioUrl": ""
+              "text": "The weeks and months passed, until one day the mother said she would like to see how the dogs had been trained by her future daughter - in - laws. The two eldest sons departed, and returned shortly, leading with them two great guard dogs, who growled so fiercely and looked so savage, that the mere sight of them made the mother tremble with fear. The youngest son, as was his way, went to the pond, and called on the frog to come to his rescue. In a minute she was at his side, bringing with her the most lovely little dog, which she put into his arms. It sat up and begged with its paws, and went through the prettiest tricks,",
+              "translationAr": "مرت الأسابيع والأشهر، حتى جاء يوم قالت فيه الأم إنها تود أن ترى كيف درّبت زوجتا ابنيها الكلاب. رحل الابنان الأكبران، ثم عادا بعد قليل، ومعهما كلبان حراسة ضخمان، كانا يزأران بشراسة وبدايتهما وحشية، لدرجة أن مجرد رؤيتهما كانت ترتجف خوفًا. أما الابن الأصغر، فقد ذهب كعادته إلى البركة، ونادى الضفدع لينقذه. وفي لحظة، كانت بجانبه، ومعها كلبها الصغير الجميل، الذي وضعته بين ذراعيه. جلس وتوسل بمخالبه، وقام بأروع الحركات.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2016.mp3"
             },
             {
               "id": 18,
-              "text": "The mother was overjoyed: “ This is the most beautiful little dog I have ever seen! You have won a pearl of a wife! ” Then she set a third test: “ Here are three shirts. Whoever sews the best will be my favourite daughter - in - law. ”",
-              "translationAr": "فابتهجت الأم: «هذا أجمل جروٍ رأيتُه قط! لقد ظفرتَ بجوهرةٍ من زوجة!» ثم وضعت اختبارًا ثالثًا: «هذه ثلاثةُ قمصان؛ مَن خاطت أفضلَها فهي كنّتي المفضّلة.»",
-              "audioUrl": ""
+              "text": "and was almost human in the way it understood and did what it was told. In high spirits the youth carried it off to his mother. As soon as she saw it, she exclaimed : “ This is the most beautiful little dog I have ever seen! You are indeed fortunate, my son. You have won a pearl of a wife! ” Then, turning to the others, she said : “Here are three shirts. Take them to your chosen wives. Whoever sews the best will be my favourite daughter-in-law. ”",
+              "translationAr": "وكان يكاد يكون إنسانًا في طريقة فهمه وفعله لما يُؤمر به. حمله الشاب بحماس إلى أمه. حالما رأته، صاحت: هذا أجمل كلب صغير رأيته في حياتي! أنت محظوظ حقًا يا بني. لقد ربحت زوجةً رائعة! ثم التفتت إلى الآخرين وقالت: هذه ثلاثة قمصان. خذوها إلى زوجاتكم المختارات. من تخيط أفضل ستكون زوجة ابني المفضلة.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2017.mp3"
             },
             {
               "id": 19,
-              "text": "Once more, the frog’s work proved the best and neatest. The mother said, “ Now I am satisfied. Go and fetch home your brides, and I will prepare the wedding feast. ”",
-              "translationAr": "ومرةً أخرى كان عملُ الضفدعة أبدعَ الأعمال وأتقنها. فقالت الأم: «الآن قد رضيت. اذهبوا وائتوني بعروساتكم، وسأعدُّ وليمة العرس.»",
-              "audioUrl": ""
+              "text": "So the young men set out once more; and again, the work of the frog was much the best and the neatest. This time the mother said: “Now that I am content with the tests I gave, I want you to go and fetch home your girls, and I will prepare the wedding feast. ”",
+              "translationAr": "انطلق الشباب مرة أخرى؛ وكان عمل الضفدع أروع وأروع ما يكون. هذه المرة قالت الأم: الآن وقد رضيتُ بالاختبارات التي أجريتها، أريدكم أن تذهبوا وتأخذوا فتياتكم إلى المنزل، وسأُعدّ وليمة العرس.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2018.mp3"
             },
             {
               "id": 20,
-              "text": "The youngest was distressed: where would he find a girl to marry? He sat, sad and silent, by the pond. Flop! The faithful frog appeared and asked him what troubled him. He told her everything.",
-              "translationAr": "وانقبض قلب الأصغر: أين له بعروس؟ جلس مكتئبًا على حافة البركة. فقفزت الضفدعة الأمينة وسألته عمّا به، فقصّ عليها كلّ شيء.",
-              "audioUrl": ""
+              "text": "You may imagine what the youngest brother felt on hearing these words. Where would he find a girl to marry? Would the frog be able to help him in this new difficulty? With a bowed head, and feeling very sad, he sat down on the edge of the pond. Flop! And once more the faithful frog was beside him. “ What is troubling you so much? ” She asked him, and then the youth told her everything.",
+              "translationAr": "لعلّك تتخيل شعور الأخ الأصغر عند سماعه هذه الكلمات. أين سيجد فتاةً ليتزوجها؟ هل سيستطيع الضفدع مساعدته في هذه المحنة الجديدة؟ جلس على حافة البركة برأسٍ منحني، وشعر بحزنٍ عميق. يا للخسارة! ومرة ​​أخرى، كانت الضفدعة المخلصة بجانبه. سألته: ما الذي يزعجك إلى هذا الحد؟، ثم أخبرها الشاب بكل شيء.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2019.mp3"
             },
             {
               "id": 21,
-              "text": "She asked, “ Will you take me for a wife? ” He wondered, “ What should I do with you as a wife? ” She insisted, “ Will you have me, or will you not? ” He replied, “ I will neither take you nor refuse you. ”",
-              "translationAr": "قالت: «أتتّخذني زوجة؟» فتعجّب: «وماذا أصنع بك زوجةً؟» فقالت مؤكِّدة: «أتقبلني أم ترفضني؟» قال: «لا أقبلك ولا أرفضك.»",
-              "audioUrl": ""
+              "text": "“ Will you take me for a wife? ” She asked. “What should I do with you as a wife?” He replied, wondering at her strange proposal. “ Once more, will you have me or will you not? ” She said. “ I will neither have you, nor will I refuse you, ” ",
+              "translationAr": "هل تقبلني زوجة؟ سألته. أجاب متعجبًا من عرضها الغريب: ماذا أفعل بك زوجة؟ قالت: مرة أخرى، هل تقبلني أم لا؟ لن أقبلك ولن أرفضك.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2020.mp3"
             },
             {
               "id": 22,
-              "text": "At once the frog vanished. In the road stood a dainty little cart drawn by two tiny ponies, and the frog held the door for him to step in: “ Come with me, ” she said.",
-              "translationAr": "فغابت الضفدعة من فَورها، وإذا بعربةٍ صغيرةٍ أنيقةٍ يجرّها مُهَران صغيران تقف في الطريق، والضفدعة تفتح بابها له: «هَلُمّ معي»، قالت.",
-              "audioUrl": ""
+              "text": "At this the frog disappeared, and the next minute the youth beheld a lovely little cart, drawn by two tiny ponies, standing on the road. The frog was holding the carriage door open for him to step in. “ Come with me, ” she said.",
+              "translationAr": "عندها اختفى الضفدع، وفي اللحظة التالية رأى الشاب عربة صغيرة جميلة، يجرها مهرتان صغيرتان، واقفة على الطريق. كانت الضفدعة تُمسك باب العربة مفتوحًا ليصعد. قالت: تعال معي.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2021.mp3"
             },
             {
               "id": 23,
-              "text": "As they drove along, they met three witches: one was blind, the second hunchbacked, and the third had a thorn in her throat.",
+              "text": "As they drove along the road they met three witches; the first of them was blind, the second was hunchbacked, and the third had a large thorn in her throat.",
               "translationAr": "وسارت العربة، فإذا بهنّ يلتقين ثلاثَ ساحرات: إحداهنّ عمياء، والثانية أحدب، والثالثة في حلقها شوكة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2022.mp3"
             },
             {
               "id": 24,
-              "text": "When they beheld the cart and the frog sitting pompously among the cushions, they laughed so hard that the blind one’s eyelids burst open and she saw; the hunchback rolled until her back grew straight; and the thorn sprang out of the third’s throat.",
+              "text": "When the three witches beheld the cart, with the frog seated pompously among the cushions, they broke into such fits of laughter that the eyelids of the blind one burst open, and she recovered her sight; the hunchback rolled about on the ground in merriment until her back became straight; and in a roar of laughter the thorn fell out of the throat of the third witch.",
               "translationAr": "ولمّا رأين العربة والضفدعة جالسةً مزهوّةً على الوسائد، ضحكن ضحكًا شديدًا؛ فانفتحت أجفان العمياء فأبصرت، وتقَلْقَلَت الأحدب حتى استقام ظهرُها، وخرجت الشوكة من حلق الثالثة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2023.mp3"
             },
             {
               "id": 25,
-              "text": "They wished to reward the frog. The first witch waved her wand and changed the frog into the loveliest girl ever seen. The second turned the tiny cart and ponies into a splendid carriage with prancing horses and a coachman. The third gave the girl a magic purse filled with money.",
-              "translationAr": "فأرَدْن مكافأة الضفدعة: لوّحت الأولى بعصاها فحوّلت الضفدعة إلى أجمل فتاةٍ تُرى. وحوّلت الثانية العربةَ الصغيرة والمهرين إلى مركبةٍ فاخرةٍ تجرّها خيولٌ تَخطر، ومعها سائس. وأعطت الثالثة الفتاةَ كيسًا سحريًّا مملوءًا بالمال.",
-              "audioUrl": ""
+              "text": "Their first thought was to reward the frog, who had accidentally cured their misfortunes. The first witch waved her magic wand over the frog, and changed her into the loveliest girl that had ever been seen. The second witch waved the wand over the tiny cart and ponies, and they were turned into a beautiful large carriage with prancing horses, and a coachman on the seat. The third witch gave the girl a magic purse, filled with money.",
+              "translationAr": "كانت فكرتهم الأولى مكافأة الضفدع الذي عالج مصائبهم بالصدفة. لوّحت الساحرة الأولى بعصاها السحرية على الضفدع، فحوّلتها إلى أجمل فتاة رأتها عيناها. لوّحت الساحرة الثانية بالعصا على العربة الصغيرة والمهور، فتحوّلت إلى عربة كبيرة جميلة تجرّها الخيول، ويجلس على مقعدها سائق. أعطت الساحرة الثالثة الفتاة محفظة سحرية مليئة بالمال.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2024.mp3"
             },
             {
               "id": 26,
-              "text": "The witches vanished. The youth and his lovely bride drove to his mother’s home. She rejoiced at her youngest son’s fortune. A beautiful house was built for them, and the new bride became the favourite daughter - in - law. They lived happily ever after.",
-              "translationAr": "ثم غابت الساحرات. ومضى الشابُّ مع عروسه الجميلة إلى بيت أمّه، ففرحت بحظّ ابنها الأصغر، وبُنِي لهما بيتٌ جميل، وصارت العروس كنَّتها المفضّلة، وعاشا في سرورٍ وهناء.",
-              "audioUrl": ""
+              "text": "Having done this, the witches disappeared, and the youth with his lovely bride drove to his mother’s home. The mother was delighted to see her youngest son’s good fortune. A beautiful house was built for them. She was the favourite daughter - in - law. Everything went well with them, and they lived happily ever after.",
+              "translationAr": "بعد ذلك، اختفت الساحرات، وتوجه الشاب مع عروسه الجميلة إلى منزل والدته. فرحت الأم برؤية حظ ابنها الأصغر السعيد. بُني لهما منزل جميل. كانت زوجة ابنهما المفضلة. سارت الأمور على ما يرام، وعاشا في سعادة دائمة.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/the%20frog/The%20Frog%20S%2025.mp3"
             },
-            {
-              "id": 27,
-              "text": "And that was the Storynory of The Frog from Andrew Lang’s Violet Fairy Book. It’s one of Prince Bertie’s favourite stories. Bertie especially likes Storynories about frogs. Do you?",
-              "translationAr": "وهذه كانت حكاية «الضفدعة» من «كتاب القصص البنفسجية» لأندرو لانغ. وهي من قصص الأمير بيرتي المفضّلة، ولا سيّما حكايات الضفادع. وأنتم، هل تحبونها؟",
-              "audioUrl": ""
-            },
-            {
-              "id": 28,
-              "text": "Prince Bertie would like you to meet his new friends on his lovely green and purple website. You can see what he looks like there. So drop by at Storynory.com.",
-              "translationAr": "يودّ الأمير بيرتي أن تتعرّفوا إلى أصدقائه الجدد على موقعه الأخضر والبنفسجي الجميل، وهناك سترون صورته. فزوروا Storynory.com.",
-              "audioUrl": ""
-            },
-            {
-              "id": 29,
-              "text": "I’ll be telling you another Storynory soon, so keep coming back for more stories. For now, from me, Natasha. Bye Bye.",
-              "translationAr": "وسأحكي لكم قريبًا قصةً أخرى من «ستورينوري»، فتابعوا زيارتنا للمزيد من الحكايات. منّي أنا ناتاشا… إلى اللقاء.",
-              "audioUrl": ""
-            }
           ]
         },
         "wordDefinitions": {
