@@ -2080,374 +2080,344 @@ export const readingData = [
               "id": 1,
               "text": "Hello hello and welcome to Storynory! You’re listening to Jana and I’m back with an Indian tale from The Panchatantra!",
               "translationAr": "مرحبًا بكم في «ستورنوري»! أنتم تستمعون إلى جَنا، وقد عدتُ إليكم بحكايةٍ هندية من «البانشاتانترا».",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2001.mp3"
             },
             {
               "id": 2,
               "text": "The Tiny Birds and the Mighty Sea.",
               "translationAr": "الطيور الصغيرة والبحر العظيم.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2002.mp3"
             },
             {
               "id": 3,
               "text": "This story is dedicated to Nithya, Adarsh and their cousins from India, Kethan and Karunya who generously support Storynory!",
               "translationAr": "تُهدى هذه القصة إلى نيثيا، وأدارش، وإلى ابني عمِّهما من الهند كيثان وكارونيا، الداعمين الكرام لستورنوري.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2003.mp3"
             },
             {
               "id": 4,
               "text": "Along by the shimmering seashore, lived a pair of Tittibha birds.",
               "translationAr": "عند الساحل المتلألئ عاش زوجٌ من طيور التيتيبها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2004.mp3"
             },
             {
               "id": 5,
               "text": "This humble couple were small, sprightly birds, no bigger than a child’s hand, with feathers the colour of autumn leaves.",
               "translationAr": "وكانا زوجًا وديعًا من الطيور النشيطة الصغيرة، لا يفوقان كفَّ طفلٍ حجمًا، وريشُهما بلون أوراق الخريف.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2005.mp3"
             },
             {
               "id": 6,
               "text": "All day long they loved to hear the sea singing her endless song as her waves washed over the sand with a long, deep whoosh.",
               "translationAr": "وكانا يُصغيان طول النهار إلى غناء البحر الذي لا ينقطع، إذ تغسل أمواجه الرمال بهمسةٍ عميقةٍ ممتدّة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2006.mp3"
             },
             {
               "id": 7,
               "text": "Now the mother bird was expecting and needed to find a space to lay her eggs.",
               "translationAr": "وكانت الأُنثى حاملاً وتحتاج إلى موضعٍ تضع فيه بيضها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2007.mp3"
             },
             {
               "id": 8,
               "text": "She hopped around nervously, leaving little claw marks in the sand.",
               "translationAr": "فأخذت تقفز بقلق، تاركةً آثار مخالب صغيرة على الرمال.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2008.mp3"
             },
             {
               "id": 9,
               "text": "“ Dear husband, ” she said, “ It is time for me to lay the eggs. Find us a safe spot! Away from the water, mind you. ”",
               "translationAr": "وقالت: «يا زوجي العزيز، قد آن لي أن أضع البيض؛ فالتمس لنا مكانًا آمنًا، بعيدًا عن الماء، لا تنسَ ذلك.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2009.mp3"
             },
             {
               "id": 10,
               "text": "The father bird puffed up his chest, spread his wings dramatically, and spoke in his most convincing tone.",
               "translationAr": "فنفخ الذكر صدرَه، وبسط جناحيه على نحوٍ مُبالغ، وتكلم بأقنعِ نبرةٍ عنده.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2010.mp3"
             },
             {
               "id": 11,
               "text": "“ My dearest, look around. This shore is perfect! The warm sand, the soothing breeze, the rhythmic waves — what better cradle for our children? And what better lullaby than the sound of the sea? ”",
               "translationAr": "«يا عزيزتي، انظري حولك؛ هذا الشاطئ كاملُ الملاءمة: رملٌ دافئ، ونسيمٌ مُريح، وأمواجٌ على إيقاعٍ رتيب—فأيُّ مهدٍ أطيب لأطفالنا؟ وأيُّ تهويدةٍ أحسن من صوت البحر؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2011.mp3"
             },
             {
               "id": 12,
-              "text": "She narrowed her eyes. “ That is your idea of a cradle? The sea is arrogant for a reason — it is vast, deep, and powerful.",
+              "text": "She narrowed her eyes. “ That is your idea of a cradle? The sea is arrogant for a reason — it is vast, deep, and very powerful.",
               "translationAr": "فضيّقت عينيها وقالت: «أهذا هو المهد في رأيك؟ إن البحر متجبّرٌ لسبب؛ فهو فسيحٌ عميقٌ شديد القوّة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2012.mp3"
             },
             {
               "id": 13,
               "text": "We small, humble creatures should know better than to challenge something so dangerous as the sea! ”",
               "translationAr": "ونحنُ صغارٌ متواضعون، أَولى بنا ألّا نتحدّى ما هو خطرٌ كالبحر!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2013.mp3"
             },
             {
               "id": 14,
               "text": "Her husband’s feathers ruffled at her words. “ What are you saying, my dear? Do you truly believe that big is beautiful and might is right?",
               "translationAr": "فاختلج ريش زوجها وقال: «ما الذي تقولينه يا عزيزتي؟ أتؤمنين حقًّا بأنَّ الكِبر جمالٌ، وأنَّ القوّة حقٌّ؟",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2014.mp3"
             },
             {
               "id": 15,
               "text": "Does an elephant deserve more than a mouse? Does the law of nature proclaim an oak superior to a daisy? ”",
               "translationAr": "أفيلٌ أحقُّ من فأر؟ وهل تقضي سنّةُ الطبيعة بأن السنديان أفضل من الأقحوان؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2015.mp3"
             },
             {
               "id": 16,
-              "text": "“ Well yes, that is the way life is… ” she replied, and she exaggerated how the powerful bend the truth to their will.",
+              "text": "“ Well yes, that is the way life is… ” she replied. “ If the big and the powerful tell us that the sky is pink with purple spots, we say, “ Yes, your honours, the sky is pink with purple spots, and if they tell us that we are no longer Tittibha birds but have become penguins, we bow and say, “ Yes your honours, we have turned into penguins and all is good in the land. ”",
               "translationAr": "قالت: «نعم، هكذا تجري الحياة…» ثم بالغت تصف كيف يلوِّي الأقوياء الحقَّ على هواهم.",
-              "audioUrl": ""
-            },
-            {
-              "id": 17,
-              "text": "“ Well that’s not fair! We birds must stand up for our rights! ”",
-              "translationAr": "فقال: «ليس هذا بعدل! علينا نحن الطيور أن ننهض لحقوقنا!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2016.mp3"
             },
             {
               "id": 18,
               "text": "All this time, the sea was overhearing the conversation between the tiny Tittibha birds.",
               "translationAr": "وكان البحر طوال ذلك يُصغي إلى حديث طيري التيتيبها الصغيرين.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2017.mp3"
             },
             {
               "id": 19,
               "text": "“ Such boldness, ” she rumbled. “ From a creature so small! We’ll see what happens when I teach these birds a lesson. ”",
               "translationAr": "فهدرت قائلة: «يا لها من جرأةٍ من مخلوقٍ صغير! سنرى ما يكون حين ألقّن هذين الطيرين درسًا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2018.mp3"
             },
             {
               "id": 20,
               "text": "Eventually the mother bird grew tired of arguing with her husband and she laid her eggs on the sand, just as he suggested.",
               "translationAr": "وأخيرًا ضجرت الأُنثى من الجدال، فوضعت بيضها على الرمال كما اقترح زوجُها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2019.mp3"
             },
             {
               "id": 21,
               "text": "When the Tittibha birds flew off to find food, the sea sent her waves creeping and climbing, and then — whoosh — scooped up the eggs.",
               "translationAr": "وما إن طار الطيران يلتمسان القوت، حتى دفعت البحرُ أمواجَها زاحفةً صاعدة، ثم—هس—اختطفت البيض.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2020.mp3"
             },
             {
               "id": 22,
               "text": "The mother bird returned to an empty nest: “ Ohh.. Where… are… my… eggs? ”",
               "translationAr": "وعادت الأُنثى إلى عشٍّ خاوٍ، وقالت مرتجفة الصوت: «أين… بيضي؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2021.mp3"
             },
             {
               "id": 23,
               "text": "“ I can’t think. But when I find who stole our eggs, they’ll be sorry, ” stammered her husband.",
               "translationAr": "وتلعثم الزوج قائلًا: «لا أستطيع التفكير… ولكنّ من سرق بيضنا سيندمُ حين أعثر عليه.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2022.mp3"
             },
             {
               "id": 24,
-              "text": "“ You can’t think? That is because you have worms for brains. It was the sea who took them, of course. What is your plan now? ” she wailed.",
+              "text": "“ You can’t think? That is because you have worms for brains. It was the sea who took them, of course, who else? What is your plan now, oh mighty protector of eggs? ” She wailed.",
               "translationAr": "فولولت: «لا تفكّر؟ لأن في رأسك ديدانًا! لقد أخذها البحرُ—ومن غيرُه؟ فما خطتك الآن؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2023.mp3"
             },
             {
               "id": 25,
               "text": "He pulled himself up to his full height — all six inches — and declared: “ I will fight the sea. I will dry her up, one beakful at a time! ”",
               "translationAr": "فانتفخ على طوله كلّه—ستُّ بوصات—وقال: «سأحارب البحر. سأجفّفه منقَارًا بعد منقار!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2024.mp3"
             },
             {
               "id": 26,
               "text": "“ You are going to drink the entire sea? Don’t you know the water is very salty? ”",
               "translationAr": "قالت: «أتشرب البحر كلَّه؟ ألا تعلم أن ماءه مِلْحٌ أُجاج؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2025.mp3"
             },
             {
               "id": 27,
               "text": "“ Yes! Fairness isn’t just for the big and powerful — it’s for little birds too! ”",
               "translationAr": "قال: «نعم! إنَّ العدل ليس للأقوياء وحدهم، بل للصغارِ أيضًا!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2026.mp3"
             },
             {
               "id": 28,
               "text": "Just then the sea rushed into the shore and covered him with a wave, but the little Tittibha’s head emerged above the foam and he cried: “ Fight! Fight! Fight! For what is right right right! ”",
               "translationAr": "وإذا بالبحر يندفع إلى الشاطئ ويغمره بموجة؛ غير أنّ رأس التيتيبها الصغير برز فوق الزَّبد، وصرخ: «قاتِلْ! قاتِلْ! قاتِلْ! لأجل الحقِّ الحقِّ الحقِّ!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2027.mp3"
             },
             {
               "id": 29,
               "text": "The gulls flying overhead echoed back, “ Fight! Fight! Fight! For what is right right right! ” The mother bird shook her head.",
               "translationAr": "فردّدت النوارسُ الطائرة: «قاتِلْ! لأجل الحق!» وهزّت الأُنثى رأسها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2028.mp3"
             },
             {
               "id": 30,
               "text": "“ Fine. If you’re going to take on the sea, you’d better call your friends. ”",
               "translationAr": "وقالت: «حسنًا؛ إن كنت ستتحدّى البحر فادعُ إخوتكَ الطير.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2029.mp3"
             },
             {
               "id": 31,
               "text": "So, he summoned the swan, the crane, the peacock, and every other bird he knew. They gathered on the shore, eyeing the vast sea.",
               "translationAr": "فاستنفر البجعة والكرْكِيَّ والطاووس، وكلَّ طائرٍ يعرفه، فاجتمعوا على الشاطئ يحدّقون في البحر الفسيح.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2030.mp3"
             },
             {
               "id": 32,
               "text": "The peacock shook his head. “ This is ridiculous. You can’t drink the sea. ”",
               "translationAr": "وهزّ الطاووس رأسه وقال: «هذا عبث؛ لا تستطيع شرب البحر.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2031.mp3"
             },
             {
               "id": 33,
               "text": "“ Can too! ” said the father bird. “ We’ll all take turns. ”",
               "translationAr": "قال الذكر: «بل نستطيع! نتناوب جميعًا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2032.mp3"
             },
             {
               "id": 34,
               "text": "“ No can do, I’m afraid. Far too salty for my taste, ” muttered the crane.",
               "translationAr": "تمتم الكركيّ: «لا طاقة لنا—مِلْحه فوق الاحتمال.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2033.mp3"
             },
             {
               "id": 35,
               "text": "The swan suggested, “ Why not ask King Garuda for help? He’s wise, powerful, and might actually have a plan. ”",
               "translationAr": "وقالت البجعةُ مُقترِحة: «لِمَ لا نستغيث بملك الطير جارودا؟ فهو حكيمٌ قويّ، ولعلَّ عنده خطة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2034.mp3"
             },
             {
               "id": 36,
               "text": "Garuda, the king of the birds, was perched on a mountain peak, gazing down at the clouds.",
               "translationAr": "كان جارودا، ملك الطير، جاثمًا على ذُرى جبلٍ يرمق السحاب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2035.mp3"
             },
             {
               "id": 37,
               "text": "His huge wings glinted with golden feathers and he had a beak as sharp as a sword.",
               "translationAr": "تتلألأ في جناحيه الضخمين ريشاتٌ ذهبية، ومنقاره ماضٍ كسيف.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2036.mp3"
             },
             {
               "id": 38,
               "text": "His royal Highness was surprised to see that the little Tittibha bird had flown all the way up to speak to him.",
               "translationAr": "وقد دُهِشَ جلالته حين رأى طائر التيتيبها الصغير قد حلق إليه يُكلمه.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2037.mp3"
             },
             {
               "id": 39,
               "text": "“ Why do you disturb me? ” he asked, in a deep voice rolling like thunder.",
               "translationAr": "وسأله بصوتٍ عميقٍ كالرعد: «لِمَ تُقلقني؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2038.mp3"
             },
             {
               "id": 40,
               "text": "The father bird fluttered forward. “ O King, the sea has stolen our eggs. She thinks she can do as she pleases just because she’s big. But justice is for little birds too! We need your help. ”",
               "translationAr": "فتقدّم الذكر قائلًا: «أيها الملك، لقد سرق البحرُ بيضَنا، ويظنُّ أنَّ كِبَرَه يبيح له ما يشاء. ولكنّ العدل للصغار أيضًا. نلتمس نصرتك.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2039.mp3"
             },
             {
               "id": 41,
               "text": "Garuda’s eyes blazed with anger: “ The sea has indeed insulted my birds! Unacceptable. I will ensure justice! ”",
               "translationAr": "فالتَهَبَتْ عينا جارودا غضبًا وقال: «لقد أهان البحرُ طيري—وهذا غيرُ مقبول. سأستوفي الحق!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2040.mp3"
             },
             {
               "id": 42,
               "text": "Garuda soared down to the shore. He landed before the sea, who rolled back her waves lazily.",
               "translationAr": "وانقضَّ جارودا نحو الساحل، وحطَّ أمام البحر، فتراجعت أمواجه كسلَى.",
-              "audioUrl": ""
-            },
-            {
-              "id": 43,
-              "text": "“ Garuda, ” she said, “ why all this drama? Is this about those tiny birds? Let it go! Let it go! ”",
-              "translationAr": "وقالت: «يا جارودا، ما هذا التهويل؟ أهو بشأن تلك الطيور الصغيرة؟ دَع الأمر يمضي.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2042.mp3"
             },
             {
               "id": 44,
-              "text": "“ You swallowed their eggs. Return them, or face my wrath! ” boomed Garuda.",
+              "text": "“ You swallowed their eggs. Return them now, or face my wrath! ” boomed Garuda.",
               "translationAr": "فدوّى جارودا: «لقد ابتلعتِ بيضهم؛ أعِيديه وإلّا تلقيتِ سَخطي!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2043.mp3"
             },
             {
               "id": 45,
               "text": "The sea foamed. “ Your wrath? Please, what can you do? I am the sea! Rivers bow to me. Do not try me! Even the sun cannot dry me!",
               "translationAr": "فارَ الزَّبَد وقالت: «سخطُك؟ وما عساك تصنع؟ أنا البحر، والأنهارُ تخضع لي؛ فلا تُجَرِّبني! حتى الشمس لا تُجفِّفني!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2044.mp3"
             },
             {
               "id": 46,
               "text": "You may be a God, but you’re still a bird. To take on the sea is simply absurd. ”",
               "translationAr": "«قد تكون إلهًا، ولكنّك طائرٌ في النهاية؛ ومنازلة البحر محضُ عبث.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2045.mp3"
             },
             {
               "id": 47,
               "text": "Just then, a flash of light split the sky. Lord Vishnu descended, his four arms holding a conch, discus, mace, and — a thunderbolt.",
               "translationAr": "وإذ ببرقٍ يشقُّ السماء، ونزل السيّد فيشنو، وفي أذرعه الأربع صَدَفَةٌ ودِرْقٌ ومِقمَعَة—وصاعقة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2046.mp3"
             },
             {
               "id": 48,
               "text": "“ Good morning, Sea, ” said Vishnu, “ You, it seems, have stolen the eggs of my servant’s servant. Return them at once. ”",
               "translationAr": "وقال: «صباح الخير أيتها البحار؛ بلغني أنّك سرقتِ بيضَ خادمِ خادمي، فردّيه حالًا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2047.mp3"
             },
             {
               "id": 49,
-              "text": "The sea rolled her waves in mock defiance and warned of chaos if struck.",
-              "translationAr": "فدحرجت البحرُ أمواجَها تحدّيًا مصطنعًا، وحذّرت من الفوضى إن ضُرِبَتْ بالصاعقة: طوفانٌ، وبحّارةٌ جرحى، ومحاصيلُ تالفة.",
-              "audioUrl": ""
+              "text": "The sea rolled her waves in mock defiance.",
+              "translationAr": "فدحرجت البحرُ أمواجَها تحدّيًا مصطنعًا.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2048.mp3"
             },
             {
               "id": 50,
               "text": "Vishnu raised the thunderbolt, and the sea quivered. “ Return the eggs now or face the consequences. ”",
               "translationAr": "فرفع فيشنو الصاعقة فارتعد البحر، وقال: «أعيدي البيضَ الآن وإلّا تحمّلتِ العاقبة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2049.mp3"
             },
             {
               "id": 51,
               "text": "The sea sighed deeply. “ Fine, fine. You win this time. I’ll give back the eggs. Though I say, the sea does not forget. ”",
               "translationAr": "فزفرت البحرُ وقالت: «حسنًا، لقد غلبتم هذه المرّة. سأُعيد البيض، غيرَ أنّ البحر لا ينسى.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2050.mp3"
             },
             {
               "id": 52,
               "text": "The eggs were returned to the delighted Tittibha birds.",
               "translationAr": "فعاد البيضُ إلى طيري التيتيبها المسرورين.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2051.mp3"
             },
             {
               "id": 53,
               "text": "The father bird fluffed his feathers proudly. “ See? Justice is for little birds too. ”",
               "translationAr": "ونفش الذكرُ ريشَه فخرًا وقال: «أرأيتِ؟ العدلُ للصغار أيضًا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2052.mp3"
             },
             {
               "id": 54,
               "text": "The mother bird gave him a sideways look. “ You’re lucky Vishnu and Garuda agreed. Otherwise, you’d still be drinking the sea. ”",
               "translationAr": "ونظرت إليه الأُنثى مائلةً وقالت: «لقد أسعدك رضا فيشنو وجارودا؛ ولولا ذلك لظللتَ تشرب البحر.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2053.mp3"
             },
             {
               "id": 55,
               "text": "The sea rumbled one last time, muttering, “ Tiny little birds, giant egos, ” as she retreated.",
               "translationAr": "وهدرت البحر آخر مرةٍ وهي تنكفئ: «طيورٌ صغيرة، وأنَى عظيمة.»",
-              "audioUrl": ""
-            },
-            {
-              "id": 56,
-              "text": "And that was ‘The Tiny Birds and the Mighty Sea.’ Read by me Jana for Storynory.com.",
-              "translationAr": "وهذه كانت «الطيور الصغيرة والبحر العظيم»، قرأتُها لكم أنا جَنا لموقع Storynory.com.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2054.mp3"
             },
             {
               "id": 57,
               "text": "So who do you think is right? Should little creatures stand up for justice, like the father bird believes?",
               "translationAr": "فبرأيكم من المصيب؟ أَيجدرُ بالمخلوقات الصغيرة أن تنتصر للعدالة كما يرى طائرُنا؟",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2056.mp3"
             },
             {
               "id": 58,
               "text": "Or is the mother bird more realistic, saying the small should be careful not to upset the powerful?",
               "translationAr": "أم أن رأي الأُمّ أَوْلى، إذ ترى أن على الصغار أن يتحفّظوا لئلّا يُغضِبوا الأقوياء؟",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2057.mp3"
             },
             {
               "id": 59,
               "text": "And if you do run up against somebody bigger than you, will laws and rules protect you?",
               "translationAr": "وإن صادفتم من هو أكبرُ شأنًا، فهل تُجيركم القوانين والأنظمة؟",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2058.mp3"
             },
             {
               "id": 60,
               "text": "What idea do you think is more realistic in the world? It’s something you can think about and discuss.",
               "translationAr": "فأيُّ الرأيين أَصْدقُ بواقع الدنيا؟ فكرةٌ تستحقُّ التأمّل والنقاش.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea/The%20Tiny%20Birds%20and%20the%20Mighty%20Sea%20S%2059.mp3"
             },
-            {
-              "id": 61,
-              "text": "And I’d like to thank Nithya (6) and Adarsh (8) — and their cousins from India, Kethan (6) and Karunya (13) — for supporting Storynory and for introducing the Tittibha birds to us.",
-              "translationAr": "وأودُّ أن أشكر نيثيا (٦) وأدارش (٨)، وابني عمهما من الهند كيثان (٦) وكارونيا (١٣)، لدعمهم سترونوري ولتعريفنا بطيور التيتيبها.",
-              "audioUrl": ""
-            },
-            {
-              "id": 62,
-              "text": "And if any of our listeners would like to support us, the best way is via PayPal. See Storynory.com for details.",
-              "translationAr": "وإن رغب أحد مستمعينا في دعمنا، فأفضل السبل عبر «باي بال». تجدون التفاصيل على Storynory.com.",
-              "audioUrl": ""
-            }
           ]
         },
         "wordDefinitions": {
@@ -4286,326 +4256,320 @@ export const readingData = [
               "id": 1,
               "text": "Hello hello, You’re listening to me Jana and I’m back with a mousy Halloween story.",
               "translationAr": "مرحبًا، أنتم تستمعون إليّ أنا جَنا، وقد عدتُ إليكم بقصةٍ فأريةٍ عن الهالوين.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2001.mp3"
             },
             {
               "id": 2,
               "text": "Halloween at the cafe.",
               "translationAr": "الهالوين في المقهي.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2002.mp3"
             },
             {
               "id": 3,
               "text": "The door of the seaside café creaked open, ushering in a gust of chilly wind as a regular customer stepped inside.",
               "translationAr": "انفتح بابُ المقهى المطلّ على البحر صريرًا، فاندفع نَفَسٌ باردٌ إلى الداخل مع دخولِ زبونٍ معتاد.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2003.mp3"
             },
             {
               "id": 4,
               "text": "It was October — days were shortening, and the air was already tinged with the bite of autumn.",
               "translationAr": "كان ذلك في أكتوبر؛ الأيام تقصر، والهواء قد تلوَّن بِسَعَفِ الخريف ولفحته.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2004.mp3"
             },
             {
               "id": 5,
               "text": "Judith Mouse shivered.",
               "translationAr": "ارتجفت جوديث الفأرة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2005.mp3"
             },
             {
               "id": 6,
               "text": "She sat as still as possible on a shelf behind a large jar of black tea, barely daring to breathe.",
               "translationAr": "وجلست ثابتةً قدر ما تستطيع على رفٍّ خلف دَورَقٍ كبيرٍ من الشاي الأسود، لا تكاد تجرؤ على التنفّس.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2006.mp3"
             },
             {
               "id": 7,
               "text": "Her ears twitched as she listened to the conversation between the customer and the café owner.",
               "translationAr": "واهتزّت أذناها وهي تُصغي إلى الحديث بين الزبون وصاحبة المقهى.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2007.mp3"
             },
             {
               "id": 8,
               "text": "“ How’s business? ” the customer asked.",
               "translationAr": "سأل الزبون: «كيف تسير الأعمال؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2008.mp3"
             },
             {
               "id": 9,
               "text": "“ Tomorrow night’s going to be wild, ” replied the owner.",
               "translationAr": "أجابت المالكة: «غدًا ستكون الليلة صاخبة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2009.mp3"
             },
             {
               "id": 10,
               "text": "“ Ghosts, witches — the whole town’s turning into a sugary nightmare. We’re even expecting pirates, you know! ”",
               "translationAr": "«أشباح، وساحرات—ستتحوّل البلدةُ بأكملها إلى كابوسٍ سكّري. ونتوقّع حتى قُرصانًا، أتعلم؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2010.mp3"
             },
             {
               "id": 11,
               "text": "“ Pirates? What’s that all about? ” the customer asked, raising his eyebrows.",
               "translationAr": "قال رافعًا حاجبيه: «قُرصان؟ ما الخبر؟»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2011.mp3"
             },
             {
               "id": 12,
               "text": "“ Not just any pirates — ghost pirates! Decorations, sweets, costumes. It’ll be anarchy, I’m telling you! ”",
               "translationAr": "«ليسوا قُرصانًا عاديين—بل قُرصانٌ أشباح! زينةٌ وحلوى وأزياء تنكّر. ستكون فوضى—أؤكد لك!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2012.mp3"
             },
             {
               "id": 13,
               "text": "Ghost pirates? Judith could hardly believe her mousy ears.",
               "translationAr": "قراصنة أشباح؟ لم تكَد جوديث تُصدّق أذنيها الفأريّتَين.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2013.mp3"
             },
             {
               "id": 14,
               "text": "Rodina Mouse, hiding behind the fridge, had overheard the same conversation.",
               "translationAr": "وكانت رودينا الفأرة، المختبئة خلف الثلّاجة، قد التقطت الحوار نفسه.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2014.mp3"
             },
             {
               "id": 15,
               "text": "She shivered, and not just because of the cold.",
               "translationAr": "وارتجفت، ولم يكن البرد وحده السبب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2015.mp3"
             },
             {
               "id": 16,
               "text": "Later, as they huddled behind the skirting board, Rodina squeaked, “ Did you hear? Ghost pirates! ”",
               "translationAr": "وفيما بعد، حين التحفتا خلف لوح الساتر الأرضي، صاحت رودينا: «أسمعتِ؟ قراصنة أشباح!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2016.mp3"
             },
             {
               "id": 17,
               "text": "Judith nodded. “ I feared I’d imagined it! Nothing like this has ever happened at the café. ”",
               "translationAr": "هزّت جوديث رأسها: «ظننت أنني توهّمت! لم يحدث مثل هذا قط في المقهى.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2017.mp3"
             },
             {
               "id": 18,
               "text": "Word spread quickly among the mice, and Grandpa Mouse soon called a meeting.",
               "translationAr": "وانتشر الخبر سريعًا بين الفئران، فما لبث الجدّ الفأر أن دعا إلى اجتماع.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2018.mp3"
             },
             {
               "id": 19,
               "text": "His head wobbled as he addressed them.",
               "translationAr": "وكان رأسُه يهتزّ وهو يُخاطبهم.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2019.mp3"
             },
             {
               "id": 20,
               "text": "“ Pirates are bad enough alive. Ghost pirates? Even worse. Maybe some smelly cheese like Limburger could ward them off, but that’s no guarantee. ”",
               "translationAr": "«القراصنةُ أشرارٌ أحياءً، فكيف إذا كانوا أشباحًا؟ ذلك أدهى. لعلّ جبنًا نتنًا كليمبورغر يَصُدُّهم، ولكن لا ضمان.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2020.mp3"
             },
             {
               "id": 21,
               "text": "Judith’s eyes lit up. “ Remember the old pirate legend, Grandpa? One ghost pirate was kind to mice when they kept him company in prison, but another despised mice. He kept ten cats on his ship just to get rid of all the mice. We need to find out which crew has come to town. ”",
               "translationAr": "لمعت عينا جوديث: «أتذكر أسطورة القراصنة القديمة يا جدّي؟ كان قرصانٌ شَبَحيّ لطيفًا مع الفئران حين آنسَتْه في السجن، أمّا الآخر فكان يمقت الفئران، وأبقى عشرة قططٍ على سفينته ليتخلّص منهم. علينا أن نعرف أيُّ الطاقمين وفد إلى البلدة.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2021.mp3"
             },
             {
               "id": 22,
               "text": "“ That’s a mission for a brave mouse, ” said Grandpa. All eyes turned to Jimmy Mouse.",
               "translationAr": "قال الجد: «هذه مهمّةٌ لفأرٍ شجاع.» فانعطفت الأنظار كلُّها إلى جيمي الفأر.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2022.mp3"
             },
             {
               "id": 23,
               "text": "“ Oh, not me again! ” groaned Jimmy, though he knew arguing was pointless. “ Alright, alright. I’ll find out if they’re here for something in particular or just to scare everyone. And I’ll figure out if it’s the friendly pirate or the one who hates us. ”",
               "translationAr": "تأوّه جيمي: «أوه، ليس أنا مجددًا!» وقد علم أنّ الجدل لا طائل منه. «حسنًا، حسنًا. سأعرف إن كانوا هنا لأمرٍ بعينه أم لمجرّد إخافة الجميع. وسأتبيّن هل هو القرصان الودود أم ذاك الذي يكرهنا.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2023.mp3"
             },
             {
               "id": 24,
               "text": "That evening, Jimmy Mouse ventured onto the streets.",
               "translationAr": "في تلك الأمسية، خرج جيمي الفأر مغامرًا إلى الشوارع.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2024.mp3"
             },
             {
               "id": 25,
               "text": "The town was transformed — lights flickered in shop windows, strange shadows danced across the cobblestones, and the usual smell of baked bread was mixed with something sweet… and pumpkiny?",
               "translationAr": "وكانت البلدة قد تبدّلت؛ أضواءٌ تومِض في واجهات المتاجر، وظلالٌ غريبة ترقص على الحجارة المرصوفة، ورائحة الخبز المعتادة قد امتزجت بشيءٍ حلو… وبقرعٍ؟",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2025.mp3"
             },
             {
               "id": 26,
               "text": "Jimmy’s heart pounded as he crept along the base of buildings. Every shadow seemed to hide some lurking danger.",
               "translationAr": "خفق قلب جيمي وهو يزحف بمحاذاة قواعد الأبنية. وبدا أن كلَّ ظلّةٍ تُخفي خطرًا كامِنًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2026.mp3"
             },
             {
               "id": 27,
               "text": "A sudden gust of wind sent leaves skittering across his path like skeletal fingers. He took a deep breath and pressed on.",
               "translationAr": "وذَرّت دفعةُ ريحٍ مباغتة أوراقًا تتقافز في طريقه كأصابع عِظام. أخذ نَفَسًا عميقًا ومضى قُدُمًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2027.mp3"
             },
             {
               "id": 28,
               "text": "At the town square, an eerie melody filled the air.",
               "translationAr": "وفي ساحة البلدة، ملأ نغمٌ مُوْحِش الفضاء.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2028.mp3"
             },
             {
               "id": 29,
               "text": "The centrepiece was a towering figure in front of the old clock tower: a colossal ghost pirate with a tattered coat and a glowing eyepatch.",
               "translationAr": "وكانت تحفة المكان هيئَةٌ شاهقة أمام برج الساعة العتيق: قرصانٌ شبحٌ عملاق بمعطفٍ مرقّع ورُقعةِ عينٍ متوهّجة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2029.mp3"
             },
             {
               "id": 30,
               "text": "Its mechanical arm swung a massive cutlass, casting long, menacing shadows.",
               "translationAr": "تلوّح ذراعه الميكانيكية بسيفٍ ثقيلٍ مُقَوْس، وتلقي ظلالًا طويلة مهدِّدة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2030.mp3"
             },
             {
               "id": 31,
               "text": "Suddenly, the pirate’s eyes flashed red, and a booming voice echoed, “ Beware, all ye who enter here! ”",
               "translationAr": "وفجأةً أومضت عينا القرصان حمراءَ، وانبعث صوتٌ مدوٍّ: «احذروا، يا كلَّ من يدخل هنا!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2031.mp3"
             },
             {
               "id": 32,
               "text": "Jimmy’s fur stood on end as he darted behind a pumpkin display and nearly bumped into a carved jack-o’ - lantern whose wicked grin made him jump.",
               "translationAr": "اشمأزّ وبرُ جيمي ووثب يختبئ خلف عرضٍ من القرع، وكاد يرتطم بقرعٍ منقوش ذي ابتسامةٍ ماكرةٍ أفزعته.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2032.mp3"
             },
             {
               "id": 33,
               "text": "As he dashed into an alley, a black cat with bright green eyes emerged from the darkness and locked onto him.",
               "translationAr": "وما إن اندفع إلى زُقاقٍ حتى خرج من الظلام قطٌّ أسود بعينين خضراوين لامعتين وثبتت عيناه عليه.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2033.mp3"
             },
             {
               "id": 34,
               "text": "Jimmy bolted, weaving between decorative tombstones and dodging rubber bats, then dived into a drain just in time.",
               "translationAr": "انطلق جيمي يعدو متلوّيًا بين شواهد قبورٍ زينة، متفاديًا خفافيش مطّاط، ثم غاص في مصرفٍ مائي في اللحظة المناسبة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2034.mp3"
             },
             {
               "id": 35,
               "text": "When he finally made it back to the skirting board, he gasped, “ They’re real! Ghost pirates, witches, and a giant cat! And they’re coming this way! ”",
               "translationAr": "وحين عاد أخيرًا إلى اللوح السفلي، لَهِث قائلًا: «إنهم حقًا! قراصنة أشباح، وساحرات، وقطٌّ عملاق! وهم قادمون إلى هنا!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2035.mp3"
             },
             {
               "id": 36,
               "text": "The mice held an emergency meeting. Some were ready to flee the café and the town altogether, but Judith insisted, “ This is our home. We must understand what they want. ”",
               "translationAr": "عقدت الفئران اجتماعًا طارئًا؛ وكان بعضهم على أهبة الفرار من المقهى والبلدة بأسرها، غير أن جوديث أصرت: «هذا بيتُنا. علينا أن نفهم ما يريدون.»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2036.mp3"
             },
             {
               "id": 37,
               "text": "After much debate, the mice decided to hide, leaving Jimmy behind to discover the truth.",
               "translationAr": "وبعد جدالٍ طويل، قرّرت الفئرانُ الاختباء، وتركوا جيمي ليتقصّى الحقيقة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2037.mp3"
             },
             {
               "id": 38,
               "text": "Poor Jimmy found waiting for the ghost pirates the scariest challenge yet, as the others evacuated through a pipe to a garage behind the café.",
               "translationAr": "ووجد جيمي المسكين أن انتظار القراصنة الأشباح أخوفُ تحدٍّ حتى الآن، فيما أخلى الآخرون عبر أنبوبٍ إلى مرآبٍ خلف المقهى.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2038.mp3"
             },
             {
               "id": 39,
               "text": "In the early evening, ghost - like figures flooded in — pirates with swords, witches with floppy hats, and little goblins clutching bags of sweets.",
               "translationAr": "مع أول المساء، تدفّقت هيئاتٌ تشبه الأشباح—قراصنة بسيوف، وساحراتٌ بقلنسواتٍ مترهّلة، وعفاريتُ صغار يشدّون أكياس الحلوى.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2039.mp3"
             },
             {
               "id": 40,
-              "text": "At first, Jimmy whispered, “ g - g - ghosts! ” , but soon he noticed wobbly rubber swords and oversized hats.",
+              "text": "At first, Jimmy’s heart raced. “ g-g-ghosts! ” he whispered, his fur standing on end. But as he watched, something didn’t quite add up. One ghost pirate’s “ cutlass ” wobbled as if made of rubber, and another tripped over its own boots. One of the witches’ hats was far too big and flopped over her eyes",
               "translationAr": "في البدء همس جيمي: «أ… أ… أشباح!»، لكنه ما لبث أن رأى سيوفًا مطاطيةً متمايلة وقلنسواتٍ أكبرَ من اللازم.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2040.mp3"
             },
             {
               "id": 41,
               "text": "Slowly, realisation dawned: “ They’re human kids! ”",
               "translationAr": "وتكشّفت الحقيقة رويدًا: «إنهم أطفالٌ بشر!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2041.mp3"
             },
             {
               "id": 42,
               "text": "The giant ghost pirate at the entrance was mechanical, children laughed and posed for pictures, and the black cat was just a stuffed decoration.",
               "translationAr": "وكان القرصان الشبح العملاق عند المدخل آليًّا، والأطفال يضحكون ويلتقطون الصور، وأمّا القطّ الأسود فمحضُ زينةٍ محشوة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2042.mp3"
             },
             {
               "id": 43,
-              "text": "Meanwhile, little ghosts and ghouls stuffed their faces with cakes, toffee apples and chocolates as the café floor grew sticky with apple - bobbing water.",
-              "translationAr": "وفي الأثناء ملأ «الأشباح» و«الأشاوذ» الصغار أفواههم بالكيك وتفاح الكراميل والشوكولاتة، وأرضُ المقهى تزداد دَبَقًا بماء لعبة التقاط التفاح.",
-              "audioUrl": ""
+              "text": "Meanwhile the small ghosts and ghouls -who were actually the human kids – were busy stuffing their faces with cakes, toffee apples and chocolates.",
+              "translationAr": "وفي الوقت نفسه، كانت الأشباح الصغيرة والغيلان -الذين كانوا في الواقع أطفالًا بشريين- مشغولة بحشو وجوهها بالكعك وتفاح التوفي والشوكولاتة.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2043.mp3"
             },
             {
               "id": 44,
-              "text": "Children’s shrieks and laughter were deafening. The owner, exhausted, hunched in a corner with her fingers in her ears.",
+              "text": "The Children’s shrieks and laughter were deafening. The owner, exhausted, hunched in a corner with her fingers in her ears.",
               "translationAr": "كانت صرخات الصغار وضحكاتهم تصمّ الآذان، وصاحبةُ المقهى المنهكة قد انكمشت في ركنٍ تسدّ أذنيها.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2045.mp3"
             },
             {
               "id": 45,
-              "text": "Jimmy mused: “ What’s worse — ghosts or a kids’ party? ”",
-              "translationAr": "وقال جيمي في نفسه: «ما الأسوأ—الأشباح أم حفلةُ الأطفال؟»",
-              "audioUrl": ""
+              "text": "Jimmy smiled to himself. “ I wonder what’s worse. Being haunted by ghosts or hosting a kids party?",
+              "translationAr": "ابتسم جيمي لنفسه. أتساءل ما هو الأسوأ. أن تطاردني الأشباح أم أن أستضيف حفلة أطفال؟",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2046.mp3"
             },
             {
               "id": 46,
-              "text": "But amid the chaos, a brave mouse could snatch plenty of crumbs unnoticed.",
-              "translationAr": "غير أنّ في الفوضى متّسعًا لفأرٍ شجاع أن يخطف فتاتًا كثيرًا بلا أن يُلحَظ.",
-              "audioUrl": ""
+              "text": "But amid all the chaos, there was plenty of opportunity for a brave little mouse to dart out and grab some crumbs without being noticed.",
+              "translationAr": "ولكن وسط كل هذه الفوضى، كانت هناك الكثير من الفرص لفأر صغير شجاع ليخرج ويأخذ بعض الفتات دون أن يلاحظه أحد.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2047.mp3"
             },
             {
               "id": 47,
-              "text": "When the party finally ended, a delicious sticky mess covered the floor, and the exhausted owner went to bed with a headache.",
-              "translationAr": "ولمّا انتهت الحفلة أخيرًا عمّت الأرضَ فوضى لذيذةٌ دَبِقة، ومضت المالكة المنهَكة إلى فراشها تشكو صداعًا.",
-              "audioUrl": ""
+              "text": "And when, eventually, the party came to an end and the last little monster had left, there was a wonderful delicious, sticky mess all over the cafe’s floor. Even better, the owner was far too exhausted to mop up, and went to bed with a headache.",
+              "translationAr": "وعندما انتهى الحفل أخيرًا وغادر آخر وحش صغير، كانت هناك فوضى لذيذة ولزجة في جميع أنحاء أرضية المقهى. والأسوأ من ذلك، أن صاحب المقهى كان منهكًا جدًا لدرجة أنه لم يستطع التنظيف، فذهب إلى الفراش وهو يعاني من صداع.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2048.mp3"
             },
             {
               "id": 48,
-              "text": "Jimmy reported back to the garage. Grandpa Mouse embraced him: “ You survived again, little Jimmy! ”",
+              "text": "Jimmy rushed off to report his findings to the mice hiding in the garage. Grandpa mouse greeted him with open arms. “ Well done little Jimmy on being alive. You survived once again!",
               "translationAr": "عاد جيمي بالتقرير إلى المرآب. واحتضنه الجدُّ الفأر: «لقد نجوتَ مرةً أخرى يا جيمي الصغير!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2049.mp3"
             },
             {
               "id": 49,
-              "text": "“ It’s a mess — crumbs everywhere! ” cried Jimmy. Wonderful, squeaked the mice. “ All night to eat them up! ”",
-              "translationAr": "«إنها فوضى—فتاتٌ في كل مكان!» صرخ جيمي. فقالت الفئرانُ صيحةَ ابتهاج: «رائع!» وأضاف: «والليلُ كلُّه لنا لنأكله!»",
-              "audioUrl": ""
+              "text": "“ It’s a mess, the most frightful mess, crumbs everywhere! ” he exclaimed. “ Wonderful, ” squeaked all the mice. “ And even better, we’ve got all night clear to eat up the crumbs! ”",
+              "translationAr": "إنها فوضى عارمة، فوضى مُرعبة، فتاتٌ في كل مكان! صرخ. صرخت الفئران جميعها: رائع!. والأفضل من ذلك، لدينا الليل كله لأكل الفتات!",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2050.mp3"
             },
             {
               "id": 50,
               "text": "“ But are you sure there aren’t any ghosts? ” asked Rodina. “ Yes, I’m sure — they’re all gone! ”",
               "translationAr": "«أمتأكّدٌ من عدم وجود أشباح؟» سألت رودينا. «نعم، متيقّن—لقد مضوا جميعًا!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2051.mp3"
             },
             {
               "id": 51,
               "text": "“ You’re a hero, Jimmy, ” declared Grandpa Mouse. “ Come on everyone, let’s hurry back to the café! ”",
               "translationAr": "قال الجدّ الفأر: «أنت بطلٌ يا جيمي. هلمّوا جميعًا ولنُسرع إلى المقهى!»",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2052.mp3"
             },
             {
               "id": 52,
-              "text": "And the mice had a great time cleaning the delicious crumbs. They were thankful that human kids are far messier than real ghosts.",
-              "translationAr": "وقضت الفئران وقتًا بهيجًا تلتقط الفتات اللذيذ، شاكرةً أن أطفال البشر أشدُّ فوضى من الأشباح الحقيقية.",
-              "audioUrl": ""
+              "text": "And the mice had a great time cleaning the delicious crumbs at the cafe. They were thankful that human kids are far messier than real ghosts.",
+              "translationAr": "واستمتعت الفئران كثيرًا بتنظيف فتات الطعام اللذيذ في المقهى. كانوا شاكرين لأن الأطفال البشر أكثر فوضوية بكثير من الأشباح الحقيقية.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2053.mp3"
             },
             {
               "id": 53,
-              "text": "Only Henry suffered from a sugar high and had to lie down. Otherwise they all had the best Halloween ever.",
-              "translationAr": "ولم يُصَب بسوءٍ سوى هنري الذي علتْ سُكّريّتُه فاضطرّ إلى الاستلقاء، وإلا فقد كان أفضلَ هالوين مرّ عليهم.",
-              "audioUrl": ""
+              "text": "The only problem was that Henry suffered from a sugar high and had to lie down. Otherwise they all had the best Halloween ever.",
+              "translationAr": "المشكلة الوحيدة كانت أن هنري عانى من ارتفاع السكر واضطر للاستلقاء. وإلا، فقد قضوا جميعًا أفضل عيد هالوين على الإطلاق.",
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Halloween%20at%20the%20Caf%C3%A9/Halloween%20at%20the%20Caf%C3%A9%20S%2054.mp3"
             },
-            {
-              "id": 54,
-              "text": "And that was ‘Halloween at the Café’. Read by me Jana for Storynory.com. Trick or treat! And if you can support Storynory, see our PayPal link on Storynory.com.",
-              "translationAr": "وهذه كانت «الهالوين في المقهي». قرأتُها لكم أنا جَنا لموقع Storynory.com. خدعة أم حلوى! وإن استطعتم دعم Storynory فزوروا رابط باي بال على موقعنا.",
-              "audioUrl": ""
-            }
           ]
         },
         "wordDefinitions": {
@@ -23005,367 +22969,355 @@ export const readingData = [
               "id": 1,
               "text": "Hi everybody. My name is Natasha. And my name is Rob.",
               "translationAr": "مرحبًا جميعًا. اسمي ناتاشا. واسمي روب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2001.mp3"
             },
             {
               "id": 2,
               "text": "Here’s a piece of gossip I just picked up about Bertie the Frog.",
               "translationAr": "إليكم إشاعةً سمعتها للتو عن بيرتي الضفدع.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2002.mp3"
             },
             {
               "id": 3,
               "text": "As you know, Bertie used to be a handsome prince, but now he’s been turned into a frog; and he lives in a pond with tadpoles, birds and fish to keep him company.",
               "translationAr": "كما تعلمون، كان بيرتي أميرًا وسيماً، لكنه تحوّل الآن إلى ضفدع؛ ويعيش في بركة مع شراغيف وطيور وأسماك تؤنسه.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2003.mp3"
             },
             {
               "id": 4,
               "text": "Bertie’s friend, Sadie, is a very special swan, who has lots of romantic daydreams.",
               "translationAr": "صديقة بيرتي، سادي، بجعة مميّزة للغاية ولديها الكثير من أحلام اليقظة الرومانسية.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2004.mp3"
             },
             {
               "id": 5,
               "text": "Sometimes she looks at her reflection in the pond, and imagines that her beautiful neck is rather royal!",
               "translationAr": "أحيانًا تنظر إلى انعكاسها في ماء البركة وتتخيل أن عنقها الجميل مَلَكيّ فعلًا!",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2005.mp3"
             },
             {
               "id": 6,
               "text": "The other creatures say that she’s always asking Bertie what it’s like to be a princess.",
               "translationAr": "وتقول المخلوقات الأخرى إنها دائمًا ما تسأل بيرتي: كيف يكون شعور أن تكوني أميرة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2006.mp3"
             },
             {
               "id": 7,
               "text": "Colin the Carp, who is a very grumpy fish, likes to take Sadie and her lofty ideas down a peg or two.",
               "translationAr": "أما كولين الشَّبوط، وهو سمكة متجهمة جدًا، فيحب أن يُنزل سادي وأفكارها السامية درجةً أو درجتين.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2007.mp3"
             },
             {
               "id": 8,
               "text": "Do you know what he said to Sadie today? You don’t? Well, it was rather rude.",
               "translationAr": "أتدرون ماذا قال لسادي اليوم؟ لا تعرفون؟ حسنًا، كان كلامًا فظًا نوعًا ما.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2008.mp3"
             },
             {
               "id": 9,
               "text": "He said, “ It doesn’t make any difference to you what it’s like being a princess. You’re just a swan. You’re stuck that way. ”",
               "translationAr": "قال: \"لن يغيّر شيئًا بالنسبة لكِ كيف يكون كونك أميرة. أنتِ مجرد بجعة. وستبقين هكذا.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2009.mp3"
             },
             {
               "id": 10,
               "text": "But Tim the Tadpole said, “ Perhaps she might be a princess really! Maybe someone turned her into a swan. ”",
               "translationAr": "لكن تيم الشرغوف قال: \"ربما تكون أميرة بالفعل! ربما حوّلها أحدهم إلى بجعة.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2010.mp3"
             },
             {
               "id": 11,
               "text": "Sadie became quite excited at the thought of that. “ Do you think I’m a princess, Bertie? ” she said. “ Do you really? ”",
               "translationAr": "تحمّست سادي جدًا للفكرة. وقالت: \"أتظن أنني أميرة يا بيرتي؟ حقًا؟\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2011.mp3"
             },
             {
               "id": 12,
               "text": "In reply, Bertie told her a little secret.",
               "translationAr": "وفي الرد، أخبرها بيرتي سرًا صغيرًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2012.mp3"
             },
             {
               "id": 13,
               "text": "“ The beautiful Princess Beatrice has a special princess test. It helped her to tell who was a princess and who wasn’t. She would just ask them whether they wanted to take the princess test. ”",
               "translationAr": "قال: \"الأميرة الجميلة بياتريس لديها اختبار أميرات خاص. يساعدها على معرفة من هي أميرة ومن ليست كذلك. كانت تسأل فقط إن كنّ يرغبن في خوض الاختبار.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2013.mp3"
             },
             {
               "id": 14,
               "text": "“ Can I take the princess test? ” asked Sadie.",
               "translationAr": "قالت سادي: \"هل يمكنني خوض اختبار الأميرات؟\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2014.mp3"
             },
             {
               "id": 15,
               "text": "“ Well, ” said Bertie, “ If they said yes then they weren’t really a princess, because a real princess doesn’t need to take a test – she just sort of knows. ”",
               "translationAr": "قال بيرتي: \"حسنًا، إذا قلن نعم فهنّ لسن أميراتٍ حقًّا، لأن الأميرة الحقيقية لا تحتاج إلى اختبار—إنها تعرف ذلك فحسب.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2015.mp3"
             },
             {
               "id": 16,
               "text": "“ Oh, ” said Sadie, a bit sadly. “ I might not be a princess, but I’m the most beautiful swan on this pond! ”",
               "translationAr": "قالت سادي بأسى قليل: \"ربما لست أميرة، لكنني أجمل بجعة في هذه البركة!\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2016.mp3"
             },
             {
               "id": 17,
               "text": "But Colin the Carp wasn’t at all bowled over by her beauty. He grumped back at her, “ Well, that’s not saying much. You’re the only swan on this pond. ”",
               "translationAr": "لكن كولين الشَّبوط لم ينبهر بجمالها إطلاقًا. تجهّم قائلًا: \"هذا لا يعني الكثير. أنتِ البجعة الوحيدة في هذه البركة.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2017.mp3"
             },
             {
               "id": 18,
               "text": "And everybody laughed – except Sadie, who glided away with as much royal dignity as she could manage.",
               "translationAr": "وضحك الجميع—إلا سادي، التي انزلقت مبتعدةً بكل ما استطاعت من وقارٍ مَلَكي.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2018.mp3"
             },
             {
               "id": 19,
               "text": "Now, if enough children listen to his stories, one day he will turn back into a prince – and perhaps, just perhaps, he will invite Sadie to come and live on a special ornamental pond, with a golden fountain, and her dream will come true – almost.",
               "translationAr": "والآن، إذا استمع عددٌ كافٍ من الأطفال إلى قصصه، فسيعود يومًا ما أميرًا—وربما، فقط ربما، سيَدعو سادي لتعيش في بركة زينة خاصة بنافورة ذهبية، وسيتحقق حلمها—تقريبًا.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2019.mp3"
             },
             {
               "id": 20,
               "text": "Here’s a piece of gossip I’ve just picked up about Bertie the Frog.",
               "translationAr": "إليكم إشاعةً سمعتها للتو عن بيرتي الضفدع.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2020.mp3"
             },
             {
               "id": 21,
               "text": "As you know, he used to be a handsome prince, and when he was royal he was always extremely brave – and that’s why all the creatures who live on his pond always look up to him.",
               "translationAr": "كما تعلمون، كان أميرًا وسيمًا، وحين كان ملكيًا كان دائمًا شديد الشجاعة—ولهذا تنظر إليه كل مخلوقات البركة بإعجاب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2021.mp3"
             },
             {
               "id": 22,
               "text": "Now this morning it was very chilly weather down on Bertie’s pond.",
               "translationAr": "وفي هذا الصباح كان الطقس باردًا جدًا عند بركة بيرتي.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2022.mp3"
             },
             {
               "id": 23,
               "text": "Mr Frosty had been through the vegetable patch, and everything was white and snowy, including Sadie the Swan.",
               "translationAr": "لقد مرّ السيّد صقيع على حديقة الخضار، وصار كل شيء أبيض كالثلج، بما في ذلك سادي البجعة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2023.mp3"
             },
             {
               "id": 24,
               "text": "Now you might not know this, but normally Sadie is a very special swan because her feathers are jet black.",
               "translationAr": "وربما لا تعلمون، لكن سادي عادةً بجعة مميزة لأن ريشها أسود كالليل.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2024.mp3"
             },
             {
               "id": 25,
               "text": "When Tim the Tadpole looked up from under a pebble in the bottom of the pond, he saw Sadie all glittering and white in the frost, and he was a bit frightened, because he had never seen a white swan before.",
               "translationAr": "وعندما نظر تيم الشرغوف من تحت حصاة في قاع البركة، رأى سادي تلمع بيضاء من الجليد، فخاف قليلًا لأنه لم يرَ بجعة بيضاء من قبل.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2025.mp3"
             },
             {
               "id": 26,
               "text": "“ Oh, ohhh, ” squeaked little Tim. “ Is that a ghost swan? ”",
               "translationAr": "صرخ تيم الصغير: \"أوه، أوووه! هل تلك بجعة شبح؟\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2026.mp3"
             },
             {
               "id": 27,
               "text": "Bertie was used to Tim’s silly questions by now. “ Oh no! ” he boomed. “ Ghosts aren’t real, so that can’t be a ghost. That’s a new type of swan we haven’t seen before. ”",
               "translationAr": "اعتاد بيرتي أسئلة تيم الطفولية. قال بصوت عالٍ: \"لا طبعًا! الأشباح ليست حقيقية، إذن فهي ليست شبحًا. إنها نوع جديد من البجع لم نره من قبل.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2027.mp3"
             },
             {
               "id": 28,
               "text": "When Colin the Carp heard Bertie telling this to Little Tim, he swam over and said, “ Well Bertie, since you consider yourself to be the prince of this pond, and a natural - born leader of creatures great and small; perhaps you should go over and introduce yourself to our new friend – if it really is a friend, that is, not a ghost swan. ”",
               "translationAr": "وعندما سمع كولين الشَّبوط بيرتي يقول ذلك لتيم الصغير، سبح نحوه وقال: \"حسنًا يا بيرتي، بما أنك تعتبر نفسك أمير هذه البركة وقائدًا بالفطرة للكبير والصغير؛ فربما عليك أن تذهب وتعرّف نفسك على صديقنا الجديد—إن كان صديقًا فعلًا وليس بجعة شبح.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2028.mp3"
             },
             {
               "id": 29,
               "text": "“ Oh cripes! ” thought Bertie. “ What if it is a ghost? It’s all very well when you are a prince to be brave, but when you are a frog, things can be a bit scary sometimes. ”",
               "translationAr": "فكّر بيرتي: \"يا للمصيبة! ماذا لو كان شبحًا؟ لا بأس بالشجاعة حين تكون أميرًا، أما وأنت ضفدع فالأمور قد تكون مخيفة أحيانًا.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2029.mp3"
             },
             {
               "id": 30,
               "text": "“ Go on Bertie, ” said Colin. “ Go on Bertie, ” said Little Tim.",
               "translationAr": "\"هيا يا بيرتي\" قال كولين. وقال تيم الصغير: \"هيا يا بيرتي\".",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2030.mp3"
             },
             {
               "id": 31,
               "text": "“ Er, erm … Croak! ” said Bertie.",
               "translationAr": "قال بيرتي متلعثمًا: \"أه.. أهم.. كرك!\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2031.mp3"
             },
             {
               "id": 32,
               "text": "Just then the ghostly white swan glided through the mist towards the little group of creatures.",
               "translationAr": "وفي تلك اللحظة انزلقت البجعة البيضاء الشبحية عبر الضباب نحو مجموعة المخلوقات الصغيرة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2032.mp3"
             },
             {
               "id": 33,
               "text": "Tim quickly dived down, and hid behind a piece of green slime. Colin the Carp sank to the bottom of the pond and pretended to be a lump of mud.",
               "translationAr": "غطس تيم بسرعة واختبأ خلف قطعة من الطحلب الأخضر. وغاص كولين الشَّبوط إلى قاع البركة وتظاهر بأنه كتلة طين.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2033.mp3"
             },
             {
               "id": 34,
               "text": "Bertie wanted to hop away, but he was so scared that he found his legs were numb, and he couldn’t leap off his lily pad.",
               "translationAr": "أراد بيرتي أن يقفز مبتعدًا، لكنه كان خائفًا لدرجة أن ساقيه خَدِرَتا ولم يستطع القفز عن ورقة الزنبق.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2034.mp3"
             },
             {
               "id": 35,
               "text": "The ghostly swan said, “ Hello Bertie. It’s so frosty this morning that my feathers are all white. Do you think I look like a princess? ”",
               "translationAr": "قالت البجعة الشبحية: \"مرحبًا يا بيرتي. البرد قارس هذا الصباح حتى صار ريشي أبيض كله. أتراني أبدو كأميرة؟\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2035.mp3"
             },
             {
               "id": 36,
               "text": "And Bertie recognised the voice of Sadie the Swan – although she was normally a black swan.",
               "translationAr": "وعرف بيرتي صوت سادي البجعة—مع أنها عادةً بجعة سوداء.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2036.mp3"
             },
             {
               "id": 37,
               "text": "He croaked a little, but no proper words came out of his mouth.",
               "translationAr": "أطلق نقنقةً خفيفة، لكن لم تخرج كلماتٌ سليمة من فمه.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2037.mp3"
             },
             {
               "id": 38,
               "text": "“ Oh my dear Bertie, ” said Sadie, sympathetically. “ You’re such a pale shade of green today. Are you feeling well? ”",
               "translationAr": "قالت سادي بعطف: \"يا عزيزي بيرتي، أنت أخضر باهت اليوم. أأنت بخير؟\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2038.mp3"
             },
             {
               "id": 39,
               "text": "“ I think, ” said Bertie, “ that I might be starting a cold. ”",
               "translationAr": "قال بيرتي: \"أظن أنني بدأت أُصاب بالزكام.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2039.mp3"
             },
             {
               "id": 40,
               "text": "But Tim and Colin were secretly very impressed that Bertie hadn’t hopped away, and they thought that he may be a brave frog after all.",
               "translationAr": "لكن تيم وكولين أُعجبا سرًا بأن بيرتي لم يهرب قافزًا، وظنّا أنه ربما يكون ضفدعًا شجاعًا في النهاية.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2040.mp3"
             },
             {
               "id": 41,
               "text": "There’s a dog who lives in the palace, and his name is Barker.",
               "translationAr": "هناك كلب يعيش في القصر واسمه باركر.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2041.mp3"
             },
             {
               "id": 42,
               "text": "Sometimes Barker comes down to the pond, and do you know why they call him Barker? You don’t? It’s because he barks, and barks, and barks.",
               "translationAr": "أحيانًا يأتي باركر إلى البركة، وتعرفون لماذا يسمونه باركر؟ لا تعرفون؟ لأنه ينبح وينبح وينبح.",
-              "audioUrl": ""
-            },
-            {
-              "id": 43,
-              "text": "Tim the Tadpole, who is only very small, even for a tadpole, finds that a bit scary.",
-              "translationAr": "تيم الشرغوف، وهو صغير جدًا حتى بالنسبة لشرغوف، يجد ذلك مخيفًا بعض الشيء.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2042.mp3"
             },
             {
               "id": 44,
               "text": "So this morning, Barker was barking, and Tim was hiding behind some green slime.",
               "translationAr": "ولذلك، هذا الصباح، كان باركر ينبح، وكان تيم يختبئ خلف بعض الطحالب الخضراء.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2043.mp3"
             },
             {
               "id": 45,
               "text": "“ I’m a bit scared, Bertie, ” said Tim.",
               "translationAr": "قال تيم: \"أنا خائف قليلًا يا بيرتي.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2044.mp3"
             },
             {
               "id": 46,
               "text": "“ Don’t be scared, Little Tim, ” croaked Bertie, “ he’s only a silly old dog. ”",
               "translationAr": "نقنق بيرتي: \"لا تخف يا تيم الصغير، إنه مجرد كلبٍ أحمقٍ عجوز.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2045.mp3"
             },
             {
               "id": 47,
               "text": "But Barker was growling, and then he dipped his big snotty nose into the water and started drinking.",
               "translationAr": "لكن باركر كان يزمجر، ثم غمس أنفه الكبير المبلل بالمخاط في الماء وبدأ يشرب.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2046.mp3"
             },
             {
               "id": 48,
               "text": "Bertie jumped back. “ You’re scared as well, ” said Colin the Carp.",
               "translationAr": "قفز بيرتي إلى الخلف. فقال كولين الشَّبوط: \"أنت خائف أيضًا.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2047.mp3"
             },
             {
               "id": 49,
               "text": "“ Rubbish, ” said Bertie. “ I used to be a prince, and princes aren’t afraid of anything. ”",
               "translationAr": "قال بيرتي: \"هراء. كنتُ أميرًا، والأمراء لا يخافون من أي شيء.\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2048.mp3"
             },
             {
               "id": 50,
               "text": "Then Bertie looked across at Sadie the Swan.",
               "translationAr": "ثم نظر بيرتي إلى سادي البجعة.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2049.mp3"
             },
             {
               "id": 51,
               "text": "Now, Sadie is a very special swan; unlike most swans who are snowy white, she’s jet black and has a wonderful red beak.",
               "translationAr": "سادي بجعة مميزة؛ فخلافًا لمعظم البجع الأبيض الثلجي، هي سوداء كالليل ولها منقار أحمر رائع.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2050.mp3"
             },
             {
               "id": 52,
               "text": "Although she’s very gentle really, sometimes she can be a bit frightening when she flaps her wings, and hisses, because she is in a bad mood.",
               "translationAr": "ومع أنها لطيفة جدًا، إلا أنها قد تكون مخيفة قليلًا حين ترفرف بجناحيها وتفحّ لأنها في مزاجٍ سيئ.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2051.mp3"
             },
             {
               "id": 53,
               "text": "Bertie, who was hiding underneath a lily pad, poked his head out of the water and said, “ Sadie, how big are your wings? ”",
               "translationAr": "وكان بيرتي يختبئ تحت ورقة زنبق، فأطلّ برأسه من الماء وقال: \"سادي، ما مدى كِبَر جناحيكِ؟\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2052.mp3"
             },
             {
               "id": 54,
               "text": "Sadie flapped her big black wings. “ This big! ” she said.",
               "translationAr": "رفرفت سادي بجناحيها الأسودين الكبيرين وقالت: \"بهذا الكِبَر!\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2053.mp3"
             },
             {
               "id": 55,
               "text": "Then Barker looked up and the silly dog ran away, because he’s really scared of swans.",
               "translationAr": "نظر باركر إلى الأعلى ثم هرب الكلب الأحمق، لأنه في الحقيقة يخاف من البجع.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2054.mp3"
             },
             {
               "id": 56,
               "text": "As he started running, Bertie croaked at him as fiercely as he could. “ Look, I made him run away! ”",
               "translationAr": "وبينما بدأ يركض، نقنق بيرتي عليه بأشد ما يستطيع: \"أنظروا! جعلته يهرب!\"",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2055.mp3"
             },
             {
               "id": 57,
               "text": "“ Oh Bertie, ” swooned Sadie, “ You’re so brave! ”",
               "translationAr": "قالت سادي بإعجاب: \"أوه يا بيرتي، أنت شجاع جدًا!\"",
-              "audioUrl": ""
-            },
-            {
-              "id": 58,
-              "text": "Any time you have a spare moment, drop by at storynory.com where you’ll find loads more stories.",
-              "translationAr": "في أي وقت تجد فيه لحظة فراغ، زر موقع storynory.com حيث ستجد الكثير من القصص.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2056.mp3"
             },
             {
               "id": 59,
               "text": "We have famous stories, which you might have heard before, but I hope you’ll enjoy listening to them again.",
               "translationAr": "لدينا قصص مشهورة ربما سمعتَ بها من قبل، وأرجو أن تستمتع بسماعها مرة أخرى.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2058.mp3"
             },
             {
               "id": 60,
               "text": "And we have lots of new stories too, so come by and listen.",
               "translationAr": "ولدينا أيضًا الكثير من القصص الجديدة، فتعال واستمع.",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2059.mp3"
             },
             {
               "id": 61,
               "text": "Until then, from me, Natasha. Bye bye!",
               "translationAr": "إلى أن نلتقي، مني أنا ناتاشا: إلى اللقاء!",
-              "audioUrl": ""
+              "audioUrl": "https://cdn13674550.b-cdn.net/Reading-tool/Three%20Short%20Bertie%20Stories/Three%20Short%20Bertie%20Stories%20S%2060.mp3"
             }
           ]
         },
