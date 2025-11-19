@@ -17,7 +17,7 @@ const MobileSubtitleContainer = ({ currentSubtitle, isMobile = false }) => {
 
   return (
     <div
-      className="fixed top-[120px] left-5 right-5 z-[1030] pointer-events-none"
+      className="fixed top-[180px] left-5 right-5 z-[1030] pointer-events-none"
       style={{
         paddingTop: "env(safe-area-inset-top)",
       }}
@@ -29,13 +29,13 @@ const MobileSubtitleContainer = ({ currentSubtitle, isMobile = false }) => {
         }}
       >
         {displayEnglish && (
-          <div className="text-white text-base font-semibold leading-[1.4]">
+          <div className="text-white text-[13px] font-semibold leading-[1.4]">
             {displayEnglish}
           </div>
         )}
         {displayArabic && (
           <div
-            className="text-white/80 text-sm font-medium leading-[1.4] mt-2"
+            className="text-white/80 text-xs font-medium leading-[1.4] mt-2"
             style={{
               direction: "rtl",
               textAlign: "center",

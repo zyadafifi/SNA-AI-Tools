@@ -602,6 +602,9 @@ export const MobileLessonPage = () => {
   }
 
   const currentSentence = lesson.sentences[currentSentenceIndex];
+  
+  // Calculate video progress percentage for current sentence
+  const videoProgress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
     <>
@@ -610,7 +613,7 @@ export const MobileLessonPage = () => {
         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-md z-10">
           <ProgressBar
             currentSentenceIndex={currentSentenceIndex}
-            sentenceProgress={0}
+            sentenceProgress={videoProgress}
             sentences={lesson.sentences}
             completedSentences={completedSentences.size}
             isMobile={true}
