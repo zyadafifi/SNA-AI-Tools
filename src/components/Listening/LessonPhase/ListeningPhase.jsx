@@ -164,6 +164,7 @@ const ListeningPhase = ({
             sentenceProgress={videoProgress}
             sentences={Array.from({ length: Math.max(0, totalSteps) })}
             completedSentences={currentStepIndex}
+            isMobile={isMobile}
           />
         </div>
 

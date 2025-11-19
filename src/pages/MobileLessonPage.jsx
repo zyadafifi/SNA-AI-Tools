@@ -613,6 +613,7 @@ export const MobileLessonPage = () => {
             sentenceProgress={0}
             sentences={lesson.sentences}
             completedSentences={completedSentences.size}
+            isMobile={true}
           />
         </div>
 

@@ -9,6 +9,7 @@ const ProgressBar = ({
   onDotClick = null,
   showLabels = false,
   labels = [],
+  isMobile = false,
 }) => {
   const [hoveredDot, setHoveredDot] = useState(null);
   const [focusedDot, setFocusedDot] = useState(null);
@@ -170,6 +171,12 @@ const ProgressBar = ({
             const isInteractive = onDotClick && isCompleted;
             const label = labels[i] || `Step ${i + 1}`;
             const bulletPosition = getBulletPosition(i);
+            
+            // Responsive bullet sizing
+            const bulletSize = isMobile ? 16 : 24;
+            const checkmarkSize = isMobile ? 8 : 12;
+            const activeScale = isMobile ? 1.15 : 1.2;
+            const currentScale = isMobile ? 1.12 : 1.15;
 
             return (
               <div
@@ -198,8 +205,8 @@ const ProgressBar = ({
                   style={{
                     position: "relative",
                     zIndex: 10,
-                    width: "24px",
-                    height: "24px",
+                    width: `${bulletSize}px`,
+                    height: `${bulletSize}px`,
                     borderRadius: "9999px",
                     border: "2px solid",
                     display: "flex",
@@ -229,7 +236,7 @@ const ProgressBar = ({
                       : isCurrent
                       ? currentColor
                       : "#D1D5DB",
-                    scale: isActive ? 1.2 : isCurrent ? 1.15 : 1,
+                    scale: isActive ? activeScale : isCurrent ? currentScale : 1,
                     borderWidth: isCurrent ? 3 : 2,
                   }}
                   transition={{ duration: 0.2 }}
@@ -251,8 +258,8 @@ const ProgressBar = ({
                         exit={{ scale: 0, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                         style={{
-                          width: "12px",
-                          height: "12px",
+                          width: `${checkmarkSize}px`,
+                          height: `${checkmarkSize}px`,
                           color: "white",
                         }}
                         fill="none"
