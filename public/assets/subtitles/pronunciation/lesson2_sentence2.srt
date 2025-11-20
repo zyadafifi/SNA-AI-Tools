@@ -1,9 +1,8 @@
 1
-00:00:00,000 --> 00:00:17,150
-Hey, welcome to Sna Academy.This app is designed to help you improve
-your pronunciation.Let's practice speaking a sentence.Now a box will appear below.You have to press the mic and say
-I want to learn English by speaking.Ready?
+00:00:00,000 --> 00:00:17,551
+Excellent. SNA Academy  provides you with a pronunciation score immediately. It also colors the words you mispronounced.
+Let's try another sentence. This time, press the mic and say, where can I find the nearest restaurant? Ready?
 
 2
-00:00:00,000 --> 00:00:17,150
-مرحبًا، أهلاً بك في أكاديمية SNA. تم تصميم هذا التطبيق لمساعدتك على تحسين نطقك. دعنا نتدرّب على نطق جملة. الآن سيظهر مربع في الأسفل. عليك الضغط على الميكروفون وقول: أريد أن أتعلم الإنجليزية من خلال التحدث. جاهز؟
+00:00:00,000 --> 00:00:17,551
+ممتاز. تمنحك أكاديمية SNA نتيجة فورية للنطق. كما تُلوّن الكلمات التي نطقتها بشكل خاطئ. دعنا نجرب جملة أخرى. هذه المرة، اضغط على الميكروفون وقل: أين يمكنني أن أجد أقرب مطعم؟ جاهز؟

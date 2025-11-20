@@ -1,8 +1,7 @@
 1
-00:00:00,000 --> 00:00:05,472
-it is important for English learners to pronounce this consonant sound
-properly.
+00:00:00,000 --> 00:00:04,838
+Good job. Let's try another example. Say blue book.
 
 2
-00:00:00,000 --> 00:00:05,472
-من المهم لمتعلمي اللغة الإنجليزية نطق هذا الصوت الساكن بشكل صحيح.
+00:00:00,000 --> 00:00:04,838
+عمل رائع. لنحاول مثالاً آخر. قل "blue book".

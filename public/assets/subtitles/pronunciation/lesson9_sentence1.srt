@@ -1,8 +1,7 @@
 1
-00:00:00,000 --> 00:00:05,405
-Hey, in this lesson, we
-will be learning about words and phrases that contain the sound B
+00:00:00,000 --> 00:00:03,437
+Let's try it. Press the mic and say book.
 
 2
-00:00:00,000 --> 00:00:05,405
-مرحبًا، في هذا الدرس سنتعلم عن الكلمات والعبارات التي تحتوي على صوت الباء
+00:00:00,000 --> 00:00:03,437
+لنجرب ذلك. اضغط على الميكروفون وقل كلمة "book".

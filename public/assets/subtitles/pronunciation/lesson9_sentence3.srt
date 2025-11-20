@@ -1,7 +1,7 @@
 1
-00:00:00,000 --> 00:00:03,437
-Let's try it. Press the mic and say book.
+00:00:00,000 --> 00:00:04,304
+Now try saying bright blue balloon.
 
 2
-00:00:00,000 --> 00:00:03,437
-لنجرب ذلك. اضغط على الميكروفون وقل كلمة "book".
+00:00:00,000 --> 00:00:04,304
+الآن جرب قول "bright blue balloon".
