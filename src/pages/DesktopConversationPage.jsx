@@ -443,15 +443,46 @@ export const DesktopConversationPage = () => {
         const nextSentenceIndex = currentSentenceIndex + 1;
         setCurrentSentenceIndex(nextSentenceIndex);
 
-        // Auto-play next video
-        setTimeout(() => {
+        // Auto-play next video with proper waiting
+        setTimeout(async () => {
           if (conversation.sentences[nextSentenceIndex]?.videoSrc) {
             setVideoSource(conversation.sentences[nextSentenceIndex].videoSrc);
-            setTimeout(() => {
-              play();
-            }, 200);
+            
+            // Wait for video to be ready before playing
+            setTimeout(async () => {
+              if (!videoRef.current) return;
+
+              try {
+                // Wait for video to be ready if it's not already
+                if (videoRef.current.readyState < 3) {
+                  await new Promise((resolve, reject) => {
+                    const timeout = setTimeout(() => {
+                      reject(new Error("Video load timeout"));
+                    }, 5000);
+
+                    const onCanPlay = () => {
+                      clearTimeout(timeout);
+                      videoRef.current?.removeEventListener("canplay", onCanPlay);
+                      resolve();
+                    };
+
+                    videoRef.current?.addEventListener("canplay", onCanPlay);
+                  });
+                }
+
+                if (videoRef.current) {
+                  await videoRef.current.play();
+                }
+              } catch (error) {
+                if (error.name === "AbortError") {
+                  console.error("Auto-play was interrupted");
+                } else {
+                  console.error("Auto-play error:", error);
+                }
+              }
+            }, 300);
           }
-        }, 500);
+        }, 100);
       }
     }
   };

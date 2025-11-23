@@ -139,24 +139,45 @@ export const MobileLessonPage = () => {
   // Enhanced video play function with user interaction check
   const safeVideoPlay = async () => {
     if (!videoRef.current) {
-      console.error("Video ref is null");
       return false;
     }
 
     try {
+      // Try to play immediately - browser will buffer while playing
       await videoRef.current.play();
       return true;
     } catch (error) {
-      console.error("Video play failed:", error.name, error.message);
-      // Don't show overlay again after initial interaction
-      if (error.name === "NotSupportedError") {
-        console.error("Video format not supported or video failed to load");
-        return false;
-      } else {
-        console.error("Other video play error:", error);
+      // If immediate play fails, wait a bit and try again
+      if (error.name === "NotAllowedError" || error.name === "AbortError") {
+        try {
+          // Wait for video to be ready (reduced timeout for faster response)
+          await new Promise((resolve) => {
+            const timeout = setTimeout(resolve, 1500); // 1.5 seconds
+
+            const onCanPlay = () => {
+              clearTimeout(timeout);
+              videoRef.current?.removeEventListener("canplay", onCanPlay);
+              resolve();
+            };
+
+            videoRef.current?.addEventListener("canplay", onCanPlay);
+          });
+
+          // Try to play again
+          if (videoRef.current) {
+            await videoRef.current.play();
+            return true;
+          }
+        } catch (retryError) {
+          return false;
+        }
+      } else if (error.name === "NotSupportedError") {
+        console.error("Video format not supported");
         return false;
       }
     }
+    
+    return false;
   };
 
   // Load lessons data
@@ -216,7 +237,7 @@ export const MobileLessonPage = () => {
     [setVideoSource]
   );
 
-  // Set video source when lesson changes
+  // Set video source when lesson changes - only reload when necessary
   useEffect(() => {
     if (lesson && lesson.sentences && lesson.sentences[currentSentenceIndex]) {
       const currentSentence = lesson.sentences[currentSentenceIndex];
@@ -235,39 +256,89 @@ export const MobileLessonPage = () => {
             currentSentenceIndex + 1 // SRT files are 1-based
           );
         }
-
-        // Wait for video to load before attempting to play
-        const handleCanPlayThrough = () => {
-          // Just show overlay if not interacted, don't autoplay
-          if (!hasUserInteracted && !userInteractionRef.current) {
-            setShowIOSAudioOverlay(true);
-          }
-          // Video is ready but paused - user must click to play
-          videoRef.current?.removeEventListener(
-            "canplaythrough",
-            handleCanPlayThrough
-          );
-        };
-
-        if (videoRef.current) {
-          videoRef.current.addEventListener(
-            "canplaythrough",
-            handleCanPlayThrough
-          );
-        }
-      } else {
       }
     }
   }, [
     lesson,
     currentSentenceIndex,
     currentVideoSrc,
-    hasUserInteracted,
     retryVideoLoad,
     isMobile,
     lessonNumber,
     loadSubtitlesForSentence,
   ]);
+
+  // Separate effect for handling initial overlay (not tied to video loading)
+  useEffect(() => {
+    if (!hasUserInteracted && !userInteractionRef.current && isMobile) {
+      setShowIOSAudioOverlay(true);
+    }
+  }, [hasUserInteracted, userInteractionRef, isMobile]);
+
+  // Auto-play effect for subsequent sentences (after first interaction)
+  useEffect(() => {
+    // Only auto-play if user has interacted and not on first sentence
+    if (
+      (hasUserInteracted || userInteractionRef.current) &&
+      currentSentenceIndex > 0 &&
+      currentVideoSrc
+    ) {
+      let mounted = true;
+
+      const attemptAutoPlay = async () => {
+        if (!mounted || !videoRef.current) return;
+
+        try {
+          // Small delay to allow video source to be set
+          await new Promise((resolve) => setTimeout(resolve, 400));
+          
+          if (!mounted || !videoRef.current) return;
+
+          // Ensure video is unmuted
+          videoRef.current.muted = false;
+          
+          // Try to play - browser will buffer while playing
+          await videoRef.current.play();
+        } catch (error) {
+          if (!mounted) return;
+          
+          // If immediate play fails, wait a bit and try again
+          if (error.name === "NotAllowedError" || error.name === "AbortError") {
+            try {
+              // Wait up to 1.5 seconds for video to be ready
+              await new Promise((resolve) => {
+                const timeout = setTimeout(resolve, 1500);
+                
+                const onCanPlay = () => {
+                  clearTimeout(timeout);
+                  if (videoRef.current) {
+                    videoRef.current.removeEventListener("canplay", onCanPlay);
+                  }
+                  resolve();
+                };
+
+                if (videoRef.current) {
+                  videoRef.current.addEventListener("canplay", onCanPlay);
+                }
+              });
+
+              if (mounted && videoRef.current) {
+                await videoRef.current.play();
+              }
+            } catch (retryError) {
+              // Silent fail - video will play when user clicks
+            }
+          }
+        }
+      };
+
+      attemptAutoPlay();
+
+      return () => {
+        mounted = false;
+      };
+    }
+  }, [currentVideoSrc, currentSentenceIndex, hasUserInteracted, userInteractionRef, videoRef]);
 
   // Handle lesson completion and update progress
   const handleLessonCompleted = useCallback(
@@ -452,24 +523,7 @@ export const MobileLessonPage = () => {
           );
         }
 
-        // Auto-play next video after first sentence is completed
-        setTimeout(() => {
-          if (hasUserInteracted || userInteractionRef.current) {
-            setTimeout(async () => {
-              if (lesson.sentences[nextSentenceIndex]?.videoSrc) {
-                setVideoSource(lesson.sentences[nextSentenceIndex].videoSrc);
-                // Auto-play the next video
-                setTimeout(async () => {
-                  try {
-                    await safeVideoPlay();
-                  } catch (error) {
-                    console.error("Auto-play error:", error);
-                  }
-                }, 300);
-              }
-            }, 500);
-          }
-        }, 0);
+        // Auto-play is now handled by the useEffect that watches currentSentenceIndex
       }
     }
   };
@@ -629,7 +683,7 @@ export const MobileLessonPage = () => {
             ref={videoRef}
             className="mobile-lesson-video"
             playsInline
-            preload="metadata"
+            preload="auto"
             muted={!hasUserInteracted}
             webkit-playsinline="true"
             crossOrigin="anonymous"

@@ -16,13 +16,17 @@ const ListeningPhase = ({
   lessonId,
   questionId,
   isDesktop = false,
+  hasUserInteracted = false,
+  setHasUserInteracted = () => {},
+  userInteractionRef = { current: false },
+  videoRefForAutoPlay = null,
+  shouldReplayVideo = false,
+  onReplayComplete = () => {},
 }) => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
-  const [hasUserInteracted, setHasUserInteracted] = useState(false);
   const [showFocusOverlay, setShowFocusOverlay] = useState(true);
   const [showIOSAudioOverlay, setShowIOSAudioOverlay] = useState(false);
-  const userInteractionRef = useRef(false);
 
   // Use video player hook like pronunciation tool
   const {
@@ -45,6 +49,13 @@ const ListeningPhase = ({
     handleCanPlay,
   } = useVideoPlayer();
 
+  // Expose videoRef to parent for auto-play functionality
+  useEffect(() => {
+    if (videoRefForAutoPlay && videoRef) {
+      videoRefForAutoPlay.current = videoRef.current;
+    }
+  }, [videoRef, videoRefForAutoPlay]);
+
   // Subtitle synchronization hook (if SRT files are available)
   const {
     currentSubtitle,
@@ -65,12 +76,68 @@ const ListeningPhase = ({
   }, []);
 
   // Load video source from prop (preferred) or lesson
+  // Only reload when videoSrc or lesson changes - not on user interaction
   useEffect(() => {
     const src = videoSrc || lesson?.videoSrc;
     if (src) {
       setVideoSource(src);
     }
   }, [videoSrc, lesson, setVideoSource]);
+
+  // Separate effect for auto-play to prevent unnecessary video reloads
+  useEffect(() => {
+    // Auto-play if user has already interacted (not the first video)
+    if (
+      (hasUserInteracted || userInteractionRef.current) &&
+      currentStepIndex > 0
+    ) {
+      let mounted = true;
+
+      // Wait for video to be ready and play
+      const attemptAutoPlay = async () => {
+        if (!videoRef.current || !mounted) return;
+
+        try {
+          // Wait for video to be ready if it's not already
+          if (videoRef.current.readyState < 3) {
+            await new Promise((resolve, reject) => {
+              const timeout = setTimeout(() => {
+                reject(new Error("Video load timeout"));
+              }, 5000);
+
+              const onCanPlay = () => {
+                clearTimeout(timeout);
+                videoRef.current?.removeEventListener("canplay", onCanPlay);
+                resolve();
+              };
+
+              videoRef.current?.addEventListener("canplay", onCanPlay);
+            });
+          }
+
+          if (!mounted || !videoRef.current) return;
+
+          // Ensure video is unmuted for subsequent videos
+          videoRef.current.muted = false;
+          await videoRef.current.play();
+        } catch (error) {
+          if (error.name === "AbortError") {
+            console.error("Auto-play was interrupted");
+          } else {
+            console.error("Auto-play error:", error);
+          }
+        }
+      };
+
+      // Small delay to allow video source to be set
+      const timer = setTimeout(attemptAutoPlay, 300);
+
+      return () => {
+        mounted = false;
+        clearTimeout(timer);
+      };
+    }
+  }, [currentStepIndex, hasUserInteracted, userInteractionRef, videoRef]);
 
   // Load subtitles when question changes
   useEffect(() => {
@@ -82,6 +149,58 @@ const ListeningPhase = ({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lessonId, questionId]);
+
+  // Handle replay video request from parent (when "Listen again" is clicked)
+  useEffect(() => {
+    if (shouldReplayVideo && videoRef.current) {
+      const replayVideo = async () => {
+        try {
+          // Wait a bit for the phase transition to complete
+          await new Promise((resolve) => setTimeout(resolve, 100));
+
+          if (!videoRef.current) {
+            onReplayComplete();
+            return;
+          }
+
+          // Wait for video to be ready if it's not already
+          if (videoRef.current.readyState < 3) {
+            await new Promise((resolve, reject) => {
+              const timeout = setTimeout(() => {
+                reject(new Error("Video load timeout"));
+              }, 5000);
+
+              const onCanPlay = () => {
+                clearTimeout(timeout);
+                videoRef.current?.removeEventListener("canplay", onCanPlay);
+                resolve();
+              };
+
+              videoRef.current?.addEventListener("canplay", onCanPlay);
+            });
+          }
+
+          if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.muted = false; // Ensure audio is on
+            await videoRef.current.play();
+          }
+
+          // Notify parent that replay is complete
+          onReplayComplete();
+        } catch (error) {
+          if (error.name === "AbortError") {
+            console.error("Video replay was interrupted");
+          } else {
+            console.error("Video replay error:", error);
+          }
+          onReplayComplete(); // Still reset the flag even on error
+        }
+      };
+
+      replayVideo();
+    }
+  }, [shouldReplayVideo, videoRef, onReplayComplete]);
 
   // Handle user interaction for mobile
   const handleUserInteraction = useCallback(async () => {
@@ -98,7 +217,7 @@ const ListeningPhase = ({
         console.error("Video play error:", error);
       }
     }
-  }, [videoRef]);
+  }, [videoRef, setHasUserInteracted, userInteractionRef]);
 
   // Handle video end - auto-transition to dictation (mobile only)
   const handleVideoEnd = useCallback(() => {
@@ -174,7 +293,7 @@ const ListeningPhase = ({
             ref={videoRef}
             className="w-full h-full object-cover bg-black"
             playsInline
-            preload="metadata"
+            preload="auto"
             muted={!hasUserInteracted}
             webkit-playsinline="true"
             crossOrigin="anonymous"
@@ -244,7 +363,7 @@ const ListeningPhase = ({
         {/* Initial Tap to Start Overlay */}
         {(!hasUserInteracted || showIOSAudioOverlay) && (
           <div
-            className="fixed inset-0 flex items-center justify-center z-[1040] cursor-pointer"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[1040] cursor-pointer"
             onClick={handleUserInteraction}
           >
             <div className="w-full px-5">
@@ -296,7 +415,7 @@ const ListeningPhase = ({
           className="absolute top-0 left-0 w-full h-full object-cover rounded-t-2xl"
           controls
           playsInline
-          preload="metadata"
+          preload="auto"
           onLoadedMetadata={handleLoadedMetadata}
           onTimeUpdate={handleTimeUpdate}
           onPlay={handlePlay}

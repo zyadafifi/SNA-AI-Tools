@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Headphones, PenTool } from "lucide-react";
@@ -20,6 +20,10 @@ export const ListeningLessonPage = () => {
   const [showCompletionDialog, setShowCompletionDialog] = useState(false);
   const [questionScores, setQuestionScores] = useState([]);
   const [userAnswers, setUserAnswers] = useState([]);
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
+  const userInteractionRef = useRef(false);
+  const videoRefForAutoPlay = useRef(null);
+  const [shouldReplayVideo, setShouldReplayVideo] = useState(false);
 
   useEffect(() => {
     const loadLesson = async () => {
@@ -96,6 +100,71 @@ export const ListeningLessonPage = () => {
     });
   };
 
+  // Safe video play function that waits for video to be ready
+  const safeVideoPlay = async () => {
+    if (!videoRefForAutoPlay.current) {
+      return false;
+    }
+
+    try {
+      // Try to play immediately - browser will buffer while playing
+      await videoRefForAutoPlay.current.play();
+      return true;
+    } catch (error) {
+      // If immediate play fails, wait a bit and try again
+      if (error.name === "NotAllowedError" || error.name === "AbortError") {
+        try {
+          // Wait for video to be ready (reduced timeout for faster response)
+          await new Promise((resolve) => {
+            const timeout = setTimeout(resolve, 1500); // 1.5 seconds
+
+            const onCanPlay = () => {
+              clearTimeout(timeout);
+              videoRefForAutoPlay.current?.removeEventListener(
+                "canplay",
+                onCanPlay
+              );
+              resolve();
+            };
+
+            videoRefForAutoPlay.current?.addEventListener("canplay", onCanPlay);
+          });
+
+          // Try to play again
+          if (videoRefForAutoPlay.current) {
+            await videoRefForAutoPlay.current.play();
+            return true;
+          }
+        } catch (retryError) {
+          return false;
+        }
+      } else if (error.name === "NotSupportedError") {
+        console.error("Video format not supported");
+        return false;
+      }
+    }
+
+    return false;
+  };
+
+  const handleListenAgain = async () => {
+    // For mobile, switch back to video phase to replay the current question's video
+    if (isMobile) {
+      setShouldReplayVideo(true);
+      setCurrentPhase("video");
+    } else {
+      // For desktop, replay video immediately (video is always visible)
+      if (videoRefForAutoPlay.current) {
+        try {
+          videoRefForAutoPlay.current.currentTime = 0;
+          await videoRefForAutoPlay.current.play();
+        } catch (error) {
+          console.error("Video replay error:", error);
+        }
+      }
+    }
+  };
+
   const handleDictationCompleted = async () => {
     const total = Math.max(1, questions.length || 5);
     const nextIndex = currentQuestionIndex + 1;
@@ -111,6 +180,8 @@ export const ListeningLessonPage = () => {
     }
     setCurrentQuestionIndex(nextIndex);
     setCurrentPhase("video");
+    // Note: Auto-play is handled by ListeningPhase component's useEffect
+    // when currentStepIndex > 0 and user has interacted
   };
 
   // Mobile layout - full screen for both phases
@@ -127,6 +198,12 @@ export const ListeningLessonPage = () => {
             totalSteps={questions.length}
             currentStepIndex={currentQuestionIndex}
             onComplete={() => setCurrentPhase("dictation")}
+            hasUserInteracted={hasUserInteracted}
+            setHasUserInteracted={setHasUserInteracted}
+            userInteractionRef={userInteractionRef}
+            videoRefForAutoPlay={videoRefForAutoPlay}
+            shouldReplayVideo={shouldReplayVideo}
+            onReplayComplete={() => setShouldReplayVideo(false)}
           />
         )}
 
@@ -135,7 +212,7 @@ export const ListeningLessonPage = () => {
             lesson={lesson}
             correctText={questions[currentQuestionIndex].text}
             onComplete={handleDictationCompleted}
-            onListenAgain={() => setCurrentPhase("video")}
+            onListenAgain={handleListenAgain}
             onScoreUpdate={handleScoreUpdate}
             onAnswerUpdate={handleAnswerUpdate}
           />
@@ -214,6 +291,12 @@ export const ListeningLessonPage = () => {
                 currentStepIndex={currentQuestionIndex}
                 onComplete={() => {}}
                 isDesktop={true}
+                hasUserInteracted={hasUserInteracted}
+                setHasUserInteracted={setHasUserInteracted}
+                userInteractionRef={userInteractionRef}
+                videoRefForAutoPlay={videoRefForAutoPlay}
+                shouldReplayVideo={shouldReplayVideo}
+                onReplayComplete={() => setShouldReplayVideo(false)}
               />
             )}
           </div>
@@ -224,10 +307,7 @@ export const ListeningLessonPage = () => {
               lesson={lesson}
               correctText={questions[currentQuestionIndex].text}
               onComplete={handleDictationCompleted}
-              onListenAgain={() => {
-                // Video will restart when user clicks play button
-                // The video is always visible on desktop, so no phase switching needed
-              }}
+              onListenAgain={handleListenAgain}
               isDesktop={true}
               onScoreUpdate={handleScoreUpdate}
               onAnswerUpdate={handleAnswerUpdate}
