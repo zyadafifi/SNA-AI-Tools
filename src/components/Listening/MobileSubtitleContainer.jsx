@@ -16,12 +16,7 @@ const MobileSubtitleContainer = ({ currentSubtitle, isMobile = false }) => {
   }
 
   return (
-    <div
-      className="fixed top-[180px] left-5 right-5 z-[1030] pointer-events-none"
-      style={{
-        paddingTop: "env(safe-area-inset-top)",
-      }}
-    >
+    <div className="fixed top-[45px] left-[76px] right-5 z-[1030] pointer-events-none">
       <div
         className="bg-black/30 backdrop-blur-[5px] rounded-xl p-3 text-center mt-3"
         style={{
@@ -29,16 +24,28 @@ const MobileSubtitleContainer = ({ currentSubtitle, isMobile = false }) => {
         }}
       >
         {displayEnglish && (
-          <div className="text-white text-[13px] font-semibold leading-[1.4]">
+          <div
+            className="text-white text-[14px] font-semibold leading-[1.5]"
+            style={{
+              fontFamily: '"Inter", sans-serif',
+              letterSpacing: "0.01em",
+              textShadow: "0 1px 3px rgba(0, 0, 0, 0.5)",
+            }}
+          >
             {displayEnglish}
           </div>
         )}
         {displayArabic && (
           <div
-            className="text-white/80 text-xs font-medium leading-[1.4] mt-2"
+            className="text-[15px] leading-[1.6] mt-2"
             style={{
+              fontFamily: '"Tajawal", "Noto Kufi Arabic", sans-serif',
+              color: "rgba(255, 255, 255, 0.95)",
+              letterSpacing: "0.015em",
               direction: "rtl",
               textAlign: "center",
+              textShadow: "0 1px 3px rgba(0, 0, 0, 0.5)",
+              fontWeight: "600",
             }}
           >
             {displayArabic}

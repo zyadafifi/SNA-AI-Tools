@@ -1311,8 +1311,8 @@
 /* Subtitle Container - Simple Design */
 .subtitle-container {
   position: absolute;
-  top: 180px; /* Increased spacing from back button */
-  left: 20px;
+  top: 45px; /* Reduced top to better match screenshot alignment */
+  left: 76px; /* Positioned to the right of back button (20px + 44px + 12px gap) */
   right: 20px;
   z-index: 15; /* Higher than video but lower than overlays */
   pointer-events: none;
@@ -1335,28 +1335,34 @@
 }
 
 .subtitle-english {
-  color: white;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 2px;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0;
 }
 
 .subtitle-arabic {
-  color: rgba(255, 255, 255, 0.8);
-  padding-top: 10px;
-  font-size: 11px;
+  font-family: "Tajawal", "Noto Kufi Arabic", sans-serif;
+  color: rgba(255, 255, 255, 0.95);
+  margin-top: 8px;
+  font-size: 15px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.6;
+  letter-spacing: 0.015em;
   direction: rtl;
   text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Responsive subtitle positioning */
 @media (max-width: 480px) {
   .subtitle-container {
-    top: 320px; /* Increased spacing from back button for smaller screens */
-    left: 15px;
+    top: 45px; /* Reduced top to better match screenshot alignment */
+    left: 76px; /* Positioned to the right of back button */
     right: 15px;
   }
 
@@ -1368,8 +1374,8 @@
 
 @media (max-width: 320px) {
   .subtitle-container {
-    top: 180px; /* Increased spacing from back button for very small screens */
-    left: 10px;
+    top: 45px; /* Reduced top to better match screenshot alignment */
+    left: 76px; /* Positioned to the right of back button */
     right: 10px;
   }
 }
