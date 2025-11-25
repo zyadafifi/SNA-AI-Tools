@@ -18,6 +18,7 @@
     "clsx": "^2.1.1",
     "formik": "^2.4.6",
     "framer-motion": "^12.23.24",
+    "hls.js": "^1.6.15",
     "jspdf": "^3.0.3",
     "lucide-react": "^0.539.0",
     "prop-types": "^15.8.1",

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaHeadphonesSimple, FaRegLightbulb } from "react-icons/fa6";
 import ProgressBar from "../../Pronunce/ProgressBar";
-import { useVideoPlayer } from "../../../hooks/useVideoPlayer";
+import { useHLSVideoPlayer } from "../../../hooks/useHLSVideoPlayer";
 import useSubtitleSync from "../../../hooks/useSubtitleSync";
 import MobileSubtitleContainer from "../MobileSubtitleContainer";
 
@@ -28,7 +28,7 @@ const ListeningPhase = ({
   const [showFocusOverlay, setShowFocusOverlay] = useState(true);
   const [showIOSAudioOverlay, setShowIOSAudioOverlay] = useState(false);
 
-  // Use video player hook like pronunciation tool
+  // Use HLS video player hook for quality management
   const {
     videoRef,
     isPlaying,
@@ -36,6 +36,7 @@ const ListeningPhase = ({
     duration,
     isLoading: videoLoading,
     hasError: videoError,
+    currentQuality,
     play,
     pause,
     setVideoSource,
@@ -47,7 +48,7 @@ const ListeningPhase = ({
     handleError,
     handleLoadStart,
     handleCanPlay,
-  } = useVideoPlayer();
+  } = useHLSVideoPlayer();
 
   // Expose videoRef to parent for auto-play functionality
   useEffect(() => {
@@ -293,10 +294,12 @@ const ListeningPhase = ({
             ref={videoRef}
             className="w-full h-full object-cover bg-black"
             playsInline
-            preload="auto"
+            preload="metadata"
             muted={!hasUserInteracted}
             webkit-playsinline="true"
+            x-webkit-airplay="allow"
             crossOrigin="anonymous"
+            disablePictureInPicture={false}
             onClick={handleVideoClick}
             onLoadedMetadata={handleLoadedMetadata}
             onTimeUpdate={handleTimeUpdate}
@@ -327,7 +330,10 @@ const ListeningPhase = ({
             onCanPlay={handleCanPlay}
           >
             {videoSrc || lesson?.videoSrc ? (
-              <source src={videoSrc || lesson?.videoSrc} type="video/mp4" />
+              <source 
+                src={videoSrc || lesson?.videoSrc} 
+                type={(videoSrc || lesson?.videoSrc).includes('.m3u8') ? 'application/x-mpegURL' : 'video/mp4'} 
+              />
             ) : (
               <source src="" type="video/mp4" />
             )}
@@ -415,7 +421,10 @@ const ListeningPhase = ({
           className="absolute top-0 left-0 w-full h-full object-cover rounded-t-2xl"
           controls
           playsInline
-          preload="auto"
+          preload="metadata"
+          x-webkit-airplay="allow"
+          crossOrigin="anonymous"
+          disablePictureInPicture={false}
           onLoadedMetadata={handleLoadedMetadata}
           onTimeUpdate={handleTimeUpdate}
           onPlay={handlePlay}
@@ -439,7 +448,10 @@ const ListeningPhase = ({
           onCanPlay={handleCanPlay}
         >
           {videoSrc || lesson?.videoSrc ? (
-            <source src={videoSrc || lesson.videoSrc} type="video/mp4" />
+            <source 
+              src={videoSrc || lesson.videoSrc} 
+              type={(videoSrc || lesson?.videoSrc).includes('.m3u8') ? 'application/x-mpegURL' : 'video/mp4'} 
+            />
           ) : (
             <source src="" type="video/mp4" />
           )}

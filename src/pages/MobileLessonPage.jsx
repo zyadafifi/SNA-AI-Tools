@@ -4,7 +4,7 @@ import { useProgress } from "../contexts/ProgressContext";
 import { useConversationProgress } from "../hooks/useConversationProgress";
 import { useNewSpeechRecognition } from "../hooks/useNewSpeechRecognition";
 import { usePronunciationScoring } from "../hooks/usePronunciationScoring";
-import { useVideoPlayer } from "../hooks/useVideoPlayer";
+import { useHLSVideoPlayer } from "../hooks/useHLSVideoPlayer";
 import { useMobileFeatures } from "../hooks/useMobileFeatures";
 import useSubtitleSync from "../hooks/useSubtitleSync";
 import ProgressBar from "../components/Pronunce/ProgressBar";
@@ -95,6 +95,7 @@ export const MobileLessonPage = () => {
     duration,
     isLoading: videoLoading,
     hasError: videoError,
+    currentQuality,
     play,
     pause,
     replay,
@@ -112,7 +113,7 @@ export const MobileLessonPage = () => {
     handleError,
     handleLoadStart,
     handleCanPlay,
-  } = useVideoPlayer();
+  } = useHLSVideoPlayer();
 
   const {
     isMobile,
@@ -683,10 +684,12 @@ export const MobileLessonPage = () => {
             ref={videoRef}
             className="mobile-lesson-video"
             playsInline
-            preload="auto"
+            preload="metadata"
             muted={!hasUserInteracted}
             webkit-playsinline="true"
+            x-webkit-airplay="allow"
             crossOrigin="anonymous"
+            disablePictureInPicture={false}
             onClick={handleVideoClick}
             onLoadedMetadata={handleLoadedMetadata}
             onTimeUpdate={handleTimeUpdate}
@@ -704,7 +707,9 @@ export const MobileLessonPage = () => {
             onLoadStart={handleLoadStart}
             onCanPlay={handleCanPlay}
           >
-            <source src={currentSentence?.videoSrc} type="video/mp4" />
+            {currentSentence?.videoSrc && (
+              <source src={currentSentence.videoSrc} type="application/x-mpegURL" />
+            )}
             Your browser does not support the video tag.
           </video>
 
