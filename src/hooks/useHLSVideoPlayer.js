@@ -44,7 +44,7 @@ export function useHLSVideoPlayer() {
       hlsRef.current = null;
     }
 
-    const hlsConfig = getHLSConfig();
+    const hlsConfig = getHLSConfig(true); // Force high quality
     const hls = new Hls(hlsConfig);
 
     // Attach media
@@ -64,20 +64,32 @@ export function useHLSVideoPlayer() {
         console.log(`⚠️ Filtered out ${levels.length - filteredLevels.length} levels below ${MIN_QUALITY_HEIGHT}p`);
       }
 
-      // Set initial quality to minimum acceptable (720p or best available)
+      // FORCE HIGHEST QUALITY initially, not minimum
+      const bestQualityIndex = getBestQualityIndex(levels);
       const minQualityIndex = getMinimumQualityIndex(levels);
       
-      if (minQualityIndex !== -1) {
+      // Start with best quality
+      if (bestQualityIndex !== -1) {
+        hls.currentLevel = bestQualityIndex;
+        setCurrentQuality(levels[bestQualityIndex]);
+        console.log(`🎯 Initial quality FORCED to HIGHEST: ${levels[bestQualityIndex].height}p (${Math.round(levels[bestQualityIndex].bitrate / 1000)}kbps)`);
+        
+        // After 5 seconds, allow adaptive but lock minimum to 720p
+        setTimeout(() => {
+          hls.currentLevel = -1; // Enable auto
+          console.log(`🔄 Enabled adaptive streaming with ${MIN_QUALITY_HEIGHT}p minimum`);
+          qualityLockRef.current = true;
+        }, 5000);
+      } else if (minQualityIndex !== -1) {
+        // Fallback to minimum quality if best not available
         hls.currentLevel = minQualityIndex;
         setCurrentQuality(levels[minQualityIndex]);
         console.log(`✓ Initial quality set to: ${levels[minQualityIndex].height}p`);
+        qualityLockRef.current = true;
       }
 
       // Log quality information
-      logQualityInfo(levels, minQualityIndex);
-
-      // Enable quality lock to prevent dropping below 720p
-      qualityLockRef.current = true;
+      logQualityInfo(levels, bestQualityIndex);
     });
 
     // Handle level switched event
@@ -86,12 +98,29 @@ export function useHLSVideoPlayer() {
       setCurrentQuality(level);
       console.log(`🔄 Quality switched to: ${level.height}p (${Math.round(level.bitrate / 1000)}kbps)`);
 
-      // Enforce minimum quality - if it drops below 720p, force it back up
-      if (qualityLockRef.current && level.height < MIN_QUALITY_HEIGHT) {
-        console.warn(`⚠️ Quality below ${MIN_QUALITY_HEIGHT}p detected, forcing back up`);
+      // AGGRESSIVE quality enforcement - if it drops below 720p, force it back up IMMEDIATELY
+      if (level.height < MIN_QUALITY_HEIGHT) {
+        console.warn(`🚫 QUALITY TOO LOW (${level.height}p)! Forcing back to ${MIN_QUALITY_HEIGHT}p+`);
         const minIndex = getMinimumQualityIndex(hls.levels);
         if (minIndex !== -1 && minIndex !== data.level) {
+          // Force quality up immediately
           hls.currentLevel = minIndex;
+          hls.loadLevel = minIndex;
+          console.log(`✅ Forced quality to: ${hls.levels[minIndex].height}p`);
+        }
+      }
+    });
+
+    // Intercept level loading to prevent low quality from even being requested
+    hls.on(Hls.Events.LEVEL_LOADING, (_event, data) => {
+      if (data.level !== undefined && hls.levels[data.level]) {
+        const level = hls.levels[data.level];
+        if (level.height < MIN_QUALITY_HEIGHT && qualityLockRef.current) {
+          console.warn(`🛑 Blocked attempt to load ${level.height}p quality`);
+          const minIndex = getMinimumQualityIndex(hls.levels);
+          if (minIndex !== -1) {
+            hls.nextLevel = minIndex;
+          }
         }
       }
     });
@@ -141,8 +170,17 @@ export function useHLSVideoPlayer() {
     const isHLS = src.includes(".m3u8");
 
     if (isHLS) {
-      // Check if browser supports native HLS (iOS Safari)
-      if (supportsNativeHLS(videoElement)) {
+      // ALWAYS use HLS.js for better quality control, even on iOS Safari
+      // iOS Safari 17.1+ supports Media Source Extensions which HLS.js uses
+      const shouldUseHLSjs = Hls.isSupported();
+      
+      if (shouldUseHLSjs) {
+        // Use HLS.js for full quality control
+        console.log("✓ Using HLS.js for quality control (iOS: quality enforcement)");
+        const hls = initializeHLS(videoElement, src);
+        hlsRef.current = hls;
+      } else if (supportsNativeHLS(videoElement)) {
+        // Fallback to native HLS only if HLS.js not supported
         console.log("✓ Using native HLS support (iOS Safari)");
         
         // Clean up HLS.js if it was previously used
@@ -151,19 +189,51 @@ export function useHLSVideoPlayer() {
           hlsRef.current = null;
         }
 
-        // Use native HLS
-        videoElement.src = src;
-        
-        // iOS-specific optimizations
+        // iOS-specific optimizations BEFORE setting src
         if (isIOSSafari()) {
+          // Force high quality hints
           videoElement.setAttribute('x-webkit-airplay', 'allow');
           videoElement.setAttribute('playsinline', 'true');
           
-          // iOS doesn't expose quality levels, but we can optimize preload
-          videoElement.preload = 'metadata';
+          // Critical: Set preload to auto for better initial quality selection
+          videoElement.preload = 'auto';
+          
+          // Request highest quality available
+          videoElement.setAttribute('webkit-playsinline', 'true');
+          
+          // Force high bandwidth preference
+          if (videoElement.style) {
+            videoElement.style.objectFit = 'cover';
+          }
+          
+          // Try to hint for high quality by requesting video to be ready
+          videoElement.load();
+          
+          console.log("🍎 iOS optimizations applied - requesting high quality");
         }
         
+        // Set source AFTER optimization attributes
+        videoElement.src = src;
+        
+        // Reload with optimizations applied
         videoElement.load();
+        
+        // Additional iOS quality forcing
+        if (isIOSSafari()) {
+          // Wait for metadata and then seek to force quality selection
+          const forceQualityOnIOS = () => {
+            if (videoElement.readyState >= 1) {
+              // Seek to 0.1 seconds to trigger quality re-evaluation
+              videoElement.currentTime = 0.1;
+              setTimeout(() => {
+                videoElement.currentTime = 0;
+              }, 100);
+              console.log("🍎 Forced iOS quality re-evaluation");
+            }
+          };
+          
+          videoElement.addEventListener('loadedmetadata', forceQualityOnIOS, { once: true });
+        }
       } else {
         // Use HLS.js for other browsers
         console.log("✓ Using HLS.js for playback");

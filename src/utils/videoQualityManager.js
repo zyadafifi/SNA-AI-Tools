@@ -108,16 +108,19 @@ export function getQualityLabel(height) {
 
 /**
  * Get HLS.js configuration optimized for quality
+ * @param {boolean} forceHighQuality - Force start with highest quality
  * @returns {Object} HLS.js configuration object
  */
-export function getHLSConfig() {
+export function getHLSConfig(forceHighQuality = true) {
+  const isIOS = isIOSSafari();
+  
   return {
-    // Start with auto quality selection
-    startLevel: -1,
+    // Start with highest quality for iOS, auto for others
+    startLevel: forceHighQuality ? 1000 : -1, // High number = highest quality
     
-    // Buffer configuration
-    maxBufferLength: 30, // 30 seconds
-    maxBufferSize: 60 * 1000 * 1000, // 60 MB
+    // Buffer configuration - larger for iOS
+    maxBufferLength: isIOS ? 40 : 30,
+    maxBufferSize: 80 * 1000 * 1000, // 80 MB for better quality buffering
     maxBufferHole: 0.5,
     
     // Loading timeouts and retries
@@ -128,31 +131,43 @@ export function getHLSConfig() {
     fragLoadingTimeOut: 20000,
     fragLoadingMaxRetry: 6,
     
-    // Quality settings - no upper limit
+    // Quality settings - no upper limit, high minimum
     autoLevelCapping: -1,
     
-    // Minimum bitrate for 720p (~2.5 Mbps)
-    minAutoBitrate: 2500000,
+    // INCREASED minimum bitrate for better quality (~4 Mbps for solid 720p)
+    minAutoBitrate: isIOS ? 4000000 : 3000000,
     
-    // Enable ABR (Adaptive Bitrate) but with constraints
+    // Enable ABR but bias towards higher quality
     abrEwmaFastLive: 3.0,
     abrEwmaSlowLive: 9.0,
-    abrEwmaDefaultEstimate: 5000000, // Start high (5 Mbps)
+    abrEwmaDefaultEstimate: 8000000, // Start very high (8 Mbps) for iOS
     
-    // Debugging (can be disabled in production)
-    debug: false,
+    // ABR algorithm settings - favor quality
+    abrBandWidthFactor: 0.95, // More aggressive quality selection
+    abrBandWidthUpFactor: 0.7, // Faster upgrade to better quality
+    
+    // Debugging
+    debug: isIOS, // Enable debug for iOS to see quality selection
     
     // Enable worker for better performance
     enableWorker: true,
     
-    // Optimize for latency
+    // Optimize for quality over latency
     lowLatencyMode: false,
+    backBufferLength: 90, // Keep more buffer for quality
     
     // Fragment loading
     fragLoadingLoopThreshold: 3,
     
     // Enable accurate seeking
     nudgeMaxRetry: 3,
+    
+    // iOS-specific: Prefer higher quality
+    capLevelToPlayerSize: false, // Don't limit quality to player size
+    
+    // Force highest initial quality
+    testBandwidth: true,
+    initialLiveManifestSize: 1,
   };
 }
 
