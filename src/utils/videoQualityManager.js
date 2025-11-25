@@ -147,7 +147,7 @@ export function getHLSConfig(forceHighQuality = true) {
     abrBandWidthUpFactor: 0.7, // Faster upgrade to better quality
     
     // Debugging
-    debug: isIOS, // Enable debug for iOS to see quality selection
+    debug: false,
     
     // Enable worker for better performance
     enableWorker: true,

@@ -1,10 +1,23 @@
 1
-00:00:00,000 --> 00:00:09,342
-Native speakers learn most of their
-grammar without realizing it. It comes naturally to us
-when we talk and listen. Doesn't
-that apply to your native language?
+00:00:00,000 --> 00:00:04,050
+Native speakers learn most of their grammar without realizing it.
 
 2
-00:00:00,000 --> 00:00:09,342
-المتحدثون الأصليون يتعلمون معظم قواعدهم النحوية دون أن يدركوا ذلك. الأمر يأتي بشكل طبيعي لنا عندما نتحدث ونستمع. أليس هذا ينطبق على لغتك الأم؟
+00:00:04,050 --> 00:00:06,290
+It comes naturally to us when we talk and listen.
+
+3
+00:00:06,290 --> 00:00:09,080
+Doesn't that apply to your native language?
+
+4
+00:00:00,000 --> 00:00:04,050
+المتحدثون الأصليون يتعلمون معظم قواعدهم النحوية دون أن يدركوا ذلك.
+
+5
+00:00:04,050 --> 00:00:06,290
+الأمر يأتي بشكل طبيعي لنا عندما نتحدث ونستمع.
+
+6
+00:00:06,290 --> 00:00:09,080
+أليس هذا ينطبق على لغتك الأم؟
