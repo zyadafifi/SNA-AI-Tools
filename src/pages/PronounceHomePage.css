@@ -1,0 +1,1333 @@
+/* HomePage.css - Exact copy from styles.css */
+
+:root {
+  --sna-primary: var(--primary-color, #ffc515);
+  --sna-secondary: var(--secondary-color, #cc6a15);
+  --sna-primary-light: #ffd84d;
+  --sna-primary-lighter: #ffeb99;
+  --sna-secondary-dark: #a8550f;
+
+  --text-dark: #2c3e50;
+  --text-light: #ffffff;
+  --text-muted: #6c757d;
+
+  --background-light: #f4f7f6;
+  --background-white: #ffffff;
+  --border-light: #e9ecef;
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--sna-primary) 0%,
+    var(--sna-secondary) 100%
+  );
+  --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-primary: 0 10px 30px rgba(255, 197, 21, 0.2),
+    0 5px 15px rgba(255, 197, 21, 0.1);
+
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 18px;
+  --radius-full: 50%;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page background for pronunciation pages */
+.home-page {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header Banner Integration */
+.home-page .header-banner {
+  margin-bottom: 0.5rem;
+  z-index: 10;
+  position: relative;
+}
+
+/* Educational Background Icons */
+.educational-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Lower z-index to stay behind content */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-icon {
+  position: absolute;
+  color: rgba(108, 117, 125, 0.2);
+  font-size: 1.8rem;
+  animation: float 20s infinite linear;
+  opacity: 0.4;
+  font-weight: 300;
+}
+
+/* Individual icon positioning */
+.icon-1 {
+  top: 8%;
+  left: 8%;
+  animation-delay: 0s;
+}
+.icon-2 {
+  top: 12%;
+  left: 85%; /* Reduced from 88% to stay within bounds */
+  animation-delay: 2s;
+}
+.icon-3 {
+  top: 18%;
+  left: 25%;
+  animation-delay: 4s;
+}
+.icon-4 {
+  top: 22%;
+  left: 75%;
+  animation-delay: 6s;
+}
+.icon-5 {
+  top: 28%;
+  left: 12%;
+  animation-delay: 8s;
+}
+.icon-6 {
+  top: 32%;
+  left: 82%; /* Reduced from 85% to stay within bounds */
+  animation-delay: 10s;
+}
+.icon-7 {
+  top: 38%;
+  left: 35%;
+  animation-delay: 12s;
+}
+.icon-8 {
+  top: 42%;
+  left: 65%;
+  animation-delay: 14s;
+}
+.icon-9 {
+  top: 48%;
+  left: 15%;
+  animation-delay: 16s;
+}
+.icon-10 {
+  top: 52%;
+  left: 80%; /* Reduced from 82% to stay within bounds */
+  animation-delay: 18s;
+}
+.icon-11 {
+  top: 58%;
+  left: 45%;
+  animation-delay: 20s;
+}
+.icon-12 {
+  top: 62%;
+  left: 18%;
+  animation-delay: 22s;
+}
+.icon-13 {
+  top: 68%;
+  left: 78%;
+  animation-delay: 24s;
+}
+.icon-14 {
+  top: 72%;
+  left: 38%;
+  animation-delay: 26s;
+}
+.icon-15 {
+  top: 78%;
+  left: 68%;
+  animation-delay: 28s;
+}
+.icon-16 {
+  top: 5%;
+  left: 45%;
+  animation-delay: 30s;
+}
+.icon-17 {
+  top: 15%;
+  left: 55%;
+  animation-delay: 32s;
+}
+.icon-18 {
+  top: 25%;
+  left: 5%;
+  animation-delay: 34s;
+}
+.icon-19 {
+  top: 35%;
+  left: 95%;
+  animation-delay: 36s;
+}
+.icon-20 {
+  top: 45%;
+  left: 50%;
+  animation-delay: 38s;
+}
+.icon-21 {
+  top: 55%;
+  left: 8%;
+  animation-delay: 40s;
+}
+.icon-22 {
+  top: 65%;
+  left: 92%;
+  animation-delay: 42s;
+}
+.icon-23 {
+  top: 75%;
+  left: 25%;
+  animation-delay: 44s;
+}
+.icon-24 {
+  top: 85%;
+  left: 75%;
+  animation-delay: 46s;
+}
+.icon-25 {
+  top: 95%;
+  left: 15%;
+  animation-delay: 48s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(20px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* Ensure document does not force dark theme here */
+body {
+  overflow-x: hidden;
+}
+
+/* Ensure header is completely hidden on mobile */
+@media (max-width: 768px) {
+  .header {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .main-container {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+  }
+
+  /* Header Banner mobile adjustments */
+  .home-page .header-banner {
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Add some glow effects to main content */
+.main-container {
+  position: relative;
+  z-index: 10;
+}
+
+.lessons-path-container {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto; /* Center horizontally */
+  max-width: 1400px; /* Limit maximum width for ultra-wide screens */
+  padding: 2rem; /* Add some breathing room */
+}
+
+/* Header Styles */
+.header {
+  background: var(--gradient-primary);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styles */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 40px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(255, 197, 21, 0.3);
+}
+
+.app-title h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+/* Main Container */
+.main-container {
+  flex: 1;
+  max-width: 1200px; /* Reduced to match JavaScript calculations */
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 2rem; /* Reduced top padding to bring content closer to header */
+}
+
+/* Desktop-specific improvements */
+@media (min-width: 1024px) {
+  .main-container {
+    max-width: 1200px; /* Keep consistent with base max-width */
+    padding: 1.5rem 2rem; /* Reduced top padding to bring content closer to header */
+  }
+}
+
+/* Path-based Lessons Container */
+.lessons-path-container {
+  position: relative;
+  min-height: 1000px;
+  width: 100%;
+  max-width: 1400px; /* Limit maximum width */
+  margin: 0 auto; /* Center the container */
+  padding: 2rem; /* Increased padding for desktop */
+  overflow: visible; /* Allow content to be visible */
+}
+
+/* Desktop-specific lessons container improvements */
+@media (min-width: 1024px) {
+  .lessons-path-container {
+    min-height: 1200px; /* Taller for desktop */
+    padding: 3rem 4rem; /* More generous padding */
+    max-width: 1200px; /* Constrain width for better layout */
+  }
+}
+
+/* SVG Path Container */
+/* SVG container no longer needed with Xarrow */
+
+/* Xarrow styles are handled by the library - no custom CSS needed */
+
+/* Lesson Node Styles */
+.lesson-node {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+/* Lesson Circle */
+.lesson-circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  background: transparent; /* Remove background */
+}
+
+/* Desktop-specific lesson circle improvements */
+@media (min-width: 1024px) {
+  .lesson-circle {
+    width: 120px; /* Even larger circles for desktop */
+    height: 120px;
+  }
+
+  .lesson-info {
+    min-width: 280px;
+    max-width: 350px; /* Reduced max-width to prevent overflow */
+    padding: 1.5rem 2rem;
+  }
+
+  .lesson-node {
+    gap: 1.5rem; /* Better spacing between circle and info */
+  }
+}
+
+/* Ultra-wide screen optimizations */
+@media (min-width: 1440px) {
+  .lessons-path-container {
+    max-width: 1400px; /* Reduced max-width for better layout */
+  }
+
+  .lesson-info {
+    max-width: 380px; /* Reduced max-width to prevent overflow */
+  }
+}
+
+.lesson-circle.completed {
+  background: transparent;
+  border: 4px solid var(--sna-primary-light);
+  box-shadow: var(--shadow-primary);
+}
+
+.lesson-circle.in-progress {
+  background: transparent;
+  border: 4px solid var(--sna-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.lesson-circle.locked {
+  background: transparent;
+  border: 4px solid #495057;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.lesson-circle.current {
+  animation: pulse 2s infinite, pulseShadow 3s infinite;
+  border-color: #cc6a15;
+  background: transparent;
+  box-shadow: 0 0 0 0 rgba(204, 106, 21, 0.4), 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Desktop lesson circle hover effects with higher specificity */
+.lesson-node .lesson-circle:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+.lesson-node .lesson-circle.completed:hover {
+  box-shadow: 0 12px 30px rgba(255, 197, 21, 0.5) !important;
+}
+
+.lesson-node .lesson-circle.in-progress:hover {
+  box-shadow: 0 12px 30px rgba(255, 197, 21, 0.4) !important;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(204, 106, 21, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(204, 106, 21, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(204, 106, 21, 0);
+  }
+}
+
+@keyframes pulseShadow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(204, 106, 21, 0.4), 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(204, 106, 21, 0.2),
+      0 20px 60px rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(204, 106, 21, 0.4), 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Lesson Avatar */
+.lesson-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 3px solid white;
+}
+
+/* Desktop-specific lesson avatar improvements */
+@media (min-width: 1024px) {
+  .lesson-avatar {
+    width: 100px; /* Even larger avatars for desktop */
+    height: 100px;
+  }
+}
+
+.lesson-circle.locked .lesson-avatar {
+  filter: grayscale(100%) brightness(0.6);
+}
+
+/* Lesson Icon for lessons without avatar */
+.lesson-icon {
+  font-size: 1.8rem; /* Increased icon size for better visibility */
+  color: white;
+}
+
+/* Desktop-specific lesson icon improvements */
+@media (min-width: 1024px) {
+  .lesson-icon {
+    font-size: 2.2rem; /* Larger icons for desktop */
+  }
+}
+
+.lesson-circle.locked .lesson-icon {
+  color: #495057;
+}
+
+/* Checkmark for completed lessons */
+.lesson-checkmark {
+  position: absolute;
+  bottom: 5px; /* Moved further inward to prevent circle edge cutoff */
+  right: 5px; /* Moved further inward to prevent circle edge cutoff */
+  width: 28px;
+  height: 28px;
+  background: #22c55e;
+  border: 2px solid white; /* Reduced border width to fit better */
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 3; /* Ensure checkmark appears above everything */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+}
+
+/* Lesson Info Panel - Now styled as simple text with arrow */
+.lesson-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 350px; /* Increased min-width for larger info panels */
+  background: transparent;
+  padding: 1.5rem 2rem;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  min-height: 90px;
+}
+
+/* Desktop-specific lesson info improvements */
+@media (min-width: 1024px) {
+  .lesson-info {
+    min-width: 450px; /* Larger info panels for desktop */
+    padding: 2rem 2.5rem; /* More generous padding */
+    min-height: 110px;
+    gap: 1.5rem;
+  }
+}
+
+.lesson-info:hover {
+  background: transparent;
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+.lesson-info:hover .lesson-title,
+.lesson-info:hover .lesson-arrow {
+  color: var(--sna-primary);
+}
+
+/* Desktop lesson info title and arrow hover effects with higher specificity */
+.lesson-node .lesson-info:hover .lesson-title {
+  color: var(--sna-primary) !important;
+  transform: scale(1.05) !important;
+  text-shadow: none !important;
+}
+
+.lesson-node .lesson-info:hover .lesson-arrow {
+  color: var(--sna-primary) !important;
+  transform: translateX(3px) !important;
+}
+
+.lesson-info.locked {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.lesson-info.locked:hover .lesson-title,
+.lesson-info.locked:hover .lesson-arrow {
+  color: #495057;
+}
+
+/* Locked lesson text styling */
+.lesson-info.locked .lesson-title {
+  color: #495057;
+}
+
+.lesson-info.locked .lesson-subtitle {
+  color: #6c757d;
+}
+
+.lesson-info.locked .lesson-arrow {
+  color: #495057;
+}
+
+.lesson-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.lesson-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  margin-left: 0;
+  color: var(--text-dark);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 0;
+  padding: 0;
+  transition: color 0.3s ease;
+  align-self: flex-start;
+  width: 100%;
+  line-height: 1.2;
+}
+
+/* Desktop-specific lesson title improvements */
+@media (min-width: 1024px) {
+  .lesson-title {
+    font-size: 1.9rem; /* Larger text for desktop - increased from 1.7rem */
+    margin-bottom: 0.7rem; /* More spacing */
+    font-weight: 900; /* Bolder weight for better visibility */
+    line-height: 1.1;
+  }
+}
+
+/* Lesson Subtitle */
+.lesson-subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin: 0;
+  padding: 0;
+  align-self: flex-start;
+  width: 100%;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 1.3;
+}
+
+/* Desktop-specific lesson subtitle improvements */
+@media (min-width: 1024px) {
+  .lesson-subtitle {
+    font-size: 1.6rem; /* Larger text for desktop - increased from 1.4rem */
+    font-weight: 600; /* Medium weight for better readability */
+    line-height: 1.2;
+  }
+}
+
+/* Lesson Arrow */
+.lesson-arrow {
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+/* Desktop-specific lesson arrow improvements */
+@media (min-width: 1024px) {
+  .lesson-arrow {
+    font-size: 1.8rem; /* Larger arrow for desktop - increased from 1.6rem */
+  }
+}
+
+/* Alternate positioning for left and right */
+.lesson-node.left {
+  flex-direction: row;
+}
+
+.lesson-node.right {
+  flex-direction: row-reverse;
+}
+
+.lesson-node.right .lesson-info {
+  text-align: right;
+}
+
+.lesson-node.right .lesson-content {
+  align-items: flex-end;
+}
+
+/* No Results Message */
+.no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+}
+
+.no-results i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--sna-primary-light);
+}
+
+.no-results h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  background: var(--gradient-primary);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Mobile-specific icon positioning to avoid lesson nodes */
+@media (max-width: 768px) {
+  .icon-1 {
+    top: 5%;
+    left: 5%;
+  }
+  .icon-2 {
+    top: 8%;
+    left: 90%;
+  }
+  .icon-3 {
+    top: 15%;
+    left: 20%;
+  }
+  .icon-4 {
+    top: 18%;
+    left: 80%;
+  }
+  .icon-5 {
+    top: 25%;
+    left: 8%;
+  }
+  .icon-6 {
+    top: 28%;
+    left: 85%; /* Reduced from 88% to stay within bounds */
+  }
+  .icon-7 {
+    top: 35%;
+    left: 30%;
+  }
+  .icon-8 {
+    top: 38%;
+    left: 70%;
+  }
+  .icon-9 {
+    top: 45%;
+    left: 12%;
+  }
+  .icon-10 {
+    top: 48%;
+    left: 82%; /* Reduced from 85% to stay within bounds */
+  }
+  .icon-11 {
+    top: 55%;
+    left: 40%;
+  }
+  .icon-12 {
+    top: 58%;
+    left: 15%;
+  }
+  .icon-13 {
+    top: 65%;
+    left: 75%;
+  }
+  .icon-14 {
+    top: 68%;
+    left: 35%;
+  }
+  .icon-15 {
+    top: 75%;
+    left: 60%;
+  }
+  .icon-16 {
+    top: 3%;
+    left: 40%;
+  }
+  .icon-17 {
+    top: 10%;
+    left: 50%;
+  }
+  .icon-18 {
+    top: 20%;
+    left: 3%;
+  }
+  .icon-19 {
+    top: 30%;
+    left: 92%;
+  }
+  .icon-20 {
+    top: 40%;
+    left: 45%;
+  }
+  .icon-21 {
+    top: 50%;
+    left: 6%;
+  }
+  .icon-22 {
+    top: 60%;
+    left: 90%;
+  }
+  .icon-23 {
+    top: 70%;
+    left: 25%;
+  }
+  .icon-24 {
+    top: 80%;
+    left: 70%;
+  }
+  .icon-25 {
+    top: 90%;
+    left: 12%;
+  }
+}
+
+/* Mobile Responsive Design - Alternating Layout with Safe Boundaries */
+@media (max-width: 768px) {
+  /* Hide header on mobile */
+  .header {
+    display: none !important;
+  }
+
+  /* Header Banner mobile adjustments */
+  .home-page .header-banner {
+    margin: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Mobile lessons container with safe margins */
+  .lessons-path-container {
+    padding: 1rem 20px; /* Reduced padding to match screenshot layout */
+    min-height: 1200px; /* Adjusted height for better mobile layout */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  /* Main container adjustments */
+  .main-container {
+    padding: 0.2rem 0; /* Further reduced padding to minimize space between header and content */
+    width: 100%;
+    max-width: 100vw; /* Ensure full viewport width usage */
+  }
+
+  /* Mobile lesson nodes - maintain alternating left/right layout with safe positioning */
+  .lesson-node {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; /* Reduced gap to match screenshot layout */
+    max-width: calc(
+      100vw - 80px
+    ); /* Adjusted to account for reduced padding and prevent cutoff */
+    margin-bottom: 1.5rem; /* Reduced vertical spacing to match screenshot */
+  }
+
+  /* Maintain left/right alternating pattern on mobile */
+  .lesson-node.left {
+    flex-direction: row;
+  }
+
+  .lesson-node.right {
+    flex-direction: row-reverse;
+  }
+
+  .lesson-node.right .lesson-info {
+    text-align: right;
+  }
+
+  .lesson-node.right .lesson-content {
+    align-items: flex-end;
+  }
+
+  /* Adjust right-side lesson info to prevent overflow */
+  .lesson-node.right {
+    flex-direction: row-reverse;
+  }
+
+  .lesson-node.right .lesson-info {
+    margin-right: 0;
+    max-width: calc(100vw - 200px) !important; /* Consistent with left side */
+    min-width: 280px; /* Consistent min-width */
+  }
+
+  .lesson-node.left .lesson-info {
+    margin-left: 0;
+    max-width: calc(
+      100vw - 200px
+    ) !important; /* Account for left positioning and circle size */
+    min-width: 280px; /* Slightly smaller min-width for left lessons */
+  }
+
+  /* Additional mobile adjustments for very small screens */
+  @media (max-width: 480px) {
+    .lesson-node.left .lesson-info,
+    .lesson-node.right .lesson-info {
+      max-width: calc(
+        100vw - 120px
+      ) !important; /* Even tighter on small screens */
+      min-width: 240px; /* Smaller min-width for very small screens */
+      padding: 1.5rem 1.5rem; /* Reduced padding */
+    }
+  }
+
+  /* Mobile circle sizes - larger for better touch interaction */
+  .lesson-circle {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0; /* Prevent circle from shrinking */
+  }
+
+  .lesson-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Mobile lesson info adjustments with responsive width - optimized for screenshot layout */
+  .lesson-info {
+    min-width: 280px; /* Reduced min-width to match screenshot */
+    max-width: calc(
+      80vw - 120px
+    ); /* Adjusted max-width for better mobile layout */
+    flex-shrink: 1; /* Allow text to shrink if needed */
+    padding: 1.2rem 1.5rem; /* Reduced padding to match screenshot */
+    min-height: 80px !important; /* Reduced minimum height to match screenshot */
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    gap: 0.8rem; /* Reduced gap to match screenshot */
+  }
+
+  /* Mobile lesson info hover effects with higher specificity */
+  .lesson-node .lesson-info:hover {
+    background: transparent !important;
+    transform: translateY(-3px) !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .lesson-node .lesson-info:hover .lesson-title,
+  .lesson-node .lesson-info:hover .lesson-arrow {
+    color: var(--sna-primary) !important;
+  }
+
+  /* Mobile lesson info title and arrow hover effects with higher specificity */
+  .lesson-node .lesson-info:hover .lesson-title {
+    color: var(--sna-primary) !important;
+    transform: scale(1.05) !important;
+    text-shadow: 0 2px 8px rgba(255, 197, 21, 0.3) !important;
+  }
+
+  .lesson-node .lesson-info:hover .lesson-arrow {
+    color: var(--sna-primary) !important;
+    transform: translateX(3px) !important;
+  }
+
+  /* Mobile lesson circle hover effects with higher specificity */
+  .lesson-node .lesson-circle:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .lesson-node .lesson-circle.completed:hover {
+    box-shadow: 0 12px 30px rgba(255, 197, 21, 0.5) !important;
+  }
+
+  .lesson-node .lesson-circle.in-progress:hover {
+    box-shadow: 0 12px 30px rgba(255, 197, 21, 0.4) !important;
+  }
+
+  .lesson-title {
+    font-size: 1.1rem; /* Adjusted font size to match screenshot */
+    font-weight: 700;
+    margin-bottom: 0.3rem; /* Reduced spacing to match screenshot */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.1;
+    max-width: calc(100% - 25px); /* Reserve space for arrow */
+  }
+
+  .lesson-subtitle {
+    font-size: 0.9rem; /* Adjusted font size to match screenshot */
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.1;
+    max-width: calc(100% - 25px); /* Reserve space for arrow */
+  }
+
+  /* Enhanced mobile path styling with safe boundaries */
+  .lesson-path {
+    stroke-width: 3; /* Slightly thinner for better mobile performance */
+  }
+
+  /* Mobile checkmark positioning to prevent cutoff */
+  .lesson-checkmark {
+    bottom: 8px; /* Moved further inward to prevent circle edge cutoff */
+    right: 8px; /* Moved further inward to prevent circle edge cutoff */
+    width: 26px;
+    height: 26px;
+    font-size: 0.75rem;
+    border: 2px solid white; /* Consistent with desktop */
+  }
+
+  /* SVG container adjustments */
+  .lessons-path-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible; /* Allow paths to be visible even at edges */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Very small screen icon positioning */
+  .icon-1 {
+    top: 3%;
+    left: 3%;
+  }
+  .icon-2 {
+    top: 6%;
+    left: 92%;
+  }
+  .icon-3 {
+    top: 12%;
+    left: 18%;
+  }
+  .icon-4 {
+    top: 15%;
+    left: 82%;
+  }
+  .icon-5 {
+    top: 22%;
+    left: 6%;
+  }
+  .icon-6 {
+    top: 25%;
+    left: 90%;
+  }
+  .icon-7 {
+    top: 32%;
+    left: 28%;
+  }
+  .icon-8 {
+    top: 35%;
+    left: 72%;
+  }
+  .icon-9 {
+    top: 42%;
+    left: 10%;
+  }
+  .icon-10 {
+    top: 45%;
+    left: 88%;
+  }
+  .icon-11 {
+    top: 52%;
+    left: 38%;
+  }
+  .icon-12 {
+    top: 55%;
+    left: 12%;
+  }
+  .icon-13 {
+    top: 62%;
+    left: 78%;
+  }
+  .icon-14 {
+    top: 65%;
+    left: 32%;
+  }
+  .icon-15 {
+    top: 72%;
+    left: 58%;
+  }
+  .icon-16 {
+    top: 1%;
+    left: 35%;
+  }
+  .icon-17 {
+    top: 8%;
+    left: 45%;
+  }
+  .icon-18 {
+    top: 18%;
+    left: 1%;
+  }
+  .icon-19 {
+    top: 28%;
+    left: 94%;
+  }
+  .icon-20 {
+    top: 38%;
+    left: 40%;
+  }
+  .icon-21 {
+    top: 48%;
+    left: 4%;
+  }
+  .icon-22 {
+    top: 58%;
+    left: 88%;
+  }
+  .icon-23 {
+    top: 68%;
+    left: 22%;
+  }
+  .icon-24 {
+    top: 78%;
+    left: 68%;
+  }
+  .icon-25 {
+    top: 88%;
+    left: 10%;
+  }
+
+  /* Very small screen adjustments with enhanced safe boundaries */
+  .header {
+    display: none !important;
+  }
+
+  .main-container {
+    padding: 1rem 0; /* Remove horizontal padding */
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  /* Extra small screen lessons container */
+  .lessons-path-container {
+    padding: 1.5rem 50px; /* Increased horizontal padding to prevent circle cutoff */
+    min-height: 1600px; /* Increased height to accommodate larger nodes and spacing */
+    overflow-x: hidden;
+  }
+
+  /* Extra small screen lesson adjustments - larger for better touch interaction */
+  .lesson-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .lesson-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Enhanced lesson info for small screens - larger for better usability */
+  .lesson-info {
+    min-width: 300px; /* Increased min-width to accommodate longer text */
+    max-width: calc(
+      80vw - 180px
+    ); /* Increased max-width for more content space */
+    gap: 1rem;
+    padding: 1.75rem 1.75rem; /* Increased padding for better touch targets */
+    min-height: 110px; /* Increased minimum height to match larger circles */
+    border-radius: 14px; /* Larger border radius */
+  }
+
+  /* Small mobile lesson info hover effects with higher specificity */
+  .lesson-node .lesson-info:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  }
+
+  /* Small mobile lesson info title and arrow hover effects with higher specificity */
+  .lesson-node .lesson-info:hover .lesson-title {
+    color: var(--sna-primary) !important;
+    transform: scale(1.05) !important;
+    text-shadow: 0 2px 8px rgba(255, 197, 21, 0.3) !important;
+  }
+
+  .lesson-node .lesson-info:hover .lesson-arrow {
+    color: var(--sna-primary) !important;
+    transform: translateX(3px) !important;
+  }
+
+  /* Small mobile lesson circle hover effects with higher specificity */
+  .lesson-node .lesson-circle:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .lesson-node .lesson-circle.completed:hover {
+    box-shadow: 0 10px 25px rgba(255, 197, 21, 0.5) !important;
+  }
+
+  .lesson-node .lesson-circle.in-progress:hover {
+    box-shadow: 0 10px 25px rgba(255, 197, 21, 0.4) !important;
+  }
+
+  .lesson-node {
+    gap: 0.75rem; /* Increased gap for better spacing */
+    max-width: calc(
+      100vw - 120px
+    ); /* Adjusted boundary to prevent cutoff with increased padding */
+    margin-bottom: 1.75rem; /* Add more vertical spacing between nodes */
+  }
+
+  .lesson-title {
+    font-size: 1.2rem; /* Increased font size for better readability */
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.1;
+    max-width: calc(100% - 25px); /* Reserve space for arrow */
+  }
+
+  .lesson-subtitle {
+    font-size: 0.95rem; /* Increased font size for better readability */
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.1;
+    max-width: calc(100% - 25px); /* Reserve space for arrow */
+  }
+
+  /* Optimized path visibility for very small screens */
+  .lesson-path {
+    stroke-width: 3; /* Slightly thinner for performance */
+  }
+
+  /* Properly positioned checkmark for very small screens */
+  .lesson-checkmark {
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+    bottom: 6px; /* Moved further inward to prevent circle edge cutoff */
+    right: 6px; /* Moved further inward to prevent circle edge cutoff */
+    border: 2px solid white; /* Consistent border */
+  }
+}
+
+/* Additional mobile-specific curve enhancements */
+@media (max-width: 768px) {
+  /* Ensure smooth path animations on mobile */
+  .lesson-path.completed {
+    stroke: var(--sna-primary);
+    stroke-dasharray: none;
+    animation: drawPath 0.8s ease-out;
+  }
+
+  .lesson-path.incomplete {
+    stroke: var(--text-muted);
+    stroke-dasharray: 15, 8; /* Adjusted dash pattern for mobile */
+  }
+}
+
+/* Path drawing animation for completed lessons */
+@keyframes drawPath {
+  from {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Loading indicator */
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.loading-indicator i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--sna-primary);
+}
+
+.loading-indicator p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Extra small screens (320px and below) */
+@media (max-width: 320px) {
+  .header {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .main-container {
+    margin-top: 0 !important;
+    padding-top: 0.5rem !important;
+  }
+}

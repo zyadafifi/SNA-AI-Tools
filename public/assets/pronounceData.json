@@ -1,0 +1,291 @@
+{
+  "lessons": [
+    {
+      "lessonNumber": 1,
+      "slug": "lesson-1",
+      "title": "At Home",
+      "arabicDescription": "تعلم كيفية التحدث في المنزل مع العائلة والأصدقاء",
+      "sentences": [
+        {
+          "english": "Welcome to the course!",
+          "arabic": "مرحبا بك في الدورة!",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/bd32c1e0-12c4-45a6-8fe5-083e2f15e226/playlist.m3u8"
+        },
+        {
+          "english": "Let's get started.",
+          "arabic": "هيا لنبدأ.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/01d60c8c-9afe-45bf-9baf-7f3e74db951d/playlist.m3u8"
+        },
+        {
+          "english": "Hello, how are you?",
+          "arabic": "مرحباً، كيف حالك؟",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/fc876498-b12f-467f-91b0-0c3607e9b8e2/playlist.m3u8"
+        },
+        {
+          "english": "Good morning!",
+          "arabic": "صباح الخير!",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/cad0048b-73fe-41fd-8a7b-f9cf64f4b605/playlist.m3u8"
+        },
+        {
+          "english": "Nice to meet you.",
+          "arabic": "سعيد بلقائك.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/ba265fcd-bd80-4707-9fc1-57e3e73b8d5d/playlist.m3u8"
+        },
+        {
+          "english": "What's your name?",
+          "arabic": "ما اسمك؟",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/f207393e-4619-4de7-b522-8b8e8dba2a20/playlist.m3u8"
+        },
+        {
+          "english": "My name is John.",
+          "arabic": "اسمي جون.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba27664-a741-4a8a-8e9c-d8f8e89a12e0/playlist.m3u8"
+        }
+      ]
+    },
+    {
+      "lessonNumber": 2,
+      "slug": "lesson-2",
+      "title": "Outdoor",
+      "arabicDescription": "تدرب على المحادثات في الأماكن الخارجية والشوارع",
+      "sentences": [
+        {
+          "english": "I want to learn English by speaking.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/1ec187e6-230b-45c6-926c-57e06635c793/playlist.m3u8"
+        },
+        {
+          "english": "Where can I find the nearest restaurant?",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/fa7dd20e-8a16-4544-b02d-d9f37bca9f33/playlist.m3u8"
+        },
+        {
+          "english": "How much does this cost?",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/22a4d83b-1f62-4d31-aa84-ca8808b15d9c/playlist.m3u8"
+        }
+      ]
+    },
+    {
+      "lessonNumber": 3,
+      "slug": "lesson-3",
+      "title": "At the Airport",
+      "arabicDescription": "تعلم العبارات المهمة للسفر والتعامل في المطار",
+      "sentences": [
+        {
+          "english": "Coffee is one of my favorite beverages.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/659cd91f-2536-4d23-8605-5430a787dda3/playlist.m3u8"
+        },
+        {
+          "english": "I prefer cappuccino.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9a2e3ac8-9806-42d4-bdc3-91ac7bb3057e/playlist.m3u8"
+        },
+        {
+          "english": "I usually add one teaspoon of sugar to the coffee.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/c7b24d30-9d5f-4621-95ae-258676339030/playlist.m3u8"
+        }
+      ]
+    },
+    {
+      "lessonNumber": 4,
+      "slug": "lesson-4",
+      "title": "In a Store",
+      "arabicDescription": "تدرب على التسوق والتحدث مع البائعين في المتاجر",
+      "sentences": [
+        {
+          "english": "I Know. Me too.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/bf07493c-7101-44d1-960b-9299e3012f04/playlist.m3u8"
+        },
+        {
+          "english": "I don't know . What do you want to do ?",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/09f4304b-9104-49c2-a161-c30ead8f7943/playlist.m3u8"
+        },
+        {
+          "english": "Well , we could go for a walk.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/00ad4cba-04c1-4467-b27d-afc80aafa529/playlist.m3u8"
+        },
+        {
+          "english": "Yeah , let's go.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/3205ba0c-ff90-43d5-a011-1d210ea5be3b/playlist.m3u8"
+        },
+        {
+          "english": "I don't know you pick",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/bcc8fa01-7a2c-4701-aacc-bb4eb9c816b7/playlist.m3u8"
+        },
+        {
+          "english": "I'm in, let's go",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/a1775163-2c04-4d9b-b155-1c9f850bb3de/playlist.m3u8"
+        }
+      ]
+    },
+    {
+      "lessonNumber": 5,
+      "slug": "lesson-5",
+      "title": "In Cafe",
+      "arabicDescription": "تعلم كيفية طلب المشروبات والتحدث في المقاهي",
+      "sentences": [
+        {
+          "english": "I just finished watching a movie.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/4f16f9f0-cea5-4297-9815-87f90376db83/playlist.m3u8"
+        },
+        {
+          "english": "I watched the avengers .",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/d50e8485-f298-4e56-bab0-5efd5399048a/playlist.m3u8"
+        },
+        {
+          "english": "It was pretty good . I love it .",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/45103d74-e831-4421-92b9-eb2eee944c8c/playlist.m3u8"
+        },
+        {
+          "english": "It had a lot of action which I liked.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/63510d50-b525-456f-8427-05de47417f9a/playlist.m3u8"
+        },
+        {
+          "english": "Yes , I would definitely recommend it .",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/b26369be-71b1-4d4b-807e-ecc7c48e951c/playlist.m3u8"
+        }
+      ]
+    },
+    {
+      "lessonNumber": 6,
+      "slug": "lesson-6",
+      "title": "In the Class",
+      "arabicDescription": "تدرب على التحدث في الفصل الدراسي مع المعلم والطلاب",
+      "sentences": [
+        {
+          "english": "You are heading in the wrong direction.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9cd8263b-d9c1-4372-9275-6ed2bd76f1bc/playlist.m3u8"
+        },
+        {
+          "english": "I will guide you no worries",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/cd0614d8-f927-43ca-9ad8-0ae6ad254228/playlist.m3u8"
+        },
+        {
+          "english": "Did you see a restaurant on your way here ?",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/8515e6cc-dbcf-4f85-84ff-617ef85c366e/playlist.m3u8"
+        },
+        {
+          "english": "It's right behind the restaurant.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/01a0e8fa-214c-453c-9fb5-f991b23dcf4e/playlist.m3u8"
+        },
+        {
+          "english": "Yup , schools line the street , so drive slowly.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/fa11bd0e-7726-4426-977a-5557d40bfa08/playlist.m3u8"
+        },
+        {
+          "english": "Don't mention it",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/c78f6bcd-1647-44b8-b7c5-66533e5ab712/playlist.m3u8"
+        }
+      ]
+    },
+    {
+      "lessonNumber": 7,
+      "slug": "lesson-7",
+      "title": "In the Hospital",
+      "arabicDescription": "تعلم المصطلحات الطبية والتحدث مع الأطباء والممرضين",
+      "sentences": [
+        {
+          "english": "Yeah , it is. I like the color .",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/839b85b5-e850-4026-b766-1de4eb74124e/playlist.m3u8"
+        },
+        {
+          "english": "That's a great deal .",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/ed04b344-f655-4fba-9b7f-027fb0c16382/playlist.m3u8"
+        },
+        {
+          "english": "Let me see it again.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/df76a018-88b0-41ae-bac9-478f1ad570cb/playlist.m3u8"
+        },
+        {
+          "english": "The material is very nice.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/6372ea4a-0960-4d57-a860-c44967b0e636/playlist.m3u8"
+        },
+        {
+          "english": "It will look great with your black jeans.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/25093ec2-c727-412d-aeaa-f29ea61fc2ca/playlist.m3u8"
+        },
+        {
+          "english": "Will you should buy it then.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/c925234b-43dd-4d07-9e24-f59b4ec120bc/playlist.m3u8"
+        },
+        {
+          "english": "No problem. I'm glad I could help.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/d51e0269-beb5-4fcf-88c8-6ecf12d2d225/playlist.m3u8"
+        }
+      ]
+    },
+    {
+      "lessonNumber": 8,
+      "slug": "lesson-8",
+      "title": "In the Office",
+      "arabicDescription": "تدرب على المحادثات المهنية والتواصل في بيئة العمل",
+      "sentences": [
+        {
+          "english": "I'm here for a business conference",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/bb0f80b8-130d-4208-93d4-234dcbd18c41/playlist.m3u8"
+        },
+        {
+          "english": "I will be here for four days.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/5e01d8ed-3a74-4555-b809-1265b389c8a0/playlist.m3u8"
+        },
+        {
+          "english": "At the helton hotel downtown.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/6fd64466-d520-4011-833e-1586e3f9501f/playlist.m3u8"
+        },
+        {
+          "english": "Thank you , I will.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/8e8d72f3-cb93-430f-972f-51352c372a21/playlist.m3u8"
+        }
+      ]
+    },
+    {
+      "lessonNumber": 9,
+      "slug": "lesson-9",
+      "title": "In the Kitchen",
+      "arabicDescription": "تعلم المفردات المتعلقة بالطبخ والطعام في المطبخ",
+      "sentences": [
+        {
+          "english": "Book",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/11ba6b64-7e35-4986-aa96-8cac84f215b7/playlist.m3u8"
+        },
+        {
+          "english": "Blue nook",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/ea1e55ad-7b9b-4ca7-844c-c9d2547c72e8/playlist.m3u8"
+        },
+        {
+          "english": "Bright blue balloon.",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/e4f11e56-c4ba-49fc-b914-6577df83e66d/playlist.m3u8"
+        },
+        {
+          "english": "Bob has a bright blue balloon .",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/7efa5eae-e264-412d-9aa1-33a9de8a6c2e/playlist.m3u8"
+        }
+      ]
+    },
+    {
+      "lessonNumber": 10,
+      "slug": "lesson-10",
+      "title": "In the Market",
+      "arabicDescription": "تدرب على التسوق والمساومة في الأسواق التقليدية",
+      "sentences": [
+        {
+          "english": "Dog",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8"
+        },
+        {
+          "english": "Bad dog",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/d91cd51e-8299-4445-945e-6cff8d277ff2/playlist.m3u8"
+        },
+        {
+          "english": "Red door",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/44a27957-0ef7-47f9-b852-c5641170b2c4/playlist.m3u8"
+        },
+        {
+          "english": "Daisy opened the door",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/2807305a-2898-4845-8285-8687b63d689a/playlist.m3u8"
+        },
+        {
+          "english": "A bad dog ran away from the dark door",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/3ce2a30a-1af5-4f37-8687-4a79e489df3c/playlist.m3u8"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,836 @@
+import { useState, useEffect, useRef, useCallback } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useProgress } from "../contexts/ProgressContext";
+import { useConversationProgress } from "../hooks/useConversationProgress";
+import { useMobilePracticeOverlayController } from "../hooks/useMobilePracticeOverlayController";
+import { useHLSVideoPlayer } from "../hooks/useHLSVideoPlayer";
+import { useMobileFeatures } from "../hooks/useMobileFeatures";
+import useSubtitleSync from "../hooks/useSubtitleSync";
+import ProgressBar from "../components/Pronunce/ProgressBar";
+import MobileBackButton from "../components/Pronunce/mobile/MobileBackButton";
+import MobileSubtitleContainer from "../components/Pronunce/mobile/MobileSubtitleContainer";
+import MobileReplayOverlay from "../components/Pronunce/mobile/MobileReplayOverlay";
+import MobilePracticeOverlay from "../components/Pronunce/mobile/MobilePracticeOverlay";
+import MobileCompletionCard from "../components/Pronunce/mobile/MobileCompletionCard";
+import MobileResultsDialog from "../components/Pronunce/mobile/MobileResultsDialog";
+import MobileAlertContainer from "../components/Pronunce/mobile/MobileAlertContainer";
+import { FaMicrophone, FaRegLightbulb } from "react-icons/fa";
+import "./MobileLessonPage.css";
+
+export const MobileLessonPage = () => {
+  const { lessonNumber } = useParams();
+  const navigate = useNavigate();
+  const { setCurrentLesson, completeLesson } = useProgress();
+
+  const [lesson, setLesson] = useState(null);
+  const [lessonsData, setLessonsData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showReplayOverlay, setShowReplayOverlay] = useState(false);
+  const [showCompletionCard, setShowCompletionCard] = useState(false);
+  const [lessonCompletedStatus, setLessonCompletedStatus] = useState(false);
+  const [showResultsDialog, setShowResultsDialog] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
+  const [showIOSAudioOverlay, setShowIOSAudioOverlay] = useState(
+    typeof window !== "undefined" && window.innerWidth <= 768
+  );
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
+  const [videoLoadAttempts, setVideoLoadAttempts] = useState(0);
+  const [currentVideoSrc, setCurrentVideoSrc] = useState(null);
+
+  // Add ref for managing user interaction
+  const userInteractionRef = useRef(false);
+
+  // Controller for pronunciation overlay (single source of truth)
+  const pronunciationController = useMobilePracticeOverlayController();
+  const {
+    show: showPracticeOverlay,
+    open: openPracticeOverlay,
+    close: closePracticeOverlay,
+    resetResults: resetPracticeResults,
+    sentence: practiceSentence,
+    isRecording,
+    isSpeaking,
+    recordingTime,
+    speechDetected,
+    isProcessing,
+    audioStream,
+    recordedAudio,
+    isPlayingRecording,
+    isRecordingPaused,
+    hasRecording,
+    lastScore,
+    recognizedText,
+    missingWords,
+    pronunciationScoreObject,
+    speakText,
+    playRecordedAudio,
+    togglePauseRecordedAudio,
+    cleanup,
+    clearRecording,
+    handleMicClick: controllerHandleMicClick,
+    handleStopRecording: controllerHandleStopRecording,
+    handleDeleteRecording: controllerHandleDeleteRecording,
+    handlePracticeComplete: baseHandlePracticeComplete,
+  } = pronunciationController;
+
+  // Hooks
+  const {
+    currentSentenceIndex,
+    sentenceScores,
+    completedSentences,
+    overallScore,
+    progressPercentage,
+    isConversationCompleted,
+    isCurrentSentenceCompleted,
+    completeSentence,
+    retrySentence,
+    resetConversation,
+    setCurrentSentenceIndex,
+  } = useConversationProgress(
+    lessonNumber ? parseInt(lessonNumber) : 0,
+    lesson?.sentences?.length || 0
+  );
+
+  const {
+    videoRef,
+    isPlaying,
+    currentTime,
+    duration,
+    isLoading: videoLoading,
+    hasError: videoError,
+    currentQuality,
+    play,
+    pause,
+    replay,
+    setVideoSource,
+    seekTo,
+    setVolume,
+    toggleMute,
+    formatTime,
+    getProgress,
+    handleLoadedMetadata,
+    handleTimeUpdate,
+    handlePlay,
+    handlePause,
+    handleEnded,
+    handleError,
+    handleLoadStart,
+    handleCanPlay,
+  } = useHLSVideoPlayer();
+
+  const {
+    isMobile,
+    viewportHeight,
+    setupMobileAccessibility,
+    enableVideoAudio,
+    mobileSpeakSentence,
+    playMobileRecordedAudioSlow,
+    showMobileAlert,
+    hideMobileAlert,
+  } = useMobileFeatures();
+
+  // Subtitle synchronization hook
+  const {
+    currentSubtitle,
+    subtitles,
+    isSubtitlesActive,
+    isLoading: subtitleLoading,
+    error: subtitleError,
+    loadSubtitlesForSentence,
+    clearSubtitles,
+  } = useSubtitleSync(videoRef);
+
+  // Enhanced video play function with user interaction check
+  const safeVideoPlay = async () => {
+    if (!videoRef.current) {
+      return false;
+    }
+
+    try {
+      // Try to play immediately - browser will buffer while playing
+      await videoRef.current.play();
+      return true;
+    } catch (error) {
+      // If immediate play fails, wait a bit and try again
+      if (error.name === "NotAllowedError" || error.name === "AbortError") {
+        try {
+          // Wait for video to be ready (reduced timeout for faster response)
+          await new Promise((resolve) => {
+            const timeout = setTimeout(resolve, 1500); // 1.5 seconds
+
+            const onCanPlay = () => {
+              clearTimeout(timeout);
+              videoRef.current?.removeEventListener("canplay", onCanPlay);
+              resolve();
+            };
+
+            videoRef.current?.addEventListener("canplay", onCanPlay);
+          });
+
+          // Try to play again
+          if (videoRef.current) {
+            await videoRef.current.play();
+            return true;
+          }
+        } catch (retryError) {
+          return false;
+        }
+      } else if (error.name === "NotSupportedError") {
+        console.error("Video format not supported");
+        return false;
+      }
+    }
+
+    return false;
+  };
+
+  // Load lessons data
+  useEffect(() => {
+    const loadLessonsData = async () => {
+      try {
+        const response = await fetch("/assets/pronounceData.json");
+        const data = await response.json();
+        setLessonsData(data);
+      } catch (error) {
+        console.error("Error loading lessons data:", error);
+      }
+    };
+
+    loadLessonsData();
+  }, []);
+
+  // Load lesson data
+  useEffect(() => {
+    if (!lessonsData) return;
+
+    const currentLesson = lessonsData.lessons.find(
+      (l) => l.lessonNumber === parseInt(lessonNumber)
+    );
+
+    if (currentLesson) {
+      setLesson(currentLesson);
+      setCurrentLesson(currentLesson.lessonNumber);
+    } else {
+      console.error("Lesson not found with number:", lessonNumber);
+    }
+    setIsLoading(false);
+  }, [lessonNumber, lessonsData, setCurrentLesson]);
+
+  // Retry video loading function
+  const retryVideoLoad = useCallback(
+    (videoSrc, attempts = 0) => {
+      const maxAttempts = 3;
+      if (attempts >= maxAttempts) {
+        console.error(
+          `Failed to load video after ${maxAttempts} attempts:`,
+          videoSrc
+        );
+        return;
+      }
+
+      setVideoLoadAttempts(attempts + 1);
+      setVideoSource(videoSrc);
+
+      // Set a timeout to retry if video doesn't load
+      setTimeout(() => {
+        if (videoRef.current && videoRef.current.readyState < 3) {
+          retryVideoLoad(videoSrc, attempts + 1);
+        }
+      }, 3000);
+    },
+    [setVideoSource]
+  );
+
+  // Set video source when lesson changes - only reload when necessary
+  useEffect(() => {
+    if (lesson && lesson.sentences && lesson.sentences[currentSentenceIndex]) {
+      const currentSentence = lesson.sentences[currentSentenceIndex];
+      if (
+        currentSentence.videoSrc &&
+        currentSentence.videoSrc !== currentVideoSrc
+      ) {
+        setCurrentVideoSrc(currentSentence.videoSrc);
+        setVideoLoadAttempts(0);
+        retryVideoLoad(currentSentence.videoSrc);
+
+        // Load subtitles for current sentence (mobile only)
+        if (isMobile) {
+          loadSubtitlesForSentence(
+            parseInt(lessonNumber),
+            currentSentenceIndex + 1 // SRT files are 1-based
+          );
+        }
+      }
+    }
+  }, [
+    lesson,
+    currentSentenceIndex,
+    currentVideoSrc,
+    retryVideoLoad,
+    isMobile,
+    lessonNumber,
+    loadSubtitlesForSentence,
+  ]);
+
+  // Separate effect for handling initial overlay (not tied to video loading)
+  useEffect(() => {
+    if (!hasUserInteracted && !userInteractionRef.current && isMobile) {
+      setShowIOSAudioOverlay(true);
+    }
+  }, [hasUserInteracted, userInteractionRef, isMobile]);
+
+  // Auto-play effect for subsequent sentences (after first interaction)
+  useEffect(() => {
+    // Only auto-play if user has interacted and not on first sentence
+    if (
+      (hasUserInteracted || userInteractionRef.current) &&
+      currentSentenceIndex > 0 &&
+      currentVideoSrc
+    ) {
+      let mounted = true;
+
+      const attemptAutoPlay = async () => {
+        if (!mounted || !videoRef.current) return;
+
+        try {
+          // Small delay to allow video source to be set
+          await new Promise((resolve) => setTimeout(resolve, 400));
+
+          if (!mounted || !videoRef.current) return;
+
+          // Ensure video is unmuted
+          videoRef.current.muted = false;
+
+          // Try to play - browser will buffer while playing
+          await videoRef.current.play();
+        } catch (error) {
+          if (!mounted) return;
+
+          // If immediate play fails, wait a bit and try again
+          if (error.name === "NotAllowedError" || error.name === "AbortError") {
+            try {
+              // Wait up to 1.5 seconds for video to be ready
+              await new Promise((resolve) => {
+                const timeout = setTimeout(resolve, 1500);
+
+                const onCanPlay = () => {
+                  clearTimeout(timeout);
+                  if (videoRef.current) {
+                    videoRef.current.removeEventListener("canplay", onCanPlay);
+                  }
+                  resolve();
+                };
+
+                if (videoRef.current) {
+                  videoRef.current.addEventListener("canplay", onCanPlay);
+                }
+              });
+
+              if (mounted && videoRef.current) {
+                await videoRef.current.play();
+              }
+            } catch (retryError) {
+              // Silent fail - video will play when user clicks
+            }
+          }
+        }
+      };
+
+      attemptAutoPlay();
+
+      return () => {
+        mounted = false;
+      };
+    }
+  }, [
+    currentVideoSrc,
+    currentSentenceIndex,
+    hasUserInteracted,
+    userInteractionRef,
+    videoRef,
+  ]);
+
+  // Handle lesson completion and update progress
+  const handleLessonCompleted = useCallback(
+    (finalScore) => {
+      if (lesson && lessonsData) {
+        // Mark lesson as completed
+        completeLesson(lesson.lessonNumber);
+        setLessonCompletedStatus(true);
+      }
+    },
+    [lesson, lessonsData, completeLesson]
+  );
+
+  // Set up global lesson completion callback
+  useEffect(() => {
+    window.onLessonCompleted = handleLessonCompleted;
+    return () => {
+      window.onLessonCompleted = null;
+    };
+  }, [handleLessonCompleted]);
+
+  // Show completion card only when lesson is actually completed
+  useEffect(() => {
+    if (
+      isConversationCompleted &&
+      currentSentenceIndex >= lesson?.sentences?.length - 1
+    ) {
+      setShowCompletionCard(true);
+
+      // Trigger lesson completion handling
+      if (lesson) {
+        handleLessonCompleted(overallScore);
+      }
+    } else {
+      setShowCompletionCard(false);
+    }
+  }, [
+    isConversationCompleted,
+    currentSentenceIndex,
+    lesson,
+    overallScore,
+    handleLessonCompleted,
+  ]);
+
+  // Detect if we're on mobile and set initial overlay state
+  useEffect(() => {
+    if (isMobile && !hasUserInteracted && !userInteractionRef.current) {
+      // On mobile, show the overlay if user hasn't interacted yet
+      setShowIOSAudioOverlay(true);
+    } else if (!isMobile && !hasUserInteracted) {
+      // On desktop, user interaction might not be required
+      setHasUserInteracted(true);
+      userInteractionRef.current = true;
+    }
+  }, [isMobile, hasUserInteracted]);
+
+  const handleBackClick = () => {
+    navigate(`/pronounce/home`);
+  };
+
+  const handleVideoEnd = () => {
+    setShowReplayOverlay(true);
+    // Show practice overlay immediately (no delay)
+    openPracticeOverlay(currentSentence);
+  };
+
+  const handleReplayClick = async () => {
+    setShowReplayOverlay(false);
+    closePracticeOverlay(); // Hide practice overlay when replaying
+
+    // Reset video to beginning and play immediately
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      try {
+        await videoRef.current.play();
+      } catch (error) {
+        console.error("Video replay error:", error);
+      }
+    }
+  };
+
+  const handlePracticeClose = () => {
+    closePracticeOverlay();
+  };
+
+  const handleListenClick = () => {
+    // Mark user interaction
+    if (!hasUserInteracted) {
+      setHasUserInteracted(true);
+      userInteractionRef.current = true;
+    }
+
+    if (lesson && lesson.sentences && lesson.sentences[currentSentenceIndex]) {
+      const currentSentence = lesson.sentences[currentSentenceIndex];
+      if (isMobile) {
+        mobileSpeakSentence(currentSentence.english);
+      } else {
+        speakText(currentSentence.english);
+      }
+    }
+  };
+
+  const handleListenSlowClick = () => {
+    // Mark user interaction
+    if (!hasUserInteracted) {
+      setHasUserInteracted(true);
+      userInteractionRef.current = true;
+    }
+
+    if (lesson && lesson.sentences && lesson.sentences[currentSentenceIndex]) {
+      const currentSentence = lesson.sentences[currentSentenceIndex];
+      if (isMobile) {
+        mobileSpeakSentence(currentSentence.english, true);
+      } else {
+        speakText(currentSentence.english, 0.7, 1);
+      }
+    }
+  };
+
+  const handleMicClick = () => {
+    // Mark user interaction
+    if (!hasUserInteracted) {
+      setHasUserInteracted(true);
+      userInteractionRef.current = true;
+    }
+    controllerHandleMicClick();
+  };
+
+  const handleRetry = async () => {
+    setShowResultsDialog(false);
+
+    // Explicit cleanup before retry
+    await cleanup();
+
+    clearRecording();
+    resetPracticeResults();
+    // Reset practice overlay states
+    closePracticeOverlay();
+    // Keep replay overlay visible - don't hide it on retry
+    // Reset the sentence for retry
+    retrySentence();
+    // Longer delay to ensure cleanup completed
+    setTimeout(() => {
+      openPracticeOverlay(
+        lesson?.sentences?.[currentSentenceIndex] || currentSentence
+      );
+    }, 800);
+  };
+
+  const handleContinue = async () => {
+    setShowResultsDialog(false);
+    clearRecording();
+
+    if (lesson && lesson.sentences && lesson.sentences[currentSentenceIndex]) {
+      const currentSentence = lesson.sentences[currentSentenceIndex];
+      completeSentence(currentSentenceIndex, lastScore);
+
+      // Move to next sentence if not completed
+      // Note: completeSentence already updates currentSentenceIndex internally
+      if (currentSentenceIndex < lesson.sentences.length - 1) {
+        const nextSentenceIndex = currentSentenceIndex + 1;
+
+        // Hide practice overlay and replay overlay
+        closePracticeOverlay();
+        setShowReplayOverlay(false);
+
+        // Load subtitles for next sentence (mobile only)
+        if (isMobile) {
+          loadSubtitlesForSentence(
+            parseInt(lessonNumber),
+            nextSentenceIndex + 1 // SRT files are 1-based
+          );
+        }
+
+        // Auto-play is now handled by the useEffect that watches currentSentenceIndex
+      }
+    }
+  };
+
+  const handleBackToLessons = () => {
+    // Save progress before navigating back
+    if (lesson) {
+      // Progress is already saved through the ProgressContext
+    }
+    navigate(`/pronounce/home`);
+  };
+
+  const showAlertMessage = (message) => {
+    setAlertMessage(message);
+    setShowAlert(true);
+  };
+
+  const hideAlert = () => {
+    setShowAlert(false);
+  };
+
+  const handleIOSAudioClick = async () => {
+    // Mark interaction and hide overlay
+    setHasUserInteracted(true);
+    userInteractionRef.current = true;
+    setShowIOSAudioOverlay(false);
+
+    // Prepare video and play immediately
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+      videoRef.current.volume = 1.0;
+      // Play video immediately after clicking overlay
+      try {
+        await videoRef.current.play();
+      } catch (error) {
+        console.error("Video play error:", error);
+      }
+    }
+  };
+
+  const handlePracticeComplete = async (results) => {
+    // Handle results from MobilePracticeOverlay
+    // The overlay calls onComplete after user stops recording and processing completes
+    const normalized = baseHandlePracticeComplete(results);
+    setShowResultsDialog(true);
+    // Keep practice overlay visible so results dialog can show
+  };
+
+  /**
+   * Handle stop recording from overlay - process and show results.
+   */
+  const handleStopRecording = async () => {
+    const result = await controllerHandleStopRecording();
+    if (result) {
+      // Show results dialog after processing
+      setShowResultsDialog(true);
+    }
+  };
+
+  const handleVideoClick = async () => {
+    // Don't allow video interaction when replay overlay is visible
+    if (showReplayOverlay) {
+      return;
+    }
+
+    // Don't allow play if initial overlay is still showing
+    if (showIOSAudioOverlay) {
+      return; // User must click overlay first
+    }
+
+    if (!hasUserInteracted) {
+      // Show overlay instead of playing
+      setShowIOSAudioOverlay(true);
+      return;
+    }
+
+    // Now handle normal play/pause
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        await safeVideoPlay();
+      } else {
+        pause();
+      }
+    }
+  };
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      cleanup();
+    };
+  }, [cleanup]);
+
+  if (isLoading) {
+    return (
+      <div className="mobile-video-container">
+        <div className="mobile-loading show">
+          <div className="spinner"></div>
+          <span>Loading practice session...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (!lesson) {
+    return (
+      <div className="mobile-video-container">
+        <div className="mobile-loading show">
+          <span>
+            Lesson {lessonNumber} not found.
+            <br />
+            <button
+              onClick={() => navigate("/")}
+              style={{
+                marginTop: "20px",
+                padding: "10px 20px",
+                background: "var(--sna-primary)",
+                color: "white",
+                border: "none",
+                borderRadius: "5px",
+                cursor: "pointer",
+              }}
+            >
+              Back to Home
+            </button>
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  const currentSentence = lesson.sentences[currentSentenceIndex];
+
+  // Calculate video progress percentage for current sentence
+  const videoProgress = duration > 0 ? (currentTime / duration) * 100 : 0;
+
+  return (
+    <>
+      <div className="mobile-video-container">
+        {/* Dynamic Progress Bar */}
+        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-md z-10">
+          <ProgressBar
+            currentSentenceIndex={currentSentenceIndex}
+            sentenceProgress={videoProgress}
+            sentences={lesson.sentences}
+            completedSentences={completedSentences.size}
+            isMobile={true}
+          />
+        </div>
+
+        {/* Back Button */}
+        <MobileBackButton onBackClick={handleBackClick} />
+
+        {/* Video Element */}
+        <div className="video-container-wrapper">
+          <video
+            ref={videoRef}
+            className="mobile-lesson-video"
+            playsInline
+            preload="metadata"
+            muted={!hasUserInteracted}
+            webkit-playsinline="true"
+            x-webkit-airplay="allow"
+            crossOrigin="anonymous"
+            disablePictureInPicture={false}
+            onClick={handleVideoClick}
+            onLoadedMetadata={handleLoadedMetadata}
+            onTimeUpdate={handleTimeUpdate}
+            onPlay={handlePlay}
+            onPause={handlePause}
+            onEnded={handleVideoEnd}
+            onError={(e) => {
+              console.error("Video error event:", e.target.error);
+              if (e.target.error) {
+                console.error("Error code:", e.target.error.code);
+                console.error("Error message:", e.target.error.message);
+              }
+              handleError(e);
+            }}
+            onLoadStart={handleLoadStart}
+            onCanPlay={handleCanPlay}
+          >
+            {currentSentence?.videoSrc && (
+              <source
+                src={currentSentence.videoSrc}
+                type="application/x-mpegURL"
+              />
+            )}
+            Your browser does not support the video tag.
+          </video>
+
+          {/* Video Error Indicator */}
+          {videoError && (
+            <div className="video-error-overlay">
+              <i className="fas fa-exclamation-triangle"></i>
+              <span>Video failed to load. Please check your connection.</span>
+            </div>
+          )}
+        </div>
+
+        {/* Initial Tap to Start Overlay with Dark Backdrop */}
+        {showIOSAudioOverlay && (
+          <div
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[1040] cursor-pointer"
+            onClick={handleIOSAudioClick}
+          >
+            <div className="w-full px-5" onClick={(e) => e.stopPropagation()}>
+              <div
+                className="mx-auto max-w-[320px] sm:max-w-[360px] bg-white/90 backdrop-blur-md rounded-[20px] p-5 text-center shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
+                onClick={handleIOSAudioClick}
+              >
+                <div className="flex items-center justify-center gap-2 text-gray-800 mb-1.5">
+                  <FaMicrophone className="w-6 h-6" />
+                  <h2 className="text-xl font-extrabold">
+                    Pronunciation Practice
+                  </h2>
+                </div>
+                <p className="text-gray-600 text-[13px] leading-relaxed">
+                  Tap to watch this video and learn
+                  <br />
+                  how to pronounce correctly
+                </p>
+                <div className="mt-4 flex items-start gap-2.5 text-left">
+                  <FaRegLightbulb className="w-5 h-5 text-[#ffc515] mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-600 text-[13px] leading-relaxed">
+                    After watching, you'll practice speaking the sentence
+                    yourself
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Subtitle Container - Only shows SRT subtitles */}
+        <MobileSubtitleContainer
+          currentSubtitle={currentSubtitle}
+          showVideoSubtitles={true}
+          isMobile={isMobile}
+        />
+
+        {/* Replay Overlay - hide when alert or results dialog is shown */}
+        <MobileReplayOverlay
+          show={showReplayOverlay && !showAlert && !showResultsDialog}
+          onReplayClick={handleReplayClick}
+        />
+
+        {/* Practice Overlay - Pure UI driven by controller */}
+        <MobilePracticeOverlay
+          show={showPracticeOverlay}
+          sentence={practiceSentence || currentSentence}
+          isRecording={isRecording}
+          recordingTime={recordingTime}
+          speechDetected={speechDetected}
+          isProcessing={isProcessing}
+          audioStream={audioStream}
+          pronunciationScore={pronunciationScoreObject}
+          transcription={recognizedText}
+          hasRecording={hasRecording}
+          onClose={handlePracticeClose}
+          onComplete={handlePracticeComplete}
+          onListenClick={handleListenClick}
+          onListenSlowClick={handleListenSlowClick}
+          onMicClick={handleMicClick}
+          onStopRecording={handleStopRecording}
+          onPlayRecording={playRecordedAudio}
+          onDeleteRecording={controllerHandleDeleteRecording}
+          onShowAlert={showAlertMessage}
+        />
+
+        {/* Completion Card */}
+        <MobileCompletionCard
+          show={showCompletionCard}
+          overallScore={overallScore}
+          onBackToLessons={handleBackToLessons}
+          lessonCompleted={lessonCompletedStatus}
+        />
+
+        {/* Alert Container */}
+        <MobileAlertContainer
+          show={showAlert}
+          message={alertMessage}
+          onClose={hideAlert}
+        />
+      </div>
+
+      {/* Mobile Results Dialog - Outside mobile-video-container */}
+      {showResultsDialog && (
+        <MobileResultsDialog
+          show={showResultsDialog}
+          score={lastScore}
+          recognizedText={recognizedText}
+          missingWords={missingWords}
+          isProcessing={isProcessing}
+          targetText={lesson?.sentences?.[currentSentenceIndex]?.english}
+          recordedBlob={recordedAudio}
+          onRetry={handleRetry}
+          onContinue={handleContinue}
+          onClose={() => setShowResultsDialog(false)}
+          onListenClick={handleListenClick}
+          onPlayRecording={playRecordedAudio}
+          isPlayingRecording={isPlayingRecording}
+          isRecordingPaused={isRecordingPaused}
+          togglePauseRecordedAudio={togglePauseRecordedAudio}
+        />
+      )}
+    </>
+  );
+};
