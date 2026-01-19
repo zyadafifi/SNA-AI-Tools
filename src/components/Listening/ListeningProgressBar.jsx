@@ -21,26 +21,16 @@ const ListeningProgressBar = ({
     <div className="w-full bg-white/80 backdrop-blur-sm rounded-xl px-3 py-2.5 shadow-lg sm:rounded-[24px] sm:px-6 sm:py-5">
       {/* Top Section - Part Progress */}
       <div className="mb-2 sm:mb-4">
-        <div className="flex items-center justify-center gap-2 mb-2 sm:gap-3 sm:mb-3">
-          {/* Checkmark Icon */}
-          <div className="w-8 h-8 rounded-full bg-[#ffc515] flex items-center justify-center shadow-md sm:w-12 sm:h-12">
-            <svg
-              className="w-4 h-4 text-white sm:w-7 sm:h-7"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={3}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M5 13l4 4L19 7"
-              />
+        <div className="flex items-center justify-start gap-2 mb-2 sm:gap-3 sm:mb-3">
+          {/* Back Button */}
+          <button className="w-8 h-8 rounded-full bg-[#ffc515] border border-white text-white flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 active:scale-100 sm:w-9 sm:h-9">
+            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 320 512" height="14" width="14" className="sm:w-4 sm:h-4" xmlns="http://www.w3.org/2000/svg">
+              <path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path>
             </svg>
-          </div>
+          </button>
           
           {/* Part Text */}
-          <h2 className="text-lg font-bold text-gray-700 sm:text-3xl">
+          <h2 className="text-base font-bold text-gray-700 sm:text-lg">
             Part <span className="text-gray-800">{currentPart + 1}</span> / {totalParts}
           </h2>
         </div>
