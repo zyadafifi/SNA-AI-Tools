@@ -18,14 +18,14 @@ const ListeningProgressBar = ({
   }));
 
   return (
-    <div className="w-full bg-white/80 backdrop-blur-sm rounded-[24px] px-6 py-5 shadow-lg">
+    <div className="w-full bg-white/80 backdrop-blur-sm rounded-xl px-3 py-2.5 shadow-lg sm:rounded-[24px] sm:px-6 sm:py-5">
       {/* Top Section - Part Progress */}
-      <div className="mb-4">
-        <div className="flex items-center justify-center gap-3 mb-3">
+      <div className="mb-2 sm:mb-4">
+        <div className="flex items-center justify-center gap-2 mb-2 sm:gap-3 sm:mb-3">
           {/* Checkmark Icon */}
-          <div className="w-12 h-12 rounded-full bg-[#ffc515] flex items-center justify-center shadow-md">
+          <div className="w-8 h-8 rounded-full bg-[#ffc515] flex items-center justify-center shadow-md sm:w-12 sm:h-12">
             <svg
-              className="w-7 h-7 text-white"
+              className="w-4 h-4 text-white sm:w-7 sm:h-7"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -40,13 +40,13 @@ const ListeningProgressBar = ({
           </div>
           
           {/* Part Text */}
-          <h2 className="text-3xl font-bold text-gray-700">
+          <h2 className="text-lg font-bold text-gray-700 sm:text-3xl">
             Part <span className="text-gray-800">{currentPart + 1}</span> / {totalParts}
           </h2>
         </div>
 
         {/* Horizontal Progress Bar */}
-        <div className="relative w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+        <div className="relative w-full h-2 bg-gray-200 rounded-full overflow-hidden sm:h-3">
           <div
             className="h-full bg-gradient-to-r from-[#ffc515] via-[#ffd84d] to-[#ffc515] rounded-full transition-all duration-500 ease-out"
             style={{ width: `${progressPercentage}%` }}
@@ -55,17 +55,17 @@ const ListeningProgressBar = ({
       </div>
 
       {/* Middle Section - Stage Progression Flow */}
-      <div className="mb-4">
-        <div className="flex items-center justify-center gap-2 flex-wrap">
+      <div className="mb-2 sm:mb-4">
+        <div className="flex items-center justify-center gap-1 flex-wrap sm:gap-2">
           {stages.map((stage, index) => (
             <React.Fragment key={stage.id}>
               {/* Stage Indicator */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 sm:gap-2">
                 {stage.status === "completed" ? (
                   // Completed - Checkmark only (no circle)
-                  <div className="flex items-center gap-1.5">
+                  <div className="flex items-center gap-1 sm:gap-1.5">
                     <svg
-                      className="w-5 h-5 text-[#ffc515]"
+                      className="w-4 h-4 text-[#ffc515] sm:w-5 sm:h-5"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -75,20 +75,20 @@ const ListeningProgressBar = ({
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-sm font-medium text-gray-600">{stage.name}</span>
+                    <span className="text-xs font-medium text-gray-600 sm:text-sm">{stage.name}</span>
                   </div>
                 ) : stage.status === "current" ? (
                   // Current - Golden circle with white number
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-7 h-7 rounded-full bg-[#ffc515] flex items-center justify-center shadow-sm">
-                      <span className="text-white font-bold text-sm">{stage.id}</span>
+                  <div className="flex items-center gap-1 sm:gap-1.5">
+                    <div className="w-5 h-5 rounded-full bg-[#ffc515] flex items-center justify-center shadow-sm sm:w-7 sm:h-7">
+                      <span className="text-white font-bold text-xs sm:text-sm">{stage.id}</span>
                     </div>
-                    <span className="text-sm font-bold text-gray-800">{stage.name}</span>
+                    <span className="text-xs font-bold text-gray-800 sm:text-sm">{stage.name}</span>
                   </div>
                 ) : (
                   // Pending - Light gray text
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-sm font-medium text-gray-400">{stage.name}</span>
+                  <div className="flex items-center gap-1 sm:gap-1.5">
+                    <span className="text-xs font-medium text-gray-400 sm:text-sm">{stage.name}</span>
                   </div>
                 )}
               </div>
@@ -96,7 +96,7 @@ const ListeningProgressBar = ({
               {/* Arrow Separator (not after last stage) */}
               {index < stages.length - 1 && (
                 <svg
-                  className="w-4 h-4 text-gray-400"
+                  className="w-3 h-3 text-gray-400 sm:w-4 sm:h-4"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -116,7 +116,7 @@ const ListeningProgressBar = ({
 
       {/* Bottom Section - Current Stage Detail */}
       <div className="text-center">
-        <p className="text-2xl text-gray-600">
+        <p className="text-base text-gray-600 sm:text-2xl">
           Stage: <span className="text-gray-500">({currentStage} / {stages.length})</span>
         </p>
       </div>
