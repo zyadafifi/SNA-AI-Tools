@@ -5,6 +5,7 @@ import FeedbackDisplay from "../FeedbackDisplay";
 import MobilePracticeOverlay from "../../Pronunce/mobile/MobilePracticeOverlay";
 import MobileResultsDialog from "../../Pronunce/mobile/MobileResultsDialog";
 import MobileReplayOverlay from "../../Pronunce/mobile/MobileReplayOverlay";
+import ListeningProgressBar from "../ListeningProgressBar";
 import soundEffects from "../../../utils/soundEffects";
 import dataService from "../../../services/dataService";
 import useSubtitleSync from "../../../hooks/useSubtitleSync";
@@ -23,6 +24,8 @@ const DictationPhase = ({
   onAnswerUpdate,
   lessonId,
   questionId,
+  currentPart = 0,
+  totalParts = 5,
 }) => {
   // Helper functions to extract English text from subtitles
   const hasArabic = (s = "") => /[\u0600-\u06FF]/.test(s);
@@ -780,12 +783,30 @@ const DictationPhase = ({
     );
   }
 
+  // Determine current stage for progress bar
+  const getCurrentStage = () => {
+    if (showPronResultsDialog) return 5; // Result (pronunciation)
+    if (showPracticeOverlay) return 4; // Speaking
+    if (showFeedback) return 3; // Result (dictation)
+    return 2; // Dictation
+  };
+
   // Mobile overlay container in question mode
   if (isQuestionMode && !isDesktop) {
     return (
       <>
         <div className="fixed inset-0 z-[1050] pointer-events-none">
           <div className="relative h-full w-full flex flex-col justify-end">
+            {/* Progress Bar - Always visible at top */}
+            <div className="absolute top-5 left-1/2 -translate-x-1/2 w-[90%] max-w-[500px] z-[1060] pointer-events-auto">
+              <ListeningProgressBar
+                currentPart={currentPart}
+                totalParts={totalParts}
+                currentStage={getCurrentStage()}
+                stageNames={["Listening", "Dictation", "Result", "Speaking", "Result"]}
+              />
+            </div>
+
             {!showFeedback && (
               <div className="pointer-events-auto px-4 pb-6">
                 {/* Header pill */}

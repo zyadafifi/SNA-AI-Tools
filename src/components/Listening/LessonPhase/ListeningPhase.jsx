@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaHeadphonesSimple, FaRegLightbulb } from "react-icons/fa6";
-import ProgressBar from "../../Pronunce/ProgressBar";
+import ListeningProgressBar from "../ListeningProgressBar";
 import { useHLSVideoPlayer } from "../../../hooks/useHLSVideoPlayer";
 import useSubtitleSync from "../../../hooks/useSubtitleSync";
 import MobileSubtitleContainer from "../MobileSubtitleContainer";
@@ -279,12 +279,11 @@ const ListeningPhase = ({
             paddingTop: "env(safe-area-inset-top)",
           }}
         >
-          <ProgressBar
-            currentSentenceIndex={currentStepIndex}
-            sentenceProgress={videoProgress}
-            sentences={Array.from({ length: Math.max(0, totalSteps) })}
-            completedSentences={currentStepIndex}
-            isMobile={isMobile}
+          <ListeningProgressBar
+            currentPart={currentStepIndex}
+            totalParts={totalSteps}
+            currentStage={1}
+            stageNames={["Listening", "Dictation", "Result", "Speaking", "Result"]}
           />
         </div>
 

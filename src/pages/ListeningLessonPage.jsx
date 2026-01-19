@@ -217,6 +217,8 @@ export const ListeningLessonPage = () => {
             onAnswerUpdate={handleAnswerUpdate}
             lessonId={lesson?.id}
             questionId={questions[currentQuestionIndex]?.id}
+            currentPart={currentQuestionIndex}
+            totalParts={questions.length}
           />
         )}
 
@@ -315,6 +317,8 @@ export const ListeningLessonPage = () => {
               onAnswerUpdate={handleAnswerUpdate}
               lessonId={lesson?.id}
               questionId={questions[currentQuestionIndex]?.id}
+              currentPart={currentQuestionIndex}
+              totalParts={questions.length}
             />
           )}
         </div>
