@@ -290,6 +290,7 @@ const ListeningPhase = ({
             totalParts={totalSteps}
             currentStage={1}
             stageNames={["Listening", "Dictation", "Result", "Speaking", "Result"]}
+            onBackClick={handleBackClick}
           />
         </div>
 

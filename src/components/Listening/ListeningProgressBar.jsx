@@ -5,6 +5,7 @@ const ListeningProgressBar = ({
   totalParts = 5,
   currentStage = 1,
   stageNames = ["Listening", "Dictation", "Result", "Speaking", "Result"],
+  onBackClick,
 }) => {
   // Calculate overall progress percentage based on current part
   // Progress should fill proportionally: Part 2/5 = ~40% (since we're on part 2, we've completed part 1)
@@ -23,7 +24,10 @@ const ListeningProgressBar = ({
       <div className="mb-2 sm:mb-4">
         <div className="flex items-center justify-start gap-2 mb-2 sm:gap-3 sm:mb-3">
           {/* Back Button */}
-          <button className="w-8 h-8 rounded-full bg-[#ffc515] border border-white text-white flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 active:scale-100 sm:w-9 sm:h-9">
+          <button 
+            onClick={onBackClick}
+            className="w-8 h-8 rounded-full bg-[#ffc515] border border-white text-white flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 active:scale-100 sm:w-9 sm:h-9"
+          >
             <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 320 512" height="14" width="14" className="sm:w-4 sm:h-4" xmlns="http://www.w3.org/2000/svg">
               <path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path>
             </svg>
