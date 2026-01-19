@@ -3,7 +3,7 @@
     {
       "id": 1,
       "slug": "lesson-1",
-      "title": "Basic Pronunciation - Vowel Sounds",
+      "title": "Basic Pronunciation",
       "description": "Master fundamental English vowel sounds with clear pronunciation practice",
       "duration": "12 minutes",
       "difficulty": "Beginner",
@@ -39,7 +39,7 @@
     {
       "id": 2,
       "slug": "lesson-2",
-      "title": "Common Phrases and Greetings",
+      "title": "Common Phrases",
       "description": "Learn essential English greetings and everyday phrases for daily communication",
       "duration": "15 minutes",
       "difficulty": "Beginner",

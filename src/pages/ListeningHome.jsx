@@ -6,6 +6,7 @@ import { BiLoaderCircle } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
 import Xarrow, { Xwrapper, useXarrow } from "react-xarrows";
 import HeaderBanner from "../components/Pronunce/HeaderBanner";
+import StartingMessage from "../components/Pronunce/StartingMessage/StartingMessage";
 import {
   FaBook,
   FaGraduationCap,
@@ -54,6 +55,9 @@ export const ListeningHome = () => {
     height: 0,
   });
   const [elementsReady, setElementsReady] = useState(false);
+  const [showStartingMessage, setShowStartingMessage] = useState(false);
+  const [selectedLesson, setSelectedLesson] = useState(null);
+  const [messagePosition, setMessagePosition] = useState({ top: 0, left: 0 });
 
   // Avatar URLs for lesson circles (same as pronunciation tool)
   const avatarUrls = [
@@ -215,6 +219,7 @@ export const ListeningHome = () => {
             locked: !isUnlocked,
             avatar: avatarUrls[(lesson.id - 1) % avatarUrls.length],
             description: lesson.description,
+            arabicDescription: lesson.arabicDescription || lesson.description || "تعلم اللغة الإنجليزية", // Fallback to description or default Arabic text
           };
         })
       );
@@ -229,15 +234,58 @@ export const ListeningHome = () => {
     }
   };
 
-  // Handle lesson click
+  // Handle lesson click - show starting message
   const handleLessonClick = useCallback(
-    (lesson) => {
+    (lesson, event) => {
       if (!lesson.locked) {
-        navigate(`/listening/lesson/${lesson.id}`);
+        // Get the lesson node position
+        const lessonNode = document.getElementById(
+          `lesson-circle-${lesson.id}`
+        );
+        if (lessonNode) {
+          const rect = lessonNode.getBoundingClientRect();
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+          const scrollLeft =
+            window.pageXOffset || document.documentElement.scrollLeft;
+
+          // Calculate position: center below the lesson circle
+          const cardWidth = 360; // Width of the card
+          const padding = 20; // Padding from viewport edges
+          const top = rect.bottom + scrollTop + 20; // 20px below the circle
+          let left = rect.left + scrollLeft + rect.width / 2 - cardWidth / 2;
+
+          // Ensure card doesn't go off-screen
+          const viewportWidth = window.innerWidth;
+          const minLeft = padding;
+          const maxLeft = viewportWidth - cardWidth - padding;
+
+          // Clamp left position to keep card within bounds
+          left = Math.max(minLeft, Math.min(left, maxLeft));
+
+          setMessagePosition({ top: `${top}px`, left: `${left}px` });
+        }
+
+        setSelectedLesson(lesson);
+        setShowStartingMessage(true);
       }
     },
-    [navigate]
+    []
   );
+
+  // Handle start/restart lesson
+  const handleStartLesson = useCallback(() => {
+    if (selectedLesson) {
+      setShowStartingMessage(false);
+      navigate(`/listening/lesson/${selectedLesson.id}`);
+    }
+  }, [selectedLesson, navigate]);
+
+  // Handle close starting message
+  const handleCloseStartingMessage = useCallback(() => {
+    setShowStartingMessage(false);
+    setSelectedLesson(null);
+  }, []);
 
   // Load lessons on mount
   useEffect(() => {
@@ -385,7 +433,7 @@ export const ListeningHome = () => {
                       top: `${position.y}px`,
                       position: "absolute",
                     }}
-                    onClick={() => handleLessonClick(lesson)}
+                    onClick={(e) => handleLessonClick(lesson, e)}
                   >
                     {/* Lesson Circle with unique ID for Xarrow */}
                     <div
@@ -402,7 +450,7 @@ export const ListeningHome = () => {
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        handleLessonClick(lesson);
+                        handleLessonClick(lesson, e);
                       }}
                     >
                       {lesson.avatar ? (
@@ -491,6 +539,19 @@ export const ListeningHome = () => {
           </div>
         </Xwrapper>
       </main>
+
+      {/* Starting Message Card */}
+      {selectedLesson && (
+        <StartingMessage
+          show={showStartingMessage}
+          lesson={selectedLesson}
+          lessonCompleted={selectedLesson.completed}
+          lastScore={selectedLesson.progress}
+          onStart={handleStartLesson}
+          onClose={handleCloseStartingMessage}
+          position={messagePosition}
+        />
+      )}
     </div>
   );
 };
