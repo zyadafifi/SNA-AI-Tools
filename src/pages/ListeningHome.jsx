@@ -1,48 +1,75 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import dataService from "../services/dataService";
-import LessonCard from "../components/Listening/LessonCard";
-import TipsPanel from "../components/Listening/TipsPanel";
 import useProgress from "../hooks/useProgress";
-import snaLogo from "/assets/images/sna logo.png";
+import { BiLoaderCircle } from "react-icons/bi";
+import { IoIosArrowForward } from "react-icons/io";
+import Xarrow, { Xwrapper, useXarrow } from "react-xarrows";
+import HeaderBanner from "../components/Pronunce/HeaderBanner";
+import {
+  FaBook,
+  FaGraduationCap,
+  FaLanguage,
+  FaMicrophone,
+  FaHeadphones,
+  FaChalkboardTeacher,
+  FaUserGraduate,
+  FaBookOpen,
+  FaSpellCheck,
+  FaVolumeUp,
+  FaPencilAlt,
+  FaClipboard,
+  FaPen,
+  FaEdit,
+  FaFileAlt,
+  FaRuler,
+  FaHighlighter,
+  FaMarker,
+  FaStickyNote,
+  FaPaperPlane,
+  FaLightbulb,
+  FaBrain,
+  FaAward,
+  FaTrophy,
+  FaStar,
+} from "react-icons/fa";
+
+import "../pages/PronounceHomePage.css";
+
 export const ListeningHome = () => {
-  const [showTips, setShowTips] = useState(false);
+  const navigate = useNavigate();
+  const updateXarrow = useXarrow();
+  const { getProgress, refreshProgress } = useProgress();
+  
   const [lessons, setLessons] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState({
     completed: 0,
     total: 0,
     percentage: 0,
   });
+  const [lessonPositions, setLessonPositions] = useState([]);
+  const [containerDimensions, setContainerDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
+  const [elementsReady, setElementsReady] = useState(false);
 
-  const lessonsPerPage = 20;
-  const { getProgress, refreshProgress } = useProgress();
+  // Avatar URLs for lesson circles (same as pronunciation tool)
+  const avatarUrls = [
+    "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&h=150&fit=crop&crop=face",
+  ];
 
-  useEffect(() => {
-    loadLessons();
-    updateProgress().catch(console.error);
-  }, [currentPage]);
-
-  // Refresh progress when component becomes visible (returning from lesson)
-  useEffect(() => {
-    const handleVisibilityChange = async () => {
-      if (!document.hidden) {
-        updateProgress();
-        // Reload lessons to get updated progress
-        const pageLessons = await dataService.getLessons(
-          currentPage,
-          lessonsPerPage
-        );
-        setLessons(pageLessons || []);
-      }
-    };
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    return () =>
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-  }, [currentPage]);
-
+  // Update progress
   const updateProgress = async () => {
     if (refreshProgress) {
       await refreshProgress();
@@ -52,22 +79,148 @@ export const ListeningHome = () => {
     }
   };
 
+  // Calculate path positions - adapted from PronounceHomePage
+  const calculatePathPositions = useCallback((lessonsToRender) => {
+    const positions = [];
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const containerWidth = isMobile
+      ? window.innerWidth
+      : Math.min(window.innerWidth, 1200);
+    const containerHeight = Math.max(800, lessonsToRender.length * 200);
+
+    const finalContainerWidth = Math.max(300, containerWidth);
+    const finalContainerHeight = Math.max(800, containerHeight);
+
+    let padding, availableWidth, availableHeight;
+
+    if (isMobile) {
+      padding = 120;
+      availableWidth = finalContainerWidth - padding * 2;
+      availableHeight = finalContainerHeight - padding * 2;
+    } else {
+      padding = 120;
+      availableWidth = finalContainerWidth - padding * 2;
+      availableHeight = finalContainerHeight - padding * 2;
+    }
+
+    lessonsToRender.forEach((lesson, index) => {
+      if (isMobile) {
+        const y =
+          padding +
+          (index / Math.max(lessonsToRender.length - 1, 1)) * availableHeight;
+        const centerX = finalContainerWidth / 2;
+        const lessonInfoWidth = 180;
+        const circleRadius = 35;
+        const safeMargin = 20;
+
+        const maxSafeOffset = Math.min(
+          finalContainerWidth / 2 - lessonInfoWidth - circleRadius - safeMargin,
+          finalContainerWidth * 0.2
+        );
+
+        const offsetDistance = Math.max(maxSafeOffset, 40);
+
+        let x, side;
+        if (index % 2 === 0) {
+          x = centerX - offsetDistance;
+          side = "left";
+        } else {
+          x = centerX + offsetDistance;
+          side = "right";
+        }
+
+        x = Math.max(
+          circleRadius + safeMargin,
+          Math.min(finalContainerWidth - circleRadius - safeMargin, x)
+        );
+
+        positions.push({ x, y, side });
+      } else {
+        const progress = index / Math.max(lessonsToRender.length - 1, 1);
+        const baseY = padding + progress * availableHeight;
+        const centerX = finalContainerWidth / 2 + 30;
+        const maxOffset = Math.min(availableWidth * 0.22, 160);
+
+        let xOffset;
+        const cycle = index % 4;
+
+        switch (cycle) {
+          case 0:
+            xOffset = -maxOffset * 0.3;
+            break;
+          case 1:
+            xOffset = maxOffset * 0.4;
+            break;
+          case 2:
+            xOffset = -maxOffset * 0.2;
+            break;
+          case 3:
+            xOffset = maxOffset * 0.3;
+            break;
+          default:
+            xOffset = 0;
+        }
+
+        const x = centerX + xOffset;
+        const y = baseY;
+
+        const lessonWidth = 300;
+        const margin = 20;
+
+        const finalX = Math.max(
+          margin,
+          Math.min(finalContainerWidth - lessonWidth - margin, x)
+        );
+        const finalY = Math.max(
+          padding,
+          Math.min(finalContainerHeight - padding, y)
+        );
+
+        positions.push({
+          x: finalX,
+          y: finalY,
+          side: finalX < finalContainerWidth / 2 ? "left" : "right",
+        });
+      }
+    });
+
+    return {
+      positions,
+      containerWidth: finalContainerWidth,
+      containerHeight: finalContainerHeight,
+    };
+  }, []);
+
+  // Load lessons
   const loadLessons = async () => {
     setLoading(true);
     try {
-      const pageLessons = await dataService.getLessons(
-        currentPage,
-        lessonsPerPage
+      // Load all lessons at once (no pagination)
+      const allLessons = await dataService.getLessons(1, 100); // Get up to 100 lessons
+      
+      // Transform lessons to match pronunciation format
+      const transformedLessons = await Promise.all(
+        (allLessons || []).map(async (lesson, index) => {
+          const isUnlocked = await dataService.isLessonUnlocked(lesson.id);
+          const isCompleted = lesson.isCompleted || lesson.progress === 100;
+          
+          return {
+            id: lesson.id,
+            lessonNumber: lesson.id, // Map id to lessonNumber for consistency
+            title: lesson.title,
+            subtitle: lesson.description || `Learn ${lesson.title.toLowerCase()}`,
+            level: index === 0 ? "Beginner" : index < 3 ? "Elementary" : "Intermediate",
+            progress: lesson.progress || 0,
+            completed: isCompleted,
+            locked: !isUnlocked,
+            avatar: avatarUrls[(lesson.id - 1) % avatarUrls.length],
+            description: lesson.description,
+          };
+        })
       );
-      const totalLessons = await dataService.getTotalLessons();
 
-      if (currentPage === 1) {
-        setLessons(pageLessons || []);
-      } else {
-        setLessons((prev) => [...(prev || []), ...(pageLessons || [])]);
-      }
-
-      setHasMore(currentPage * lessonsPerPage < totalLessons);
+      setLessons(transformedLessons);
+      await updateProgress();
     } catch (error) {
       console.error("Error loading lessons:", error);
       setLessons([]);
@@ -76,134 +229,268 @@ export const ListeningHome = () => {
     }
   };
 
-  const handleLoadMore = () => {
-    setCurrentPage((prev) => prev + 1);
-  };
+  // Handle lesson click
+  const handleLessonClick = useCallback(
+    (lesson) => {
+      if (!lesson.locked) {
+        navigate(`/listening/lesson/${lesson.id}`);
+      }
+    },
+    [navigate]
+  );
+
+  // Load lessons on mount
+  useEffect(() => {
+    loadLessons();
+  }, []);
+
+  // Refresh progress when component becomes visible
+  useEffect(() => {
+    const handleVisibilityChange = async () => {
+      if (!document.hidden) {
+        await loadLessons();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () =>
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }, []);
+
+  // Calculate lesson positions when lessons change
+  useEffect(() => {
+    if (lessons.length === 0) return;
+
+    const { positions, containerWidth, containerHeight } =
+      calculatePathPositions(lessons);
+    setLessonPositions(positions);
+    setContainerDimensions({ width: containerWidth, height: containerHeight });
+
+    setTimeout(() => {
+      updateXarrow();
+    }, 500);
+  }, [lessons, calculatePathPositions, updateXarrow]);
+
+  // Update Xarrows when positions change
+  useEffect(() => {
+    if (lessonPositions.length > 0) {
+      setTimeout(() => {
+        const allElementsExist = lessons.every((lesson) =>
+          document.getElementById(`lesson-circle-${lesson.id}`)
+        );
+
+        if (allElementsExist) {
+          setElementsReady(true);
+          updateXarrow();
+        } else {
+          setTimeout(() => {
+            setElementsReady(true);
+            updateXarrow();
+          }, 200);
+        }
+      }, 600);
+    }
+  }, [lessonPositions, updateXarrow, lessons]);
+
+  // Add window resize listener
+  useEffect(() => {
+    const handleResize = () => {
+      setTimeout(() => {
+        updateXarrow();
+      }, 100);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [updateXarrow]);
+
+  if (loading) {
+    return (
+      <div className="home-page">
+        <main className="main-container">
+          <div className="loading-indicator">
+            <BiLoaderCircle
+              size={43}
+              className={"animate-spin text-[var(--primary-color)]"}
+            />
+            <p>Loading lessons...</p>
+          </div>
+        </main>
+      </div>
+    );
+  }
 
   return (
-    <div className="gradient-background">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        {/* Hero Section */}
-        <div className="relative">
-          <div className="bg-gradient-to-br from-[#f8edd6]/30 via-[#d3995e]/20 to-[#96b0c0]/25 rounded-xl sm:rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-10 xl:p-14 pb-20 sm:pb-24 lg:pb-28 xl:pb-32 mb-6 sm:mb-8 lg:mb-10 shadow-[0_4px_20px_rgba(0,0,0,0.08)] text-center">
-            <div className="flex justify-center mb-2 sm:mb-3 lg:mb-4">
-              <img
-                src={snaLogo}
-                alt="SNA Academy"
-                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto"
-              />
-            </div>
-            <p className="text-sm sm:text-base lg:text-lg text-[#64748b] mb-0 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
-              Master fundamental English vowel
-              <br /> sounds with clear pronunciation
-            </p>
-
-            {/* PROGRESS – two cards with pill-shaped inner edges and square outer edges */}
-            <div
-              className="
-        absolute left-1/2 -translate-x-1/2 bottom-3 sm:bottom-4 lg:bottom-6
-        w-screen sm:w-[calc(100%+3rem)] lg:w-[calc(100%+5rem)] xl:w-[calc(100%+8rem)]
-        max-w-none px-0 sm:px-0
-      "
-              aria-hidden="true"
-            >
-              <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
-                {/* LEFT card — pill-shaped on right (inner edge), square on left (outer edge) */}
-                <div
-                  className="
-            bg-white rounded-r-full rounded-l-xl sm:rounded-l-2xl
-            border-t border-b border-r border-slate-200
-            shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)]
-            h-12 sm:h-14 lg:h-16 xl:h-18 flex items-center justify-end px-4 sm:px-6 lg:px-8 xl:px-12
-          "
-                  aria-label={`${progress.completed} completed lessons`}
-                >
-                  <div className="text-center leading-tight flex flex-col justify-center">
-                    <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-slate-700">
-                      {progress.completed}
-                    </div>
-                    <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
-                      completed
-                    </div>
-                  </div>
-                </div>
-
-                {/* RIGHT card — pill-shaped on left (inner edge), square on right (outer edge) */}
-                <div
-                  className="
-            bg-white rounded-l-full rounded-r-xl sm:rounded-r-2xl
-            border-t border-b border-l border-slate-200
-            shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)]
-            h-12 sm:h-14 lg:h-16 xl:h-18 flex items-center justify-start px-4 sm:px-6 lg:px-8 xl:px-12
-          "
-                  aria-label={`${
-                    progress.total - progress.completed
-                  } remaining lessons`}
-                >
-                  <div className="text-center leading-tight flex flex-col justify-center">
-                    <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-slate-700">
-                      {progress.total - progress.completed}
-                    </div>
-                    <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
-                      Remaining
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* /PROGRESS */}
-          </div>
-        </div>
-
-        {/* Lessons Grid */}
-        <div className="lessons-section">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#FDCB3E] mb-6 sm:mb-8 text-center drop-shadow-sm">
-            Available Lessons
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10 p-0">
-            {lessons.map((lesson, index) => (
-              <div
-                key={lesson.id}
-                className="animate-fade-in-up h-full flex"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <LessonCard
-                  lesson={lesson}
-                  isUnlocked={lesson.isUnlocked}
-                  isCompleted={lesson.isCompleted}
-                  progress={lesson.progress}
-                  className="h-full w-full"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Load More Button */}
-        {hasMore && (
-          <div className="text-center mt-8 sm:mt-12">
-            <button
-              onClick={handleLoadMore}
-              disabled={loading}
-              className="bg-[#FDCB3E] text-white font-semibold px-6 sm:px-10 py-3 sm:py-4 rounded-xl border-none cursor-pointer transition-all duration-300 text-sm sm:text-base shadow-[0_4px_12px_rgba(253,203,62,0.3)] hover:bg-[#ffd84d] hover:shadow-[0_6px_16px_rgba(253,203,62,0.4)] disabled:bg-gray-400 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none"
-            >
-              {loading ? (
-                <div className="flex items-center gap-3">
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  <span>Loading...</span>
-                </div>
-              ) : (
-                <div className="flex items-center gap-3">
-                  <span>Load More Lessons</span>
-                </div>
-              )}
-            </button>
-          </div>
-        )}
+    <div className="home-page">
+      {/* Header Banner - Mobile Only */}
+      <div className="block md:hidden">
+        <HeaderBanner lessons={lessons} />
       </div>
 
-      {/* Tips Panel */}
-      <TipsPanel isOpen={showTips} onClose={() => setShowTips(false)} />
+      {/* Educational Background Icons */}
+      <div className="educational-background">
+        <FaBook className="bg-icon icon-1" />
+        <FaGraduationCap className="bg-icon icon-2" />
+        <FaLanguage className="bg-icon icon-3" />
+        <FaMicrophone className="bg-icon icon-4" />
+        <FaHeadphones className="bg-icon icon-5" />
+        <FaChalkboardTeacher className="bg-icon icon-6" />
+        <FaUserGraduate className="bg-icon icon-7" />
+        <FaBookOpen className="bg-icon icon-8" />
+        <FaSpellCheck className="bg-icon icon-9" />
+        <FaVolumeUp className="bg-icon icon-10" />
+        <FaPencilAlt className="bg-icon icon-11" />
+        <FaClipboard className="bg-icon icon-12" />
+        <FaPen className="bg-icon icon-13" />
+        <FaEdit className="bg-icon icon-14" />
+        <FaFileAlt className="bg-icon icon-15" />
+        <FaRuler className="bg-icon icon-16" />
+        <FaHighlighter className="bg-icon icon-17" />
+        <FaStickyNote className="bg-icon icon-18" />
+        <FaLightbulb className="bg-icon icon-19" />
+        <FaBrain className="bg-icon icon-20" />
+        <FaAward className="bg-icon icon-21" />
+        <FaTrophy className="bg-icon icon-22" />
+        <FaStar className="bg-icon icon-23" />
+        <FaBook className="bg-icon icon-24" />
+        <FaGraduationCap className="bg-icon icon-25" />
+      </div>
+
+      <main className="main-container">
+        <Xwrapper>
+          <div
+            className="lessons-path-container"
+            style={{
+              height: `${containerDimensions.height}px`,
+              width: `${containerDimensions.width}px`,
+            }}
+          >
+            {/* Render lesson nodes */}
+            {lessons.map((lesson, index) => {
+              const position = lessonPositions[index];
+              if (!position) return null;
+
+              const isCurrent =
+                !lesson.locked &&
+                !lesson.completed &&
+                index === lessons.findIndex((l) => !l.completed && !l.locked);
+
+              return (
+                <div key={lesson.id}>
+                  <div
+                    className={`lesson-node ${position.side}`}
+                    data-lesson-id={lesson.id}
+                    style={{
+                      left: `${position.x}px`,
+                      top: `${position.y}px`,
+                      position: "absolute",
+                    }}
+                    onClick={() => handleLessonClick(lesson)}
+                  >
+                    {/* Lesson Circle with unique ID for Xarrow */}
+                    <div
+                      id={`lesson-circle-${lesson.id}`}
+                      className={`lesson-circle ${
+                        lesson.completed
+                          ? "completed"
+                          : lesson.progress > 0
+                          ? "in-progress"
+                          : lesson.locked
+                          ? "locked"
+                          : "current"
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleLessonClick(lesson);
+                      }}
+                    >
+                      {lesson.avatar ? (
+                        <div
+                          className="lesson-avatar"
+                          style={{ backgroundImage: `url(${lesson.avatar})` }}
+                        />
+                      ) : (
+                        <i className="lesson-icon fas fa-book-open" />
+                      )}
+
+                      {lesson.completed && (
+                        <div className="lesson-checkmark">
+                          <svg
+                            stroke="currentColor"
+                            fill="currentColor"
+                            strokeWidth="0"
+                            viewBox="0 0 512 512"
+                            height="20px"
+                            width="20px"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                          </svg>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Lesson Info */}
+                    <div
+                      className={`lesson-info ${lesson.locked ? "locked" : ""}`}
+                    >
+                      <div className="lesson-content">
+                        <h3 className="lesson-title">
+                          Lesson {lesson.lessonNumber}
+                        </h3>
+                        <p className="lesson-subtitle">{lesson.title}</p>
+                      </div>
+                      <svg
+                        className="lesson-arrow"
+                        stroke="currentColor"
+                        fill="currentColor"
+                        strokeWidth="0"
+                        viewBox="0 0 512 512"
+                        height="30px"
+                        width="30px"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* Xarrow connections between lessons */}
+            {elementsReady &&
+              lessonPositions.length > 0 &&
+              lessons.map((lesson, index) => {
+                if (index >= lessons.length - 1) return null;
+
+                const nextLesson = lessons[index + 1];
+                const isPathCompleted = lesson.progress >= 100;
+
+                return (
+                  <Xarrow
+                    key={`arrow-${lesson.id}-${nextLesson.id}`}
+                    start={`lesson-circle-${lesson.id}`}
+                    end={`lesson-circle-${nextLesson.id}`}
+                    startAnchor="bottom"
+                    endAnchor="top"
+                    strokeWidth={2}
+                    color={isPathCompleted ? "#ffc515" : "#9ca3af"}
+                    dashness={
+                      isPathCompleted
+                        ? false
+                        : { strokeLen: 8, nonStrokeLen: 4 }
+                    }
+                    curveness={0.8}
+                    path="smooth"
+                    showHead={false}
+                  />
+                );
+              })}
+          </div>
+        </Xwrapper>
+      </main>
     </div>
   );
 };
