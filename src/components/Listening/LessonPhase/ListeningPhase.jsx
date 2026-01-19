@@ -27,6 +27,7 @@ const ListeningPhase = ({
   const [isMobile, setIsMobile] = useState(false);
   const [showFocusOverlay, setShowFocusOverlay] = useState(true);
   const [showIOSAudioOverlay, setShowIOSAudioOverlay] = useState(false);
+  const [videoEnded, setVideoEnded] = useState(false);
 
   // Use HLS video player hook for quality management
   const {
@@ -82,6 +83,7 @@ const ListeningPhase = ({
     const src = videoSrc || lesson?.videoSrc;
     if (src) {
       setVideoSource(src);
+      setVideoEnded(false); // Reset ended state when video source changes (new part)
     }
   }, [videoSrc, lesson, setVideoSource]);
 
@@ -209,6 +211,7 @@ const ListeningPhase = ({
     userInteractionRef.current = true;
     setShowIOSAudioOverlay(false);
     setShowFocusOverlay(false);
+    setVideoEnded(false); // Reset ended state when starting new video
 
     // Play video
     if (videoRef.current) {
@@ -222,6 +225,7 @@ const ListeningPhase = ({
 
   // Handle video end - auto-transition to dictation (mobile only)
   const handleVideoEnd = useCallback(() => {
+    setVideoEnded(true);
     if (!isDesktop && isMobile) {
       setTimeout(() => {
         onComplete();
@@ -262,15 +266,17 @@ const ListeningPhase = ({
           paddingRight: "env(safe-area-inset-right)",
         }}
       >
-        {/* Back Button */}
-        <div className="absolute top-20 left-5 z-[100000]">
-          <button
-            onClick={handleBackClick}
-            className="w-11 h-11 rounded-full bg-[#ffc515] border border-white text-white flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 active:scale-100"
-          >
-            <FaChevronLeft size={20} />
-          </button>
-        </div>
+        {/* Back Button - Hide when user has played the video */}
+        {!hasUserInteracted && (
+          <div className="absolute top-20 left-5 z-[100000]">
+            <button
+              onClick={handleBackClick}
+              className="w-11 h-11 rounded-full bg-[#ffc515] border border-white text-white flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 active:scale-100"
+            >
+              <FaChevronLeft size={20} />
+            </button>
+          </div>
+        )}
 
         {/* Top Progress Bar */}
         <div
