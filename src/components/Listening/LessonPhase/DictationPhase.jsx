@@ -820,59 +820,58 @@ const DictationPhase = ({
 
             {!showFeedback && (
               <div className="pointer-events-auto px-4 pb-6">
-                {/* Header pill */}
-                <div className="flex justify-center mb-3">
-                  <div className="bg-white/50 backdrop-blur-sm text-gray-800 rounded-[24px] px-6 py-3 shadow-[0_2px_12px_rgba(0,0,0,0.15)] inline-flex items-center gap-3">
-                    <div>
-                      <div className="text-gray-800 font-extrabold text-lg leading-none text-center">
-                        Your Turn!
-                      </div>
-                      <div className="text-gray-600 text-sm mt-1">
-                        <span className="text-lg">🖊️</span> type what you heard
-                      </div>
+                {/* Unified white rounded card container */}
+                <div className="bg-white rounded-[24px] px-6 py-5 shadow-[0_4px_20px_rgba(0,0,0,0.12)]">
+                  {/* Title section */}
+                  <div className="text-center mb-4">
+                    <div className="text-[#ffc515] font-extrabold text-lg leading-none mb-1">
+                      Your Turn!
+                    </div>
+                    <div className="text-gray-600 text-sm">
+                      Type the sentence you heard.
                     </div>
                   </div>
-                </div>
 
-                {/* Textarea */}
-                <div className="-ml-6 w-[105%] max-w-none">
-                  <div className="bg-white/50 backdrop-blur-sm border border-white/60 shadow-[0_4px_20px_rgba(0,0,0,0.12)] rounded-l-[24px] rounded-r-[999px] overflow-hidden">
-                    <textarea
-                      value={userAnswer}
-                      onChange={(e) => setUserAnswer(e.target.value)}
-                      placeholder="type the sentence you heard here........"
-                      className="w-full min-h-[88px] bg-transparent text-black-800 placeholder-black px-5 py-3.5 focus:outline-none resize-none"
-                      spellCheck="false"
-                      autoCorrect="off"
-                      autoCapitalize="off"
-                      data-gramm="false"
-                      data-gramm_editor="false"
-                      data-enable-grammarly="false"
-                    />
+                  {/* Textarea */}
+                  <div className="mb-5">
+                    <div className="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
+                      <textarea
+                        value={userAnswer}
+                        onChange={(e) => setUserAnswer(e.target.value)}
+                        placeholder="Type what you heard here..."
+                        className="w-full max-h-[55px] bg-transparent text-gray-800 placeholder-gray-400 px-5 py-3.5 focus:outline-none resize-none"
+                        spellCheck="false"
+                        autoCorrect="off"
+                        autoCapitalize="off"
+                        data-gramm="false"
+                        data-gramm_editor="false"
+                        data-enable-grammarly="false"
+                      />
+                    </div>
                   </div>
-                </div>
 
-                {/* Buttons */}
-                <div className="mt-5 flex items-center justify-center gap-3">
-                  <button
-                    onClick={() => {
-                      setShowFeedback(false);
-                      setFeedback(null);
-                      onListenAgain && onListenAgain();
-                    }}
-                    className="px-6 py-3 rounded-full border border-white text-white bg-transparent hover:bg-white/10 transition-all"
-                  >
-                    Listen again
-                  </button>
-                  <button
-                    onClick={handleAnswerSubmit}
-                    disabled={!userAnswer.trim()}
-                    className={`${
-                      !userAnswer.trim() ? "opacity-50 cursor-not-allowed" : ""
-                    } px-8 py-3 rounded-full font-semibold text-gray-900 bg-[#ffc515] hover:bg-[#ffd84d] transition-all shadow-[0_10px_20px_rgba(255,197,21,0.35)]`}
-                  >
-                    Next
-                  </button>
+                  {/* Buttons */}
+                  <div className="flex items-center justify-center gap-3">
+                    <button
+                      onClick={() => {
+                        setShowFeedback(false);
+                        setFeedback(null);
+                        onListenAgain && onListenAgain();
+                      }}
+                      className="px-6 py-3 rounded-full border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 transition-all"
+                    >
+                      Listen again
+                    </button>
+                    <button
+                      onClick={handleAnswerSubmit}
+                      disabled={!userAnswer.trim()}
+                      className={`${
+                        !userAnswer.trim() ? "opacity-50 cursor-not-allowed" : ""
+                      } px-8 py-3 rounded-full font-semibold text-white bg-[#ffc515] hover:bg-[#ffd84d] transition-all shadow-[0_10px_20px_rgba(255,197,21,0.35)]`}
+                    >
+                      Next
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
