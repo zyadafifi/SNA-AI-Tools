@@ -370,7 +370,7 @@ const ListeningPhase = ({
         {(!hasUserInteracted || showIOSAudioOverlay) && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[1040]">
             <div className="w-full px-5">
-              <div className="mx-auto max-w-[380px] sm:max-w-[400px] bg-white rounded-[20px] p-5 text-center shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+              <div className="mx-auto max-w-[380px] sm:max-w-[400px] bg-white/80 rounded-[20px] p-5 text-center shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
                 {/* Title with Headphone Icon */}
                 <div className="flex items-center justify-center gap-2 text-gray-800 mb-1">
                   <svg
@@ -442,7 +442,7 @@ const ListeningPhase = ({
                 <div className="flex justify-end">
                   <button
                     onClick={handleUserInteraction}
-                    className="text-gray-500 text-[13px] flex items-center gap-1 hover:text-gray-700 transition-colors cursor-pointer"
+                    className="text-gray-500 text-[13px] flex items-center gap-1 hover:text-gray-700 transition-colors cursor-pointer mt-2"
                   >
                     <span>Skip intro</span>
                     <svg
