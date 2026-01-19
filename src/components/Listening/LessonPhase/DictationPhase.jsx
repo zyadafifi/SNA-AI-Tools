@@ -584,11 +584,30 @@ const DictationPhase = ({
     }
   }, [isQuestionMode, showPracticeOverlay, showPronResultsDialog]);
 
+  // Determine current stage for progress bar
+  const getCurrentStage = () => {
+    if (showPronResultsDialog) return 5; // Result (pronunciation)
+    if (showPracticeOverlay) return 4; // Speaking
+    if (showFeedback) return 3; // Result (dictation)
+    return 2; // Dictation
+  };
+
   // While pronunciation overlay OR results dialog is open, FULLY UNMOUNT dictation UI
   // This prevents any stacking/z-index/click issues
   if (isQuestionMode && (showPracticeOverlay || showPronResultsDialog)) {
     return (
       <>
+        {/* Progress Bar - Always visible at top, even during practice overlay */}
+        {!isDesktop && (
+          <div className="fixed top-5 left-1/2 -translate-x-1/2 w-[90%] max-w-[500px] z-[1060]">
+            <ListeningProgressBar
+              currentPart={currentPart}
+              totalParts={totalParts}
+              currentStage={getCurrentStage()}
+              stageNames={["Listening", "Dictation", "Result", "Speaking", "Result"]}
+            />
+          </div>
+        )}
         {pronunciationOverlayEl}
         {pronunciationResultsDialogEl}
       </>
@@ -782,14 +801,6 @@ const DictationPhase = ({
       </div>
     );
   }
-
-  // Determine current stage for progress bar
-  const getCurrentStage = () => {
-    if (showPronResultsDialog) return 5; // Result (pronunciation)
-    if (showPracticeOverlay) return 4; // Speaking
-    if (showFeedback) return 3; // Result (dictation)
-    return 2; // Dictation
-  };
 
   // Mobile overlay container in question mode
   if (isQuestionMode && !isDesktop) {
