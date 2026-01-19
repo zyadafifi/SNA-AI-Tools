@@ -366,29 +366,98 @@ const ListeningPhase = ({
           </div>
         )}
 
-        {/* Initial Tap to Start Overlay */}
+        {/* Initial Listening Phase Modal */}
         {(!hasUserInteracted || showIOSAudioOverlay) && (
-          <div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[1040] cursor-pointer"
-            onClick={handleUserInteraction}
-          >
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[1040]">
             <div className="w-full px-5">
-              <div className="mx-auto max-w-[320px] sm:max-w-[360px] bg-white/90 backdrop-blur-md rounded-[20px] p-5 text-center shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
-                <div className="flex items-center justify-center gap-2 text-gray-800 mb-1.5">
-                  <FaHeadphonesSimple className="w-6 h-6" />
+              <div className="mx-auto max-w-[380px] sm:max-w-[400px] bg-white rounded-[20px] p-5 text-center shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+                {/* Title with Headphone Icon */}
+                <div className="flex items-center justify-center gap-2 text-gray-800 mb-1">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    strokeWidth="0"
+                    viewBox="0 0 512 512"
+                    className="w-6 h-6"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M256 80C141.1 80 48 173.1 48 288V392c0 13.3-10.7 24-24 24s-24-10.7-24-24V288C0 146.6 114.6 32 256 32s256 114.6 256 256V392c0 13.3-10.7 24-24 24s-24-10.7-24-24V288c0-114.9-93.1-208-208-208zM80 352c0-35.3 28.7-64 64-64h16c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H144c-35.3 0-64-28.7-64-64V352zm288-64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H352c-17.7 0-32-14.3-32-32V320c0-17.7 14.3-32 32-32h16z"></path>
+                  </svg>
                   <h2 className="text-xl font-extrabold">Listening Phase</h2>
                 </div>
-                <p className="text-gray-600 text-[13px] leading-relaxed">
-                  Tap To Watch this video to improve your
-                  <br />
-                  listening skills
-                </p>
-                <div className="mt-4 flex items-start gap-2.5 text-left">
-                  <FaRegLightbulb className="w-5 h-5 text-[#ffc515] mt-0.5 flex-shrink-0" />
-                  <p className="text-gray-600 text-[13px] leading-relaxed">
-                    After you finish the listening, you will move to the
-                    dictation phase
-                  </p>
+
+                {/* Main Instruction */}
+                <div className="text-left mb-2.5">
+                  <div className="flex items-start gap-2">
+                    
+                    <p className="text-gray-600 text-[13px] leading-relaxed mt-1">
+                      Listen carefully. You'll type what you hear next.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bullet Points */}
+                <div className="text-left mb-3 space-y-1.5">
+                  <div className="flex items-start gap-2">
+                    <span className="text-gray-800 font-semibold text-[13px]">•</span>
+                    <p className="text-gray-600 text-[13px] leading-relaxed">
+                      Replay: 2 times max
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-gray-800 font-semibold text-[13px]">•</span>
+                    <p className="text-gray-600 text-[13px] leading-relaxed">
+                      Focus on the full sentence
+                    </p>
+                  </div>
+                </div>
+
+                {/* Start Listening Button */}
+                <div className="flex justify-center mb-2">
+                  <button
+                    onClick={handleUserInteraction}
+                    className="w-auto min-w-[280px] bg-gradient-to-r from-[#ffc515] via-[#ffd84d] to-[#ffc515] text-gray-800 font-semibold py-2 px-8 rounded-[30px] flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 hover:shadow-[0_6px_16px_rgba(255,197,21,0.4)] active:scale-95"
+                  >
+                  <div className="bg-black rounded-full p-1.5 flex items-center justify-center">
+                    <svg
+                      stroke="#ffc515"
+                      fill="#ffc515"
+                      strokeWidth="0"
+                      viewBox="0 0 448 512"
+                      className="w-4 h-4 pl-0.5"
+                      height="0.5em"
+                      width="0.5em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+                    </svg>
+                  </div>
+                  <span>Start Listening</span>
+                  </button>
+                </div>
+
+                {/* Skip Intro Link */}
+                <div className="flex justify-end">
+                  <button
+                    onClick={handleUserInteraction}
+                    className="text-gray-500 text-[13px] flex items-center gap-1 hover:text-gray-700 transition-colors cursor-pointer"
+                  >
+                    <span>Skip intro</span>
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      strokeWidth="0"
+                      viewBox="0 0 512 512"
+                      className="w-4 h-4"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
