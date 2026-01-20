@@ -12,7 +12,13 @@ const FeedbackDisplay = ({
   if (type !== "writing" || !analysis) return null;
 
   return (
-    <div className="fixed inset-0 z-[1060] flex items-center justify-center">
+    <div 
+      className="fixed inset-0 z-[1060] flex items-center justify-center"
+      style={{
+        paddingTop: 'max(80px, env(safe-area-inset-top, 0px) + 70px)',
+        paddingBottom: 'max(20px, env(safe-area-inset-bottom, 0px) + 20px)',
+      }}
+    >
       <div className="absolute inset-0 " />
       <div className="relative w-[92%] max-w-[360px] bg-white/80 backdrop-blur-md rounded-[24px] px-4 pt-5 pb-4 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
         {/* Header - Simple Score Text */}
