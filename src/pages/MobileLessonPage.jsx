@@ -15,6 +15,7 @@ import MobileCompletionCard from "../components/Pronunce/mobile/MobileCompletion
 import MobileResultsDialog from "../components/Pronunce/mobile/MobileResultsDialog";
 import MobileAlertContainer from "../components/Pronunce/mobile/MobileAlertContainer";
 import { FaMicrophone, FaRegLightbulb } from "react-icons/fa";
+import { FaVolumeHigh } from "react-icons/fa6";
 import "./MobileLessonPage.css";
 
 export const MobileLessonPage = () => {
@@ -733,26 +734,77 @@ export const MobileLessonPage = () => {
           >
             <div className="w-full px-5" onClick={(e) => e.stopPropagation()}>
               <div
-                className="mx-auto max-w-[320px] sm:max-w-[360px] bg-white/90 backdrop-blur-md rounded-[20px] p-5 text-center shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
+                className="mx-auto max-w-[380px] sm:max-w-[420px] bg-white/90 backdrop-blur-md rounded-[20px] p-4 text-center shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
                 onClick={handleIOSAudioClick}
               >
-                <div className="flex items-center justify-center gap-2 text-gray-800 mb-1.5">
-                  <FaMicrophone className="w-6 h-6" />
+                {/* Header with Speaker Icon */}
+                <div className="flex items-center justify-center gap-2 text-gray-800 mb-2.5">
+                  <FaVolumeHigh className="w-6 h-6 text-[#ffc515]" />
                   <h2 className="text-xl font-extrabold">
-                    Pronunciation Practice
+                    Pronounce Tool
                   </h2>
                 </div>
-                <p className="text-gray-600 text-[13px] leading-relaxed">
-                  Tap to watch this video and learn
-                  <br />
-                  how to pronounce correctly
-                </p>
-                <div className="mt-4 flex items-start gap-2.5 text-left">
-                  <FaRegLightbulb className="w-5 h-5 text-[#ffc515] mt-0.5 flex-shrink-0" />
-                  <p className="text-gray-600 text-[13px] leading-relaxed">
-                    After watching, you'll practice speaking the sentence
-                    yourself
-                  </p>
+
+                {/* Bullet Points */}
+                <div className="text-left mb-3 space-y-1.5">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span>
+                    <p className="text-gray-600 text-[13px] leading-tight whitespace-nowrap">
+                      Improve your pronunciation with AI-powered practice
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span>
+                    <p className="text-gray-600 text-[13px] leading-tight whitespace-nowrap">
+                      Perfect your accent and word pronunciation
+                    </p>
+                  </div>
+                </div>
+
+                {/* Start Practicing Button */}
+                <div className="flex justify-center mb-2.5">
+                  <button
+                    onClick={handleIOSAudioClick}
+                    className="px-8 py-2.5 rounded-full bg-gradient-to-r from-[#ffc515] via-[#ffd84d] to-[#ffc515] text-white font-semibold text-sm flex items-center gap-2 shadow-[0_4px_12px_rgba(255,197,21,0.35)] hover:shadow-[0_6px_16px_rgba(255,197,21,0.4)] transition-all duration-300 hover:scale-105 active:scale-100"
+                  >
+                    <div className="bg-black rounded-full p-1.5 flex items-center justify-center">
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        strokeWidth="0"
+                        viewBox="0 0 448 512"
+                        className="w-3 h-3 text-[#ffc515] pl-0.5"
+                        height="0.5em"
+                        width="0.5em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+                      </svg>
+                    </div>
+                    <span>Start Practicing</span>
+                  </button>
+                </div>
+
+                {/* Skip intro Link */}
+                <div className="flex justify-end">
+                  <button
+                    onClick={handleIOSAudioClick}
+                    className="text-gray-500 text-[13px] flex items-center gap-1 hover:text-gray-700 transition-colors cursor-pointer"
+                  >
+                    <span>Skip intro</span>
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      strokeWidth="0"
+                      viewBox="0 0 512 512"
+                      className="w-4 h-4"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
