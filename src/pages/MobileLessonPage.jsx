@@ -734,7 +734,7 @@ export const MobileLessonPage = () => {
           >
             <div className="w-full px-5" onClick={(e) => e.stopPropagation()}>
               <div
-                className="mx-auto max-w-[380px] sm:max-w-[420px] bg-white/90 backdrop-blur-md rounded-[20px] p-4 text-center shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
+                className="mx-auto max-w-[320px] sm:max-w-[360px] bg-white/90 backdrop-blur-md rounded-[20px] p-4 text-center shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
                 onClick={handleIOSAudioClick}
               >
                 {/* Header with Speaker Icon */}
@@ -750,7 +750,7 @@ export const MobileLessonPage = () => {
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0"></span>
                     <p className="text-gray-600 text-[13px] leading-tight whitespace-nowrap">
-                      Improve your pronunciation with AI-powered practice
+                      Improve pronunciation with AI
                     </p>
                   </div>
                   <div className="flex items-center gap-2">
