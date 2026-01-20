@@ -729,13 +729,11 @@ export const MobileLessonPage = () => {
         {/* Initial Tap to Start Overlay with Dark Backdrop */}
         {showIOSAudioOverlay && (
           <div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[1040] cursor-pointer"
-            onClick={handleIOSAudioClick}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[1040]"
           >
             <div className="w-full px-5" onClick={(e) => e.stopPropagation()}>
               <div
                 className="mx-auto max-w-[320px] sm:max-w-[360px] bg-white/90 backdrop-blur-md rounded-[20px] p-4 text-center shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
-                onClick={handleIOSAudioClick}
               >
                 {/* Header with Speaker Icon */}
                 <div className="flex items-center justify-center gap-2 text-gray-800 mb-2.5">
