@@ -11,89 +11,110 @@ const FeedbackDisplay = ({
 
   if (type !== "writing" || !analysis) return null;
 
-  const stats = [
-    { label: "correct", value: analysis.correctWords },
-    { label: "mistakes", value: analysis.mistakes },
-    { label: "missing", value: analysis.missing },
-    { label: "Extra", value: analysis.extra },
-  ];
-
   return (
     <div className="fixed inset-0 z-[1060] flex items-center justify-center">
       <div className="absolute inset-0 " />
       <div className="relative w-[92%] max-w-[360px] bg-white/80 backdrop-blur-md rounded-[24px] px-4 pt-5 pb-4 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-        {/* Top accuracy badge */}
-        <div className="flex justify-center mt-0 mb-3">
-          <div className="w-[110px] h-[110px] rounded-full bg-gradient-to-b from-[#ffd84d] to-[#f5b100] shadow-[0_8px_24px_rgba(255,197,21,0.5)] border-4 border-white flex flex-col items-center justify-center text-[#333]">
-            <div className="text-2xl font-extrabold">{analysis.accuracy}%</div>
-            <div className="text-[11px] leading-none opacity-80 mt-1">
-              Accuracy
-            </div>
+        {/* Header - Simple Score Text */}
+        <div className="text-center mb-3">
+          <div className="text-2xl font-bold text-gray-800">
+            Score: {analysis.accuracy}%
+          </div>
+          <div className="text-sm text-gray-600 mt-1">
+            Let's try again — you're improving!
           </div>
         </div>
-        {lessonTitle && (
-          <div className="flex justify-center mt-5 mb-3">
-            <div className="px-4 py-1 rounded-full bg-slate-200/90 backdrop-blur-sm border border-white shadow-[0_2px_8px_rgba(0,0,0,0.12)] text-[12px] text-slate-800 font-semibold">
-              {lessonTitle}
+
+        {/* Correct Sentence Section */}
+        <div className="bg-white/90 rounded-xl p-3 mb-4">
+          <div className="text-xs text-gray-600 font-semibold mb-1">
+            Correct sentence:
+          </div>
+          <div className="text-sm text-gray-800">
+            {analysis.correctAnswer || correctAnswer}
+          </div>
+        </div>
+
+        {/* Stats - Horizontal Row with Icons */}
+        <div className="flex items-center justify-around bg-white/90 rounded-xl p-4 mb-4">
+          {/* Correct */}
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                className="text-green-600"
+              >
+                <path
+                  d="M5 13l4 4L19 7"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div>
+              <span className="text-xs text-gray-600">Correct: </span>
+              <span className="font-semibold text-green-600">
+                {analysis.correctWords}
+              </span>
             </div>
           </div>
-        )}
-        {/* Stats: same styling as provided pill components */}
-        <div className="space-y-2 mb-3 sm:mb-4 lg:mb-6 -mx-4">
-          <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4 w-full">
-            <div
-              className="bg-white rounded-r-full rounded-l-xl sm:rounded-l-2xl border-t border-b border-r border-slate-200 shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)] h-12 sm:h-14 lg:h-16 xl:h-18 flex items-center justify-end px-4 sm:px-6 lg:px-8 xl:px-12"
-              aria-label={`${stats[0].value} ${stats[0].label}`}
-            >
-              <div className="text-center leading-tight flex flex-col justify-center">
-                <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-green-600">
-                  {stats[0].value}
-                </div>
-                <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
-                  {stats[0].label}
-                </div>
-              </div>
+
+          {/* Wrong */}
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                className="text-red-600"
+              >
+                <path
+                  d="M6 6l12 12M18 6L6 18"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
-            <div
-              className="bg-white rounded-l-full rounded-r-xl sm:rounded-r-2xl border-t border-b border-l border-slate-200 shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)] h-12 sm:h-14 lg:h-16 xl:h-18 flex items-center justify-start px-4 sm:px-6 lg:px-8 xl:px-12"
-              aria-label={`${stats[1].value} ${stats[1].label}`}
-            >
-              <div className="text-center leading-tight flex flex-col justify-center">
-                <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-red-500">
-                  {stats[1].value}
-                </div>
-                <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
-                  {stats[1].label}
-                </div>
-              </div>
+            <div>
+              <span className="text-xs text-gray-600">Wrong: </span>
+              <span className="font-semibold text-red-600">
+                {analysis.mistakes}
+              </span>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4 w-full">
-            <div
-              className="bg-white rounded-r-full rounded-l-xl sm:rounded-l-2xl border-t border-b border-r border-slate-200 shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)] h-12 sm:h-14 lg:h-16 xl:h-18 flex items-center justify-end px-4 sm:px-6 lg:px-8 xl:px-12"
-              aria-label={`${stats[2].value} ${stats[2].label}`}
-            >
-              <div className="text-center leading-tight flex flex-col justify-center">
-                <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-slate-700">
-                  {stats[2].value}
-                </div>
-                <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
-                  {stats[2].label}
-                </div>
-              </div>
+
+          {/* Missing */}
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                className="text-orange-600"
+              >
+                <path
+                  d="M12 9v4m0 4h.01"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
-            <div
-              className="bg-white rounded-l-full rounded-r-xl sm:rounded-r-2xl border-t border-b border-l border-slate-200 shadow-[0_8px_20px_rgba(0,0,0,0.08)] sm:shadow-[0_12px_30px_rgba(0,0,0,0.12)] h-12 sm:h-14 lg:h-16 xl:h-18 flex items-center justify-start px-4 sm:px-6 lg:px-8 xl:px-12"
-              aria-label={`${stats[3].value} ${stats[3].label}`}
-            >
-              <div className="text-center leading-tight flex flex-col justify-center">
-                <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-slate-700">
-                  {stats[3].value}
-                </div>
-                <div className="text-[10px] sm:text-xs lg:text-sm text-slate-500 mt-0.5">
-                  {stats[3].label}
-                </div>
-              </div>
+            <div>
+              <span className="text-xs text-gray-600">Missing: </span>
+              <span className="font-semibold text-orange-600">
+                {analysis.missing}
+              </span>
             </div>
           </div>
         </div>
@@ -102,7 +123,7 @@ const FeedbackDisplay = ({
         <div className="space-y-3">
           <div className="bg-white/90 border border-[#e2e8f0] rounded-[16px] p-3">
             <div className="text-[12px] text-[#475569] mb-2 font-semibold">
-              Your Answer
+              Your Answer:
             </div>
             <div className="text-[13px] text-[#334155]">
               <div
@@ -116,33 +137,15 @@ const FeedbackDisplay = ({
               />
             </div>
           </div>
-          <div className="bg-white/90 border border-[#e2e8f0] rounded-[16px] p-3">
-            <div className="text-[12px] text-[#475569] mb-2 font-semibold">
-              correct answer
-            </div>
-            <style>{`
-              .word-correct{background:#86efac;color:#166534;border-radius:10px;padding:4px 8px;margin:2px;display:inline-block}
-              .word-should-be{background:#86efac;color:#166534;border-radius:10px;padding:4px 8px;margin:2px;display:inline-block}
-              .word-incorrect{background:#fecaca;color:#7f1d1d;border-radius:10px;padding:4px 8px;margin:2px;display:inline-block}
-              .word-extra{background:#fde68a;color:#78350f;border-radius:10px;padding:4px 8px;margin:2px;display:inline-block}
-              .word-missing{background:#fde68a;color:#78350f;border-radius:10px;padding:4px 8px;margin:2px;display:inline-block}
-            `}</style>
-            <div
-              className="text-[13px] text-[#334155] leading-relaxed"
-              dangerouslySetInnerHTML={{
-                __html: analysis.correctAnalysis || analysis.correctAnswer,
-              }}
-            />
-          </div>
         </div>
 
         {/* Actions */}
         <div className="flex items-center justify-center gap-3 mt-4">
           <button
             onClick={onRetry}
-            className="w-[100px] h-[38px] rounded-full border border-[#D1D5DB] text-[#6B7280] text-sm font-medium bg-white hover:bg-gray-50 transition"
+            className="px-8 py-2.5 rounded-full bg-[#FFC107] text-white text-sm font-semibold shadow-[0_4px_12px_rgba(255,193,7,0.35)] hover:bg-[#FFB300] transition"
           >
-            Retry
+            Try Again
           </button>
           <button
             onClick={() => {
@@ -150,11 +153,35 @@ const FeedbackDisplay = ({
                 onNext();
               }
             }}
-            className="w-[100px] h-[38px] rounded-full bg-[#FFC107] text-white text-sm font-semibold shadow-[0_4px_12px_rgba(255,193,7,0.35)] hover:bg-[#FFB300] transition cursor-pointer"
+            className="px-8 py-2.5 rounded-full border border-gray-300 text-gray-700 bg-white text-sm font-medium hover:bg-gray-50 transition flex items-center gap-2"
           >
-            Next
+            <span>Next</span>
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              className="text-gray-700"
+            >
+              <path
+                d="M6 3L6 9M3 6l3 3 3-3"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
         </div>
+
+        {/* Keep word highlighting styles */}
+        <style>{`
+          .word-correct{background:#86efac;color:#166534;border-radius:10px;padding:4px 8px;margin:2px;display:inline-block}
+          .word-should-be{background:#86efac;color:#166534;border-radius:10px;padding:4px 8px;margin:2px;display:inline-block}
+          .word-incorrect{background:#fecaca;color:#7f1d1d;border-radius:10px;padding:4px 8px;margin:2px;display:inline-block}
+          .word-extra{background:#fde68a;color:#78350f;border-radius:10px;padding:4px 8px;margin:2px;display:inline-block}
+          .word-missing{background:#fde68a;color:#78350f;border-radius:10px;padding:4px 8px;margin:2px;display:inline-block}
+        `}</style>
       </div>
     </div>
   );
