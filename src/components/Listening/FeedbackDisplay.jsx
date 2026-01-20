@@ -20,35 +20,35 @@ const FeedbackDisplay = ({
       }}
     >
       <div className="absolute inset-0 " />
-      <div className="relative w-[92%] max-w-[360px] bg-white/80 backdrop-blur-md rounded-[24px] px-4 pt-5 pb-4 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+      <div className="relative w-[92%] max-w-[360px] bg-white/80 backdrop-blur-md rounded-[24px] px-4 pt-4 pb-3 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
         {/* Header - Simple Score Text */}
-        <div className="text-center mb-3">
-          <div className="text-2xl font-bold text-gray-800">
+        <div className="text-center mb-2">
+          <div className="text-xl font-bold text-gray-800">
             Score: {analysis.accuracy}%
           </div>
-          <div className="text-sm text-gray-600 mt-1">
+          <div className="text-xs text-gray-600 mt-0.5">
             Let's try again — you're improving!
           </div>
         </div>
 
         {/* Correct Sentence Section */}
-        <div className="bg-white/90 rounded-xl p-3 mb-4">
-          <div className="text-xs text-gray-600 font-semibold mb-1">
+        <div className="bg-white/90 rounded-xl p-2.5 mb-2.5">
+          <div className="text-[10px] text-gray-600 font-semibold mb-0.5">
             Correct sentence:
           </div>
-          <div className="text-sm text-gray-800">
+          <div className="text-xs text-gray-800">
             {analysis.correctAnswer || correctAnswer}
           </div>
         </div>
 
         {/* Stats - Horizontal Row with Icons */}
-        <div className="flex items-center justify-around bg-white/90 rounded-xl p-4 mb-4">
+        <div className="flex items-center justify-around bg-white/90 rounded-xl p-3 mb-2.5">
           {/* Correct */}
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+          <div className="flex items-center gap-1.5">
+            <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
               <svg
-                width="14"
-                height="14"
+                width="12"
+                height="12"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -63,19 +63,19 @@ const FeedbackDisplay = ({
               </svg>
             </div>
             <div>
-              <span className="text-xs text-gray-600">Correct: </span>
-              <span className="font-semibold text-green-600">
+              <span className="text-[10px] text-gray-600">Correct: </span>
+              <span className="font-semibold text-green-600 text-xs">
                 {analysis.correctWords}
               </span>
             </div>
           </div>
 
           {/* Wrong */}
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center">
+          <div className="flex items-center gap-1.5">
+            <div className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center">
               <svg
-                width="14"
-                height="14"
+                width="12"
+                height="12"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -90,19 +90,19 @@ const FeedbackDisplay = ({
               </svg>
             </div>
             <div>
-              <span className="text-xs text-gray-600">Wrong: </span>
-              <span className="font-semibold text-red-600">
+              <span className="text-[10px] text-gray-600">Wrong: </span>
+              <span className="font-semibold text-red-600 text-xs">
                 {analysis.mistakes}
               </span>
             </div>
           </div>
 
           {/* Missing */}
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center">
+          <div className="flex items-center gap-1.5">
+            <div className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center">
               <svg
-                width="14"
-                height="14"
+                width="12"
+                height="12"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -117,8 +117,8 @@ const FeedbackDisplay = ({
               </svg>
             </div>
             <div>
-              <span className="text-xs text-gray-600">Missing: </span>
-              <span className="font-semibold text-orange-600">
+              <span className="text-[10px] text-gray-600">Missing: </span>
+              <span className="font-semibold text-orange-600 text-xs">
                 {analysis.missing}
               </span>
             </div>
@@ -126,12 +126,12 @@ const FeedbackDisplay = ({
         </div>
 
         {/* Answers */}
-        <div className="space-y-3">
-          <div className="bg-white/90 border border-[#e2e8f0] rounded-[16px] p-3">
-            <div className="text-[12px] text-[#475569] mb-2 font-semibold">
+        <div className="space-y-2">
+          <div className="bg-white/90 border border-[#e2e8f0] rounded-[16px] p-2.5">
+            <div className="text-[11px] text-[#475569] mb-1.5 font-semibold">
               Your Answer:
             </div>
-            <div className="text-[13px] text-[#334155]">
+            <div className="text-xs text-[#334155]">
               <div
                 className="leading-relaxed"
                 dangerouslySetInnerHTML={{
@@ -146,10 +146,10 @@ const FeedbackDisplay = ({
         </div>
 
         {/* Actions */}
-        <div className="flex items-center justify-center gap-3 mt-4">
+        <div className="flex items-center justify-center gap-2 mt-3">
           <button
             onClick={onRetry}
-            className="px-8 py-2.5 rounded-full bg-[#FFC107] text-white text-sm font-semibold shadow-[0_4px_12px_rgba(255,193,7,0.35)] hover:bg-[#FFB300] transition"
+            className="px-6 py-2 rounded-full bg-[#FFC107] text-white text-xs font-semibold shadow-[0_4px_12px_rgba(255,193,7,0.35)] hover:bg-[#FFB300] transition"
           >
             Try Again
           </button>
@@ -159,12 +159,12 @@ const FeedbackDisplay = ({
                 onNext();
               }
             }}
-            className="px-8 py-2.5 rounded-full border border-gray-300 text-gray-700 bg-white text-sm font-medium hover:bg-gray-50 transition flex items-center gap-2"
+            className="px-6 py-2 rounded-full border border-gray-300 text-gray-700 bg-white text-xs font-medium hover:bg-gray-50 transition flex items-center gap-1.5"
           >
             <span>Next</span>
             <svg
-              width="12"
-              height="12"
+              width="10"
+              height="10"
               viewBox="0 0 12 12"
               fill="none"
               className="text-gray-700"
