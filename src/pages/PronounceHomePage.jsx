@@ -343,7 +343,7 @@ export const PronounceHomePage = () => {
 
       // Add avatar URLs for each lesson
       const avatarUrls = [
-        "https://cdn13674550.b-cdn.net/04.jpg",
+        "https://cdn13674550.b-cdn.net/10.jpg",
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
         "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
