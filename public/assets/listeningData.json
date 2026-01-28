@@ -3,7 +3,7 @@
     {
       "id": 1,
       "slug": "lesson-1",
-      "title": "Basic Pronunciation - Vowel Sounds",
+      "title": "Basic Pronunciation",
       "description": "Master fundamental English vowel sounds with clear pronunciation practice",
       "duration": "12 minutes",
       "difficulty": "Beginner",
@@ -11,27 +11,27 @@
       "questions": [
         {
           "id": 1,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The cat sat on the mat."
         },
         {
           "id": 2,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "She likes to read books in the evening."
         },
         {
           "id": 3,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The sun shines bright in the sky."
         },
         {
           "id": 4,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "I have a red car and a blue bike."
         },
         {
           "id": 5,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The dog runs fast in the park."
         }
       ]
@@ -39,7 +39,7 @@
     {
       "id": 2,
       "slug": "lesson-2",
-      "title": "Common Phrases and Greetings",
+      "title": "Common Phrases",
       "description": "Learn essential English greetings and everyday phrases for daily communication",
       "duration": "15 minutes",
       "difficulty": "Beginner",
@@ -47,27 +47,27 @@
       "questions": [
         {
           "id": 1,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "Good morning, how are you today?"
         },
         {
           "id": 2,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "Nice to meet you, my name is Sarah."
         },
         {
           "id": 3,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "Thank you very much for your help."
         },
         {
           "id": 4,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "Excuse me, where is the bathroom?"
         },
         {
           "id": 5,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "Have a great day and see you later!"
         }
       ]
@@ -83,27 +83,27 @@
       "questions": [
         {
           "id": 1,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "It's three thirty in the afternoon."
         },
         {
           "id": 2,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "I have twenty-five books on my shelf."
         },
         {
           "id": 3,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The meeting starts at nine o'clock sharp."
         },
         {
           "id": 4,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "She was born on the fifteenth of March."
         },
         {
           "id": 5,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The train leaves at half past seven."
         }
       ]
@@ -119,27 +119,27 @@
       "questions": [
         {
           "id": 1,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "My grandmother lives with us in the same house."
         },
         {
           "id": 2,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "My brother is older than my sister by two years."
         },
         {
           "id": 3,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "We visit our relatives every Christmas holiday."
         },
         {
           "id": 4,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "My uncle works as a doctor in the hospital."
         },
         {
           "id": 5,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "I have a close relationship with my cousins."
         }
       ]
@@ -155,27 +155,27 @@
       "questions": [
         {
           "id": 1,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "I would like to order the grilled chicken with vegetables."
         },
         {
           "id": 2,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The soup tastes delicious and very hot."
         },
         {
           "id": 3,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "Could you please bring me the dessert menu?"
         },
         {
           "id": 4,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "I'm allergic to nuts and dairy products."
         },
         {
           "id": 5,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The bill comes to forty-five dollars and fifty cents."
         }
       ]
@@ -191,27 +191,27 @@
       "questions": [
         {
           "id": 1,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The quarterly report will be presented to the board of directors next Friday."
         },
         {
           "id": 2,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "We need to schedule a meeting to discuss the project timeline."
         },
         {
           "id": 3,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The client requested several modifications to the original proposal."
         },
         {
           "id": 4,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "Our team achieved a significant increase in productivity this month."
         },
         {
           "id": 5,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The deadline for submitting the final report is next Wednesday."
         }
       ]
@@ -227,27 +227,27 @@
       "questions": [
         {
           "id": 1,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The research methodology employed in this study follows established scientific protocols."
         },
         {
           "id": 2,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The hypothesis was supported by the experimental data collected over six months."
         },
         {
           "id": 3,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The literature review revealed significant gaps in current research."
         },
         {
           "id": 4,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "Students must demonstrate critical thinking skills in their assignments."
         },
         {
           "id": 5,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The professor emphasized the importance of proper citation methods."
         }
       ]
@@ -263,27 +263,27 @@
       "questions": [
         {
           "id": 1,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The implementation of new policies requires careful consideration of all stakeholders."
         },
         {
           "id": 2,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "Environmental sustainability has become a critical concern for modern businesses."
         },
         {
           "id": 3,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The economic implications of this decision cannot be underestimated."
         },
         {
           "id": 4,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "Technological advancement has revolutionized modern communication methods."
         },
         {
           "id": 5,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "International cooperation is essential for addressing global challenges."
         }
       ]
@@ -299,27 +299,27 @@
       "questions": [
         {
           "id": 1,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The patient's symptoms indicate a possible allergic reaction to the medication."
         },
         {
           "id": 2,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The surgical procedure was performed successfully without complications."
         },
         {
           "id": 3,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The diagnosis requires further examination and laboratory tests."
         },
         {
           "id": 4,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The treatment protocol includes both medication and physical therapy."
         },
         {
           "id": 5,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The patient's recovery depends on following the prescribed rehabilitation program."
         }
       ]
@@ -335,27 +335,27 @@
       "questions": [
         {
           "id": 1,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The contract stipulates that both parties must fulfill their obligations within the specified timeframe."
         },
         {
           "id": 2,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The court proceedings will commence at nine o'clock in the morning."
         },
         {
           "id": 3,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The defendant's attorney presented compelling evidence during the trial."
         },
         {
           "id": 4,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The settlement agreement requires mutual consent from all involved parties."
         },
         {
           "id": 5,
-          "videoSrc": "https://cdn13674550.b-cdn.net/testing%20videos/for%20zyad.mp4",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba29b7d-4420-4813-94e2-f84f55fcc1a4/playlist.m3u8",
           "text": "The legal precedent established by this case will influence future decisions."
         }
       ]

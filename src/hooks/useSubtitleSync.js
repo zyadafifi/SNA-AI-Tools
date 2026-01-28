@@ -70,12 +70,10 @@ const useSubtitleSync = (videoRef) => {
   /**
    * Load subtitles for current sentence (pronunciation tool)
    * @param {number} lessonNumber - Lesson number
-   * @param {number} topicId - Topic ID
-   * @param {number} conversationId - Conversation ID
    * @param {number} sentenceIndex - Sentence index (1-based)
    */
   const loadSubtitlesForSentence = useCallback(
-    async (lessonNumber, topicId, conversationId, sentenceIndex) => {
+    async (lessonNumber, sentenceIndex) => {
       setSubtitleError(null);
 
       try {
@@ -84,8 +82,6 @@ const useSubtitleSync = (videoRef) => {
 
         const loadedSubtitles = await loadSRTFile(
           lessonNumber,
-          topicId,
-          conversationId,
           sentenceIndex,
           "pronunciation"
         );

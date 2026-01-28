@@ -1,16 +1,16 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import {
   Volume2,
   Headphones,
   PenTool,
   BookOpen,
-  ChevronRight,
   TrendingUp,
 } from "lucide-react";
 import { readingData } from "../../../config/readingData/readingData";
 import { Link } from "react-router-dom";
 
 export const SideHome = () => {
+  const gradientId = `progressGradient-${useId().replace(/:/g, "")}`;
   const [activeCard, setActiveCard] = useState(null);
   const [progress, setProgress] = useState({});
   const [listeningProgress, setListeningProgress] = useState({
@@ -243,22 +243,21 @@ export const SideHome = () => {
     tools.reduce((acc, tool) => acc + tool.progress, 0) / tools.length
   );
 
+  const horizontalTools = tools;
+
   return (
-    <div className="sticky top-0 h-screen bg-[var(--main-bg-color)] p-3 overflow-y-auto">
-      <div className="space-y-4">
+    <section className="w-full p-4 md:p-6">
+      <div className="space-y-6">
         {/* Header */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-[var(--main-text-color)] mb-2">
-            Learning Tools
-          </h2>
-          <p className="text-[var(--main-text-color)] text-sm arabic_font">
+        <div className="mb-6 text-center">
+          <h1 className="text-[var(--main-text-color)] text-2xl font-bold arabic_font">
             أدوات التعلم
-          </p>
+          </h1>
         </div>
 
-        {/* Tools Cards */}
-        <div className="space-y-3">
-          {tools.map((tool) => {
+        {/* Tools Cards - Horizontal row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {horizontalTools.map((tool) => {
             const Icon = tool.icon;
             const isActive = activeCard === tool.id;
             return (
@@ -306,19 +305,6 @@ export const SideHome = () => {
                           {tool.brief}
                         </p>
                       </div>
-
-                      {/* Arrow */}
-                      <ChevronRight
-                        className={`
-                          w-5 h-5 text-[var(--primary-color)] flex-shrink-0 mt-1
-                          transition-all duration-300
-                          ${
-                            isActive
-                              ? "opacity-100 translate-x-1"
-                              : "opacity-0 translate-x-0"
-                          }
-                        `}
-                      />
                     </div>
 
                     {/* Progress Section */}
@@ -359,107 +345,83 @@ export const SideHome = () => {
           })}
         </div>
 
-        {/* Overall Progress - Simple Circular */}
-        <div className="mt-8 pt-6 border-t border-white/10">
-          <div className="bg-gradient-to-br rounded-xl p-8 border border-[#63a29b]/30">
-            <div className="flex flex-col items-center justify-center">
-              {/* Title */}
-              <div className="text-center mb-6">
-                <p className="text-[var(--main-text-color)] font-semibold text-lg mb-1">
-                  Overall Progress
-                </p>
-                <p className="arabic_font text-[var(--main-text-color)] text-sm">
-                  التقدم الإجمالي
-                </p>
-              </div>
-
-              {/* Circular Progress */}
-              <div className="relative w-36 h-36">
-                <svg className="w-full h-full transform -rotate-90">
-                  {/* Background */}
-                  <circle
-                    cx="72"
-                    cy="72"
-                    r="64"
-                    stroke="#c4c4c4"
-                    strokeWidth="10"
-                    fill="none"
-                  />
-                  {/* Progress */}
-                  <circle
-                    cx="72"
-                    cy="72"
-                    r="64"
-                    stroke="url(#progressGradient)"
-                    strokeWidth="10"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeDasharray={`${2 * Math.PI * 64}`}
-                    strokeDashoffset={`${
-                      2 * Math.PI * 64 * (1 - averageProgress / 100)
-                    }`}
-                    className="transition-all duration-1000 ease-out"
-                    style={{
-                      filter: "drop-shadow(0 0 8px rgba(99, 162, 155, 0.5))",
-                    }}
-                  />
-                  <defs>
-                    <linearGradient
-                      id="progressGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="100%"
-                    >
-                      <stop offset="0%" stopColor="#ffc515" />
-                      <stop offset="100%" stopColor="#ffc515" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-
-                {/* Center Content */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <p className="text-[var(--main-text-color)] font-bold text-3xl mb-1">
-                      {averageProgress}%
-                    </p>
-                    <p className="text-[var(--main-text-color)] text-sm">
-                      percent
-                    </p>
-                  </div>
+        {/* Overall Progress - Stacked on mobile, horizontal on desktop */}
+        <div className="mt-8 pt-6 flex justify-center">
+          <div className="w-full max-w-2xl mx-auto bg-white/5 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 border border-gray/10 flex flex-col md:flex-row flex-nowrap items-center md:justify-start gap-4 md:gap-6 lg:gap-8">
+            {/* Circular Progress - centered on mobile, left on desktop */}
+            <div className="relative w-36 h-36 flex-shrink-0">
+              <svg className="w-full h-full transform -rotate-90">
+                {/* Background circle - light grey */}
+                <circle
+                  cx="72"
+                  cy="72"
+                  r="64"
+                  stroke="#e5e7eb"
+                  strokeWidth="10"
+                  fill="none"
+                />
+                {/* Progress arc - yellow with glow */}
+                <circle
+                  cx="72"
+                  cy="72"
+                  r="64"
+                  stroke={`url(#${gradientId})`}
+                  strokeWidth="10"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeDasharray={`${2 * Math.PI * 64}`}
+                  strokeDashoffset={`${
+                    2 * Math.PI * 64 * (1 - averageProgress / 100)
+                  }`}
+                  className="transition-all duration-1000 ease-out"
+                  style={{
+                    filter: "drop-shadow(0 0 10px rgba(255, 197, 21, 0.5))",
+                  }}
+                />
+                <defs>
+                  <linearGradient
+                    id={gradientId}
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="#ffc515" />
+                    <stop offset="100%" stopColor="#ffc515" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              {/* Center: percentage and "Overall" */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="text-center">
+                  <p className="text-[var(--main-text-color)] font-bold text-3xl mb-0.5">
+                    {averageProgress}%
+                  </p>
+                  <p className="text-[var(--main-text-color)] text-sm">
+                    Overall
+                  </p>
                 </div>
               </div>
+            </div>
 
-              {/* Optional subtitle */}
-              <p className="arabic_font text-[var(--main-text-color)] text-xs mt-4 text-center max-w-xs">
+            {/* Text content - centered on mobile, left on desktop */}
+            <div className="flex-1 min-w-0 text-center md:text-left w-full md:w-auto">
+              <p className="text-[var(--main-text-color)] font-bold text-lg mb-1">
+                Overall Progress
+              </p>
+              <p className="arabic_font text-[var(--main-text-color)] font-semibold text-sm mb-3">
+                التقدم الإجمالي
+              </p>
+              <p className="text-[var(--main-text-color)] text-sm mb-1">
+                Your average progress across all tools
+              </p>
+              <p className="arabic_font text-[var(--main-text-color)] text-sm">
                 متوسط تقدمك في جميع أدوات التعلم الأربعة
               </p>
             </div>
           </div>
         </div>
-        <div>
-          <div className="mt-3 pt-6 border-t border-white/10">
-            <div
-              className="bg-gradient-to-br rounded-xl p-4 border border-[#63a29b]/30"
-              role="region"
-              aria-label="واجهة التسجيل"
-            >
-              {/* Spacer */}
-              <div />
-
-              {/* Log In */}
-              <Link
-                to="/login"
-                type="button"
-                className="w-full block text-center select-none arabic_font rounded-xl bg-[var(--primary-color)] px-5 py-3 text-base sm:text-md font-extrabold text-white shadow-md outline-none transition transform hover:-translate-y-0.5 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#1CB0F6] active:translate-y-0"
-                aria-label="تسجيل الدخول"
-              >
-                تسجيل الدخول
-              </Link>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+    </section>
   );
 };

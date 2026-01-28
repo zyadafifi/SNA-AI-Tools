@@ -1,7 +1,6 @@
 import { HomeNav } from "./Components/HomeNav";
 import { HomeMain } from "./Components/HomeMain";
 import { SideHome } from "./Components/SideHome";
-
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -32,19 +31,13 @@ export function Home() {
       )}
 
       <div className="flex">
-        {/* Left Sidebar */}
+        {/* Left Sidebar - Mobile only (opens via burger) */}
         <aside
           className={`
-            fixed lg:sticky top-0 left-0 h-screen w-80 z-40
-            bg-gradient-to-br
+            lg:hidden fixed top-0 left-0 h-screen w-80 z-40
+            bg-[var(--main-bg-color)] overflow-y-auto
             transform transition-transform duration-300 ease-in-out
-            lg:transform-none
-            ${
-              isSidebarOpen
-                ? "translate-x-0"
-                : "-translate-x-full lg:translate-x-0"
-            }
-            overflow-y-auto
+            ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
           `}
         >
           <SideHome />

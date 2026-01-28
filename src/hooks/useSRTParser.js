@@ -10,7 +10,9 @@ const useSRTParser = () => {
 
   /**
    * Parse SRT content into subtitle objects
-   * Handles the specific format with English and Arabic subtitles
+   * Handles both formats:
+   * - New pronunciation format: 2 blocks (1 English + 1 Arabic with same timestamps)
+   * - Listening format: 6+ blocks (3 English + 3 Arabic with different timestamps)
    * @param {string} srtContent - Raw SRT file content
    * @returns {Array} Array of subtitle objects with timing and text
    */
@@ -18,12 +20,56 @@ const useSRTParser = () => {
     const subtitles = [];
     const blocks = srtContent.trim().split(/\n\s*\n/);
 
-    // The SRT file has 6 blocks: first 3 are English, last 3 are Arabic
-    if (blocks.length >= 6) {
-      const englishBlocks = blocks.slice(0, 3); // First 3 blocks
-      const arabicBlocks = blocks.slice(3, 6); // Last 3 blocks
+    // Handle new pronunciation format (2 blocks: 1 English + 1 Arabic)
+    if (blocks.length === 2) {
+      const englishBlock = blocks[0];
+      const arabicBlock = blocks[1];
 
-      // Process each pair of English/Arabic blocks
+      if (englishBlock && arabicBlock) {
+        const englishLines = englishBlock.split("\n");
+        const arabicLines = arabicBlock.split("\n");
+
+        if (englishLines.length >= 3 && arabicLines.length >= 3) {
+          const timingLine = englishLines[1];
+          const timingMatch = timingLine.match(
+            /(\d{2}):(\d{2}):(\d{2}),(\d{3})\s*-->\s*(\d{2}):(\d{2}):(\d{2}),(\d{3})/
+          );
+
+          if (timingMatch) {
+            const startTime = parseTimeToMs(
+              timingMatch[1],
+              timingMatch[2],
+              timingMatch[3],
+              timingMatch[4]
+            );
+            const endTime = parseTimeToMs(
+              timingMatch[5],
+              timingMatch[6],
+              timingMatch[7],
+              timingMatch[8]
+            );
+
+            const englishText = englishLines.slice(2).join(" ").trim();
+            const arabicText = arabicLines.slice(2).join(" ").trim();
+
+            if (englishText && arabicText) {
+              subtitles.push({
+                startTime,
+                endTime,
+                englishText,
+                arabicText,
+                index: 0,
+              });
+            }
+          }
+        }
+      }
+    }
+    // Handle listening format (6+ blocks: 3 English + 3 Arabic)
+    else if (blocks.length >= 6) {
+      const englishBlocks = blocks.slice(0, 3);
+      const arabicBlocks = blocks.slice(3, 6);
+
       for (let i = 0; i < 3; i++) {
         const englishBlock = englishBlocks[i];
         const arabicBlock = arabicBlocks[i];
@@ -33,7 +79,6 @@ const useSRTParser = () => {
           const arabicLines = arabicBlock.split("\n");
 
           if (englishLines.length >= 3 && arabicLines.length >= 3) {
-            // Parse timing from English block (format: "00:00:00,000 --> 00:00:05,000")
             const timingLine = englishLines[1];
             const timingMatch = timingLine.match(
               /(\d{2}):(\d{2}):(\d{2}),(\d{3})\s*-->\s*(\d{2}):(\d{2}):(\d{2}),(\d{3})/
@@ -70,6 +115,9 @@ const useSRTParser = () => {
         }
       }
     } else {
+      console.warn(
+        `SRT file has unexpected format with ${blocks.length} blocks (expected 2 or 6+)`
+      );
     }
 
     return subtitles;
@@ -95,8 +143,6 @@ const useSRTParser = () => {
   /**
    * Load and parse SRT file from public/subtitles directory
    * @param {number} lessonNumber - Lesson number
-   * @param {number} topicId - Topic ID
-   * @param {number} conversationId - Conversation ID
    * @param {number} sentenceIndex - Sentence index (1-based)
    * @param {string} folderPath - Subfolder path (default: "pronunciation")
    * @returns {Promise<Array>} Promise resolving to parsed subtitles array
@@ -104,8 +150,6 @@ const useSRTParser = () => {
   const loadSRTFile = useCallback(
     async (
       lessonNumber,
-      topicId,
-      conversationId,
       sentenceIndex,
       folderPath = "pronunciation"
     ) => {
@@ -113,9 +157,11 @@ const useSRTParser = () => {
       setError(null);
 
       try {
-        // Construct SRT file path based on the naming convention
-        const fileName = `lesson${lessonNumber}_topic${topicId}_conversation${conversationId}_sentence${sentenceIndex}.srt`;
+        // Construct SRT file path using simplified naming convention
+        const fileName = `lesson${lessonNumber}_sentence${sentenceIndex}.srt`;
         const filePath = `/assets/subtitles/${folderPath}/${fileName}`;
+
+        console.log(`Loading SRT file: ${filePath}`);
 
         const response = await fetch(filePath);
 

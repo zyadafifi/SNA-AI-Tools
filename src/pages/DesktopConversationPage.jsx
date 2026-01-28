@@ -443,28 +443,59 @@ export const DesktopConversationPage = () => {
         const nextSentenceIndex = currentSentenceIndex + 1;
         setCurrentSentenceIndex(nextSentenceIndex);
 
-        // Auto-play next video
-        setTimeout(() => {
+        // Auto-play next video with proper waiting
+        setTimeout(async () => {
           if (conversation.sentences[nextSentenceIndex]?.videoSrc) {
             setVideoSource(conversation.sentences[nextSentenceIndex].videoSrc);
-            setTimeout(() => {
-              play();
-            }, 200);
+            
+            // Wait for video to be ready before playing
+            setTimeout(async () => {
+              if (!videoRef.current) return;
+
+              try {
+                // Wait for video to be ready if it's not already
+                if (videoRef.current.readyState < 3) {
+                  await new Promise((resolve, reject) => {
+                    const timeout = setTimeout(() => {
+                      reject(new Error("Video load timeout"));
+                    }, 5000);
+
+                    const onCanPlay = () => {
+                      clearTimeout(timeout);
+                      videoRef.current?.removeEventListener("canplay", onCanPlay);
+                      resolve();
+                    };
+
+                    videoRef.current?.addEventListener("canplay", onCanPlay);
+                  });
+                }
+
+                if (videoRef.current) {
+                  await videoRef.current.play();
+                }
+              } catch (error) {
+                if (error.name === "AbortError") {
+                  console.error("Auto-play was interrupted");
+                } else {
+                  console.error("Auto-play error:", error);
+                }
+              }
+            }, 300);
           }
-        }, 500);
+        }, 100);
       }
     }
   };
 
-  // Handle back to topics
-  const handleBackToTopics = () => {
-    navigate(`/pronounce/topics/${lessonNumber}`);
+  // Handle back to home
+  const handleBackToHome = () => {
+    navigate(`/pronounce/home`);
   };
 
   // Handle close completion modal
   const handleCloseCompletionModal = () => {
     setShowCompletionModal(false);
-    navigate(`/pronounce/topics/${lessonNumber}`);
+    navigate(`/pronounce/home`);
   };
 
   // Cleanup on unmount
@@ -498,8 +529,8 @@ export const DesktopConversationPage = () => {
               {!topic && `Topic ${topicId} not found. `}
               {!conversation && `Conversation ${conversationId} not found. `}
             </p>
-            <button onClick={handleBackToTopics} className="btn btn-primary">
-              Back to Topics
+            <button onClick={handleBackToHome} className="btn btn-primary">
+              Back to Home
             </button>
           </div>
         </div>

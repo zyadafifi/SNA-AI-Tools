@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMicrophone,
@@ -21,6 +22,9 @@ const MobileResultsDialog = ({
   onClose = () => {},
   onListenClick = () => {},
   onPlayRecording = () => {},
+  isPlayingRecording = false, // From controller when using onPlayRecording prop
+  isRecordingPaused = false, // From controller when using onPlayRecording prop
+  togglePauseRecordedAudio = null, // From controller - toggle pause/resume
   missingWords = [],
   isProcessing = false,
 }) => {
@@ -28,6 +32,7 @@ const MobileResultsDialog = ({
   const [isPlayingOriginal, setIsPlayingOriginal] = useState(false);
   const [isPlayingRecorded, setIsPlayingRecorded] = useState(false);
   const [audioPlayed, setAudioPlayed] = useState(false);
+  const [internalAudioRef, setInternalAudioRef] = useState(null);
 
   // Play audio feedback based on score when dialog opens
   useEffect(() => {
@@ -77,11 +82,15 @@ const MobileResultsDialog = ({
       setIsPlayingOriginal(false);
       setIsPlayingRecorded(false);
       setAudioPlayed(false);
+      if (internalAudioRef) {
+        internalAudioRef.pause();
+        setInternalAudioRef(null);
+      }
       if (window.speechSynthesis) {
         window.speechSynthesis.cancel();
       }
     }
-  }, [show]);
+  }, [show, internalAudioRef]);
 
   // Play original sentence using speech synthesis
   const handleListenOriginal = useCallback(() => {
@@ -102,36 +111,71 @@ const MobileResultsDialog = ({
     window.speechSynthesis.speak(utterance);
   }, [targetText, isPlayingOriginal]);
 
-  // Play recorded audio
+  // Play recorded audio - use onPlayRecording prop if provided, otherwise use internal handler
   const handlePlayRecorded = useCallback(() => {
+    // If onPlayRecording prop is provided, use controller's play/pause toggle
+    if (onPlayRecording && togglePauseRecordedAudio) {
+      if (isPlayingRecording && !isRecordingPaused) {
+        // Currently playing - pause it
+        togglePauseRecordedAudio();
+      } else if (isPlayingRecording && isRecordingPaused) {
+        // Currently paused - resume it
+        togglePauseRecordedAudio();
+      } else {
+        // Not playing - start playing
+        onPlayRecording();
+      }
+      return;
+    }
+
+    // If only onPlayRecording is provided (no toggle), just call it
+    if (onPlayRecording) {
+      onPlayRecording();
+      return;
+    }
+
+    // Fallback to internal handler if no prop provided
     if (!recordedBlob) {
       alert("No recorded audio available.");
       return;
     }
 
-    if (isPlayingRecorded) {
-      // Stop current playback
-      setIsPlayingRecorded(false);
+    if (isPlayingRecorded && internalAudioRef) {
+      // Pause if playing
+      if (!internalAudioRef.paused) {
+        internalAudioRef.pause();
+        setIsPlayingRecorded(false);
+      } else {
+        // Resume if paused
+        internalAudioRef.play();
+        setIsPlayingRecorded(true);
+      }
       return;
     }
 
+    // Start playing
     try {
       const audioUrl = URL.createObjectURL(recordedBlob);
       const audio = new Audio(audioUrl);
+      setInternalAudioRef(audio);
 
       audio.onplay = () => setIsPlayingRecorded(true);
+      audio.onpause = () => setIsPlayingRecorded(false);
       audio.onended = () => {
         setIsPlayingRecorded(false);
+        setInternalAudioRef(null);
         URL.revokeObjectURL(audioUrl);
       };
       audio.onerror = () => {
         setIsPlayingRecorded(false);
+        setInternalAudioRef(null);
         URL.revokeObjectURL(audioUrl);
         alert("Error playing recorded audio.");
       };
 
       audio.play().catch(() => {
         setIsPlayingRecorded(false);
+        setInternalAudioRef(null);
         URL.revokeObjectURL(audioUrl);
         alert("Could not play recorded audio.");
       });
@@ -139,7 +183,15 @@ const MobileResultsDialog = ({
       console.error("Error playing recorded audio:", error);
       alert("Error playing recorded audio.");
     }
-  }, [recordedBlob, isPlayingRecorded]);
+  }, [
+    recordedBlob,
+    isPlayingRecorded,
+    onPlayRecording,
+    togglePauseRecordedAudio,
+    isPlayingRecording,
+    isRecordingPaused,
+    internalAudioRef,
+  ]);
 
   // Process recognized text for display
   const processRecognizedText = useCallback(() => {
@@ -202,9 +254,23 @@ const MobileResultsDialog = ({
     [onClose]
   );
 
+  // Prevent body scroll when dialog is open
+  useEffect(() => {
+    if (show) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [show]);
+
   if (!show) return null;
 
-  return (
+  // Render via Portal to ensure it's above everything
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <div className="mobile-dialog-container active">
       <div
         className="mobile-dialog-backdrop"
@@ -324,26 +390,40 @@ const MobileResultsDialog = ({
           {/* Play Recording Button */}
           <button
             className={`mobile-control-btn mobile-play-btn ${
-              isPlayingRecorded ? "playing" : ""
+              (isPlayingRecording && !isRecordingPaused) || isPlayingRecorded
+                ? "playing"
+                : ""
             }`}
-            title="Play recorded audio"
+            title={
+              (isPlayingRecording && !isRecordingPaused) || isPlayingRecorded
+                ? "Pause recorded audio"
+                : "Play recorded audio"
+            }
             onClick={handlePlayRecorded}
-            disabled={!recordedBlob}
+            disabled={!recordedBlob && !onPlayRecording}
             style={{
-              opacity: recordedBlob ? 1 : 0.5,
-              cursor: recordedBlob ? "pointer" : "not-allowed",
+              opacity: recordedBlob || onPlayRecording ? 1 : 0.5,
+              cursor:
+                recordedBlob || onPlayRecording ? "pointer" : "not-allowed",
             }}
           >
             <FontAwesomeIcon
-              icon={isPlayingRecorded ? faPause : faHeadphones}
+              icon={
+                (isPlayingRecording && !isRecordingPaused) || isPlayingRecorded
+                  ? faPause
+                  : faHeadphones
+              }
               className={`fas ${
-                isPlayingRecorded ? "fa-pause" : "fa-headphones"
+                (isPlayingRecording && !isRecordingPaused) || isPlayingRecorded
+                  ? "fa-pause"
+                  : "fa-headphones"
               }`}
             />
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

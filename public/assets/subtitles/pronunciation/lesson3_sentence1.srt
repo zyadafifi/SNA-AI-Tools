@@ -1,0 +1,8 @@
+1
+00:00:00,000 --> 00:00:08,408
+Hey again! In this lesson, I'll play the role of
+your friend and we will talk about coffee. Let's start. So tell me, do you like coffee?
+
+2
+00:00:00,000 --> 00:00:08,408
+مرحبًا مجددًا! في هذا الدرس، سألعب دور صديقك وسنتحدث عن القهوة. لنبدأ. إذًا أخبرني، هل تحب القهوة؟

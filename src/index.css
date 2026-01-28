@@ -269,14 +269,12 @@ a {
 /* Mobile Practice Overlay Styles */
 .mobile-practice-overlay {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: transparent;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  z-index: 1000;
+  z-index: 99999;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;

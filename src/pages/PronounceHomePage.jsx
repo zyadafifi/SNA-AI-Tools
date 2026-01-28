@@ -5,6 +5,7 @@ import { BiLoaderCircle } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
 import Xarrow, { Xwrapper, useXarrow } from "react-xarrows";
 import HeaderBanner from "../components/Pronunce/HeaderBanner";
+import StartingMessage from "../components/Pronunce/StartingMessage";
 import {
   FaBook,
   FaGraduationCap,
@@ -49,6 +50,99 @@ export const PronounceHomePage = () => {
   const [lessons, setLessons] = useState([]);
   const [lessonsData, setLessonsData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showStartingMessage, setShowStartingMessage] = useState(false);
+  const [selectedLesson, setSelectedLesson] = useState(null);
+  const [messagePosition, setMessagePosition] = useState({ top: 0, left: 0 });
+
+  // Get lesson's last overall score
+  const getLessonScore = useCallback((lessonNumber) => {
+    try {
+      const progressData = JSON.parse(
+        localStorage.getItem("pronunciationMasterProgress") || "{}"
+      );
+
+      // Check if lesson has stored score data
+      if (progressData.lessons && progressData.lessons[lessonNumber]) {
+        return progressData.lessons[lessonNumber].overallScore || 0;
+      }
+
+      // If no direct lesson score, calculate average from sentences
+      if (progressData.sentences) {
+        const lessonSentences = Object.keys(progressData.sentences)
+          .filter((key) => key.startsWith(`lesson${lessonNumber}_`))
+          .map((key) => progressData.sentences[key])
+          .filter((s) => s && s.score !== undefined);
+
+        if (lessonSentences.length > 0) {
+          const avgScore =
+            lessonSentences.reduce((sum, s) => sum + (s.score || 0), 0) /
+            lessonSentences.length;
+          return Math.round(avgScore);
+        }
+      }
+
+      return 0;
+    } catch (error) {
+      console.error("Error getting lesson score:", error);
+      return 0;
+    }
+  }, []);
+
+  // Handle lesson click - show starting message
+  const handleLessonClick = useCallback(
+    (lesson, event) => {
+      if (!lesson.locked) {
+        // Get the lesson node position
+        const lessonNode = document.getElementById(
+          `lesson-circle-${lesson.lessonNumber}`
+        );
+        if (lessonNode) {
+          const rect = lessonNode.getBoundingClientRect();
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+          const scrollLeft =
+            window.pageXOffset || document.documentElement.scrollLeft;
+
+          // Calculate position: center below the lesson circle
+          const cardWidth = 360; // Width of the card
+          const padding = 20; // Padding from viewport edges
+          const top = rect.bottom + scrollTop + 20; // 20px below the circle
+          let left = rect.left + scrollLeft + rect.width / 2 - cardWidth / 2;
+
+          // Ensure card doesn't go off-screen
+          const viewportWidth = window.innerWidth;
+          const minLeft = padding;
+          const maxLeft = viewportWidth - cardWidth - padding;
+
+          // Clamp left position to keep card within bounds
+          left = Math.max(minLeft, Math.min(left, maxLeft));
+
+          setMessagePosition({ top: `${top}px`, left: `${left}px` });
+        }
+
+        const fullLesson = lessonsData.lessons.find(
+          (l) => l.lessonNumber === lesson.lessonNumber
+        );
+        setSelectedLesson(fullLesson);
+        setShowStartingMessage(true);
+      }
+    },
+    [lessonsData]
+  );
+
+  // Handle start/restart lesson
+  const handleStartLesson = useCallback(() => {
+    if (selectedLesson) {
+      setShowStartingMessage(false);
+      navigate(`/pronounce/lesson/${selectedLesson.lessonNumber}`);
+    }
+  }, [selectedLesson, navigate]);
+
+  // Handle close starting message
+  const handleCloseStartingMessage = useCallback(() => {
+    setShowStartingMessage(false);
+    setSelectedLesson(null);
+  }, []);
 
   // Get lesson icon function - exact copy from script.js
   const getLessonIcon = useCallback((lessonId) => {
@@ -249,7 +343,7 @@ export const PronounceHomePage = () => {
 
       // Add avatar URLs for each lesson
       const avatarUrls = [
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face",
+        "https://cdn13674550.b-cdn.net/10.jpg",
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
         "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
@@ -433,11 +527,7 @@ export const PronounceHomePage = () => {
                       top: `${position.y}px`,
                       position: "absolute",
                     }}
-                    onClick={() => {
-                      if (!lesson.locked) {
-                        navigate(`/pronounce/topics/${lesson.lessonNumber}`);
-                      }
-                    }}
+                    onClick={(e) => handleLessonClick(lesson, e)}
                   >
                     {/* Lesson Circle with unique ID for Xarrow */}
                     <div
@@ -454,9 +544,7 @@ export const PronounceHomePage = () => {
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        if (!lesson.locked) {
-                          navigate(`/pronounce/topics/${lesson.lessonNumber}`);
-                        }
+                        handleLessonClick(lesson, e);
                       }}
                     >
                       {lesson.avatar ? (
@@ -547,6 +635,19 @@ export const PronounceHomePage = () => {
           </div>
         </Xwrapper>
       </main>
+
+      {/* Starting Message Card */}
+      {selectedLesson && (
+        <StartingMessage
+          show={showStartingMessage}
+          lesson={selectedLesson}
+          lessonCompleted={isLessonCompleted(selectedLesson.lessonNumber)}
+          lastScore={getLessonScore(selectedLesson.lessonNumber)}
+          onStart={handleStartLesson}
+          onClose={handleCloseStartingMessage}
+          position={messagePosition}
+        />
+      )}
     </div>
   );
 };

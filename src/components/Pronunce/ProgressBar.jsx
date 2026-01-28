@@ -9,6 +9,7 @@ const ProgressBar = ({
   onDotClick = null,
   showLabels = false,
   labels = [],
+  isMobile = false,
 }) => {
   const [hoveredDot, setHoveredDot] = useState(null);
   const [focusedDot, setFocusedDot] = useState(null);
@@ -54,9 +55,8 @@ const ProgressBar = ({
     return index * segmentSize + segmentSize / 2;
   };
 
-  // Calculate progress based on completed sentences and current position
-  // Progress is distributed in equal segments (33.3% each for 3 sentences)
-  // The fill is always synchronized with the current bullet position
+  // Calculate progress based on video position - fill from previous bullet to current bullet
+  // The fill should stop at the current sentence's bullet position when video reaches 100%
   const segmentSize = 100 / total;
   let progressPercentage;
 
@@ -65,9 +65,46 @@ const ProgressBar = ({
     // All sentences completed: fill to 100%
     progressPercentage = 100;
   } else {
-    // Fill to the current sentence's bullet position
-    // This ensures the fill is always at the bullet for the sentence being worked on
-    progressPercentage = getBulletPosition(currentSentenceIndex);
+    // Check if current sentence is completed
+    const isCurrentCompleted =
+      typeof completedSentences === "number"
+        ? currentSentenceIndex < completedSentences
+        : completedSentences?.has(currentSentenceIndex);
+
+    // Calculate progress by interpolating between previous and current bullet positions
+    // Previous bullet position (or 0 if first sentence)
+    const previousBulletPosition =
+      currentSentenceIndex > 0
+        ? getBulletPosition(currentSentenceIndex - 1)
+        : 0;
+
+    // Current bullet position
+    const currentBulletPosition = getBulletPosition(currentSentenceIndex);
+
+    // If current sentence is not completed yet, stay at previous bullet position
+    // This prevents jumping ahead during sentence transitions when old video progress persists
+    if (!isCurrentCompleted && currentSentenceIndex > 0) {
+      // Stay frozen at previous bullet until video actually plays
+      // Only start moving when sentenceProgress indicates real playback (> 0.5%)
+      if (sentenceProgress < 0.5) {
+        progressPercentage = previousBulletPosition;
+      } else {
+        // Video is actually playing, interpolate progress
+        progressPercentage =
+          previousBulletPosition +
+          (currentBulletPosition - previousBulletPosition) *
+            (sentenceProgress / 100);
+      }
+    } else {
+      // First sentence or current sentence already completed
+      progressPercentage =
+        previousBulletPosition +
+        (currentBulletPosition - previousBulletPosition) *
+          (sentenceProgress / 100);
+    }
+
+    // Ensure progress doesn't exceed 100%
+    progressPercentage = Math.min(progressPercentage, 100);
   }
 
   // SNA brand colors with fallbacks
@@ -171,6 +208,12 @@ const ProgressBar = ({
             const label = labels[i] || `Step ${i + 1}`;
             const bulletPosition = getBulletPosition(i);
 
+            // Responsive bullet sizing
+            const bulletSize = isMobile ? 16 : 24;
+            const checkmarkSize = isMobile ? 8 : 12;
+            const activeScale = isMobile ? 1.15 : 1.2;
+            const currentScale = isMobile ? 1.12 : 1.15;
+
             return (
               <div
                 key={i}
@@ -198,8 +241,8 @@ const ProgressBar = ({
                   style={{
                     position: "relative",
                     zIndex: 10,
-                    width: "24px",
-                    height: "24px",
+                    width: `${bulletSize}px`,
+                    height: `${bulletSize}px`,
                     borderRadius: "9999px",
                     border: "2px solid",
                     display: "flex",
@@ -229,7 +272,11 @@ const ProgressBar = ({
                       : isCurrent
                       ? currentColor
                       : "#D1D5DB",
-                    scale: isActive ? 1.2 : isCurrent ? 1.15 : 1,
+                    scale: isActive
+                      ? activeScale
+                      : isCurrent
+                      ? currentScale
+                      : 1,
                     borderWidth: isCurrent ? 3 : 2,
                   }}
                   transition={{ duration: 0.2 }}
@@ -251,8 +298,8 @@ const ProgressBar = ({
                         exit={{ scale: 0, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                         style={{
-                          width: "12px",
-                          height: "12px",
+                          width: `${checkmarkSize}px`,
+                          height: `${checkmarkSize}px`,
                           color: "white",
                         }}
                         fill="none"

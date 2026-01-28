@@ -54,7 +54,7 @@ const MobileCompletionCard = ({
         )}
 
         <button className="completion-btn" onClick={onBackToLessons}>
-          Back to Topics
+          Back to Home
         </button>
       </div>
     </div>

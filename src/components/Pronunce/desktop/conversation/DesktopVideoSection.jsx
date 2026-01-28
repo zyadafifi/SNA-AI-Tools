@@ -59,6 +59,7 @@ const DesktopVideoSection = ({
           className="lesson-video"
           controls
           controlsList="nodownload"
+          preload="auto"
           id="lessonVideo"
           onLoadedMetadata={onLoadedMetadata}
           onTimeUpdate={onTimeUpdate}

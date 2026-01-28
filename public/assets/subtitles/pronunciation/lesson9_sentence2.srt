@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:04,838
+Good job. Let's try another example. Say blue book.
+
+2
+00:00:00,000 --> 00:00:04,838
+عمل رائع. لنحاول مثالاً آخر. قل "blue book".
