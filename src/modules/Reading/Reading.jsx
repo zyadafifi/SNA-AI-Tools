@@ -1,122 +1,161 @@
-import { useState, useMemo } from "react";
+import { useMemo, useState, useCallback, useDeferredValue } from "react";
 import { LevelList } from "./Components/LevelList/LevelList";
 import { readingData } from "../../config/readingData/readingData";
 import { SectionTitle } from "../../components/index";
 
+/**
+ * Keep this outside component so it doesn't get re-created on every render
+ */
+const LEVEL_SECTIONS = [
+  { title: "Beginner", keys: ["Beginner"] },
+  { title: "Pre Intermediate", keys: ["Pre-Intermediate"] },
+  { title: "Intermediate", keys: ["Intermediate"] },
+  { title: "Advanced", keys: ["Advanced"] },
+];
+
 export const Reading = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  // store as array for UI simplicity, but we'll also build a Set for fast lookup
   const [selectedLevels, setSelectedLevels] = useState([]);
 
-  const levelSections = [
-    { title: "Beginner", keys: ["Beginner"] },
-    { title: "Pre Intermediate", keys: ["Pre-Intermediate"] },
-    { title: "Intermediate", keys: ["Intermediate"] },
-    { title: "Advanced", keys: ["Advanced"] },
-  ];
+  /**
+   * Defer the search term so React prioritizes typing responsiveness
+   * (especially helpful if the dataset is large)
+   */
+  const deferredSearchTerm = useDeferredValue(searchTerm);
 
-  // Search by level title and item title only
+  /**
+   * Build an index ONCE:
+   * - group levels by levelKey
+   * - precompute lowercase titles to avoid calling toLowerCase repeatedly
+   * - for lessons also precompute lowercase title
+   */
+  const indexed = useMemo(() => {
+    const byKey = new Map();
+
+    for (const level of readingData) {
+      const levelKey = level.levelKey;
+      if (!byKey.has(levelKey)) byKey.set(levelKey, []);
+
+      const lessons = Array.isArray(level.lessons) ? level.lessons : [];
+
+      byKey.get(levelKey).push({
+        ...level,
+        __levelTitleLower: (level.levelTitle || "").toLowerCase(),
+        lessons: lessons.map((lesson) => ({
+          ...lesson,
+          __lessonTitleLower: (lesson.title || "").toLowerCase(),
+        })),
+        __totalLessonsCount: lessons.length,
+      });
+    }
+
+    return { byKey };
+  }, []);
+
+  const selectedLevelsSet = useMemo(() => new Set(selectedLevels), [selectedLevels]);
+
   const filteredData = useMemo(() => {
-    let results = {
+    const term = deferredSearchTerm.trim().toLowerCase();
+    const hasTerm = term.length > 0;
+    const hasLevelFilter = selectedLevelsSet.size > 0;
+
+    const results = {
       sections: [],
       levelMatches: 0,
       itemMatches: 0,
       totalResults: 0,
     };
 
-    levelSections.forEach(({ title, keys }) => {
-      // Get levels for this section
-      let sectionLevels = readingData.filter((level) =>
-        keys.includes(level.levelKey)
-      );
-
-      // Apply level filter first
-      if (selectedLevels.length > 0) {
-        sectionLevels = sectionLevels.filter((level) =>
-          selectedLevels.includes(level.levelKey)
-        );
+    for (const section of LEVEL_SECTIONS) {
+      // Gather all levels for this section from the indexed map (no readingData.filter)
+      let sectionLevels = [];
+      for (const k of section.keys) {
+        const arr = indexed.byKey.get(k);
+        if (arr?.length) sectionLevels = sectionLevels.concat(arr);
       }
+
+      // Apply level filter using Set (fast)
+      if (hasLevelFilter) {
+        sectionLevels = sectionLevels.filter((lvl) => selectedLevelsSet.has(lvl.levelKey));
+      }
+
+      if (sectionLevels.length === 0) continue;
 
       let filteredLevels = [];
 
-      if (searchTerm.trim()) {
-        const searchLower = searchTerm.toLowerCase();
+      if (hasTerm) {
+        for (const level of sectionLevels) {
+          const levelTitleMatches = level.__levelTitleLower.includes(term);
 
-        sectionLevels.forEach((level) => {
-          // Search ONLY in level title
-          const levelTitleMatches = level.levelTitle
-            ?.toLowerCase()
-            .includes(searchLower);
-
-          // Search ONLY in lesson titles (items)
+          // filter lessons by title (fast lowercased field)
           let matchingLessons = [];
-          if (level.lessons && Array.isArray(level.lessons)) {
+          if (level.lessons?.length) {
             matchingLessons = level.lessons.filter((lesson) =>
-              lesson.title?.toLowerCase().includes(searchLower)
+              lesson.__lessonTitleLower.includes(term)
             );
           }
 
-          // Include level if level title matches OR has lessons with matching titles
           if (levelTitleMatches || matchingLessons.length > 0) {
             filteredLevels.push({
               ...level,
               levelTitleMatched: levelTitleMatches,
-              lessons:
-                matchingLessons.length > 0
-                  ? matchingLessons
-                  : level.lessons || [],
+              lessons: matchingLessons.length > 0 ? matchingLessons : level.lessons || [],
               matchingLessonsCount: matchingLessons.length,
-              totalLessonsCount: level.lessons ? level.lessons.length : 0,
+              totalLessonsCount: level.__totalLessonsCount || 0,
             });
 
-            // Update counters
             if (levelTitleMatches) results.levelMatches++;
             results.itemMatches += matchingLessons.length;
           }
-        });
+        }
       } else {
-        // No search - show all levels (after level filter)
+        // no search term: include everything after level filter
         filteredLevels = sectionLevels.map((level) => ({
           ...level,
           levelTitleMatched: false,
           matchingLessonsCount: 0,
-          totalLessonsCount: level.lessons ? level.lessons.length : 0,
+          totalLessonsCount: level.__totalLessonsCount || 0,
         }));
 
         results.levelMatches += filteredLevels.length;
         results.itemMatches += filteredLevels.reduce(
-          (acc, level) => acc + (level.lessons ? level.lessons.length : 0),
+          (acc, lvl) => acc + (lvl.__totalLessonsCount || 0),
           0
         );
       }
 
       if (filteredLevels.length > 0) {
         results.sections.push({
-          title,
+          title: section.title,
           levelList: filteredLevels,
         });
       }
-    });
+    }
 
     results.totalResults = results.levelMatches + results.itemMatches;
     return results;
-  }, [searchTerm, selectedLevels]);
+  }, [deferredSearchTerm, indexed, selectedLevelsSet]);
 
-  // Toggle level selection
-  const handleLevelToggle = (levelKey) => {
-    setSelectedLevels((prev) =>
-      prev.includes(levelKey)
-        ? prev.filter((key) => key !== levelKey)
-        : [...prev, levelKey]
-    );
-  };
+  const handleLevelToggle = useCallback((levelKey) => {
+    setSelectedLevels((prev) => {
+      // avoid includes twice
+      const i = prev.indexOf(levelKey);
+      if (i !== -1) {
+        const next = prev.slice();
+        next.splice(i, 1);
+        return next;
+      }
+      return [...prev, levelKey];
+    });
+  }, []);
 
-  // Clear filters
-  const clearSearch = () => {
+  const clearSearch = useCallback(() => {
     setSearchTerm("");
     setSelectedLevels([]);
-  };
+  }, []);
 
-  const hasSearch = searchTerm.trim() || selectedLevels.length > 0;
+  const hasSearch = deferredSearchTerm.trim() || selectedLevels.length > 0;
 
   return (
     <div>
@@ -149,6 +188,7 @@ export const Reading = () => {
                   />
                 </svg>
               </div>
+
               {hasSearch && (
                 <button
                   onClick={clearSearch}
@@ -162,17 +202,16 @@ export const Reading = () => {
             {/* Level Filter */}
             <div className="mb-6">
               <div className="flex flex-wrap items-center gap-2">
-                <h3 className="text-sm font-medium text-gray-700">
-                  Filter by Level:
-                </h3>
-                {levelSections.map(({ title, keys }) => {
-                  const isSelected = keys.some((key) =>
-                    selectedLevels.includes(key)
-                  );
+                <h3 className="text-sm font-medium text-gray-700">Filter by Level:</h3>
+
+                {LEVEL_SECTIONS.map(({ title, keys }) => {
+                  const key = keys[0];
+                  const isSelected = selectedLevelsSet.has(key);
+
                   return (
                     <button
                       key={title}
-                      onClick={() => handleLevelToggle(keys[0])}
+                      onClick={() => handleLevelToggle(key)}
                       className={`px-3 py-2 text-sm font-medium rounded-2xl shadow-sm transition-colors ${
                         isSelected
                           ? "bg-[var(--primary-color)] text-white"
@@ -212,12 +251,10 @@ export const Reading = () => {
                   d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6"
                 />
               </svg>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
-                No title matches found
-              </h3>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">No title matches found</h3>
               <p className="text-gray-500 mb-4">
-                {searchTerm
-                  ? `No level titles or lesson titles contain "${searchTerm}"`
+                {deferredSearchTerm.trim()
+                  ? `No level titles or lesson titles contain "${deferredSearchTerm}"`
                   : "No levels match your selected filters"}
               </p>
               <button
