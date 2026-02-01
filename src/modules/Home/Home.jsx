@@ -34,7 +34,7 @@ export function Home() {
         {/* Left Sidebar - Mobile only (opens via burger) */}
         <aside
           className={`
-            lg:hidden fixed top-0 left-0 h-screen w-80 z-40
+            lg:hidden h-full fixed top-0 left-0 w-80 z-40
             bg-[var(--main-bg-color)] overflow-y-auto
             transform transition-transform duration-300 ease-in-out
             ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}

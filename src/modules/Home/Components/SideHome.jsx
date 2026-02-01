@@ -13,6 +13,7 @@ export const SideHome = () => {
   const gradientId = `progressGradient-${useId().replace(/:/g, "")}`;
   const [activeCard, setActiveCard] = useState(null);
   const [progress, setProgress] = useState({});
+  const [pronounceLessons, setPronounceLessons] = useState([]);
   const [listeningProgress, setListeningProgress] = useState({
     progress: 0,
     completedLessons: 0,
@@ -29,6 +30,28 @@ export const SideHome = () => {
     completedTopics: 0,
     totalTopics: 0,
   });
+
+  useEffect(() => {
+  let cancelled = false;
+
+  const load = async () => {
+    try {
+      const res = await fetch("/assets/pronounceData.json", { cache: "no-store" });
+      if (!res.ok) throw new Error(`pronounceData.json ${res.status}`);
+      const data = await res.json();
+      if (!cancelled) setPronounceLessons(data?.lessons || []);
+    } catch (e) {
+      console.error("Error loading pronounceData.json:", e);
+      if (!cancelled) setPronounceLessons([]);
+    }
+  };
+
+  load();
+  return () => {
+    cancelled = true;
+  };
+}, []);
+
 
   // Load Writing progress from localStorage
   useEffect(() => {
@@ -110,37 +133,121 @@ export const SideHome = () => {
 
   // Load Pronunciation progress from localStorage
   useEffect(() => {
-    try {
-      const storedData = localStorage.getItem("pronunciationMasterProgress");
-      if (storedData) {
-        const data = JSON.parse(storedData);
+  try {
+    const storedData = localStorage.getItem("pronunciationMasterProgress");
+    if (!storedData) return;
 
-        if (data.topics) {
-          const topics = Object.values(data.topics);
-          const totalTopics = topics.length;
-          const completedTopics = topics.filter(
-            (topic) => topic.completed
-          ).length;
+    const data = JSON.parse(storedData);
 
-          // Calculate average progress from all topics
-          const totalProgress = topics.reduce(
-            (sum, topic) => sum + (topic.progress || 0),
-            0
-          );
-          const avgProgress =
-            totalTopics > 0 ? Math.round(totalProgress / totalTopics) : 0;
-
-          setPronunciationProgress({
-            progress: avgProgress,
-            completedTopics: completedTopics,
-            totalTopics: totalTopics,
-          });
-        }
-      }
-    } catch (error) {
-      console.error("Error loading pronunciation progress:", error);
+    // ✅ totals from JSON (الحقيقي)
+    const totalByLessonFromJson = {};
+    for (const l of pronounceLessons) {
+      const id = Number(l.lessonNumber);
+      totalByLessonFromJson[id] = Array.isArray(l.sentences) ? l.sentences.length : 0;
     }
-  }, []);
+
+    // ✅ completed sentences from localStorage
+    const sentences = data?.sentences && typeof data.sentences === "object" ? data.sentences : {};
+    const conversations =
+      data?.conversations && typeof data.conversations === "object" ? data.conversations : {};
+
+    const completedByLesson = {};
+    for (const [key, s] of Object.entries(sentences)) {
+      if (!s?.completed) continue;
+      const [lessonStr] = String(key).split("-");
+      const lessonId = Number(lessonStr);
+      if (!Number.isFinite(lessonId)) continue;
+      completedByLesson[lessonId] = (completedByLesson[lessonId] || 0) + 1;
+    }
+
+    // ✅ union of lessons (from json + localstorage)
+    const lessonIds = Array.from(
+      new Set([
+        ...Object.keys(totalByLessonFromJson).map(Number),
+        ...Object.keys(completedByLesson).map(Number),
+        ...Object.keys(conversations).map(Number),
+      ])
+    )
+      .filter(Number.isFinite)
+      .sort((a, b) => a - b);
+
+    // ✅ Compare + compute per lesson using JSON totals
+    const perLesson = lessonIds.map((id) => {
+      const totalJson = totalByLessonFromJson[id] ?? 0;
+      const done = completedByLesson[id] ?? 0;
+
+      // inferred progress from JSON totals (الأهم)
+      const inferred =
+        totalJson > 0 ? Math.round((done / totalJson) * 100) : 0;
+
+      // conversations may say 100 wrongly or be missing
+      const conv = conversations[String(id)];
+      const convProgress =
+        typeof conv?.progress === "number"
+          ? conv.progress
+          : conv?.completed
+          ? 100
+          : null;
+
+      // ✅ final progress:
+      // - لو عندنا totalJson: نعتمد inferred (أصدق)
+      // - ولو conversations أقل (مثلاً 50) نخلي الأقل؟ (اختياري)
+      // أنا هنا بخلي final = inferred لأن inferred مبني على الحقيقي.
+      const finalProgress = totalJson > 0 ? inferred : convProgress ?? 0;
+
+      const completed = totalJson > 0 ? done >= totalJson : !!conv?.completed;
+
+      // ✅ mismatch detection (ده اللي انتي عايزاه)
+      const mismatch =
+        typeof convProgress === "number" &&
+        totalJson > 0 &&
+        convProgress === 100 &&
+        inferred < 100;
+
+      return {
+        lessonId: id,
+        doneSentences: done,
+        totalSentencesJson: totalJson,
+        inferredProgress: inferred,
+        convProgress: convProgress ?? "-",
+        finalProgress,
+        completed,
+        mismatch,
+      };
+    });
+
+    // ✅ console comparison table
+    console.group("✅ Pronunciation JSON vs LocalStorage Comparison");
+    console.table(perLesson);
+
+    const mismatches = perLesson.filter((x) => x.mismatch);
+    if (mismatches.length) {
+      console.warn("⚠️ Mismatches (conv says 100 but JSON-based < 100):");
+      console.table(mismatches);
+    }
+    console.groupEnd();
+
+    // ✅ compute overall from JSON-based finalProgress
+    const valid = perLesson.filter((x) => x.totalSentencesJson > 0);
+    const totalLessons = valid.length;
+
+    const avgProgress =
+      totalLessons > 0
+        ? Math.round(valid.reduce((s, x) => s + x.finalProgress, 0) / totalLessons)
+        : 0;
+
+    const completedLessons = valid.filter((x) => x.completed).length;
+
+    setPronunciationProgress({
+      progress: avgProgress,
+      completedTopics: completedLessons,
+      totalTopics: totalLessons,
+    });
+  } catch (error) {
+    console.error("Error loading pronunciation progress:", error);
+  }
+}, [pronounceLessons]);
+
 
   // Helper functions
   const isValidProgressKey = (key) => /^level-\d+-lesson-\d+$/.test(key);
@@ -202,7 +309,7 @@ export const SideHome = () => {
       icon: Volume2,
       title: "Pronunciation",
       titleAr: "النطق",
-      brief: "AI-powered accent training",
+      brief: "accent training",
       briefAr: "تدريب النطق بالذكاء الاصطناعي",
       progress: pronunciationProgress.progress,
       completedLessons: pronunciationProgress.completedTopics,
@@ -256,7 +363,7 @@ export const SideHome = () => {
         </div>
 
         {/* Tools Cards - Horizontal row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-4 gap-4">
           {horizontalTools.map((tool) => {
             const Icon = tool.icon;
             const isActive = activeCard === tool.id;

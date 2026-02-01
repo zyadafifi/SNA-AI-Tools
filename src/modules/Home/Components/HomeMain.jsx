@@ -1,7 +1,6 @@
 import { HomeSectionTitle } from "./HomeSectionTitle";
 import { SideHome } from "./SideHome";
 // import { HomeHeroSection } from "./HomeHeroSection";
-// import { HomeToolsList } from "./HomeToolsList";
 import { HomeMainPlan } from "./HomeMainPlan";
 export const HomeMain = () => {
   return (
@@ -20,9 +19,6 @@ export const HomeMain = () => {
 
         {/* ===================== HOME PLAN ===================== */}
         <HomeMainPlan />
-
-        {/* ===================== TOOLS LIST ===================== */}
-        {/* <HomeToolsList tools={tools} /> */}
       </div>
     </div>
   );
