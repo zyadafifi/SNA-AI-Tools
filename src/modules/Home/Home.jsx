@@ -44,7 +44,7 @@ export function Home() {
         </aside>
 
         {/* Main Content */}
-        <main className="w-full bg-gradient-to-br overflow-hidden">
+        <main className="flex-1 bg-gradient-to-br">
           <HomeMain />
         </main>
 
