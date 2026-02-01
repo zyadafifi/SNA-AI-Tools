@@ -1,99 +1,107 @@
-import { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { readingData } from "../../../config/readingData/readingData";
 import { Loading } from "../../../components/Loading";
 
 // ============================================
-// ICONS COMPONENTS
+// ICONS COMPONENTS (Memoized)
 // ============================================
-const HeadphonesIcon = ({ active, size = "w-10 h-10" }) => (
-  <svg viewBox="0 0 24 24" className={size} fill="none">
-    <path
-      d="M4 12a8 8 0 0 1 16 0v7a2 2 0 0 1-2 2h-1v-7h3"
-      stroke={active ? "white" : "#9CA3AF"}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M4 12v7a2 2 0 0 0 2 2h1v-7H4"
-      stroke={active ? "white" : "#9CA3AF"}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+const HeadphonesIcon = React.memo(function HeadphonesIcon({ active, size = "w-10 h-10" }) {
+  return (
+    <svg viewBox="0 0 24 24" className={size} fill="none">
+      <path
+        d="M4 12a8 8 0 0 1 16 0v7a2 2 0 0 1-2 2h-1v-7h3"
+        stroke={active ? "white" : "#9CA3AF"}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4 12v7a2 2 0 0 0 2 2h1v-7H4"
+        stroke={active ? "white" : "#9CA3AF"}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+});
 
-const MicIcon = ({ active, size = "w-10 h-10" }) => (
-  <svg viewBox="0 0 24 24" className={size} fill="none">
-    <path
-      d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3Z"
-      stroke={active ? "white" : "#9CA3AF"}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M19 11a7 7 0 0 1-14 0"
-      stroke={active ? "white" : "#9CA3AF"}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M12 18v3"
-      stroke={active ? "white" : "#9CA3AF"}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M8 21h8"
-      stroke={active ? "white" : "#9CA3AF"}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+const MicIcon = React.memo(function MicIcon({ active, size = "w-10 h-10" }) {
+  return (
+    <svg viewBox="0 0 24 24" className={size} fill="none">
+      <path
+        d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3Z"
+        stroke={active ? "white" : "#9CA3AF"}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M19 11a7 7 0 0 1-14 0"
+        stroke={active ? "white" : "#9CA3AF"}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 18v3"
+        stroke={active ? "white" : "#9CA3AF"}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 21h8"
+        stroke={active ? "white" : "#9CA3AF"}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+});
 
-const BookIcon = ({ active, size = "w-10 h-10" }) => (
-  <svg viewBox="0 0 24 24" className={size} fill="none">
-    <path
-      d="M4 19a2 2 0 0 0 2 2h14V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14Z"
-      stroke={active ? "white" : "#9CA3AF"}
-      strokeWidth="2"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M8 7h8M8 11h8"
-      stroke={active ? "white" : "#9CA3AF"}
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-  </svg>
-);
+const BookIcon = React.memo(function BookIcon({ active, size = "w-10 h-10" }) {
+  return (
+    <svg viewBox="0 0 24 24" className={size} fill="none">
+      <path
+        d="M4 19a2 2 0 0 0 2 2h14V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14Z"
+        stroke={active ? "white" : "#9CA3AF"}
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 7h8M8 11h8"
+        stroke={active ? "white" : "#9CA3AF"}
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+});
 
-const PencilIcon = ({ active, size = "w-10 h-10" }) => (
-  <svg viewBox="0 0 24 24" className={size} fill="none">
-    <path
-      d="M12 20h9"
-      stroke={active ? "white" : "#9CA3AF"}
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <path
-      d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4 11.5-11.5Z"
-      stroke={active ? "white" : "#9CA3AF"}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+const PencilIcon = React.memo(function PencilIcon({ active, size = "w-10 h-10" }) {
+  return (
+    <svg viewBox="0 0 24 24" className={size} fill="none">
+      <path
+        d="M12 20h9"
+        stroke={active ? "white" : "#9CA3AF"}
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4 11.5-11.5Z"
+        stroke={active ? "white" : "#9CA3AF"}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+});
 
-const ToolIcon = ({ category, active, size = "w-10 h-10" }) => {
+const ToolIcon = React.memo(function ToolIcon({ category, active, size = "w-10 h-10" }) {
   switch (category) {
     case "listening":
       return <HeadphonesIcon active={active} size={size} />;
@@ -106,34 +114,44 @@ const ToolIcon = ({ category, active, size = "w-10 h-10" }) => {
     default:
       return <BookIcon active={active} size={size} />;
   }
-};
+});
 
 // ============================================
-// CURVED PATH SVG - Connects nodes with curves
+// GROUP THEMES (كل 4 نقاط لون مختلف)
 // ============================================
-const CurvedConnector = ({ from, to, isActive }) => {
+const GROUP_THEMES = [
+  { primary: "#F59E0B", secondary: "#D97706", gradFrom: "#FBBF24", gradTo: "#F97316" },
+  { primary: "#2563EB", secondary: "#1D4ED8", gradFrom: "#60A5FA", gradTo: "#2563EB" },
+  { primary: "#7C3AED", secondary: "#6D28D9", gradFrom: "#A78BFA", gradTo: "#7C3AED" },
+  { primary: "#16A34A", secondary: "#15803D", gradFrom: "#4ADE80", gradTo: "#16A34A" },
+  { primary: "#DB2777", secondary: "#BE185D", gradFrom: "#F472B6", gradTo: "#DB2777" },
+  { primary: "#0EA5E9", secondary: "#0284C7", gradFrom: "#7DD3FC", gradTo: "#0EA5E9" },
+];
+
+// ============================================
+// CURVED PATH SVG - Connects nodes with curves (Memoized)
+// ============================================
+const CurvedConnector = React.memo(function CurvedConnector({ from, to, isActive, activeColor }) {
   const curveOffset = (to.x - from.x) / 1;
-
-  const path = `
-    M ${from.x} ${from.y}
-    C ${from.x + curveOffset} ${from.y + 20},
-      ${to.x + curveOffset} ${to.y - 30},
-      ${to.x} ${to.y}
-  `;
+  const d = `M ${from.x} ${from.y}
+             C ${from.x + curveOffset} ${from.y + 20},
+               ${to.x + curveOffset} ${to.y - 30},
+               ${to.x} ${to.y}`;
 
   return (
     <path
-      d={path}
+      d={d}
       fill="none"
-      stroke={isActive ? "var(--primary-color)" : "#E5E7EB"}
+      stroke={isActive ? activeColor : "#E5E7EB"}
       strokeWidth={isActive ? "6" : "10"}
       strokeLinecap="round"
       style={{
+        // ⚡ drop-shadow على الـ active فقط (زي ما كان)
         filter: isActive ? "drop-shadow(0px 6px 6px rgba(0,0,0,0.25))" : "none",
       }}
     />
   );
-};
+});
 
 // ============================================
 // HELPERS
@@ -149,18 +167,19 @@ const getCategoryNameArabic = (category) => {
 };
 
 // ============================================
-// LESSON NODE - Single circular node (3D)
+// LESSON NODE - Single circular node (3D) (Memoized)
 // ============================================
-const LessonNode = ({ node, position, onNodeClick }) => {
-  const { isUnlocked, isCurrent, isClickable, linkTo } = node;
+const LessonNode = React.memo(function LessonNode({ node, position, onNodeClick }) {
+  const { isUnlocked, isCurrent, isClickable, linkTo, theme } = node;
 
   const CircleContent = (
     <div className="relative" style={{ transformStyle: "preserve-3d" }}>
       {/* Outer ring for active node */}
       {isCurrent && (
         <div
-          className="absolute inset-0 rounded-full border-4 border-[var(--primary-color)] animate-pulse"
+          className="absolute inset-0 rounded-full border-4 animate-pulse"
           style={{
+            borderColor: theme?.primary || "var(--primary-color)",
             width: "96px",
             height: "96px",
             left: "-8px",
@@ -191,29 +210,22 @@ const LessonNode = ({ node, position, onNodeClick }) => {
         style={{
           transform: "rotateX(26.87deg) translateZ(8px)",
           boxShadow: `0px 10px 0px 0px ${
-            isUnlocked || isCurrent ? "var(--secondary-color)" : "gray"
+            isUnlocked || isCurrent ? (theme?.secondary || "var(--secondary-color)") : "gray"
           }`,
-          filter: isCurrent
-            ? "drop-shadow(0px 14px 12px rgba(0,0,0,0.35))"
-            : "none",
+          filter: isCurrent ? "drop-shadow(0px 14px 12px rgba(0,0,0,0.35))" : "none",
+          background:
+            isUnlocked || isCurrent
+              ? `linear-gradient(to bottom, ${theme?.gradFrom}, ${theme?.gradTo})`
+              : undefined,
         }}
         className={`
           w-20 h-20 rounded-full flex items-center justify-center
           transition-all duration-300 shadow-lg relative z-10
-          ${
-            isUnlocked || isCurrent
-              ? "bg-gradient-to-b from-yellow-400 to-orange-500 hover:scale-105 hover:-translate-y-1"
-              : "bg-gray-300"
-          }
+          ${isUnlocked || isCurrent ? "hover:scale-105 hover:-translate-y-1" : "bg-gray-300"}
         `}
       >
         <div className="relative z-10">
-          {/* ✅ Dynamic icon by category */}
-          <ToolIcon
-            category={node.category}
-            active={isUnlocked || isCurrent}
-            size="w-10 h-10"
-          />
+          <ToolIcon category={node.category} active={isUnlocked || isCurrent} size="w-10 h-10" />
         </div>
       </div>
     </div>
@@ -231,40 +243,45 @@ const LessonNode = ({ node, position, onNodeClick }) => {
       {/* Current Label */}
       {isCurrent && (
         <div className="absolute -top-[74px] left-1/2 -translate-x-1/2 z-50">
-  <div className="relative">
-    <div
-      className="
-        flex items-center gap-2
-        bg-white/80 backdrop-blur-md
-        border border-white/60
-        rounded-2xl px-4 py-2
-        shadow-[0_16px_30px_rgba(0,0,0,0.18)]
-        whitespace-nowrap
-      "
-    >
-      {/* mini badge */}
-      <div className="w-7 h-7 rounded-full bg-gradient-to-b from-yellow-400 to-orange-500 shadow-md flex items-center justify-center">
-        <span className="text-white text-xs font-black">GO</span>
-      </div>
+          <div className="relative">
+            <div
+              className="
+                flex items-center gap-2
+                bg-white/80 backdrop-blur-md
+                border border-white/60
+                rounded-2xl px-4 py-2
+                shadow-[0_16px_30px_rgba(0,0,0,0.18)]
+                whitespace-nowrap
+              "
+            >
+              <div
+                className="w-7 h-7 rounded-full shadow-md flex items-center justify-center"
+                style={{
+                  background: `linear-gradient(to bottom, ${theme?.gradFrom}, ${theme?.gradTo})`,
+                }}
+              >
+                <span className="text-white text-xs font-black">GO</span>
+              </div>
 
-      <span className="arabic_font text-slate-800 font-extrabold text-sm">
-        {node.category === "listening"
-          ? `ابدأ الاستماع درس ${node.lessonNo}`
-          : `ابدأ ${getCategoryNameArabic(node.category)} درس ${node.lessonNo}`}
-      </span>
-    </div>
+              <span className="arabic_font text-slate-800 font-extrabold text-sm">
+                {node.category === "listening"
+                  ? `ابدأ الاستماع درس ${node.lessonNo}`
+                  : `ابدأ ${getCategoryNameArabic(node.category)} درس ${node.lessonNo}`}
+              </span>
+            </div>
 
-    {/* glow line */}
-    <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-yellow-400/30 to-orange-500/30 blur-md -z-10" />
-
-    {/* pointer */}
-    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 rotate-45 w-4 h-4 bg-white/80 border border-white/60 backdrop-blur-md" />
-  </div>
-</div>
-
+            <div
+              className="absolute -inset-0.5 rounded-2xl blur-md -z-10"
+              style={{
+                background: `linear-gradient(to right, ${theme?.primary}55, ${theme?.secondary}55)`,
+              }}
+            />
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 rotate-45 w-4 h-4 bg-white/80 border border-white/60 backdrop-blur-md" />
+          </div>
+        </div>
       )}
 
-      {/* ✅ Click behavior */}
+      {/* Click behavior */}
       {isClickable && linkTo ? (
         <Link
           to={linkTo}
@@ -279,40 +296,39 @@ const LessonNode = ({ node, position, onNodeClick }) => {
       )}
     </div>
   );
-};
+});
 
 // ============================================
-// ZIGZAG PATH UI COMPONENT (3D container)
+// ZIGZAG PATH UI COMPONENT (3D container) (Memoized + memoized positions)
 // ============================================
-const ZigzagPathUI = ({ nodes, onNodeClick = () => {} }) => {
-  const calculatePositions = (nodes) => {
-    const positions = [];
+const ZigzagPathUI = React.memo(function ZigzagPathUI({ nodes, onNodeClick = () => {} }) {
+  const positions = useMemo(() => {
     const centerX = 210;
     const startY = 110;
     const verticalSpacing = 145;
     const horizontalOffset = 85;
 
-    nodes.forEach((node, index) => {
+    const groupSize = 4;
+    const groupGap = 80;
+
+    return nodes.map((_, index) => {
       let x = centerX;
+      if (index % 2 === 1) x = centerX - horizontalOffset;
+      else if (index > 0) x = centerX + horizontalOffset;
 
-      if (index % 2 === 1) {
-        x = centerX - horizontalOffset;
-      } else if (index > 0) {
-        x = centerX + horizontalOffset;
-      }
+      const groupIndex = Math.floor(index / groupSize);
 
-      positions.push({
+      return {
         x,
-        y: startY + index * verticalSpacing,
-      });
+        y: startY + index * verticalSpacing + groupIndex * groupGap,
+      };
     });
+  }, [nodes]);
 
-    return positions;
-  };
-
-  const positions = calculatePositions(nodes);
-  const svgHeight =
-    positions.length > 0 ? positions[positions.length - 1].y + 140 : 520;
+  const svgHeight = useMemo(() => {
+    if (!positions.length) return 520;
+    return positions[positions.length - 1].y + 170;
+  }, [positions]);
 
   return (
     <div className="container relative w-full flex justify-center py-10 overflow-hidden">
@@ -325,14 +341,50 @@ const ZigzagPathUI = ({ nodes, onNodeClick = () => {} }) => {
           transformStyle: "preserve-3d",
         }}
       >
+        {/* Group separators */}
+        {nodes.map((_, index) => {
+          const isEndOfGroup = (index + 1) % 4 === 0 && index !== nodes.length - 1;
+          if (!isEndOfGroup) return null;
+
+          const y = positions[index].y + 92;
+          const nextTheme = nodes[index + 1]?.theme;
+
+          return (
+            <div
+              key={`sep-${index}`}
+              className="absolute left-1/2 -translate-x-1/2"
+              style={{ top: `${y}px`, width: "340px", height: "28px", zIndex: 1 }}
+            >
+              <div className="relative w-full h-full flex items-center justify-center">
+                <div
+                  className="w-full h-[6px] rounded-full"
+                  style={{
+                    background: "rgba(229,231,235,0.9)",
+                    boxShadow: "0 10px 20px rgba(0,0,0,0.10)",
+                  }}
+                />
+                <div
+                  className="absolute w-20 h-5 rounded-full"
+                  style={{
+                    background: `linear-gradient(to right, ${nextTheme?.primary}55, ${nextTheme?.secondary}55)`,
+                    filter: "blur(0px)",
+                  }}
+                />
+              </div>
+            </div>
+          );
+        })}
+
         {/* SVG Connectors */}
-        <svg
-          className="absolute top-0 left-0 w-full h-full pointer-events-none"
-          style={{ zIndex: 0 }}
-        >
+        <svg className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
           {positions.map((pos, index) => {
             if (index === positions.length - 1) return null;
+
+            const isGroupBreak = (index + 1) % 4 === 0;
+            if (isGroupBreak) return null;
+
             const nextPos = positions[index + 1];
+            const activeColor = nodes[index]?.theme?.primary || "var(--primary-color)";
 
             return (
               <CurvedConnector
@@ -340,27 +392,28 @@ const ZigzagPathUI = ({ nodes, onNodeClick = () => {} }) => {
                 from={pos}
                 to={nextPos}
                 isActive={nodes[index].isUnlocked}
+                activeColor={activeColor}
               />
             );
           })}
         </svg>
 
         {/* Nodes */}
-        {nodes.map((node) => (
+        {nodes.map((node, idx) => (
           <LessonNode
             key={node.id}
             node={node}
-            position={positions[node.index]}
+            position={positions[idx]}
             onNodeClick={onNodeClick}
           />
         ))}
       </div>
     </div>
   );
-};
+});
 
 // ============================================
-// DATA LOGIC - Progress tracking
+// PROGRESS HOOK (✅ لا يقرأ localStorage كل render)
 // ============================================
 const useProgressData = (lengths) => {
   const safeParse = (raw, fallback) => {
@@ -371,85 +424,69 @@ const useProgressData = (lengths) => {
     }
   };
 
-  // Pronounce: عدّ المفاتيح الرقمية فقط (1,2,3...) وتجاهل conversations/sentences...etc
   const countNumericCompleted = (obj) => {
     if (!obj || typeof obj !== "object") return 0;
-
-    return Object.entries(obj).reduce((count, [key, value]) => {
-      const isNumericKey = /^\d+$/.test(key);
-      if (!isNumericKey) return count;
-
-      const completed = !!value?.completed;
-      return count + (completed ? 1 : 0);
-    }, 0);
+    let c = 0;
+    for (const key in obj) {
+      if (/^\d+$/.test(key) && obj[key]?.completed) c++;
+    }
+    return c;
   };
 
-  const getProgressFromLocalStorage = () => {
-    try {
-      // =======================
-      // Listening Progress
-      // =======================
-      const listeningRaw = localStorage.getItem("sna-lesson-progress");
-      const listeningArr = safeParse(listeningRaw, []);
-      const listeningCompleted = Array.isArray(listeningArr)
-        ? listeningArr.filter((lesson) => lesson?.isCompleted === true).length
+  const compute = useCallback(() => {
+    const listeningArr = safeParse(localStorage.getItem("sna-lesson-progress"), []);
+    const listeningCompleted = Array.isArray(listeningArr)
+      ? listeningArr.reduce((acc, x) => acc + (x?.isCompleted ? 1 : 0), 0)
+      : 0;
+
+    const pronounceObj = safeParse(localStorage.getItem("pronunciationMasterProgress"), {});
+    const pronunciationCompleted = countNumericCompleted(pronounceObj);
+
+    const readingObj = safeParse(localStorage.getItem("quizProgress"), {});
+    const readingCompleted =
+      readingObj && typeof readingObj === "object"
+        ? Object.values(readingObj).reduce((acc, x) => acc + (x?.completed ? 1 : 0), 0)
         : 0;
 
-      // =======================
-      // Pronunciation Progress
-      // =======================
-      const pronounceRaw = localStorage.getItem("pronunciationMasterProgress");
-      const pronounceObj = safeParse(pronounceRaw, {});
-      const pronunciationCompleted = countNumericCompleted(pronounceObj);
+    const writingObj = safeParse(localStorage.getItem("sna-writing-tool-progress"), {});
+    const writingCompleted =
+      writingObj && typeof writingObj === "object"
+        ? Object.values(writingObj).reduce(
+            (acc, x) => acc + (x?.phase === "questions-completed" ? 1 : 0),
+            0
+          )
+        : 0;
 
-      // =======================
-      // Reading Progress
-      // =======================
-      const readingRaw = localStorage.getItem("quizProgress");
-      const readingObj = safeParse(readingRaw, {});
-      const readingCompleted =
-        readingObj && typeof readingObj === "object"
-          ? Object.values(readingObj).filter((lesson) => lesson?.completed === true)
-              .length
-          : 0;
+    return {
+      listening: listeningCompleted,
+      pronunciation: pronunciationCompleted,
+      reading: readingCompleted,
+      writing: writingCompleted,
+    };
+  }, []);
 
-      // =======================
-      // Writing Progress
-      // =======================
-      const writingRaw = localStorage.getItem("sna-writing-tool-progress");
-      const writingObj = safeParse(writingRaw, {});
-      const writingCompleted =
-        writingObj && typeof writingObj === "object"
-          ? Object.values(writingObj).filter(
-              (item) => item?.phase === "questions-completed"
-            ).length
-          : 0;
+  const [progress, setProgress] = useState(() => compute());
 
-      console.log("📊 Progress Summary (from localStorage shapes):", {
-        listening: `${listeningCompleted}/${lengths.listening}`,
-        pronunciation: `${pronunciationCompleted}/${lengths.pronounce}`,
-        reading: `${readingCompleted}/${lengths.reading}`,
-        writing: `${writingCompleted}/${lengths.writing}`,
-      });
+  // recompute عند تغيّر lengths (يعني data اتغيرت) + عند تغيّر localStorage (من تبويب آخر)
+  useEffect(() => {
+    setProgress(compute());
 
-      return {
-        listening: listeningCompleted,
-        pronunciation: pronunciationCompleted,
-        reading: readingCompleted,
-        writing: writingCompleted,
-      };
-    } catch (error) {
-      console.error("Error reading progress from localStorage:", error);
-      return {
-        listening: 0,
-        pronunciation: 0,
-        reading: 0,
-        writing: 0,
-      };
-    }
-  };
+    const onStorage = (e) => {
+      if (
+        e.key === "sna-lesson-progress" ||
+        e.key === "pronunciationMasterProgress" ||
+        e.key === "quizProgress" ||
+        e.key === "sna-writing-tool-progress"
+      ) {
+        setProgress(compute());
+      }
+    };
 
-  return getProgressFromLocalStorage();
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, [compute, lengths.listening, lengths.pronounce, lengths.reading, lengths.writing]);
+
+  return progress;
 };
 
 // ============================================
@@ -457,9 +494,6 @@ const useProgressData = (lengths) => {
 // ============================================
 const CATEGORY_ORDER = ["listening", "pronunciation", "reading", "writing"];
 
-/**
- * NOTE: بنمرر getPathByCategory كـ argument عشان تقدر تستخدم data جوه الـ component
- */
 const buildInterleavedNodes = (lengths, completedCounts, getPathByCategory) => {
   const maxLen = Math.max(
     lengths.listening || 0,
@@ -482,17 +516,13 @@ const buildInterleavedNodes = (lengths, completedCounts, getPathByCategory) => {
     writing: completedCounts.writing || 0,
   };
 
-  // steps: L1,P1,R1,W1,L2,P2...
   const steps = [];
   for (let lessonNo = 1; lessonNo <= maxLen; lessonNo++) {
     for (const cat of CATEGORY_ORDER) {
-      if (lessonNo <= (lenByCat[cat] || 0)) {
-        steps.push({ category: cat, lessonNo });
-      }
+      if (lessonNo <= (lenByCat[cat] || 0)) steps.push({ category: cat, lessonNo });
     }
   }
 
-  // current = أول خطوة لسه مش مكتملة داخل قسمها
   let currentIndex = -1;
   for (let i = 0; i < steps.length; i++) {
     const { category, lessonNo } = steps[i];
@@ -508,13 +538,18 @@ const buildInterleavedNodes = (lengths, completedCounts, getPathByCategory) => {
     const isCurrent = i === currentIndex;
     const isClickable = isUnlocked || isCurrent;
 
+    const groupIndex = Math.floor(i / 4);
+    const theme = GROUP_THEMES[groupIndex % GROUP_THEMES.length];
+
     return {
       id: `${step.category}-${step.lessonNo}-${i}`,
       index: i,
+      groupIndex,
+      theme,
       category: step.category,
       lessonNo: step.lessonNo,
       label: `${getCategoryNameArabic(step.category)} ${step.lessonNo}`,
-      iconType: step.category, // ✅ (optional) category-based icon
+      iconType: step.category,
       isUnlocked,
       isCurrent,
       isClickable,
@@ -533,35 +568,60 @@ export function HomeMainPlan() {
     writing: null,
     listening: null,
   });
+
   const [loading, setLoading] = useState({
     pronounce: true,
     writing: true,
     listening: true,
   });
+
   const [errors, setErrors] = useState({
     pronounce: null,
     writing: null,
     listening: null,
   });
 
-  const fetchData = async (url, key) => {
-    try {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error("Failed to load data");
-      const json = await res.json();
-      setData((p) => ({ ...p, [key]: json }));
-      setErrors((p) => ({ ...p, [key]: null }));
-    } catch (e) {
-      setErrors((p) => ({ ...p, [key]: e.message }));
-    } finally {
-      setLoading((p) => ({ ...p, [key]: false }));
-    }
-  };
-
+  // ✅ Fetch مرة واحدة + state update مرة واحدة (أقل re-renders)
   useEffect(() => {
-    fetchData("/assets/pronounceData.json", "pronounce");
-    fetchData("/assets/writingData.json", "writing");
-    fetchData("/assets/listeningData.json", "listening");
+    let mounted = true;
+
+    (async () => {
+      try {
+        const [p, w, l] = await Promise.all([
+          fetch("/assets/pronounceData.json").then((r) => {
+            if (!r.ok) throw new Error("Failed to load pronounceData.json");
+            return r.json();
+          }),
+          fetch("/assets/writingData.json").then((r) => {
+            if (!r.ok) throw new Error("Failed to load writingData.json");
+            return r.json();
+          }),
+          fetch("/assets/listeningData.json").then((r) => {
+            if (!r.ok) throw new Error("Failed to load listeningData.json");
+            return r.json();
+          }),
+        ]);
+
+        if (!mounted) return;
+
+        setData({ pronounce: p, writing: w, listening: l });
+        setErrors({ pronounce: null, writing: null, listening: null });
+      } catch (e) {
+        if (!mounted) return;
+        setErrors({
+          pronounce: e?.message || "Failed to load data",
+          writing: e?.message || "Failed to load data",
+          listening: e?.message || "Failed to load data",
+        });
+      } finally {
+        if (!mounted) return;
+        setLoading({ pronounce: false, writing: false, listening: false });
+      }
+    })();
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   const lengths = useMemo(
@@ -576,27 +636,30 @@ export function HomeMainPlan() {
 
   const completedCounts = useProgressData(lengths);
 
-  // ✅ getPathByCategory جوه الـ component عشان يشوف data
-  const getPathByCategory = (category, lessonNo) => {
-    switch (category) {
-      case "listening":
-        return `/listening/lesson/${lessonNo}`;
+  // ✅ stable callback
+  const getPathByCategory = useCallback(
+    (category, lessonNo) => {
+      switch (category) {
+        case "listening":
+          return `/listening/lesson/${lessonNo}`;
 
-      case "pronunciation":
-        return `/pronounce/lesson/${lessonNo}`;
+        case "pronunciation":
+          return `/pronounce/lesson/${lessonNo}`;
 
-      case "reading":
-        return `/reading/show-lesson-first-round/${lessonNo}/1`;
+        case "reading":
+          return `/reading/show-lesson-first-round/${lessonNo}/1`;
 
-      case "writing": {
-        const writingId = data?.writing?.topics?.[lessonNo - 1]?.id;
-        return writingId ? `/article/${writingId}` : `/article/${lessonNo}`;
+        case "writing": {
+          const writingId = data?.writing?.topics?.[lessonNo - 1]?.id;
+          return writingId ? `/article/${writingId}` : `/article/${lessonNo}`;
+        }
+
+        default:
+          return `/plan/slug/lesson-${lessonNo}`;
       }
-
-      default:
-        return `/plan/slug/lesson-${lessonNo}`;
-    }
-  };
+    },
+    [data?.writing]
+  );
 
   const total = useMemo(() => {
     const maxLen = Math.max(
@@ -619,14 +682,15 @@ export function HomeMainPlan() {
   const nodes = useMemo(() => {
     if (total === 0) return [];
     return buildInterleavedNodes(lengths, completedCounts, getPathByCategory);
-  }, [total, lengths, completedCounts, data]);
+  }, [total, lengths, completedCounts, getPathByCategory]);
 
-  const isLoading = Object.values(loading).some(Boolean);
-  const hasErrors = Object.values(errors).some(Boolean);
+  const isLoading = useMemo(() => Object.values(loading).some(Boolean), [loading]);
+  const hasErrors = useMemo(() => Object.values(errors).some(Boolean), [errors]);
 
-  const handleNodeClick = (node) => {
-    console.log("Node clicked:", node);
-  };
+  const handleNodeClick = useCallback((node) => {
+    // لو لسه محتاج log خليه مؤقت، لكنه بيبطّأ مع كثرة re-renders
+    // console.log("Node clicked:", node);
+  }, []);
 
   if (isLoading) return <Loading />;
 
