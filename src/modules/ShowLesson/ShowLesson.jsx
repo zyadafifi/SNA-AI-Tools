@@ -350,9 +350,6 @@ const RecordingModal = ({
     const normalizedOriginal = normalizeText(orig);
     const normalizedUser = normalizeText(user);
 
-    const originalWords = normalizedOriginal
-      .split(/\s+/)
-      .filter((w) => w.length > 0);
     const userWords = normalizedUser.split(/\s+/).filter((w) => w.length > 0);
 
     const displayOriginalWords = orig.trim().split(/\s+/);
@@ -361,13 +358,11 @@ const RecordingModal = ({
       const normalizedDisplayWord = normalizeText(displayWord);
       const userWord = userWords[i] || "";
 
-      let isCorrect = false;
       let similarity = 0;
       let matchType = "none";
 
       if (userWord && normalizedDisplayWord) {
         if (normalizedDisplayWord === userWord) {
-          isCorrect = true;
           similarity = 100;
           matchType = "exact";
         } else {
@@ -378,26 +373,19 @@ const RecordingModal = ({
           );
           similarity = maxLen > 0 ? ((maxLen - distance) / maxLen) * 100 : 0;
 
-          if (similarity >= 80) {
-            isCorrect = true;
-            matchType = "close";
-          } else if (similarity >= 60) {
-            isCorrect = false;
-            matchType = "partial";
-          } else {
-            isCorrect = false;
-            matchType = "wrong";
-          }
+          if (similarity >= 80) matchType = "close";
+          else if (similarity >= 60) matchType = "partial";
+          else matchType = "wrong";
         }
+      } else {
+        matchType = "wrong";
       }
 
       return {
         word: displayWord,
-        isCorrect,
         userWord,
         similarity: Math.round(similarity),
         matchType,
-        normalizedWord: normalizedDisplayWord,
       };
     });
 
@@ -421,11 +409,11 @@ const RecordingModal = ({
                     : "text-red-800 bg-red-100"
                 }`}
                 title={
-                  it.isCorrect
+                  it.matchType === "exact"
                     ? `نطق صحيح (${it.similarity}%)`
-                    : `متوقع: ${it.word}، نطقت: ${it.userWord || "لا شيء"} (${
-                        it.similarity
-                      }%)`
+                    : `متوقع: ${it.word}، نطقت: ${
+                        it.userWord || "لا شيء"
+                      } (${it.similarity}%)`
                 }
               >
                 {it.word}
@@ -489,7 +477,7 @@ const RecordingModal = ({
   const androidOptimizedClass = isAndroid() ? "android-optimized" : "";
 
   const handleDeleteRecording = () => {
-     if (isRecording && onStopRecording) {
+    if (isRecording && onStopRecording) {
       onStopRecording();
     }
     if (recordingResult?.audioUrl) {
@@ -669,9 +657,7 @@ const RecordingModal = ({
               <div className="mt-6 space-y-5">
                 {recordingResult.success ? (
                   <>
-                    <div
-                      className={`mb-1 p-4 rounded-xl border-2 ${resultTone}`}
-                    >
+                    <div className={`mb-1 p-4 rounded-xl border-2 ${resultTone}`}>
                       <div className="flex items-start gap-3">
                         <svg
                           className="w-5 h-5 mt-0.5 flex-shrink-0"
@@ -741,30 +727,27 @@ const RecordingModal = ({
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      
-                        <>
-                          <button
-                            onClick={onRetry}
-                            className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium transition-colors ${
-                              isAndroid() ? "min-h-[48px]" : ""
-                            }`}
-                          >
-                            <RotateCcw size={18} />
-                            <span className="arabic_font">إعادة المحاولة</span>
-                          </button>
-                          {/* زر المتابعة يظهر فقط مع تسجيل صوتي */}
-                          {recordingResult.audioUrl && (
-                            <button
-                              onClick={onContinue}
-                              className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-green-500 hover:bg-green-600 text-white font-medium transition-colors ${
-                                isAndroid() ? "min-h-[48px]" : ""
-                              }`}
-                            >
-                              <span className="arabic_font">متابعة</span>
-                            </button>
-                          )}
-                        </>
-                     
+                      <button
+                        onClick={onRetry}
+                        className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium transition-colors ${
+                          isAndroid() ? "min-h-[48px]" : ""
+                        }`}
+                      >
+                        <RotateCcw size={18} />
+                        <span className="arabic_font">إعادة المحاولة</span>
+                      </button>
+
+                      {/* زر المتابعة يظهر فقط مع تسجيل صوتي */}
+                      {recordingResult.audioUrl && (
+                        <button
+                          onClick={onContinue}
+                          className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-green-500 hover:bg-green-600 text-white font-medium transition-colors ${
+                            isAndroid() ? "min-h-[48px]" : ""
+                          }`}
+                        >
+                          <span className="arabic_font">متابعة</span>
+                        </button>
+                      )}
                     </div>
                   </>
                 ) : (
@@ -910,7 +893,6 @@ const ClickableWord = ({
 
       if (!wordRef.current) return;
 
-      // حساب موقع الكلمة بالنسبة للصفحة
       const rect = wordRef.current.getBoundingClientRect();
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
@@ -1076,12 +1058,10 @@ const WordPopover = ({
   const popoverWidth = 320;
   const estimatedHeight = 250;
 
-  // حساب الموقع
   let top = position.top;
   let left = position.left - popoverWidth / 2;
   let showBelow = false;
 
-  // نشوف لو الكلمة في أول الصفحة
   if (position.top < estimatedHeight + 100) {
     showBelow = true;
     top = position.bottom + 10;
@@ -1089,26 +1069,19 @@ const WordPopover = ({
     top = position.top - estimatedHeight - 10;
   }
 
-  // نتأكد إن مش هيخرج من الشاشة يمين أو شمال
   const maxLeft = window.innerWidth - popoverWidth - 20;
-  if (left < 20) {
-    left = 20;
-  } else if (left > maxLeft) {
-    left = maxLeft;
-  }
+  if (left < 20) left = 20;
+  else if (left > maxLeft) left = maxLeft;
 
-  // حساب موقع السهم بالنسبة للـ popover
   const arrowLeft = position.left - left;
 
   return (
     <>
-      {/* Backdrop */}
       <div
         className="fixed inset-0 z-40 bg-black bg-opacity-20 md:bg-transparent"
         onClick={onClose}
       />
 
-      {/* Popover */}
       <div
         className="absolute z-50 bg-white rounded-xl shadow-2xl border border-gray-200"
         style={{
@@ -1118,7 +1091,6 @@ const WordPopover = ({
           maxWidth: "calc(100vw - 40px)",
         }}
       >
-        {/* Header */}
         <div className="flex items-center justify-between p-3 border-b border-gray-100">
           <h3 className="text-lg font-bold text-gray-800 break-all flex-1 mr-2">
             {selectedWordData.word}
@@ -1147,16 +1119,13 @@ const WordPopover = ({
           </div>
         </div>
 
-        {/* Content */}
         <div className="p-4 space-y-3 max-h-64 overflow-y-auto">
-          {/* Translation */}
           <div>
             <p className="arabic_font text-right text-base text-gray-700 font-medium">
               {selectedWordData.translation}
             </p>
           </div>
 
-          {/* Definition */}
           {selectedWordData.definition && (
             <div className="pt-2 border-t border-gray-100">
               <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">
@@ -1169,7 +1138,6 @@ const WordPopover = ({
           )}
         </div>
 
-        {/* Arrow pointer */}
         <div
           className={`absolute w-3 h-3 bg-white border border-gray-200 transform rotate-45 ${
             showBelow
@@ -1211,11 +1179,13 @@ export function ShowLesson() {
   const [popoverPosition, setPopoverPosition] = useState(null);
   const [selectedWordData, setSelectedWordData] = useState(null);
   const [activeWord, setActiveWord] = useState(null);
+
   const [isReading, setIsReading] = useState(false);
   const [currentReadingSentenceId, setCurrentReadingSentenceId] =
     useState(null);
   const [autoScroll] = useState(true);
   const [readingProgress, setReadingProgress] = useState(0);
+
   const [isRecording, setIsRecording] = useState(false);
   const [isWaitingForRecording, setIsWaitingForRecording] = useState(false);
   const [recordingResult, setRecordingResult] = useState(null);
@@ -1229,6 +1199,11 @@ export function ShowLesson() {
   const [voices, setVoices] = useState([]);
   const [playbackRate, setPlaybackRate] = useState(1);
   const [loopEnabled, setLoopEnabled] = useState(false);
+
+  // ✅ performance: throttle time updates
+  const timeUpdateRafRef = useRef(null);
+  const lastTimeUpdateMsRef = useRef(0);
+
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const durationsRef = useRef({});
@@ -1236,14 +1211,24 @@ export function ShowLesson() {
   const [lessonElapsed, setLessonElapsed] = useState(0);
 
   const readingTimeoutRef = useRef(null);
+
   const readingStateRef = useRef({
     isReading: false,
     currentIndex: 0,
     shouldStop: false,
   });
+
+  // ✅ NEW: resume state (stop -> resume from where paused)
+  const resumeRef = useRef({
+    hasPosition: false,
+    index: 0,
+    timeInSentence: 0,
+  });
+
   const sentenceRefs = useRef({});
   const recognitionRef = useRef(null);
   const audioRef = useRef(null);
+
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
   const recordedAudioRef = useRef(null);
@@ -1283,6 +1268,8 @@ export function ShowLesson() {
   useEffect(() => {
     let active = true;
     const loaders = [];
+    durationsRef.current = {}; // ✅ reset on lesson change
+
     if (currentLesson?.storyData?.content?.length) {
       currentLesson.storyData.content.forEach((s) => {
         if (s.audioUrl) {
@@ -1319,9 +1306,6 @@ export function ShowLesson() {
     const ss = Math.floor(s % 60);
     return `${String(m).padStart(2, "0")}:${String(ss).padStart(2, "0")}`;
   };
-
-  const togglePlayPause = () =>
-    isReading ? stopReading() : readAllSentences();
 
   const handleSpeedChange = (rate) => {
     setPlaybackRate(rate);
@@ -1473,7 +1457,6 @@ export function ShowLesson() {
           window.speechSynthesis.cancel();
         } catch {}
       }
-      // Clean up audio recording resources
       isRecordingActiveRef.current = false;
       if (silenceTimeoutRef.current) {
         cancelAnimationFrame(silenceTimeoutRef.current);
@@ -1503,29 +1486,25 @@ export function ShowLesson() {
         window.SpeechRecognition || window.webkitSpeechRecognition;
       recognitionRef.current = new SpeechRecognition();
 
-      // إعدادات أساسية
-      recognitionRef.current.continuous = true; // ✅ تغيير إلى true لعدم التوقف التلقائي
+      recognitionRef.current.continuous = true;
       recognitionRef.current.interimResults = false;
       recognitionRef.current.lang = "en-US";
       recognitionRef.current.maxAlternatives = 1;
 
       recognitionRef.current.onstart = () => {
         setIsRecording(true);
-        // للأندرويد: لا تبدأ MediaRecorder مع Speech Recognition
         if (!isAndroid()) {
           startAudioRecording();
         }
       };
 
       recognitionRef.current.onresult = (event) => {
-        // أخذ آخر نتيجة من التسجيل
         const lastResultIndex = event.results.length - 1;
         const transcript = event.results[lastResultIndex][0].transcript
           .toLowerCase()
           .trim();
         const confidence = event.results[lastResultIndex][0].confidence;
 
-        // حفظ النتيجة الأخيرة في ref لاستخدامها عند الإيقاف
         if (!window.lastRecognitionResult) {
           window.lastRecognitionResult = { transcript: "", confidence: 0 };
         }
@@ -1553,35 +1532,28 @@ export function ShowLesson() {
           });
           setShowRecordingModal(true);
         } else if (event.error === "network" && isAndroid()) {
-          // للأندرويد: ابدأ تسجيل صوتي فقط كـ fallback
           startAudioOnlyRecording();
         }
       };
 
       recognitionRef.current.onend = () => {
         setIsRecording(false);
-        if (!isAndroid()) {
-          stopAudioRecording();
-        }
+        if (!isAndroid()) stopAudioRecording();
 
-        // معالجة النتيجة النهائية
         if (
           window.lastRecognitionResult &&
           window.lastRecognitionResult.transcript
         ) {
           const { transcript, confidence } = window.lastRecognitionResult;
 
-          // بدء تسجيل صوتي منفصل للأندرويد بعد الحصول على النتيجة
           if (isAndroid()) {
             startQuickAudioRecording(() => {
               handleRecognitionResult(transcript, confidence);
-              // تنظيف النتيجة المؤقتة
               window.lastRecognitionResult = null;
             });
           } else {
             setTimeout(() => {
               handleRecognitionResult(transcript, confidence);
-              // تنظيف النتيجة المؤقتة
               window.lastRecognitionResult = null;
             }, 200);
           }
@@ -1592,7 +1564,6 @@ export function ShowLesson() {
     }
   };
 
-  // تسجيل صوتي سريع للأندرويد بعد Speech Recognition
   const startQuickAudioRecording = async (callback) => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -1616,9 +1587,7 @@ export function ShowLesson() {
       const audioChunks = [];
 
       mediaRecorder.ondataavailable = (event) => {
-        if (event.data.size > 0) {
-          audioChunks.push(event.data);
-        }
+        if (event.data.size > 0) audioChunks.push(event.data);
       };
 
       mediaRecorder.onstop = () => {
@@ -1626,20 +1595,15 @@ export function ShowLesson() {
           type: mediaRecorder.mimeType || "audio/webm",
         });
 
-        // إنشاء URL للصوت المسجل مع معالجة خاصة للموبايل
-        let audioUrl;
         try {
-          audioUrl = URL.createObjectURL(audioBlob);
+          const audioUrl = URL.createObjectURL(audioBlob);
           recordedAudioRef.current = audioUrl;
         } catch (error) {
           console.error("Error creating audio URL:", error);
           recordedAudioRef.current = null;
         }
 
-        // تنظيف
         stream.getTracks().forEach((track) => track.stop());
-
-        // استدعاء callback
         if (callback) callback();
       };
 
@@ -1649,12 +1613,9 @@ export function ShowLesson() {
         if (callback) callback();
       };
 
-      // تسجيل قصير جداً (ثانية واحدة) لحفظ شيء ما
       mediaRecorder.start();
       setTimeout(() => {
-        if (mediaRecorder.state === "recording") {
-          mediaRecorder.stop();
-        }
+        if (mediaRecorder.state === "recording") mediaRecorder.stop();
       }, 1000);
     } catch (error) {
       console.error("Quick audio recording failed:", error);
@@ -1662,7 +1623,6 @@ export function ShowLesson() {
     }
   };
 
-  // تسجيل صوتي فقط للأندرويد (كـ fallback)
   const startAudioOnlyRecording = async () => {
     try {
       setIsRecording(true);
@@ -1689,9 +1649,7 @@ export function ShowLesson() {
       const audioChunks = [];
 
       mediaRecorder.ondataavailable = (event) => {
-        if (event.data.size > 0) {
-          audioChunks.push(event.data);
-        }
+        if (event.data.size > 0) audioChunks.push(event.data);
       };
 
       mediaRecorder.onstop = () => {
@@ -1699,7 +1657,6 @@ export function ShowLesson() {
           type: mediaRecorder.mimeType || "audio/webm",
         });
 
-        // إنشاء URL للصوت المسجل مع معالجة خاصة للموبايل
         let audioUrl;
         try {
           audioUrl = URL.createObjectURL(audioBlob);
@@ -1723,7 +1680,6 @@ export function ShowLesson() {
         setIsRecording(false);
         setIsWaitingForRecording(false);
 
-        // تنظيف
         stream.getTracks().forEach((track) => track.stop());
       };
 
@@ -1735,12 +1691,8 @@ export function ShowLesson() {
       };
 
       mediaRecorder.start();
-
-      // وقف تلقائي بعد 5 ثوان
       setTimeout(() => {
-        if (mediaRecorder.state === "recording") {
-          mediaRecorder.stop();
-        }
+        if (mediaRecorder.state === "recording") mediaRecorder.stop();
       }, 5000);
     } catch (error) {
       setIsRecording(false);
@@ -1749,10 +1701,8 @@ export function ShowLesson() {
     }
   };
 
-  // إزالة تعقيدات الأندرويد من startAudioRecording (للاستخدام مع iOS فقط)
   const startAudioRecording = async () => {
-    // هذه الدالة للـ iOS فقط الآن
-    if (isAndroid()) return; // لا تعمل على الأندرويد
+    if (isAndroid()) return;
 
     try {
       audioChunksRef.current = [];
@@ -1769,9 +1719,7 @@ export function ShowLesson() {
       mediaRecorderRef.current = mediaRecorder;
 
       mediaRecorder.ondataavailable = (event) => {
-        if (event.data.size > 0) {
-          audioChunksRef.current.push(event.data);
-        }
+        if (event.data.size > 0) audioChunksRef.current.push(event.data);
       };
 
       mediaRecorder.onstop = () => {
@@ -1781,7 +1729,6 @@ export function ShowLesson() {
         const audioUrl = URL.createObjectURL(audioBlob);
         recordedAudioRef.current = audioUrl;
 
-        // تنظيف الموارد
         if (streamRef.current) {
           streamRef.current.getTracks().forEach((track) => track.stop());
           streamRef.current = null;
@@ -1794,7 +1741,6 @@ export function ShowLesson() {
       };
 
       mediaRecorder.start();
-      // بدء silence detection للـ iOS فقط
       startSilenceDetection(stream);
     } catch (error) {
       console.error("Error starting audio recording:", error);
@@ -1802,10 +1748,9 @@ export function ShowLesson() {
     }
   };
 
-  // تحديث دالة silence detection لتعمل مع iOS فقط
   const startSilenceDetection = useCallback(
     (stream) => {
-      if (isAndroid()) return; // لا تعمل على الأندرويد
+      if (isAndroid()) return;
 
       try {
         const audioContext = new (window.AudioContext ||
@@ -1823,11 +1768,8 @@ export function ShowLesson() {
         const bufferLength = analyser.frequencyBinCount;
         const dataArray = new Uint8Array(bufferLength);
 
-        let silenceStart = Date.now();
-        let hasSpoken = false;
-        const SILENCE_THRESHOLD = 20;
-        const SILENCE_DURATION = 2000;
-        const MIN_SPEAKING_TIME = 500;
+        // ✅ performance: update waveform every ~2 frames
+        let frame = 0;
 
         const detectSilence = () => {
           if (!isRecordingActiveRef.current) {
@@ -1837,25 +1779,18 @@ export function ShowLesson() {
 
           analyser.getByteFrequencyData(dataArray);
 
-          const average =
-            dataArray.reduce((sum, value) => sum + value, 0) / bufferLength;
-
-          // تحديث الموجات للـ iOS
-          const waveformData = [];
-          const step = Math.floor(bufferLength / BAR_COUNT);
-          for (let i = 0; i < BAR_COUNT; i++) {
-            const index = i * step;
-            const value = dataArray[index] || 0;
-            const height = Math.max(8, Math.min(36, 8 + (value / 180) * 28));
-            waveformData.push(height);
+          frame++;
+          if (frame % 2 === 0) {
+            const waveformData = [];
+            const step = Math.floor(bufferLength / BAR_COUNT);
+            for (let i = 0; i < BAR_COUNT; i++) {
+              const index = i * step;
+              const value = dataArray[index] || 0;
+              const height = Math.max(8, Math.min(36, 8 + (value / 180) * 28));
+              waveformData.push(height);
+            }
+            setAudioLevels(waveformData);
           }
-          setAudioLevels(waveformData);
-
-          if (average > SILENCE_THRESHOLD) {
-            silenceStart = Date.now();
-            hasSpoken = true;
-          }
-          // Auto-stop removed - recording continues until manual submit
 
           if (silenceTimeoutRef.current) {
             cancelAnimationFrame(silenceTimeoutRef.current);
@@ -1871,9 +1806,8 @@ export function ShowLesson() {
     [BAR_COUNT]
   );
 
-  // تحديث دالة stopAudioRecording
   const stopAudioRecording = () => {
-    if (isAndroid()) return; // لا تعمل على الأندرويد
+    if (isAndroid()) return;
 
     isRecordingActiveRef.current = false;
 
@@ -1934,7 +1868,6 @@ export function ShowLesson() {
   /* ------------------------------ Enhanced Recording API for Android ----------------------------- */
   const startRecording = useCallback(async () => {
     if (!recognitionRef.current) {
-      // للأندرويد: ابدأ تسجيل صوتي فقط
       if (isAndroid()) {
         startAudioOnlyRecording();
         return;
@@ -1953,22 +1886,15 @@ export function ShowLesson() {
       }
 
       setRecordingResult(null);
-
-      // تنظيف النتيجة المؤقتة من التسجيل السابق
       window.lastRecognitionResult = null;
 
-      // للأندرويد: استخدم Speech Recognition فقط (بدون MediaRecorder متزامن)
       if (isAndroid()) {
-        // تنظيف سريع
         if (streamRef.current) {
           streamRef.current.getTracks().forEach((track) => track.stop());
           streamRef.current = null;
         }
-
-        // بدء Speech Recognition فقط
         recognitionRef.current.start();
       } else {
-        // للأجهزة الأخرى: الطريقة العادية
         recognitionRef.current.start();
       }
     } catch (error) {
@@ -1979,7 +1905,6 @@ export function ShowLesson() {
         setMicrophonePermission("denied");
         alert("تم رفض إذن الميكروفون. الرجاء السماح بالوصول للميكروفون.");
       } else if (isAndroid()) {
-        // للأندرويد: fallback إلى تسجيل صوتي فقط
         startAudioOnlyRecording();
       }
     }
@@ -2001,11 +1926,12 @@ export function ShowLesson() {
   const continueToNextSentence = () => {
     setShowRecordingModal(false);
     setRecordingResult(null);
-    // Clean up any recorded audio
+
     if (recordedAudioRef.current) {
       URL.revokeObjectURL(recordedAudioRef.current);
       recordedAudioRef.current = null;
     }
+
     if (!readingStateRef.current.shouldStop) {
       readingTimeoutRef.current = setTimeout(() => {
         window.speakNextSentence?.();
@@ -2014,16 +1940,14 @@ export function ShowLesson() {
   };
 
   const retryRecording = () => {
-    // Clean up previous recording
     if (recordedAudioRef.current) {
       URL.revokeObjectURL(recordedAudioRef.current);
       recordedAudioRef.current = null;
     }
     setRecordingResult(null);
     setIsWaitingForRecording(false);
-    // تنظيف النتيجة المؤقتة
     window.lastRecognitionResult = null;
-    // Start new recording immediately
+
     setTimeout(() => {
       startRecording();
     }, 300);
@@ -2055,7 +1979,7 @@ export function ShowLesson() {
 
   /* ------------------------------ Enhanced Audio Playback for Mobile ------------------------------ */
   const playSentenceAudio = useCallback(
-    (audioUrl) => {
+    (audioUrl, startAt = 0) => {
       if (window.speechSynthesis) {
         try {
           window.speechSynthesis.cancel();
@@ -2066,23 +1990,43 @@ export function ShowLesson() {
           audioRef.current.pause();
         } catch {}
       }
+
       const audio = new Audio(audioUrl);
       audioRef.current = audio;
+
       try {
         audio.playbackRate = playbackRate;
       } catch {}
+
       audio.onloadedmetadata = () => {
         const d = Number.isFinite(audio.duration) ? audio.duration : 0;
         setDuration(d);
+
+        // ✅ seek after metadata
+        if (Number.isFinite(startAt) && startAt > 0) {
+          try {
+            audio.currentTime = Math.max(0, Math.min(startAt, d || startAt));
+          } catch {}
+        }
       };
+
+      // ✅ performance: throttle updates (every ~150ms)
       audio.ontimeupdate = () => {
-        const now = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
-        setCurrentTime(now);
-        const base = sumDurationsBeforeIndex(
-          readingStateRef.current.currentIndex
-        );
-        setLessonElapsed(base + now);
+        const nowMs = performance.now();
+        if (nowMs - lastTimeUpdateMsRef.current < 150) return;
+        lastTimeUpdateMsRef.current = nowMs;
+
+        if (timeUpdateRafRef.current) cancelAnimationFrame(timeUpdateRafRef.current);
+        timeUpdateRafRef.current = requestAnimationFrame(() => {
+          const now = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+          setCurrentTime(now);
+          const base = sumDurationsBeforeIndex(
+            readingStateRef.current.currentIndex
+          );
+          setLessonElapsed(base + now);
+        });
       };
+
       audio.onended = () => {
         setCurrentTime(0);
         const base = sumDurationsBeforeIndex(
@@ -2090,44 +2034,37 @@ export function ShowLesson() {
         );
         setLessonElapsed(base);
       };
+
       audio.onerror = () => {
         setDuration(0);
         setCurrentTime(0);
       };
 
-      // معالجة خاصة للموبايل
-      if (isMobileDevice()) {
-        // إضافة user interaction للموبايل
-        const playAudio = () => {
-          audio.play().catch((e) => {
-            console.error("Error playing audio:", e);
-            // محاولة تشغيل بدون playbackRate للموبايل
-            if (e.name === "NotSupportedError") {
+      const playAudio = () => {
+        audio.play().catch((e) => {
+          console.error("Error playing audio:", e);
+          if (e.name === "NotSupportedError") {
+            try {
               audio.playbackRate = 1;
-              audio.play().catch(console.error);
-            }
-          });
-        };
+            } catch {}
+            audio.play().catch(console.error);
+          }
+        });
+      };
 
-        if (audio.readyState >= 2) {
-          playAudio();
-        } else {
-          audio.addEventListener("canplay", playAudio, { once: true });
-        }
+      if (isMobileDevice()) {
+        if (audio.readyState >= 2) playAudio();
+        else audio.addEventListener("canplay", playAudio, { once: true });
       } else {
-        audio.play().catch((e) => console.error("Error playing audio:", e));
+        playAudio();
       }
     },
     [playbackRate, sumDurationsBeforeIndex]
   );
 
   const playAudioFile = useCallback((audioUrl, rate = 1) => {
-    if (!audioUrl) {
-      console.log("No audio file available");
-      return;
-    }
+    if (!audioUrl) return;
 
-    // Stop any current audio
     if (audioRef.current) {
       try {
         audioRef.current.pause();
@@ -2140,19 +2077,16 @@ export function ShowLesson() {
       } catch {}
     }
 
-    // Play audio file at specified rate with mobile optimization
     const audio = new Audio(audioUrl);
     audioRef.current = audio;
 
-    // معالجة خاصة للموبايل
     if (isMobileDevice()) {
-      // للموبايل: تطبيق المعدل بعد التحميل
       audio.addEventListener("loadeddata", () => {
         try {
           if (rate !== 1 && audio.playbackRate !== undefined) {
             audio.playbackRate = rate;
           }
-        } catch (e) {
+        } catch {
           console.warn("Playback rate not supported on this device");
         }
       });
@@ -2160,19 +2094,17 @@ export function ShowLesson() {
       const playMobileAudio = () => {
         audio.play().catch((err) => {
           console.error("Error playing audio on mobile:", err);
-          // محاولة بدون معدل السرعة
           if (err.name === "NotSupportedError") {
-            audio.playbackRate = 1;
+            try {
+              audio.playbackRate = 1;
+            } catch {}
             audio.play().catch(console.error);
           }
         });
       };
 
-      if (audio.readyState >= 2) {
-        playMobileAudio();
-      } else {
-        audio.addEventListener("canplay", playMobileAudio, { once: true });
-      }
+      if (audio.readyState >= 2) playMobileAudio();
+      else audio.addEventListener("canplay", playMobileAudio, { once: true });
     } else {
       try {
         audio.playbackRate = rate;
@@ -2182,12 +2114,8 @@ export function ShowLesson() {
   }, []);
 
   const playRecordedAudio = useCallback((audioUrl) => {
-    if (!audioUrl) {
-      console.log("No recorded audio available");
-      return;
-    }
+    if (!audioUrl) return;
 
-    // Stop any current audio
     if (audioRef.current) {
       try {
         audioRef.current.pause();
@@ -2200,30 +2128,15 @@ export function ShowLesson() {
       } catch {}
     }
 
-    // Create audio with explicit user interaction
     const audio = new Audio();
     audioRef.current = audio;
 
-    // معالجة خاصة للأندرويد
     if (isAndroid()) {
-      // للأندرويد: استخدام طريقة مباشرة أكثر
       audio.preload = "auto";
 
-      // معالجة الأخطاء
       audio.addEventListener("error", (e) => {
         console.error("Android audio error:", e);
-        const errorCodes = {
-          1: "MEDIA_ERR_ABORTED",
-          2: "MEDIA_ERR_NETWORK",
-          3: "MEDIA_ERR_DECODE",
-          4: "MEDIA_ERR_SRC_NOT_SUPPORTED",
-        };
-        console.error(
-          "Error type:",
-          errorCodes[audio.error?.code] || "Unknown"
-        );
 
-        // محاولة fallback: تحويل blob إلى data URL
         fetch(audioUrl)
           .then((res) => res.blob())
           .then((blob) => {
@@ -2241,56 +2154,37 @@ export function ShowLesson() {
           .catch((err) => console.error("Blob conversion failed:", err));
       });
 
-      // تعيين المصدر وتحميله
       audio.src = audioUrl;
       audio.load();
 
-      // التشغيل بعد التحميل مباشرة
       const playWhenReady = () => {
-        // محاولة التشغيل الفوري (يعمل لأنها ضمن user gesture)
         const playPromise = audio.play();
-
         if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              console.log("Android audio playing successfully");
-            })
-            .catch((err) => {
-              console.error("Android play failed:", err);
-              // إعادة المحاولة بعد وقت قصير
-              setTimeout(() => {
-                audio.play().catch((e) => console.error("Retry failed:", e));
-              }, 100);
-            });
+          playPromise.catch((err) => {
+            console.error("Android play failed:", err);
+            setTimeout(() => {
+              audio.play().catch((e) => console.error("Retry failed:", e));
+            }, 100);
+          });
         }
       };
 
-      if (audio.readyState >= 3) {
-        playWhenReady();
-      } else {
-        audio.addEventListener("canplay", playWhenReady, { once: true });
-      }
+      if (audio.readyState >= 3) playWhenReady();
+      else audio.addEventListener("canplay", playWhenReady, { once: true });
     } else if (isMobileDevice()) {
-      // للأجهزة المحمولة الأخرى (iOS)
       audio.preload = "auto";
       audio.src = audioUrl;
       audio.load();
 
       const playIOS = () => {
-        audio
-          .play()
-          .then(() => console.log("iOS audio playing"))
-          .catch((err) => {
-            console.error("iOS play failed:", err);
-            setTimeout(() => audio.play().catch(console.error), 100);
-          });
+        audio.play().catch((err) => {
+          console.error("iOS play failed:", err);
+          setTimeout(() => audio.play().catch(console.error), 100);
+        });
       };
 
-      if (audio.readyState >= 2) {
-        playIOS();
-      } else {
-        audio.addEventListener("canplay", playIOS, { once: true });
-      }
+      if (audio.readyState >= 2) playIOS();
+      else audio.addEventListener("canplay", playIOS, { once: true });
     } else {
       audio.src = audioUrl;
       audio.play().catch((err) => console.error("Desktop play failed:", err));
@@ -2306,115 +2200,148 @@ export function ShowLesson() {
     [speak]
   );
 
-  /* ------------------------------ Read all sentences ------------------------------ */
-  const readAllSentences = useCallback(() => {
-    if (!currentLesson || !currentLesson.storyData?.content?.length) return;
+  /* ------------------------------ Read all sentences / Resume ------------------------------ */
+  const readAllSentences = useCallback(
+    (startIndex = 0, startAtSeconds = 0) => {
+      if (!currentLesson || !currentLesson.storyData?.content?.length) return;
 
-    if (audioRef.current) {
-      try {
-        audioRef.current.pause();
-      } catch {}
-    }
-    if (window.speechSynthesis) {
-      try {
-        window.speechSynthesis.cancel();
-      } catch {}
-    }
-
-    readingStateRef.current = {
-      isReading: true,
-      currentIndex: 0,
-      shouldStop: false,
-    };
-    setIsReading(true);
-    setReadingProgress(0);
-    setIsWaitingForRecording(false);
-    setShowRecordingModal(false);
-
-    const speakNextSentence = () => {
-      const { currentIndex, shouldStop } = readingStateRef.current;
-      const total = currentLesson.storyData.content.length;
-
-      if (shouldStop || currentIndex >= total) {
-        setIsReading(false);
-        setCurrentReadingSentenceId(null);
-        setReadingProgress(100);
-        readingStateRef.current.isReading = false;
-        if (loopEnabled && !shouldStop) {
-          setTimeout(() => {
-            if (!readingStateRef.current.shouldStop) readAllSentences();
-          }, 400);
-        }
-        return;
+      if (audioRef.current) {
+        try {
+          audioRef.current.pause();
+        } catch {}
+      }
+      if (window.speechSynthesis) {
+        try {
+          window.speechSynthesis.cancel();
+        } catch {}
       }
 
-      const sentence = currentLesson.storyData.content[currentIndex];
-      setLessonElapsed(sumDurationsBeforeIndex(currentIndex));
-      const progress = ((currentIndex + 1) / total) * 100;
+      readingStateRef.current = {
+        isReading: true,
+        currentIndex: Math.max(0, startIndex),
+        shouldStop: false,
+      };
 
-      setCurrentReadingSentenceId(sentence.id);
-      setReadingProgress(progress);
-      scrollToCurrentSentence(sentence.id);
+      setIsReading(true);
+      setIsWaitingForRecording(false);
+      setShowRecordingModal(false);
 
-      if (sentence.audioUrl) {
-        playSentenceAudio(sentence.audioUrl);
-        if (audioRef.current) {
-          audioRef.current.onended = () => {
-            if (!readingStateRef.current.shouldStop) {
-              readingStateRef.current.currentIndex++;
-              if (pronunciationEnabled) {
-                setIsWaitingForRecording(true);
-                setShowRecordingModal(true);
-              } else {
-                readingTimeoutRef.current = setTimeout(speakNextSentence, 500);
+      const speakNextSentence = (forceSeekSeconds = 0) => {
+        const { currentIndex, shouldStop } = readingStateRef.current;
+        const total = currentLesson.storyData.content.length;
+
+        if (shouldStop || currentIndex >= total) {
+          setIsReading(false);
+          setCurrentReadingSentenceId(null);
+          setReadingProgress(shouldStop ? readingProgress : 100);
+          readingStateRef.current.isReading = false;
+
+          if (loopEnabled && !shouldStop) {
+            setTimeout(() => {
+              if (!readingStateRef.current.shouldStop) {
+                resumeRef.current = { hasPosition: false, index: 0, timeInSentence: 0 };
+                readAllSentences(0, 0);
               }
-            }
-          };
-          audioRef.current.onerror = () => {
-            if (!readingStateRef.current.shouldStop) {
-              readingStateRef.current.currentIndex++;
-              if (pronunciationEnabled) {
-                setIsWaitingForRecording(true);
-                setShowRecordingModal(true);
-              } else {
-                readingTimeoutRef.current = setTimeout(speakNextSentence, 500);
-              }
-            }
-          };
+            }, 400);
+          }
+          return;
         }
-      } else {
-        readingStateRef.current.currentIndex++;
-        if (pronunciationEnabled) {
-          setIsWaitingForRecording(true);
-          setShowRecordingModal(true);
+
+        const sentence = currentLesson.storyData.content[currentIndex];
+        const progress = ((currentIndex + 1) / total) * 100;
+
+        setCurrentReadingSentenceId(sentence.id);
+        setReadingProgress(progress);
+        scrollToCurrentSentence(sentence.id);
+
+        const base = sumDurationsBeforeIndex(currentIndex);
+        setLessonElapsed(base + (forceSeekSeconds || 0));
+
+        if (sentence.audioUrl) {
+          playSentenceAudio(sentence.audioUrl, forceSeekSeconds);
+
+          if (audioRef.current) {
+            audioRef.current.onended = () => {
+              if (!readingStateRef.current.shouldStop) {
+                readingStateRef.current.currentIndex++;
+                resumeRef.current = { hasPosition: true, index: readingStateRef.current.currentIndex, timeInSentence: 0 };
+
+                if (pronunciationEnabled) {
+                  setIsWaitingForRecording(true);
+                  setShowRecordingModal(true);
+                } else {
+                  readingTimeoutRef.current = setTimeout(() => speakNextSentence(0), 500);
+                }
+              }
+            };
+
+            audioRef.current.onerror = () => {
+              if (!readingStateRef.current.shouldStop) {
+                readingStateRef.current.currentIndex++;
+                resumeRef.current = { hasPosition: true, index: readingStateRef.current.currentIndex, timeInSentence: 0 };
+
+                if (pronunciationEnabled) {
+                  setIsWaitingForRecording(true);
+                  setShowRecordingModal(true);
+                } else {
+                  readingTimeoutRef.current = setTimeout(() => speakNextSentence(0), 500);
+                }
+              }
+            };
+          }
         } else {
-          readingTimeoutRef.current = setTimeout(speakNextSentence, 1000);
+          readingStateRef.current.currentIndex++;
+          resumeRef.current = { hasPosition: true, index: readingStateRef.current.currentIndex, timeInSentence: 0 };
+
+          if (pronunciationEnabled) {
+            setIsWaitingForRecording(true);
+            setShowRecordingModal(true);
+          } else {
+            readingTimeoutRef.current = setTimeout(() => speakNextSentence(0), 1000);
+          }
         }
-      }
-    };
+      };
 
-    window.speakNextSentence = speakNextSentence;
-    speakNextSentence();
-  }, [
-    currentLesson,
-    scrollToCurrentSentence,
-    pronunciationEnabled,
-    playSentenceAudio,
-    loopEnabled,
-    sumDurationsBeforeIndex,
-  ]);
+      window.speakNextSentence = speakNextSentence;
 
-  /* --------------------------------- Stop -------------------------------- */
-  const stopReading = useCallback(() => {
+      // ✅ first call: can resume mid-sentence
+      speakNextSentence(Math.max(0, startAtSeconds || 0));
+    },
+    [
+      currentLesson,
+      scrollToCurrentSentence,
+      pronunciationEnabled,
+      playSentenceAudio,
+      loopEnabled,
+      sumDurationsBeforeIndex,
+      readingProgress,
+    ]
+  );
+
+  // ✅ Stop = Pause (no reset)
+  const pauseReading = useCallback(() => {
+    // mark stop so speakNextSentence won't continue
     readingStateRef.current.shouldStop = true;
     readingStateRef.current.isReading = false;
+
+    // ✅ save resume position
+    const idx = readingStateRef.current.currentIndex;
+    const t = audioRef.current?.currentTime || 0;
+
+    resumeRef.current = {
+      hasPosition: true,
+      index: Math.max(0, idx),
+      timeInSentence: Number.isFinite(t) ? t : 0,
+    };
+
     setIsReading(false);
     setCurrentReadingSentenceId(null);
-    setReadingProgress(0);
     setIsWaitingForRecording(false);
+    // ما تقفلش المودال لو كان مفتوح بسبب نطق؟ أنت طلبت "stop" يوقف كل حاجة
     setShowRecordingModal(false);
 
     if (recognitionRef.current && isRecording) recognitionRef.current.abort();
+
     if (audioRef.current) {
       try {
         audioRef.current.pause();
@@ -2429,10 +2356,63 @@ export function ShowLesson() {
         window.speechSynthesis.cancel();
       } catch {}
     }
+  }, [isRecording]);
+
+  // ✅ Reset = stop + back to start
+  const resetReading = useCallback(() => {
+    resumeRef.current = { hasPosition: false, index: 0, timeInSentence: 0 };
+
+    readingStateRef.current.shouldStop = true;
+    readingStateRef.current.isReading = false;
+    readingStateRef.current.currentIndex = 0;
+
+    setIsReading(false);
+    setCurrentReadingSentenceId(null);
+    setReadingProgress(0);
+    setIsWaitingForRecording(false);
+    setShowRecordingModal(false);
+
+    if (recognitionRef.current && isRecording) recognitionRef.current.abort();
+
+    if (audioRef.current) {
+      try {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      } catch {}
+    }
+    if (readingTimeoutRef.current) {
+      clearTimeout(readingTimeoutRef.current);
+      readingTimeoutRef.current = null;
+    }
+    if (window.speechSynthesis) {
+      try {
+        window.speechSynthesis.cancel();
+      } catch {}
+    }
     setCurrentTime(0);
     setDuration(0);
-    readingStateRef.current.currentIndex = 0;
+    setLessonElapsed(0);
   }, [isRecording]);
+
+  // ✅ toggle: if paused -> resume, else start from beginning
+  const resumeOrStart = useCallback(() => {
+    if (!currentLesson?.storyData?.content?.length) return;
+
+    const canResume = resumeRef.current.hasPosition;
+    const index = canResume ? resumeRef.current.index : 0;
+    const time = canResume ? resumeRef.current.timeInSentence : 0;
+
+    readingStateRef.current.shouldStop = false;
+    readingStateRef.current.isReading = true;
+
+    setIsReading(true);
+    setIsWaitingForRecording(false);
+    setShowRecordingModal(false);
+
+    readAllSentences(index, time);
+  }, [currentLesson, readAllSentences]);
+
+  const togglePlayPause = () => (isReading ? pauseReading() : resumeOrStart());
 
   useEffect(() => {
     return () => {
@@ -2449,6 +2429,7 @@ export function ShowLesson() {
           window.speechSynthesis.cancel();
         } catch {}
       }
+      if (timeUpdateRafRef.current) cancelAnimationFrame(timeUpdateRafRef.current);
     };
   }, []);
 
@@ -2511,7 +2492,8 @@ export function ShowLesson() {
             >
               <X size={29} />
             </Link>
-            {isReading && (
+
+            {(isReading || resumeRef.current.hasPosition) && (
               <div className="flex items-center space-x-2">
                 <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
                   <div
@@ -2522,6 +2504,15 @@ export function ShowLesson() {
                 <span className="text-sm text-gray-600">
                   {Math.round(readingProgress)}%
                 </span>
+
+                {/* ✅ Reset button (optional) */}
+                <button
+                  onClick={resetReading}
+                  className="ml-1 inline-flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200"
+                  title="إعادة من البداية"
+                >
+                  <RotateCcw size={16} />
+                </button>
               </div>
             )}
           </div>
@@ -2560,7 +2551,7 @@ export function ShowLesson() {
               isCurrentlyReading={currentReadingSentenceId === sentence.id}
               wordDefinitions={currentLesson.wordDefinitions}
               pronunciationScore={pronunciationScores[sentence.id]}
-              onPlaySentenceAudio={playSentenceAudio}
+              onPlaySentenceAudio={(url) => playSentenceAudio(url, 0)}
               onPlayWordAudio={playWordAudio}
             />
           ))}
@@ -2607,13 +2598,24 @@ export function ShowLesson() {
                   duration === 0
                 )
                   return;
+
                 const rect = e.currentTarget.getBoundingClientRect();
                 const ratio = Math.min(
                   1,
                   Math.max(0, (e.clientX - rect.left) / rect.width)
                 );
                 const t = ratio * duration;
-                audioRef.current.currentTime = t;
+
+                try {
+                  audioRef.current.currentTime = t;
+                } catch {}
+
+                // ✅ also update resume point (so pause/resume keeps seek)
+                resumeRef.current = {
+                  hasPosition: true,
+                  index: readingStateRef.current.currentIndex,
+                  timeInSentence: t,
+                };
               }}
             >
               <div
@@ -2638,7 +2640,7 @@ export function ShowLesson() {
                 <button
                   onClick={togglePlayPause}
                   className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[var(--primary-color)] text-white hover:bg-[var(--secondary-color)] transition-colors"
-                  title={isReading ? "إيقاف" : "تشغيل"}
+                  title={isReading ? "إيقاف مؤقت" : "تشغيل/استكمال"}
                 >
                   {isReading ? <Pause size={18} /> : <Play size={18} />}
                 </button>
@@ -2660,9 +2662,7 @@ export function ShowLesson() {
 
               <div className="flex items-center gap-1 text-[11px] text-gray-600">
                 <span className="tabular-nums">
-                  {lessonTotalDuration
-                    ? fmt(lessonElapsed)
-                    : fmt(currentTime) || "00:00"}{" "}
+                  {lessonTotalDuration ? fmt(lessonElapsed) : fmt(currentTime)}
                 </span>
                 <span className="text-gray-300">/</span>
                 <span className="tabular-nums">
@@ -2700,6 +2700,18 @@ export function ShowLesson() {
                 </div>
               </div>
             </div>
+
+            {/* ✅ optional: Full Stop (Reset) button row for clarity */}
+            <div className="px-4 pb-3">
+              <button
+                onClick={resetReading}
+                className="w-full text-sm rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-200 py-2 flex items-center justify-center gap-2"
+                title="إيقاف وإعادة من البداية"
+              >
+                <RotateCcw size={16} />
+                <span className="arabic_font">إيقاف كامل (من البداية)</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -2709,23 +2721,17 @@ export function ShowLesson() {
         to={`/reading/level/${levelId}/lesson/${lessonId}/quiz`}
         className="fixed bottom-20 md:bottom-24 right-4 md:right-6 group z-50"
       >
-        {/* Mobile: Extended button with text */}
         <div className="md:hidden bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] text-white rounded-full shadow-xl transition-all duration-300 flex items-center gap-2 px-3 py-1 animate-pulse hover:animate-none">
           <PiExam size={24} />
           <span className="arabic_font text-[11px] font-semibold">اختبار</span>
         </div>
 
-        {/* Desktop: Round button with always visible tooltip */}
         <div className="hidden md:flex bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] text-white rounded-full shadow-xl hover:shadow-2xl transition-all animate-none duration-300 items-center justify-center relative hover:animate-none w-[50px] h-[50px]">
           <PiExam size={25} />
-
-          {/* Ripple Effect */}
           <span className="absolute inset-0 rounded-full border-2 border-[var(--primary-color)] animate-ping opacity-75"></span>
 
-          {/* Floating Label - Always visible on Desktop */}
           <div className="absolute arabic_font right-full top-1/2 -translate-y-1/2 mr-3 bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap shadow-lg animate-none">
             🎯 ابدأ الاختبار الآن
-            {/* Arrow */}
             <div className="absolute left-full top-1/2 -translate-y-1/2 -ml-1">
               <div className="w-0 h-0 border-t-4 border-t-transparent border-b-4 border-b-transparent border-r-4 border-r-gray-900 rotate-180"></div>
             </div>

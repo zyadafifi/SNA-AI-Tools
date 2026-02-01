@@ -34,7 +34,13 @@ const translateOnTheFly = (text, dict = {}) => {
 /* ------------------------------------------------------------------ */
 /* Word Popover (replaces Sidebar)                                   */
 /* ------------------------------------------------------------------ */
-const WordPopover = ({ isOpen, selectedWordData, position, onClose, onPlayWordAudio }) => {
+const WordPopover = ({
+  isOpen,
+  selectedWordData,
+  position,
+  onClose,
+  onPlayWordAudio,
+}) => {
   if (!isOpen || !selectedWordData || !position) return null;
 
   const popoverWidth = 320;
@@ -71,7 +77,7 @@ const WordPopover = ({ isOpen, selectedWordData, position, onClose, onPlayWordAu
         className="fixed inset-0 z-40 bg-black bg-opacity-20 md:bg-transparent"
         onClick={onClose}
       />
-      
+
       {/* Popover */}
       <div
         className="absolute z-50 bg-white rounded-xl shadow-2xl border border-gray-200"
@@ -79,7 +85,7 @@ const WordPopover = ({ isOpen, selectedWordData, position, onClose, onPlayWordAu
           top: `${top - 65}px`,
           left: `${left}px`,
           width: `${popoverWidth}px`,
-          maxWidth: 'calc(100vw - 40px)',
+          maxWidth: "calc(100vw - 40px)",
         }}
       >
         {/* Header */}
@@ -136,9 +142,9 @@ const WordPopover = ({ isOpen, selectedWordData, position, onClose, onPlayWordAu
         {/* Arrow pointer */}
         <div
           className={`absolute w-3 h-3 bg-white border border-gray-200 transform rotate-45 ${
-            showBelow 
-              ? 'border-b-0 border-r-0 -top-[7px]' 
-              : 'border-t-0 border-l-0 -bottom-[7px]'
+            showBelow
+              ? "border-b-0 border-r-0 -top-[7px]"
+              : "border-t-0 border-l-0 -bottom-[7px]"
           }`}
           style={{
             left: `${Math.max(10, Math.min(arrowLeft, popoverWidth - 10))}px`,
@@ -160,6 +166,7 @@ WordPopover.propTypes = {
   onClose: PropTypes.func,
   onPlayWordAudio: PropTypes.func,
 };
+
 /* ------------------------------------------------------------------ */
 /* Microphone permission alert                                        */
 /* ------------------------------------------------------------------ */
@@ -231,6 +238,7 @@ const ClickableWord = ({
       const position = {
         top: rect.top + window.scrollY,
         left: rect.left + rect.width / 2,
+        bottom: rect.bottom + window.scrollY,
       };
 
       onPlayWordAudio(cleanWord);
@@ -239,9 +247,7 @@ const ClickableWord = ({
         {
           word: cleanWord,
           translation: wordData ? wordData.translation : "ترجمة غير متوفرة",
-          definition: wordData
-            ? wordData.definition
-            : "Definition not available",
+          definition: wordData ? wordData.definition : "Definition not available",
           partOfSpeech: wordData ? wordData.partOfSpeech : "word",
           rank: wordData ? wordData.rank : Math.floor(Math.random() * 1000) + 1,
         },
@@ -343,9 +349,7 @@ const Sentence = React.forwardRef(
         {arabicLine && (
           <div
             className={`overflow-hidden transition-all duration-300 ease-in-out ${
-              showTranslation
-                ? "max-h-20 opacity-100 mb-2"
-                : "max-h-0 opacity-0"
+              showTranslation ? "max-h-20 opacity-100 mb-2" : "max-h-0 opacity-0"
             }`}
           >
             <p className="arabic_font text-base text-gray-700 pr-1">
@@ -392,6 +396,9 @@ Sentence.propTypes = {
   showTranslation: PropTypes.bool.isRequired,
 };
 
+// ✅ Memoized version to reduce re-renders
+const MemoSentence = React.memo(Sentence);
+
 /* ------------------------------------------------------------------ */
 /* Main component                                                     */
 /* ------------------------------------------------------------------ */
@@ -403,7 +410,7 @@ export function ShowLessonSecondRound() {
   const [popoverOpen, setPopoverOpen] = useState(false);
   const [popoverPosition, setPopoverPosition] = useState(null);
   const [selectedWordData, setSelectedWordData] = useState(null);
-  const [showTranslations, setShowTranslations] = useState(false); // New state for translation toggle
+  const [showTranslations, setShowTranslations] = useState(false);
 
   const currentLevel = readingData.find((level) => level.id === levelIdNum);
   const currentLesson =
@@ -431,6 +438,16 @@ export function ShowLessonSecondRound() {
   const sentenceRefs = useRef({});
   const recognitionRef = useRef(null);
   const audioRef = useRef(null);
+
+  // ✅ resume state
+  const resumeRef = useRef({
+    hasResume: false,
+    index: 0,
+    time: 0,
+  });
+
+  // ✅ throttle
+  const rafRef = useRef(0);
 
   // player state
   const [playbackRate, setPlaybackRate] = useState(1);
@@ -496,15 +513,13 @@ export function ShowLessonSecondRound() {
         Math.min((audioRef.current.currentTime || 0) + delta, duration || 0)
       );
       audioRef.current.currentTime = next;
-    }
-  };
 
-  const togglePlayPause = () => {
-    if (isReading) {
-      stopReading();
-    } else {
-      setShowEndActions(false);
-      readAllSentences();
+      // ✅ update resume position too (so stepping then pause/play continues correctly)
+      resumeRef.current = {
+        hasResume: true,
+        index: Math.max(0, readingStateRef.current.currentIndex),
+        time: next,
+      };
     }
   };
 
@@ -657,6 +672,7 @@ export function ShowLessonSecondRound() {
         } catch {}
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checkMicrophonePermission]);
 
   const initializeSpeechRecognition = () => {
@@ -798,8 +814,18 @@ export function ShowLessonSecondRound() {
         } catch {}
       }
 
-      const audio = new Audio(audioUrl);
+      // ✅ reuse audio instance
+      const audio = audioRef.current || new Audio();
       audioRef.current = audio;
+
+      audio.onloadedmetadata = null;
+      audio.ontimeupdate = null;
+      audio.onended = null;
+      audio.onerror = null;
+
+      audio.src = audioUrl;
+      audio.preload = "auto";
+
       try {
         audio.playbackRate = playbackRate;
       } catch {}
@@ -808,10 +834,16 @@ export function ShowLessonSecondRound() {
         const d = Number.isFinite(audio.duration) ? audio.duration : 0;
         setDuration(d);
       };
+
       audio.ontimeupdate = () => {
-        const now = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
-        setCurrentTime(now);
+        if (rafRef.current) return;
+        rafRef.current = requestAnimationFrame(() => {
+          rafRef.current = 0;
+          const now = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+          setCurrentTime(now);
+        });
       };
+
       audio.onended = () => {
         setCurrentTime(0);
       };
@@ -838,133 +870,186 @@ export function ShowLessonSecondRound() {
   );
 
   /* ---------------- Read all sentences (auto/continuous) ---------------- */
-  const readAllSentences = useCallback(() => {
-    if (!currentLesson || !currentLesson.storyData?.content?.length) return;
+  const readAllSentences = useCallback(
+    (startIndex = 0, startTime = 0) => {
+      if (!currentLesson || !currentLesson.storyData?.content?.length) return;
 
-    if (audioRef.current) {
-      try {
-        audioRef.current.pause();
-      } catch {}
-    }
-    if (window.speechSynthesis) {
-      try {
-        window.speechSynthesis.cancel();
-      } catch {}
-    }
-
-    readingStateRef.current = {
-      isReading: true,
-      currentIndex: 0,
-      shouldStop: false,
-    };
-    setIsReading(true);
-    setReadingProgress(0);
-
-    const speakNextSentence = () => {
-      const { currentIndex, shouldStop } = readingStateRef.current;
-      const totalSentences = currentLesson.storyData.content.length;
-
-      if (shouldStop || currentIndex >= totalSentences) {
-        setIsReading(false);
-        setCurrentReadingSentenceId(null);
-        setReadingProgress(100);
-        readingStateRef.current.isReading = false;
-
-        // show end actions panel
-        setShowEndActions(true);
-
-        if (loopEnabled && !shouldStop) {
-          setTimeout(() => {
-            if (!readingStateRef.current.shouldStop) readAllSentences();
-          }, 200);
-        }
-        return;
+      if (audioRef.current) {
+        try {
+          audioRef.current.pause();
+        } catch {}
+      }
+      if (window.speechSynthesis) {
+        try {
+          window.speechSynthesis.cancel();
+        } catch {}
       }
 
-      const sentence = currentLesson.storyData.content[currentIndex];
+      readingStateRef.current = {
+        isReading: true,
+        currentIndex: startIndex,
+        shouldStop: false,
+      };
 
-      setLessonElapsed(sumDurationsBeforeIndex(currentIndex));
-      const progress = ((currentIndex + 1) / totalSentences) * 100;
-      setCurrentReadingSentenceId(sentence.id);
-      setReadingProgress(progress);
-      scrollToCurrentSentence(sentence.id);
+      setIsReading(true);
+      setShowEndActions(false);
 
-      if (sentence.audioUrl) {
-        const audio = new Audio(sentence.audioUrl);
-        audioRef.current = audio;
-        try {
-          audio.playbackRate = playbackRate;
-        } catch {}
+      const speakNextSentence = () => {
+        const { currentIndex, shouldStop } = readingStateRef.current;
+        const totalSentences = currentLesson.storyData.content.length;
 
-        audio.onloadedmetadata = () => {
-          const d = Number.isFinite(audio.duration) ? audio.duration : 0;
-          setDuration(d);
-        };
-        audio.ontimeupdate = () => {
-          const now = Number.isFinite(audio.currentTime)
-            ? audio.currentTime
-            : 0;
-          setCurrentTime(now);
-          const base = sumDurationsBeforeIndex(
-            readingStateRef.current.currentIndex
-          );
-          setLessonElapsed(base + now);
-        };
+        if (shouldStop || currentIndex >= totalSentences) {
+          setIsReading(false);
+          setCurrentReadingSentenceId(null);
+          setReadingProgress(100);
+          readingStateRef.current.isReading = false;
 
-        const advance = () => {
-          if (readingStateRef.current.shouldStop) return;
+          setShowEndActions(true);
 
-          if (noPauseBetween) {
-            readingStateRef.current.currentIndex++;
-            speakNextSentence();
-            return;
+          // ✅ clear resume after finishing
+          resumeRef.current.hasResume = false;
+
+          if (loopEnabled && !shouldStop) {
+            setTimeout(() => {
+              if (!readingStateRef.current.shouldStop) readAllSentences(0, 0);
+            }, 200);
           }
+          return;
+        }
 
-          if (recognitionRef.current?.start) {
-            recognitionRef.current.onend = () => {
-              recognitionRef.current.onend = null;
+        const sentence = currentLesson.storyData.content[currentIndex];
+
+        setLessonElapsed(sumDurationsBeforeIndex(currentIndex));
+        const progress = ((currentIndex + 1) / totalSentences) * 100;
+        setCurrentReadingSentenceId(sentence.id);
+        setReadingProgress(progress);
+        scrollToCurrentSentence(sentence.id);
+
+        if (sentence.audioUrl) {
+          // ✅ reuse one Audio instance
+          const audio = audioRef.current || new Audio();
+          audioRef.current = audio;
+
+          // clean old handlers
+          audio.onloadedmetadata = null;
+          audio.ontimeupdate = null;
+          audio.onended = null;
+          audio.onerror = null;
+
+          audio.src = sentence.audioUrl;
+          audio.preload = "auto";
+
+          try {
+            audio.playbackRate = playbackRate;
+          } catch {}
+
+          audio.onloadedmetadata = () => {
+            const d = Number.isFinite(audio.duration) ? audio.duration : 0;
+            setDuration(d);
+
+            // resume inside this sentence only once
+            if (startTime > 0 && currentIndex === startIndex) {
+              try {
+                audio.currentTime = Math.min(startTime, d || startTime);
+              } catch {}
+            }
+          };
+
+          // ✅ throttle UI updates
+          audio.ontimeupdate = () => {
+            if (rafRef.current) return;
+            rafRef.current = requestAnimationFrame(() => {
+              rafRef.current = 0;
+
+              const now = Number.isFinite(audio.currentTime)
+                ? audio.currentTime
+                : 0;
+
+              setCurrentTime(now);
+
+              const base = sumDurationsBeforeIndex(
+                readingStateRef.current.currentIndex
+              );
+              setLessonElapsed(base + now);
+
+              // keep resume updated during playback
+              resumeRef.current = {
+                hasResume: true,
+                index: readingStateRef.current.currentIndex,
+                time: now,
+              };
+            });
+          };
+
+          const advance = () => {
+            if (readingStateRef.current.shouldStop) return;
+
+            // after first sentence resume, ignore startTime
+            startTime = 0;
+
+            if (noPauseBetween) {
               readingStateRef.current.currentIndex++;
               speakNextSentence();
-            };
-            recognitionRef.current.start();
-          } else {
-            readingStateRef.current.currentIndex++;
-            speakNextSentence();
-          }
-        };
+              return;
+            }
 
-        audio.onended = advance;
-        audio.onerror = advance;
+            if (recognitionRef.current?.start) {
+              recognitionRef.current.onend = () => {
+                recognitionRef.current.onend = null;
+                readingStateRef.current.currentIndex++;
+                speakNextSentence();
+              };
+              recognitionRef.current.start();
+            } else {
+              readingStateRef.current.currentIndex++;
+              speakNextSentence();
+            }
+          };
 
-        audio.play().catch((err) => {
-          console.error("Error playing audio:", err);
-          advance();
-        });
-      } else {
-        readingStateRef.current.currentIndex++;
-        speakNextSentence();
-      }
-    };
+          audio.onended = advance;
+          audio.onerror = advance;
 
-    window.speakNextSentence = speakNextSentence;
-    speakNextSentence();
-  }, [
-    currentLesson,
-    scrollToCurrentSentence,
-    loopEnabled,
-    sumDurationsBeforeIndex,
-    playbackRate,
-    noPauseBetween,
-  ]);
+          audio.play().catch((err) => {
+            console.error("Error playing audio:", err);
+            advance();
+          });
+        } else {
+          readingStateRef.current.currentIndex++;
+          speakNextSentence();
+        }
+      };
 
-  /* ---------------- Stop reading ---------------- */
+      speakNextSentence();
+    },
+    [
+      currentLesson,
+      scrollToCurrentSentence,
+      loopEnabled,
+      sumDurationsBeforeIndex,
+      playbackRate,
+      noPauseBetween,
+    ]
+  );
+
+  /* ---------------- Pause (Stop button) ---------------- */
   const stopReading = useCallback(() => {
     readingStateRef.current.shouldStop = true;
     readingStateRef.current.isReading = false;
 
+    const idx = Math.max(0, readingStateRef.current.currentIndex);
+    const t =
+      audioRef.current && Number.isFinite(audioRef.current.currentTime)
+        ? audioRef.current.currentTime
+        : 0;
+
+    // ✅ save resume point
+    resumeRef.current = {
+      hasResume: true,
+      index: idx,
+      time: t,
+    };
+
     setIsReading(false);
-    setCurrentReadingSentenceId(null);
-    setReadingProgress(0);
 
     recognitionRef.current?.abort?.();
 
@@ -982,17 +1067,34 @@ export function ShowLessonSecondRound() {
         window.speechSynthesis.cancel();
       } catch {}
     }
-    setCurrentTime(0);
-    setDuration(0);
-    readingStateRef.current.currentIndex = 0;
   }, []);
+
+  /* ---------------- Play/Pause toggle ---------------- */
+  const togglePlayPause = () => {
+    if (isReading) {
+      stopReading();
+      return;
+    }
+
+    setShowEndActions(false);
+
+    if (resumeRef.current.hasResume) {
+      readAllSentences(resumeRef.current.index, resumeRef.current.time);
+    } else {
+      readAllSentences(0, 0);
+    }
+  };
 
   /* ---------------- Cleanup ---------------- */
   useEffect(() => {
     return () => {
       readingStateRef.current.shouldStop = true;
+
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+
       if (readingTimeoutRef.current) clearTimeout(readingTimeoutRef.current);
       recognitionRef.current?.abort?.();
+
       if (audioRef.current) {
         try {
           audioRef.current.pause();
@@ -1092,7 +1194,7 @@ export function ShowLessonSecondRound() {
 
         <div className="space-y-6 mb-24">
           {currentLesson.storyData.content.map((sentence) => (
-            <Sentence
+            <MemoSentence
               key={sentence.id}
               ref={(el) => (sentenceRefs.current[sentence.id] = el)}
               sentence={sentence}
@@ -1124,15 +1226,10 @@ export function ShowLessonSecondRound() {
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
                 <button
                   onClick={() => {
+                    // ✅ reset and start from beginning
+                    resumeRef.current = { hasResume: false, index: 0, time: 0 };
                     setShowEndActions(false);
-                    readingStateRef.current = {
-                      isReading: true,
-                      currentIndex: 0,
-                      shouldStop: false,
-                    };
-                    setIsReading(true);
-                    setReadingProgress(0);
-                    readAllSentences();
+                    readAllSentences(0, 0);
                   }}
                   className="arabic_font w-full sm:w-auto text-sm px-4 py-2 rounded-full bg-[var(--secondary-color)] text-white hover:bg-[var(--primary-color)] active:scale-[.98] transition"
                 >
@@ -1172,6 +1269,13 @@ export function ShowLessonSecondRound() {
                 );
                 const t = ratio * duration;
                 audioRef.current.currentTime = t;
+
+                // ✅ keep resume updated
+                resumeRef.current = {
+                  hasResume: true,
+                  index: Math.max(0, readingStateRef.current.currentIndex),
+                  time: t,
+                };
               }}
             >
               <div
