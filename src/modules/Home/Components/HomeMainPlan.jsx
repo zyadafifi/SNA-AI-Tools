@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { readingData } from "../../../config/readingData/readingData";
 import { Loading } from "../../../components/Loading";
@@ -301,18 +301,44 @@ const LessonNode = React.memo(function LessonNode({ node, position, onNodeClick 
 // ============================================
 // ZIGZAG PATH UI COMPONENT (3D container) (Memoized + memoized positions)
 // ============================================
-const ZigzagPathUI = React.memo(function ZigzagPathUI({ nodes, onNodeClick = () => {} }) {
-  const positions = useMemo(() => {
-    const centerX = 210;
+
+
+// ============================================
+// ZIGZAG PATH UI COMPONENT (Responsive width + memoized positions)
+// ============================================
+export const ZigzagPathUI = React.memo(function ZigzagPathUI({ nodes, onNodeClick = () => {} }) {
+  const wrapRef = useRef(null);
+  const [wrapW, setWrapW] = useState(420);
+
+  // ✅ Read actual container width (prevents mobile "zoom out" feeling)
+  useEffect(() => {
+    if (!wrapRef.current) return;
+
+    const ro = new ResizeObserver((entries) => {
+      const w = entries?.[0]?.contentRect?.width || 420;
+      setWrapW(w);
+    });
+
+    ro.observe(wrapRef.current);
+    return () => ro.disconnect();
+  }, []);
+
+  const { positions, layoutW } = useMemo(() => {
+    const width = Math.min(420, wrapW || 420);
+
+    const centerX = width / 2;
     const startY = 110;
+
+    // keep your same look, but allow it to adapt a bit
     const verticalSpacing = 145;
-    const horizontalOffset = 85;
+    const horizontalOffset = Math.min(85, width * 0.2);
 
     const groupSize = 4;
     const groupGap = 80;
 
-    return nodes.map((_, index) => {
+    const pos = nodes.map((_, index) => {
       let x = centerX;
+
       if (index % 2 === 1) x = centerX - horizontalOffset;
       else if (index > 0) x = centerX + horizontalOffset;
 
@@ -323,7 +349,9 @@ const ZigzagPathUI = React.memo(function ZigzagPathUI({ nodes, onNodeClick = () 
         y: startY + index * verticalSpacing + groupIndex * groupGap,
       };
     });
-  }, [nodes]);
+
+    return { positions: pos, layoutW: width };
+  }, [nodes, wrapW]);
 
   const svgHeight = useMemo(() => {
     if (!positions.length) return 520;
@@ -331,11 +359,12 @@ const ZigzagPathUI = React.memo(function ZigzagPathUI({ nodes, onNodeClick = () 
   }, [positions]);
 
   return (
-    <div className="container relative w-full flex justify-center py-10 overflow-hidden">
+    <div className="relative w-full flex justify-center py-10 overflow-hidden">
       <div
-        className="relative"
+        ref={wrapRef}
+        className="relative w-full max-w-[420px]"
         style={{
-          width: "420px",
+          // ✅ IMPORTANT: no fixed 420px width anymore
           height: `${svgHeight}px`,
           perspective: "900px",
           transformStyle: "preserve-3d",
@@ -353,7 +382,7 @@ const ZigzagPathUI = React.memo(function ZigzagPathUI({ nodes, onNodeClick = () 
             <div
               key={`sep-${index}`}
               className="absolute left-1/2 -translate-x-1/2"
-              style={{ top: `${y}px`, width: "340px", height: "28px", zIndex: 1 }}
+              style={{ top: `${y}px`, width: "min(340px, 92vw)", height: "28px", zIndex: 1 }}
             >
               <div className="relative w-full h-full flex items-center justify-center">
                 <div
@@ -376,7 +405,12 @@ const ZigzagPathUI = React.memo(function ZigzagPathUI({ nodes, onNodeClick = () 
         })}
 
         {/* SVG Connectors */}
-        <svg className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
+        <svg
+          className="absolute top-0 left-0 w-full h-full pointer-events-none"
+          style={{ zIndex: 0 }}
+          viewBox={`0 0 ${layoutW} ${svgHeight}`}
+          preserveAspectRatio="none"
+        >
           {positions.map((pos, index) => {
             if (index === positions.length - 1) return null;
 
@@ -400,17 +434,13 @@ const ZigzagPathUI = React.memo(function ZigzagPathUI({ nodes, onNodeClick = () 
 
         {/* Nodes */}
         {nodes.map((node, idx) => (
-          <LessonNode
-            key={node.id}
-            node={node}
-            position={positions[idx]}
-            onNodeClick={onNodeClick}
-          />
+          <LessonNode key={node.id} node={node} position={positions[idx]} onNodeClick={onNodeClick} />
         ))}
       </div>
     </div>
   );
 });
+
 
 // ============================================
 // PROGRESS HOOK (✅ لا يقرأ localStorage كل render)
