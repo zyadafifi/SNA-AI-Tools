@@ -13,7 +13,6 @@ import {
   PronunciationProgressTracker,
   LoginPage,
   WritingProgressTracker,
-  ShowLessonsBySlug,
 } from "../../modules/index";
 import { ListeningHome } from "../../pages/ListeningHome";
 import { ListeningLessonPage } from "../../pages/ListeningLessonPage";
@@ -91,7 +90,6 @@ export const Routes = createBrowserRouter([
       { path: "results/:topicId", element: <Results /> },
       { path: "login", element: <LoginPage /> },
       { path: "writing/progress", element: <WritingProgressTracker /> },
-      { path: "plan/slug/:slug", element: <ShowLessonsBySlug /> },
     ],
   },
 ]);
