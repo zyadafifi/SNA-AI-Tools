@@ -28,7 +28,7 @@ const isAndroid = () => {
 
 const isMobileDevice = () => {
   return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
+    navigator.userAgent,
   );
 };
 
@@ -141,7 +141,7 @@ const levenshteinDistance = (str1, str2) => {
         matrix[i][j] = Math.min(
           matrix[i - 1][j - 1] + 1, // استبدال
           matrix[i][j - 1] + 1, // إدراج
-          matrix[i - 1][j] + 1 // حذف
+          matrix[i - 1][j] + 1, // حذف
         );
       }
     }
@@ -312,10 +312,10 @@ const RecordingModal = ({
   const title = isRecording
     ? "جارٍ التسجيل"
     : recordingResult
-    ? recordingResult.success
-      ? "نتيجة التقييم"
-      : "خطأ في التسجيل"
-    : "سجّل نُطقك الآن";
+      ? recordingResult.success
+        ? "نتيجة التقييم"
+        : "خطأ في التسجيل"
+      : "سجّل نُطقك الآن";
 
   const tokens = useMemo(() => {
     const words = (originalText || "").trim().split(/\s+/).filter(Boolean);
@@ -337,12 +337,12 @@ const RecordingModal = ({
     recordingResult?.evaluation?.color === "green"
       ? "border-green-500 bg-green-50 text-green-800"
       : recordingResult?.evaluation?.color === "blue"
-      ? "border-blue-500 bg-blue-50 text-blue-800"
-      : recordingResult?.evaluation?.color === "yellow"
-      ? "border-yellow-500 bg-yellow-50 text-yellow-800"
-      : recordingResult?.evaluation?.color === "orange"
-      ? "border-orange-500 bg-orange-50 text-orange-800"
-      : "border-red-500 bg-red-50 text-red-800";
+        ? "border-blue-500 bg-blue-50 text-blue-800"
+        : recordingResult?.evaluation?.color === "yellow"
+          ? "border-yellow-500 bg-yellow-50 text-yellow-800"
+          : recordingResult?.evaluation?.color === "orange"
+            ? "border-orange-500 bg-orange-50 text-orange-800"
+            : "border-red-500 bg-red-50 text-red-800";
 
   const highlightWords = (orig, user) => {
     if (!orig || !user) return null;
@@ -369,7 +369,7 @@ const RecordingModal = ({
           const distance = levenshteinDistance(normalizedDisplayWord, userWord);
           const maxLen = Math.max(
             normalizedDisplayWord.length,
-            userWord.length
+            userWord.length,
           );
           similarity = maxLen > 0 ? ((maxLen - distance) / maxLen) * 100 : 0;
 
@@ -403,10 +403,10 @@ const RecordingModal = ({
                   it.matchType === "exact"
                     ? "text-green-800 bg-green-100"
                     : it.matchType === "close"
-                    ? "text-blue-800 bg-blue-100"
-                    : it.matchType === "partial"
-                    ? "text-yellow-800 bg-yellow-100"
-                    : "text-red-800 bg-red-100"
+                      ? "text-blue-800 bg-blue-100"
+                      : it.matchType === "partial"
+                        ? "text-yellow-800 bg-yellow-100"
+                        : "text-red-800 bg-red-100"
                 }`}
                 title={
                   it.matchType === "exact"
@@ -470,7 +470,7 @@ const RecordingModal = ({
   const fmt = (s) =>
     `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(s % 60).padStart(
       2,
-      "0"
+      "0",
     )}`;
 
   const androidClass = isAndroid() ? "android-modal" : "";
@@ -657,7 +657,9 @@ const RecordingModal = ({
               <div className="mt-6 space-y-5">
                 {recordingResult.success ? (
                   <>
-                    <div className={`mb-1 p-4 rounded-xl border-2 ${resultTone}`}>
+                    <div
+                      className={`mb-1 p-4 rounded-xl border-2 ${resultTone}`}
+                    >
                       <div className="flex items-start gap-3">
                         <svg
                           className="w-5 h-5 mt-0.5 flex-shrink-0"
@@ -689,7 +691,7 @@ const RecordingModal = ({
                       </p>
                       {highlightWords(
                         recordingResult.originalText,
-                        recordingResult.userText
+                        recordingResult.userText,
                       )}
                     </div>
 
@@ -917,10 +919,10 @@ const ClickableWord = ({
           partOfSpeech: wordData ? wordData.partOfSpeech : "word",
           rank: wordData ? wordData.rank : Math.floor(Math.random() * 1000) + 1,
         },
-        position
+        position,
       );
     },
-    [word, onWordClick, wordDefinitions, onPlayWordAudio]
+    [word, onWordClick, wordDefinitions, onPlayWordAudio],
   );
 
   const cleanWord = word.replace(/[.,!?;:'"]/g, "");
@@ -968,7 +970,7 @@ const Sentence = React.forwardRef(
       onPlaySentenceAudio,
       onPlayWordAudio,
     },
-    ref
+    ref,
   ) => {
     const words = sentence.text.split(" ");
     return (
@@ -1013,10 +1015,10 @@ const Sentence = React.forwardRef(
                pronunciationScore >= 85
                  ? "bg-green-100 text-green-800"
                  : pronunciationScore >= 70
-                 ? "bg-blue-100 text-blue-800"
-                 : pronunciationScore >= 50
-                 ? "bg-yellow-100 text-yellow-800"
-                 : "bg-red-100 text-red-800"
+                   ? "bg-blue-100 text-blue-800"
+                   : pronunciationScore >= 50
+                     ? "bg-yellow-100 text-yellow-800"
+                     : "bg-red-100 text-red-800"
              }`}
           >
             {pronunciationScore}
@@ -1024,7 +1026,7 @@ const Sentence = React.forwardRef(
         )}
       </div>
     );
-  }
+  },
 );
 
 Sentence.displayName = "Sentence";
@@ -1282,7 +1284,7 @@ export function ShowLesson() {
             if (active) {
               const total = Object.values(durationsRef.current).reduce(
                 (acc, v) => acc + (Number.isFinite(v) ? v : 0),
-                0
+                0,
               );
               setLessonTotalDuration(total);
             }
@@ -1295,7 +1297,7 @@ export function ShowLesson() {
     return () => {
       active = false;
       loaders.forEach(({ a, onLoaded }) =>
-        a.removeEventListener("loadedmetadata", onLoaded)
+        a.removeEventListener("loadedmetadata", onLoaded),
       );
     };
   }, [currentLesson]);
@@ -1328,7 +1330,7 @@ export function ShowLesson() {
       }
       return sum;
     },
-    [currentLesson]
+    [currentLesson],
   );
 
   /* ------------------------------ Load voices ----------------------------- */
@@ -1349,18 +1351,18 @@ export function ShowLesson() {
       voices.find((v) =>
         (v.name || "")
           .toLowerCase()
-          .includes(PREFERRED_VOICE_NAME.toLowerCase())
+          .includes(PREFERRED_VOICE_NAME.toLowerCase()),
       ) ||
       voices.find((v) =>
         (v.voiceURI || "")
           .toLowerCase()
-          .includes(PREFERRED_VOICE_NAME.toLowerCase())
+          .includes(PREFERRED_VOICE_NAME.toLowerCase()),
       );
     if (byName) return byName;
     const byLang = voices.find((v) =>
       (v.lang || "")
         .toLowerCase()
-        .startsWith(PREFERRED_VOICE_LANG.toLowerCase())
+        .startsWith(PREFERRED_VOICE_LANG.toLowerCase()),
     );
     if (byLang) return byLang;
     return voices.find((v) => (v.lang || "").startsWith("en")) || voices[0];
@@ -1403,7 +1405,7 @@ export function ShowLesson() {
         .play()
         .catch((err) => console.error("TTS+MP3 fallback failed:", err));
     },
-    [pickVoice, playbackRate]
+    [pickVoice, playbackRate],
   );
 
   /* -------------------------- Enhanced Microphone permission for Android -------------------------- */
@@ -1578,10 +1580,10 @@ export function ShowLesson() {
         mimeType: MediaRecorder.isTypeSupported("audio/webm; codecs=opus")
           ? "audio/webm; codecs=opus"
           : MediaRecorder.isTypeSupported("audio/webm")
-          ? "audio/webm"
-          : MediaRecorder.isTypeSupported("audio/mp4")
-          ? "audio/mp4"
-          : "",
+            ? "audio/webm"
+            : MediaRecorder.isTypeSupported("audio/mp4")
+              ? "audio/mp4"
+              : "",
       });
 
       const audioChunks = [];
@@ -1640,10 +1642,10 @@ export function ShowLesson() {
         mimeType: MediaRecorder.isTypeSupported("audio/webm; codecs=opus")
           ? "audio/webm; codecs=opus"
           : MediaRecorder.isTypeSupported("audio/webm")
-          ? "audio/webm"
-          : MediaRecorder.isTypeSupported("audio/mp4")
-          ? "audio/mp4"
-          : "",
+            ? "audio/webm"
+            : MediaRecorder.isTypeSupported("audio/mp4")
+              ? "audio/mp4"
+              : "",
       });
 
       const audioChunks = [];
@@ -1753,8 +1755,9 @@ export function ShowLesson() {
       if (isAndroid()) return;
 
       try {
-        const audioContext = new (window.AudioContext ||
-          window.webkitAudioContext)();
+        const audioContext = new (
+          window.AudioContext || window.webkitAudioContext
+        )();
         audioContextRef.current = audioContext;
 
         const analyser = audioContext.createAnalyser();
@@ -1803,7 +1806,7 @@ export function ShowLesson() {
         console.error("Error setting up silence detection:", error);
       }
     },
-    [BAR_COUNT]
+    [BAR_COUNT],
   );
 
   const stopAudioRecording = () => {
@@ -1836,7 +1839,7 @@ export function ShowLesson() {
         });
       }
     },
-    [autoScroll]
+    [autoScroll],
   );
 
   const handleRecognitionResult = (transcript, confidence) => {
@@ -1846,7 +1849,7 @@ export function ShowLesson() {
       const evaluation = evaluatePronunciation(
         transcript,
         originalSentence.text,
-        confidence
+        confidence,
       );
       setRecordingResult({
         success: true,
@@ -2016,12 +2019,15 @@ export function ShowLesson() {
         if (nowMs - lastTimeUpdateMsRef.current < 150) return;
         lastTimeUpdateMsRef.current = nowMs;
 
-        if (timeUpdateRafRef.current) cancelAnimationFrame(timeUpdateRafRef.current);
+        if (timeUpdateRafRef.current)
+          cancelAnimationFrame(timeUpdateRafRef.current);
         timeUpdateRafRef.current = requestAnimationFrame(() => {
-          const now = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+          const now = Number.isFinite(audio.currentTime)
+            ? audio.currentTime
+            : 0;
           setCurrentTime(now);
           const base = sumDurationsBeforeIndex(
-            readingStateRef.current.currentIndex
+            readingStateRef.current.currentIndex,
           );
           setLessonElapsed(base + now);
         });
@@ -2030,7 +2036,7 @@ export function ShowLesson() {
       audio.onended = () => {
         setCurrentTime(0);
         const base = sumDurationsBeforeIndex(
-          readingStateRef.current.currentIndex
+          readingStateRef.current.currentIndex,
         );
         setLessonElapsed(base);
       };
@@ -2059,7 +2065,7 @@ export function ShowLesson() {
         playAudio();
       }
     },
-    [playbackRate, sumDurationsBeforeIndex]
+    [playbackRate, sumDurationsBeforeIndex],
   );
 
   const playAudioFile = useCallback((audioUrl, rate = 1) => {
@@ -2197,7 +2203,7 @@ export function ShowLesson() {
       if (!clean) return;
       speak(clean);
     },
-    [speak]
+    [speak],
   );
 
   /* ------------------------------ Read all sentences / Resume ------------------------------ */
@@ -2239,7 +2245,11 @@ export function ShowLesson() {
           if (loopEnabled && !shouldStop) {
             setTimeout(() => {
               if (!readingStateRef.current.shouldStop) {
-                resumeRef.current = { hasPosition: false, index: 0, timeInSentence: 0 };
+                resumeRef.current = {
+                  hasPosition: false,
+                  index: 0,
+                  timeInSentence: 0,
+                };
                 readAllSentences(0, 0);
               }
             }, 400);
@@ -2264,13 +2274,20 @@ export function ShowLesson() {
             audioRef.current.onended = () => {
               if (!readingStateRef.current.shouldStop) {
                 readingStateRef.current.currentIndex++;
-                resumeRef.current = { hasPosition: true, index: readingStateRef.current.currentIndex, timeInSentence: 0 };
+                resumeRef.current = {
+                  hasPosition: true,
+                  index: readingStateRef.current.currentIndex,
+                  timeInSentence: 0,
+                };
 
                 if (pronunciationEnabled) {
                   setIsWaitingForRecording(true);
                   setShowRecordingModal(true);
                 } else {
-                  readingTimeoutRef.current = setTimeout(() => speakNextSentence(0), 500);
+                  readingTimeoutRef.current = setTimeout(
+                    () => speakNextSentence(0),
+                    500,
+                  );
                 }
               }
             };
@@ -2278,26 +2295,40 @@ export function ShowLesson() {
             audioRef.current.onerror = () => {
               if (!readingStateRef.current.shouldStop) {
                 readingStateRef.current.currentIndex++;
-                resumeRef.current = { hasPosition: true, index: readingStateRef.current.currentIndex, timeInSentence: 0 };
+                resumeRef.current = {
+                  hasPosition: true,
+                  index: readingStateRef.current.currentIndex,
+                  timeInSentence: 0,
+                };
 
                 if (pronunciationEnabled) {
                   setIsWaitingForRecording(true);
                   setShowRecordingModal(true);
                 } else {
-                  readingTimeoutRef.current = setTimeout(() => speakNextSentence(0), 500);
+                  readingTimeoutRef.current = setTimeout(
+                    () => speakNextSentence(0),
+                    500,
+                  );
                 }
               }
             };
           }
         } else {
           readingStateRef.current.currentIndex++;
-          resumeRef.current = { hasPosition: true, index: readingStateRef.current.currentIndex, timeInSentence: 0 };
+          resumeRef.current = {
+            hasPosition: true,
+            index: readingStateRef.current.currentIndex,
+            timeInSentence: 0,
+          };
 
           if (pronunciationEnabled) {
             setIsWaitingForRecording(true);
             setShowRecordingModal(true);
           } else {
-            readingTimeoutRef.current = setTimeout(() => speakNextSentence(0), 1000);
+            readingTimeoutRef.current = setTimeout(
+              () => speakNextSentence(0),
+              1000,
+            );
           }
         }
       };
@@ -2315,7 +2346,7 @@ export function ShowLesson() {
       loopEnabled,
       sumDurationsBeforeIndex,
       readingProgress,
-    ]
+    ],
   );
 
   // ✅ Stop = Pause (no reset)
@@ -2429,7 +2460,8 @@ export function ShowLesson() {
           window.speechSynthesis.cancel();
         } catch {}
       }
-      if (timeUpdateRafRef.current) cancelAnimationFrame(timeUpdateRafRef.current);
+      if (timeUpdateRafRef.current)
+        cancelAnimationFrame(timeUpdateRafRef.current);
     };
   }, []);
 
@@ -2602,7 +2634,7 @@ export function ShowLesson() {
                 const rect = e.currentTarget.getBoundingClientRect();
                 const ratio = Math.min(
                   1,
-                  Math.max(0, (e.clientX - rect.left) / rect.width)
+                  Math.max(0, (e.clientX - rect.left) / rect.width),
                 );
                 const t = ratio * duration;
 
@@ -2628,8 +2660,8 @@ export function ShowLesson() {
                         100
                       }%`
                     : duration
-                    ? `${(Math.min(currentTime, duration) / duration) * 100}%`
-                    : `${readingProgress}%`,
+                      ? `${(Math.min(currentTime, duration) / duration) * 100}%`
+                      : `${readingProgress}%`,
                 }}
               />
             </div>
@@ -2658,6 +2690,15 @@ export function ShowLesson() {
                     <path d="M17 1l4 4-4 4V6H7a3 3 0 00-3 3v2H2V9a5 5 0 015-5h10V1zm-10 22l-4-4 4-4v3h10a3 3 0 003-3v-2h2v2a5 5 0 01-5 5H7v3z" />
                   </svg>
                 </button>
+                {/* ✅ optional: Full Stop (Reset) button row for clarity */}
+         
+                  <button
+                    onClick={resetReading}
+                    className="w-9 h-9 text-base rounded-full bg-red-100 hover:bg-red-300  grid place-items-center"
+                    title="إيقاف وإعادة من البداية"
+                  >
+                    <RotateCcw size={20} />
+                  </button>
               </div>
 
               <div className="flex items-center gap-1 text-[11px] text-gray-600">
@@ -2669,8 +2710,8 @@ export function ShowLesson() {
                   {lessonTotalDuration
                     ? fmt(lessonTotalDuration)
                     : duration
-                    ? fmt(duration)
-                    : `${Math.round(readingProgress)}%`}
+                      ? fmt(duration)
+                      : `${Math.round(readingProgress)}%`}
                 </span>
               </div>
 
@@ -2700,18 +2741,6 @@ export function ShowLesson() {
                 </div>
               </div>
             </div>
-
-            {/* ✅ optional: Full Stop (Reset) button row for clarity */}
-            <div className="px-4 pb-3">
-              <button
-                onClick={resetReading}
-                className="w-full text-sm rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-200 py-2 flex items-center justify-center gap-2"
-                title="إيقاف وإعادة من البداية"
-              >
-                <RotateCcw size={16} />
-                <span className="arabic_font">إيقاف كامل (من البداية)</span>
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -2719,7 +2748,7 @@ export function ShowLesson() {
       {/* Quiz FAB */}
       <Link
         to={`/reading/level/${levelId}/lesson/${lessonId}/quiz`}
-        className="fixed bottom-20 md:bottom-24 right-4 md:right-6 group z-50"
+        className="fixed bottom-20 md:bottom-24 right-4 md:right-6 group z-10"
       >
         <div className="md:hidden bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] text-white rounded-full shadow-xl transition-all duration-300 flex items-center gap-2 px-3 py-1 animate-pulse hover:animate-none">
           <PiExam size={24} />
