@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { Link } from "react-router-dom";
 import { readingData } from "../../../config/readingData/readingData";
 import { Loading } from "../../../components/Loading";
@@ -6,7 +12,10 @@ import { Loading } from "../../../components/Loading";
 // ============================================
 // ICONS COMPONENTS (Memoized)
 // ============================================
-const HeadphonesIcon = React.memo(function HeadphonesIcon({ active, size = "w-10 h-10" }) {
+const HeadphonesIcon = React.memo(function HeadphonesIcon({
+  active,
+  size = "w-10 h-10",
+}) {
   return (
     <svg viewBox="0 0 24 24" className={size} fill="none">
       <path
@@ -81,7 +90,10 @@ const BookIcon = React.memo(function BookIcon({ active, size = "w-10 h-10" }) {
   );
 });
 
-const PencilIcon = React.memo(function PencilIcon({ active, size = "w-10 h-10" }) {
+const PencilIcon = React.memo(function PencilIcon({
+  active,
+  size = "w-10 h-10",
+}) {
   return (
     <svg viewBox="0 0 24 24" className={size} fill="none">
       <path
@@ -101,7 +113,11 @@ const PencilIcon = React.memo(function PencilIcon({ active, size = "w-10 h-10" }
   );
 });
 
-const ToolIcon = React.memo(function ToolIcon({ category, active, size = "w-10 h-10" }) {
+const ToolIcon = React.memo(function ToolIcon({
+  category,
+  active,
+  size = "w-10 h-10",
+}) {
   switch (category) {
     case "listening":
       return <HeadphonesIcon active={active} size={size} />;
@@ -120,18 +136,53 @@ const ToolIcon = React.memo(function ToolIcon({ category, active, size = "w-10 h
 // GROUP THEMES (كل 4 نقاط لون مختلف)
 // ============================================
 const GROUP_THEMES = [
-  { primary: "#F59E0B", secondary: "#D97706", gradFrom: "#FBBF24", gradTo: "#F97316" },
-  { primary: "#2563EB", secondary: "#1D4ED8", gradFrom: "#60A5FA", gradTo: "#2563EB" },
-  { primary: "#7C3AED", secondary: "#6D28D9", gradFrom: "#A78BFA", gradTo: "#7C3AED" },
-  { primary: "#16A34A", secondary: "#15803D", gradFrom: "#4ADE80", gradTo: "#16A34A" },
-  { primary: "#DB2777", secondary: "#BE185D", gradFrom: "#F472B6", gradTo: "#DB2777" },
-  { primary: "#0EA5E9", secondary: "#0284C7", gradFrom: "#7DD3FC", gradTo: "#0EA5E9" },
+  {
+    primary: "#F59E0B",
+    secondary: "#D97706",
+    gradFrom: "#FBBF24",
+    gradTo: "#F97316",
+  },
+  {
+    primary: "#2563EB",
+    secondary: "#1D4ED8",
+    gradFrom: "#60A5FA",
+    gradTo: "#2563EB",
+  },
+  {
+    primary: "#7C3AED",
+    secondary: "#6D28D9",
+    gradFrom: "#A78BFA",
+    gradTo: "#7C3AED",
+  },
+  {
+    primary: "#16A34A",
+    secondary: "#15803D",
+    gradFrom: "#4ADE80",
+    gradTo: "#16A34A",
+  },
+  {
+    primary: "#DB2777",
+    secondary: "#BE185D",
+    gradFrom: "#F472B6",
+    gradTo: "#DB2777",
+  },
+  {
+    primary: "#0EA5E9",
+    secondary: "#0284C7",
+    gradFrom: "#7DD3FC",
+    gradTo: "#0EA5E9",
+  },
 ];
 
 // ============================================
 // CURVED PATH SVG - Connects nodes with curves (Memoized)
 // ============================================
-const CurvedConnector = React.memo(function CurvedConnector({ from, to, isActive, activeColor }) {
+const CurvedConnector = React.memo(function CurvedConnector({
+  from,
+  to,
+  isActive,
+  activeColor,
+}) {
   const curveOffset = (to.x - from.x) / 1;
   const d = `M ${from.x} ${from.y}
              C ${from.x + curveOffset} ${from.y + 20},
@@ -169,7 +220,11 @@ const getCategoryNameArabic = (category) => {
 // ============================================
 // LESSON NODE - Single circular node (3D) (Memoized)
 // ============================================
-const LessonNode = React.memo(function LessonNode({ node, position, onNodeClick }) {
+const LessonNode = React.memo(function LessonNode({
+  node,
+  position,
+  onNodeClick,
+}) {
   const { isUnlocked, isCurrent, isClickable, linkTo, theme } = node;
 
   const CircleContent = (
@@ -210,9 +265,13 @@ const LessonNode = React.memo(function LessonNode({ node, position, onNodeClick 
         style={{
           transform: "rotateX(26.87deg) translateZ(8px)",
           boxShadow: `0px 10px 0px 0px ${
-            isUnlocked || isCurrent ? (theme?.secondary || "var(--secondary-color)") : "gray"
+            isUnlocked || isCurrent
+              ? theme?.secondary || "var(--secondary-color)"
+              : "gray"
           }`,
-          filter: isCurrent ? "drop-shadow(0px 14px 12px rgba(0,0,0,0.35))" : "none",
+          filter: isCurrent
+            ? "drop-shadow(0px 14px 12px rgba(0,0,0,0.35))"
+            : "none",
           background:
             isUnlocked || isCurrent
               ? `linear-gradient(to bottom, ${theme?.gradFrom}, ${theme?.gradTo})`
@@ -225,7 +284,11 @@ const LessonNode = React.memo(function LessonNode({ node, position, onNodeClick 
         `}
       >
         <div className="relative z-10">
-          <ToolIcon category={node.category} active={isUnlocked || isCurrent} size="w-10 h-10" />
+          <ToolIcon
+            category={node.category}
+            active={isUnlocked || isCurrent}
+            size="w-10 h-10"
+          />
         </div>
       </div>
     </div>
@@ -302,11 +365,13 @@ const LessonNode = React.memo(function LessonNode({ node, position, onNodeClick 
 // ZIGZAG PATH UI COMPONENT (3D container) (Memoized + memoized positions)
 // ============================================
 
-
 // ============================================
 // ZIGZAG PATH UI COMPONENT (Responsive width + memoized positions)
 // ============================================
-export const ZigzagPathUI = React.memo(function ZigzagPathUI({ nodes, onNodeClick = () => {} }) {
+export const ZigzagPathUI = React.memo(function ZigzagPathUI({
+  nodes,
+  onNodeClick = () => {},
+}) {
   const wrapRef = useRef(null);
   const [wrapW, setWrapW] = useState(420);
 
@@ -371,8 +436,10 @@ export const ZigzagPathUI = React.memo(function ZigzagPathUI({ nodes, onNodeClic
         }}
       >
         {/* Group separators */}
-        {nodes.map((_, index) => {
-          const isEndOfGroup = (index + 1) % 4 === 0 && index !== nodes.length - 1;
+        {nodes.map((group, index) => {
+          const isEndOfGroup =
+            (index + 1) % 4 === 0 && index !== nodes.length - 1;
+
           if (!isEndOfGroup) return null;
 
           const y = positions[index].y + 92;
@@ -381,24 +448,36 @@ export const ZigzagPathUI = React.memo(function ZigzagPathUI({ nodes, onNodeClic
           return (
             <div
               key={`sep-${index}`}
-              className="absolute left-1/2 -translate-x-1/2"
-              style={{ top: `${y}px`, width: "min(340px, 92vw)", height: "28px", zIndex: 1 }}
+              className="absolute left-1/2 -translate-x-1/2 z-10"
+              style={{ top: `${y}px`, width: "min(500px, 92vw)" }}
             >
-              <div className="relative w-full h-full flex items-center justify-center">
+              <div className="relative flex items-center justify-center h-8">
+                {/* Line */}
                 <div
-                  className="w-full h-[6px] rounded-full"
+                  className="absolute inset-x-0 top-1/2 h-[2px] rounded-full opacity-70"
                   style={{
-                    background: "rgba(229,231,235,0.9)",
-                    boxShadow: "0 10px 20px rgba(0,0,0,0.10)",
+                    background: `linear-gradient(to right,
+              transparent,
+              ${nextTheme?.primary},
+              ${nextTheme?.secondary},
+              transparent
+            )`,
                   }}
                 />
+
+                {/* Badge */}
                 <div
-                  className="absolute w-20 h-5 rounded-full"
+                  className="relative px-4 py-1 text-base arabic_font font-semibold rounded-full backdrop-blur-md shadow-md"
                   style={{
-                    background: `linear-gradient(to right, ${nextTheme?.primary}55, ${nextTheme?.secondary}55)`,
-                    filter: "blur(0px)",
+                    background: `linear-gradient(135deg,
+              ${nextTheme?.primary},
+              ${nextTheme?.secondary}
+            )`,
+                    color: "#fff",
                   }}
-                />
+                >
+                  الدرس رقم {group?.groupIndex + 2}
+                </div>
               </div>
             </div>
           );
@@ -418,7 +497,8 @@ export const ZigzagPathUI = React.memo(function ZigzagPathUI({ nodes, onNodeClic
             if (isGroupBreak) return null;
 
             const nextPos = positions[index + 1];
-            const activeColor = nodes[index]?.theme?.primary || "var(--primary-color)";
+            const activeColor =
+              nodes[index]?.theme?.primary || "var(--primary-color)";
 
             return (
               <CurvedConnector
@@ -434,13 +514,17 @@ export const ZigzagPathUI = React.memo(function ZigzagPathUI({ nodes, onNodeClic
 
         {/* Nodes */}
         {nodes.map((node, idx) => (
-          <LessonNode key={node.id} node={node} position={positions[idx]} onNodeClick={onNodeClick} />
+          <LessonNode
+            key={node.id}
+            node={node}
+            position={positions[idx]}
+            onNodeClick={onNodeClick}
+          />
         ))}
       </div>
     </div>
   );
 });
-
 
 // ============================================
 // PROGRESS HOOK (✅ لا يقرأ localStorage كل render)
@@ -464,26 +548,38 @@ const useProgressData = (lengths) => {
   };
 
   const compute = useCallback(() => {
-    const listeningArr = safeParse(localStorage.getItem("sna-lesson-progress"), []);
+    const listeningArr = safeParse(
+      localStorage.getItem("sna-lesson-progress"),
+      [],
+    );
     const listeningCompleted = Array.isArray(listeningArr)
       ? listeningArr.reduce((acc, x) => acc + (x?.isCompleted ? 1 : 0), 0)
       : 0;
 
-    const pronounceObj = safeParse(localStorage.getItem("pronunciationMasterProgress"), {});
+    const pronounceObj = safeParse(
+      localStorage.getItem("pronunciationMasterProgress"),
+      {},
+    );
     const pronunciationCompleted = countNumericCompleted(pronounceObj);
 
     const readingObj = safeParse(localStorage.getItem("quizProgress"), {});
     const readingCompleted =
       readingObj && typeof readingObj === "object"
-        ? Object.values(readingObj).reduce((acc, x) => acc + (x?.completed ? 1 : 0), 0)
+        ? Object.values(readingObj).reduce(
+            (acc, x) => acc + (x?.completed ? 1 : 0),
+            0,
+          )
         : 0;
 
-    const writingObj = safeParse(localStorage.getItem("sna-writing-tool-progress"), {});
+    const writingObj = safeParse(
+      localStorage.getItem("sna-writing-tool-progress"),
+      {},
+    );
     const writingCompleted =
       writingObj && typeof writingObj === "object"
         ? Object.values(writingObj).reduce(
             (acc, x) => acc + (x?.phase === "questions-completed" ? 1 : 0),
-            0
+            0,
           )
         : 0;
 
@@ -514,7 +610,13 @@ const useProgressData = (lengths) => {
 
     window.addEventListener("storage", onStorage);
     return () => window.removeEventListener("storage", onStorage);
-  }, [compute, lengths.listening, lengths.pronounce, lengths.reading, lengths.writing]);
+  }, [
+    compute,
+    lengths.listening,
+    lengths.pronounce,
+    lengths.reading,
+    lengths.writing,
+  ]);
 
   return progress;
 };
@@ -529,7 +631,7 @@ const buildInterleavedNodes = (lengths, completedCounts, getPathByCategory) => {
     lengths.listening || 0,
     lengths.pronounce || 0,
     lengths.reading || 0,
-    lengths.writing || 0
+    lengths.writing || 0,
   );
 
   const lenByCat = {
@@ -549,7 +651,8 @@ const buildInterleavedNodes = (lengths, completedCounts, getPathByCategory) => {
   const steps = [];
   for (let lessonNo = 1; lessonNo <= maxLen; lessonNo++) {
     for (const cat of CATEGORY_ORDER) {
-      if (lessonNo <= (lenByCat[cat] || 0)) steps.push({ category: cat, lessonNo });
+      if (lessonNo <= (lenByCat[cat] || 0))
+        steps.push({ category: cat, lessonNo });
     }
   }
 
@@ -583,8 +686,12 @@ const buildInterleavedNodes = (lengths, completedCounts, getPathByCategory) => {
       isUnlocked,
       isCurrent,
       isClickable,
-      linkTo: isClickable ? getPathByCategory(step.category, step.lessonNo) : null,
-      nextCategoryLabel: isCurrent ? getCategoryNameArabic(step.category) : null,
+      linkTo: isClickable
+        ? getPathByCategory(step.category, step.lessonNo)
+        : null,
+      nextCategoryLabel: isCurrent
+        ? getCategoryNameArabic(step.category)
+        : null,
     };
   });
 };
@@ -661,7 +768,7 @@ export function HomeMainPlan() {
       listening: data.listening?.lessons?.length || 0,
       reading: readingData?.length || 0,
     }),
-    [data]
+    [data],
   );
 
   const completedCounts = useProgressData(lengths);
@@ -688,7 +795,7 @@ export function HomeMainPlan() {
           return `/plan/slug/lesson-${lessonNo}`;
       }
     },
-    [data?.writing]
+    [data?.writing],
   );
 
   const total = useMemo(() => {
@@ -696,7 +803,7 @@ export function HomeMainPlan() {
       lengths.listening || 0,
       lengths.pronounce || 0,
       lengths.reading || 0,
-      lengths.writing || 0
+      lengths.writing || 0,
     );
 
     let count = 0;
@@ -714,8 +821,14 @@ export function HomeMainPlan() {
     return buildInterleavedNodes(lengths, completedCounts, getPathByCategory);
   }, [total, lengths, completedCounts, getPathByCategory]);
 
-  const isLoading = useMemo(() => Object.values(loading).some(Boolean), [loading]);
-  const hasErrors = useMemo(() => Object.values(errors).some(Boolean), [errors]);
+  const isLoading = useMemo(
+    () => Object.values(loading).some(Boolean),
+    [loading],
+  );
+  const hasErrors = useMemo(
+    () => Object.values(errors).some(Boolean),
+    [errors],
+  );
 
   const handleNodeClick = useCallback((node) => {
     // لو لسه محتاج log خليه مؤقت، لكنه بيبطّأ مع كثرة re-renders
@@ -727,7 +840,9 @@ export function HomeMainPlan() {
   if (hasErrors) {
     return (
       <div className="mb-8 text-center py-8">
-        <div className="text-red-600">Error loading data. Please try again.</div>
+        <div className="text-red-600">
+          Error loading data. Please try again.
+        </div>
       </div>
     );
   }
