@@ -1,0 +1,8 @@
+1
+00:00:00,000 --> 00:00:17,551
+Excellent. SNA Academy  provides you with a pronunciation score immediately. It also colors the words you mispronounced.
+Let's try another sentence. This time, press the mic and say, where can I find the nearest restaurant? Ready?
+
+2
+00:00:00,000 --> 00:00:17,551
+ممتاز. تمنحك أكاديمية SNA نتيجة فورية للنطق. كما تُلوّن الكلمات التي نطقتها بشكل خاطئ. دعنا نجرب جملة أخرى. هذه المرة، اضغط على الميكروفون وقل: أين يمكنني أن أجد أقرب مطعم؟ جاهز؟
