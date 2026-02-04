@@ -43,6 +43,8 @@ const PREFERRED_VOICE_LANG = "en-GB";
 
 /* ========================== Enhanced Pronunciation System ========================== */
 
+/* ========================== Enhanced Pronunciation System (FIXED) ========================== */
+
 // قاموس الاختصارات الشائعة
 const CONTRACTIONS_MAP = {
   "i'm": "i am",
@@ -102,7 +104,7 @@ const normalizeText = (text) => {
   let normalized = text
     .toLowerCase()
     .trim()
-    // إزالة علامات الترقيم والرموز الخاصة
+    // إزالة علامات الترقيم والرموز الخاصة (نترك ' للاختصارات)
     .replace(/[^\w\s']/g, " ")
     // معالجة المسافات المتعددة
     .replace(/\s+/g, " ")
@@ -120,18 +122,21 @@ const normalizeText = (text) => {
   return normalized;
 };
 
-// دالة حساب المسافة بين الكلمات (Levenshtein distance)
+// Tokenize موحد
+const tokenize = (text) => {
+  const n = normalizeText(text);
+  if (!n) return [];
+  return n.split(/\s+/).filter(Boolean);
+};
+
+// Levenshtein distance
 const levenshteinDistance = (str1, str2) => {
   const matrix = [];
   const len1 = str1.length;
   const len2 = str2.length;
 
-  for (let i = 0; i <= len2; i++) {
-    matrix[i] = [i];
-  }
-  for (let j = 0; j <= len1; j++) {
-    matrix[0][j] = j;
-  }
+  for (let i = 0; i <= len2; i++) matrix[i] = [i];
+  for (let j = 0; j <= len1; j++) matrix[0][j] = j;
 
   for (let i = 1; i <= len2; i++) {
     for (let j = 1; j <= len1; j++) {
@@ -139,70 +144,113 @@ const levenshteinDistance = (str1, str2) => {
         matrix[i][j] = matrix[i - 1][j - 1];
       } else {
         matrix[i][j] = Math.min(
-          matrix[i - 1][j - 1] + 1, // استبدال
-          matrix[i][j - 1] + 1, // إدراج
-          matrix[i - 1][j] + 1, // حذف
+          matrix[i - 1][j - 1] + 1, // replace
+          matrix[i][j - 1] + 1, // insert
+          matrix[i - 1][j] + 1, // delete
         );
       }
     }
   }
-
   return matrix[len2][len1];
 };
 
-// دالة حساب التشابه المحسنة
-const calculateSimilarity = (userText, originalText) => {
-  const normalizedUser = normalizeText(userText);
-  const normalizedOriginal = normalizeText(originalText);
+// Similarity بين كلمتين (0..1)
+const wordCharSimilarity = (a, b) => {
+  if (!a || !b) return 0;
+  if (a === b) return 1;
+  const d = levenshteinDistance(a, b);
+  const maxLen = Math.max(a.length, b.length);
+  return maxLen ? (maxLen - d) / maxLen : 0;
+};
 
-  if (normalizedUser === normalizedOriginal) {
-    return 100;
+/**
+ * Alignment DP بين كلمات الأصل وكلمات المستخدم
+ * الهدف: ما نعتمدش على نفس الـ index لأن أي كلمة زيادة/ناقصة تكسر التصحيح
+ */
+const alignWordsDP = (origWords, userWords) => {
+  const n = origWords.length;
+  const m = userWords.length;
+
+  const dp = Array.from({ length: n + 1 }, () => Array(m + 1).fill(0));
+  const back = Array.from({ length: n + 1 }, () => Array(m + 1).fill(null));
+
+  // tune penalties
+  const DEL = -0.35; // missing an original word
+  const INS = -0.2; // extra user word
+
+  for (let i = 1; i <= n; i++) {
+    dp[i][0] = dp[i - 1][0] + DEL;
+    back[i][0] = "del";
+  }
+  for (let j = 1; j <= m; j++) {
+    dp[0][j] = dp[0][j - 1] + INS;
+    back[0][j] = "ins";
   }
 
-  const userWords = normalizedUser
-    .split(/\s+/)
-    .filter((word) => word.length > 0);
-  const originalWords = normalizedOriginal
-    .split(/\s+/)
-    .filter((word) => word.length > 0);
+  for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= m; j++) {
+      const sim = wordCharSimilarity(origWords[i - 1], userWords[j - 1]); // 0..1
+      const MATCH = sim >= 0.95 ? 1.0 : sim >= 0.7 ? sim : sim * 0.5;
 
-  if (originalWords.length === 0) return 0;
-  if (userWords.length === 0) return 0;
+      const a = dp[i - 1][j - 1] + MATCH; // match
+      const b = dp[i - 1][j] + DEL; // delete original word
+      const c = dp[i][j - 1] + INS; // skip inserted user word
 
-  let exactMatches = 0;
-  let partialMatches = 0;
-
-  for (let i = 0; i < Math.min(userWords.length, originalWords.length); i++) {
-    const userWord = userWords[i];
-    const originalWord = originalWords[i];
-
-    if (userWord === originalWord) {
-      exactMatches++;
-    } else {
-      const distance = levenshteinDistance(userWord, originalWord);
-      const maxLen = Math.max(userWord.length, originalWord.length);
-      const similarity = maxLen > 0 ? (maxLen - distance) / maxLen : 0;
-
-      if (similarity >= 0.7) {
-        partialMatches += similarity;
-      }
+      const best = Math.max(a, b, c);
+      dp[i][j] = best;
+      back[i][j] = best === a ? "diag" : best === b ? "del" : "ins";
     }
   }
 
-  const totalScore = (exactMatches + partialMatches) / originalWords.length;
-  const lengthPenalty =
-    Math.abs(userWords.length - originalWords.length) / originalWords.length;
+  // reconstruct: for each original word => matched user word or ""
+  const pairs = [];
+  let i = n,
+    j = m;
 
-  const finalScore = Math.max(0, totalScore - lengthPenalty * 0.3) * 100;
+  while (i > 0 || j > 0) {
+    const step = back[i][j];
+    if (step === "diag") {
+      pairs.push({ orig: origWords[i - 1], user: userWords[j - 1] });
+      i--;
+      j--;
+    } else if (step === "del") {
+      pairs.push({ orig: origWords[i - 1], user: "" });
+      i--;
+    } else {
+      // insertion: user said extra word not mapped to original
+      j--;
+    }
+  }
 
-  return Math.min(100, Math.round(finalScore));
+  pairs.reverse();
+  return { pairs, rawScore: dp[n][m] };
+};
+
+// حساب التشابه (0..100) باستخدام alignment
+const calculateSimilarity = (userText, originalText) => {
+  const origWords = tokenize(originalText);
+  const userWords = tokenize(userText);
+
+  if (!origWords.length || !userWords.length) return 0;
+
+  // exact match after normalize?
+  if (normalizeText(userText) === normalizeText(originalText)) return 100;
+
+  const { pairs } = alignWordsDP(origWords, userWords);
+
+  let sum = 0;
+  for (const p of pairs) {
+    sum += wordCharSimilarity(p.orig, p.user); // 0..1
+  }
+
+  const avg = sum / origWords.length;
+  return Math.min(100, Math.round(avg * 100));
 };
 
 const evaluatePronunciation = (userText, originalText, confidence) => {
   const similarity = calculateSimilarity(userText, originalText);
   const confidenceScore = (confidence || 0) * 100;
 
-  // If text is perfectly matched, give 100%
   if (similarity === 100) {
     return {
       level: "excellent",
@@ -212,7 +260,6 @@ const evaluatePronunciation = (userText, originalText, confidence) => {
     };
   }
 
-  // Otherwise calculate weighted score
   const overall = similarity * 0.85 + confidenceScore * 0.15;
 
   if (overall >= 90)
@@ -249,6 +296,44 @@ const evaluatePronunciation = (userText, originalText, confidence) => {
     color: "red",
     score: Math.round(overall),
   };
+};
+
+// ✅ Highlight words باستخدام نفس alignment (ده اللي بيصلّح الـ Correction)
+const buildWordHighlights = (originalText, userText) => {
+  const origDisplayWords = (originalText || "")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  const origNormWords = tokenize(originalText);
+  const userNormWords = tokenize(userText);
+
+  const { pairs } = alignWordsDP(origNormWords, userNormWords);
+
+  const len = Math.min(origDisplayWords.length, pairs.length);
+
+  const items = [];
+  for (let i = 0; i < len; i++) {
+    const displayWord = origDisplayWords[i];
+    const expected = pairs[i]?.orig || "";
+    const said = pairs[i]?.user || "";
+
+    const sim01 = wordCharSimilarity(expected, said);
+    const sim = Math.round(sim01 * 100);
+
+    let matchType = "wrong";
+    if (sim >= 95) matchType = "exact";
+    else if (sim >= 80) matchType = "close";
+    else if (sim >= 60) matchType = "partial";
+
+    items.push({
+      word: displayWord,
+      userWord: said,
+      similarity: sim,
+      matchType,
+    });
+  }
+
+  return items;
 };
 
 /* =================== Permission Banner =================== */
@@ -347,47 +432,7 @@ const RecordingModal = ({
   const highlightWords = (orig, user) => {
     if (!orig || !user) return null;
 
-    const normalizedOriginal = normalizeText(orig);
-    const normalizedUser = normalizeText(user);
-
-    const userWords = normalizedUser.split(/\s+/).filter((w) => w.length > 0);
-
-    const displayOriginalWords = orig.trim().split(/\s+/);
-
-    const items = displayOriginalWords.map((displayWord, i) => {
-      const normalizedDisplayWord = normalizeText(displayWord);
-      const userWord = userWords[i] || "";
-
-      let similarity = 0;
-      let matchType = "none";
-
-      if (userWord && normalizedDisplayWord) {
-        if (normalizedDisplayWord === userWord) {
-          similarity = 100;
-          matchType = "exact";
-        } else {
-          const distance = levenshteinDistance(normalizedDisplayWord, userWord);
-          const maxLen = Math.max(
-            normalizedDisplayWord.length,
-            userWord.length,
-          );
-          similarity = maxLen > 0 ? ((maxLen - distance) / maxLen) * 100 : 0;
-
-          if (similarity >= 80) matchType = "close";
-          else if (similarity >= 60) matchType = "partial";
-          else matchType = "wrong";
-        }
-      } else {
-        matchType = "wrong";
-      }
-
-      return {
-        word: displayWord,
-        userWord,
-        similarity: Math.round(similarity),
-        matchType,
-      };
-    });
+    const items = buildWordHighlights(orig, user);
 
     return (
       <div>
@@ -411,9 +456,7 @@ const RecordingModal = ({
                 title={
                   it.matchType === "exact"
                     ? `نطق صحيح (${it.similarity}%)`
-                    : `متوقع: ${it.word}، نطقت: ${
-                        it.userWord || "لا شيء"
-                      } (${it.similarity}%)`
+                    : `متوقع: ${it.word}، نطقت: ${it.userWord || "لا شيء"} (${it.similarity}%)`
                 }
               >
                 {it.word}
@@ -425,19 +468,19 @@ const RecordingModal = ({
 
         <div className="flex flex-wrap gap-2 text-xs mt-3 pt-2 border-t border-gray-200">
           <div className="flex items-center gap-1">
-            <div className="w-3 h-3 rounded bg-green-100 border border-green-300"></div>
+            <div className="w-3 h-3 rounded bg-green-100 border border-green-300" />
             <span className="text-gray-600 arabic_font">مطابقة تامة</span>
           </div>
           <div className="flex items-center gap-1">
-            <div className="w-3 h-3 rounded bg-blue-100 border border-blue-300"></div>
+            <div className="w-3 h-3 rounded bg-blue-100 border border-blue-300" />
             <span className="text-gray-600 arabic_font">مطابقة قريبة</span>
           </div>
           <div className="flex items-center gap-1">
-            <div className="w-3 h-3 rounded bg-yellow-100 border border-yellow-300"></div>
+            <div className="w-3 h-3 rounded bg-yellow-100 border border-yellow-300" />
             <span className="text-gray-600 arabic_font">مطابقة جزئية</span>
           </div>
           <div className="flex items-center gap-1">
-            <div className="w-3 h-3 rounded bg-red-100 border border-red-300"></div>
+            <div className="w-3 h-3 rounded bg-red-100 border border-red-300" />
             <span className="text-gray-600 arabic_font">غير مطابق</span>
           </div>
         </div>
@@ -445,7 +488,6 @@ const RecordingModal = ({
     );
   };
 
-  const BAR_COUNT = 28;
   const [elapsed, setElapsed] = useState(0);
   const startTsRef = useRef(null);
   const rafRef = useRef(null);
@@ -2691,14 +2733,14 @@ export function ShowLesson() {
                   </svg>
                 </button>
                 {/* ✅ optional: Full Stop (Reset) button row for clarity */}
-         
-                  <button
-                    onClick={resetReading}
-                    className="w-9 h-9 text-base rounded-full bg-red-100 hover:bg-red-300  grid place-items-center"
-                    title="إيقاف وإعادة من البداية"
-                  >
-                    <RotateCcw size={20} />
-                  </button>
+
+                <button
+                  onClick={resetReading}
+                  className="w-9 h-9 text-base rounded-full bg-red-100 hover:bg-red-300  grid place-items-center"
+                  title="إيقاف وإعادة من البداية"
+                >
+                  <RotateCcw size={20} />
+                </button>
               </div>
 
               <div className="flex items-center gap-1 text-[11px] text-gray-600">
