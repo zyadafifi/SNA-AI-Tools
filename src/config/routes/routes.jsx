@@ -12,13 +12,14 @@ import {
   ListeningProgressTracker,
   PronunciationProgressTracker,
   LoginPage,
-  WritingProgressTracker,
+  // WritingProgressTracker,
+  TemporarilyPaused,
 } from "../../modules/index";
 import { ListeningHome } from "../../pages/ListeningHome";
 import { ListeningLessonPage } from "../../pages/ListeningLessonPage";
 import { PronounceHomePage } from "../../pages/PronounceHomePage";
 import { MobileLessonPage } from "../../pages/MobileLessonPage";
-import { WritingHome } from "../../pages/WritingHome";
+// import { WritingHome } from "../../pages/WritingHome";
 import Article from "../../pages/Article";
 import Questions from "../../pages/Questions";
 import Results from "../../pages/Results";
@@ -81,15 +82,19 @@ export const Routes = createBrowserRouter([
         path: "pronounce/progress",
         element: <PronunciationProgressTracker />,
       },
+      // {
+      //   path: "writing/home",
+      //   element: <WritingHome />,
+      // },
       {
-        path: "writing/home",
-        element: <WritingHome />,
+        path: "writing/temporarily-paused",
+        element: <TemporarilyPaused />,
       },
       { path: "article/:topicId", element: <Article /> },
       { path: "questions/:topicId", element: <Questions /> },
       { path: "results/:topicId", element: <Results /> },
       { path: "login", element: <LoginPage /> },
-      { path: "writing/progress", element: <WritingProgressTracker /> },
+      // { path: "writing/progress", element: <WritingProgressTracker /> },
     ],
   },
 ]);

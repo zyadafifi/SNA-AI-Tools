@@ -41,7 +41,7 @@ export const HomeNav = () => {
       label: "الكتابة",
       color: "text-yellow-400",
       width: "31px",
-      linkTo: "/writing/home",
+      linkTo: "/writing/temporarily-paused",
     },
   ];
   return (

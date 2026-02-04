@@ -10,6 +10,7 @@ import { PronunciationProgressTracker } from "./PronunciationProgressTracker/Pro
 import { Home } from "./Home/Home";
 import { LoginPage } from "./LoginPage/LoginPage";
 import { WritingProgressTracker } from "./WritingProgressTracker/WritingProgressTracker";
+import { TemporarilyPaused } from "./TemporarilyPaused/TemporarilyPaused";
 
 export {
   Home,
@@ -24,4 +25,5 @@ export {
   PronunciationProgressTracker,
   LoginPage,
   WritingProgressTracker,
+  TemporarilyPaused,
 };

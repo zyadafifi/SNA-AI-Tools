@@ -1,5 +1,5 @@
 import { useEffect, useId, useMemo, useState } from "react";
-import { Volume2, Headphones, PenTool, BookOpen, TrendingUp } from "lucide-react";
+import { Volume2, Headphones, BookOpen, TrendingUp } from "lucide-react";
 import { readingData } from "../../../config/readingData/readingData";
 import { Link } from "react-router-dom";
 
@@ -17,14 +17,12 @@ const runWhenIdle = (fn) => {
   if ("requestIdleCallback" in window) {
     window.requestIdleCallback(fn, { timeout: 800 });
   } else {
-    // fallback
     setTimeout(fn, 0);
   }
 };
 
 export const SideHome = () => {
   const gradientId = `progressGradient-${useId().replace(/:/g, "")}`;
-
   const [activeCard, setActiveCard] = useState(null);
 
   // ✅ store only RAW loaded data once, and derive everything else via useMemo
@@ -33,7 +31,6 @@ export const SideHome = () => {
   const [stored, setStored] = useState(() => ({
     quizProgress: {},
     lessonProgress: [],
-    writingToolProgress: {},
     pronunciationMaster: null,
   }));
 
@@ -60,18 +57,16 @@ export const SideHome = () => {
     return () => controller.abort();
   }, []);
 
-  // ✅ Read all localStorage ONCE (idle) to reduce blocking
+  // ✅ Read localStorage ONCE (idle) to reduce blocking
   useEffect(() => {
     runWhenIdle(() => {
       const quizProgressRaw = localStorage.getItem("quizProgress");
       const lessonProgressRaw = localStorage.getItem("sna-lesson-progress");
-      const writingRaw = localStorage.getItem("sna-writing-tool-progress");
       const pronMasterRaw = localStorage.getItem("pronunciationMasterProgress");
 
       setStored({
         quizProgress: safeJSON(quizProgressRaw, {}),
         lessonProgress: safeJSON(lessonProgressRaw, []),
-        writingToolProgress: safeJSON(writingRaw, {}),
         pronunciationMaster: safeJSON(pronMasterRaw, null),
       });
     });
@@ -81,7 +76,6 @@ export const SideHome = () => {
   // ✅ Reading: precompute a fast lookup map once
   // =========================================================
   const readingIndex = useMemo(() => {
-    // key => true (level-#-lesson-#)
     const known = new Set();
     let totalLessons = 0;
 
@@ -99,14 +93,14 @@ export const SideHome = () => {
   }, []);
 
   const readingOverall = useMemo(() => {
-    const progressObj = stored.quizProgress && typeof stored.quizProgress === "object"
-      ? stored.quizProgress
-      : {};
+    const progressObj =
+      stored.quizProgress && typeof stored.quizProgress === "object"
+        ? stored.quizProgress
+        : {};
 
     let completed = 0;
 
     for (const key of Object.keys(progressObj)) {
-      // ✅ super fast check (no regex + no find)
       if (readingIndex.known.has(key)) completed++;
     }
 
@@ -120,7 +114,9 @@ export const SideHome = () => {
   // ✅ Listening
   // =========================================================
   const listeningProgress = useMemo(() => {
-    const lessons = Array.isArray(stored.lessonProgress) ? stored.lessonProgress : [];
+    const lessons = Array.isArray(stored.lessonProgress)
+      ? stored.lessonProgress
+      : [];
     const total = lessons.length;
     if (!total) return { progress: 0, completedLessons: 0, totalLessons: 10 };
 
@@ -142,41 +138,6 @@ export const SideHome = () => {
   }, [stored.lessonProgress]);
 
   // =========================================================
-  // ✅ Writing
-  // =========================================================
-  const writingProgress = useMemo(() => {
-    const data = stored.writingToolProgress && typeof stored.writingToolProgress === "object"
-      ? stored.writingToolProgress
-      : {};
-
-    const entries = Object.values(data);
-    const totalTopics = entries.length;
-
-    const phaseWeights = {
-      "not-started": 0,
-      "article-read": 50,
-      "questions-completed": 100,
-    };
-
-    let sum = 0;
-    let completed = 0;
-
-    for (const item of entries) {
-      const phase = item?.phase || "not-started";
-      sum += phaseWeights[phase] ?? 0;
-      if (phase === "questions-completed") completed++;
-    }
-
-    const avg = totalTopics > 0 ? Math.round(sum / totalTopics) : 0;
-
-    return {
-      progress: avg,
-      completedTopics: completed,
-      totalTopics,
-    };
-  }, [stored.writingToolProgress]);
-
-  // =========================================================
   // ✅ Pronunciation (derived, no extra setState)
   // =========================================================
   const pronunciationProgress = useMemo(() => {
@@ -189,13 +150,19 @@ export const SideHome = () => {
     const totalByLessonFromJson = {};
     for (const l of pronounceLessons) {
       const id = Number(l?.lessonNumber);
-      totalByLessonFromJson[id] = Array.isArray(l?.sentences) ? l.sentences.length : 0;
+      totalByLessonFromJson[id] = Array.isArray(l?.sentences)
+        ? l.sentences.length
+        : 0;
     }
 
     const sentences =
-      master?.sentences && typeof master.sentences === "object" ? master.sentences : {};
+      master?.sentences && typeof master.sentences === "object"
+        ? master.sentences
+        : {};
     const conversations =
-      master?.conversations && typeof master.conversations === "object" ? master.conversations : {};
+      master?.conversations && typeof master.conversations === "object"
+        ? master.conversations
+        : {};
 
     // completed sentences from localStorage
     const completedByLesson = {};
@@ -212,7 +179,7 @@ export const SideHome = () => {
         ...Object.keys(totalByLessonFromJson).map(Number),
         ...Object.keys(completedByLesson).map(Number),
         ...Object.keys(conversations).map(Number),
-      ])
+      ]),
     )
       .filter(Number.isFinite)
       .sort((a, b) => a - b);
@@ -220,14 +187,6 @@ export const SideHome = () => {
     let sumProgress = 0;
     let count = 0;
     let completedLessons = 0;
-
-    // ✅ remove heavy console.table in production
-    const dev = import.meta?.env?.DEV;
-
-    if (dev) {
-      // lightweight logs only if needed
-      // console.log("Pronunciation lessons:", lessonIds.length);
-    }
 
     for (const id of lessonIds) {
       const totalJson = totalByLessonFromJson[id] ?? 0;
@@ -253,12 +212,12 @@ export const SideHome = () => {
   }, [stored.pronunciationMaster, pronounceLessons]);
 
   // =========================================================
-  // ✅ Tools array memoized (prevents re-creating objects every render)
+  // ✅ Tools array memoized
   // =========================================================
   const tools = useMemo(() => {
     return [
       {
-        id: 4,
+        id: 1,
         icon: BookOpen,
         title: "Reading",
         titleAr: "القراءة",
@@ -268,9 +227,10 @@ export const SideHome = () => {
         totalLessons: readingOverall.total,
         color: "from-[var(--primary-color)] to-[var(--primary-color)]",
         link: "/reading/progress",
+        unit: "lessons",
       },
       {
-        id: 1,
+        id: 2,
         icon: Volume2,
         title: "Pronunciation",
         titleAr: "النطق",
@@ -280,9 +240,10 @@ export const SideHome = () => {
         totalLessons: pronunciationProgress.totalTopics,
         color: "from-[var(--primary-color)] to-[var(--primary-color)]",
         link: "/pronounce/progress",
+        unit: "topics",
       },
       {
-        id: 2,
+        id: 3,
         icon: Headphones,
         title: "Listening",
         titleAr: "الاستماع",
@@ -292,21 +253,10 @@ export const SideHome = () => {
         totalLessons: listeningProgress.totalLessons,
         color: "from-[var(--primary-color)] to-[var(--primary-color)]",
         link: "/listening/progress",
-      },
-      {
-        id: 3,
-        icon: PenTool,
-        title: "Writing",
-        titleAr: "الكتابة",
-        brief: "Smart grammar correction",
-        progress: writingProgress.progress,
-        completedLessons: writingProgress.completedTopics,
-        totalLessons: writingProgress.totalTopics,
-        color: "from-[var(--primary-color)] to-[var(--primary-color)]",
-        link: "/writing/progress",
+        unit: "lessons",
       },
     ];
-  }, [readingOverall, pronunciationProgress, listeningProgress, writingProgress]);
+  }, [readingOverall, pronunciationProgress, listeningProgress]);
 
   const averageProgress = useMemo(() => {
     const sum = tools.reduce((acc, t) => acc + Number(t.progress || 0), 0);
@@ -324,7 +274,7 @@ export const SideHome = () => {
         </div>
 
         {/* Tools Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-4">
           {tools.map((tool) => {
             const Icon = tool.icon;
             const isActive = activeCard === tool.id;
@@ -386,12 +336,13 @@ export const SideHome = () => {
                       <div className="flex items-center justify-between text-xs">
                         <div className="flex items-center gap-1">
                           <TrendingUp className="w-3 h-3 text-[var(--primary-color)]" />
-                          <span className="text-white font-semibold">{tool.progress}%</span>
+                          <span className="text-white font-semibold">
+                            {tool.progress}%
+                          </span>
                           <span className="text-gray-400">complete</span>
                         </div>
                         <span className="text-gray-400">
-                          {tool.completedLessons}/{tool.totalLessons}{" "}
-                          {tool.id === 3 ? "topics" : tool.id === 1 ? "topics" : "lessons"}
+                          {tool.completedLessons}/{tool.totalLessons} {tool.unit}
                         </span>
                       </div>
                     </div>
@@ -407,7 +358,14 @@ export const SideHome = () => {
           <div className="w-full max-w-2xl mx-auto bg-white/5 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 border border-gray/10 flex flex-col md:flex-row flex-nowrap items-center md:justify-start gap-4 md:gap-6 lg:gap-8">
             <div className="relative w-36 h-36 flex-shrink-0">
               <svg className="w-full h-full transform -rotate-90">
-                <circle cx="72" cy="72" r="64" stroke="#e5e7eb" strokeWidth="10" fill="none" />
+                <circle
+                  cx="72"
+                  cy="72"
+                  r="64"
+                  stroke="#e5e7eb"
+                  strokeWidth="10"
+                  fill="none"
+                />
                 <circle
                   cx="72"
                   cy="72"
@@ -419,10 +377,18 @@ export const SideHome = () => {
                   strokeDasharray={`${2 * Math.PI * 64}`}
                   strokeDashoffset={`${2 * Math.PI * 64 * (1 - averageProgress / 100)}`}
                   className="transition-all duration-1000 ease-out"
-                  style={{ filter: "drop-shadow(0 0 10px rgba(255, 197, 21, 0.5))" }}
+                  style={{
+                    filter: "drop-shadow(0 0 10px rgba(255, 197, 21, 0.5))",
+                  }}
                 />
                 <defs>
-                  <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient
+                    id={gradientId}
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
                     <stop offset="0%" stopColor="#ffc515" />
                     <stop offset="100%" stopColor="#ffc515" />
                   </linearGradient>
@@ -434,7 +400,9 @@ export const SideHome = () => {
                   <p className="text-[var(--main-text-color)] font-bold text-3xl mb-0.5">
                     {averageProgress}%
                   </p>
-                  <p className="text-[var(--main-text-color)] text-sm">Overall</p>
+                  <p className="text-[var(--main-text-color)] text-sm">
+                    Overall
+                  </p>
                 </div>
               </div>
             </div>
@@ -450,7 +418,7 @@ export const SideHome = () => {
                 Your average progress across all tools
               </p>
               <p className="arabic_font text-[var(--main-text-color)] text-sm">
-                متوسط تقدمك في جميع أدوات التعلم الأربعة
+                متوسط تقدمك في جميع أدوات التعلم الثلاثة
               </p>
             </div>
           </div>

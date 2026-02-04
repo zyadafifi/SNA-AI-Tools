@@ -90,29 +90,6 @@ const BookIcon = React.memo(function BookIcon({ active, size = "w-10 h-10" }) {
   );
 });
 
-const PencilIcon = React.memo(function PencilIcon({
-  active,
-  size = "w-10 h-10",
-}) {
-  return (
-    <svg viewBox="0 0 24 24" className={size} fill="none">
-      <path
-        d="M12 20h9"
-        stroke={active ? "white" : "#9CA3AF"}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4 11.5-11.5Z"
-        stroke={active ? "white" : "#9CA3AF"}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-});
-
 const ToolIcon = React.memo(function ToolIcon({
   category,
   active,
@@ -125,8 +102,6 @@ const ToolIcon = React.memo(function ToolIcon({
       return <MicIcon active={active} size={size} />;
     case "reading":
       return <BookIcon active={active} size={size} />;
-    case "writing":
-      return <PencilIcon active={active} size={size} />;
     default:
       return <BookIcon active={active} size={size} />;
   }
@@ -212,7 +187,6 @@ const getCategoryNameArabic = (category) => {
     listening: "الاستماع",
     pronunciation: "النطق",
     reading: "القراءة",
-    writing: "الكتابة",
   };
   return names[category] || category;
 };
@@ -362,10 +336,6 @@ const LessonNode = React.memo(function LessonNode({
 });
 
 // ============================================
-// ZIGZAG PATH UI COMPONENT (3D container) (Memoized + memoized positions)
-// ============================================
-
-// ============================================
 // ZIGZAG PATH UI COMPONENT (Responsive width + memoized positions)
 // ============================================
 export const ZigzagPathUI = React.memo(function ZigzagPathUI({
@@ -398,7 +368,7 @@ export const ZigzagPathUI = React.memo(function ZigzagPathUI({
     const verticalSpacing = 145;
     const horizontalOffset = Math.min(85, width * 0.2);
 
-    const groupSize = 4;
+    const groupSize = 3;
     const groupGap = 80;
 
     const pos = nodes.map((_, index) => {
@@ -438,7 +408,7 @@ export const ZigzagPathUI = React.memo(function ZigzagPathUI({
         {/* Group separators */}
         {nodes.map((group, index) => {
           const isEndOfGroup =
-            (index + 1) % 4 === 0 && index !== nodes.length - 1;
+            (index + 1) % 3 === 0 && index !== nodes.length - 1;
 
           if (!isEndOfGroup) return null;
 
@@ -467,7 +437,7 @@ export const ZigzagPathUI = React.memo(function ZigzagPathUI({
 
                 {/* Badge */}
                 <div
-                  className="relative px-4 py-1 text-base arabic_font font-semibold rounded-full backdrop-blur-md shadow-md"
+                  className="z-50 relative px-4 py-1 text-base arabic_font font-semibold rounded-full backdrop-blur-md shadow-md"
                   style={{
                     background: `linear-gradient(135deg,
               ${nextTheme?.primary},
@@ -493,7 +463,7 @@ export const ZigzagPathUI = React.memo(function ZigzagPathUI({
           {positions.map((pos, index) => {
             if (index === positions.length - 1) return null;
 
-            const isGroupBreak = (index + 1) % 4 === 0;
+            const isGroupBreak = (index + 1) % 3 === 0;
             if (isGroupBreak) return null;
 
             const nextPos = positions[index + 1];
@@ -571,23 +541,10 @@ const useProgressData = (lengths) => {
           )
         : 0;
 
-    const writingObj = safeParse(
-      localStorage.getItem("sna-writing-tool-progress"),
-      {},
-    );
-    const writingCompleted =
-      writingObj && typeof writingObj === "object"
-        ? Object.values(writingObj).reduce(
-            (acc, x) => acc + (x?.phase === "questions-completed" ? 1 : 0),
-            0,
-          )
-        : 0;
-
     return {
       listening: listeningCompleted,
       pronunciation: pronunciationCompleted,
       reading: readingCompleted,
-      writing: writingCompleted,
     };
   }, []);
 
@@ -601,8 +558,7 @@ const useProgressData = (lengths) => {
       if (
         e.key === "sna-lesson-progress" ||
         e.key === "pronunciationMasterProgress" ||
-        e.key === "quizProgress" ||
-        e.key === "sna-writing-tool-progress"
+        e.key === "quizProgress"
       ) {
         setProgress(compute());
       }
@@ -610,13 +566,7 @@ const useProgressData = (lengths) => {
 
     window.addEventListener("storage", onStorage);
     return () => window.removeEventListener("storage", onStorage);
-  }, [
-    compute,
-    lengths.listening,
-    lengths.pronounce,
-    lengths.reading,
-    lengths.writing,
-  ]);
+  }, [compute, lengths.listening, lengths.pronounce, lengths.reading]);
 
   return progress;
 };
@@ -624,28 +574,25 @@ const useProgressData = (lengths) => {
 // ============================================
 // NEW LOGIC - Interleaved ordering
 // ============================================
-const CATEGORY_ORDER = ["listening", "pronunciation", "reading", "writing"];
+const CATEGORY_ORDER = ["listening", "pronunciation", "reading"];
 
 const buildInterleavedNodes = (lengths, completedCounts, getPathByCategory) => {
   const maxLen = Math.max(
     lengths.listening || 0,
     lengths.pronounce || 0,
     lengths.reading || 0,
-    lengths.writing || 0,
   );
 
   const lenByCat = {
     listening: lengths.listening || 0,
     pronunciation: lengths.pronounce || 0,
     reading: lengths.reading || 0,
-    writing: lengths.writing || 0,
   };
 
   const doneByCat = {
     listening: completedCounts.listening || 0,
     pronunciation: completedCounts.pronunciation || 0,
     reading: completedCounts.reading || 0,
-    writing: completedCounts.writing || 0,
   };
 
   const steps = [];
@@ -671,7 +618,7 @@ const buildInterleavedNodes = (lengths, completedCounts, getPathByCategory) => {
     const isCurrent = i === currentIndex;
     const isClickable = isUnlocked || isCurrent;
 
-    const groupIndex = Math.floor(i / 4);
+    const groupIndex = Math.floor(i / 3);
     const theme = GROUP_THEMES[groupIndex % GROUP_THEMES.length];
 
     return {
@@ -702,19 +649,16 @@ const buildInterleavedNodes = (lengths, completedCounts, getPathByCategory) => {
 export function HomeMainPlan() {
   const [data, setData] = useState({
     pronounce: null,
-    writing: null,
     listening: null,
   });
 
   const [loading, setLoading] = useState({
     pronounce: true,
-    writing: true,
     listening: true,
   });
 
   const [errors, setErrors] = useState({
     pronounce: null,
-    writing: null,
     listening: null,
   });
 
@@ -724,13 +668,9 @@ export function HomeMainPlan() {
 
     (async () => {
       try {
-        const [p, w, l] = await Promise.all([
+        const [p, l] = await Promise.all([
           fetch("/assets/pronounceData.json").then((r) => {
             if (!r.ok) throw new Error("Failed to load pronounceData.json");
-            return r.json();
-          }),
-          fetch("/assets/writingData.json").then((r) => {
-            if (!r.ok) throw new Error("Failed to load writingData.json");
             return r.json();
           }),
           fetch("/assets/listeningData.json").then((r) => {
@@ -741,18 +681,17 @@ export function HomeMainPlan() {
 
         if (!mounted) return;
 
-        setData({ pronounce: p, writing: w, listening: l });
-        setErrors({ pronounce: null, writing: null, listening: null });
+        setData({ pronounce: p, listening: l });
+        setErrors({ pronounce: null, listening: null });
       } catch (e) {
         if (!mounted) return;
         setErrors({
           pronounce: e?.message || "Failed to load data",
-          writing: e?.message || "Failed to load data",
           listening: e?.message || "Failed to load data",
         });
       } finally {
         if (!mounted) return;
-        setLoading({ pronounce: false, writing: false, listening: false });
+        setLoading({ pronounce: false, listening: false });
       }
     })();
 
@@ -764,7 +703,6 @@ export function HomeMainPlan() {
   const lengths = useMemo(
     () => ({
       pronounce: data.pronounce?.lessons?.length || 0,
-      writing: data.writing?.topics?.length || 0,
       listening: data.listening?.lessons?.length || 0,
       reading: readingData?.length || 0,
     }),
@@ -774,36 +712,27 @@ export function HomeMainPlan() {
   const completedCounts = useProgressData(lengths);
 
   // ✅ stable callback
-  const getPathByCategory = useCallback(
-    (category, lessonNo) => {
-      switch (category) {
-        case "listening":
-          return `/listening/lesson/${lessonNo}`;
+  const getPathByCategory = useCallback((category, lessonNo) => {
+    switch (category) {
+      case "listening":
+        return `/listening/lesson/${lessonNo}`;
 
-        case "pronunciation":
-          return `/pronounce/lesson/${lessonNo}`;
+      case "pronunciation":
+        return `/pronounce/lesson/${lessonNo}`;
 
-        case "reading":
-          return `/reading/show-lesson-first-round/${lessonNo}/1`;
+      case "reading":
+        return `/reading/show-lesson-first-round/${lessonNo}/1`;
 
-        case "writing": {
-          const writingId = data?.writing?.topics?.[lessonNo - 1]?.id;
-          return writingId ? `/article/${writingId}` : `/article/${lessonNo}`;
-        }
-
-        default:
-          return `/plan/slug/lesson-${lessonNo}`;
-      }
-    },
-    [data?.writing],
-  );
+      default:
+        return `/plan/slug/lesson-${lessonNo}`;
+    }
+  }, []);
 
   const total = useMemo(() => {
     const maxLen = Math.max(
       lengths.listening || 0,
       lengths.pronounce || 0,
       lengths.reading || 0,
-      lengths.writing || 0,
     );
 
     let count = 0;
@@ -811,7 +740,6 @@ export function HomeMainPlan() {
       if (n <= lengths.listening) count++;
       if (n <= lengths.pronounce) count++;
       if (n <= lengths.reading) count++;
-      if (n <= lengths.writing) count++;
     }
     return count;
   }, [lengths]);
@@ -829,11 +757,6 @@ export function HomeMainPlan() {
     () => Object.values(errors).some(Boolean),
     [errors],
   );
-
-  const handleNodeClick = useCallback((node) => {
-    // لو لسه محتاج log خليه مؤقت، لكنه بيبطّأ مع كثرة re-renders
-    // console.log("Node clicked:", node);
-  }, []);
 
   if (isLoading) return <Loading />;
 
@@ -855,5 +778,5 @@ export function HomeMainPlan() {
     );
   }
 
-  return <ZigzagPathUI nodes={nodes} onNodeClick={handleNodeClick} />;
+  return <ZigzagPathUI nodes={nodes} />;
 }
