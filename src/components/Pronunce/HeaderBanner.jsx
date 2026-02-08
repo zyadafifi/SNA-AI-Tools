@@ -21,7 +21,7 @@ const HeaderBanner = ({ lessons = [] }) => {
   };
 
   const handleTryNow = () => {
-    window.location.href = "https://sna-english-test.vercel.app/";
+    window.location.href = "https://englishtest.sna.academy/";
   };
 
   return (
