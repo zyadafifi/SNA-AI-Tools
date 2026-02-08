@@ -210,18 +210,25 @@ export const usePronunciationScoring = () => {
     const totalWords = targetWords.length;
 
     // Check each target word against recognized words
+    // For short words (length <= 2, e.g. "i", "me"), require exact match only
+    // to avoid false matches (e.g. "i" matching inside "narayanpi")
+    const isShortWord = (w) => w.length <= 2;
     targetWords.forEach((targetWord) => {
-      if (
-        recognizedWords.some(
-          (recognizedWord) =>
-            recognizedWord === targetWord || // Exact match
-            recognizedWord.includes(targetWord) ||
-            targetWord.includes(recognizedWord)
-        )
-      ) {
-        correctWords++;
-      }
+      const matches = recognizedWords.some((recognizedWord) => {
+        if (recognizedWord === targetWord) return true;
+        if (isShortWord(targetWord)) return false; // no substring match for short words
+        return (
+          recognizedWord.includes(targetWord) ||
+          targetWord.includes(recognizedWord)
+        );
+      });
+      if (matches) correctWords++;
     });
+
+    // When user said something completely different, no target words match → 0%
+    if (correctWords === 0 && totalWords > 0 && recognized.trim().length > 0) {
+      return 0;
+    }
 
     // Calculate percentage
     const wordAccuracy = (correctWords / totalWords) * 100;
