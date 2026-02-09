@@ -379,6 +379,10 @@ export const MobileLessonPage = () => {
       currentSentenceIndex >= lesson?.sentences?.length - 1
     ) {
       setShowCompletionCard(true);
+      
+      // Hide overlays when lesson is completed
+      closePracticeOverlay();
+      setShowReplayOverlay(false);
 
       // Trigger lesson completion handling
       if (lesson) {
@@ -393,6 +397,7 @@ export const MobileLessonPage = () => {
     lesson,
     overallScore,
     handleLessonCompleted,
+    closePracticeOverlay,
   ]);
 
   // Detect if we're on mobile and set initial overlay state
@@ -818,13 +823,13 @@ export const MobileLessonPage = () => {
 
         {/* Replay Overlay - hide when alert or results dialog is shown */}
         <MobileReplayOverlay
-          show={showReplayOverlay && !showAlert && !showResultsDialog}
+          show={showReplayOverlay && !showAlert && !showResultsDialog && !showCompletionCard}
           onReplayClick={handleReplayClick}
         />
 
         {/* Practice Overlay - Pure UI driven by controller */}
         <MobilePracticeOverlay
-          show={showPracticeOverlay}
+          show={showPracticeOverlay && !showCompletionCard}
           sentence={practiceSentence || currentSentence}
           isRecording={isRecording}
           recordingTime={recordingTime}

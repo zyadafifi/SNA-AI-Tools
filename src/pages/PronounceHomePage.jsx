@@ -61,15 +61,20 @@ export const PronounceHomePage = () => {
         localStorage.getItem("pronunciationMasterProgress") || "{}"
       );
 
-      // Check if lesson has stored score data
-      if (progressData.lessons && progressData.lessons[lessonNumber]) {
-        return progressData.lessons[lessonNumber].overallScore || 0;
+      // Primary: Check if lesson has overall score stored in conversations
+      // (lessonNumber is used as conversationId in the pronunciation flow)
+      if (progressData.conversations && progressData.conversations[lessonNumber]) {
+        const score = progressData.conversations[lessonNumber].score;
+        if (score !== undefined && score !== null) {
+          return Math.round(score);
+        }
       }
 
-      // If no direct lesson score, calculate average from sentences
+      // Fallback: Calculate average from sentence-level scores
+      // Sentence keys are in format: "${lessonNumber}-${sentenceIndex}" (e.g., "1-0", "1-1")
       if (progressData.sentences) {
         const lessonSentences = Object.keys(progressData.sentences)
-          .filter((key) => key.startsWith(`lesson${lessonNumber}_`))
+          .filter((key) => key.startsWith(`${lessonNumber}-`))
           .map((key) => progressData.sentences[key])
           .filter((s) => s && s.score !== undefined);
 
