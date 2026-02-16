@@ -8,7 +8,7 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
-
+import { FaArrowDown } from "react-icons/fa";
 export function TemporarilyPaused() {
   return (
     <div
@@ -73,7 +73,7 @@ export function TemporarilyPaused() {
               <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <h1 className="text-2xl arabic_font sm:text-3xl font-bold tracking-tight text-zinc-900">
-                    موقوفة مؤقتًا
+                    Writing Assistant - قريبًا بإصدار جديد
                   </h1>
                   <span className="inline-flex arabic_font items-center gap-1 rounded-full bg-[color:var(--secondary-color)]/15 border border-[color:var(--secondary-color)]/30 px-2 py-1 text-xs text-[var(--secondary-color)]">
                     <Clock className="h-3.5 w-3.5" />
@@ -81,12 +81,69 @@ export function TemporarilyPaused() {
                   </span>
                 </div>
 
-                <p className="mt-2 arabic_font text-zinc-600 leading-relaxed">
-                  أداة{" "}
-                  <span className="font-semibold arabic_font text-zinc-900">الكتابة</span>{" "}
-                  موقوفة مؤقتًا حاليًا عشان نطوّر الأداء ونحسّن الاستقرار.
-                  تقدر تكمّل التصفح وتستخدمين باقي المزايا بدون أي مشكلة.
+                <p
+                  dir="rtl"
+                  className="mt-2 arabic_font text-zinc-600 leading-relaxed"
+                >
+                  أداة الكتابة متوقفة مؤقتًا، لأننا بنعيد بناءها بشكل كامل.
+                  <br />
+                  بنطورها وفق أحدث منهج تدريبي، حتي تناسب مستواك الحقيقي، وتخدم
+                  أهدافك في الكتابة بدقة أكبر.
+                  <br />
+                  نسخة أذكى، أبسط، أسرع، وأكثر فعالية في تطوير مهارتك.
+                  <br />
+                  واذا ودك تطور مهارة الكتابة من الآن، عندنا نظام كامل تقدر تبدأ
+                  بيه فورًا: Netflix System Book،
+                  <br />
+                  من خلاله هتقدر:
                 </p>
+
+                <ol
+                  dir="rtl"
+                  className="mt-2 arabic_font text-zinc-600 leading-relaxed list-decimal pr-3 space-y-2"
+                >
+                  <li className="arabic_font">
+                    تتدرب على كتابة Paragraphs ومقالات كاملة بالإنجليزي.
+                  </li>
+                  <li className="arabic_font">
+                    تدخل الإنجليزي في حياتك اليومية بشكل طبيعي.
+                  </li>
+                  <li className="arabic_font">
+                    تطبق عملي من خلال مسلسلات، أفلام، وبودكاست مرشحة حسب مستواك.
+                  </li>
+                  <li className="arabic_font">
+                    تكتسب مفردات وتراكيب من سياق حقيقي.
+                  </li>
+                  <li className="arabic_font">
+                    تبني لغتك بالطريقة الصحيحة.. وبأقل مجهود.
+                  </li>
+                </ol>
+
+                <p
+                  dir="rtl"
+                  className="mt-2 arabic_font text-zinc-600 leading-relaxed"
+                >
+                  ابدأ في بناء مهاراتك الآن، والنسخه المطوره ستكون اضافه حقيقيه
+                  لتقدمك!
+                  <br />
+                  ولو هدفك تبني أساس قوي في باقي المهارات: سواء في القراءة،
+                  التحدث، أو حتي الاستماع.
+                  <br />
+                  ابدأ بنظام متكامل يمشي معاك خطوة بخطوة.
+                </p>
+                <div className="flex flex-col items-center justify-center mt-6">
+                  {/* Arrow */}
+                  <FaArrowDown className=" text-[var(--primary-color)] text-2xl mb-2 animate-bounce drop-shadow-md " />
+
+                  {/* Button */}
+                  <a
+                    target="_blank"
+                    href="https://sna.academy/library-page"
+                    className=" bg-[var(--primary-color)] arabic_font text-black px-6 py-2 rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  >
+                    اضغط هنا
+                  </a>
+                </div>
 
                 {/* شريط التقدم */}
                 <div className="mt-5">
