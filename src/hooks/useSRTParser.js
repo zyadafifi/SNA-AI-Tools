@@ -9,136 +9,97 @@ const useSRTParser = () => {
   const [error, setError] = useState(null);
 
   /**
+   * Detect if text contains Arabic script
+   * @param {string} text - Text to check
+   * @returns {boolean}
+   */
+  const isArabicText = (text) => /[\u0600-\u06FF]/.test(text);
+
+  /**
+   * Parse a single SRT block into { startTime, endTime, text }
+   * @param {string} block - Raw block content (seq, timestamp line, text lines)
+   * @returns {{ startTime: number, endTime: number, text: string }|null}
+   */
+  const parseBlock = useCallback((block) => {
+    const lines = block.trim().split("\n");
+    if (lines.length < 3) return null;
+
+    const timingMatch = lines[1].match(
+      /(\d{2}):(\d{2}):(\d{2}),(\d{3})\s*-->\s*(\d{2}):(\d{2}):(\d{2}),(\d{3})/
+    );
+    if (!timingMatch) return null;
+
+    const startTime =
+      parseInt(timingMatch[1]) * 3600000 +
+      parseInt(timingMatch[2]) * 60000 +
+      parseInt(timingMatch[3]) * 1000 +
+      parseInt(timingMatch[4]);
+    const endTime =
+      parseInt(timingMatch[5]) * 3600000 +
+      parseInt(timingMatch[6]) * 60000 +
+      parseInt(timingMatch[7]) * 1000 +
+      parseInt(timingMatch[8]);
+    const text = lines.slice(2).join(" ").trim();
+
+    return text ? { startTime, endTime, text } : null;
+  }, []);
+
+  /**
    * Parse SRT content into subtitle objects
    * Handles both formats:
-   * - New pronunciation format: 2 blocks (1 English + 1 Arabic with same timestamps)
-   * - Listening format: 6+ blocks (3 English + 3 Arabic with different timestamps)
+   * - Pronunciation format: 2 blocks (1 English + 1 Arabic with same timestamps)
+   * - Listening format: alternating Eng/Ar pairs (blocks 0+1, 2+3, 4+5, ...)
    * @param {string} srtContent - Raw SRT file content
    * @returns {Array} Array of subtitle objects with timing and text
    */
   const parseSRT = useCallback((srtContent) => {
     const subtitles = [];
-    const blocks = srtContent.trim().split(/\n\s*\n/);
+    const blocks = srtContent.trim().split(/\n\s*\n/).filter(Boolean);
 
-    // Handle new pronunciation format (2 blocks: 1 English + 1 Arabic)
+    // Handle pronunciation format (2 blocks: 1 English + 1 Arabic)
     if (blocks.length === 2) {
-      const englishBlock = blocks[0];
-      const arabicBlock = blocks[1];
-
-      if (englishBlock && arabicBlock) {
-        const englishLines = englishBlock.split("\n");
-        const arabicLines = arabicBlock.split("\n");
-
-        if (englishLines.length >= 3 && arabicLines.length >= 3) {
-          const timingLine = englishLines[1];
-          const timingMatch = timingLine.match(
-            /(\d{2}):(\d{2}):(\d{2}),(\d{3})\s*-->\s*(\d{2}):(\d{2}):(\d{2}),(\d{3})/
-          );
-
-          if (timingMatch) {
-            const startTime = parseTimeToMs(
-              timingMatch[1],
-              timingMatch[2],
-              timingMatch[3],
-              timingMatch[4]
-            );
-            const endTime = parseTimeToMs(
-              timingMatch[5],
-              timingMatch[6],
-              timingMatch[7],
-              timingMatch[8]
-            );
-
-            const englishText = englishLines.slice(2).join(" ").trim();
-            const arabicText = arabicLines.slice(2).join(" ").trim();
-
-            if (englishText && arabicText) {
-              subtitles.push({
-                startTime,
-                endTime,
-                englishText,
-                arabicText,
-                index: 0,
-              });
-            }
-          }
+      const parsed0 = parseBlock(blocks[0]);
+      const parsed1 = parseBlock(blocks[1]);
+      if (parsed0 && parsed1) {
+        const [englishText, arabicText] = isArabicText(parsed0.text)
+          ? [parsed1.text, parsed0.text]
+          : [parsed0.text, parsed1.text];
+        if (englishText && arabicText) {
+          subtitles.push({
+            startTime: parsed0.startTime,
+            endTime: parsed0.endTime,
+            englishText,
+            arabicText,
+            index: 0,
+          });
         }
       }
     }
-    // Handle listening format (6+ blocks: 3 English + 3 Arabic)
-    else if (blocks.length >= 6) {
-      const englishBlocks = blocks.slice(0, 3);
-      const arabicBlocks = blocks.slice(3, 6);
+    // Handle listening format: alternating Eng/Ar pairs (any even number of blocks)
+    else if (blocks.length >= 2) {
+      for (let i = 0; i < blocks.length - 1; i += 2) {
+        const parsedA = parseBlock(blocks[i]);
+        const parsedB = parseBlock(blocks[i + 1]);
+        if (!parsedA || !parsedB) continue;
 
-      for (let i = 0; i < 3; i++) {
-        const englishBlock = englishBlocks[i];
-        const arabicBlock = arabicBlocks[i];
+        const [englishText, arabicText] = isArabicText(parsedA.text)
+          ? [parsedB.text, parsedA.text]
+          : [parsedA.text, parsedB.text];
 
-        if (englishBlock && arabicBlock) {
-          const englishLines = englishBlock.split("\n");
-          const arabicLines = arabicBlock.split("\n");
-
-          if (englishLines.length >= 3 && arabicLines.length >= 3) {
-            const timingLine = englishLines[1];
-            const timingMatch = timingLine.match(
-              /(\d{2}):(\d{2}):(\d{2}),(\d{3})\s*-->\s*(\d{2}):(\d{2}):(\d{2}),(\d{3})/
-            );
-
-            if (timingMatch) {
-              const startTime = parseTimeToMs(
-                timingMatch[1],
-                timingMatch[2],
-                timingMatch[3],
-                timingMatch[4]
-              );
-              const endTime = parseTimeToMs(
-                timingMatch[5],
-                timingMatch[6],
-                timingMatch[7],
-                timingMatch[8]
-              );
-
-              const englishText = englishLines.slice(2).join(" ").trim();
-              const arabicText = arabicLines.slice(2).join(" ").trim();
-
-              if (englishText && arabicText) {
-                subtitles.push({
-                  startTime,
-                  endTime,
-                  englishText,
-                  arabicText,
-                  index: subtitles.length,
-                });
-              }
-            }
-          }
+        if (englishText || arabicText) {
+          subtitles.push({
+            startTime: parsedA.startTime,
+            endTime: parsedA.endTime,
+            englishText: englishText || "",
+            arabicText: arabicText || "",
+            index: subtitles.length,
+          });
         }
       }
-    } else {
-      console.warn(
-        `SRT file has unexpected format with ${blocks.length} blocks (expected 2 or 6+)`
-      );
     }
 
     return subtitles;
-  }, []);
-
-  /**
-   * Convert time components to milliseconds
-   * @param {string} hours - Hours component
-   * @param {string} minutes - Minutes component
-   * @param {string} seconds - Seconds component
-   * @param {string} milliseconds - Milliseconds component
-   * @returns {number} Total time in milliseconds
-   */
-  const parseTimeToMs = (hours, minutes, seconds, milliseconds) => {
-    return (
-      parseInt(hours) * 3600000 +
-      parseInt(minutes) * 60000 +
-      parseInt(seconds) * 1000 +
-      parseInt(milliseconds)
-    );
-  };
+  }, [parseBlock]);
 
   /**
    * Load and parse SRT file from public/subtitles directory
