@@ -248,7 +248,20 @@ const DictationPhase = ({
       return;
     }
 
-    const analysis = analyzeAnswer(userAnswer.trim(), currentExercise.text);
+    // Use video content (English from SRT) as target; fallback to correctText if subtitles not loaded
+    let targetText = videoTextToPronounce;
+    if (!targetText && subtitles && subtitles.length > 0) {
+      const parts = subtitles.map(pickEnglish).filter(Boolean);
+      const deduped = [...new Set(parts.map((t) => t.trim()))];
+      targetText = deduped.join(" ").trim();
+    }
+    if (!targetText) targetText = currentExercise.text;
+    if (!targetText) {
+      alert("Could not load the correct answer. Please try again.");
+      return;
+    }
+
+    const analysis = analyzeAnswer(userAnswer.trim(), targetText);
     const score = analysis.accuracy;
     const isCorrect = analysis.isPerfect;
     setFeedback({ type: "writing", analysis, isCorrect });
@@ -727,7 +740,7 @@ const DictationPhase = ({
             Dictation phase
           </h2>
           <p className="text-white/90 text-lg mb-8">
-            Get ready to type what you hear
+            Get ready to type what you hear in English
           </p>
           <button
             onClick={handleStartDictation}
@@ -752,7 +765,7 @@ const DictationPhase = ({
                 <textarea
                   value={userAnswer}
                   onChange={(e) => setUserAnswer(e.target.value)}
-                  placeholder="type the sentence you heard here........"
+                  placeholder="Type what you heard in English..."
                   className="w-full min-h-[120px] bg-transparent text-gray-800 placeholder-gray-400 px-5 py-4 focus:outline-none focus:border-[#ffc515] resize-none text-base"
                   spellCheck="false"
                   autoCorrect="off"
@@ -828,7 +841,7 @@ const DictationPhase = ({
                       Your Turn!
                     </div>
                     <div className="text-gray-600 text-sm">
-                      Type the sentence you heard.
+                      Type what you heard in English.
                     </div>
                   </div>
 
@@ -838,7 +851,7 @@ const DictationPhase = ({
                       <textarea
                         value={userAnswer}
                         onChange={(e) => setUserAnswer(e.target.value)}
-                        placeholder="Type what you heard here..."
+                        placeholder="Type what you heard in English..."
                         className="w-full max-h-[55px] bg-transparent text-gray-800 placeholder-gray-400 px-5 py-3.5 focus:outline-none resize-none"
                         spellCheck="false"
                         autoCorrect="off"

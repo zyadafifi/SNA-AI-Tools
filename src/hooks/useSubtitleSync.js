@@ -21,25 +21,41 @@ const useSubtitleSync = (videoRef) => {
 
   const syncIntervalRef = useRef(null);
   const currentSubtitleIndexRef = useRef(-1);
+  const subtitlesRef = useRef([]);
+
+  // Keep ref in sync so interval always reads latest subtitles (avoids stale closure)
+  useEffect(() => {
+    subtitlesRef.current = subtitles;
+  }, [subtitles]);
 
   /**
-   * Update current subtitle based on video time
+   * Core update logic: read from ref and sync current subtitle to state
+   * @param {boolean} skipActiveCheck - If true, run even when isSubtitlesActive is false (e.g. after load)
+   */
+  const performSubtitleUpdate = useCallback(
+    (skipActiveCheck = false) => {
+      const subs = subtitlesRef.current;
+      if (!videoRef?.current || !subs?.length) return;
+      if (!skipActiveCheck && !isSubtitlesActive) return;
+
+      const currentTime = videoRef.current.currentTime;
+      const subtitle = getCurrentSubtitle(subs, currentTime);
+
+      const newSubtitleIndex = subtitle ? subtitle.index : -1;
+      if (newSubtitleIndex !== currentSubtitleIndexRef.current) {
+        currentSubtitleIndexRef.current = newSubtitleIndex;
+        setCurrentSubtitle(subtitle);
+      }
+    },
+    [isSubtitlesActive, getCurrentSubtitle, videoRef]
+  );
+
+  /**
+   * Update current subtitle based on video time (reads from ref to avoid stale closure)
    */
   const updateSubtitles = useCallback(() => {
-    if (!videoRef?.current || !subtitles.length || !isSubtitlesActive) return;
-
-    const video = videoRef.current;
-    const currentTime = video.currentTime;
-
-    const subtitle = getCurrentSubtitle(subtitles, currentTime);
-
-    // Only update if subtitle changed to prevent unnecessary re-renders
-    const newSubtitleIndex = subtitle ? subtitle.index : -1;
-    if (newSubtitleIndex !== currentSubtitleIndexRef.current) {
-      currentSubtitleIndexRef.current = newSubtitleIndex;
-      setCurrentSubtitle(subtitle);
-    }
-  }, [subtitles, isSubtitlesActive, getCurrentSubtitle, videoRef]);
+    performSubtitleUpdate(false);
+  }, [performSubtitleUpdate]);
 
   /**
    * Start subtitle synchronization with video
@@ -52,9 +68,9 @@ const useSubtitleSync = (videoRef) => {
     setIsSubtitlesActive(true);
 
     syncIntervalRef.current = setInterval(() => {
-      updateSubtitles();
-    }, 100); // Update every 100ms for smooth synchronization
-  }, [updateSubtitles]);
+      performSubtitleUpdate(false);
+    }, 50);
+  }, [performSubtitleUpdate]);
 
   /**
    * Stop subtitle synchronization
@@ -87,23 +103,26 @@ const useSubtitleSync = (videoRef) => {
         );
 
         if (loadedSubtitles && loadedSubtitles.length > 0) {
+          subtitlesRef.current = loadedSubtitles;
           setSubtitles(loadedSubtitles);
           setCurrentSubtitle(null);
           currentSubtitleIndexRef.current = -1;
 
-          // Start sync after loading
           startSubtitleSync();
+          performSubtitleUpdate(true);
         } else {
+          subtitlesRef.current = [];
           setSubtitles([]);
           setCurrentSubtitle(null);
         }
       } catch (error) {
         setSubtitleError(error.message);
+        subtitlesRef.current = [];
         setSubtitles([]);
         setCurrentSubtitle(null);
       }
     },
-    [loadSRTFile, startSubtitleSync, stopSubtitleSync]
+    [loadSRTFile, startSubtitleSync, stopSubtitleSync, performSubtitleUpdate]
   );
 
   /**
@@ -140,24 +159,27 @@ const useSubtitleSync = (videoRef) => {
         const loadedSubtitles = parseSRT(srtContent);
 
         if (loadedSubtitles && loadedSubtitles.length > 0) {
+          subtitlesRef.current = loadedSubtitles;
           setSubtitles(loadedSubtitles);
           setCurrentSubtitle(null);
           currentSubtitleIndexRef.current = -1;
 
-          // Start sync after loading
           startSubtitleSync();
+          performSubtitleUpdate(true);
         } else {
+          subtitlesRef.current = [];
           setSubtitles([]);
           setCurrentSubtitle(null);
         }
       } catch (error) {
         console.error("Error loading subtitles:", error.message);
         setSubtitleError(error.message);
+        subtitlesRef.current = [];
         setSubtitles([]);
         setCurrentSubtitle(null);
       }
     },
-    [parseSRT, startSubtitleSync, stopSubtitleSync]
+    [parseSRT, startSubtitleSync, stopSubtitleSync, performSubtitleUpdate]
   );
 
   /**
@@ -165,6 +187,7 @@ const useSubtitleSync = (videoRef) => {
    */
   const clearSubtitles = useCallback(() => {
     stopSubtitleSync();
+    subtitlesRef.current = [];
     setSubtitles([]);
     setCurrentSubtitle(null);
     setSubtitleError(null);
@@ -175,10 +198,10 @@ const useSubtitleSync = (videoRef) => {
    * Handle video events
    */
   const handleVideoPlay = useCallback(() => {
-    if (subtitles.length > 0) {
+    if (subtitlesRef.current.length > 0) {
       startSubtitleSync();
     }
-  }, [subtitles.length, startSubtitleSync]);
+  }, [startSubtitleSync]);
 
   const handleVideoPause = useCallback(() => {
     stopSubtitleSync();
@@ -190,16 +213,16 @@ const useSubtitleSync = (videoRef) => {
   }, [stopSubtitleSync]);
 
   const handleVideoSeeked = useCallback(() => {
-    // Update subtitle immediately after seeking
-    if (subtitles.length > 0 && videoRef?.current) {
+    const subs = subtitlesRef.current;
+    if (subs?.length > 0 && videoRef?.current) {
       const subtitle = getCurrentSubtitle(
-        subtitles,
+        subs,
         videoRef.current.currentTime
       );
       setCurrentSubtitle(subtitle);
       currentSubtitleIndexRef.current = subtitle ? subtitle.index : -1;
     }
-  }, [subtitles, getCurrentSubtitle, videoRef]);
+  }, [getCurrentSubtitle, videoRef]);
 
   // Attach video event listeners
   useEffect(() => {
