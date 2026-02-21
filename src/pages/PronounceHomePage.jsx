@@ -348,16 +348,16 @@ export const PronounceHomePage = () => {
 
       // Add avatar URLs for each lesson
       const avatarUrls = [
-        "https://cdn13674550.b-cdn.net/10.jpg",
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
-        "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop&crop=face",
-        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&h=150&fit=crop&crop=face",
+        "https://cdn13674550.b-cdn.net/assets/SNA%20media/speaking%20tool%20home%20page/Airport.jpg",
+        "https://cdn13674550.b-cdn.net/assets/SNA%20media/speaking%20tool%20home%20page/Cafe.jpg",
+        "https://cdn13674550.b-cdn.net/assets/SNA%20media/speaking%20tool%20home%20page/Class.jpg",
+        "https://cdn13674550.b-cdn.net/assets/SNA%20media/speaking%20tool%20home%20page/Hospital.jpg",
+        "https://cdn13674550.b-cdn.net/assets/SNA%20media/speaking%20tool%20home%20page/Kitchen.jpg",
+        "https://cdn13674550.b-cdn.net/assets/SNA%20media/speaking%20tool%20home%20page/Market.jpg",
+        "https://cdn13674550.b-cdn.net/assets/SNA%20media/speaking%20tool%20home%20page/Office.jpg",
+        "https://cdn13674550.b-cdn.net/assets/SNA%20media/speaking%20tool%20home%20page/Outdoor.jpg",
+        "https://cdn13674550.b-cdn.net/assets/SNA%20media/speaking%20tool%20home%20page/Store.jpg",
+        "https://cdn13674550.b-cdn.net/assets/SNA%20media/speaking%20tool%20home%20page/10.jpg",
       ];
 
       const updatedLesson = {
