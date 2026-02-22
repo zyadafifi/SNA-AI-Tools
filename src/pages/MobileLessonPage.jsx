@@ -12,6 +12,7 @@ import MobileSubtitleContainer from "../components/Listening/MobileSubtitleConta
 import MobileReplayOverlay from "../components/Pronunce/mobile/MobileReplayOverlay";
 import MobilePracticeOverlay from "../components/Pronunce/mobile/MobilePracticeOverlay";
 import MobileCompletionCard from "../components/Pronunce/mobile/MobileCompletionCard";
+import IntroCompletionCard from "../components/Pronunce/mobile/IntroCompletionCard";
 import MobileResultsDialog from "../components/Pronunce/mobile/MobileResultsDialog";
 import MobileAlertContainer from "../components/Pronunce/mobile/MobileAlertContainer";
 import { FaMicrophone, FaRegLightbulb } from "react-icons/fa";
@@ -38,6 +39,9 @@ export const MobileLessonPage = () => {
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
   const [videoLoadAttempts, setVideoLoadAttempts] = useState(0);
   const [currentVideoSrc, setCurrentVideoSrc] = useState(null);
+  const [showIntroCompletionCard, setShowIntroCompletionCard] = useState(false);
+
+  const isIntroLesson = parseInt(lessonNumber) === 1;
 
   // Add ref for managing user interaction
   const userInteractionRef = useRef(false);
@@ -92,6 +96,11 @@ export const MobileLessonPage = () => {
     lessonNumber ? parseInt(lessonNumber) : 0,
     lesson?.sentences?.length || 0
   );
+
+  // Reset conversation state when switching lessons (e.g. Continue from intro to lesson 2)
+  useEffect(() => {
+    resetConversation();
+  }, [lessonNumber, resetConversation]);
 
   const {
     videoRef,
@@ -377,8 +386,12 @@ export const MobileLessonPage = () => {
     };
   }, [handleLessonCompleted]);
 
-  // Show completion card only when lesson is actually completed
+  // Show completion card only when lesson is actually completed (skip for intro lesson 1)
   useEffect(() => {
+    if (isIntroLesson) {
+      setShowCompletionCard(false);
+      return;
+    }
     if (
       isConversationCompleted &&
       currentSentenceIndex >= lesson?.sentences?.length - 1
@@ -397,6 +410,7 @@ export const MobileLessonPage = () => {
       setShowCompletionCard(false);
     }
   }, [
+    isIntroLesson,
     isConversationCompleted,
     currentSentenceIndex,
     lesson,
@@ -421,10 +435,31 @@ export const MobileLessonPage = () => {
     navigate(`/pronounce/home`);
   };
 
+  const handleIntroContinue = () => {
+    completeLesson(1);
+    setShowIntroCompletionCard(false);
+    navigate("/pronounce/lesson/2");
+  };
+
+  const handleIntroBackToHome = () => {
+    completeLesson(1);
+    setShowIntroCompletionCard(false);
+    navigate("/pronounce/home");
+  };
+
   const handleVideoEnd = () => {
-    setShowReplayOverlay(true);
-    // Show practice overlay immediately (no delay)
-    openPracticeOverlay(currentSentence);
+    if (isIntroLesson) {
+      // Lesson 1 intro: auto-advance to next video or show completion
+      const total = lesson?.sentences?.length ?? 0;
+      if (currentSentenceIndex < total - 1) {
+        setCurrentSentenceIndex(currentSentenceIndex + 1);
+      } else {
+        setShowIntroCompletionCard(true);
+      }
+    } else {
+      setShowReplayOverlay(true);
+      openPracticeOverlay(currentSentence);
+    }
   };
 
   const handleReplayClick = async () => {
@@ -816,15 +851,15 @@ export const MobileLessonPage = () => {
           isMobile={isMobile}
         />
 
-        {/* Replay Overlay - hide when alert or results dialog is shown */}
+        {/* Replay Overlay - hide when alert or results dialog is shown, or intro mode */}
         <MobileReplayOverlay
-          show={showReplayOverlay && !showAlert && !showResultsDialog && !showCompletionCard}
+          show={showReplayOverlay && !showAlert && !showResultsDialog && !showCompletionCard && !showIntroCompletionCard}
           onReplayClick={handleReplayClick}
         />
 
-        {/* Practice Overlay - Pure UI driven by controller */}
+        {/* Practice Overlay - Pure UI driven by controller, hidden in intro mode */}
         <MobilePracticeOverlay
-          show={showPracticeOverlay && !showCompletionCard}
+          show={showPracticeOverlay && !showCompletionCard && !showIntroCompletionCard}
           sentence={practiceSentence || currentSentence}
           isRecording={isRecording}
           recordingTime={recordingTime}
@@ -851,6 +886,13 @@ export const MobileLessonPage = () => {
           overallScore={overallScore}
           onBackToLessons={handleBackToLessons}
           lessonCompleted={lessonCompletedStatus}
+        />
+
+        {/* Intro Completion Card - Lesson 1 only */}
+        <IntroCompletionCard
+          show={showIntroCompletionCard && isIntroLesson}
+          onContinue={handleIntroContinue}
+          onBackToHome={handleIntroBackToHome}
         />
 
         {/* Alert Container */}

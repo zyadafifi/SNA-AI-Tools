@@ -1248,6 +1248,43 @@
   font-size: 18px;
 }
 
+/* Intro completion card - two buttons only */
+.intro-completion-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.intro-completion-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.intro-completion-buttons .completion-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.completion-btn-secondary {
+  background: linear-gradient(
+    135deg,
+    #6c757d 0%,
+    #495057 100%
+  ) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.completion-btn-secondary:hover {
+  background: linear-gradient(
+    135deg,
+    #495057 0%,
+    #6c757d 100%
+  ) !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 480px) {
   .mobile-recording-ui {
