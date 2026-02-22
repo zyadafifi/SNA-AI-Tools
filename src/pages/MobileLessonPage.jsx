@@ -265,6 +265,7 @@ export const MobileLessonPage = () => {
   ]);
 
   // Load subtitles when sentence changes (matches listening tool methodology)
+  // Only primitive deps to prevent repeated fetches - load/clear functions excluded
   useEffect(() => {
     if (lessonNumber && lesson?.sentences?.[currentSentenceIndex] && isMobile) {
       loadSubtitlesForSentence(
@@ -275,14 +276,8 @@ export const MobileLessonPage = () => {
     return () => {
       clearSubtitles();
     };
-  }, [
-    lessonNumber,
-    currentSentenceIndex,
-    lesson,
-    isMobile,
-    loadSubtitlesForSentence,
-    clearSubtitles,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lessonNumber, currentSentenceIndex, lesson?.lessonNumber, isMobile]);
 
   // Separate effect for handling initial overlay (not tied to video loading)
   useEffect(() => {

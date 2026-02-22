@@ -12,7 +12,6 @@ const useSubtitleSync = (videoRef) => {
   const [subtitleError, setSubtitleError] = useState(null);
 
   const {
-    loadSRTFile,
     parseSRT,
     getCurrentSubtitle,
     isLoading: srtLoading,
@@ -22,8 +21,6 @@ const useSubtitleSync = (videoRef) => {
   const syncIntervalRef = useRef(null);
   const currentSubtitleIndexRef = useRef(-1);
   const subtitlesRef = useRef([]);
-  const clearDelayRef = useRef(null);
-  const GAP_CLEAR_DELAY_MS = 180; // Keep subtitle visible during brief gaps to prevent flicker
 
   // Keep ref in sync so interval always reads latest subtitles (avoids stale closure)
   useEffect(() => {
@@ -32,7 +29,6 @@ const useSubtitleSync = (videoRef) => {
 
   /**
    * Core update logic: read from ref and sync current subtitle to state
-   * Uses "sticky subtitle" - defers clearing to avoid flicker from boundary jitter, precision, or brief gaps
    * @param {boolean} skipActiveCheck - If true, run even when isSubtitlesActive is false (e.g. after load)
    */
   const performSubtitleUpdate = useCallback(
@@ -43,27 +39,11 @@ const useSubtitleSync = (videoRef) => {
 
       const currentTime = videoRef.current.currentTime;
       const subtitle = getCurrentSubtitle(subs, currentTime);
-      const newSubtitleIndex = subtitle ? subtitle.index : -1;
 
-      if (subtitle) {
-        // Cancel any pending clear - we have a subtitle to show
-        if (clearDelayRef.current) {
-          clearTimeout(clearDelayRef.current);
-          clearDelayRef.current = null;
-        }
-        if (newSubtitleIndex !== currentSubtitleIndexRef.current) {
-          currentSubtitleIndexRef.current = newSubtitleIndex;
-          setCurrentSubtitle(subtitle);
-        }
-      } else {
-        // No subtitle at current time - defer clear to prevent flicker from brief gaps
-        if (currentSubtitleIndexRef.current !== -1 && !clearDelayRef.current) {
-          clearDelayRef.current = setTimeout(() => {
-            clearDelayRef.current = null;
-            currentSubtitleIndexRef.current = -1;
-            setCurrentSubtitle(null);
-          }, GAP_CLEAR_DELAY_MS);
-        }
+      const newSubtitleIndex = subtitle ? subtitle.index : -1;
+      if (newSubtitleIndex !== currentSubtitleIndexRef.current) {
+        currentSubtitleIndexRef.current = newSubtitleIndex;
+        setCurrentSubtitle(subtitle);
       }
     },
     [isSubtitlesActive, getCurrentSubtitle, videoRef]
@@ -99,15 +79,12 @@ const useSubtitleSync = (videoRef) => {
       clearInterval(syncIntervalRef.current);
       syncIntervalRef.current = null;
     }
-    if (clearDelayRef.current) {
-      clearTimeout(clearDelayRef.current);
-      clearDelayRef.current = null;
-    }
     setIsSubtitlesActive(false);
   }, []);
 
   /**
    * Load subtitles for current sentence (pronunciation tool)
+   * Same methodology as loadSubtitlesForQuestion: direct fetch + parseSRT
    * @param {number} lessonNumber - Lesson number
    * @param {number} sentenceIndex - Sentence index (1-based)
    */
@@ -119,11 +96,24 @@ const useSubtitleSync = (videoRef) => {
         // Stop current sync while loading
         stopSubtitleSync();
 
-        const loadedSubtitles = await loadSRTFile(
-          lessonNumber,
-          sentenceIndex,
-          "pronunciation"
-        );
+        const fileName = `lesson${lessonNumber}_sentence${sentenceIndex}.srt`;
+        const filePath = `/assets/subtitles/pronunciation/${fileName}`;
+
+        const response = await fetch(filePath);
+
+        if (!response.ok) {
+          throw new Error(
+            `Failed to load SRT file: ${response.status} ${response.statusText}`
+          );
+        }
+
+        const srtContent = await response.text();
+
+        if (!srtContent.trim()) {
+          throw new Error("SRT file is empty");
+        }
+
+        const loadedSubtitles = parseSRT(srtContent);
 
         if (loadedSubtitles && loadedSubtitles.length > 0) {
           subtitlesRef.current = loadedSubtitles;
@@ -139,13 +129,14 @@ const useSubtitleSync = (videoRef) => {
           setCurrentSubtitle(null);
         }
       } catch (error) {
+        console.error("Error loading subtitles:", error.message);
         setSubtitleError(error.message);
         subtitlesRef.current = [];
         setSubtitles([]);
         setCurrentSubtitle(null);
       }
     },
-    [loadSRTFile, startSubtitleSync, stopSubtitleSync, performSubtitleUpdate]
+    [parseSRT, startSubtitleSync, stopSubtitleSync, performSubtitleUpdate]
   );
 
   /**
@@ -209,10 +200,6 @@ const useSubtitleSync = (videoRef) => {
    * Clear all subtitles and stop sync
    */
   const clearSubtitles = useCallback(() => {
-    if (clearDelayRef.current) {
-      clearTimeout(clearDelayRef.current);
-      clearDelayRef.current = null;
-    }
     stopSubtitleSync();
     subtitlesRef.current = [];
     setSubtitles([]);
