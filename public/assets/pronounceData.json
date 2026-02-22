@@ -7,39 +7,10 @@
       "arabicDescription": "تعلم كيفية التحدث في المنزل مع العائلة والأصدقاء",
       "sentences": [
         {
-          "english": "Welcome to the course!",
-          "arabic": "مرحبا بك في الدورة!",
-          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/bd32c1e0-12c4-45a6-8fe5-083e2f15e226/playlist.m3u8"
-        },
-        {
-          "english": "Let's get started.",
-          "arabic": "هيا لنبدأ.",
-          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/01d60c8c-9afe-45bf-9baf-7f3e74db951d/playlist.m3u8"
-        },
-        {
-          "english": "Hello, how are you?",
-          "arabic": "مرحباً، كيف حالك؟",
-          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/fc876498-b12f-467f-91b0-0c3607e9b8e2/playlist.m3u8"
-        },
-        {
-          "english": "Good morning!",
-          "arabic": "صباح الخير!",
-          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/cad0048b-73fe-41fd-8a7b-f9cf64f4b605/playlist.m3u8"
-        },
-        {
-          "english": "Nice to meet you.",
-          "arabic": "سعيد بلقائك.",
-          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/ba265fcd-bd80-4707-9fc1-57e3e73b8d5d/playlist.m3u8"
-        },
-        {
-          "english": "What's your name?",
-          "arabic": "ما اسمك؟",
-          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/f207393e-4619-4de7-b522-8b8e8dba2a20/playlist.m3u8"
-        },
-        {
-          "english": "My name is John.",
-          "arabic": "اسمي جون.",
-          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/9ba27664-a741-4a8a-8e9c-d8f8e89a12e0/playlist.m3u8"
+          "english": "Lesson 1 - Introduction",
+          "arabic": "الدرس الأول - مقدمة",
+          "videoSrc": "https://vz-2011baf9-1ba.b-cdn.net/d6763c8c-dd1b-4bdf-893a-1cfc1863ae9c/playlist.m3u8",
+          "subtitleFile": "Lesson1.srt"
         }
       ]
     },

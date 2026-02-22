@@ -7,6 +7,8 @@ import ListeningPhase from "../components/Listening/LessonPhase/ListeningPhase";
 import DictationPhase from "../components/Listening/LessonPhase/DictationPhase";
 import TipsPanel from "../components/Listening/TipsPanel";
 import CompletionDialog from "../components/Listening/CompletionDialog";
+import IntroCompletionCard from "../components/Pronunce/mobile/IntroCompletionCard";
+import "./MobileLessonPage.css";
 
 export const ListeningLessonPage = () => {
   const { id } = useParams();
@@ -16,6 +18,9 @@ export const ListeningLessonPage = () => {
   const [lesson, setLesson] = useState(null);
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [showIntroCompletionCard, setShowIntroCompletionCard] = useState(false);
+
+  const isIntroLesson = parseInt(id) === 1;
   const [isMobile, setIsMobile] = useState(false);
   const [showCompletionDialog, setShowCompletionDialog] = useState(false);
   const [questionScores, setQuestionScores] = useState([]);
@@ -24,6 +29,13 @@ export const ListeningLessonPage = () => {
   const userInteractionRef = useRef(false);
   const videoRefForAutoPlay = useRef(null);
   const [shouldReplayVideo, setShouldReplayVideo] = useState(false);
+
+  // Reset state when switching lessons (avoids index out of bounds)
+  useEffect(() => {
+    setCurrentQuestionIndex(0);
+    setCurrentPhase("video");
+    setShowIntroCompletionCard(false);
+  }, [id]);
 
   useEffect(() => {
     const loadLesson = async () => {
@@ -40,10 +52,12 @@ export const ListeningLessonPage = () => {
         setLesson(foundLesson);
         const qs = await dataService.getLessonQuestions(lessonId);
         setQuestions(qs);
-        // Derive current question from saved progress (20% per question)
-        const progress = foundLesson.progress || 0;
-        const derivedIndex = Math.min(4, Math.floor(progress / 20));
-        setCurrentQuestionIndex(derivedIndex);
+        // Derive current question from saved progress (20% per question) - skip for intro
+        if (parseInt(id) !== 1) {
+          const progress = foundLesson.progress || 0;
+          const derivedIndex = Math.min((qs?.length || 5) - 1, Math.floor(progress / 20));
+          setCurrentQuestionIndex(derivedIndex);
+        }
       } else {
         navigate("/listening/home");
       }
@@ -165,6 +179,32 @@ export const ListeningLessonPage = () => {
     }
   };
 
+  const handleIntroContinue = async () => {
+    await dataService.completeLesson(1);
+    setShowIntroCompletionCard(false);
+    navigate("/listening/lesson/2");
+  };
+
+  const handleIntroBackToHome = async () => {
+    await dataService.completeLesson(1);
+    setShowIntroCompletionCard(false);
+    navigate("/listening/home");
+  };
+
+  const handleListeningPhaseComplete = () => {
+    if (isIntroLesson) {
+      // Lesson 1 intro: auto-advance to next video or show intro completion
+      const total = questions.length || 0;
+      if (currentQuestionIndex < total - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+      } else {
+        setShowIntroCompletionCard(true);
+      }
+    } else {
+      setCurrentPhase("dictation");
+    }
+  };
+
   const handleDictationCompleted = async () => {
     const total = Math.max(1, questions.length || 5);
     const nextIndex = currentQuestionIndex + 1;
@@ -195,9 +235,11 @@ export const ListeningLessonPage = () => {
             lessonId={lesson?.id}
             questionId={questions[currentQuestionIndex]?.id}
             videoSrc={questions[currentQuestionIndex].videoSrc}
+            subtitleFile={questions[currentQuestionIndex].subtitleFile}
             totalSteps={questions.length}
             currentStepIndex={currentQuestionIndex}
-            onComplete={() => setCurrentPhase("dictation")}
+            onComplete={handleListeningPhaseComplete}
+            isIntroLesson={isIntroLesson}
             hasUserInteracted={hasUserInteracted}
             setHasUserInteracted={setHasUserInteracted}
             userInteractionRef={userInteractionRef}
@@ -207,7 +249,7 @@ export const ListeningLessonPage = () => {
           />
         )}
 
-        {currentPhase === "dictation" && questions[currentQuestionIndex] && (
+        {!isIntroLesson && currentPhase === "dictation" && questions[currentQuestionIndex] && (
           <DictationPhase
             lesson={lesson}
             correctText={questions[currentQuestionIndex].text}
@@ -221,6 +263,13 @@ export const ListeningLessonPage = () => {
             totalParts={questions.length}
           />
         )}
+
+        {/* Intro Completion Card - Lesson 1 only */}
+        <IntroCompletionCard
+          show={showIntroCompletionCard && isIntroLesson}
+          onContinue={handleIntroContinue}
+          onBackToHome={handleIntroBackToHome}
+        />
 
         {/* Completion Dialog */}
         <CompletionDialog
@@ -291,10 +340,12 @@ export const ListeningLessonPage = () => {
                 lessonId={lesson?.id}
                 questionId={questions[currentQuestionIndex]?.id}
                 videoSrc={questions[currentQuestionIndex].videoSrc}
+                subtitleFile={questions[currentQuestionIndex].subtitleFile}
                 totalSteps={questions.length}
                 currentStepIndex={currentQuestionIndex}
-                onComplete={() => {}}
+                onComplete={isIntroLesson ? handleListeningPhaseComplete : () => {}}
                 isDesktop={true}
+                isIntroLesson={isIntroLesson}
                 hasUserInteracted={hasUserInteracted}
                 setHasUserInteracted={setHasUserInteracted}
                 userInteractionRef={userInteractionRef}
@@ -305,8 +356,8 @@ export const ListeningLessonPage = () => {
             )}
           </div>
 
-          {/* Dictation Section - Always visible on desktop */}
-          {questions[currentQuestionIndex] && (
+          {/* Dictation Section - Always visible on desktop (hidden for intro lesson) */}
+          {!isIntroLesson && questions[currentQuestionIndex] && (
             <DictationPhase
               lesson={lesson}
               correctText={questions[currentQuestionIndex].text}
@@ -326,6 +377,13 @@ export const ListeningLessonPage = () => {
 
       {/* Tips Panel */}
       <TipsPanel isOpen={showTips} onClose={() => setShowTips(false)} />
+
+      {/* Intro Completion Card - Lesson 1 only (desktop) */}
+      <IntroCompletionCard
+        show={showIntroCompletionCard && isIntroLesson}
+        onContinue={handleIntroContinue}
+        onBackToHome={handleIntroBackToHome}
+      />
 
       {/* Completion Dialog */}
       <CompletionDialog

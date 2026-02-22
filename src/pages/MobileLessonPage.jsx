@@ -277,9 +277,11 @@ export const MobileLessonPage = () => {
   // Only primitive deps to prevent repeated fetches - load/clear functions excluded
   useEffect(() => {
     if (lessonNumber && lesson?.sentences?.[currentSentenceIndex] && isMobile) {
+      const sentence = lesson.sentences[currentSentenceIndex];
       loadSubtitlesForSentence(
         parseInt(lessonNumber),
-        currentSentenceIndex + 1 // SRT files are 1-based
+        currentSentenceIndex + 1, // SRT files are 1-based
+        sentence?.subtitleFile
       );
     }
     return () => {
@@ -709,6 +711,7 @@ export const MobileLessonPage = () => {
             sentences={lesson.sentences}
             completedSentences={completedSentences.size}
             isMobile={true}
+            isIntroLesson={isIntroLesson}
           />
         </div>
 

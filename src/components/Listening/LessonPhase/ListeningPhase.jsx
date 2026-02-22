@@ -15,7 +15,9 @@ const ListeningPhase = ({
   currentStepIndex = 0,
   lessonId,
   questionId,
+  subtitleFile,
   isDesktop = false,
+  isIntroLesson = false,
   hasUserInteracted = false,
   setHasUserInteracted = () => {},
   userInteractionRef = { current: false },
@@ -193,22 +195,23 @@ const ListeningPhase = ({
       nearEndTriggeredRef.current = true;
       el.pause();
       setVideoEnded(true);
-      if (!isDesktop && isMobile) {
+      // Call onComplete: mobile always; desktop only for intro lesson (videos play back-to-back)
+      if ((!isDesktop && isMobile) || (isDesktop && isIntroLesson)) {
         setTimeout(() => onComplete(), 1000);
       }
     }
-  }, [handleTimeUpdate, isDesktop, isMobile, onComplete, videoRef]);
+  }, [handleTimeUpdate, isDesktop, isMobile, isIntroLesson, onComplete, videoRef]);
 
   // Load subtitles when question changes
   useEffect(() => {
     if (lessonId && questionId) {
-      loadSubtitlesForQuestion(lessonId, questionId);
+      loadSubtitlesForQuestion(lessonId, questionId, subtitleFile);
     }
     return () => {
       clearSubtitles();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lessonId, questionId]);
+  }, [lessonId, questionId, subtitleFile]);
 
   // Handle replay video request from parent (when "Listen again" is clicked)
   useEffect(() => {
@@ -289,10 +292,11 @@ const ListeningPhase = ({
       videoRef.current.pause();
     }
     setVideoEnded(true);
-    if (!isDesktop && isMobile) {
+    // Call onComplete: mobile always; desktop only for intro lesson
+    if ((!isDesktop && isMobile) || (isDesktop && isIntroLesson)) {
       setTimeout(() => onComplete(), 1000);
     }
-  }, [onComplete, isDesktop, isMobile, videoRef]);
+  }, [onComplete, isDesktop, isMobile, isIntroLesson, videoRef]);
 
   const handleVideoClick = () => {
     if (!hasUserInteracted) {

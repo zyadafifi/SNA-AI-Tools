@@ -10,6 +10,7 @@ const ProgressBar = ({
   showLabels = false,
   labels = [],
   isMobile = false,
+  isIntroLesson = false,
 }) => {
   const [hoveredDot, setHoveredDot] = useState(null);
   const [focusedDot, setFocusedDot] = useState(null);
@@ -57,11 +58,14 @@ const ProgressBar = ({
 
   // Calculate progress based on video position - fill from previous bullet to current bullet
   // The fill should stop at the current sentence's bullet position when video reaches 100%
+  // For intro lesson: linear progress across full bar (no bullets)
   const segmentSize = 100 / total;
   let progressPercentage;
 
-  // Check if all sentences are completed
-  if (completedCount === total && total > 0) {
+  if (isIntroLesson) {
+    // Lesson 1 intro: video plays across entire bar, no segment bubbles
+    progressPercentage = Math.min(Math.max(sentenceProgress, 0), 100);
+  } else if (completedCount === total && total > 0) {
     // All sentences completed: fill to 100%
     progressPercentage = 100;
   } else {
@@ -189,7 +193,8 @@ const ProgressBar = ({
           />
         </div>
 
-        {/* Progress dots container */}
+        {/* Progress dots container - hidden for intro lesson */}
+        {!isIntroLesson && (
         <div
           style={{
             position: "absolute",
@@ -392,6 +397,7 @@ const ProgressBar = ({
             );
           })}
         </div>
+        )}
       </div>
     </div>
   );

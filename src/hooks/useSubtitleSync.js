@@ -87,16 +87,17 @@ const useSubtitleSync = (videoRef) => {
    * Same methodology as loadSubtitlesForQuestion: direct fetch + parseSRT
    * @param {number} lessonNumber - Lesson number
    * @param {number} sentenceIndex - Sentence index (1-based)
+   * @param {string} [subtitleFile] - Optional override filename (e.g. "Lesson1.srt")
    */
   const loadSubtitlesForSentence = useCallback(
-    async (lessonNumber, sentenceIndex) => {
+    async (lessonNumber, sentenceIndex, subtitleFile) => {
       setSubtitleError(null);
 
       try {
         // Stop current sync while loading
         stopSubtitleSync();
 
-        const fileName = `lesson${lessonNumber}_sentence${sentenceIndex}.srt`;
+        const fileName = subtitleFile || `lesson${lessonNumber}_sentence${sentenceIndex}.srt`;
         const filePath = `/assets/subtitles/pronunciation/${fileName}`;
 
         const response = await fetch(filePath);
@@ -143,17 +144,17 @@ const useSubtitleSync = (videoRef) => {
    * Load subtitles for listening tool question
    * @param {number} lessonId - Lesson ID
    * @param {number} questionId - Question ID
+   * @param {string} [subtitleFile] - Optional override filename (e.g. "L1.srt")
    */
   const loadSubtitlesForQuestion = useCallback(
-    async (lessonId, questionId) => {
+    async (lessonId, questionId, subtitleFile) => {
       setSubtitleError(null);
 
       try {
         // Stop current sync while loading
         stopSubtitleSync();
 
-        // Create a custom loader for listening tool naming convention
-        const fileName = `lesson${lessonId}_question${questionId}.srt`;
+        const fileName = subtitleFile || `lesson${lessonId}_question${questionId}.srt`;
         const filePath = `/assets/subtitles/listening/${fileName}`;
 
         const response = await fetch(filePath);
