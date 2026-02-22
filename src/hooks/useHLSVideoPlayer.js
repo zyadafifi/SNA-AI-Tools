@@ -153,10 +153,16 @@ export function useHLSVideoPlayer() {
     const isHLS = src.includes(".m3u8");
 
     if (isHLS) {
+      // Clear any existing src/source to prevent native HLS from loading first
+      // Native HLS uses conservative quality; we need HLS.js for 720p+ control
+      videoElement.removeAttribute("src");
+      videoElement.querySelectorAll("source").forEach((s) => s.remove());
+      videoElement.load();
+
       // ALWAYS use HLS.js for better quality control, even on iOS Safari
       // iOS Safari 17.1+ supports Media Source Extensions which HLS.js uses
       const shouldUseHLSjs = Hls.isSupported();
-      
+
       if (shouldUseHLSjs) {
         // Use HLS.js for full quality control
         const hls = initializeHLS(videoElement, src);
