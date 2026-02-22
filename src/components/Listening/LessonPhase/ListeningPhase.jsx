@@ -28,6 +28,9 @@ const ListeningPhase = ({
   const [showFocusOverlay, setShowFocusOverlay] = useState(true);
   const [showIOSAudioOverlay, setShowIOSAudioOverlay] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
+  const [videoLoadAttempts, setVideoLoadAttempts] = useState(0);
+  const [currentVideoSrc, setCurrentVideoSrc] = useState(null);
+  const nearEndTriggeredRef = useRef(false);
 
   // Use HLS video player hook for quality management
   const {
@@ -77,22 +80,55 @@ const ListeningPhase = ({
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Retry video loading function (matches pronunciation tool methodology)
+  const retryVideoLoad = useCallback(
+    (src, attempts = 0) => {
+      const maxAttempts = 3;
+      if (attempts >= maxAttempts) {
+        console.error(
+          `Failed to load video after ${maxAttempts} attempts:`,
+          src
+        );
+        return;
+      }
+
+      setVideoLoadAttempts(attempts + 1);
+      setVideoSource(src);
+
+      // Retry if video doesn't load within 3 seconds
+      setTimeout(() => {
+        if (videoRef.current && videoRef.current.readyState < 3) {
+          retryVideoLoad(src, attempts + 1);
+        }
+      }, 3000);
+    },
+    [setVideoSource, videoRef]
+  );
+
   // Load video source from prop (preferred) or lesson
-  // Only reload when videoSrc or lesson changes - not on user interaction
+  // Only reload when videoSrc or lesson changes - avoid unnecessary reloads (matches pronunciation methodology)
   useEffect(() => {
     const src = videoSrc || lesson?.videoSrc;
-    if (src) {
-      setVideoSource(src);
-      setVideoEnded(false); // Reset ended state when video source changes (new part)
+    if (src && src !== currentVideoSrc) {
+      setCurrentVideoSrc(src);
+      setVideoLoadAttempts(0);
+      retryVideoLoad(src);
+      setVideoEnded(false); // Reset ended state when video source changes
     }
-  }, [videoSrc, lesson, setVideoSource]);
+  }, [
+    videoSrc,
+    lesson?.videoSrc,
+    currentVideoSrc,
+    retryVideoLoad,
+  ]);
 
-  // Separate effect for auto-play to prevent unnecessary video reloads
+  // Separate effect for auto-play to prevent unnecessary video reloads (matches pronunciation methodology)
   useEffect(() => {
-    // Auto-play if user has already interacted (not the first video)
+    // Auto-play if user has already interacted (not the first video) and video source is loaded
     if (
       (hasUserInteracted || userInteractionRef.current) &&
-      currentStepIndex > 0
+      currentStepIndex > 0 &&
+      currentVideoSrc
     ) {
       let mounted = true;
 
@@ -140,7 +176,28 @@ const ListeningPhase = ({
         clearTimeout(timer);
       };
     }
-  }, [currentStepIndex, hasUserInteracted, userInteractionRef, videoRef]);
+  }, [currentStepIndex, currentVideoSrc, hasUserInteracted, userInteractionRef, videoRef]);
+
+  // Reset near-end trigger when video source changes
+  useEffect(() => {
+    nearEndTriggeredRef.current = false;
+  }, [currentVideoSrc]);
+
+  // Pause slightly before end to keep last frame visible (HLS buffer clears on 'ended')
+  const handleTimeUpdateWithNearEnd = useCallback(() => {
+    handleTimeUpdate();
+    const el = videoRef.current;
+    if (!el || !el.duration || nearEndTriggeredRef.current) return;
+    const threshold = 0.15; // Pause 0.15s before end
+    if (el.currentTime >= el.duration - threshold) {
+      nearEndTriggeredRef.current = true;
+      el.pause();
+      setVideoEnded(true);
+      if (!isDesktop && isMobile) {
+        setTimeout(() => onComplete(), 1000);
+      }
+    }
+  }, [handleTimeUpdate, isDesktop, isMobile, onComplete, videoRef]);
 
   // Load subtitles when question changes
   useEffect(() => {
@@ -223,16 +280,19 @@ const ListeningPhase = ({
     }
   }, [videoRef, setHasUserInteracted, userInteractionRef]);
 
-  // Handle video end - auto-transition to dictation (mobile only)
+  // Fallback when 'ended' fires (e.g. if timeupdate missed) - still try to show last frame
   const handleVideoEnd = useCallback(() => {
+    if (nearEndTriggeredRef.current) return; // Already handled by timeupdate
+    nearEndTriggeredRef.current = true;
+    if (videoRef.current?.duration) {
+      videoRef.current.currentTime = Math.max(0, videoRef.current.duration - 0.01);
+      videoRef.current.pause();
+    }
     setVideoEnded(true);
     if (!isDesktop && isMobile) {
-      setTimeout(() => {
-        onComplete();
-      }, 1000);
+      setTimeout(() => onComplete(), 1000);
     }
-    // Desktop: don't auto-switch, dictation is always visible
-  }, [onComplete, isDesktop, isMobile]);
+  }, [onComplete, isDesktop, isMobile, videoRef]);
 
   const handleVideoClick = () => {
     if (!hasUserInteracted) {
@@ -308,7 +368,7 @@ const ListeningPhase = ({
             disablePictureInPicture={false}
             onClick={handleVideoClick}
             onLoadedMetadata={handleLoadedMetadata}
-            onTimeUpdate={handleTimeUpdate}
+            onTimeUpdate={handleTimeUpdateWithNearEnd}
             onPlay={handlePlay}
             onPause={handlePause}
             onEnded={handleVideoEnd}
@@ -335,14 +395,7 @@ const ListeningPhase = ({
             onLoadStart={handleLoadStart}
             onCanPlay={handleCanPlay}
           >
-            {videoSrc || lesson?.videoSrc ? (
-              <source 
-                src={videoSrc || lesson?.videoSrc} 
-                type={(videoSrc || lesson?.videoSrc).includes('.m3u8') ? 'application/x-mpegURL' : 'video/mp4'} 
-              />
-            ) : (
-              <source src="" type="video/mp4" />
-            )}
+            {/* No source element - load via setVideoSource/HLS.js only for full quality control */}
             Your browser does not support the video tag.
           </video>
 
@@ -501,7 +554,7 @@ const ListeningPhase = ({
           crossOrigin="anonymous"
           disablePictureInPicture={false}
           onLoadedMetadata={handleLoadedMetadata}
-          onTimeUpdate={handleTimeUpdate}
+          onTimeUpdate={handleTimeUpdateWithNearEnd}
           onPlay={handlePlay}
           onPause={handlePause}
           onEnded={handleVideoEnd}
@@ -522,14 +575,7 @@ const ListeningPhase = ({
           onLoadStart={handleLoadStart}
           onCanPlay={handleCanPlay}
         >
-          {videoSrc || lesson?.videoSrc ? (
-            <source 
-              src={videoSrc || lesson.videoSrc} 
-              type={(videoSrc || lesson?.videoSrc).includes('.m3u8') ? 'application/x-mpegURL' : 'video/mp4'} 
-            />
-          ) : (
-            <source src="" type="video/mp4" />
-          )}
+          {/* No source element - load via setVideoSource/HLS.js only for full quality control */}
           Your browser does not support the video tag.
         </video>
 

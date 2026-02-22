@@ -8,7 +8,7 @@ import { useMobileFeatures } from "../hooks/useMobileFeatures";
 import useSubtitleSync from "../hooks/useSubtitleSync";
 import ProgressBar from "../components/Pronunce/ProgressBar";
 import MobileBackButton from "../components/Pronunce/mobile/MobileBackButton";
-import MobileSubtitleContainer from "../components/Pronunce/mobile/MobileSubtitleContainer";
+import MobileSubtitleContainer from "../components/Listening/MobileSubtitleContainer";
 import MobileReplayOverlay from "../components/Pronunce/mobile/MobileReplayOverlay";
 import MobilePracticeOverlay from "../components/Pronunce/mobile/MobilePracticeOverlay";
 import MobileCompletionCard from "../components/Pronunce/mobile/MobileCompletionCard";
@@ -254,14 +254,6 @@ export const MobileLessonPage = () => {
         setCurrentVideoSrc(currentSentence.videoSrc);
         setVideoLoadAttempts(0);
         retryVideoLoad(currentSentence.videoSrc);
-
-        // Load subtitles for current sentence (mobile only)
-        if (isMobile) {
-          loadSubtitlesForSentence(
-            parseInt(lessonNumber),
-            currentSentenceIndex + 1 // SRT files are 1-based
-          );
-        }
       }
     }
   }, [
@@ -269,9 +261,27 @@ export const MobileLessonPage = () => {
     currentSentenceIndex,
     currentVideoSrc,
     retryVideoLoad,
-    isMobile,
     lessonNumber,
+  ]);
+
+  // Load subtitles when sentence changes (matches listening tool methodology)
+  useEffect(() => {
+    if (lessonNumber && lesson?.sentences?.[currentSentenceIndex] && isMobile) {
+      loadSubtitlesForSentence(
+        parseInt(lessonNumber),
+        currentSentenceIndex + 1 // SRT files are 1-based
+      );
+    }
+    return () => {
+      clearSubtitles();
+    };
+  }, [
+    lessonNumber,
+    currentSentenceIndex,
+    lesson,
+    isMobile,
     loadSubtitlesForSentence,
+    clearSubtitles,
   ]);
 
   // Separate effect for handling initial overlay (not tied to video loading)
@@ -513,25 +523,16 @@ export const MobileLessonPage = () => {
       const currentSentence = lesson.sentences[currentSentenceIndex];
       completeSentence(currentSentenceIndex, lastScore);
 
-      // Move to next sentence if not completed
-      // Note: completeSentence already updates currentSentenceIndex internally
-      if (currentSentenceIndex < lesson.sentences.length - 1) {
-        const nextSentenceIndex = currentSentenceIndex + 1;
+        // Move to next sentence if not completed
+        // Note: completeSentence already updates currentSentenceIndex internally
+        if (currentSentenceIndex < lesson.sentences.length - 1) {
+          // Hide practice overlay and replay overlay
+          closePracticeOverlay();
+          setShowReplayOverlay(false);
 
-        // Hide practice overlay and replay overlay
-        closePracticeOverlay();
-        setShowReplayOverlay(false);
-
-        // Load subtitles for next sentence (mobile only)
-        if (isMobile) {
-          loadSubtitlesForSentence(
-            parseInt(lessonNumber),
-            nextSentenceIndex + 1 // SRT files are 1-based
-          );
+          // Subtitles for next sentence are loaded by the dedicated useEffect when currentSentenceIndex updates
+          // Auto-play is now handled by the useEffect that watches currentSentenceIndex
         }
-
-        // Auto-play is now handled by the useEffect that watches currentSentenceIndex
-      }
     }
   };
 
@@ -814,10 +815,9 @@ export const MobileLessonPage = () => {
           </div>
         )}
 
-        {/* Subtitle Container - Only shows SRT subtitles */}
+        {/* Subtitle Container - SRT subtitles (matches listening tool methodology) */}
         <MobileSubtitleContainer
           currentSubtitle={currentSubtitle}
-          showVideoSubtitles={true}
           isMobile={isMobile}
         />
 
