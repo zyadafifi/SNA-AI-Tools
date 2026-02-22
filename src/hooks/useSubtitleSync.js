@@ -22,6 +22,8 @@ const useSubtitleSync = (videoRef) => {
   const syncIntervalRef = useRef(null);
   const currentSubtitleIndexRef = useRef(-1);
   const subtitlesRef = useRef([]);
+  const clearDelayRef = useRef(null);
+  const GAP_CLEAR_DELAY_MS = 180; // Keep subtitle visible during brief gaps to prevent flicker
 
   // Keep ref in sync so interval always reads latest subtitles (avoids stale closure)
   useEffect(() => {
@@ -30,6 +32,7 @@ const useSubtitleSync = (videoRef) => {
 
   /**
    * Core update logic: read from ref and sync current subtitle to state
+   * Uses "sticky subtitle" - defers clearing to avoid flicker from boundary jitter, precision, or brief gaps
    * @param {boolean} skipActiveCheck - If true, run even when isSubtitlesActive is false (e.g. after load)
    */
   const performSubtitleUpdate = useCallback(
@@ -40,11 +43,27 @@ const useSubtitleSync = (videoRef) => {
 
       const currentTime = videoRef.current.currentTime;
       const subtitle = getCurrentSubtitle(subs, currentTime);
-
       const newSubtitleIndex = subtitle ? subtitle.index : -1;
-      if (newSubtitleIndex !== currentSubtitleIndexRef.current) {
-        currentSubtitleIndexRef.current = newSubtitleIndex;
-        setCurrentSubtitle(subtitle);
+
+      if (subtitle) {
+        // Cancel any pending clear - we have a subtitle to show
+        if (clearDelayRef.current) {
+          clearTimeout(clearDelayRef.current);
+          clearDelayRef.current = null;
+        }
+        if (newSubtitleIndex !== currentSubtitleIndexRef.current) {
+          currentSubtitleIndexRef.current = newSubtitleIndex;
+          setCurrentSubtitle(subtitle);
+        }
+      } else {
+        // No subtitle at current time - defer clear to prevent flicker from brief gaps
+        if (currentSubtitleIndexRef.current !== -1 && !clearDelayRef.current) {
+          clearDelayRef.current = setTimeout(() => {
+            clearDelayRef.current = null;
+            currentSubtitleIndexRef.current = -1;
+            setCurrentSubtitle(null);
+          }, GAP_CLEAR_DELAY_MS);
+        }
       }
     },
     [isSubtitlesActive, getCurrentSubtitle, videoRef]
@@ -79,6 +98,10 @@ const useSubtitleSync = (videoRef) => {
     if (syncIntervalRef.current) {
       clearInterval(syncIntervalRef.current);
       syncIntervalRef.current = null;
+    }
+    if (clearDelayRef.current) {
+      clearTimeout(clearDelayRef.current);
+      clearDelayRef.current = null;
     }
     setIsSubtitlesActive(false);
   }, []);
@@ -186,6 +209,10 @@ const useSubtitleSync = (videoRef) => {
    * Clear all subtitles and stop sync
    */
   const clearSubtitles = useCallback(() => {
+    if (clearDelayRef.current) {
+      clearTimeout(clearDelayRef.current);
+      clearDelayRef.current = null;
+    }
     stopSubtitleSync();
     subtitlesRef.current = [];
     setSubtitles([]);

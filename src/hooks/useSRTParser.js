@@ -154,6 +154,7 @@ const useSRTParser = () => {
 
   /**
    * Find the current subtitle based on video time
+   * Uses 50ms tolerance at boundaries to prevent flicker from timing jitter
    * @param {Array} subtitles - Array of parsed subtitles
    * @param {number} currentTime - Current video time in seconds
    * @returns {Object|null} Current subtitle object or null
@@ -162,12 +163,13 @@ const useSRTParser = () => {
     if (!subtitles || subtitles.length === 0) return null;
 
     const currentTimeMs = currentTime * 1000;
+    const TOLERANCE_MS = 50; // Buffer at segment boundaries to reduce flicker
 
     return (
       subtitles.find(
         (subtitle) =>
-          currentTimeMs >= subtitle.startTime &&
-          currentTimeMs <= subtitle.endTime
+          currentTimeMs >= subtitle.startTime - TOLERANCE_MS &&
+          currentTimeMs <= subtitle.endTime + TOLERANCE_MS
       ) || null
     );
   }, []);
