@@ -76,7 +76,7 @@ const MobileSubtitleContainer = ({ currentSubtitle, isMobile = false }) => {
               style={{
                 fontFamily: '"Tajawal", "Noto Kufi Arabic", sans-serif',
                 fontSize: "19px",
-                letterSpacing: "2.2em",
+                letterSpacing: "0",
                 direction: "rtl",
                 textAlign: "center",
                 textShadow: "0 1px 3px rgba(0, 0, 0, 0.5)",
