@@ -7,11 +7,11 @@
       "description": ".Basic greetings and simple sentences",
       "duration": "12 minutes",
       "difficulty": "Beginner",
-      "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+      
       "questions": [
         {
           "id": 1,
-          "videoSrc": "https://vz-06f2b5a9-975.b-cdn.net/a18f1e7d-374b-4dda-b9c7-8caa5f502d7f/playlist.m3u8",
+          "videoSrc": "https://vz-06f2b5a9-975.b-cdn.net/d9cc57e7-a752-43de-8414-5189929de56a/playlist.m3u8",
           "text": "",
           "subtitleFile": "L1.srt"
         }
