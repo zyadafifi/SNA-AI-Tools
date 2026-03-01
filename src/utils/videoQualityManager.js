@@ -118,9 +118,10 @@ export function getHLSConfig(forceHighQuality = true) {
     // Start with highest quality for iOS, auto for others
     startLevel: forceHighQuality ? 1000 : -1, // High number = highest quality
     
-    // Buffer configuration - larger for iOS
-    maxBufferLength: isIOS ? 40 : 30,
-    maxBufferSize: 80 * 1000 * 1000, // 80 MB for better quality buffering
+    // Buffer configuration - larger to reduce stalls on slow/unstable networks
+    maxBufferLength: isIOS ? 60 : 45,
+    maxBufferSize: 100 * 1000 * 1000, // 100 MB
+    maxMaxBufferLength: 600, // Cap total buffer (10 min) to avoid memory issues
     maxBufferHole: 0.5,
     
     // Loading timeouts and retries

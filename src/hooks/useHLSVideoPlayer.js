@@ -67,10 +67,18 @@ export function useHLSVideoPlayer() {
         setCurrentQuality(levels[bestQualityIndex]);
         
         // After 5 seconds, allow adaptive but lock minimum to 720p
-        setTimeout(() => {
-          hls.currentLevel = -1; // Enable auto
-          qualityLockRef.current = true;
+        const timeoutId = setTimeout(() => {
+          try {
+            // Guard: only run if this hls instance is still active (not destroyed/replaced)
+            if (hlsRef.current === hls && hls.media) {
+              hls.currentLevel = -1; // Enable auto
+              qualityLockRef.current = true;
+            }
+          } catch (e) {
+            // HLS instance may be destroyed - ignore
+          }
         }, 5000);
+        hls.on(Hls.Events.DESTROYING, () => clearTimeout(timeoutId));
       } else if (minQualityIndex !== -1) {
         // Fallback to minimum quality if best not available
         hls.currentLevel = minQualityIndex;
@@ -110,9 +118,8 @@ export function useHLSVideoPlayer() {
 
     // Handle errors
     hls.on(Hls.Events.ERROR, (_event, data) => {
-      console.error("HLS Error:", data);
-
       if (data.fatal) {
+        console.error("HLS Error:", data);
         switch (data.type) {
           case Hls.ErrorTypes.NETWORK_ERROR:
             console.error("Fatal network error, trying to recover");
@@ -127,6 +134,13 @@ export function useHLSVideoPlayer() {
             setHasError(true);
             hls.destroy();
             break;
+        }
+      } else if (data.details === "bufferStalledError") {
+        // Non-fatal: playback stalled due to empty buffer - kick recovery
+        try {
+          hls.startLoad();
+        } catch (e) {
+          // ignore
         }
       }
     });
@@ -159,69 +173,26 @@ export function useHLSVideoPlayer() {
       videoElement.querySelectorAll("source").forEach((s) => s.remove());
       videoElement.load();
 
-      // ALWAYS use HLS.js for better quality control, even on iOS Safari
-      // iOS Safari 17.1+ supports Media Source Extensions which HLS.js uses
-      const shouldUseHLSjs = Hls.isSupported();
-
-      if (shouldUseHLSjs) {
-        // Use HLS.js for full quality control
+      // Use HLS.js when supported (includes iOS 17.1+ with MSE) for high initial quality.
+      // Fall back to native HLS only when HLS.js is not supported (e.g. older iOS).
+      if (Hls.isSupported()) {
         const hls = initializeHLS(videoElement, src);
         hlsRef.current = hls;
       } else if (supportsNativeHLS(videoElement)) {
-        // Fallback to native HLS only if HLS.js not supported
-        
-        // Clean up HLS.js if it was previously used
+        // Fallback to native HLS when HLS.js not supported (e.g. older iOS)
         if (hlsRef.current) {
           hlsRef.current.destroy();
           hlsRef.current = null;
         }
-
-        // iOS-specific optimizations BEFORE setting src
         if (isIOSSafari()) {
-          // Force high quality hints
-          videoElement.setAttribute('x-webkit-airplay', 'allow');
-          videoElement.setAttribute('playsinline', 'true');
-          
-          // Critical: Set preload to auto for better initial quality selection
-          videoElement.preload = 'auto';
-          
-          // Request highest quality available
-          videoElement.setAttribute('webkit-playsinline', 'true');
-          
-          // Force high bandwidth preference
-          if (videoElement.style) {
-            videoElement.style.objectFit = 'cover';
-          }
-          
-          // Try to hint for high quality by requesting video to be ready
-          videoElement.load();
+          videoElement.setAttribute("x-webkit-airplay", "allow");
+          videoElement.setAttribute("playsinline", "true");
+          videoElement.setAttribute("webkit-playsinline", "true");
+          videoElement.preload = "auto";
+          if (videoElement.style) videoElement.style.objectFit = "cover";
         }
-        
-        // Set source AFTER optimization attributes
         videoElement.src = src;
-        
-        // Reload with optimizations applied
         videoElement.load();
-        
-        // Additional iOS quality forcing
-        if (isIOSSafari()) {
-          // Wait for metadata and then seek to force quality selection
-          const forceQualityOnIOS = () => {
-            if (videoElement.readyState >= 1) {
-              // Seek to 0.1 seconds to trigger quality re-evaluation
-              videoElement.currentTime = 0.1;
-              setTimeout(() => {
-                videoElement.currentTime = 0;
-              }, 100);
-            }
-          };
-          
-          videoElement.addEventListener('loadedmetadata', forceQualityOnIOS, { once: true });
-        }
-      } else {
-        // Use HLS.js for other browsers
-        const hls = initializeHLS(videoElement, src);
-        hlsRef.current = hls;
       }
     } else {
       // Regular MP4 playback
